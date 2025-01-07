@@ -1,0 +1,25 @@
+quarkus:
+  profile: dev
+  config:
+    profile:
+      parent: common
+  http:
+    host: 0.0.0.0
+    cors:
+      ~: true
+      origins:
+        - "*"
+      methods:
+        - "*"
+  log:
+    level: INFO
+    category:
+      "org.hibernate":
+        level: ERROR
+    file:
+      enable: true
+      path: ./logs/workeronboarding.log
+      level: INFO
+      rotation:
+        file-suffix: .yyyy-MM-dd
+        max-file-size: 1024M

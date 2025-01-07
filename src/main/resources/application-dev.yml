@@ -1,0 +1,15 @@
+quarkus:
+  http:
+    port: 8001
+  hibernate-orm:
+    database:
+      generation: none
+    log:
+      sql: false
+    dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    username: root
+    password: Paaru@1307
+    jdbc:
+      driver: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/workeronboardings

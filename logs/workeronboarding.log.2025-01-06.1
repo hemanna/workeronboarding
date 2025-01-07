@@ -1,0 +1,35 @@
+2025-01-06 23:37:55,395 desktop-0ebg92j workeronboarding-dev.jar[19056] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 6.537s. Listening on: http://0.0.0.0:8001
+2025-01-06 23:37:55,406 desktop-0ebg92j workeronboarding-dev.jar[19056] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-01-06 23:37:55,408 desktop-0ebg92j workeronboarding-dev.jar[19056] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-01-06 23:38:02,892 desktop-0ebg92j workeronboarding-dev.jar[19056] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: 5d747c4a-cbf2-47b1-a68f-2d750f891bfe | Create Employee Details Request: ApiRequest(data=EmployeeDTO(departmentDTO=null, employeeAttendanceDTO=EmployeeDTO.EmployeeAttendanceDTO(id=1, employeeId=1, departmentId=9, roleId=1, date=2025-01-06, checkinTime=09:00, checkoutTime=18:00, workingHours=8, overtime=1, shiftDetails=Day Shift, location=Office HQ, photo=attendancePhoto.jpg, approvalStatus=Pending, status=Active, leaveId=20), employeeDetailsDTO=null, leaveDTO=null, leaveTypeDTO=null, roleDTO=null), type=null, pagination=null)
+2025-01-06 23:38:02,941 desktop-0ebg92j workeronboarding-dev.jar[19056] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating employee details - RequestId: 5d747c4a-cbf2-47b1-a68f-2d750f891bfe
+2025-01-06 23:38:02,945 desktop-0ebg92j workeronboarding-dev.jar[19056] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 0c42b2c1-54ce-4201-a076-9fa6295085a8 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeDetailsDTO.getAadharNumber()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeDetailsDTO()" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeDetailsDTO.getAadharNumber()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeDetailsDTO()" is null
+	at com.sbd.record.control.service.EmployeeRecordService.createEmployeeDetails(EmployeeRecordService.java:54)
+	at com.sbd.record.control.service.EmployeeRecordService_Subclass.createEmployeeDetails$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService_Subclass$$function$$1.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeRecordService_Subclass.createEmployeeDetails(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.createEmployeeDetails(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.createEmployeeDetails(EmployeeRecordResource.java:31)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$createEmployeeDetails_dfa449f783d46c75f485f00d4145be3976953562.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
