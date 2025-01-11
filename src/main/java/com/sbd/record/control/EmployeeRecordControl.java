@@ -6,5 +6,6 @@ import com.sbd.common.response.ApiResponse;
 
 public interface EmployeeRecordControl {
     ApiResponse createEmployeeDetails(ApiRequest<EmployeeDTO> apiRequest, String requestId);
+    ApiResponse createAttendance(ApiRequest<EmployeeDTO.EmployeeAttendanceDTO> apiRequest, String requestId);
 
 }

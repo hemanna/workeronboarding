@@ -30,4 +30,14 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Create Employee Details Request: {}", requestId, apiRequest);
         return employeeRecordControl.createEmployeeDetails(apiRequest, requestId);
     }
+    @POST
+    @Path("/attendance")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse createAttendance(ApiRequest<EmployeeDTO.EmployeeAttendanceDTO> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Create Employee Attendance Request: {}", requestId, apiRequest);
+        return employeeRecordControl.createAttendance(apiRequest, requestId);
+    }
+
 }

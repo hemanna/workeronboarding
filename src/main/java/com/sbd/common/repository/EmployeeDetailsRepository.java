@@ -7,10 +7,11 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class EmployeeDetailsRepository implements PanacheRepository<EmployeeDetails> {
 
-    // Custom query to find employee by ID
-    public EmployeeDetails findById(Long employeeId) {
+
+    public EmployeeDetails findById(Integer employeeId) {
         return find("id", employeeId).firstResult();
     }
+
     public EmployeeDetails findByAadharNumber(String aadharNumber) {
         return find("aadharNumber", aadharNumber).firstResult();
     }

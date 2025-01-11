@@ -1,12 +1,12 @@
 package com.sbd.common.entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "employee_attendance")
@@ -33,7 +33,7 @@ public class EmployeeAttendance {
     private LocalTime checkinTime;
 
     @Column(name = "checkout_time")
-    private LocalTime  checkoutTime;
+    private LocalTime checkoutTime;
 
     @Column(name = "working_hours")
     private BigDecimal workingHours;
@@ -60,7 +60,8 @@ public class EmployeeAttendance {
     @JoinColumn(name = "leave_id", referencedColumnName = "id")
     private Leave leave;
 
-    @ManyToOne
+    @JsonbTransient
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
     private Department department;
 

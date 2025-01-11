@@ -7,8 +7,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class DepartmentRepository implements PanacheRepository<Department> {
 
-    // Custom query to find department by name
-    public Department findByName(String name) {
-        return find("name", name).firstResult();
+
+    public Department findById(int id) {
+        return find("id", id).firstResult();
     }
 }

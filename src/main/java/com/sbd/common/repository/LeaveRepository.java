@@ -7,8 +7,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class LeaveRepository implements PanacheRepository<Leave> {
 
-    // Custom query to find leave by employeeId
-    public Leave findByEmployeeId(Long employeeId) {
-        return find("employee.id", employeeId).firstResult();
+    public Leave findById(Integer id) {
+        return find("id", id).firstResult();
     }
+
 }

@@ -1,8 +1,8 @@
 package com.sbd.common.entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -55,7 +55,7 @@ public class EmployeeDetails {
     @Column(name = "address_line2")
     private String addressLine2;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
 
@@ -89,8 +89,8 @@ public class EmployeeDetails {
     @Column(name = "approval_status")
     private String approvalStatus;
 
-
-    @ManyToOne
+    @JsonbTransient
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
     private Department department;
 }

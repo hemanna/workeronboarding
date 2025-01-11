@@ -1,9 +1,8 @@
 package com.sbd.common.entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -33,13 +32,14 @@ public class Role {
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
-
     @Column(name = "status")
     private String status;
 
-    @OneToMany(mappedBy = "role")
+    @JsonbTransient
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
     private Set<EmployeeDetails> employees;
 
-    @OneToMany(mappedBy = "role")
+    @JsonbTransient
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
     private Set<EmployeeAttendance> attendances;
 }
