@@ -4,6 +4,7 @@ import com.sbd.common.entity.*;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
+import com.sbd.common.request.UserDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeRecordControl;
@@ -34,6 +35,9 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 
     @Inject
     private RoleRepository roleRepository;
+
+    @Inject
+    private UserRepository userRepository;
 
     @Override
     @Transactional
@@ -158,6 +162,53 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse createUsers(ApiRequest<UserDTO> apiRequest, String requestId) {
+        log.info("Start creating user - RequestId: {}", requestId);
+
+        // Check if the apiRequest data is null
+        if (apiRequest == null || apiRequest.getData() == null) {
+            log.error("Request data is missing or null for RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid user data", requestId)
+            );
+        }
+
+        UserDTO userDTO = apiRequest.getData();
+
+        // Check if email already exists
+        User existingUserByEmail = userRepository.findByEmail(userDTO.getEmail());
+        if (existingUserByEmail != null) {
+            log.error("Email already exists for RequestId: {} - Email: {}", requestId, userDTO.getEmail());
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Email already exists", requestId)
+            );
+        }
+
+        // Check if phone number already exists
+        User existingUserByPhone = userRepository.findByPhoneNumber(userDTO.getPhoneNumber());
+        if (existingUserByPhone != null) {
+            log.error("Phone number already exists for RequestId: {} - Phone Number: {}", requestId, userDTO.getPhoneNumber());
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Phone number already exists", requestId)
+            );
+        }
+
+        // Create User entity
+        User user = mapUser(userDTO);
+        userRepository.persist(user);
+
+        log.info("End creating user - RequestId: {}", requestId);
+
+        // Return response
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "User successfully created", requestId),
+                user
+        );
+    }
+
+
     private EmployeeDetails mapEmployeeDetails(EmployeeDTO employeeDTO, Department department, Role role) {
         EmployeeDetails employeeDetails = new EmployeeDetails();
         employeeDetails.setEmployeeName(employeeDTO.getEmployeeDetailsDTO().getEmployeeName());
@@ -206,5 +257,11 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeAttendance.setDepartment(department);
         return employeeAttendance;
     }
-
+    private User mapUser(UserDTO userDTO)  {
+        User user = new User();
+        user.setEmail(userDTO.getEmail());
+        user.setPhoneNumber(userDTO.getPhoneNumber());
+        user.setPassword(userDTO.getPassword());
+        return user;
+    }
 }

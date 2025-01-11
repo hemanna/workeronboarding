@@ -2,6 +2,7 @@ package com.sbd.record.boundary;
 
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
+import com.sbd.common.request.UserDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.EmployeeRecordControl;
 import jakarta.ws.rs.Consumes;
@@ -39,5 +40,13 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Create Employee Attendance Request: {}", requestId, apiRequest);
         return employeeRecordControl.createAttendance(apiRequest, requestId);
     }
-
+    @POST
+    @Path("/users")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse createUsers(ApiRequest<UserDTO> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Create Employee Attendance Request: {}", requestId, apiRequest);
+        return employeeRecordControl.createUsers(apiRequest, requestId);
+    }
 }
