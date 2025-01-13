@@ -1,15 +1,90 @@
-2025-01-12 02:03:48,124 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 6.274s. Listening on: http://0.0.0.0:8001
-2025-01-12 02:03:48,129 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
-2025-01-12 02:03:48,130 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
-2025-01-12 02:03:54,962 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: f7201673-ad48-4c80-a467-fc90d5156257 | Create Employee Attendance Request: ApiRequest(data=UserDTO(id=null, email=user@example.com, phoneNumber=1234567890, password=securePassword123), type=null, pagination=null)
-2025-01-12 02:03:55,013 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating user - RequestId: f7201673-ad48-4c80-a467-fc90d5156257
-2025-01-12 02:03:55,445 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End creating user - RequestId: f7201673-ad48-4c80-a467-fc90d5156257
-2025-01-12 02:04:13,434 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: c0843130-455f-48d0-b396-f95b7bdb4436 | Create Employee Attendance Request: ApiRequest(data=UserDTO(id=null, email=user@example.com, phoneNumber=1234567890, password=securePassword123), type=null, pagination=null)
-2025-01-12 02:04:13,435 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating user - RequestId: c0843130-455f-48d0-b396-f95b7bdb4436
-2025-01-12 02:04:13,446 desktop-0ebg92j workeronboarding-dev.jar[9532] ERROR [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Email already exists for RequestId: c0843130-455f-48d0-b396-f95b7bdb4436 - Email: user@example.com
-2025-01-12 02:04:22,545 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: 09be452b-dfd0-4398-8f37-efe4ef70833d | Create Employee Attendance Request: ApiRequest(data=UserDTO(id=null, email=user@examle.com, phoneNumber=1234567890, password=securePassword123), type=null, pagination=null)
-2025-01-12 02:04:22,545 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating user - RequestId: 09be452b-dfd0-4398-8f37-efe4ef70833d
-2025-01-12 02:04:22,553 desktop-0ebg92j workeronboarding-dev.jar[9532] ERROR [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Phone number already exists for RequestId: 09be452b-dfd0-4398-8f37-efe4ef70833d - Phone Number: 1234567890
-2025-01-12 02:04:27,230 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: fadc993c-950a-4a00-8abc-f44832697296 | Create Employee Attendance Request: ApiRequest(data=UserDTO(id=null, email=user@examle.com, phoneNumber=123467890, password=securePassword123), type=null, pagination=null)
-2025-01-12 02:04:27,231 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating user - RequestId: fadc993c-950a-4a00-8abc-f44832697296
-2025-01-12 02:04:27,241 desktop-0ebg92j workeronboarding-dev.jar[9532] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End creating user - RequestId: fadc993c-950a-4a00-8abc-f44832697296
+2025-01-14 01:50:55,460 desktop-0ebg92j workeronboarding-dev.jar[2872] ERROR [io.qua.hib.orm.run.sch.SchemaManagementIntegrator] (Hibernate post-boot validation thread for <default>) Failed to validate Schema: Schema-validation: missing column [username] in table [user_credentials]
+2025-01-14 01:50:55,575 desktop-0ebg92j workeronboarding-dev.jar[2872] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 7.573s. Listening on: http://0.0.0.0:8001
+2025-01-14 01:50:55,578 desktop-0ebg92j workeronboarding-dev.jar[2872] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-01-14 01:50:55,579 desktop-0ebg92j workeronboarding-dev.jar[2872] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-01-14 01:50:55,612 desktop-0ebg92j workeronboarding-dev.jar[2872] ERROR [io.qua.hib.orm.run.sch.SchemaManagementIntegrator] (Hibernate post-boot validation thread for <default>) The following SQL may resolve the database issues, as generated by the Hibernate schema migration tool. WARNING: You must manually verify this SQL is correct, this is a best effort guess, do not copy/paste it without verifying that it does what you expect.
+
+alter table employee_attendance modify column overtime decimal(38,2);
+alter table employee_attendance modify column working_hours decimal(38,2);
+alter table user_credentials add column username varchar(255) not null;
+alter table employee_details drop index UK_bm8mmycftggcscwi8eoq9mevf;
+alter table employee_details add constraint UK_bm8mmycftggcscwi8eoq9mevf unique (aadhar_number);
+alter table user_credentials drop index UK_8pcilw7ay5rs8c4dtrtik21pw;
+alter table user_credentials add constraint UK_8pcilw7ay5rs8c4dtrtik21pw unique (username);
+
+2025-01-14 01:57:30,538 desktop-0ebg92j workeronboarding-dev.jar[2872] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : c9723403-c061-4a93-ba51-0efb9cecf9be | message : HTTP 404 Not Found | cause : {}: jakarta.ws.rs.NotFoundException: HTTP 404 Not Found
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.handle(RestInitialHandler.java:71)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:121)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:138)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:192)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:181)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.lambda$emitSuccess$0(FutureBase.java:54)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-14 01:59:55,231 desktop-0ebg92j workeronboarding-dev.jar[2872] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : 5898747c-2b13-4442-878a-7a47d6b37265 | message : HTTP 404 Not Found | cause : {}: jakarta.ws.rs.NotFoundException: HTTP 404 Not Found
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.handle(RestInitialHandler.java:71)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:121)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:138)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:192)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:181)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.lambda$emitSuccess$0(FutureBase.java:54)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+

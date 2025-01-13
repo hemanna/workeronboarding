@@ -4,7 +4,7 @@ import com.sbd.common.entity.*;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
-import com.sbd.common.request.UserDTO;
+import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeRecordControl;
@@ -162,53 +162,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         );
     }
 
-    @Override
-    @Transactional
-    public ApiResponse createUsers(ApiRequest<UserDTO> apiRequest, String requestId) {
-        log.info("Start creating user - RequestId: {}", requestId);
-
-        // Check if the apiRequest data is null
-        if (apiRequest == null || apiRequest.getData() == null) {
-            log.error("Request data is missing or null for RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid user data", requestId)
-            );
-        }
-
-        UserDTO userDTO = apiRequest.getData();
-
-        // Check if email already exists
-        User existingUserByEmail = userRepository.findByEmail(userDTO.getEmail());
-        if (existingUserByEmail != null) {
-            log.error("Email already exists for RequestId: {} - Email: {}", requestId, userDTO.getEmail());
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Email already exists", requestId)
-            );
-        }
-
-        // Check if phone number already exists
-        User existingUserByPhone = userRepository.findByPhoneNumber(userDTO.getPhoneNumber());
-        if (existingUserByPhone != null) {
-            log.error("Phone number already exists for RequestId: {} - Phone Number: {}", requestId, userDTO.getPhoneNumber());
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Phone number already exists", requestId)
-            );
-        }
-
-        // Create User entity
-        User user = mapUser(userDTO);
-        userRepository.persist(user);
-
-        log.info("End creating user - RequestId: {}", requestId);
-
-        // Return response
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "User successfully created", requestId),
-                user
-        );
-    }
-
-
     private EmployeeDetails mapEmployeeDetails(EmployeeDTO employeeDTO, Department department, Role role) {
         EmployeeDetails employeeDetails = new EmployeeDetails();
         employeeDetails.setEmployeeName(employeeDTO.getEmployeeDetailsDTO().getEmployeeName());
@@ -257,11 +210,95 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeAttendance.setDepartment(department);
         return employeeAttendance;
     }
-    private User mapUser(UserDTO userDTO)  {
-        User user = new User();
-        user.setEmail(userDTO.getEmail());
-        user.setPhoneNumber(userDTO.getPhoneNumber());
-        user.setPassword(userDTO.getPassword());
-        return user;
+
+    @Override
+    @Transactional
+    public ApiResponse updateEmployeeDetails(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId) {
+        log.info("Start updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+
+        EmployeeDTO employeeDTO = apiRequest.getData();
+
+        // Fetch existing employee details
+        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
+        if (existingEmployee == null) {
+            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Fetch and validate department if provided
+        if (employeeDTO.getDepartmentDTO() != null) {
+            Department department = departmentRepository.findById(employeeDTO.getDepartmentDTO().getId());
+            if (department == null) {
+                return new ApiResponse(
+                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
+                );
+            }
+            existingEmployee.setDepartment(department);
+        }
+
+        // Fetch and validate role if provided
+        if (employeeDTO.getRoleDTO() != null) {
+            Role role = roleRepository.findByRoleId(employeeDTO.getRoleDTO().getRoleId());
+            if (role == null) {
+                return new ApiResponse(
+                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
+                );
+            }
+            existingEmployee.setRole(role);
+        }
+
+        // Update employee details fields
+        if (employeeDTO.getEmployeeDetailsDTO() != null) {
+            EmployeeDTO.EmployeeDetailsDTO detailsDTO = employeeDTO.getEmployeeDetailsDTO();
+
+            existingEmployee.setEmployeeName(detailsDTO.getEmployeeName());
+            existingEmployee.setGuardianName(detailsDTO.getGuardianName());
+            existingEmployee.setAadharNumber(detailsDTO.getAadharNumber());
+            existingEmployee.setPancard(detailsDTO.getPancard());
+            existingEmployee.setDob(detailsDTO.getDob());
+            existingEmployee.setGender(detailsDTO.getGender());
+            existingEmployee.setPhoneNumber(detailsDTO.getPhoneNumber());
+            existingEmployee.setEmergencyNumber(detailsDTO.getEmergencyNumber());
+            existingEmployee.setNationality(detailsDTO.getNationality());
+            existingEmployee.setBloodGroup(detailsDTO.getBloodGroup());
+            existingEmployee.setAddressLine1(detailsDTO.getAddressLine1());
+            existingEmployee.setAddressLine2(detailsDTO.getAddressLine2());
+            existingEmployee.setState(detailsDTO.getState());
+            existingEmployee.setDistrict(detailsDTO.getDistrict());
+            existingEmployee.setPostalCode(detailsDTO.getPostalCode());
+            existingEmployee.setExperience(detailsDTO.getExperience());
+            existingEmployee.setDateOfJoining(detailsDTO.getDateOfJoining());
+            existingEmployee.setProfilePic(detailsDTO.getProfilePic());
+            existingEmployee.setAadharPic(detailsDTO.getAadharPic());
+            existingEmployee.setPancardPic(detailsDTO.getPancardPic());
+            existingEmployee.setStatus(detailsDTO.getStatus());
+            existingEmployee.setApprovalStatus(detailsDTO.getApprovalStatus());
+            // Set role and department using their objects, not IDs
+            if (detailsDTO.getRoleId() != null) {
+                Role role = roleRepository.findByRoleId(detailsDTO.getRoleId());
+                if (role != null) {
+                    existingEmployee.setRole(role);
+                }
+            }
+            if (detailsDTO.getDepartmentId() != null) {
+                Department department = departmentRepository.findById(detailsDTO.getDepartmentId());
+                if (department != null) {
+                    existingEmployee.setDepartment(department);
+                }
+            }
+        }
+
+
+        // Persist the updated entity
+        employeeDetailsRepository.persist(existingEmployee);
+
+        log.info("End updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee details successfully updated", requestId),
+                existingEmployee
+        );
     }
+
 }
