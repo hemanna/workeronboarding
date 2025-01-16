@@ -36,8 +36,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     @Inject
     private RoleRepository roleRepository;
 
-    @Inject
-    private UserRepository userRepository;
 
     @Override
     @Transactional
@@ -82,85 +80,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         );
     }
 
-    @Override
-    @Transactional
-    public ApiResponse createAttendance(ApiRequest<EmployeeDTO.EmployeeAttendanceDTO> apiRequest, String requestId) {
-        log.info("Start creating employee attendance - RequestId: {}", requestId);
-
-        EmployeeDTO.EmployeeAttendanceDTO attendanceDTO = apiRequest.getData();
-
-        // Validate that departmentId is not null
-        if (attendanceDTO.getDepartmentId() == null) {
-            log.error("Department ID is missing in request - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department ID is required", requestId)
-            );
-        }
-
-        // Fetch Department
-        Department department = departmentRepository.findById(attendanceDTO.getDepartmentId());
-        if (department == null) {
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
-            );
-        }
-
-        // Validate that roleId is not null
-        if (attendanceDTO.getRoleId() == null) {
-            log.error("Role ID is missing in request - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role ID is required", requestId)
-            );
-        }
-
-        // Fetch Role
-        Role role = roleRepository.findByRoleId(attendanceDTO.getRoleId());
-        if (role == null) {
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
-            );
-        }
-
-        // Fetch Leave
-        Leave leave = null;
-        if (attendanceDTO.getLeaveId() != null) {
-            leave = leaveRepository.findById(attendanceDTO.getLeaveId());
-            if (leave == null) {
-                return new ApiResponse(
-                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Leave not found", requestId)
-                );
-            }
-        }
-
-        // Fetch Employee
-        EmployeeDetails details = employeeDetailsRepository.findById(attendanceDTO.getEmployeeId());
-        if (details == null) {
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Employee ID not found", requestId)
-            );
-        }
-
-        // Check if the attendance for this date already exists
-        EmployeeAttendance existingAttendance = employeeAttendanceRepository.findByEmployeeAndDate(
-                attendanceDTO.getEmployeeId(), attendanceDTO.getDate());
-        if (existingAttendance != null) {
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Attendance already exists for this date", requestId)
-            );
-        }
-
-        // Create EmployeeAttendance
-        EmployeeAttendance employeeAttendance = mapEmployeeAttendance(attendanceDTO, details, department, role, leave);
-        employeeAttendanceRepository.persist(employeeAttendance);
-
-        log.info("End creating employee attendance - RequestId: {}", requestId);
-
-        // Return response with the created employee attendance
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee attendance successfully created", requestId),
-                employeeAttendance
-        );
-    }
 
     private EmployeeDetails mapEmployeeDetails(EmployeeDTO employeeDTO, Department department, Role role) {
         EmployeeDetails employeeDetails = new EmployeeDetails();
@@ -190,26 +109,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetails.setRole(role);
         return employeeDetails;
     }
-    private EmployeeAttendance mapEmployeeAttendance(EmployeeDTO.EmployeeAttendanceDTO attendanceDTO,
-                                                     EmployeeDetails employeeDetails, Department department,
-                                                     Role role, Leave leave) {
-        EmployeeAttendance employeeAttendance = new EmployeeAttendance();
-        employeeAttendance.setEmployee(employeeDetails);
-        employeeAttendance.setRole(role);
-        employeeAttendance.setLeave(leave);
-        employeeAttendance.setDate(attendanceDTO.getDate());
-        employeeAttendance.setCheckinTime(attendanceDTO.getCheckinTime());
-        employeeAttendance.setCheckoutTime(attendanceDTO.getCheckoutTime());
-        employeeAttendance.setWorkingHours(attendanceDTO.getWorkingHours());
-        employeeAttendance.setOvertime(attendanceDTO.getOvertime());
-        employeeAttendance.setShiftDetails(attendanceDTO.getShiftDetails());
-        employeeAttendance.setLocation(attendanceDTO.getLocation());
-        employeeAttendance.setPhoto(attendanceDTO.getPhoto());
-        employeeAttendance.setApprovalStatus(attendanceDTO.getApprovalStatus());
-        employeeAttendance.setStatus(attendanceDTO.getStatus());
-        employeeAttendance.setDepartment(department);
-        return employeeAttendance;
-    }
+
 
     @Override
     @Transactional
@@ -227,7 +127,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             );
         }
 
-        // Fetch and validate department if provided
+        // Validate and update department
         if (employeeDTO.getDepartmentDTO() != null) {
             Department department = departmentRepository.findById(employeeDTO.getDepartmentDTO().getId());
             if (department == null) {
@@ -238,7 +138,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             existingEmployee.setDepartment(department);
         }
 
-        // Fetch and validate role if provided
+        // Validate and update role if provided
         if (employeeDTO.getRoleDTO() != null) {
             Role role = roleRepository.findByRoleId(employeeDTO.getRoleDTO().getRoleId());
             if (role == null) {
@@ -249,10 +149,9 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             existingEmployee.setRole(role);
         }
 
-        // Update employee details fields
+        // Update employee details fields from the DTO
         if (employeeDTO.getEmployeeDetailsDTO() != null) {
             EmployeeDTO.EmployeeDetailsDTO detailsDTO = employeeDTO.getEmployeeDetailsDTO();
-
             existingEmployee.setEmployeeName(detailsDTO.getEmployeeName());
             existingEmployee.setGuardianName(detailsDTO.getGuardianName());
             existingEmployee.setAadharNumber(detailsDTO.getAadharNumber());
@@ -275,21 +174,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             existingEmployee.setPancardPic(detailsDTO.getPancardPic());
             existingEmployee.setStatus(detailsDTO.getStatus());
             existingEmployee.setApprovalStatus(detailsDTO.getApprovalStatus());
-            // Set role and department using their objects, not IDs
-            if (detailsDTO.getRoleId() != null) {
-                Role role = roleRepository.findByRoleId(detailsDTO.getRoleId());
-                if (role != null) {
-                    existingEmployee.setRole(role);
-                }
-            }
-            if (detailsDTO.getDepartmentId() != null) {
-                Department department = departmentRepository.findById(detailsDTO.getDepartmentId());
-                if (department != null) {
-                    existingEmployee.setDepartment(department);
-                }
-            }
         }
-
 
         // Persist the updated entity
         employeeDetailsRepository.persist(existingEmployee);
@@ -300,5 +185,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
                 existingEmployee
         );
     }
+
 
 }
