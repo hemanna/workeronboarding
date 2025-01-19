@@ -14,9 +14,12 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 @ApplicationScoped
 @Slf4j
 public class EmployeeRecordService implements EmployeeRecordControl {
+
 
     @Inject
     private DepartmentRepository departmentRepository;
@@ -183,6 +186,50 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Employee details successfully updated", requestId),
                 existingEmployee
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchEmployeeById(Long employeeId, String requestId) {
+        log.info("Start fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+
+        // Fetch the employee details by ID
+        EmployeeDetails employeeDetails = employeeDetailsRepository.findById(employeeId);
+        if (employeeDetails == null) {
+            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Return the employee details
+        log.info("End fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
+                employeeDetails
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAllEmployees(String requestId) {
+        log.info("Start fetching all employee details - RequestId: {}", requestId);
+
+        // Fetch all employee details as a list
+        List<EmployeeDetails> employees = employeeDetailsRepository.findAll().list();
+        if (employees == null || employees.isEmpty()) {
+            log.warn("No employee records found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
+            );
+        }
+
+        // Return the list of employee details
+        log.info("End fetching all employee details - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
+                employees
         );
     }
 

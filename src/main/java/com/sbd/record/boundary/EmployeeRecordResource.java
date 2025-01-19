@@ -39,5 +39,24 @@ public class EmployeeRecordResource {
         return employeeRecordControl.updateEmployeeDetails(employeeId, apiRequest, requestId);
     }
 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get/{employeeId}")
+    public ApiResponse fetchEmployeeById(@PathParam("employeeId") Long employeeId) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get employee by id: {}", requestId, employeeId);
+        return employeeRecordControl.fetchEmployeeById(employeeId, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_all")
+    public ApiResponse fetchAllEmployees() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get all employee details", requestId);
+
+        return employeeRecordControl.fetchAllEmployees(requestId);
+    }
+
 
 }

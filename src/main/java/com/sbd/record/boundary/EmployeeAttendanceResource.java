@@ -5,10 +5,7 @@ import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.EmployeeAttendanceControl;
 import com.sbd.record.control.EmployeeRecordControl;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,5 +26,34 @@ public class EmployeeAttendanceResource {
         String requestId = UUID.randomUUID().toString();
         log.info("RequestId: {} | Create Employee Attendance Request: {}", requestId, apiRequest);
         return employeeAttendanceControl.createAttendance(apiRequest, requestId);
+    }
+
+    @PATCH
+    @Path("/attendance/{Id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse updateAttendance(@PathParam("Id") Integer Id, ApiRequest<EmployeeDTO> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Update Employee Attendance Request: Id: {}", requestId, Id);
+        return employeeAttendanceControl.updateAttendance(Id, apiRequest, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_attendance/{Id}")
+    public ApiResponse fetchAttendanceById(@PathParam("Id") Long employeeId) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get employee by id: {}", requestId, employeeId);
+        return employeeAttendanceControl.fetchAttendanceById(employeeId, requestId);
+    }
+
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_allattendance")
+    public ApiResponse fetchAllAttendance() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get all employee attendance", requestId);
+        return employeeAttendanceControl.fetchAllAttendance(requestId);
     }
 }

@@ -14,6 +14,8 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 @ApplicationScoped
 @Slf4j
 public class EmployeeAttendanceService implements EmployeeAttendanceControl {
@@ -117,6 +119,80 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse updateAttendance(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId) {
+        log.info("Start updating employee attendance - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+
+        EmployeeDTO employeeDTO = apiRequest.getData();
+
+        // Fetch existing attendance record for the employee and date
+        EmployeeAttendance employeeAttendance = employeeAttendanceRepository.findByEmployeeAndDate(employeeId, employeeDTO.getEmployeeAttendanceDTO().getDate());
+        if (employeeAttendance == null) {
+            log.error("Attendance record not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Attendance record not found", requestId)
+            );
+        }
+
+        // Validate and update Department if provided
+        if (employeeDTO.getDepartmentDTO() != null) {
+            Department department = departmentRepository.findById(employeeDTO.getDepartmentDTO().getId());
+            if (department == null) {
+                return new ApiResponse(
+                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
+                );
+            }
+            employeeAttendance.setDepartment(department);
+        }
+
+        // Validate and update Role if provided
+        if (employeeDTO.getRoleDTO() != null) {
+            Role role = roleRepository.findByRoleId(employeeDTO.getRoleDTO().getRoleId());
+            if (role == null) {
+                return new ApiResponse(
+                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
+                );
+            }
+            employeeAttendance.setRole(role);
+        }
+
+        // Validate and update Leave if provided
+        if (employeeDTO.getEmployeeAttendanceDTO().getLeaveId() != null) {
+            Leave leave = leaveRepository.findById(employeeDTO.getEmployeeAttendanceDTO().getLeaveId());
+            if (leave == null) {
+                return new ApiResponse(
+                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Leave not found", requestId)
+                );
+            }
+            employeeAttendance.setLeave(leave);
+        }
+
+        // Update attendance details
+        EmployeeDTO.EmployeeAttendanceDTO attendanceDTO = employeeDTO.getEmployeeAttendanceDTO();
+        employeeAttendance.setDate(attendanceDTO.getDate());
+        employeeAttendance.setCheckinTime(attendanceDTO.getCheckinTime());
+        employeeAttendance.setCheckoutTime(attendanceDTO.getCheckoutTime());
+        employeeAttendance.setWorkingHours(attendanceDTO.getWorkingHours());
+        employeeAttendance.setOvertime(attendanceDTO.getOvertime());
+        employeeAttendance.setShiftDetails(attendanceDTO.getShiftDetails());
+        employeeAttendance.setLocation(attendanceDTO.getLocation());
+        employeeAttendance.setPhoto(attendanceDTO.getPhoto());
+        employeeAttendance.setApprovalStatus(attendanceDTO.getApprovalStatus());
+        employeeAttendance.setStatus(attendanceDTO.getStatus());
+
+        // Persist updated attendance record
+        employeeAttendanceRepository.persist(employeeAttendance);
+
+        log.info("End updating employee attendance - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee attendance successfully updated", requestId),
+                employeeAttendance
+        );
+    }
+
+
     private EmployeeAttendance mapEmployeeAttendance(EmployeeDTO.EmployeeAttendanceDTO attendanceDTO,
                                                      EmployeeDetails employeeDetails, Department department,
                                                      Role role, Leave leave) {
@@ -137,4 +213,51 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         employeeAttendance.setDepartment(department);
         return employeeAttendance;
     }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAttendanceById(Long attendanceId, String requestId) {
+        log.info("Start fetching attendance details - RequestId: {}, AttendanceId: {}", requestId, attendanceId);
+
+        // Fetch the attendance record by ID
+        EmployeeAttendance attendance = employeeAttendanceRepository.findById(attendanceId);
+        if (attendance == null) {
+            log.error("Attendance record not found - RequestId: {}, AttendanceId: {}", requestId, attendanceId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Attendance record not found", requestId)
+            );
+        }
+
+        // Return the attendance details
+        log.info("End fetching attendance details - RequestId: {}, AttendanceId: {}", requestId, attendanceId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Attendance record fetched successfully", requestId),
+                attendance
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAllAttendance(String requestId) {
+        log.info("Start fetching all attendance records - RequestId: {}", requestId);
+
+        // Fetch all attendance records
+        List<EmployeeAttendance> attendanceList = employeeAttendanceRepository.listAll();
+        if (attendanceList == null || attendanceList.isEmpty()) {
+            log.warn("No attendance records found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No attendance records found", requestId)
+            );
+        }
+
+
+        log.info("End fetching all attendance records - RequestId: {}", requestId);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
+                attendanceList
+        );
+    }
+
+
 }

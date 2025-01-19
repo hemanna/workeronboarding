@@ -55,7 +55,8 @@ public class EmployeeDetails {
     @Column(name = "address_line2")
     private String addressLine2;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonbTransient
+    @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
 
@@ -90,7 +91,7 @@ public class EmployeeDetails {
     private String approvalStatus;
 
     @JsonbTransient
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
     private Department department;
 }

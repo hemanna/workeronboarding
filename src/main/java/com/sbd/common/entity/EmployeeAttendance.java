@@ -56,12 +56,13 @@ public class EmployeeAttendance {
     @Column(name = "status", nullable = false)
     private String status;
 
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "leave_id", referencedColumnName = "id")
     private Leave leave;
 
     @JsonbTransient
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
     private Department department;
 
