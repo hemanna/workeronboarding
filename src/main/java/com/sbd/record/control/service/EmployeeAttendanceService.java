@@ -14,6 +14,7 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @ApplicationScoped
@@ -253,6 +254,82 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
         log.info("End fetching all attendance records - RequestId: {}", requestId);
 
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
+                attendanceList
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAttendanceByDate(String date, String requestId) {
+        log.info("Start fetching employee attendance by date - RequestId: {}, Date: {}", requestId, date);
+
+        // Convert the date string to LocalDate
+        LocalDate parsedDate;
+        try {
+            parsedDate = LocalDate.parse(date);
+        } catch (Exception e) {
+            log.error("Invalid date format - RequestId: {}, Date: {}", requestId, date);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid date format", requestId)
+            );
+        }
+
+        // Fetch attendance records for the specified date
+        List<EmployeeAttendance> attendanceList = employeeAttendanceRepository.findByDate(parsedDate);
+
+        // If no attendance records found
+        if (attendanceList == null || attendanceList.isEmpty()) {
+            log.warn("No attendance records found for date: {} - RequestId: {}", date, requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No attendance records found for the given date", requestId)
+            );
+        }
+
+        log.info("End fetching employee attendance by date - RequestId: {}, Date: {}", requestId, date);
+
+        // Return the list of attendance records
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
+                attendanceList
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAttendanceByMonth(String month, String requestId) {
+        log.info("Start fetching employee attendance for month - RequestId: {}, Month: {}", requestId, month);
+
+        // Parse the input month (expected format: yyyy-MM)
+        LocalDate startDate;
+        try {
+            // Parse the input string into LocalDate (representing the first day of the month)
+            startDate = LocalDate.parse(month + "-01"); // Adding "-01" to represent the first day
+        } catch (Exception e) {
+            log.error("Invalid month format - RequestId: {}, Month: {}", requestId, month);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid month format", requestId)
+            );
+        }
+
+        // Calculate the end date of the month (the last day of the month)
+        LocalDate endDate = startDate.plusMonths(1).minusDays(1); // Subtract one day to get the last day of the month
+
+        // Fetch attendance records for the specified month
+        List<EmployeeAttendance> attendanceList = employeeAttendanceRepository.findByMonth(startDate, endDate);
+
+        // If no attendance records are found
+        if (attendanceList == null || attendanceList.isEmpty()) {
+            log.warn("No attendance records found for the month: {} - RequestId: {}", month, requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No attendance records found for the given month", requestId)
+            );
+        }
+
+        log.info("End fetching employee attendance for month - RequestId: {}, Month: {}", requestId, month);
+
+        // Return the list of attendance records for the month
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
                 attendanceList

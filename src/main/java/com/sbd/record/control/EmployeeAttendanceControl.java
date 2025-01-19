@@ -9,4 +9,7 @@ public interface EmployeeAttendanceControl {
     ApiResponse updateAttendance(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId);
     ApiResponse fetchAttendanceById(Long employeeId, String requestId );
     ApiResponse fetchAllAttendance(String requestId);
+    ApiResponse fetchAttendanceByDate(String date, String requestId);
+    ApiResponse fetchAttendanceByMonth(String month, String requestId);
+
 }

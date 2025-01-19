@@ -56,4 +56,24 @@ public class EmployeeAttendanceResource {
         log.info("request_id : {} | get all employee attendance", requestId);
         return employeeAttendanceControl.fetchAllAttendance(requestId);
     }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_attendance_by_date")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchAttendanceByDate(@QueryParam("date") String date) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get employee attendance by date: {}", requestId, date);
+        return employeeAttendanceControl.fetchAttendanceByDate(date, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_attendance_by_month")
+    public ApiResponse fetchAttendanceByMonth(@QueryParam("month") String month) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get employee attendance by month: {}", requestId, month);
+        return employeeAttendanceControl.fetchAttendanceByMonth(month, requestId);
+    }
+
 }
