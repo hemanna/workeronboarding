@@ -76,4 +76,13 @@ public class EmployeeAttendanceResource {
         return employeeAttendanceControl.fetchAttendanceByMonth(month, requestId);
     }
 
+    @POST
+    @Path("/attendance/pending-approvals")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchAttendancePending() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Fetching pending attendance approvals", requestId);
+        return employeeAttendanceControl.fetchAttendancePending(requestId);
+    }
+
 }

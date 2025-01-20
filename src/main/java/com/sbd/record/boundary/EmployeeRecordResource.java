@@ -58,5 +58,13 @@ public class EmployeeRecordResource {
         return employeeRecordControl.fetchAllEmployees(requestId);
     }
 
+    @POST
+    @Path("/approvals/pending")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchPendingApprovals() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Fetching pending worker approvals", requestId);
+        return employeeRecordControl.fetchPendingApprovals(requestId);
+    }
 
 }

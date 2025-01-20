@@ -63,7 +63,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             );
         }
 
-     // Check if Aadhar number already exists
+        // Check if Aadhar number already exists
         EmployeeDetails existingEmployee = employeeDetailsRepository.findByAadharNumber(employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
         if (existingEmployee != null) {
             log.error("Aadhar number already exists for RequestId: {} - Aadhar Number: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
@@ -232,6 +232,29 @@ public class EmployeeRecordService implements EmployeeRecordControl {
                 employees
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchPendingApprovals(String requestId) {
+        log.info("Start fetching employees with pending approvals - RequestId: {}", requestId);
+
+        // Fetch all employees with "Pending" approval status
+        List<EmployeeDetails> pendingApprovals = employeeDetailsRepository.find("approvalStatus", "Pending").list();
+        if (pendingApprovals == null || pendingApprovals.isEmpty()) {
+            log.warn("No pending approvals found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No pending approvals found", requestId)
+            );
+        }
+
+        // Return the list of employees with pending approvals
+        log.info("End fetching employees with pending approvals - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Pending approvals fetched successfully", requestId),
+                pendingApprovals
+        );
+    }
+
 
 
 }

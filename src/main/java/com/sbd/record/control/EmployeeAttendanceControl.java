@@ -11,5 +11,5 @@ public interface EmployeeAttendanceControl {
     ApiResponse fetchAllAttendance(String requestId);
     ApiResponse fetchAttendanceByDate(String date, String requestId);
     ApiResponse fetchAttendanceByMonth(String month, String requestId);
-
+    ApiResponse fetchAttendancePending(String requestId);
 }

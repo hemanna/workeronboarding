@@ -10,5 +10,5 @@ public interface EmployeeRecordControl {
     ApiResponse updateEmployeeDetails(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId);
     ApiResponse fetchEmployeeById(Long employeeId, String requestId );
     ApiResponse fetchAllEmployees(String requestId);
-
+    ApiResponse fetchPendingApprovals(String requestId);
 }

@@ -336,5 +336,27 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse fetchAttendancePending(String requestId) {
+        log.info("Start fetching pending attendance approvals - RequestId: {}", requestId);
+
+        // Fetch all attendance with "Pending" approval status
+        List<EmployeeAttendance> pendingApprovals = employeeAttendanceRepository.find("approvalStatus", "Pending").list();
+        if (pendingApprovals == null || pendingApprovals.isEmpty()) {
+            log.warn("No pending approvals found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No pending approvals found", requestId)
+            );
+        }
+        // Return the list of employees with pending approvals
+        log.info("End fetching attendance with pending approvals - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Pending approvals fetched successfully", requestId),
+                pendingApprovals
+        );
+    }
+
+
 
 }
