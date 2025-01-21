@@ -20,5 +20,12 @@ public class BusinessException extends Exception {
     this.requestId = requestId;
   }
 
+
+  public BusinessException(String message) {
+    super(message);
+    this.status = 500;
+    this.requestId = null;
+  }
+
 }
 
