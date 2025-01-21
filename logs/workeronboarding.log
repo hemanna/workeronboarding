@@ -1,6 +1,330 @@
-2025-01-21 00:05:18,080 desktop-0ebg92j workeronboarding-dev.jar[1652] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 10.956s. Listening on: http://0.0.0.0:8001
-2025-01-21 00:05:18,088 desktop-0ebg92j workeronboarding-dev.jar[1652] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
-2025-01-21 00:05:18,089 desktop-0ebg92j workeronboarding-dev.jar[1652] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
-2025-01-21 00:05:38,062 desktop-0ebg92j workeronboarding-dev.jar[1652] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 34150ea8-d457-44bf-a9ec-5f2408975684 | Fetching pending attendance approvals
-2025-01-21 00:05:38,145 desktop-0ebg92j workeronboarding-dev.jar[1652] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching pending attendance approvals - RequestId: 34150ea8-d457-44bf-a9ec-5f2408975684
-2025-01-21 00:05:38,839 desktop-0ebg92j workeronboarding-dev.jar[1652] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching attendance with pending approvals - RequestId: 34150ea8-d457-44bf-a9ec-5f2408975684
+2025-01-21 20:27:46,968 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 7.049s. Listening on: http://0.0.0.0:8001
+2025-01-21 20:27:46,973 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-01-21 20:27:46,974 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-01-21 20:28:05,074 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 3fd596e3-f509-448e-a620-af24d12d86b1 | get employee attendance by month: 2024-02
+2025-01-21 20:28:05,130 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching employee attendance for month - RequestId: 3fd596e3-f509-448e-a620-af24d12d86b1, Month: 2024-02
+2025-01-21 20:28:05,566 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching employee attendance for month - RequestId: 3fd596e3-f509-448e-a620-af24d12d86b1, Month: 2024-02
+2025-01-21 20:28:35,852 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 2cc288a4-2849-4690-9dea-1a361705ecd6 | get employee attendance by month: 2024-05
+2025-01-21 20:28:35,853 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching employee attendance for month - RequestId: 2cc288a4-2849-4690-9dea-1a361705ecd6, Month: 2024-05
+2025-01-21 20:28:35,861 desktop-0ebg92j workeronboarding-dev.jar[15460] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) No attendance records found for the month: 2024-05 - RequestId: 2cc288a4-2849-4690-9dea-1a361705ecd6
+2025-01-21 20:28:53,604 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 6adfb6c5-935f-42dc-ad3a-cd17d4362379 | get employee attendance by month: 2025-05
+2025-01-21 20:28:53,605 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching employee attendance for month - RequestId: 6adfb6c5-935f-42dc-ad3a-cd17d4362379, Month: 2025-05
+2025-01-21 20:28:53,627 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching employee attendance for month - RequestId: 6adfb6c5-935f-42dc-ad3a-cd17d4362379, Month: 2025-05
+2025-01-21 20:29:02,355 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 17ffc158-40e4-4c09-a3aa-87632fe263d7 | get employee attendance by month: 2025-08
+2025-01-21 20:29:02,356 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching employee attendance for month - RequestId: 17ffc158-40e4-4c09-a3aa-87632fe263d7, Month: 2025-08
+2025-01-21 20:29:02,382 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching employee attendance for month - RequestId: 17ffc158-40e4-4c09-a3aa-87632fe263d7, Month: 2025-08
+2025-01-21 20:35:59,468 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id : 0c75c1de-b16b-4551-bd61-c70d90132fa1 | get all employee details
+2025-01-21 20:35:59,474 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching all employee details - RequestId: 0c75c1de-b16b-4551-bd61-c70d90132fa1
+2025-01-21 20:35:59,516 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching all employee details - RequestId: 0c75c1de-b16b-4551-bd61-c70d90132fa1
+2025-01-21 20:37:22,576 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id : 4a3be3cd-9402-402d-bff8-bf1eee86e44c | get employee by id: 1
+2025-01-21 20:37:22,577 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employee details - RequestId: 4a3be3cd-9402-402d-bff8-bf1eee86e44c, EmployeeId: 1
+2025-01-21 20:37:22,594 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Employee not found - RequestId: 4a3be3cd-9402-402d-bff8-bf1eee86e44c, EmployeeId: 1
+2025-01-21 20:37:29,489 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id : 6289a4ba-3c64-4f17-8d19-b1bb88f11ffb | get employee by id: 9
+2025-01-21 20:37:29,490 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employee details - RequestId: 6289a4ba-3c64-4f17-8d19-b1bb88f11ffb, EmployeeId: 9
+2025-01-21 20:37:29,496 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employee details - RequestId: 6289a4ba-3c64-4f17-8d19-b1bb88f11ffb, EmployeeId: 9
+2025-01-21 20:37:38,222 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id : 0bfd211e-6b5b-4bae-abdd-4459eadab390 | get employee by id: 12
+2025-01-21 20:37:38,223 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employee details - RequestId: 0bfd211e-6b5b-4bae-abdd-4459eadab390, EmployeeId: 12
+2025-01-21 20:37:38,227 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employee details - RequestId: 0bfd211e-6b5b-4bae-abdd-4459eadab390, EmployeeId: 12
+2025-01-21 20:38:06,459 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id : 9240c355-f320-47fe-a6f9-ff6f410739cc | get employee by id: 77
+2025-01-21 20:38:06,460 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employee details - RequestId: 9240c355-f320-47fe-a6f9-ff6f410739cc, EmployeeId: 77
+2025-01-21 20:38:06,466 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employee details - RequestId: 9240c355-f320-47fe-a6f9-ff6f410739cc, EmployeeId: 77
+2025-01-21 20:38:54,902 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: 238edaa7-e5ec-42dd-9f9e-797bff8c497e | Fetching pending worker approvals
+2025-01-21 20:38:54,903 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees with pending approvals - RequestId: 238edaa7-e5ec-42dd-9f9e-797bff8c497e
+2025-01-21 20:38:54,976 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employees with pending approvals - RequestId: 238edaa7-e5ec-42dd-9f9e-797bff8c497e
+2025-01-21 20:39:50,509 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: 5141a7df-9a51-4089-82a3-18eaf1b9bc31 | Fetching pending worker approvals
+2025-01-21 20:39:50,510 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees with pending approvals - RequestId: 5141a7df-9a51-4089-82a3-18eaf1b9bc31
+2025-01-21 20:39:50,528 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employees with pending approvals - RequestId: 5141a7df-9a51-4089-82a3-18eaf1b9bc31
+2025-01-21 20:44:49,714 desktop-0ebg92j workeronboarding-dev.jar[15460] WARN  [com.sbd.com.exc.map.NotAllowedExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : d3b32a48-35de-4e07-94f0-f1b019db251f | message : HTTP 405 Method Not Allowed | cause : {}: jakarta.ws.rs.NotAllowedException: HTTP 405 Method Not Allowed
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:99)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:138)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:192)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:181)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.lambda$emitSuccess$0(FutureBase.java:54)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:46:19,298 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 11c4d82b-fa2c-4472-8484-552dbc8fb3df | Update Employee Attendance Request: Id: 1
+2025-01-21 20:46:19,299 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: 11c4d82b-fa2c-4472-8484-552dbc8fb3df, EmployeeId: 1
+2025-01-21 20:46:19,304 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : efc4d561-d974-4e50-9d06-1acebc69bb50 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:46:56,007 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: c9cbeb0e-2e0c-4e5f-a26e-74f3af011d1a | Update Employee Attendance Request: Id: 1
+2025-01-21 20:46:56,008 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: c9cbeb0e-2e0c-4e5f-a26e-74f3af011d1a, EmployeeId: 1
+2025-01-21 20:46:56,009 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : bddf721f-0203-4b77-936c-b6912fa21ac4 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:47:00,938 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: b52f1b2f-7a87-43fb-983f-412cb19324b6 | Update Employee Attendance Request: Id: 1
+2025-01-21 20:47:00,939 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: b52f1b2f-7a87-43fb-983f-412cb19324b6, EmployeeId: 1
+2025-01-21 20:47:00,940 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 16274da0-649d-44a7-b6c1-1f81f6fcb407 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:53:07,126 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: c15bd727-5ac8-4053-a613-d8f6ffe615c7 | Update Employee Attendance Request: Id: 1
+2025-01-21 20:53:07,127 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: c15bd727-5ac8-4053-a613-d8f6ffe615c7, EmployeeId: 1
+2025-01-21 20:53:07,128 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 8456a6eb-9728-44a2-9918-308d0dc08f2d | message : Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:53:20,151 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: a5d21a54-ef60-414e-bdad-7f37f44bd777 | Update Employee Attendance Request: Id: 33
+2025-01-21 20:53:20,152 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: a5d21a54-ef60-414e-bdad-7f37f44bd777, EmployeeId: 33
+2025-01-21 20:53:20,153 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 651287c5-dd61-4b6e-98c3-b8d14809e139 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:53:36,859 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: bf5b4c8e-beb4-45ae-b68e-ecdd9b0836ee | Update Employee Attendance Request: Id: 34
+2025-01-21 20:53:36,861 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: bf5b4c8e-beb4-45ae-b68e-ecdd9b0836ee, EmployeeId: 34
+2025-01-21 20:53:36,862 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : e9897c54-93f2-4b3e-9c30-e782ea65d41c | message : Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:53:38,942 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: d849c914-ac77-4d27-b4f3-8934b56c823a | Update Employee Attendance Request: Id: 34
+2025-01-21 20:53:38,944 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: d849c914-ac77-4d27-b4f3-8934b56c823a, EmployeeId: 34
+2025-01-21 20:53:38,945 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 9e4d493b-5217-4012-b16e-e64998903720 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-21 20:54:31,995 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 017f94f4-265f-4716-886b-c760d5ae5270 | Update Employee Attendance Request: Id: 34
+2025-01-21 20:54:31,996 desktop-0ebg92j workeronboarding-dev.jar[15460] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: 017f94f4-265f-4716-886b-c760d5ae5270, EmployeeId: 34
+2025-01-21 20:54:31,998 desktop-0ebg92j workeronboarding-dev.jar[15460] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : d5dd75c1-9fee-4e16-aa7c-4602c9568f6c | message : Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" because "employeeDTO" is null
+	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+

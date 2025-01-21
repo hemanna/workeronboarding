@@ -50,7 +50,7 @@ public class EmployeeAttendanceResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/get_allattendance")
+    @Path("/get_all_attendance")
     public ApiResponse fetchAllAttendance() {
         String requestId = UUID.randomUUID().toString();
         log.info("request_id : {} | get all employee attendance", requestId);
@@ -59,9 +59,9 @@ public class EmployeeAttendanceResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/get_attendance_by_date")
+    @Path("/get_attendance_by_date/{date}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public ApiResponse fetchAttendanceByDate(@QueryParam("date") String date) {
+    public ApiResponse fetchAttendanceByDate(@PathParam("date") String date) {
         String requestId = UUID.randomUUID().toString();
         log.info("request_id : {} | get employee attendance by date: {}", requestId, date);
         return employeeAttendanceControl.fetchAttendanceByDate(date, requestId);
@@ -69,8 +69,8 @@ public class EmployeeAttendanceResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/get_attendance_by_month")
-    public ApiResponse fetchAttendanceByMonth(@QueryParam("month") String month) {
+    @Path("/get_attendance_by_month/{month}")
+    public ApiResponse fetchAttendanceByMonth(@PathParam("month") String month) {
         String requestId = UUID.randomUUID().toString();
         log.info("request_id : {} | get employee attendance by month: {}", requestId, month);
         return employeeAttendanceControl.fetchAttendanceByMonth(month, requestId);
