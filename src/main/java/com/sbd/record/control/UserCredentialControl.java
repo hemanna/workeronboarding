@@ -5,6 +5,7 @@ import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 
 public interface UserCredentialControl {
-    ApiResponse resetPassword(ApiRequest<UserCredentialsDTO> apiRequest, String requestId);  // PATCH for resetting password
-    ApiResponse createUserCredentials(ApiRequest<UserCredentialsDTO> apiRequest,String requestId);
+    ApiResponse createUserCredentials(ApiRequest<UserCredentialsDTO> apiRequest, String requestId);
+
+    ApiResponse resetPassword(String username, String password, String requestId);
 }

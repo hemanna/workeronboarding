@@ -18,7 +18,6 @@ public class UserCredentialsResource {
 
     private final UserCredentialControl userCredentialControl;
 
-
     @POST
     @Path("/user-credentials")
     @Produces(MediaType.APPLICATION_JSON)
@@ -29,15 +28,19 @@ public class UserCredentialsResource {
         return userCredentialControl.createUserCredentials(apiRequest, requestId);
     }
 
-
     @PATCH
     @Path("/reset-password")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public ApiResponse resetPassword(ApiRequest<UserCredentialsDTO> apiRequest) {
         String requestId = UUID.randomUUID().toString();
-        log.info("RequestId: {} | Reset Password Request: {}", requestId, apiRequest);
-        return userCredentialControl.resetPassword(apiRequest, requestId);
+        String username = apiRequest.getData().getUsername();
+        String password = apiRequest.getData().getPassword();
+
+        log.info("RequestId: {} | Reset Password Request: username={}, password=[PROTECTED]", requestId, username);
+
+        return userCredentialControl.resetPassword(username, password, requestId);
     }
+
 
 }
