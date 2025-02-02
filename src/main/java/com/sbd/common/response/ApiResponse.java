@@ -9,14 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonbPropertyOrder({"status", "data"})
-public class ApiResponse {
+public class ApiResponse<T> {
 
     private Status status;
-    private Object data;
+    private T data;
 
     public ApiResponse(Status status) {
         this.status = status;
     }
-
-
 }

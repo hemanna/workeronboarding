@@ -22,8 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 @ApplicationScoped
 @Slf4j
 public class UserCredentialService implements UserCredentialControl {
-    @Inject
-    private UserCredentialsRepository userCredentialsRepository;
 
     @Inject
     private EmployeeDetailsRepository employeeDetailsRepository;
@@ -31,11 +29,15 @@ public class UserCredentialService implements UserCredentialControl {
     @Inject
     private RoleRepository roleRepository;
 
+    @Inject
+    private UserCredentialsRepository userCredentialsRepository; // ✅ Added missing injection
+
     @Override
     @Transactional
     public ApiResponse createUserCredentials(ApiRequest<UserCredentialsDTO> apiRequest, String requestId) {
         log.info("Start creating user credentials - RequestId: {}", requestId);
 
+        // Extract data from the request
         UserCredentialsDTO userCredentialsDTO = apiRequest.getData();
 
         // Check if user already exists
@@ -46,11 +48,11 @@ public class UserCredentialService implements UserCredentialControl {
             );
         }
 
-        // Fetch employee details using the employeeId from DTO
-        EmployeeDetails employee = employeeDetailsRepository.findById(userCredentialsDTO.getEmployeeId());
+        // Assuming you want to fetch employee based on username (email)
+        EmployeeDetails employee = employeeDetailsRepository.findByAadharNumber(userCredentialsDTO.getPassword());
         if (employee == null) {
             return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found for this username", requestId)
             );
         }
 
@@ -86,11 +88,14 @@ public class UserCredentialService implements UserCredentialControl {
         responseDto.setDepartmentName(dept.getName());
 
         log.info("End creating user credentials - RequestId: {}", requestId);
+
+        // Send successful response with the user and role details
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Successful", requestId),
                 responseDto
         );
     }
+
 
 
     @Override

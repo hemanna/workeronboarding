@@ -115,8 +115,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
         // Return response with the created employee attendance
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee attendance successfully created", requestId),
-                employeeAttendance
+                new Status(Response.Status.OK.getStatusCode(), "Employee attendance successfully created", requestId)
+
         );
     }
 

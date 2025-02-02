@@ -22,6 +22,7 @@ public class UserCredentialsResource {
     @Path("/user-credentials")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+
     public ApiResponse createUserCredentials(ApiRequest<UserCredentialsDTO> apiRequest) {
         String requestId = UUID.randomUUID().toString();
         log.info("RequestId: {} | Create User Credentials Request: {}", requestId, apiRequest);

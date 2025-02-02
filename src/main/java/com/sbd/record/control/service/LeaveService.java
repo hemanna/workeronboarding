@@ -16,6 +16,9 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @ApplicationScoped
 @Slf4j
 public class LeaveService implements LeaveControl {
@@ -74,7 +77,6 @@ public class LeaveService implements LeaveControl {
                 new Status(Response.Status.OK.getStatusCode(), "Leave request submitted successfully", requestId)
         );
     }
-
     // Convert DTO to Entity
     private Leave mapLeave(EmployeeDetails employee, EmployeeDTO.LeaveDTO leaveDTO, Department department, LeaveType leaveType) {
         Leave leave = new Leave();
@@ -86,4 +88,114 @@ public class LeaveService implements LeaveControl {
         leave.setReason(leaveDTO.getReason());
         return leave;
     }
+
+    @Override
+    @Transactional
+    public ApiResponse<EmployeeDTO.LeaveDTO> fetchLeaveById(Long leaveId, String requestId) {
+        log.info("Start fetching leave details - RequestId: {}, LeaveId: {}", requestId, leaveId);
+
+        // Fetch the leave details by Id
+        Leave leave = leaveRepository.findById(leaveId);
+        if (leave == null) {
+            log.error("Leave not found - RequestId: {}, LeaveId: {}", requestId, leaveId);
+            return new ApiResponse<>(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Leave not found", requestId)
+            );
+        }
+
+        // Leave entity to LeaveDTO
+        EmployeeDTO.LeaveDTO leaveDTO = mapToLeaveDTO(leave);
+
+        // Return the leave details
+        log.info("End fetching leave details - RequestId: {}, LeaveId: {}", requestId, leaveId);
+        return new ApiResponse<>(
+                new Status(Response.Status.OK.getStatusCode(), "Leave details fetched successfully", requestId),
+                leaveDTO
+        );
+    }
+
+
+
+    private EmployeeDTO.LeaveDTO mapToLeaveDTO(Leave leave) {
+        EmployeeDTO.LeaveDTO leaveDTO = new EmployeeDTO.LeaveDTO();
+        leaveDTO.setId(leave.getId());
+        leaveDTO.setEmployeeId(leave.getEmployee().getId());
+        leaveDTO.setLeaveTypeId(leave.getLeaveType().getId());
+        leaveDTO.setStartDate(leave.getStartDate());
+        leaveDTO.setEndDate(leave.getEndDate());
+        leaveDTO.setDepartmentId(leave.getDepartment() != null ? leave.getDepartment().getId() : null);
+        leaveDTO.setReason(leave.getReason());
+        return leaveDTO;
+    }
+
+
+    @Override
+    @Transactional
+    public ApiResponse updateLeaveRequest(Integer leaveId, ApiRequest<EmployeeDTO> apiRequest, String requestId) {
+        log.info("RequestId: {} | Updating Leave Request with LeaveId: {}", requestId, leaveId);
+
+        // Fetch the existing leave request
+        Leave existingLeave = leaveRepository.findById(leaveId);
+        if (existingLeave == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Leave request not found", requestId)
+            );
+        }
+
+        EmployeeDTO.LeaveDTO leaveDTO = apiRequest.getData().getLeaveDTO();
+
+        // Fetch the employee details
+        EmployeeDetails employee = employeeDetailsRepository.findById(leaveDTO.getEmployeeId());
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Fetch the leave type
+        LeaveType leaveType = leaveTypeRepository.findById(Long.valueOf(leaveDTO.getLeaveTypeId()));
+        if (leaveType == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Leave type not found", requestId)
+            );
+        }
+
+        // Update the  leave request
+        existingLeave.setEmployee(employee);
+        existingLeave.setLeaveType(leaveType);
+        existingLeave.setStartDate(leaveDTO.getStartDate());
+        existingLeave.setEndDate(leaveDTO.getEndDate());
+        existingLeave.setReason(leaveDTO.getReason());
+        leaveRepository.persist(existingLeave);
+
+        log.info("RequestId: {} | Leave Request with LeaveId: {} updated successfully", requestId, leaveId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Leave request updated successfully", requestId)
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAllLeaveRequest(String requestId) {
+        log.info("Start fetching all leave requests - RequestId: {}", requestId);
+
+        List<Leave> leaveList = leaveRepository.findAll().list();
+        if (leaveList == null || leaveList.isEmpty()) {
+            log.warn("No leave requests found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No leave requests found", requestId)
+            );
+        }
+
+        List<EmployeeDTO.LeaveDTO> leaveDTOs = leaveList.stream()
+                .map(this::mapToLeaveDTO)
+                .collect(Collectors.toList());
+
+        log.info("End fetching all leave requests - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Leave requests fetched successfully", requestId),
+                leaveDTOs
+        );
+    }
+
 }
