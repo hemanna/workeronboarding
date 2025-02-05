@@ -12,7 +12,7 @@ quarkus:
     password: Paaru@1307
     jdbc:
       driver: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.197.120:3306/workeronboardings
+      url: jdbc:mysql://192.168.57.120:3306/workeronboardings
 http:
   cors:
     enabled: true

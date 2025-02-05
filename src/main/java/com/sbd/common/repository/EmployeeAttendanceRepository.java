@@ -24,5 +24,8 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
     public List<EmployeeAttendance> findByMonth(LocalDate startDate, LocalDate endDate) {
         return list("date >= ?1 and date <= ?2", startDate, endDate);
     }
+    public List<EmployeeAttendance> findByDateRange(LocalDate fromDate, LocalDate toDate) {
+        return find("date >= ?1 AND date <= ?2", fromDate, toDate).list();
+    }
 
 }

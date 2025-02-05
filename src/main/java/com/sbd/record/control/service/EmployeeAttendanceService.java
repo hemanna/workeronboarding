@@ -357,6 +357,76 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse fetchAttendanceByRange(String fromDate, String toDate, String requestId) {
+        log.info("Start fetching employee attendance by date range - RequestId: {}, From: {}, To: {}", requestId, fromDate, toDate);
+
+        //  the input dates
+        LocalDate startDate;
+        LocalDate endDate;
+        try {
+            startDate = LocalDate.parse(fromDate);
+            endDate = LocalDate.parse(toDate);
+        } catch (Exception e) {
+            log.error("Invalid date format - RequestId: {}, From: {}, To: {}", requestId, fromDate, toDate);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid date format", requestId)
+            );
+        }
+
+        // Validate that fromDate is before or equal to toDate
+        if (startDate.isAfter(endDate)) {
+            log.error("Invalid date range - From date is after To date - RequestId: {}, From: {}, To: {}", requestId, fromDate, toDate);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid date range: fromDate should be before or equal to toDate", requestId)
+            );
+        }
+
+        // Fetch attendance records within the given range
+        List<EmployeeAttendance> attendanceList = employeeAttendanceRepository.findByDateRange(startDate, endDate);
+
+        // If no attendance records found
+        if (attendanceList == null || attendanceList.isEmpty()) {
+            log.warn("No attendance records found between {} and {} - RequestId: {}", fromDate, toDate, requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No attendance records found for the given date range", requestId)
+            );
+        }
+
+        log.info("End fetching employee attendance by date range - RequestId: {}, From: {}, To: {}", requestId, fromDate, toDate);
+
+        // Return the list of attendance records
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
+                attendanceList
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse deleteAttendance(Long id, String requestId) {
+        log.info("Start deleting employee attendance - RequestId: {}, AttendanceId: {}", requestId, id);
+
+        // Fetch the attendance record by ID
+        EmployeeAttendance attendance = employeeAttendanceRepository.findById(id);
+        if (attendance == null) {
+            log.error("Attendance record not found - RequestId: {}, AttendanceId: {}", requestId, id);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Attendance record not found", requestId)
+            );
+        }
+
+        // Delete the attendance record
+        employeeAttendanceRepository.delete(attendance);
+
+        log.info("Successfully deleted employee attendance - RequestId: {}, AttendanceId: {}", requestId, id);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee attendance successfully deleted", requestId)
+        );
+    }
+
 
 
 }

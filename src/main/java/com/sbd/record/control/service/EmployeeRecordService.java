@@ -80,11 +80,23 @@ public class EmployeeRecordService implements EmployeeRecordControl {
                     new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Aadhar number already exists", requestId)
             );
         }
-
-        // Create EmployeeDetails
+// Create EmployeeDetails
         EmployeeDetails employeeDetails = mapEmployeeDetails(employeeDTO, department, role);
         employeeDetailsRepository.persist(employeeDetails);
 
+
+       /* // Create EmployeeDetails
+        EmployeeDetails employeeDetails = mapEmployeeDetails(employeeDTO, department, role);
+        EmployeeDetails employeeDetails1= employeeDetailsRepository.persist(employeeDetails);
+
+
+        // Create UserCredentials
+        UserCredentials userCredentials = new UserCredentials();
+        userCredentials.setUsername(userCredentialsDTO.getUsername());
+        userCredentials.setPassword(userCredentialsDTO.getPassword());
+        userCredentials.setEmployee(employee);
+        userCredentialsRepository.persist(userCredentials);
+*/
         log.info("End creating employee details - RequestId: {}", requestId);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Employee details successfully created", requestId)

@@ -84,5 +84,25 @@ public class EmployeeAttendanceResource {
         log.info("RequestId: {} | Fetching pending attendance approvals", requestId);
         return employeeAttendanceControl.fetchAttendancePending(requestId);
     }
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_attendance_by_range/{fromDate}/{toDate}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchAttendanceByRange(
+            @PathParam("fromDate") String fromDate,
+            @PathParam("toDate") String toDate) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | Fetching employee attendance from {} to {}", requestId, fromDate, toDate);
+        return employeeAttendanceControl.fetchAttendanceByRange(fromDate, toDate, requestId);
+    }
+
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/delete/{id}")
+    public ApiResponse deleteAttendance(@PathParam("id") Long id) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Deleting Employee Attendance with ID: {}", requestId, id);
+        return employeeAttendanceControl.deleteAttendance(id, requestId);
+    }
 
 }
