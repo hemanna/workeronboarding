@@ -1,6 +1,8 @@
 package com.sbd.common.request;
 
 import lombok.Data;
+import org.jboss.resteasy.reactive.multipart.FileUpload;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,6 +17,8 @@ public class EmployeeDTO {
     private LeaveDTO leaveDTO;
     private LeaveTypeDTO leaveTypeDTO;
     private RoleDTO roleDTO;
+    private UserCredentialsDTO userCredentialsDTO;
+
 
     // Department
     @Data
@@ -65,9 +69,9 @@ public class EmployeeDTO {
         private Integer roleId;
         private Integer experience;
         private LocalDate dateOfJoining;
-        private String profilePic;
-        private String aadharPic;
-        private String pancardPic;
+        private FileUpload profilePic;
+        private FileUpload aadharPic;
+        private FileUpload pancardPic;
         private String status;
         private String approvalStatus;
         private Integer departmentId;
@@ -103,5 +107,16 @@ public class EmployeeDTO {
         private LocalDateTime creationDate;
         private String status;
     }
+
+
+    @Data
+    public static class ImageDTO {
+        private Integer id;
+        private FileUpload profilePic;
+        private FileUpload aadharPic;
+        private FileUpload pancardPic;
+
+    }
+
 }
 

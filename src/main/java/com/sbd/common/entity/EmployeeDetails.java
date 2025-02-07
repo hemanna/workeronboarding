@@ -75,14 +75,17 @@ public class EmployeeDetails {
     @Column(name = "date_of_joining")
     private LocalDate dateOfJoining;
 
+    @Lob
     @Column(name = "profile_pic")
-    private String profilePic;
+    private byte[] profilePic;
 
+    @Lob
     @Column(name = "aadhar_pic")
-    private String aadharPic;
+    private byte[] aadharPic;
 
+    @Lob
     @Column(name = "pancard_pic")
-    private String pancardPic;
+    private byte[] pancardPic;
 
     @Column(name = "status")
     private String status;

@@ -30,7 +30,7 @@ public class UserCredentialService implements UserCredentialControl {
     private RoleRepository roleRepository;
 
     @Inject
-    private UserCredentialsRepository userCredentialsRepository; // ✅ Added missing injection
+    private UserCredentialsRepository userCredentialsRepository;
 
     @Override
     @Transactional
@@ -89,7 +89,6 @@ public class UserCredentialService implements UserCredentialControl {
 
         log.info("End creating user credentials - RequestId: {}", requestId);
 
-        // Send successful response with the user and role details
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Successful", requestId),
                 responseDto
@@ -103,7 +102,7 @@ public class UserCredentialService implements UserCredentialControl {
     public ApiResponse resetPassword(String username, String password, String requestId) {
         log.info("Start resetting password - RequestId: {}", requestId);
 
-        // Fetch the user credentials by username
+        // Fetch the user credentials
         UserCredentials userCredentials = userCredentialsRepository.findByUsername(username);
         if (userCredentials == null) {
             log.error("UserCredentials not found - RequestId: {}", requestId);

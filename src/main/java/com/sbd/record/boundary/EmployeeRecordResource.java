@@ -1,6 +1,5 @@
 package com.sbd.record.boundary;
 
-import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.request.UserCredentialsDTO;
@@ -31,6 +30,10 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Create Employee Details Request: {}", requestId, apiRequest);
         return employeeRecordControl.createEmployeeDetails(apiRequest, requestId);
     }
+
+
+
+
     @PATCH
     @Path("/update/{employeeId}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -86,5 +89,4 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Fetching pending worker approvals", requestId);
         return employeeRecordControl.fetchPendingApprovals(requestId);
     }
-
 }

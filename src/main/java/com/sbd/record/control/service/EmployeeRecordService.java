@@ -20,7 +20,6 @@ import java.util.List;
 @Slf4j
 public class EmployeeRecordService implements EmployeeRecordControl {
 
-
     @Inject
     private DepartmentRepository departmentRepository;
 
@@ -39,6 +38,8 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     @Inject
     private RoleRepository roleRepository;
 
+    @Inject
+    private UserCredentialsRepository userCredentialsRepository;
 
     @Override
     @Transactional
@@ -46,7 +47,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         log.info("Start creating employee details - RequestId: {}", requestId);
 
         EmployeeDTO employeeDTO = apiRequest.getData();
-
 
         // Validate RoleDTO presence before proceeding
         if (employeeDTO.getRoleDTO() == null) {
@@ -80,28 +80,35 @@ public class EmployeeRecordService implements EmployeeRecordControl {
                     new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Aadhar number already exists", requestId)
             );
         }
-// Create EmployeeDetails
+
+        // Create EmployeeDetails
         EmployeeDetails employeeDetails = mapEmployeeDetails(employeeDTO, department, role);
         employeeDetailsRepository.persist(employeeDetails);
 
-
-       /* // Create EmployeeDetails
-        EmployeeDetails employeeDetails = mapEmployeeDetails(employeeDTO, department, role);
-        EmployeeDetails employeeDetails1= employeeDetailsRepository.persist(employeeDetails);
-
-
         // Create UserCredentials
+        UserCredentialsDTO userCredentialsDTO = employeeDTO.getUserCredentialsDTO();
+        if (userCredentialsDTO == null) {
+            log.error("UserCredentialsDTO is missing in the request - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "User credentials information is required", requestId)
+            );
+        }
+
         UserCredentials userCredentials = new UserCredentials();
         userCredentials.setUsername(userCredentialsDTO.getUsername());
-        userCredentials.setPassword(userCredentialsDTO.getPassword());
-        userCredentials.setEmployee(employee);
+        userCredentials.setPassword("");
+        userCredentials.setEmployee(employeeDetails);
         userCredentialsRepository.persist(userCredentials);
-*/
+
+
+
         log.info("End creating employee details - RequestId: {}", requestId);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Employee details successfully created", requestId)
         );
     }
+
+
 
 
     private EmployeeDetails mapEmployeeDetails(EmployeeDTO employeeDTO, Department department, Role role) {
@@ -123,11 +130,11 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetails.setPostalCode(employeeDTO.getEmployeeDetailsDTO().getPostalCode());
         employeeDetails.setExperience(employeeDTO.getEmployeeDetailsDTO().getExperience());
         employeeDetails.setDateOfJoining(employeeDTO.getEmployeeDetailsDTO().getDateOfJoining());
-        employeeDetails.setProfilePic(employeeDTO.getEmployeeDetailsDTO().getProfilePic());
-        employeeDetails.setAadharPic(employeeDTO.getEmployeeDetailsDTO().getAadharPic());
-        employeeDetails.setPancardPic(employeeDTO.getEmployeeDetailsDTO().getPancardPic());
+       // employeeDetails.setProfilePic(employeeDTO.getEmployeeDetailsDTO().getProfilePic());
+      //  employeeDetails.setAadharPic(employeeDTO.getEmployeeDetailsDTO().getAadharPic());
+      //  employeeDetails.setPancardPic(employeeDTO.getEmployeeDetailsDTO().getPancardPic());
         employeeDetails.setStatus(employeeDTO.getEmployeeDetailsDTO().getStatus());
-        employeeDetails.setApprovalStatus("Pending"); // Set approval status to default "Pending"
+        employeeDetails.setApprovalStatus("Pending");
         employeeDetails.setDepartment(department);
         employeeDetails.setRole(role);
         return employeeDetails;
@@ -150,7 +157,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             );
         }
 
-        // Check for duplicate Aadhar number before updating
+        // Check for duplicate Aadhar number
         String aadharNumber = employeeDTO.getEmployeeDetailsDTO().getAadharNumber();
         if (aadharNumber != null && !aadharNumber.equals(existingEmployee.getAadharNumber())) {
             EmployeeDetails existingAadharEmployee = employeeDetailsRepository.findByAadharNumber(aadharNumber);
@@ -162,7 +169,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             }
         }
 
-        // Validate and update department directly from employeeDTO
+        // Validate and update department  from employeeDTO
         if (employeeDTO.getEmployeeDetailsDTO().getDepartmentId() != null) {
             Department department = departmentRepository.findById(employeeDTO.getEmployeeDetailsDTO().getDepartmentId());
             if (department == null) {
@@ -174,7 +181,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             existingEmployee.setDepartment(department);
         }
 
-        // Validate and update role directly from employeeDTO
+        // Validate and update role  from employeeDTO
         if (employeeDTO.getEmployeeDetailsDTO().getRoleId() != null) {
             Role role = roleRepository.findByRoleId(employeeDTO.getEmployeeDetailsDTO().getRoleId());
             if (role == null) {
@@ -205,13 +212,10 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         existingEmployee.setPostalCode(detailsDTO.getPostalCode());
         existingEmployee.setExperience(detailsDTO.getExperience());
         existingEmployee.setDateOfJoining(detailsDTO.getDateOfJoining());
-        existingEmployee.setProfilePic(detailsDTO.getProfilePic());
-        existingEmployee.setAadharPic(detailsDTO.getAadharPic());
-        existingEmployee.setPancardPic(detailsDTO.getPancardPic());
         existingEmployee.setStatus(detailsDTO.getStatus());
         existingEmployee.setApprovalStatus(detailsDTO.getApprovalStatus());
 
-        // Persist the updated entity
+
         try {
             employeeDetailsRepository.persist(existingEmployee);
             log.info("Successfully updated employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
@@ -253,8 +257,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 
         // Update the approval status of the employee
         existingEmployee.setApprovalStatus(approvalStatus);
-
-        // Persist the updated employee details
         try {
             employeeDetailsRepository.persist(existingEmployee);
             log.info("Successfully updated approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
@@ -322,7 +324,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     public ApiResponse fetchPendingApprovals(String requestId) {
         log.info("Start fetching employees with pending approvals - RequestId: {}", requestId);
 
-        // Fetch all employees with "Pending" approval status
+        // Fetch all employees with Pending approval status
         List<EmployeeDetails> pendingApprovals = employeeDetailsRepository.find("approvalStatus", "Pending").list();
         if (pendingApprovals == null || pendingApprovals.isEmpty()) {
             log.warn("No pending approvals found - RequestId: {}", requestId);
@@ -331,14 +333,11 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             );
         }
 
-        // Return the list of employees with pending approvals
+
         log.info("End fetching employees with pending approvals - RequestId: {}", requestId);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Pending approvals fetched successfully", requestId),
                 pendingApprovals
         );
     }
-
-
-
 }

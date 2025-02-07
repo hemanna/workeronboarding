@@ -1,35 +1,3 @@
-2025-02-03 01:22:29,986 desktop-0ebg92j workeronboarding-dev.jar[2996] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 8.667s. Listening on: http://0.0.0.0:8080
-2025-02-03 01:22:29,990 desktop-0ebg92j workeronboarding-dev.jar[2996] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
-2025-02-03 01:22:29,991 desktop-0ebg92j workeronboarding-dev.jar[2996] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
-2025-02-03 01:22:35,918 desktop-0ebg92j workeronboarding-dev.jar[2996] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 224491d6-6a7b-4453-a83d-fb0d16563345 | Update Employee Attendance Request: Id: 1
-2025-02-03 01:22:35,976 desktop-0ebg92j workeronboarding-dev.jar[2996] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start updating employee attendance - RequestId: 224491d6-6a7b-4453-a83d-fb0d16563345, EmployeeId: 1
-2025-02-03 01:22:35,982 desktop-0ebg92j workeronboarding-dev.jar[2996] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 8ce805e9-4b49-4b74-87e1-b81c14135d05 | message : Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null | cause : {}: java.lang.NullPointerException: Cannot invoke "com.sbd.common.request.EmployeeDTO$EmployeeAttendanceDTO.getDate()" because the return value of "com.sbd.common.request.EmployeeDTO.getEmployeeAttendanceDTO()" is null
-	at com.sbd.record.control.service.EmployeeAttendanceService.updateAttendance(EmployeeAttendanceService.java:131)
-	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance$$superforward(Unknown Source)
-	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$7.apply(Unknown Source)
-	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
-	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
-	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
-	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
-	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
-	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
-	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
-	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
-	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
-	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
-	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
-	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.updateAttendance(Unknown Source)
-	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.updateAttendance(Unknown Source)
-	at com.sbd.record.boundary.EmployeeAttendanceResource.updateAttendance(EmployeeAttendanceResource.java:38)
-	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$updateAttendance_a4d73263eb0ab43dbf2865be8154f269ce7bdc1c.invoke(Unknown Source)
-	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
-	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
-	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
-	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
-	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
-	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
-	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
-	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-
+2025-02-07 22:31:35,790 desktop-0ebg92j workeronboarding-dev.jar[6056] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 13.643s. Listening on: http://0.0.0.0:8080
+2025-02-07 22:31:35,796 desktop-0ebg92j workeronboarding-dev.jar[6056] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-02-07 22:31:35,797 desktop-0ebg92j workeronboarding-dev.jar[6056] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]

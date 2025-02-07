@@ -20,11 +20,11 @@ public class Leave {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "employee_id",  nullable = false)
     private EmployeeDetails employee;
 
     @ManyToOne
-    @JoinColumn(name = "leave_type_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "leave_type_id",   nullable = false)
     private LeaveType leaveType;
 
     @Column(name = "start_date", nullable = false)
@@ -34,7 +34,7 @@ public class Leave {
     private LocalDate endDate;
 
     @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    @JoinColumn(name = "department_id")
     private Department department;
 
     @Column(name = "reason")
