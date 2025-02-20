@@ -6,12 +6,15 @@ import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeRecordControl;
+import io.netty.handler.codec.http.multipart.FileUpload;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jboss.resteasy.reactive.RestForm;
 
+import java.io.InputStream;
 import java.util.UUID;
 
 @Path("/employee")
@@ -30,9 +33,6 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Create Employee Details Request: {}", requestId, apiRequest);
         return employeeRecordControl.createEmployeeDetails(apiRequest, requestId);
     }
-
-
-
 
     @PATCH
     @Path("/update/{employeeId}")
@@ -89,4 +89,18 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Fetching pending worker approvals", requestId);
         return employeeRecordControl.fetchPendingApprovals(requestId);
     }
+
+//    @POST
+//    @Path("/{id}/upload")
+//    @Consumes(MediaType.MULTIPART_FORM_DATA)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public ApiResponse uploadEmployeeImages(
+//            @PathParam("id") Integer employeeId,
+//            @RestForm("profilePic") FileUpload profilePic,
+//            @RestForm("aadharPic") FileUpload aadharPic,
+//            @RestForm("pancardPic") FileUpload pancardPic) {
+//
+//        String requestId = UUID.randomUUID().toString();
+//        return employeeRecordControl.uploadEmployeeImages(employeeId, profilePic, aadharPic, pancardPic, requestId);
+//    }
 }

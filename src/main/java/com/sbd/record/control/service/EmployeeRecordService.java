@@ -8,6 +8,7 @@ import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeRecordControl;
+import io.netty.handler.codec.http.multipart.FileUpload;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -96,7 +97,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 
         UserCredentials userCredentials = new UserCredentials();
         userCredentials.setUsername(userCredentialsDTO.getUsername());
-        userCredentials.setPassword("");
+        userCredentials.setPassword("employee");
         userCredentials.setEmployee(employeeDetails);
         userCredentialsRepository.persist(userCredentials);
 
@@ -340,4 +341,9 @@ public class EmployeeRecordService implements EmployeeRecordControl {
                 pendingApprovals
         );
     }
+
+//    @Override
+//    public ApiResponse uploadEmployeeImages(Integer employeeId, FileUpload profilePic, FileUpload aadharPic, FileUpload pancardPic, String requestId) {
+//        return null;
+//    }
 }

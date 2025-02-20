@@ -9,10 +9,11 @@ quarkus:
     dialect: org.hibernate.dialect.MySQLDialect
   datasource:
     username: root
-    password: Paaru@1307
+    password: root
     jdbc:
       driver: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.57.120:3306/workeronboardings
+      url: jdbc:mysql://192.168.51.65:3306/WorkerOnboarding
+
 http:
   cors:
     enabled: true
