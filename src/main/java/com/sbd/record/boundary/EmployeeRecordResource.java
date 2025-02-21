@@ -89,7 +89,6 @@ public class EmployeeRecordResource {
         log.info("RequestId: {} | Fetching pending worker approvals", requestId);
         return employeeRecordControl.fetchPendingApprovals(requestId);
     }
-
 //    @POST
 //    @Path("/{id}/upload")
 //    @Consumes(MediaType.MULTIPART_FORM_DATA)
