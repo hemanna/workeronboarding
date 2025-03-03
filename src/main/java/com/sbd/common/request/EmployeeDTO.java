@@ -87,8 +87,12 @@ public class EmployeeDTO {
         private LocalDate endDate;
         private Integer departmentId;
         private String reason;
-    }
+        private LocalDate appliedDate;
+        private String adminRemarks;
+        private byte[] attachment;
+        private String attachmentName;
 
+    }
 
     // LeaveType
     @Data

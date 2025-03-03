@@ -1,31 +1,44 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.exception.BusinessException;
+import com.sbd.common.exception.TechnicalException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
+import com.sbd.common.request.LeaveRequest;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.LeaveControl;
+import com.sbd.record.control.service.LeaveService;
+import io.vertx.ext.web.FileUpload;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jboss.resteasy.reactive.PartType;
+import org.jboss.resteasy.reactive.RestForm;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @Path("/employee")
 @AllArgsConstructor
 @Slf4j
+@Consumes(MediaType.MULTIPART_FORM_DATA)
+@Produces(MediaType.APPLICATION_JSON)
 public class LeaveResource {
-
+    @Inject
+    LeaveService leaveService;
     private final LeaveControl leaveControl;
 
     @POST
-    @Path("/Leave")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ApiResponse createLeaveRequest(ApiRequest<EmployeeDTO> apiRequest) {
+    @Path("/apply")
+    public Response applyLeave(@BeanParam LeaveRequest leaveRequest) throws BusinessException, IOException {
         String requestId = UUID.randomUUID().toString();
-        log.info("RequestId: {} | Create Employee Leave  Request: {}", requestId, apiRequest);
-        return leaveControl.createLeaveRequest(apiRequest, requestId);
+        ApiResponse response = leaveService.createLeaveRequest(leaveRequest, requestId);
+        return Response.ok(response).build();
     }
 
     @PATCH

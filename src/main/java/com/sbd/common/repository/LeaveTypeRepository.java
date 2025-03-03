@@ -9,6 +9,7 @@ public class LeaveTypeRepository implements PanacheRepository<LeaveType> {
 
 
     public LeaveType findByType(String type) {
-        return find("type", type).firstResult();
+        return find("type", type)
+                .firstResult();
     }
 }

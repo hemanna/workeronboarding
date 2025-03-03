@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "leave_requests")
@@ -39,4 +40,17 @@ public class Leave {
 
     @Column(name = "reason")
     private String reason;
+
+    @Lob
+    @Column(name = "attachment")
+    private byte[] attachment;
+
+    @Column(name = "attachment_name")
+    private String attachmentName;
+
+    @Column(name = "applied_date")
+    private LocalDate appliedDate;
+
+    @Column(name = "admin_remarks")
+    private String adminRemarks;
 }
