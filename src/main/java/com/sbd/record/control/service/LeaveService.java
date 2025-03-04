@@ -2,6 +2,7 @@ package com.sbd.record.control.service;
 
 import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.mapper.LeaveMapper;
 import com.sbd.common.repository.EmployeeDetailsRepository;
 import com.sbd.common.repository.LeaveRepository;
 import com.sbd.common.repository.LeaveTypeRepository;
@@ -75,6 +76,10 @@ public class LeaveService implements LeaveControl {
         leaveDTO.setEndDate(leave.getEndDate());
         leaveDTO.setDepartmentId(leave.getDepartment() != null ? leave.getDepartment().getId() : null);
         leaveDTO.setReason(leave.getReason());
+        leaveDTO.setAppliedDate(leave.getAppliedDate());
+        leaveDTO.setAdminRemarks(leave.getAdminRemarks());
+//        leaveDTO.setAttachmentUrl(leave.getAttachment());  // Ensure this is properly handled
+        leaveDTO.setAttachmentName(leave.getAttachmentName());
         return leaveDTO;
     }
 
@@ -130,16 +135,16 @@ public class LeaveService implements LeaveControl {
         log.info("Start fetching all leave requests - RequestId: {}", requestId);
 
         List<Leave> leaveList = leaveRepository.findAll().list();
-        if (leaveList == null || leaveList.isEmpty()) {
+        if (leaveList.isEmpty()) {
             log.warn("No leave requests found - RequestId: {}", requestId);
             return new ApiResponse(
                     new Status(Response.Status.NOT_FOUND.getStatusCode(), "No leave requests found", requestId)
             );
         }
 
-        List<EmployeeDTO.LeaveDTO> leaveDTOs = leaveList.stream()
-                .map(this::mapToLeaveDTO)
-                .collect(Collectors.toList());
+        // ✅ Use the new method from LeaveMapper
+        List<EmployeeDTO.LeaveDTO> leaveDTOs = LeaveMapper.INSTANCE.toDTOList(leaveList);
+
 
         log.info("End fetching all leave requests - RequestId: {}", requestId);
         return new ApiResponse(
@@ -149,7 +154,9 @@ public class LeaveService implements LeaveControl {
     }
 
     @Transactional
-    public ApiResponse createLeaveRequest(LeaveRequest leaveRequest , String requestId) throws IOException, BusinessException {
+    public ApiResponse createLeaveRequest(LeaveRequest leaveRequest, String requestId)
+            throws IOException, BusinessException {
+
         // Fetch Employee from Database
         EmployeeDetails employee = employeeDetailsRepository.findById(leaveRequest.getEmployeeId());
         if (employee == null) {
@@ -162,10 +169,14 @@ public class LeaveService implements LeaveControl {
             throw new BusinessException("Leave type not found for ID: " + leaveRequest.getLeaveTypeId());
         }
 
-        // Fetch Department (if applicable)
-        Department department = employee.getDepartment();
-
-        //  Create Leave Entity
+//        // Fetch Department
+//        Department department = employee.getDepartment();
+// Fetch Leave Type
+        Department department = departmentRepository.findById(Long.valueOf(leaveRequest.getDepartmentId()));
+        if (department == null) {
+            throw new BusinessException("Leave type not found for ID: " + leaveRequest.getDepartmentId());
+        }
+        // Create Leave Entity
         Leave leave = new Leave();
         leave.setEmployee(employee);
         leave.setLeaveType(leaveType);
@@ -177,15 +188,18 @@ public class LeaveService implements LeaveControl {
         leave.setAppliedDate(LocalDate.now());
 
         if (leaveRequest.getAttachment() != null) {
-            leave.setAttachment(leaveRequest.getAttachment());
+            leave.setAttachment(leaveRequest.getAttachment());  // Store as BLOB
             leave.setAttachmentName(leaveRequest.getAttachmentName());
         }
 
         // Persist Leave Entity
         leaveRepository.persist(leave);
+
+        // Convert Entity to DTO using MapStruct
+        EmployeeDTO.LeaveDTO leaveDTO = LeaveMapper.INSTANCE.toDTO(leave);
+
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Leave request submitted successfully", requestId)
-        );
+       ,leaveDTO );
     }
-
 }

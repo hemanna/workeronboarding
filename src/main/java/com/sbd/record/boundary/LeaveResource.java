@@ -62,11 +62,18 @@ public class LeaveResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     @Path("/get_all_LeaveRequest")
-    public ApiResponse fetchAllLeaveRequest() {
+    public Response fetchAllLeaveRequests() { // Updated method name for clarity
         String requestId = UUID.randomUUID().toString();
-        log.info("request_id : {} | get all Leave Request", requestId);
-        return leaveControl.fetchAllLeaveRequest(requestId);
+        log.info("Request ID: {} | Fetching all leave requests", requestId);
+
+        ApiResponse apiResponse = leaveControl.fetchAllLeaveRequest(requestId);
+        if (apiResponse.getStatus().getStatusCode() == Response.Status.NOT_FOUND.getStatusCode()) {
+            return Response.status(Response.Status.NOT_FOUND).entity(apiResponse).build();
+        }
+
+        return Response.ok(apiResponse).build();
     }
 
 }

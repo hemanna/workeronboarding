@@ -89,7 +89,7 @@ public class EmployeeDTO {
         private String reason;
         private LocalDate appliedDate;
         private String adminRemarks;
-        private byte[] attachment;
+        private String attachmentUrl;
         private String attachmentName;
 
     }
