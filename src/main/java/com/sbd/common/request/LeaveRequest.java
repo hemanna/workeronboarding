@@ -30,7 +30,7 @@ public class LeaveRequest {
     private String reason;
 
     @FormParam("attachment")
-    @PartType(MediaType.APPLICATION_OCTET_STREAM) // This is for file upload
+    @PartType(MediaType.APPLICATION_OCTET_STREAM)
     private byte[] attachment;
 
     @FormParam("attachmentName")

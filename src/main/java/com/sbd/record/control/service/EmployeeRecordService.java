@@ -1,9 +1,12 @@
 package com.sbd.record.control.service;
 
 import com.sbd.common.entity.*;
+import com.sbd.common.exception.BusinessException;
+import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
+import com.sbd.common.request.EmployeeDetailsRequest;
 import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
@@ -37,313 +40,382 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     private LeaveTypeRepository leaveTypeRepository;
 
     @Inject
+    EmployeeDetailsMapper employeeDetailsMapper;
+
+    @Inject
     private RoleRepository roleRepository;
 
     @Inject
     private UserCredentialsRepository userCredentialsRepository;
 
-    @Override
+//    @Override
+//    public ApiResponse createEmployeeDetails(ApiRequest<EmployeeDetailsRequest> employeeDetailsRequest, String requestId) throws BusinessException {
+//        return null;
+//    }
+
     @Transactional
-    public ApiResponse createEmployeeDetails(ApiRequest<EmployeeDTO> apiRequest, String requestId) {
-        log.info("Start creating employee details - RequestId: {}", requestId);
+    public ApiResponse createEmployeeDetails(EmployeeDetailsRequest employeeDetailsRequest, String requestId) throws BusinessException {
 
-        EmployeeDTO employeeDTO = apiRequest.getData();
-
-        // Validate RoleDTO presence before proceeding
-        if (employeeDTO.getRoleDTO() == null) {
-            log.error("RoleDTO is missing in the request - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role information is required", requestId)
-            );
-        }
-
-        // Fetch Department
-        Department department = departmentRepository.findById(employeeDTO.getDepartmentDTO().getId());
-        if (department == null) {
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
-            );
-        }
 
         // Fetch Role
-        Role role = roleRepository.findByRoleId(employeeDTO.getRoleDTO().getRoleId());
+        Role role = roleRepository.findByRoleId(employeeDetailsRequest.getRoleId());
         if (role == null) {
             return new ApiResponse(
                     new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
             );
         }
 
-        // Check if Aadhar number already exists
-        EmployeeDetails existingEmployee = employeeDetailsRepository.findByAadharNumber(employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
-        if (existingEmployee != null) {
-            log.error("Aadhar number already exists for RequestId: {} - Aadhar Number: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Aadhar number already exists", requestId)
-            );
+           // Fetch Department
+                Department department = departmentRepository.findById(Long.valueOf(employeeDetailsRequest.getDepartmentId()));
+                if (department == null) {
+                    throw new BusinessException("Leave type not found for ID: " + employeeDetailsRequest.getDepartmentId());
+                }
+
+        // Create EmployeeDetails entity
+        EmployeeDetails employeeDetails = new EmployeeDetails();
+        employeeDetails.setEmployeeName(employeeDetails.getEmployeeName());
+        employeeDetails.setGuardianName(employeeDetails.getGuardianName());
+        employeeDetails.setAadhaarNumber(employeeDetails.getAadhaarNumber());
+        employeeDetails.setPanCard(employeeDetails.getPanCard());
+        employeeDetails.setDob(employeeDetails.getDob());
+        employeeDetails.setGender(employeeDetails.getGender());
+        employeeDetails.setPhoneNumber(employeeDetails.getPhoneNumber());
+        employeeDetails.setEmergencyNumber(employeeDetails.getEmergencyNumber());
+        employeeDetails.setNationality(employeeDetails.getNationality());
+        employeeDetails.setBloodGroup(employeeDetails.getBloodGroup());
+        employeeDetails.setAddressLine1(employeeDetails.getAddressLine1());
+        employeeDetails.setAddressLine2(employeeDetails.getAddressLine2());
+        employeeDetails.setRole(role);
+        employeeDetails.setState(employeeDetails.getState());
+        employeeDetails.setDistrict(employeeDetails.getDistrict());
+        employeeDetails.setPostalCode(employeeDetails.getPostalCode());
+        employeeDetails.setExperience(employeeDetails.getExperience());
+        employeeDetails.setDateOfJoining(employeeDetails.getDateOfJoining());
+        employeeDetails.setStatus(employeeDetails.getStatus());
+        employeeDetails.setApprovalStatus(employeeDetails.getApprovalStatus());
+        employeeDetails.setDepartment(department);
+
+        if (employeeDetails.getProfilePic() != null) {
+            employeeDetails.setProfilePic(employeeDetails.getProfilePic());
+        }
+        if (employeeDetails.getAadhaarPic() != null) {
+            employeeDetails.setAadhaarPic(employeeDetails.getAadhaarPic());
+        }
+        if (employeeDetails.getPancardPic() != null) {
+            employeeDetails.setPancardPic(employeeDetails.getPancardPic());
         }
 
-        // Create EmployeeDetails
-        EmployeeDetails employeeDetails = mapEmployeeDetails(employeeDTO, department, role);
+        // Persist EmployeeDetails entity
         employeeDetailsRepository.persist(employeeDetails);
 
-        // Create UserCredentials
-        UserCredentialsDTO userCredentialsDTO = employeeDTO.getUserCredentialsDTO();
-        if (userCredentialsDTO == null) {
-            log.error("UserCredentialsDTO is missing in the request - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "User credentials information is required", requestId)
-            );
-        }
+        // Convert Entity to DTO using MapStruct
+        EmployeeDTO.EmployeeDetailsDTO employeeDTO = EmployeeDetailsMapper.INSTANCE.toDTO(employeeDetails);
 
-        UserCredentials userCredentials = new UserCredentials();
-        userCredentials.setUsername(userCredentialsDTO.getUsername());
-        userCredentials.setPassword("employee");
-        userCredentials.setEmployee(employeeDetails);
-        userCredentialsRepository.persist(userCredentials);
-
-
-
-        log.info("End creating employee details - RequestId: {}", requestId);
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee details successfully created", requestId)
+                new Status(Response.Status.OK.getStatusCode(), "Employee details created successfully", requestId),
+                employeeDTO
         );
+
     }
 
-
-
-
-    private EmployeeDetails mapEmployeeDetails(EmployeeDTO employeeDTO, Department department, Role role) {
-        EmployeeDetails employeeDetails = new EmployeeDetails();
-        employeeDetails.setEmployeeName(employeeDTO.getEmployeeDetailsDTO().getEmployeeName());
-        employeeDetails.setGuardianName(employeeDTO.getEmployeeDetailsDTO().getGuardianName());
-        employeeDetails.setAadharNumber(employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
-        employeeDetails.setPancard(employeeDTO.getEmployeeDetailsDTO().getPancard());
-        employeeDetails.setDob(employeeDTO.getEmployeeDetailsDTO().getDob());
-        employeeDetails.setGender(employeeDTO.getEmployeeDetailsDTO().getGender());
-        employeeDetails.setPhoneNumber(employeeDTO.getEmployeeDetailsDTO().getPhoneNumber());
-        employeeDetails.setEmergencyNumber(employeeDTO.getEmployeeDetailsDTO().getEmergencyNumber());
-        employeeDetails.setNationality(employeeDTO.getEmployeeDetailsDTO().getNationality());
-        employeeDetails.setBloodGroup(employeeDTO.getEmployeeDetailsDTO().getBloodGroup());
-        employeeDetails.setAddressLine1(employeeDTO.getEmployeeDetailsDTO().getAddressLine1());
-        employeeDetails.setAddressLine2(employeeDTO.getEmployeeDetailsDTO().getAddressLine2());
-        employeeDetails.setState(employeeDTO.getEmployeeDetailsDTO().getState());
-        employeeDetails.setDistrict(employeeDTO.getEmployeeDetailsDTO().getDistrict());
-        employeeDetails.setPostalCode(employeeDTO.getEmployeeDetailsDTO().getPostalCode());
-        employeeDetails.setExperience(employeeDTO.getEmployeeDetailsDTO().getExperience());
-        employeeDetails.setDateOfJoining(employeeDTO.getEmployeeDetailsDTO().getDateOfJoining());
-       // employeeDetails.setProfilePic(employeeDTO.getEmployeeDetailsDTO().getProfilePic());
-      //  employeeDetails.setAadharPic(employeeDTO.getEmployeeDetailsDTO().getAadharPic());
-      //  employeeDetails.setPancardPic(employeeDTO.getEmployeeDetailsDTO().getPancardPic());
-        employeeDetails.setStatus(employeeDTO.getEmployeeDetailsDTO().getStatus());
-        employeeDetails.setApprovalStatus("Pending");
-        employeeDetails.setDepartment(department);
-        employeeDetails.setRole(role);
-        return employeeDetails;
-    }
-
-
-    @Override
-    @Transactional
-    public ApiResponse updateEmployeeDetails(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId) {
-        log.info("Start updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-
-        EmployeeDTO employeeDTO = apiRequest.getData();
-
-        // Fetch existing employee details
-        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
-        if (existingEmployee == null) {
-            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
-            );
-        }
-
-        // Check for duplicate Aadhar number
-        String aadharNumber = employeeDTO.getEmployeeDetailsDTO().getAadharNumber();
-        if (aadharNumber != null && !aadharNumber.equals(existingEmployee.getAadharNumber())) {
-            EmployeeDetails existingAadharEmployee = employeeDetailsRepository.findByAadharNumber(aadharNumber);
-            if (existingAadharEmployee != null) {
-                log.error("Duplicate Aadhar Number - RequestId: {}, AadharNumber: {}", requestId, aadharNumber);
-                return new ApiResponse(
-                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Aadhar Number already exists", requestId)
-                );
-            }
-        }
-
-        // Validate and update department  from employeeDTO
-        if (employeeDTO.getEmployeeDetailsDTO().getDepartmentId() != null) {
-            Department department = departmentRepository.findById(employeeDTO.getEmployeeDetailsDTO().getDepartmentId());
-            if (department == null) {
-                log.error("Department not found - RequestId: {}, DepartmentId: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getDepartmentId());
-                return new ApiResponse(
-                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
-                );
-            }
-            existingEmployee.setDepartment(department);
-        }
-
-        // Validate and update role  from employeeDTO
-        if (employeeDTO.getEmployeeDetailsDTO().getRoleId() != null) {
-            Role role = roleRepository.findByRoleId(employeeDTO.getEmployeeDetailsDTO().getRoleId());
-            if (role == null) {
-                log.error("Role not found - RequestId: {}, RoleId: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getRoleId());
-                return new ApiResponse(
-                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
-                );
-            }
-            existingEmployee.setRole(role);
-        }
-
-        // Update other employee details from the DTO
-        EmployeeDTO.EmployeeDetailsDTO detailsDTO = employeeDTO.getEmployeeDetailsDTO();
-        existingEmployee.setEmployeeName(detailsDTO.getEmployeeName());
-        existingEmployee.setGuardianName(detailsDTO.getGuardianName());
-        existingEmployee.setAadharNumber(detailsDTO.getAadharNumber());
-        existingEmployee.setPancard(detailsDTO.getPancard());
-        existingEmployee.setDob(detailsDTO.getDob());
-        existingEmployee.setGender(detailsDTO.getGender());
-        existingEmployee.setPhoneNumber(detailsDTO.getPhoneNumber());
-        existingEmployee.setEmergencyNumber(detailsDTO.getEmergencyNumber());
-        existingEmployee.setNationality(detailsDTO.getNationality());
-        existingEmployee.setBloodGroup(detailsDTO.getBloodGroup());
-        existingEmployee.setAddressLine1(detailsDTO.getAddressLine1());
-        existingEmployee.setAddressLine2(detailsDTO.getAddressLine2());
-        existingEmployee.setState(detailsDTO.getState());
-        existingEmployee.setDistrict(detailsDTO.getDistrict());
-        existingEmployee.setPostalCode(detailsDTO.getPostalCode());
-        existingEmployee.setExperience(detailsDTO.getExperience());
-        existingEmployee.setDateOfJoining(detailsDTO.getDateOfJoining());
-        existingEmployee.setStatus(detailsDTO.getStatus());
-        existingEmployee.setApprovalStatus(detailsDTO.getApprovalStatus());
-
-
-        try {
-            employeeDetailsRepository.persist(existingEmployee);
-            log.info("Successfully updated employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-        } catch (Exception e) {
-            log.error("Error while updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
-            return new ApiResponse(
-                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating employee details", requestId)
-            );
-        }
-
-        log.info("End updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee details successfully updated", requestId)
-
-        );
-    }
-
-    @Override
-    @Transactional
-    public ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId) {
-        log.info("Start updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-
-        // Validate the approval status
-        if (approvalStatus == null || (!"Approved".equalsIgnoreCase(approvalStatus) && !"Rejected".equalsIgnoreCase(approvalStatus))) {
-            log.error("Invalid approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid approval status", requestId)
-            );
-        }
-
-        // Fetch the existing employee details
-        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
-        if (existingEmployee == null) {
-            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
-            );
-        }
-
-        // Update the approval status of the employee
-        existingEmployee.setApprovalStatus(approvalStatus);
-        try {
-            employeeDetailsRepository.persist(existingEmployee);
-            log.info("Successfully updated approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-        } catch (Exception e) {
-            log.error("Error while updating approval status - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
-            return new ApiResponse(
-                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating approval status", requestId)
-            );
-        }
-
-        log.info("End updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "" + approvalStatus, requestId)
-        );
-    }
-
-
-
-    @Override
-    @Transactional
-    public ApiResponse fetchEmployeeById(Long employeeId, String requestId) {
-        log.info("Start fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-
-        // Fetch the employee details by ID
-        EmployeeDetails employeeDetails = employeeDetailsRepository.findById(employeeId);
-        if (employeeDetails == null) {
-            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
-            );
-        }
-
-        // Return the employee details
-        log.info("End fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
-                employeeDetails
-        );
-    }
-
-    @Override
-    @Transactional
-    public ApiResponse fetchAllEmployees(String requestId) {
-        log.info("Start fetching all employee details - RequestId: {}", requestId);
-
-        // Fetch all employee details as a list
-        List<EmployeeDetails> employees = employeeDetailsRepository.findAll().list();
-        if (employees == null || employees.isEmpty()) {
-            log.warn("No employee records found - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
-            );
-        }
-
-        // Return the list of employee details
-        log.info("End fetching all employee details - RequestId: {}", requestId);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
-                employees
-        );
-    }
-
-    @Override
-    @Transactional
-    public ApiResponse fetchPendingApprovals(String requestId) {
-        log.info("Start fetching employees with pending approvals - RequestId: {}", requestId);
-
-        // Fetch all employees with Pending approval status
-        List<EmployeeDetails> pendingApprovals = employeeDetailsRepository.find("approvalStatus", "Pending").list();
-        if (pendingApprovals == null || pendingApprovals.isEmpty()) {
-            log.warn("No pending approvals found - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No pending approvals found", requestId)
-            );
-        }
-
-
-        log.info("End fetching employees with pending approvals - RequestId: {}", requestId);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Pending approvals fetched successfully", requestId),
-                pendingApprovals
-        );
-    }
 
 //    @Override
-//    public ApiResponse uploadEmployeeImages(Integer employeeId, FileUpload profilePic, FileUpload aadharPic, FileUpload pancardPic, String requestId) {
-//        return null;
+//    @Transactional
+//    public ApiResponse createEmployeeDetails(ApiRequest<EmployeeDTO> apiRequest, String requestId) {
+//        log.info("Start creating employee details - RequestId: {}", requestId);
+//
+//        EmployeeDTO employeeDTO = apiRequest.getData();
+//
+//        // Validate RoleDTO presence before proceeding
+//        if (employeeDTO.getRoleDTO() == null) {
+//            log.error("RoleDTO is missing in the request - RequestId: {}", requestId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role information is required", requestId)
+//            );
+//        }
+//
+//        // Fetch Department
+//        Department department = departmentRepository.findById(employeeDTO.getDepartmentDTO().getId());
+//        if (department == null) {
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
+//            );
+//        }
+//
+//        // Fetch Role
+//        Role role = roleRepository.findByRoleId(employeeDTO.getRoleDTO().getRoleId());
+//        if (role == null) {
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
+//            );
+//        }
+//
+//        // Check if Aadhar number already exists
+//        EmployeeDetails existingEmployee = employeeDetailsRepository.findByAadharNumber(employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
+//        if (existingEmployee != null) {
+//            log.error("Aadhar number already exists for RequestId: {} - Aadhar Number: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Aadhar number already exists", requestId)
+//            );
+//        }
+//
+//        // Create EmployeeDetails
+//        EmployeeDetails employeeDetails = mapEmployeeDetails(employeeDTO, department, role);
+//        employeeDetailsRepository.persist(employeeDetails);
+//
+//        // Create UserCredentials
+//        UserCredentialsDTO userCredentialsDTO = employeeDTO.getUserCredentialsDTO();
+//        if (userCredentialsDTO == null) {
+//            log.error("UserCredentialsDTO is missing in the request - RequestId: {}", requestId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "User credentials information is required", requestId)
+//            );
+//        }
+//
+//        UserCredentials userCredentials = new UserCredentials();
+//        userCredentials.setUsername(userCredentialsDTO.getUsername());
+//        userCredentials.setPassword("employee");
+//        userCredentials.setEmployee(employeeDetails);
+//        userCredentialsRepository.persist(userCredentials);
+//
+//
+//
+//        log.info("End creating employee details - RequestId: {}", requestId);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "Employee details successfully created", requestId)
+//        );
+//    }
+//
+//
+//
+//
+//    private EmployeeDetails mapEmployeeDetails(EmployeeDTO employeeDTO, Department department, Role role) {
+//        EmployeeDetails employeeDetails = new EmployeeDetails();
+//        employeeDetails.setEmployeeName(employeeDTO.getEmployeeDetailsDTO().getEmployeeName());
+//        employeeDetails.setGuardianName(employeeDTO.getEmployeeDetailsDTO().getGuardianName());
+//        employeeDetails.setAadharNumber(employeeDTO.getEmployeeDetailsDTO().getAadharNumber());
+//        employeeDetails.setPancard(employeeDTO.getEmployeeDetailsDTO().getPancard());
+//        employeeDetails.setDob(employeeDTO.getEmployeeDetailsDTO().getDob());
+//        employeeDetails.setGender(employeeDTO.getEmployeeDetailsDTO().getGender());
+//        employeeDetails.setPhoneNumber(employeeDTO.getEmployeeDetailsDTO().getPhoneNumber());
+//        employeeDetails.setEmergencyNumber(employeeDTO.getEmployeeDetailsDTO().getEmergencyNumber());
+//        employeeDetails.setNationality(employeeDTO.getEmployeeDetailsDTO().getNationality());
+//        employeeDetails.setBloodGroup(employeeDTO.getEmployeeDetailsDTO().getBloodGroup());
+//        employeeDetails.setAddressLine1(employeeDTO.getEmployeeDetailsDTO().getAddressLine1());
+//        employeeDetails.setAddressLine2(employeeDTO.getEmployeeDetailsDTO().getAddressLine2());
+//        employeeDetails.setState(employeeDTO.getEmployeeDetailsDTO().getState());
+//        employeeDetails.setDistrict(employeeDTO.getEmployeeDetailsDTO().getDistrict());
+//        employeeDetails.setPostalCode(employeeDTO.getEmployeeDetailsDTO().getPostalCode());
+//        employeeDetails.setExperience(employeeDTO.getEmployeeDetailsDTO().getExperience());
+//        employeeDetails.setDateOfJoining(employeeDTO.getEmployeeDetailsDTO().getDateOfJoining());
+//       // employeeDetails.setProfilePic(employeeDTO.getEmployeeDetailsDTO().getProfilePic());
+//      //  employeeDetails.setAadharPic(employeeDTO.getEmployeeDetailsDTO().getAadharPic());
+//      //  employeeDetails.setPancardPic(employeeDTO.getEmployeeDetailsDTO().getPancardPic());
+//        employeeDetails.setStatus(employeeDTO.getEmployeeDetailsDTO().getStatus());
+//        employeeDetails.setApprovalStatus("Pending");
+//        employeeDetails.setDepartment(department);
+//        employeeDetails.setRole(role);
+//        return employeeDetails;
+//    }
+//
+//
+//    @Override
+//    @Transactional
+//    public ApiResponse updateEmployeeDetails(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId) {
+//        log.info("Start updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//
+//        EmployeeDTO employeeDTO = apiRequest.getData();
+//
+//        // Fetch existing employee details
+//        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
+//        if (existingEmployee == null) {
+//            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+//            );
+//        }
+//
+//        // Check for duplicate Aadhar number
+//        String aadharNumber = employeeDTO.getEmployeeDetailsDTO().getAadharNumber();
+//        if (aadharNumber != null && !aadharNumber.equals(existingEmployee.getAadharNumber())) {
+//            EmployeeDetails existingAadharEmployee = employeeDetailsRepository.findByAadharNumber(aadharNumber);
+//            if (existingAadharEmployee != null) {
+//                log.error("Duplicate Aadhar Number - RequestId: {}, AadharNumber: {}", requestId, aadharNumber);
+//                return new ApiResponse(
+//                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Aadhar Number already exists", requestId)
+//                );
+//            }
+//        }
+//
+//        // Validate and update department  from employeeDTO
+//        if (employeeDTO.getEmployeeDetailsDTO().getDepartmentId() != null) {
+//            Department department = departmentRepository.findById(employeeDTO.getEmployeeDetailsDTO().getDepartmentId());
+//            if (department == null) {
+//                log.error("Department not found - RequestId: {}, DepartmentId: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getDepartmentId());
+//                return new ApiResponse(
+//                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Department not found", requestId)
+//                );
+//            }
+//            existingEmployee.setDepartment(department);
+//        }
+//
+//        // Validate and update role  from employeeDTO
+//        if (employeeDTO.getEmployeeDetailsDTO().getRoleId() != null) {
+//            Role role = roleRepository.findByRoleId(employeeDTO.getEmployeeDetailsDTO().getRoleId());
+//            if (role == null) {
+//                log.error("Role not found - RequestId: {}, RoleId: {}", requestId, employeeDTO.getEmployeeDetailsDTO().getRoleId());
+//                return new ApiResponse(
+//                        new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Role not found", requestId)
+//                );
+//            }
+//            existingEmployee.setRole(role);
+//        }
+//
+//        // Update other employee details from the DTO
+//        EmployeeDTO.EmployeeDetailsDTO detailsDTO = employeeDTO.getEmployeeDetailsDTO();
+//        existingEmployee.setEmployeeName(detailsDTO.getEmployeeName());
+//        existingEmployee.setGuardianName(detailsDTO.getGuardianName());
+//        existingEmployee.setAadharNumber(detailsDTO.getAadharNumber());
+//        existingEmployee.setPancard(detailsDTO.getPancard());
+//        existingEmployee.setDob(detailsDTO.getDob());
+//        existingEmployee.setGender(detailsDTO.getGender());
+//        existingEmployee.setPhoneNumber(detailsDTO.getPhoneNumber());
+//        existingEmployee.setEmergencyNumber(detailsDTO.getEmergencyNumber());
+//        existingEmployee.setNationality(detailsDTO.getNationality());
+//        existingEmployee.setBloodGroup(detailsDTO.getBloodGroup());
+//        existingEmployee.setAddressLine1(detailsDTO.getAddressLine1());
+//        existingEmployee.setAddressLine2(detailsDTO.getAddressLine2());
+//        existingEmployee.setState(detailsDTO.getState());
+//        existingEmployee.setDistrict(detailsDTO.getDistrict());
+//        existingEmployee.setPostalCode(detailsDTO.getPostalCode());
+//        existingEmployee.setExperience(detailsDTO.getExperience());
+//        existingEmployee.setDateOfJoining(detailsDTO.getDateOfJoining());
+//        existingEmployee.setStatus(detailsDTO.getStatus());
+//        existingEmployee.setApprovalStatus(detailsDTO.getApprovalStatus());
+//
+//
+//        try {
+//            employeeDetailsRepository.persist(existingEmployee);
+//            log.info("Successfully updated employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//        } catch (Exception e) {
+//            log.error("Error while updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
+//            return new ApiResponse(
+//                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating employee details", requestId)
+//            );
+//        }
+//
+//        log.info("End updating employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "Employee details successfully updated", requestId)
+//
+//        );
+//    }
+//
+//    @Override
+//    @Transactional
+//    public ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId) {
+//        log.info("Start updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+//
+//        // Validate the approval status
+//        if (approvalStatus == null || (!"Approved".equalsIgnoreCase(approvalStatus) && !"Rejected".equalsIgnoreCase(approvalStatus))) {
+//            log.error("Invalid approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid approval status", requestId)
+//            );
+//        }
+//
+//        // Fetch the existing employee details
+//        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
+//        if (existingEmployee == null) {
+//            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+//            );
+//        }
+//
+//        // Update the approval status of the employee
+//        existingEmployee.setApprovalStatus(approvalStatus);
+//        try {
+//            employeeDetailsRepository.persist(existingEmployee);
+//            log.info("Successfully updated approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+//        } catch (Exception e) {
+//            log.error("Error while updating approval status - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
+//            return new ApiResponse(
+//                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating approval status", requestId)
+//            );
+//        }
+//
+//        log.info("End updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "" + approvalStatus, requestId)
+//        );
+//    }
+//
+//
+//
+//    @Override
+//    @Transactional
+//    public ApiResponse fetchEmployeeById(Long employeeId, String requestId) {
+//        log.info("Start fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//
+//        // Fetch the employee details by ID
+//        EmployeeDetails employeeDetails = employeeDetailsRepository.findById(employeeId);
+//        if (employeeDetails == null) {
+//            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+//            );
+//        }
+//
+//        // Return the employee details
+//        log.info("End fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
+//                employeeDetails
+//        );
+//    }
+//
+//    @Override
+//    @Transactional
+//    public ApiResponse fetchAllEmployees(String requestId) {
+//        log.info("Start fetching all employee details - RequestId: {}", requestId);
+//
+//        // Fetch all employee details as a list
+//        List<EmployeeDetails> employees = employeeDetailsRepository.findAll().list();
+//        if (employees == null || employees.isEmpty()) {
+//            log.warn("No employee records found - RequestId: {}", requestId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
+//            );
+//        }
+//
+//        // Return the list of employee details
+//        log.info("End fetching all employee details - RequestId: {}", requestId);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
+//                employees
+//        );
+//    }
+//
+//    @Override
+//    @Transactional
+//    public ApiResponse fetchPendingApprovals(String requestId) {
+//        log.info("Start fetching employees with pending approvals - RequestId: {}", requestId);
+//
+//        // Fetch all employees with Pending approval status
+//        List<EmployeeDetails> pendingApprovals = employeeDetailsRepository.find("approvalStatus", "Pending").list();
+//        if (pendingApprovals == null || pendingApprovals.isEmpty()) {
+//            log.warn("No pending approvals found - RequestId: {}", requestId);
+//            return new ApiResponse(
+//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No pending approvals found", requestId)
+//            );
+//        }
+//
+//
+//        log.info("End fetching employees with pending approvals - RequestId: {}", requestId);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "Pending approvals fetched successfully", requestId),
+//                pendingApprovals
+//        );
 //    }
 }

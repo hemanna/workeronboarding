@@ -25,7 +25,7 @@ public interface LeaveMapper {
     @Mapping(target = "attachment", ignore = true) // Ignore mapping back to byte[]
     Leave toEntity(EmployeeDTO.LeaveDTO leaveDTO);
 
-    // ✅ New Method: Convert List of Leave to List of LeaveDTO
+    //  New Method: Convert List of Leave to List of LeaveDTO
     default List<EmployeeDTO.LeaveDTO> toDTOList(List<Leave> leaves) {
         return leaves.stream().map(this::toDTO).collect(Collectors.toList());
     }

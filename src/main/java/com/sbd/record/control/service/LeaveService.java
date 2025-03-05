@@ -142,7 +142,7 @@ public class LeaveService implements LeaveControl {
             );
         }
 
-        // ✅ Use the new method from LeaveMapper
+        // Use the new method from LeaveMapper
         List<EmployeeDTO.LeaveDTO> leaveDTOs = LeaveMapper.INSTANCE.toDTOList(leaveList);
 
 
@@ -170,8 +170,6 @@ public class LeaveService implements LeaveControl {
         }
 
 //        // Fetch Department
-//        Department department = employee.getDepartment();
-// Fetch Leave Type
         Department department = departmentRepository.findById(Long.valueOf(leaveRequest.getDepartmentId()));
         if (department == null) {
             throw new BusinessException("Leave type not found for ID: " + leaveRequest.getDepartmentId());

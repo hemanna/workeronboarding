@@ -25,11 +25,11 @@ public class EmployeeDetails {
     @Column(name = "guardian_name")
     private String guardianName;
 
-    @Column(name = "aadhar_number", nullable = false, unique = true)
-    private String aadharNumber;
+    @Column(name = "aadhaar_number", nullable = false, unique = true)
+    private String aadhaarNumber;
 
-    @Column(name = "pancard")
-    private String pancard;
+    @Column(name = "pan_card")
+    private String panCard;
 
     @Column(name = "dob")
     private LocalDate dob;
@@ -80,8 +80,8 @@ public class EmployeeDetails {
     private byte[] profilePic;
 
     @Lob
-    @Column(name = "aadhar_pic")
-    private byte[] aadharPic;
+    @Column(name = "aadhaar_pic")
+    private byte[] aadhaarPic;
 
     @Lob
     @Column(name = "pancard_pic")

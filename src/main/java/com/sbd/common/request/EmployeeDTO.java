@@ -69,9 +69,9 @@ public class EmployeeDTO {
         private Integer roleId;
         private Integer experience;
         private LocalDate dateOfJoining;
-        private FileUpload profilePic;
-        private FileUpload aadharPic;
-        private FileUpload pancardPic;
+        private String profilePicUrl;
+        private String aadhaarPicUrl;
+        private String pancardPicUrl;
         private String status;
         private String approvalStatus;
         private Integer departmentId;
@@ -111,16 +111,5 @@ public class EmployeeDTO {
         private LocalDateTime creationDate;
         private String status;
     }
-
-
-    @Data
-    public static class ImageDTO {
-        private Integer id;
-        private FileUpload profilePic;
-        private FileUpload aadharPic;
-        private FileUpload pancardPic;
-
-    }
-
 }
 
