@@ -64,7 +64,7 @@ public class LeaveResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/get_all_LeaveRequest")
-    public Response fetchAllLeaveRequests() { // Updated method name for clarity
+    public Response fetchAllLeaveRequests() {
         String requestId = UUID.randomUUID().toString();
         log.info("Request ID: {} | Fetching all leave requests", requestId);
 

@@ -84,15 +84,15 @@ public class EmployeeRecordResource {
 //        return employeeRecordControl.fetchEmployeeById(employeeId, requestId);
 //    }
 //
-//    @POST
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/get_all")
-//    public ApiResponse fetchAllEmployees() {
-//        String requestId = UUID.randomUUID().toString();
-//        log.info("request_id : {} | get all employee details", requestId);
-//
-//        return employeeRecordControl.fetchAllEmployees(requestId);
-//    }
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_all")
+    public ApiResponse fetchAllEmployees() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get all employee details", requestId);
+
+        return employeeRecordControl.fetchAllEmployees(requestId);
+    }
 //
 //    @POST
 //    @Path("/approvals/pending")

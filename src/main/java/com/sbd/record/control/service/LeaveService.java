@@ -169,11 +169,12 @@ public class LeaveService implements LeaveControl {
             throw new BusinessException("Leave type not found for ID: " + leaveRequest.getLeaveTypeId());
         }
 
-//        // Fetch Department
+        // Fetch Department
         Department department = departmentRepository.findById(Long.valueOf(leaveRequest.getDepartmentId()));
         if (department == null) {
             throw new BusinessException("Leave type not found for ID: " + leaveRequest.getDepartmentId());
         }
+
         // Create Leave Entity
         Leave leave = new Leave();
         leave.setEmployee(employee);

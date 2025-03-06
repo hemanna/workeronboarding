@@ -40,7 +40,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     private LeaveTypeRepository leaveTypeRepository;
 
     @Inject
-    EmployeeDetailsMapper employeeDetailsMapper;
+    EmployeeDetailsRequest employeeDetailsRequest;
 
     @Inject
     private RoleRepository roleRepository;
@@ -48,10 +48,8 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     @Inject
     private UserCredentialsRepository userCredentialsRepository;
 
-//    @Override
-//    public ApiResponse createEmployeeDetails(ApiRequest<EmployeeDetailsRequest> employeeDetailsRequest, String requestId) throws BusinessException {
-//        return null;
-//    }
+
+
 
     @Transactional
     public ApiResponse createEmployeeDetails(EmployeeDetailsRequest employeeDetailsRequest, String requestId) throws BusinessException {
@@ -65,58 +63,60 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             );
         }
 
-           // Fetch Department
-                Department department = departmentRepository.findById(Long.valueOf(employeeDetailsRequest.getDepartmentId()));
-                if (department == null) {
-                    throw new BusinessException("Leave type not found for ID: " + employeeDetailsRequest.getDepartmentId());
-                }
+        // Fetch Department
+        Department department = departmentRepository.findById(Long.valueOf(employeeDetailsRequest.getDepartmentId()));
+        if (department == null) {
+            throw new BusinessException("Leave type not found for ID: " + employeeDetailsRequest.getDepartmentId());
+        }
 
         // Create EmployeeDetails entity
         EmployeeDetails employeeDetails = new EmployeeDetails();
-        employeeDetails.setEmployeeName(employeeDetails.getEmployeeName());
-        employeeDetails.setGuardianName(employeeDetails.getGuardianName());
-        employeeDetails.setAadhaarNumber(employeeDetails.getAadhaarNumber());
-        employeeDetails.setPanCard(employeeDetails.getPanCard());
-        employeeDetails.setDob(employeeDetails.getDob());
-        employeeDetails.setGender(employeeDetails.getGender());
-        employeeDetails.setPhoneNumber(employeeDetails.getPhoneNumber());
-        employeeDetails.setEmergencyNumber(employeeDetails.getEmergencyNumber());
-        employeeDetails.setNationality(employeeDetails.getNationality());
-        employeeDetails.setBloodGroup(employeeDetails.getBloodGroup());
-        employeeDetails.setAddressLine1(employeeDetails.getAddressLine1());
-        employeeDetails.setAddressLine2(employeeDetails.getAddressLine2());
+        employeeDetails.setEmployeeName(employeeDetailsRequest.getEmployeeName());  // ✅ Corrected
+        employeeDetails.setGuardianName(employeeDetailsRequest.getGuardianName());
+        employeeDetails.setAadhaarNumber(employeeDetailsRequest.getAadhaarNumber());
+        employeeDetails.setPanCard(employeeDetailsRequest.getPanCard());
+        employeeDetails.setDob(employeeDetailsRequest.getDob());
+        employeeDetails.setGender(employeeDetailsRequest.getGender());
+        employeeDetails.setPhoneNumber(employeeDetailsRequest.getPhoneNumber());
+        employeeDetails.setEmergencyNumber(employeeDetailsRequest.getEmergencyNumber());
+        employeeDetails.setNationality(employeeDetailsRequest.getNationality());
+        employeeDetails.setBloodGroup(employeeDetailsRequest.getBloodGroup());
+        employeeDetails.setAddressLine1(employeeDetailsRequest.getAddressLine1());
+        employeeDetails.setAddressLine2(employeeDetailsRequest.getAddressLine2());
         employeeDetails.setRole(role);
-        employeeDetails.setState(employeeDetails.getState());
-        employeeDetails.setDistrict(employeeDetails.getDistrict());
-        employeeDetails.setPostalCode(employeeDetails.getPostalCode());
-        employeeDetails.setExperience(employeeDetails.getExperience());
-        employeeDetails.setDateOfJoining(employeeDetails.getDateOfJoining());
-        employeeDetails.setStatus(employeeDetails.getStatus());
-        employeeDetails.setApprovalStatus(employeeDetails.getApprovalStatus());
+        employeeDetails.setState(employeeDetailsRequest.getState());
+        employeeDetails.setDistrict(employeeDetailsRequest.getDistrict());
+        employeeDetails.setPostalCode(employeeDetailsRequest.getPostalCode());
+        employeeDetails.setExperience(employeeDetailsRequest.getExperience());
+        employeeDetails.setDateOfJoining(employeeDetailsRequest.getDateOfJoining());
+        employeeDetails.setStatus(employeeDetailsRequest.getStatus());
+        employeeDetails.setApprovalStatus(employeeDetailsRequest.getApprovalStatus());
         employeeDetails.setDepartment(department);
 
-        if (employeeDetails.getProfilePic() != null) {
-            employeeDetails.setProfilePic(employeeDetails.getProfilePic());
+        // Save Profile, Aadhaar, and Pancard Pics (if present)
+        if (employeeDetailsRequest.getProfilePic() != null) {
+            employeeDetails.setProfilePic(employeeDetailsRequest.getProfilePic());
         }
-        if (employeeDetails.getAadhaarPic() != null) {
-            employeeDetails.setAadhaarPic(employeeDetails.getAadhaarPic());
+        if (employeeDetailsRequest.getAadhaarPic() != null) {
+            employeeDetails.setAadhaarPic(employeeDetailsRequest.getAadhaarPic());
         }
-        if (employeeDetails.getPancardPic() != null) {
-            employeeDetails.setPancardPic(employeeDetails.getPancardPic());
+        if (employeeDetailsRequest.getPancardPic() != null) {
+            employeeDetails.setPancardPic(employeeDetailsRequest.getPancardPic());
         }
 
-        // Persist EmployeeDetails entity
+       // Persist EmployeeDetails entity
         employeeDetailsRepository.persist(employeeDetails);
 
         // Convert Entity to DTO using MapStruct
         EmployeeDTO.EmployeeDetailsDTO employeeDTO = EmployeeDetailsMapper.INSTANCE.toDTO(employeeDetails);
 
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee details created successfully", requestId),
-                employeeDTO
+                new Status(Response.Status.OK.getStatusCode(), "Employee details created successfully", requestId)
+
         );
 
     }
+
 
 
 //    @Override
@@ -375,27 +375,28 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 //        );
 //    }
 //
-//    @Override
-//    @Transactional
-//    public ApiResponse fetchAllEmployees(String requestId) {
-//        log.info("Start fetching all employee details - RequestId: {}", requestId);
-//
-//        // Fetch all employee details as a list
-//        List<EmployeeDetails> employees = employeeDetailsRepository.findAll().list();
-//        if (employees == null || employees.isEmpty()) {
-//            log.warn("No employee records found - RequestId: {}", requestId);
-//            return new ApiResponse(
-//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
-//            );
-//        }
-//
-//        // Return the list of employee details
-//        log.info("End fetching all employee details - RequestId: {}", requestId);
-//        return new ApiResponse(
-//                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
-//                employees
-//        );
-//    }
+    @Override
+    @Transactional
+    public ApiResponse fetchAllEmployees(String requestId) {
+        log.info("Start fetching all employee details - RequestId: {}", requestId);
+
+        // Fetch all employee details as a list
+        List<EmployeeDetails> employees = employeeDetailsRepository.findAll().list();
+        if (employees == null || employees.isEmpty()) {
+            log.warn("No employee records found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
+            );
+        }
+
+
+        // Return the list of employee details
+        log.info("End fetching all employee details - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
+                employees
+        );
+    }
 //
 //    @Override
 //    @Transactional

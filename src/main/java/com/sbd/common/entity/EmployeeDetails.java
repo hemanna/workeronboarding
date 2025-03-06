@@ -19,13 +19,13 @@ public class EmployeeDetails {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "employee_name", nullable = false)
+    @Column(name = "employee_name")
     private String employeeName;
 
     @Column(name = "guardian_name")
     private String guardianName;
 
-    @Column(name = "aadhaar_number", nullable = false, unique = true)
+    @Column(name = "aadhaar_number", unique = true)
     private String aadhaarNumber;
 
     @Column(name = "pan_card")
@@ -43,7 +43,7 @@ public class EmployeeDetails {
     @Column(name = "emergency_number")
     private String emergencyNumber;
 
-    @Column(name = "nationality", nullable = false)
+    @Column(name = "nationality")
     private String nationality;
 
     @Column(name = "blood_group")
@@ -66,7 +66,7 @@ public class EmployeeDetails {
     @Column(name = "district")
     private String district;
 
-    @Column(name = "postal_code", nullable = false)
+    @Column(name = "postal_code")
     private String postalCode;
 
     @Column(name = "experience")
@@ -95,6 +95,6 @@ public class EmployeeDetails {
 
     @JsonbTransient
     @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
     private Department department;
 }
