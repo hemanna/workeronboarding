@@ -19,10 +19,10 @@ public interface LeaveMapper {
     @Mapping(target = "employeeId", source = "employee.id")
     @Mapping(target = "leaveTypeId", source = "leaveType.id")
     @Mapping(target = "departmentId", source = "department.id")
-    @Mapping(target = "attachmentUrl", source = "attachment", qualifiedByName = "mapAttachment") // Custom mapping
+    @Mapping(target = "attachmentUrl", source = "attachment", qualifiedByName = "mapAttachment")
     EmployeeDTO.LeaveDTO toDTO(Leave leave);
 
-    @Mapping(target = "attachment", ignore = true) // Ignore mapping back to byte[]
+    @Mapping(target = "attachment", ignore = true)
     Leave toEntity(EmployeeDTO.LeaveDTO leaveDTO);
 
     //  New Method: Convert List of Leave to List of LeaveDTO

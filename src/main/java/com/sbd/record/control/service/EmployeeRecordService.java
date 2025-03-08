@@ -3,6 +3,7 @@ package com.sbd.record.control.service;
 import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
+import com.sbd.common.mapper.LeaveMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
@@ -90,7 +91,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetails.setExperience(employeeDetailsRequest.getExperience());
         employeeDetails.setDateOfJoining(employeeDetailsRequest.getDateOfJoining());
         employeeDetails.setStatus(employeeDetailsRequest.getStatus());
-        employeeDetails.setApprovalStatus(employeeDetailsRequest.getApprovalStatus());
+        employeeDetails.setApprovalStatus("Pending");
         employeeDetails.setDepartment(department);
 
         // Save Profile, Aadhaar, and Pancard Pics (if present)
@@ -381,13 +382,15 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         log.info("Start fetching all employee details - RequestId: {}", requestId);
 
         // Fetch all employee details as a list
-        List<EmployeeDetails> employees = employeeDetailsRepository.findAll().list();
-        if (employees == null || employees.isEmpty()) {
+        List<EmployeeDetails> employeeList = employeeDetailsRepository.findAll().list();
+        if (employeeList == null || employeeList.isEmpty()) {
             log.warn("No employee records found - RequestId: {}", requestId);
             return new ApiResponse(
                     new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
             );
         }
+        // Use the new method from Employee Mapper
+        List<EmployeeDTO.EmployeeDetailsDTO> employees = EmployeeDetailsMapper.INSTANCE.toDTOList(employeeList);
 
 
         // Return the list of employee details
