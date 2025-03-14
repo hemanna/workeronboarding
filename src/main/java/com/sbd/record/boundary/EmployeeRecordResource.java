@@ -1,8 +1,11 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.entity.EmployeeDetails;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.repository.EmployeeDetailsRepository;
 import com.sbd.common.request.*;
 import com.sbd.common.response.ApiResponse;
+import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeRecordControl;
 import com.sbd.record.control.service.EmployeeRecordService;
 import jakarta.ws.rs.*;
@@ -11,6 +14,7 @@ import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.ByteArrayInputStream;
 import java.util.UUID;
 
 @Path("/employee")
@@ -25,7 +29,7 @@ public class EmployeeRecordResource {
 
 
     @POST
-    @Path("/details")
+    @Path("/create")
     public Response createEmployeeDetails(
             @BeanParam EmployeeDetailsRequest employeeDetailsRequest)
             throws BusinessException {
@@ -34,17 +38,7 @@ public class EmployeeRecordResource {
         return Response.ok(response).build();
     }
 
-//    @POST
-//    @Path("/persona")
-//    public ApiResponse saveUpdateContactPersona(
-//            @Context HttpHeaders httpHeaders, ApiRequest<ContactPersonaRequest> contactPersonaRequest)
-//            throws BusinessException, TechnicalException {
-//        String correlationId = CustomerDataUtil.generateCorrelationId();
-//        return contactPersonaControl.saveUpdateContactPersona(
-//                apiGatewayHeadersReader.validateHeaderRequest(httpHeaders, correlationId),
-//                contactPersonaRequest,
-//                correlationId);
-//    }
+
 
 
 //    @PATCH
@@ -57,35 +51,36 @@ public class EmployeeRecordResource {
 //        return employeeRecordControl.updateEmployeeDetails(employeeId, apiRequest, requestId);
 //    }
 //
-//    @PATCH
-//    @Path("ApprovalStatus/{employeeId}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public ApiResponse updateApprovalStatus(@PathParam("employeeId") Integer employeeId, ApiRequest<EmployeeDTO> apiRequest) {
-//        String requestId = UUID.randomUUID().toString();
-//        log.info("RequestId: {} | Update Employee Approval Status Request: EmployeeId: {}", requestId, employeeId);
-//        String approvalStatus = apiRequest.getData().getEmployeeDetailsDTO().getApprovalStatus();
-//        if (approvalStatus == null || approvalStatus.isEmpty()) {
-//            return new ApiResponse(
-//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Approval status is required", requestId)
-//            );
-//        }
-//        return employeeRecordControl.updateApprovalStatus(employeeId, approvalStatus, requestId);
-//    }
-//
-//
-//
-//    @POST
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/get/{employeeId}")
-//    public ApiResponse fetchEmployeeById(@PathParam("employeeId") Long employeeId) {
-//        String requestId = UUID.randomUUID().toString();
-//        log.info("request_id : {} | get employee by id: {}", requestId, employeeId);
-//        return employeeRecordControl.fetchEmployeeById(employeeId, requestId);
-//    }
-//
+    @PATCH
+    @Path("ApprovalStatus/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse updateApprovalStatus(@PathParam("employeeId") Integer employeeId, ApiRequest<EmployeeDTO> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Update Employee Approval Status Request: EmployeeId: {}", requestId, employeeId);
+        String approvalStatus = apiRequest.getData().getEmployeeDetailsDTO().getApprovalStatus();
+        if (approvalStatus == null || approvalStatus.isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Approval status is required", requestId)
+            );
+        }
+        return employeeRecordControl.updateApprovalStatus(employeeId, approvalStatus, requestId);
+    }
+
+
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get/{employeeId}")
+    public ApiResponse fetchEmployeeById(@PathParam("employeeId") Long employeeId) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get employee by id: {}", requestId, employeeId);
+        return employeeRecordControl.fetchEmployeeById(employeeId, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     @Path("/get_all")
     public ApiResponse fetchAllEmployees() {
         String requestId = UUID.randomUUID().toString();
@@ -93,6 +88,8 @@ public class EmployeeRecordResource {
 
         return employeeRecordControl.fetchAllEmployees(requestId);
     }
+
+
 //
 //    @POST
 //    @Path("/approvals/pending")

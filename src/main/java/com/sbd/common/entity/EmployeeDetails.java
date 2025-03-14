@@ -77,14 +77,17 @@ public class EmployeeDetails {
 
     @Lob
     @Column(name = "profile_pic")
+    @JsonbTransient
     private byte[] profilePic;
 
     @Lob
     @Column(name = "aadhaar_pic")
+    @JsonbTransient
     private byte[] aadhaarPic;
 
     @Lob
     @Column(name = "pancard_pic")
+    @JsonbTransient
     private byte[] pancardPic;
 
     @Column(name = "status")

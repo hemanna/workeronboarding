@@ -15,6 +15,7 @@ public interface LeaveControl {
     ApiResponse updateLeaveRequest(Integer leaveId, ApiRequest<EmployeeDTO> apiRequest, String requestId);
     ApiResponse<EmployeeDTO.LeaveDTO> fetchLeaveById(Long leaveId, String requestId);
     ApiResponse fetchAllLeaveRequest(String requestId);
+    ApiResponse updateApprovalStatus(Integer leaveId, String approvalStatus, String requestId);
 
 }
 

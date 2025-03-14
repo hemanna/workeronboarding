@@ -48,6 +48,9 @@ public class Leave {
     @Column(name = "attachment_name")
     private String attachmentName;
 
+    @Column(name = "status")
+    private String status;
+
     @Column(name = "applied_date")
     private LocalDate appliedDate;
 

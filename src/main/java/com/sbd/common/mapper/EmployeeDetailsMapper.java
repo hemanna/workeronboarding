@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,11 +18,15 @@ import java.util.stream.Collectors;
 public interface EmployeeDetailsMapper {
     EmployeeDetailsMapper INSTANCE = Mappers.getMapper(EmployeeDetailsMapper.class);
 
+
     @Mapping(target = "roleId", source = "role.id")
+    @Mapping(target = "aadharNumber" , source = "aadhaarNumber")
+    @Mapping(target = "pancard" , source = "panCard")
+    @Mapping(target = "status" , source = "status")
     @Mapping(target = "departmentId", source = "department.id")
-    @Mapping(target = "profilePicUrl", source = "profilePic", qualifiedByName = "mapProfilePic")
-    @Mapping(target = "aadhaarPicUrl", source = "aadhaarPic", qualifiedByName = "mapAadhaarPic")
-    @Mapping(target = "pancardPicUrl", source = "pancardPic", qualifiedByName = "mapPancardPic")
+    @Mapping(target = "profilePicUrl", source = "profilePic", qualifiedByName = "mapToBase64")
+    @Mapping(target = "aadhaarPicUrl", source = "aadhaarPic", qualifiedByName = "mapToBase64")
+    @Mapping(target = "pancardPicUrl", source = "pancardPic", qualifiedByName = "mapToBase64")
     EmployeeDTO.EmployeeDetailsDTO toDTO(EmployeeDetails employeeDetails);
 
     //  New Method: Convert List of Leave to List of LeaveDTO
@@ -29,18 +34,9 @@ public interface EmployeeDetailsMapper {
         return employeeDetails.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
-    @Named("mapProfilePic")
-    default String mapProfilePic(byte[] profilePic) {
-        return (profilePic != null) ? "http://localhost:8080/employeedetails/profilePic/" + profilePic.hashCode() : null;
+    @Named("mapToBase64")
+    default String mapToBase64(byte[] data) {
+        return (data != null) ? Base64.getEncoder().encodeToString(data) : null;
     }
 
-    @Named("mapAadhaarPic")
-    default String mapAadhaarPic(byte[] aadhaarPic) {
-        return (aadhaarPic != null) ? "http://localhost:8080/employeedetails/aadhaarPic/" + aadhaarPic.hashCode() : null;
-    }
-
-    @Named("mapPancardPic")
-    default String mapPancardPic(byte[] pancardPic) {
-        return (pancardPic != null) ? "http://localhost:8080/employeedetails/pancardPic/" + pancardPic.hashCode() : null;
-    }
 }

@@ -1,27 +1,24 @@
 package com.sbd.record.boundary;
 
 import com.sbd.common.exception.BusinessException;
-import com.sbd.common.exception.TechnicalException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.request.LeaveRequest;
 import com.sbd.common.response.ApiResponse;
+import com.sbd.common.response.Status;
 import com.sbd.record.control.LeaveControl;
 import com.sbd.record.control.service.LeaveService;
-import io.vertx.ext.web.FileUpload;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jboss.resteasy.reactive.PartType;
-import org.jboss.resteasy.reactive.RestForm;
+
 
 import java.io.IOException;
 import java.util.UUID;
+
 
 @Path("/employee")
 @AllArgsConstructor
@@ -74,6 +71,24 @@ public class LeaveResource {
         }
 
         return Response.ok(apiResponse).build();
+    }
+
+    @PATCH
+    @Path("/approval_status/{leaveId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse updateApprovalStatus(@PathParam("leaveId") Integer leaveId, ApiRequest<EmployeeDTO> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Update Employee Approval Status Request: LeaveId: {}", requestId, leaveId);
+
+        String approvalStatus = apiRequest.getData().getEmployeeDetailsDTO().getApprovalStatus();
+
+        if (approvalStatus == null || approvalStatus.isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Approval status is required", requestId)
+            );
+        }
+
+        return leaveControl.updateApprovalStatus(leaveId, approvalStatus, requestId);
     }
 
 }

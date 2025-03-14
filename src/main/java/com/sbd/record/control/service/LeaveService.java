@@ -77,8 +77,8 @@ public class LeaveService implements LeaveControl {
         leaveDTO.setDepartmentId(leave.getDepartment() != null ? leave.getDepartment().getId() : null);
         leaveDTO.setReason(leave.getReason());
         leaveDTO.setAppliedDate(leave.getAppliedDate());
-        leaveDTO.setAdminRemarks(leave.getAdminRemarks());
-//        leaveDTO.setAttachmentUrl(leave.getAttachment());  // Ensure this is properly handled
+        leaveDTO.setAdminRemarks("Pending");
+        //        leaveDTO.setAttachmentUrl(leave.getAttachment());  // Ensure this is properly handled
         leaveDTO.setAttachmentName(leave.getAttachmentName());
         return leaveDTO;
     }
@@ -153,6 +153,46 @@ public class LeaveService implements LeaveControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse updateApprovalStatus(Integer leaveId, String approvalStatus, String requestId) {
+        log.info("Start updating approval status - RequestId: {}, LeaveId: {}, ApprovalStatus: {}", requestId, leaveId, approvalStatus);
+
+        // Validate the approval status
+        if (approvalStatus == null || (!"Approved".equalsIgnoreCase(approvalStatus) && !"Rejected".equalsIgnoreCase(approvalStatus))) {
+            log.error("Invalid approval status - RequestId: {}, LeaveId: {}, ApprovalStatus: {}", requestId, leaveId, approvalStatus);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid approval status", requestId)
+            );
+        }
+
+        // Fetch the existing leave request
+        Leave existingLeave = leaveRepository.findById(leaveId);
+        if (existingLeave == null) {
+            log.error("Leave request not found - RequestId: {}, LeaveId: {}", requestId, leaveId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Leave request not found", requestId)
+            );
+        }
+
+        // Update the approval status of the leave
+        existingLeave.setStatus(approvalStatus);
+
+        try {
+            leaveRepository.persist(existingLeave);
+            log.info("Successfully updated approval status - RequestId: {}, LeaveId: {}, ApprovalStatus: {}", requestId, leaveId, approvalStatus);
+        } catch (Exception e) {
+            log.error("Error while updating approval status - RequestId: {}, LeaveId: {}", requestId, leaveId, e);
+            return new ApiResponse(
+                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating approval status", requestId)
+            );
+        }
+
+        log.info("End updating approval status - RequestId: {}, LeaveId: {}, ApprovalStatus: {}", requestId, leaveId, approvalStatus);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Approval status updated to " + approvalStatus, requestId)
+        );
+    }
     @Transactional
     public ApiResponse createLeaveRequest(LeaveRequest leaveRequest, String requestId)
             throws IOException, BusinessException {
@@ -183,7 +223,7 @@ public class LeaveService implements LeaveControl {
         leave.setStartDate(leaveRequest.getStartDate());
         leave.setEndDate(leaveRequest.getEndDate());
         leave.setReason(leaveRequest.getReason());
-        leave.setAdminRemarks(leaveRequest.getAdminRemarks());
+        leave.setStatus(leaveRequest.getAdminRemarks());
         leave.setAppliedDate(LocalDate.now());
 
         if (leaveRequest.getAttachment() != null) {

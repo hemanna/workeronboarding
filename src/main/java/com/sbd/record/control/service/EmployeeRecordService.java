@@ -72,7 +72,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 
         // Create EmployeeDetails entity
         EmployeeDetails employeeDetails = new EmployeeDetails();
-        employeeDetails.setEmployeeName(employeeDetailsRequest.getEmployeeName());  // ✅ Corrected
+        employeeDetails.setEmployeeName(employeeDetailsRequest.getEmployeeName());
         employeeDetails.setGuardianName(employeeDetailsRequest.getGuardianName());
         employeeDetails.setAadhaarNumber(employeeDetailsRequest.getAadhaarNumber());
         employeeDetails.setPanCard(employeeDetailsRequest.getPanCard());
@@ -312,94 +312,98 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 //        );
 //    }
 //
-//    @Override
-//    @Transactional
-//    public ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId) {
-//        log.info("Start updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+    @Override
+    @Transactional
+    public ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId) {
+        log.info("Start updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+
+        // Validate the approval status
+        if (approvalStatus == null || (!"Approved".equalsIgnoreCase(approvalStatus) && !"Rejected".equalsIgnoreCase(approvalStatus))) {
+            log.error("Invalid approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid approval status", requestId)
+            );
+        }
+
+        // Fetch the existing employee details
+        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
+        if (existingEmployee == null) {
+            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Update the approval status of the employee
+        existingEmployee.setApprovalStatus(approvalStatus);
+        try {
+            employeeDetailsRepository.persist(existingEmployee);
+            log.info("Successfully updated approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+        } catch (Exception e) {
+            log.error("Error while updating approval status - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
+            return new ApiResponse(
+                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating approval status", requestId)
+            );
+        }
+
+        log.info("End updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "" + approvalStatus, requestId)
+        );
+    }
 //
-//        // Validate the approval status
-//        if (approvalStatus == null || (!"Approved".equalsIgnoreCase(approvalStatus) && !"Rejected".equalsIgnoreCase(approvalStatus))) {
-//            log.error("Invalid approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-//            return new ApiResponse(
-//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid approval status", requestId)
-//            );
-//        }
 //
-//        // Fetch the existing employee details
-//        EmployeeDetails existingEmployee = employeeDetailsRepository.findById(employeeId);
-//        if (existingEmployee == null) {
-//            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-//            return new ApiResponse(
-//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
-//            );
-//        }
-//
-//        // Update the approval status of the employee
-//        existingEmployee.setApprovalStatus(approvalStatus);
-//        try {
-//            employeeDetailsRepository.persist(existingEmployee);
-//            log.info("Successfully updated approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-//        } catch (Exception e) {
-//            log.error("Error while updating approval status - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
-//            return new ApiResponse(
-//                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating approval status", requestId)
-//            );
-//        }
-//
-//        log.info("End updating approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
-//        return new ApiResponse(
-//                new Status(Response.Status.OK.getStatusCode(), "" + approvalStatus, requestId)
-//        );
-//    }
-//
-//
-//
-//    @Override
-//    @Transactional
-//    public ApiResponse fetchEmployeeById(Long employeeId, String requestId) {
-//        log.info("Start fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-//
-//        // Fetch the employee details by ID
-//        EmployeeDetails employeeDetails = employeeDetailsRepository.findById(employeeId);
-//        if (employeeDetails == null) {
-//            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-//            return new ApiResponse(
-//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
-//            );
-//        }
-//
-//        // Return the employee details
-//        log.info("End fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
-//        return new ApiResponse(
-//                new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
-//                employeeDetails
-//        );
-//    }
 //
     @Override
     @Transactional
-    public ApiResponse fetchAllEmployees(String requestId) {
-        log.info("Start fetching all employee details - RequestId: {}", requestId);
+    public ApiResponse fetchEmployeeById(Long employeeId, String requestId) {
+        log.info("Start fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
 
-        // Fetch all employee details as a list
-        List<EmployeeDetails> employeeList = employeeDetailsRepository.findAll().list();
-        if (employeeList == null || employeeList.isEmpty()) {
-            log.warn("No employee records found - RequestId: {}", requestId);
+        // Fetch the employee details by ID
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        if (employee == null) {
+            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
             return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
             );
         }
+
         // Use the new method from Employee Mapper
-        List<EmployeeDTO.EmployeeDetailsDTO> employees = EmployeeDetailsMapper.INSTANCE.toDTOList(employeeList);
+        EmployeeDTO.EmployeeDetailsDTO employees = EmployeeDetailsMapper.INSTANCE.toDTO(employee);
 
-
-        // Return the list of employee details
-        log.info("End fetching all employee details - RequestId: {}", requestId);
+        // Return the employee details
+        log.info("End fetching employee details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
                 employees
         );
     }
+
+@Override
+@Transactional
+public ApiResponse fetchAllEmployees(String requestId) {
+    log.info("Start fetching all employee details - RequestId: {}", requestId);
+
+    // Fetch all employee details as a list
+    List<EmployeeDetails> employeeList = employeeDetailsRepository.findAll().list();
+    if (employeeList == null || employeeList.isEmpty()) {
+        log.warn("No employee records found - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
+        );
+    }
+    // Use the new method from Employee Mapper
+    List<EmployeeDTO.EmployeeDetailsDTO> employees = EmployeeDetailsMapper.INSTANCE.toDTOList(employeeList);
+
+
+    // Return the list of employee details
+    log.info("End fetching all employee details - RequestId: {}", requestId);
+    return new ApiResponse(
+            new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
+            employees
+    );
+}
+
 //
 //    @Override
 //    @Transactional

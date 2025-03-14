@@ -88,6 +88,7 @@ public class EmployeeDTO {
         private Integer departmentId;
         private String reason;
         private LocalDate appliedDate;
+        private String status;
         private String adminRemarks;
         private String attachmentUrl;
         private String attachmentName;
