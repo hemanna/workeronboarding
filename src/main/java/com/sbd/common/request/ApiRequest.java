@@ -15,7 +15,7 @@ public class ApiRequest<T> {
     private Pagination pagination;
 
     public void isValid(String requestId) throws BusinessException {
-        if (!Stream.of(data, type).allMatch(Objects::nonNull)) {
+        if (!Stream.of(data).allMatch(Objects::nonNull)) {
             throw new BusinessException(
                     Response.Status.BAD_REQUEST.getStatusCode(),
                     requestId,
