@@ -78,18 +78,28 @@ public class EmployeeRecordResource {
         return employeeRecordControl.fetchEmployeeById(employeeId, requestId);
     }
 
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/get_all")
-    public ApiResponse fetchAllEmployees() {
+    public ApiResponse fetchAllEmployee(ApiRequest<EmployeeDetailsRequest> apiRequest) throws BusinessException {
         String requestId = UUID.randomUUID().toString();
-        log.info("request_id : {} | get all employee details", requestId);
+        log.info("request_id: {} | Fetching all employees", requestId);
 
-        return employeeRecordControl.fetchAllEmployees(requestId);
+        return employeeRecordControl.fetchAllEmployee(requestId, apiRequest);
     }
 
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/delete_emp/{employeeId}")
+    public ApiResponse deleteEmployee(@PathParam("employeeId") Long employeeId) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id: {} | Deleting employee with ID: {}", requestId, employeeId);
 
+        return employeeRecordControl.deleteEmployee(requestId, employeeId);
+    }
 //
 //    @POST
 //    @Path("/approvals/pending")

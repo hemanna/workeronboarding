@@ -12,6 +12,15 @@ public interface EmployeeRecordControl {
 //    ApiResponse updateEmployeeDetails(Integer employeeId, ApiRequest<EmployeeDTO> apiRequest, String requestId);
     ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId);
     ApiResponse fetchEmployeeById(Long employeeId, String requestId );
-    ApiResponse fetchAllEmployees(String requestId);
 //    ApiResponse fetchPendingApprovals(String requestId);
-    }
+ApiResponse fetchAllEmployee(
+        String requestId ,
+        ApiRequest<EmployeeDetailsRequest> apiRequest)
+        throws BusinessException;
+
+    ApiResponse deleteEmployee(
+            String requestId,
+            Long employeeId)
+            throws BusinessException;
+
+}

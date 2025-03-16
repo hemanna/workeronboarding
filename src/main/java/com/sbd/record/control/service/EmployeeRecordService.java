@@ -379,30 +379,75 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         );
     }
 
-@Override
-@Transactional
-public ApiResponse fetchAllEmployees(String requestId) {
-    log.info("Start fetching all employee details - RequestId: {}", requestId);
 
-    // Fetch all employee details as a list
-    List<EmployeeDetails> employeeList = employeeDetailsRepository.findAll().list();
-    if (employeeList == null || employeeList.isEmpty()) {
-        log.warn("No employee records found - RequestId: {}", requestId);
+    @Override
+    public ApiResponse fetchAllEmployee(String requestId, ApiRequest<EmployeeDetailsRequest> apiRequest) throws BusinessException {
+        log.info("Start fetching employees - RequestId: {}", requestId);
+
+        // Validate request structure
+        apiRequest.isValid(requestId);
+
+        List<EmployeeDetails> employees;
+
+        // Use employeeName instead of getValue()
+        if (isValidData(apiRequest)) {
+            employees = employeeDetailsRepository.listByName(
+                    apiRequest.getData().getEmployeeName(), apiRequest.getPagination());
+        } else {
+            employees = employeeDetailsRepository.listAll(apiRequest.getPagination());
+        }
+
+        if (employees.isEmpty()) {
+            log.info("No employees found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NO_CONTENT.getStatusCode(),
+                            "No employee records found", requestId)
+            );
+        }
+
+        log.info("End fetching employees - RequestId: {}", requestId);
         return new ApiResponse(
-                new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employee records found", requestId)
+                new Status(Response.Status.OK.getStatusCode(),
+                        "Employee details fetched successfully", requestId),
+                EmployeeDetailsMapper.INSTANCE.toDTOList(employees)
         );
     }
-    // Use the new method from Employee Mapper
-    List<EmployeeDTO.EmployeeDetailsDTO> employees = EmployeeDetailsMapper.INSTANCE.toDTOList(employeeList);
 
+    @Override
+    @Transactional
+    public ApiResponse deleteEmployee(String requestId, Long employeeId) throws BusinessException {
+        log.info("Request ID: {} | Deleting employee with ID: {}", requestId, employeeId);
 
-    // Return the list of employee details
-    log.info("End fetching all employee details - RequestId: {}", requestId);
-    return new ApiResponse(
-            new Status(Response.Status.OK.getStatusCode(), "Employee details fetched successfully", requestId),
-            employees
-    );
-}
+        // Fetch the employee from the database
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+
+        // If employee does not exist, return a NOT FOUND response
+        if (employee == null) {
+            log.warn("Request ID: {} | Employee with ID {} not found", requestId, employeeId);
+            throw new BusinessException(
+                    Response.Status.NOT_FOUND.getStatusCode(),
+                    requestId,
+                    "Employee not found"
+            );
+        }
+
+        // Delete the employee
+        employeeDetailsRepository.delete(employee);
+        log.info("Request ID: {} | Employee with ID {} deleted successfully", requestId, employeeId);
+
+        // Return success response
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(),
+                        "Employee deleted successfully", requestId)
+        );
+
+    }
+
+    // Corrected isValidData method
+    private boolean isValidData(ApiRequest<EmployeeDetailsRequest> apiRequest) {
+        return apiRequest.getData() != null && apiRequest.getData().getEmployeeName() != null;
+
+    }
 
 //
 //    @Override
