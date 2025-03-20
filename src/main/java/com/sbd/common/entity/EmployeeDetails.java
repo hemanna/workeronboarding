@@ -76,17 +76,17 @@ public class EmployeeDetails {
     private LocalDate dateOfJoining;
 
     @Lob
-    @Column(name = "profile_pic")
+    @Column(name = "profile_pic" , columnDefinition = "LONGBLOB")
     @JsonbTransient
     private byte[] profilePic;
 
     @Lob
-    @Column(name = "aadhaar_pic")
+    @Column(name = "aadhaar_pic",columnDefinition = "LONGBLOB")
     @JsonbTransient
     private byte[] aadhaarPic;
 
     @Lob
-    @Column(name = "pancard_pic")
+    @Column(name = "pancard_pic" ,columnDefinition = "LONGBLOB")
     @JsonbTransient
     private byte[] pancardPic;
 

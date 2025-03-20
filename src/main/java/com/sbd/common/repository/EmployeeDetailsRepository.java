@@ -3,7 +3,10 @@ package com.sbd.common.repository;
 import com.sbd.common.entity.EmployeeDetails;
 import com.sbd.common.request.Pagination;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import io.quarkus.panache.common.Parameters;
 import jakarta.enterprise.context.ApplicationScoped;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -19,19 +22,35 @@ public class EmployeeDetailsRepository implements PanacheRepository<EmployeeDeta
         return find("aadharNumber", aadharNumber).firstResult();
     }
 
-    public List<EmployeeDetails> listAll(Pagination pagination) {
-        return findAll()
-                .page(pagination.getPageIndex() - 1, pagination.getPageSize())
-                .list();
-    }
+public List<EmployeeDetails> listAll(Pagination pagination) {
+    return find(QueryEnum.QUERY_LIST_ALL.getValue() )
+            .page(pagination.getPageIndex() - 1, pagination.getPageSize())
+            .list();
+}
+
     public List<EmployeeDetails> listByName(String name, Pagination pagination) {
-        return find("employeeName LIKE ?1", "%" + name + "%")
+        return find(QueryEnum.QUERY_LIST_BY_NAME.getValue() + " ORDER BY e.id DESC",
+                         Parameters.with(QueryEnum.EMPLOYEE_NAME.getValue(), "%" + name + "%"))
                 .page(pagination.getPageIndex() - 1, pagination.getPageSize())
                 .list();
     }
+
+
     // Delete employee by ID
     public boolean deleteById(Long employeeId) {
         return delete("id", employeeId) > 0;
     }
 
-}
+    @Getter
+    @AllArgsConstructor
+    private enum QueryEnum {
+        QUERY_LIST_ALL("SELECT e FROM EmployeeDetails e order by e.id desc"),
+        QUERY_LIST_BY_NAME("SELECT e FROM EmployeeDetails e WHERE e.employeeName LIKE :employeeName"),
+
+        EMPLOYEE_ID("employeeId"),
+        EMPLOYEE_NAME("employeeName");
+
+        private final String value;
+    }
+
+    }

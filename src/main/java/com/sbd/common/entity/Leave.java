@@ -42,7 +42,7 @@ public class Leave {
     private String reason;
 
     @Lob
-    @Column(name = "attachment")
+    @Column(name = "attachment" , columnDefinition = "LONGBLOB")
     private byte[] attachment;
 
     @Column(name = "attachment_name")

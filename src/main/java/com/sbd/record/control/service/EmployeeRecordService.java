@@ -40,8 +40,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     @Inject
     private LeaveTypeRepository leaveTypeRepository;
 
-    @Inject
-    EmployeeDetailsRequest employeeDetailsRequest;
 
     @Inject
     private RoleRepository roleRepository;
@@ -105,8 +103,10 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             employeeDetails.setPancardPic(employeeDetailsRequest.getPancardPic());
         }
 
-       // Persist EmployeeDetails entity
+
+        // Persist EmployeeDetails entity
         employeeDetailsRepository.persist(employeeDetails);
+        employeeDetailsRepository.flush();
 
         // Convert Entity to DTO using MapStruct
         EmployeeDTO.EmployeeDetailsDTO employeeDTO = EmployeeDetailsMapper.INSTANCE.toDTO(employeeDetails);
