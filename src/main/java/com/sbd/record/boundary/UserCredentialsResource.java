@@ -4,6 +4,7 @@ import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.UserCredentialControl;
+import com.sbd.record.control.service.UserCredentialService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @Slf4j
 public class UserCredentialsResource {
 
+    private final UserCredentialService userCredentialService;
     private final UserCredentialControl userCredentialControl;
 
     @POST
@@ -42,6 +44,7 @@ public class UserCredentialsResource {
 
         return userCredentialControl.resetPassword(username, password, requestId);
     }
+
 
 
 }

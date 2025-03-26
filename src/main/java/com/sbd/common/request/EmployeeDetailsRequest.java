@@ -86,4 +86,9 @@ public class EmployeeDetailsRequest {
     @FormParam("departmentId")
     private Integer departmentId;
 
+    @FormParam("email")
+    private String email;
+
+    @FormParam("skillType")
+    private String skillType;
 }

@@ -9,10 +9,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
+import java.util.Optional;
 
 @ApplicationScoped
 public class EmployeeDetailsRepository implements PanacheRepository<EmployeeDetails> {
 
+    public EmployeeDetails findByEmail(String email) {
+        return find("email", email).firstResult();
+    }
+    public EmployeeDetails findByEmailOrPhone(String username) {
+        return find("email = ?1 OR phoneNumber = ?1", username).firstResult();
+    }
 
     public EmployeeDetails findById(Integer employeeId) {
         return find("id", employeeId).firstResult();

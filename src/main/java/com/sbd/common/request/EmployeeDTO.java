@@ -75,6 +75,8 @@ public class EmployeeDTO {
         private String status;
         private String approvalStatus;
         private Integer departmentId;
+        private String email;
+        private String skillType;
     }
 
     // Leave DTO

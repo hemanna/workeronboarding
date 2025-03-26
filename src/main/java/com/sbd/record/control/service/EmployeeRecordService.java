@@ -89,6 +89,9 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetails.setExperience(employeeDetailsRequest.getExperience());
         employeeDetails.setDateOfJoining(employeeDetailsRequest.getDateOfJoining());
         employeeDetails.setStatus(employeeDetailsRequest.getStatus());
+        employeeDetails.setEmail(employeeDetailsRequest.getEmail());
+        employeeDetails.setSkillType(employeeDetailsRequest.getSkillType());
+        employeeDetails.setPassword("employee");
         employeeDetails.setApprovalStatus("Pending");
         employeeDetails.setDepartment(department);
 

@@ -100,4 +100,13 @@ public class EmployeeDetails {
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id")
     private Department department;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "skill_type")
+    private String skillType;
+
+    @Column(name = "password")
+    private String password;
 }
