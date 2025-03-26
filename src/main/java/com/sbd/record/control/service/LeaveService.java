@@ -1,5 +1,6 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.LeaveDTO;
 import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.LeaveMapper;
@@ -21,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -134,7 +136,7 @@ public class LeaveService implements LeaveControl {
     public ApiResponse fetchAllLeaveRequest(String requestId) {
         log.info("Start fetching all leave requests - RequestId: {}", requestId);
 
-        List<Leave> leaveList = leaveRepository.findAll().list();
+        List<LeaveDTO> leaveList = leaveRepository.findAllWithLeaveDays();
         if (leaveList.isEmpty()) {
             log.warn("No leave requests found - RequestId: {}", requestId);
             return new ApiResponse(
@@ -143,13 +145,13 @@ public class LeaveService implements LeaveControl {
         }
 
         // Use the new method from LeaveMapper
-        List<EmployeeDTO.LeaveDTO> leaveDTOs = LeaveMapper.INSTANCE.toDTOList(leaveList);
+//        List<LeaveDTO> leaveDTOs = Collections.singletonList(LeaveMapper.INSTANCE.toDTO((Leave) leaveList));
 
 
         log.info("End fetching all leave requests - RequestId: {}", requestId);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Leave requests fetched successfully", requestId),
-                leaveDTOs
+                leaveList
         );
     }
 
@@ -235,10 +237,9 @@ public class LeaveService implements LeaveControl {
         leaveRepository.persist(leave);
 
         // Convert Entity to DTO using MapStruct
-        EmployeeDTO.LeaveDTO leaveDTO = LeaveMapper.INSTANCE.toDTO(leave);
+        LeaveDTO leaveDTO = LeaveMapper.INSTANCE.toDTO(leave);
 
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Leave request submitted successfully", requestId)
-       ,leaveDTO );
+                new Status(Response.Status.OK.getStatusCode(), "Leave request submitted successfully", requestId));
     }
 }

@@ -77,6 +77,7 @@ public class EmployeeDTO {
         private Integer departmentId;
         private String email;
         private String skillType;
+        private String password;
     }
 
     // Leave DTO
@@ -94,7 +95,7 @@ public class EmployeeDTO {
         private String adminRemarks;
         private String attachmentUrl;
         private String attachmentName;
-
+        private Long numberOfDays;
     }
 
     // LeaveType
