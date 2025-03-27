@@ -1,6 +1,9 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.EmployeeAttendanceResponseDTO;
 import com.sbd.common.entity.*;
+import com.sbd.common.mapper.EmployeeAttendanceMapper;
+import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
@@ -16,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @ApplicationScoped
 @Slf4j
@@ -39,6 +44,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
     @Inject
     private RoleRepository roleRepository;
 
+    private final EmployeeAttendanceMapper attendanceMapper=EmployeeAttendanceMapper.INSTANCE;
 
     @Override
     @Transactional
@@ -416,4 +422,21 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse fetchStatusById(Long employeeId, String requestId) {
+        log.info("Start fetch employee attendance - RequestId: {}", requestId);
+
+        Optional<Map<String, Object>> attendanceData = employeeAttendanceRepository.getAttendanceForCurrentMonth(employeeId);
+
+        EmployeeAttendanceResponseDTO responseDTO = attendanceData.map(attendanceMapper::toDto)
+                .orElse(new EmployeeAttendanceResponseDTO(employeeId, 0, 0, 0, 0, 0));
+
+        log.info("End fetch employee attendance - RequestId: {}", requestId);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee attendance fetched successfully", requestId),
+                responseDTO
+        );
+    }
 }

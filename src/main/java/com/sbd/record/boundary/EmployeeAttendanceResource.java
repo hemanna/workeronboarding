@@ -105,4 +105,14 @@ public class EmployeeAttendanceResource {
         return employeeAttendanceControl.deleteAttendance(id, requestId);
     }
 
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/attendance_status/{Id}")
+    public ApiResponse fetchStatusById(@PathParam("Id") Long employeeId) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get employee by id: {}", requestId, employeeId);
+        return employeeAttendanceControl.fetchStatusById(employeeId, requestId);
+    }
+
 }

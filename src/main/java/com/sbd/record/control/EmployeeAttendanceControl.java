@@ -14,4 +14,6 @@ public interface EmployeeAttendanceControl {
     ApiResponse fetchAttendancePending(String requestId);
     ApiResponse fetchAttendanceByRange(String fromDate, String toDate, String requestId);
     ApiResponse deleteAttendance(Long id, String requestId);
+    ApiResponse fetchStatusById(Long employeeId, String requestId );
+
 }
