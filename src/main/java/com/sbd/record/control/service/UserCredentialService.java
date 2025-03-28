@@ -1,12 +1,13 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.UserCredentialRequest;
+import com.sbd.common.entity.EmployeeDetails;
 import com.sbd.common.entity.UserCredentials;
+import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.EmployeeDetailsRepository;
 import com.sbd.common.repository.RoleRepository;
 import com.sbd.common.repository.UserCredentialsRepository;
-import com.sbd.common.request.ApiRequest;
-import com.sbd.common.request.UserCredentialsDTO;
-import com.sbd.common.request.LoginRequest;
+import com.sbd.common.request.*;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.UserCredentialControl;
@@ -34,29 +35,39 @@ public class UserCredentialService implements UserCredentialControl {
 
     @Override
     @Transactional
-    public ApiResponse createUserCredentials(ApiRequest<UserCredentialsDTO> apiRequest, String requestId) {
-        log.info("Start creating user credentials - RequestId: {}", requestId);
-
-//        Optional<UserCredentials> userOptional = userCredentialsRepository.findByUsernameOrPhoneNumber(LoginRequest.getUsername());
-//
-//        if (userOptional.isEmpty()) {
-//            return new ApiResponse(new Status(401, "Invalid credentials", null));
-//        }
-//
-//        UserCredentials user = userOptional.get();
-//
-//        // Validate Password
-//        HAProxySSLTLV passwordHash;
-//        if (!passwordHash.verify(user.getPassword(), LoginRequest.getPassword().toCharArray())) {
-//            return new ApiResponse(new Status(401, "Invalid credentials", null));
-//        }
+    public ApiResponse UserLogin(ApiRequest<UserCredentialRequest> apiRequest, String requestId) {
+        log.info("Start Login user  - RequestId: {}", requestId);
 
 
 
-        log.info("End creating user credentials - RequestId: {}", requestId);
+        // Validate request data
+        UserCredentialRequest userRequest = apiRequest.getData();
+        if (userRequest == null || userRequest.getUsername() == null || userRequest.getPassword() == null) {
+            log.warn("RequestId: {} | Invalid login request: missing fields", requestId);
+            return new ApiResponse(new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Username and Password are required", requestId));
+        }
+
+        // Check if user exists
+        EmployeeDetails user = employeeDetailsRepository.findByEmailOrPhone(userRequest.getUsername());
+        if (user == null) {
+            log.warn("RequestId: {} | User not found: {}", requestId, userRequest.getUsername());
+            return new ApiResponse(new Status(Response.Status.NOT_FOUND.getStatusCode(), "User not found", requestId));
+        }
+
+        // Verify password
+        if (!user.getPassword().equals(userRequest.getPassword())) {
+            log.warn("RequestId: {} | Incorrect password for user: {}", requestId, userRequest.getUsername());
+            return new ApiResponse(new Status(Response.Status.UNAUTHORIZED.getStatusCode(), "Incorrect Password", requestId));
+        }
+
+// Convert EmployeeDetails to EmployeeDetailsDTO using Mapper
+        EmployeeDTO.EmployeeDetailsDTO employeeDetailsDTO = EmployeeDetailsMapper.INSTANCE.toDTO(user);
+
+
+        log.info("End user Login  - RequestId: {}", requestId);
 
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Successful", requestId)
+                new Status(Response.Status.OK.getStatusCode(), "Successful", requestId),employeeDetailsDTO
         );
     }
 

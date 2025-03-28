@@ -24,6 +24,7 @@ public interface EmployeeDetailsMapper {
     @Mapping(target = "pancard" , source = "panCard")
     @Mapping(target = "status" , source = "status")
     @Mapping(target = "departmentId", source = "department.id")
+    @Mapping(target = "password", ignore = true)
     @Mapping(target = "profilePicUrl", source = "profilePic", qualifiedByName = "mapToBase64")
     @Mapping(target = "aadhaarPicUrl", source = "aadhaarPic", qualifiedByName = "mapToBase64")
     @Mapping(target = "pancardPicUrl", source = "pancardPic", qualifiedByName = "mapToBase64")

@@ -1,5 +1,6 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.UserCredentialRequest;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
@@ -21,14 +22,14 @@ public class UserCredentialsResource {
     private final UserCredentialControl userCredentialControl;
 
     @POST
-    @Path("/user-credentials")
+    @Path("/user-Login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
 
-    public ApiResponse createUserCredentials(ApiRequest<UserCredentialsDTO> apiRequest) {
+    public ApiResponse UserLogin(ApiRequest<UserCredentialRequest> apiRequest) {
         String requestId = UUID.randomUUID().toString();
-        log.info("RequestId: {} | Create User Credentials Request: {}", requestId, apiRequest);
-        return userCredentialControl.createUserCredentials(apiRequest, requestId);
+        log.info("RequestId: {} | Login User Request: {}", requestId, apiRequest);
+        return userCredentialControl.UserLogin(apiRequest, requestId);
     }
 
     @PATCH
