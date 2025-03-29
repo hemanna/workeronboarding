@@ -73,28 +73,45 @@ public class UserCredentialService implements UserCredentialControl {
 
 
 
-    @Override
     @Transactional
-    public ApiResponse resetPassword(String username, String password, String requestId) {
+    public ApiResponse resetPassword(ApiRequest<ResetPasswordRequest> apiRequest, String requestId) {
         log.info("Start resetting password - RequestId: {}", requestId);
+        ResetPasswordRequest requestData = apiRequest.getData();
+        String username = requestData.getUserName();
 
-        // Fetch the user credentials
-        UserCredentials userCredentials = userCredentialsRepository.findByUsername(username);
-        if (userCredentials == null) {
-            log.error("UserCredentials not found - RequestId: {}", requestId);
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Invalid UserName", requestId)
-            );
+        // Validate request
+        if (requestData == null || requestData.getNewPassword() == null || requestData.getConfirmNewPassword() == null) {
+            return new ApiResponse(new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid request payload", requestId));
         }
 
-        // Reset the password
-        userCredentials.setPassword(password);
-        userCredentialsRepository.persist(userCredentials);
+        if (!requestData.getNewPassword().equals(requestData.getConfirmNewPassword())) {
+            return new ApiResponse(new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Passwords do not match", requestId));
+        }
+
+        // Perform user verification (pseudo-code, implement actual logic)
+        boolean isValidUser = validateUser(username, requestData.getCurrentPassword());
+        if (!isValidUser) {
+            return new ApiResponse(new Status(Response.Status.UNAUTHORIZED.getStatusCode(), "Invalid credentials", requestId));
+        }
+
+        // Update password in database (pseudo-code, implement actual logic)
+        boolean passwordUpdated = updatePassword(username, requestData.getNewPassword());
+        if (!passwordUpdated) {
+            return new ApiResponse(new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Failed to reset password", requestId));
+        }
 
         log.info("End resetting password - RequestId: {}", requestId);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Password reset successfully", requestId)
-        );
+        return new ApiResponse(new Status(Response.Status.OK.getStatusCode(), "Password reset successfully", requestId));
+    }
+
+    private boolean validateUser(String username, String currentPassword) {
+        // Implement actual user validation logic (e.g., query database, compare passwords)
+        return true; // Placeholder
+    }
+
+    private boolean updatePassword(String username, String newPassword) {
+        // Implement actual password update logic in the database
+        return true; // Placeholder
     }
 }
 
