@@ -1,8 +1,8 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.ResetPasswordRequest;
 import com.sbd.common.Jsonb.UserCredentialRequest;
 import com.sbd.common.request.ApiRequest;
-import com.sbd.common.request.ResetPasswordRequest;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.UserCredentialControl;
 import com.sbd.record.control.service.UserCredentialService;
@@ -38,7 +38,7 @@ public class UserCredentialsResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public ApiResponse resetPassword(ApiRequest<ResetPasswordRequest> apiRequest) {
         String requestId = UUID.randomUUID().toString();
-        log.info("RequestId: {} | Reset Password Request: username={}, password=[PROTECTED]", requestId,apiRequest);
+        log.info("RequestId: {} | Reset Password Request:{}", requestId,apiRequest);
         return userCredentialControl.resetPassword(apiRequest, requestId);
     }
 }
