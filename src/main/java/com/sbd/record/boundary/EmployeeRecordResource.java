@@ -39,16 +39,17 @@ public class EmployeeRecordResource {
 
 
 
-//    @PATCH
-//    @Path("/update/{employeeId}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public ApiResponse updateEmployeeDetails(@PathParam("employeeId") Integer employeeId, ApiRequest<EmployeeDTO> apiRequest) {
-//        String requestId = UUID.randomUUID().toString();
-//        log.info("RequestId: {} | Update Employee Details Request: EmployeeId: {}", requestId, employeeId);
-//        return employeeRecordControl.updateEmployeeDetails(employeeId, apiRequest, requestId);
-//    }
-//
+    @POST
+    @Path("/update/{employeeId}")
+    public Response updateEmployeeDetails(
+            @PathParam("employeeId") Integer employeeId,
+            @BeanParam EmployeeDetailsRequest employeeDetailsRequest) throws BusinessException {
+
+        String requestId = UUID.randomUUID().toString();
+        ApiResponse response = employeeRecordService.updateEmployeeDetails(employeeId, employeeDetailsRequest, requestId);
+        return Response.ok(response).build();
+    }
+
     @PATCH
     @Path("ApprovalStatus/{employeeId}")
     @Produces(MediaType.APPLICATION_JSON)
