@@ -1,24 +1,21 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.SkillCountDTO;
 import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
-import com.sbd.common.mapper.LeaveMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.request.EmployeeDetailsRequest;
-import com.sbd.common.request.UserCredentialsDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeRecordControl;
-import io.netty.handler.codec.http.multipart.FileUpload;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
-
 import java.util.List;
 
 @ApplicationScoped
@@ -47,7 +44,11 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     @Inject
     private UserCredentialsRepository userCredentialsRepository;
 
+    @Inject
+    private SkillRepository skillRepository;
 
+    @Inject
+    private EmployeeSkillsRepository employeeSkillsRepository;
 
 
     @Transactional
@@ -67,6 +68,8 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         if (department == null) {
             throw new BusinessException("Leave type not found for ID: " + employeeDetailsRequest.getDepartmentId());
         }
+
+
 
         // Create EmployeeDetails entity
         EmployeeDetails employeeDetails = new EmployeeDetails();
@@ -90,7 +93,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetails.setDateOfJoining(employeeDetailsRequest.getDateOfJoining());
         employeeDetails.setStatus(employeeDetailsRequest.getStatus());
         employeeDetails.setEmail(employeeDetailsRequest.getEmail());
-        employeeDetails.setSkillType(employeeDetailsRequest.getSkillType());
         employeeDetails.setPassword("employee");
         employeeDetails.setApprovalStatus("Pending");
         employeeDetails.setDepartment(department);
@@ -110,6 +112,24 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         // Persist EmployeeDetails entity
         employeeDetailsRepository.persist(employeeDetails);
         employeeDetailsRepository.flush();
+
+        // Persist employee_skills entries
+        if (employeeDetailsRequest.getSkillIds() != null && !employeeDetailsRequest.getSkillIds().isEmpty()) {
+            for (Integer skillId : employeeDetailsRequest.getSkillIds()) {
+                Skill skill = skillRepository.findBySkillId(skillId);
+                if (skill == null) {
+                    return new ApiResponse(
+                            new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Skill not found: " + skillId, requestId)
+                    );
+                }
+
+                EmployeeSkills empSkill = new EmployeeSkills();
+                empSkill.setEmployee(employeeDetails);
+                empSkill.setSkill(skill);
+                employeeSkillsRepository.persist(empSkill);
+            }
+        }
+
 
         // Convert Entity to DTO using MapStruct
         EmployeeDTO.EmployeeDetailsDTO employeeDTO = EmployeeDetailsMapper.INSTANCE.toDTO(employeeDetails);
@@ -274,7 +294,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetails.setDateOfJoining(employeeDetailsRequest.getDateOfJoining());
         employeeDetails.setStatus(employeeDetailsRequest.getStatus());
         employeeDetails.setEmail(employeeDetailsRequest.getEmail());
-        employeeDetails.setSkillType(employeeDetailsRequest.getSkillType());
         employeeDetails.setApprovalStatus(employeeDetailsRequest.getApprovalStatus());
 
         if (employeeDetailsRequest.getProfilePic() != null) {
@@ -290,6 +309,25 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         employeeDetailsRepository.persist(employeeDetails);
         employeeDetailsRepository.flush();
 
+        // Persist employee_skills entries
+        if (employeeDetailsRequest.getSkillIds() != null && !employeeDetailsRequest.getSkillIds().isEmpty()) {
+            for (Integer skillId : employeeDetailsRequest.getSkillIds()) {
+                Skill skill = skillRepository.findBySkillId(skillId);
+                if (skill == null) {
+                    return new ApiResponse(
+                            new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Skill not found: " + skillId, requestId)
+                    );
+                }
+               // Check if skill already exists for employee
+                boolean alreadyExists = employeeSkillsRepository.existsByEmployeeAndSkill(employeeDetails.getId(), skillId);
+                if (!alreadyExists) {
+                    EmployeeSkills empSkill = new EmployeeSkills();
+                    empSkill.setEmployee(employeeDetails);
+                    empSkill.setSkill(skill);
+                    employeeSkillsRepository.persist(empSkill);
+                }
+            }
+        }
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Employee details updated successfully", requestId)
         );
@@ -424,6 +462,31 @@ public class EmployeeRecordService implements EmployeeRecordControl {
                         "Employee deleted successfully", requestId)
         );
 
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse skillcountEmployee(
+            String requestId ,
+            ApiRequest<EmployeeDetailsRequest> apiRequest)
+            throws BusinessException {
+
+        log.info("Start fetching skill wise employee count - RequestId: {}", requestId);
+
+        List<SkillCountDTO> skillCounts = employeeDetailsRepository.getSkillWiseEmployeeCount();
+
+        if (skillCounts == null || skillCounts.isEmpty()) {
+            log.info("No skill count data found - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.NO_CONTENT.getStatusCode(), "No skill data found", requestId)
+            );
+        }
+
+        log.info("End fetching skill-wise employee count - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Skill wise employee count fetched successfully", requestId),
+                skillCounts
+        );
     }
 
     // Corrected isValidData method

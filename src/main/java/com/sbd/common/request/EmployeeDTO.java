@@ -76,7 +76,6 @@ public class EmployeeDTO {
         private String approvalStatus;
         private Integer departmentId;
         private String email;
-        private String skillType;
         private String password;
     }
 

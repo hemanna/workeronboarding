@@ -104,9 +104,6 @@ public class EmployeeDetails {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "skill_type")
-    private String skillType;
-
     @Column(name = "password")
     private String password;
 }

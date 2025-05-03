@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.jboss.resteasy.reactive.PartType;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -89,6 +90,6 @@ public class EmployeeDetailsRequest {
     @FormParam("email")
     private String email;
 
-    @FormParam("skillType")
-    private String skillType;
+    @FormParam("skillIds")
+    private List<Integer> skillIds;
 }

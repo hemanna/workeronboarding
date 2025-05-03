@@ -109,4 +109,14 @@ public class EmployeeRecordResource {
 //        return employeeRecordControl.fetchPendingApprovals(requestId);
 //    }
 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/skill_count")
+    public ApiResponse skillcountEmployee(ApiRequest<EmployeeDetailsRequest> apiRequest) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id: {} | Fetching all employees", requestId);
+
+        return employeeRecordControl.skillcountEmployee(requestId, apiRequest);
+    }
 }

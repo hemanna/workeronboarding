@@ -7,12 +7,26 @@ import com.sbd.common.request.EmployeeDetailsRequest;
 import com.sbd.common.response.ApiResponse;
 
 public interface EmployeeRecordControl {
-    ApiResponse createEmployeeDetails(EmployeeDetailsRequest employeeDetailsRequest, String requestId) throws BusinessException;
+    ApiResponse createEmployeeDetails(
+            EmployeeDetailsRequest employeeDetailsRequest,
+            String requestId)
+            throws BusinessException;
 
-    ApiResponse updateEmployeeDetails(Integer employeeId, EmployeeDetailsRequest employeeDetailsRequest, String requestId) throws BusinessException;
-    ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId);
-    ApiResponse fetchEmployeeById(Long employeeId, String requestId );
-//    ApiResponse fetchPendingApprovals(String requestId);
+    ApiResponse updateEmployeeDetails(
+            Integer employeeId,
+            EmployeeDetailsRequest employeeDetailsRequest,
+            String requestId)
+            throws BusinessException;
+
+    ApiResponse updateApprovalStatus(
+            Integer employeeId,
+            String approvalStatus,
+            String requestId);
+
+    ApiResponse fetchEmployeeById(
+            Long employeeId,
+            String requestId );
+
 ApiResponse fetchAllEmployee(
         String requestId ,
         ApiRequest<EmployeeDetailsRequest> apiRequest)
@@ -23,4 +37,8 @@ ApiResponse fetchAllEmployee(
             Long employeeId)
             throws BusinessException;
 
+    ApiResponse skillcountEmployee(
+            String requestId ,
+            ApiRequest<EmployeeDetailsRequest> apiRequest)
+            throws BusinessException;
 }
