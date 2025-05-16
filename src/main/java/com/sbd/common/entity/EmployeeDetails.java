@@ -4,6 +4,7 @@ import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "employee_details")
@@ -106,4 +107,7 @@ public class EmployeeDetails {
 
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<EmployeeSkills> employeeSkills;
 }

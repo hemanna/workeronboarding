@@ -22,6 +22,9 @@ public class LeaveType {
     @Column(name = "type", nullable = false)
     private String type;
 
+    @Column(name = "entitlements", nullable = false)
+    private Integer entitlements;
+
     @OneToMany(mappedBy = "leaveType")
     private Set<Leave> leaves;
 }

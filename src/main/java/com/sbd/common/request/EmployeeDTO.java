@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 @Data
 public class EmployeeDTO {
@@ -54,7 +55,7 @@ public class EmployeeDTO {
         private String employeeName;
         private String guardianName;
         private String aadharNumber;
-        private String pancard;
+        private String panCard;
         private LocalDate dob;
         private String gender;
         private String phoneNumber;
@@ -77,7 +78,14 @@ public class EmployeeDTO {
         private Integer departmentId;
         private String email;
         private String password;
+        private List<SkillDTO> skills;  // Skill list added
     }
+
+    @Data
+    public static class SkillDTO {
+        private Integer id;
+    }
+
 
     // Leave DTO
     @Data

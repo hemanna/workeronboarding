@@ -32,6 +32,9 @@ public class LeaveResource {
 
     @POST
     @Path("/apply")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_JSON)
+
     public Response applyLeave(@BeanParam LeaveRequest leaveRequest) throws BusinessException, IOException {
         String requestId = UUID.randomUUID().toString();
         ApiResponse response = leaveService.createLeaveRequest(leaveRequest, requestId);

@@ -1,6 +1,7 @@
 package com.sbd.common.mapper;
 
 import com.sbd.common.entity.EmployeeDetails;
+import com.sbd.common.entity.EmployeeSkills;
 import com.sbd.common.entity.Leave;
 import com.sbd.common.request.EmployeeDTO;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -21,13 +22,14 @@ public interface EmployeeDetailsMapper {
 
     @Mapping(target = "roleId", source = "role.id")
     @Mapping(target = "aadharNumber" , source = "aadhaarNumber")
-    @Mapping(target = "pancard" , source = "panCard")
+    @Mapping(target = "panCard" , source = "panCard")
     @Mapping(target = "status" , source = "status")
     @Mapping(target = "departmentId", source = "department.id")
     @Mapping(target = "password", ignore = true)
     @Mapping(target = "profilePicUrl", source = "profilePic", qualifiedByName = "mapToBase64")
     @Mapping(target = "aadhaarPicUrl", source = "aadhaarPic", qualifiedByName = "mapToBase64")
     @Mapping(target = "pancardPicUrl", source = "pancardPic", qualifiedByName = "mapToBase64")
+    @Mapping(target = "skills", source = "employeeSkills", qualifiedByName = "mapSkills")
     EmployeeDTO.EmployeeDetailsDTO toDTO(EmployeeDetails employeeDetails);
 
     //  New Method: Convert List of Leave to List of LeaveDTO
@@ -38,6 +40,17 @@ public interface EmployeeDetailsMapper {
     @Named("mapToBase64")
     default String mapToBase64(byte[] data) {
         return (data != null) ? Base64.getEncoder().encodeToString(data) : null;
+    }
+
+    @Named("mapSkills")
+    default List<EmployeeDTO.SkillDTO> mapSkills(List<EmployeeSkills> skills) {
+        if (skills == null) return null;
+        return skills.stream()
+                .map(empSkill -> {
+                    EmployeeDTO.SkillDTO dto = new EmployeeDTO.SkillDTO();
+                    dto.setId(empSkill.getSkill().getId());
+                    return dto;
+                }).collect(Collectors.toList());
     }
 
 }
