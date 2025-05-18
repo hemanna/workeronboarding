@@ -25,6 +25,15 @@ public class LeaveType {
     @Column(name = "entitlements", nullable = false)
     private Integer entitlements;
 
+    @Column(name = "annual_entitlement", nullable = false)
+    private Integer annual_entitlement;
+
+    @Column(name = "is_carry_forward_allowed")
+    private Boolean isCarryForwardAllowed;
+
     @OneToMany(mappedBy = "leaveType")
     private Set<Leave> leaves;
+
+    @OneToMany(mappedBy = "leaveType")
+    private Set<LeaveBalance> leaveBalances;
 }

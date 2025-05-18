@@ -23,6 +23,4 @@ public class LeaveDTO {
     private String attachment;
     private String attachmentName;
     private long numberOfDays;
-
-
 }

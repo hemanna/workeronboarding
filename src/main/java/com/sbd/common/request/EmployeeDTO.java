@@ -1,5 +1,6 @@
 package com.sbd.common.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.jboss.resteasy.reactive.multipart.FileUpload;
 
