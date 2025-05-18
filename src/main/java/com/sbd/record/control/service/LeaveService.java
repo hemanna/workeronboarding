@@ -233,10 +233,8 @@ public class LeaveService implements LeaveControl {
             leave.setAttachment(leaveRequest.getAttachment());  // Store as BLOB
             leave.setAttachmentName(leaveRequest.getAttachmentName());
         }
-
         // Persist Leave Entity
         leaveRepository.persist(leave);
-
         // Convert Entity to DTO using MapStruct
         LeaveDTO leaveDTO = LeaveMapper.INSTANCE.toDTO(leave);
 
