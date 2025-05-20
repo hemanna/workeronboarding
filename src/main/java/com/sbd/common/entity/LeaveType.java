@@ -22,9 +22,6 @@ public class LeaveType {
     @Column(name = "type", nullable = false)
     private String type;
 
-    @Column(name = "entitlements", nullable = false)
-    private Integer entitlements;
-
     @Column(name = "annual_entitlement", nullable = false)
     private Integer annual_entitlement;
 
