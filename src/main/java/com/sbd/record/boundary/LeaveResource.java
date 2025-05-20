@@ -1,5 +1,6 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.LeaveBalanceJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -93,5 +95,17 @@ public class LeaveResource {
 
         return leaveControl.updateApprovalStatus(leaveId, approvalStatus, requestId);
     }
+
+    @GET
+    @Path("/leave_balances/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse<List<LeaveBalanceJsonb>> getLeaveBalancesByEmployeeId(
+            @PathParam("employeeId") int employeeId,
+            @PathParam("year") int year) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("requestId: {} | Fetch leave balances for employee {} and year {}", requestId, employeeId, year);
+        return leaveControl.fetchLeaveBalancesByEmployeeId(employeeId, year, requestId);
+    }
+
 
 }

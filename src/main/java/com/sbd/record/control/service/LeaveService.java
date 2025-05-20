@@ -1,13 +1,11 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.LeaveBalanceJsonb;
 import com.sbd.common.Jsonb.LeaveDTO;
 import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.LeaveMapper;
-import com.sbd.common.repository.EmployeeDetailsRepository;
-import com.sbd.common.repository.LeaveRepository;
-import com.sbd.common.repository.LeaveTypeRepository;
-import com.sbd.common.repository.DepartmentRepository;
+import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.request.LeaveRequest;
@@ -21,6 +19,8 @@ import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @ApplicationScoped
@@ -38,6 +38,9 @@ public class LeaveService implements LeaveControl {
 
     @Inject
     DepartmentRepository departmentRepository;
+
+    @Inject
+    LeaveBalanceRepository leaveBalanceRepository;
 
     @Override
     @Transactional
@@ -192,6 +195,80 @@ public class LeaveService implements LeaveControl {
                 new Status(Response.Status.OK.getStatusCode(), "Approval status updated to " + approvalStatus, requestId)
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse<List<LeaveBalanceJsonb>> fetchLeaveBalancesByEmployeeId(int employeeId, int year, String requestId) {
+        String leavePeriod = String.valueOf(year);
+        List<Object[]> results = leaveRepository.findLeaveBalancesByEmployeeId(employeeId, year);
+
+        List<LeaveBalanceJsonb> dtoList = new ArrayList<>();
+
+        if (results.isEmpty()) {
+            return new ApiResponse<>(
+                    new Status(Response.Status.OK.getStatusCode(), "No leave balances found", requestId),
+                    dtoList
+            );
+        }
+
+        EmployeeDetails employee = employeeDetailsRepository.findById(Long.valueOf(employeeId));
+        if (employee == null) {
+            return new ApiResponse<>(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Employee not found", requestId),
+                    dtoList
+            );
+        }
+
+        for (Object[] row : results) {
+            int leaveTypeId = ((Number) row[0]).intValue();
+            String leaveTypeName = (String) row[1];
+            int entitled = ((Number) row[2]).intValue();
+            int takenDays = ((Number) row[3]).intValue();
+
+            LeaveType leaveType = leaveTypeRepository.findById(Long.valueOf(leaveTypeId));
+            if (leaveType == null) continue;
+
+            boolean carryForwardAllowed = Boolean.TRUE.equals(leaveType.getIsCarryForwardAllowed());
+
+            LeaveBalance leaveBalance = leaveBalanceRepository.findByEmployeeAndLeaveTypeAndYear(employeeId, leaveTypeId, leavePeriod);
+
+            if (leaveBalance == null) {
+                leaveBalance = new LeaveBalance();
+                leaveBalance.setEmployee(employee);
+                leaveBalance.setLeaveType(leaveType);
+                leaveBalance.setTakenDays(takenDays);
+                leaveBalance.setCarryForwardDays(0); // Default value or calculate if needed
+                leaveBalance.setRemainingDays(entitled - takenDays);
+                leaveBalance.setLeavePeriod(leavePeriod);
+                leaveBalanceRepository.persist(leaveBalance);
+            } else {
+                leaveBalance.setTakenDays(takenDays);
+                leaveBalance.setRemainingDays(entitled - takenDays + leaveBalance.getCarryForwardDays());
+                leaveBalanceRepository.persist(leaveBalance);
+            }
+
+            LeaveBalanceJsonb dto = new LeaveBalanceJsonb(
+                    employeeId,
+                    leaveTypeId,
+                    entitled,
+                    takenDays,
+                    leaveBalance.getCarryForwardDays() != null ? leaveBalance.getCarryForwardDays() : 0,
+                    leaveBalance.getRemainingDays(),
+                    leavePeriod,
+                    carryForwardAllowed
+            );
+            dtoList.add(dto);
+        }
+
+        return new ApiResponse<>(
+                new Status(Response.Status.OK.getStatusCode(), "Leave Balance fetched successfully", requestId),
+                dtoList
+        );
+    }
+
+
+
+
     @Transactional
     public ApiResponse createLeaveRequest(LeaveRequest leaveRequest, String requestId)
             throws IOException, BusinessException {

@@ -41,17 +41,18 @@ public class LeaveRepository implements PanacheRepository<Leave> {
                 .getResultList();
     }
 
+
     @Getter
     @AllArgsConstructor
     private enum LeaveQueryEnum {
         LEAVE_BALANCE(
-                "SELECT lt.id AS leaveTypeId, lt.type, lt.entitled, " +
+                "SELECT lt.id, lt.type, lt.annual_entitlement, " +
                         "COALESCE(SUM(DATEDIFF(lr.end_date, lr.start_date) + 1), 0) AS used " +
                         "FROM leave_type lt " +
                         "LEFT JOIN leave_requests lr ON lr.leave_type_id = lt.id " +
                         "AND lr.employee_id = :employeeId " +
                         "AND YEAR(lr.start_date) = :year " +
-                        "GROUP BY lt.id, lt.type, lt.entitled"
+                        "GROUP BY lt.id, lt.type, lt.annual_entitlement"
         ),
 
 
