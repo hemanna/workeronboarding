@@ -25,7 +25,6 @@ public class UserCredentialsResource {
     @Path("/user-Login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-
     public ApiResponse UserLogin(ApiRequest<UserCredentialRequest> apiRequest) {
         String requestId = UUID.randomUUID().toString();
         log.info("RequestId: {} | Login User Request: {}", requestId, apiRequest);
