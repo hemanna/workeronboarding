@@ -3,6 +3,7 @@ package com.sbd.record.control.service;
 import com.sbd.common.Jsonb.BankDetailsJsonb;
 import com.sbd.common.entity.BankDetails;
 import com.sbd.common.entity.EmployeeDetails;
+import com.sbd.common.exception.BusinessException;
 import com.sbd.common.repository.BankDetailsRepository;
 import com.sbd.common.repository.EmployeeDetailsRepository;
 import com.sbd.common.request.ApiRequest;
@@ -49,6 +50,7 @@ public class BankDetailsService implements BankDetailsControl {
             );
         }
 
+
         BankDetails bankDetails = new BankDetails();
         bankDetails.setEmployeeId(employee);
         bankDetails.setAccountNumber(details.getAccountNumber());
@@ -61,7 +63,6 @@ public class BankDetailsService implements BankDetailsControl {
         bankDetails.setCreatedAt(LocalDateTime.now());
         bankDetails.setUpdatedAt(LocalDateTime.now());
 
-
         bankDetailsRepository.persist(bankDetails);
         employeeDetailsRepository.flush();
 
@@ -70,4 +71,51 @@ public class BankDetailsService implements BankDetailsControl {
                 new Status(Response.Status.OK.getStatusCode(), "Bank holder details successfully created", requestId)
 
         );    }
+
+    @Override
+    @Transactional
+    public ApiResponse updateBankDetailsRequest(
+            Integer employeeId,
+            ApiRequest<BankDetailsJsonb> apiRequest,
+            String requestId)
+            throws BusinessException {
+        log.info("Start updating BankDetails - RequestId: {}", requestId);
+
+        BankDetailsJsonb details = apiRequest.getData();
+
+        // Fetch the employee details
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Fetch existing bank details for the employee
+        BankDetails bankDetails = bankDetailsRepository.findByEmployeeId(employeeId);
+        if (bankDetails == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Bank details not found for this employee", requestId)
+            );
+        }
+
+        // Update bank details
+        bankDetails.setAccountNumber(details.getAccountNumber());
+        bankDetails.setIfscCode(details.getIfscCode());
+        bankDetails.setBankName(details.getBankName());
+        bankDetails.setBranchName(details.getBranchName());
+        bankDetails.setNameOnAccount(details.getNameOnAccount());
+        bankDetails.setAccountCountryTerritory(details.getAccountCountryTerritory());
+        bankDetails.setAccountType(details.getAccountType());
+        bankDetails.setUpdatedAt(LocalDateTime.now());
+
+        bankDetailsRepository.persist(bankDetails);
+        employeeDetailsRepository.flush();
+
+        log.info("End updating BankDetails - RequestId: {}", requestId);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Bank details successfully updated", requestId)
+        );
+    }
 }
