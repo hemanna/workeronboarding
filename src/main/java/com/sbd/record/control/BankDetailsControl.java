@@ -17,4 +17,9 @@ public interface BankDetailsControl {
             String requestId)
             throws BusinessException;
 
+    ApiResponse fetchBankDetailsEmployeeById(
+            Long employeeId,
+            String requestId )
+            throws BusinessException;
+
 }

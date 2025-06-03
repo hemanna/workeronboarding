@@ -4,6 +4,7 @@ import com.sbd.common.Jsonb.BankDetailsJsonb;
 import com.sbd.common.entity.BankDetails;
 import com.sbd.common.entity.EmployeeDetails;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.mapper.BankDetailsMapper;
 import com.sbd.common.repository.BankDetailsRepository;
 import com.sbd.common.repository.EmployeeDetailsRepository;
 import com.sbd.common.request.ApiRequest;
@@ -116,6 +117,38 @@ public class BankDetailsService implements BankDetailsControl {
 
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Bank details successfully updated", requestId)
+        );
+    }
+
+    @Override
+    public ApiResponse fetchBankDetailsEmployeeById(Long employeeId, String requestId) throws BusinessException {
+        log.info("Start fetching bank details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+
+        // Fetch the employee entity by ID
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId.intValue());
+        if (employee == null) {
+            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Fetch bank details for this employee
+        BankDetails bankDetails = bankDetailsRepository.findByEmployeeId(employee.getId());
+        if (bankDetails == null) {
+            log.error("Bank details not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Bank details not found", requestId)
+            );
+        }
+
+        // Convert entity to DTO using mapper
+        BankDetailsJsonb bankDetailsJsonb = BankDetailsMapper.INSTANCE.toJsonb(bankDetails);
+
+        log.info("End fetching bank details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Bank details fetched successfully", requestId),
+                bankDetailsJsonb
         );
     }
 }
