@@ -121,7 +121,10 @@ public class BankDetailsService implements BankDetailsControl {
     }
 
     @Override
-    public ApiResponse fetchBankDetailsEmployeeById(Long employeeId, String requestId) throws BusinessException {
+    public ApiResponse fetchBankDetailsEmployeeById(
+            Long employeeId,
+            String requestId)
+            throws BusinessException {
         log.info("Start fetching bank details - RequestId: {}, EmployeeId: {}", requestId, employeeId);
 
         // Fetch the employee entity by ID

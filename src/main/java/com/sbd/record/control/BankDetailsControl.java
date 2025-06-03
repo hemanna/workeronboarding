@@ -6,7 +6,6 @@ import com.sbd.common.request.ApiRequest;
 import com.sbd.common.response.ApiResponse;
 
 public interface BankDetailsControl {
-
     ApiResponse bankHolderLogin(
             ApiRequest<BankDetailsJsonb> apiRequest,
             String requestId);

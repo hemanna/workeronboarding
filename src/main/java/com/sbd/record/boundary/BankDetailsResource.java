@@ -20,6 +20,7 @@ import java.util.UUID;
 public class BankDetailsResource {
 
     private final BankDetailsControl bankDetailsControl;
+
     @POST
     @Path("/create")
     public ApiResponse createBankDetails(

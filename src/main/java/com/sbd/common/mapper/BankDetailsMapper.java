@@ -10,7 +10,6 @@ import org.mapstruct.factory.Mappers;
 @ApplicationScoped
 @Mapper
 public interface BankDetailsMapper {
-
     BankDetailsMapper INSTANCE = Mappers.getMapper(BankDetailsMapper.class);
 
     @Mapping(target = "employeeId", source = "employeeId.id")
