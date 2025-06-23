@@ -69,11 +69,34 @@ public class EmployeeAttendanceResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/get_attendance_by_month/{month}")
+    @Path("/get_attendance/{month}")
     public ApiResponse fetchAttendanceByMonth(@PathParam("month") String month) {
         String requestId = UUID.randomUUID().toString();
         log.info("request_id : {} | get employee attendance by month: {}", requestId, month);
         return employeeAttendanceControl.fetchAttendanceByMonth(month, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_attendance/{year}/{month}")
+    public ApiResponse fetchAttendanceByYearAndMonth(
+            @PathParam("year") String year,
+            @PathParam("month") String month
+    ) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Fetching attendance for Year: {}, Month: {}", requestId, year, month);
+        return employeeAttendanceControl.fetchAttendanceByYearAndMonth(year, month, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_attendance/{year}")
+    public ApiResponse fetchAttendanceByYear(
+            @PathParam("year") String year
+    ) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Fetching attendance for Year: {}", requestId, year);
+        return employeeAttendanceControl.fetchAttendanceByYearAndMonth(year, null, requestId);
     }
 
     @POST

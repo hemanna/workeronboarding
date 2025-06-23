@@ -21,6 +21,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 @Slf4j
@@ -439,4 +440,73 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                 responseDTO
         );
     }
+
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAttendanceByYearAndMonth(String year, String month, String requestId) {
+        log.info("Start fetching attendance - RequestId: {}, Year: {}, Month: {}", requestId, year, month);
+
+        LocalDate startDate;
+        LocalDate endDate;
+
+        try {
+            startDate = LocalDate.parse(year + "-01-01");
+            endDate = LocalDate.parse(year + "-12-31");
+
+            if (month != null) {
+                startDate = LocalDate.parse(year + "-" + month + "-01");
+                endDate = startDate.plusMonths(1).minusDays(1);
+            }
+        } catch (Exception e) {
+            log.error("Invalid date format - RequestId: {}, Year: {}, Month: {}", requestId, year, month);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid year or month format", requestId)
+            );
+        }
+
+        List<EmployeeAttendance> attendanceList = employeeAttendanceRepository.findByMonth(startDate, endDate);
+
+        if (attendanceList == null || attendanceList.isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No attendance records found", requestId)
+            );
+        }
+
+
+        List<EmployeeDTO.EmployeeAttendanceDTO> attendanceDTOList = attendanceList.stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
+
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
+                attendanceDTOList
+        );
+    }
+
+    private EmployeeDTO.EmployeeAttendanceDTO mapToDTO(EmployeeAttendance attendance) {
+        EmployeeDTO.EmployeeAttendanceDTO dto = new EmployeeDTO.EmployeeAttendanceDTO();
+
+        dto.setId(attendance.getId());
+        dto.setEmployeeId(attendance.getEmployee().getId());
+        dto.setDepartmentId(attendance.getDepartment() != null ? attendance.getDepartment().getId() : null);
+        dto.setRoleId(attendance.getRole() != null ? attendance.getRole().getRoleId() : null);
+        dto.setLeaveId(attendance.getLeave() != null ? attendance.getLeave().getId() : null);
+
+        dto.setDate(attendance.getDate());
+        dto.setCheckinTime(attendance.getCheckinTime());
+        dto.setCheckoutTime(attendance.getCheckoutTime());
+        dto.setWorkingHours(attendance.getWorkingHours());
+        dto.setOvertime(attendance.getOvertime());
+        dto.setShiftDetails(attendance.getShiftDetails());
+        dto.setLocation(attendance.getLocation());
+        dto.setPhoto(attendance.getPhoto());
+        dto.setApprovalStatus(attendance.getApprovalStatus());
+        dto.setStatus(attendance.getStatus());
+
+        return dto;
+    }
+
+
 }
