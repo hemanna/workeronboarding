@@ -470,7 +470,6 @@ public class EmployeeRecordService implements EmployeeRecordControl {
             String requestId ,
             ApiRequest<EmployeeDetailsRequest> apiRequest)
             throws BusinessException {
-
         log.info("Start fetching skill wise employee count - RequestId: {}", requestId);
 
         List<SkillCountDTO> skillCounts = employeeDetailsRepository.getSkillWiseEmployeeCount();
