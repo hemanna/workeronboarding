@@ -2,6 +2,8 @@ package com.sbd.record.boundary;
 
 import com.sbd.common.Jsonb.PayrollJsonb;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.request.ApiRequest;
+import com.sbd.common.request.EmployeeDetailsRequest;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.SalaryStructureControl;
 import jakarta.ws.rs.*;
@@ -40,4 +42,14 @@ public class SalaryStructureResource {
         return salaryStructureControl.fetchSalaryStructure(requestDTO, requestId);
     }
 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/get_all_payslipdata")
+    public ApiResponse fetchAllEmployeesPayslipData(PayrollJsonb requestDTO) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id: {} | Fetching all employees", requestId);
+
+        return salaryStructureControl.fetchAllEmployeesPayslipData(requestDTO, requestId);
+    }
 }

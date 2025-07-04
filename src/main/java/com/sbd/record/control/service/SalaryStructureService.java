@@ -1,5 +1,6 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.EmployeePayslipDTO;
 import com.sbd.common.Jsonb.PayrollDTO;
 import com.sbd.common.Jsonb.PayrollJsonb;
 import com.sbd.common.Jsonb.SalaryStructureDTO;
@@ -198,4 +199,88 @@ public class SalaryStructureService implements SalaryStructureControl {
                 response
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAllEmployeesPayslipData(PayrollJsonb requestDTO, String requestId) throws BusinessException {
+        Integer month = requestDTO.getMonth();
+        Integer year = requestDTO.getYear();
+
+        log.info("Start fetching all employees payslip data - RequestId: {}, Month: {}, Year: {}", requestId, month, year);
+
+        List<EmployeeDetails> employees = employeeDetailsRepository.listAll();
+
+        if (employees == null || employees.isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No employees found", requestId)
+            );
+        }
+
+        List<EmployeePayslipDTO> responseList = employees.stream()
+                .map(employee -> {
+                    List<Payroll> payrolls;
+
+                    if (month != null && year != null) {
+                        payrolls = payrollRepository.find(
+                                "employeeId = ?1 and month = ?2 and year = ?3",
+                                employee,
+                                month,
+                                year
+                        ).list();
+                    } else if (year != null) {
+                        payrolls = payrollRepository.find(
+                                "employeeId = ?1 and year = ?2",
+                                employee,
+                                year
+                        ).list();
+                    } else {
+                        // Fetch all payrolls for employee (no filter)
+                        payrolls = payrollRepository.find(
+                                "employeeId = ?1",
+                                employee
+                        ).list();
+                    }
+
+                    List<PayrollDTO> payrollDTOs = payrolls.stream()
+                            .map(payroll -> {
+                                List<PayrollComponent> components = payrollComponentRepository.find(
+                                        "payrollId = ?1", payroll
+                                ).list();
+
+                                List<SalaryStructureDTO> componentDTOs = components.stream()
+                                        .map(SalaryStructureMapper.INSTANCE::toDTO)
+                                        .collect(Collectors.toList());
+
+                                return new PayrollDTO(
+                                        payroll.getGrossSalary(),
+                                        payroll.getNetSalary(),
+                                        payroll.getGeneratedOn(),
+                                        payroll.getMonth(),
+                                        payroll.getYear(),
+                                        componentDTOs
+                                );
+                            })
+                            .collect(Collectors.toList());
+
+                    return new EmployeePayslipDTO(
+                            employee.getId().longValue(),
+                            employee.getEmployeeName(),
+                            payrollDTOs
+                    );
+                })
+                .filter(dto -> !dto.getPayrolls().isEmpty()) // Remove employees with no payroll data
+                .collect(Collectors.toList());
+
+        if (responseList.isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No payroll data found for any employee", requestId)
+            );
+        }
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Payslip data fetched successfully", requestId),
+                responseList
+        );
+
     }
+}
