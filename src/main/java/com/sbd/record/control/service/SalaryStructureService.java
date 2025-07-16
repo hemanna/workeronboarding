@@ -1,19 +1,10 @@
 package com.sbd.record.control.service;
 
-import com.sbd.common.Jsonb.EmployeePayslipDTO;
-import com.sbd.common.Jsonb.PayrollDTO;
-import com.sbd.common.Jsonb.PayrollJsonb;
-import com.sbd.common.Jsonb.SalaryStructureDTO;
-import com.sbd.common.entity.EmployeeDetails;
-import com.sbd.common.entity.Payroll;
-import com.sbd.common.entity.PayrollComponent;
-import com.sbd.common.entity.SalaryStructure;
+import com.sbd.common.Jsonb.*;
+import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.SalaryStructureMapper;
-import com.sbd.common.repository.EmployeeDetailsRepository;
-import com.sbd.common.repository.PayrollComponentRepository;
-import com.sbd.common.repository.PayrollRepository;
-import com.sbd.common.repository.SalaryStructureRepository;
+import com.sbd.common.repository.*;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.SalaryStructureControl;
@@ -45,6 +36,12 @@ public class SalaryStructureService implements SalaryStructureControl {
 
     @Inject
     EmployeeDetailsRepository employeeDetailsRepository;
+
+    @Inject
+    EmployeeSalaryStructureRepository employeeSalaryStructureRepository;
+
+    @Inject
+    DepartmentRepository departmentRepository;
 
     @Transactional
     @Override
@@ -283,4 +280,85 @@ public class SalaryStructureService implements SalaryStructureControl {
         );
 
     }
+
+    @Override
+    @Transactional
+    public ApiResponse createSalaryStructure(EmployeeSalaryStructureJsonb request, String requestId) throws BusinessException {
+        log.info("Start creating Employee Salary Structure - RequestId: {}", requestId);
+
+        // Validate Employee existence
+        EmployeeDetails employee = employeeDetailsRepository.findById(request.getEmployeeId());
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Check for existing Salary Structure (optional duplication prevention)
+        EmployeeSalaryStructure existing = employeeSalaryStructureRepository.findByEmployeeId(request.getEmployeeId());
+
+        if (existing != null) {
+            return new ApiResponse(
+                    new Status(Response.Status.CONFLICT.getStatusCode(), "Salary structure already exists for this employee", requestId)
+            );
+        }
+
+        // Map request to entity
+        EmployeeSalaryStructure salary = new EmployeeSalaryStructure();
+        salary.setEmployee(employee);
+        salary.setDepartment(departmentRepository.findById(request.getDepartmentId()));
+        salary.setLocation(request.getLocation());
+
+        // Fixed Components
+        salary.setBasicSalary(request.getBasicSalary());
+        salary.setHouseRentAllowance(request.getHouseRentAllowance());
+        salary.setSpecialAllowance(request.getSpecialAllowance());
+        salary.setNpsEmployer(request.getNpsEmployer());
+        salary.setCarReimbursement(request.getCarReimbursement());
+        salary.setDriverReimbursement(request.getDriverReimbursement());
+        salary.setPdReimbursement(request.getPdReimbursement());
+        salary.setTelephoneReimbursement(request.getTelephoneReimbursement());
+
+        // Salary Calculations
+        salary.setGrossSalary(request.getGrossSalary());
+        salary.setPfContribution(request.getPfContribution());
+        salary.setEsiContribution(request.getEsiContribution());
+        salary.setFixedSalary(request.getFixedSalary());
+        salary.setGratuityPayable(request.getGratuityPayable());
+        salary.setBonusPayable(request.getBonusPayable());
+        salary.setLtaPayable(request.getLtaPayable());
+        salary.setVariablePayable(request.getVariablePayable());
+        salary.setMediclaimBenefits(request.getMediclaimBenefits());
+        salary.setGrandTotalCtc(request.getGrandTotalCtc());
+
+        // Summary
+        salary.setMonthlySalary(request.getMonthlySalary());
+        salary.setAnnualCtc(request.getAnnualCtc());
+        salary.setApprovalStatus(request.getApprovalStatus());
+        salary.setSalaryStatus(request.getSalaryStatus());
+
+        // Percentages
+        salary.setPfApplicable(request.getPfApplicable());
+        salary.setPfLimit(request.getPfLimit());
+        salary.setEsiApplicable(request.getEsiApplicable());
+        salary.setGratuityApplicable(request.getGratuityApplicable());
+        salary.setBonusApplicable(request.getBonusApplicable());
+        salary.setBasicSalaryPercent(request.getBasicSalaryPercent());
+        salary.setHraPercent(request.getHraPercent());
+        salary.setNpsPercent(request.getNpsPercent());
+        salary.setMinimumWage(request.getMinimumWage());
+
+        salary.setCreatedAt(LocalDateTime.now());
+        salary.setUpdatedAt(LocalDateTime.now());
+
+        // Persist salary structure
+        employeeSalaryStructureRepository.persist(salary);
+        employeeSalaryStructureRepository.flush();
+
+        log.info("End creating Employee Salary Structure - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Salary structure successfully created", requestId)
+        );
+    }
+
 }

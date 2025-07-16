@@ -1,5 +1,7 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.BankDetailsJsonb;
+import com.sbd.common.Jsonb.EmployeeSalaryStructureJsonb;
 import com.sbd.common.Jsonb.PayrollJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
@@ -51,5 +53,12 @@ public class SalaryStructureResource {
         log.info("request_id: {} | Fetching all employees", requestId);
 
         return salaryStructureControl.fetchAllEmployeesPayslipData(requestDTO, requestId);
+    }
+
+    @POST
+    @Path("/create")
+    public ApiResponse createSalaryStructure(EmployeeSalaryStructureJsonb apiRequest) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        return salaryStructureControl.createSalaryStructure(apiRequest, requestId);
     }
 }
