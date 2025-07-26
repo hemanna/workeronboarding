@@ -10,6 +10,7 @@ import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.SalaryStructureControl;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -60,5 +61,15 @@ public class SalaryStructureResource {
     public ApiResponse createSalaryStructure(EmployeeSalaryStructureJsonb apiRequest) throws BusinessException {
         String requestId = UUID.randomUUID().toString();
         return salaryStructureControl.createSalaryStructure(apiRequest, requestId);
+    }
+
+    @PATCH
+    @Path("/update/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse updateSalaryStructure(@PathParam("employeeId") Integer employeeId,
+                                                 ApiRequest<EmployeeSalaryStructureJsonb> apiRequest) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        return salaryStructureControl.updateSalaryStructure(employeeId, apiRequest, requestId);
     }
 }

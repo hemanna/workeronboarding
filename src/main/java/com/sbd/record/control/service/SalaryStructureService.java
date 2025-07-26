@@ -3,8 +3,10 @@ package com.sbd.record.control.service;
 import com.sbd.common.Jsonb.*;
 import com.sbd.common.entity.*;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.mapper.EmployeeSalaryStructureMapper;
 import com.sbd.common.mapper.SalaryStructureMapper;
 import com.sbd.common.repository.*;
+import com.sbd.common.request.ApiRequest;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.SalaryStructureControl;
@@ -203,7 +205,7 @@ public class SalaryStructureService implements SalaryStructureControl {
         Integer month = requestDTO.getMonth();
         Integer year = requestDTO.getYear();
 
-        log.info("Start fetching all employees payslip data - RequestId: {}, Month: {}, Year: {}", requestId, month, year);
+        log.info("Start fetching all employees salary structure data - RequestId: {}, Month: {}, Year: {}", requestId, month, year);
 
         List<EmployeeDetails> employees = employeeDetailsRepository.listAll();
 
@@ -215,71 +217,50 @@ public class SalaryStructureService implements SalaryStructureControl {
 
         List<EmployeePayslipDTO> responseList = employees.stream()
                 .map(employee -> {
-                    List<Payroll> payrolls;
+                    List<EmployeeSalaryStructure> salaryStructures;
 
                     if (month != null && year != null) {
-                        payrolls = payrollRepository.find(
-                                "employeeId = ?1 and month = ?2 and year = ?3",
-                                employee,
-                                month,
-                                year
+                        salaryStructures = employeeSalaryStructureRepository.find(
+                                "employee = ?1 AND MONTH(createdAt) = ?2 AND YEAR(createdAt) = ?3",
+                                employee, month, year
                         ).list();
                     } else if (year != null) {
-                        payrolls = payrollRepository.find(
-                                "employeeId = ?1 and year = ?2",
-                                employee,
-                                year
+                        salaryStructures = employeeSalaryStructureRepository.find(
+                                "employee = ?1 AND YEAR(createdAt) = ?2",
+                                employee, year
                         ).list();
                     } else {
-                        // Fetch all payrolls for employee (no filter)
-                        payrolls = payrollRepository.find(
-                                "employeeId = ?1",
+                        salaryStructures = employeeSalaryStructureRepository.find(
+                                "employee = ?1",
                                 employee
                         ).list();
                     }
 
-                    List<PayrollDTO> payrollDTOs = payrolls.stream()
-                            .map(payroll -> {
-                                List<PayrollComponent> components = payrollComponentRepository.find(
-                                        "payrollId = ?1", payroll
-                                ).list();
-
-                                List<SalaryStructureDTO> componentDTOs = components.stream()
-                                        .map(SalaryStructureMapper.INSTANCE::toDTO)
-                                        .collect(Collectors.toList());
-
-                                return new PayrollDTO(
-                                        payroll.getGrossSalary(),
-                                        payroll.getNetSalary(),
-                                        payroll.getGeneratedOn(),
-                                        payroll.getMonth(),
-                                        payroll.getYear(),
-                                        componentDTOs
-                                );
-                            })
+                    List<EmployeeSalaryStructureJsonb> salaryJsonbList = salaryStructures.stream()
+                            .map(EmployeeSalaryStructureMapper.INSTANCE::toJsonb)
                             .collect(Collectors.toList());
 
                     return new EmployeePayslipDTO(
                             employee.getId().longValue(),
                             employee.getEmployeeName(),
-                            payrollDTOs
+                            salaryJsonbList
                     );
                 })
-                .filter(dto -> !dto.getPayrolls().isEmpty()) // Remove employees with no payroll data
+                .filter(dto -> !dto.getSalaryStructures().isEmpty())
                 .collect(Collectors.toList());
 
         if (responseList.isEmpty()) {
             return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No payroll data found for any employee", requestId)
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No salary structure data found for any employee", requestId)
             );
         }
 
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Payslip data fetched successfully", requestId),
+                new Status(Response.Status.OK.getStatusCode(), "Salary structure data fetched successfully", requestId),
                 responseList
         );
-
     }
+
 
     @Override
     @Transactional
@@ -360,5 +341,85 @@ public class SalaryStructureService implements SalaryStructureControl {
                 new Status(Response.Status.OK.getStatusCode(), "Salary structure successfully created", requestId)
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse updateSalaryStructure(Integer employeeId, ApiRequest<EmployeeSalaryStructureJsonb> apiRequest, String requestId) throws BusinessException {
+        log.info("Start updating Employee Salary Structure - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+
+        EmployeeSalaryStructureJsonb request = apiRequest.getData();
+        if (request == null) {
+            throw new BusinessException(Response.Status.BAD_REQUEST.getStatusCode(), requestId, "Request data cannot be null");
+        }
+
+        // Validate existence of Employee
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Fetch existing salary structure
+        EmployeeSalaryStructure existing = employeeSalaryStructureRepository.findByEmployeeId(employeeId);
+        if (existing == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Salary structure not found for this employee", requestId)
+            );
+        }
+
+        // Update fields
+        existing.setLocation(request.getLocation());
+
+        // Fixed Components
+        existing.setBasicSalary(request.getBasicSalary());
+        existing.setHouseRentAllowance(request.getHouseRentAllowance());
+        existing.setSpecialAllowance(request.getSpecialAllowance());
+        existing.setNpsEmployer(request.getNpsEmployer());
+        existing.setCarReimbursement(request.getCarReimbursement());
+        existing.setDriverReimbursement(request.getDriverReimbursement());
+        existing.setPdReimbursement(request.getPdReimbursement());
+        existing.setTelephoneReimbursement(request.getTelephoneReimbursement());
+
+        // Salary Calculations
+        existing.setGrossSalary(request.getGrossSalary());
+        existing.setPfContribution(request.getPfContribution());
+        existing.setEsiContribution(request.getEsiContribution());
+        existing.setFixedSalary(request.getFixedSalary());
+        existing.setGratuityPayable(request.getGratuityPayable());
+        existing.setBonusPayable(request.getBonusPayable());
+        existing.setLtaPayable(request.getLtaPayable());
+        existing.setVariablePayable(request.getVariablePayable());
+        existing.setMediclaimBenefits(request.getMediclaimBenefits());
+        existing.setGrandTotalCtc(request.getGrandTotalCtc());
+
+        // Summary
+        existing.setMonthlySalary(request.getMonthlySalary());
+        existing.setAnnualCtc(request.getAnnualCtc());
+        existing.setApprovalStatus(request.getApprovalStatus());
+        existing.setSalaryStatus(request.getSalaryStatus());
+
+        // Percentages
+        existing.setPfApplicable(request.getPfApplicable());
+        existing.setPfLimit(request.getPfLimit());
+        existing.setEsiApplicable(request.getEsiApplicable());
+        existing.setGratuityApplicable(request.getGratuityApplicable());
+        existing.setBonusApplicable(request.getBonusApplicable());
+        existing.setBasicSalaryPercent(request.getBasicSalaryPercent());
+        existing.setHraPercent(request.getHraPercent());
+        existing.setNpsPercent(request.getNpsPercent());
+        existing.setMinimumWage(request.getMinimumWage());
+
+        existing.setUpdatedAt(LocalDateTime.now());
+
+        employeeSalaryStructureRepository.persist(existing);
+        employeeSalaryStructureRepository.flush();
+
+        log.info("End updating Employee Salary Structure - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Salary structure successfully updated", requestId)
+        );
+    }
+
 
 }

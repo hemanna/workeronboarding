@@ -12,6 +12,6 @@ import java.util.List;
 public class EmployeePayslipDTO {
     private Long employeeId;
     private String employeeName;
-    private List<PayrollDTO> payrolls;
+    private List<EmployeeSalaryStructureJsonb> salaryStructures;
 
 }
