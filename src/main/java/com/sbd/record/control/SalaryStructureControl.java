@@ -18,4 +18,10 @@ public interface SalaryStructureControl {
             ApiRequest<EmployeeSalaryStructureJsonb> apiRequest,
             String requestId)
             throws BusinessException;
+
+    ApiResponse updateApprovalStatus(
+            Integer employeeId,
+            String approvalStatus,
+            String requestId);
+
 }

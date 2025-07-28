@@ -421,5 +421,51 @@ public class SalaryStructureService implements SalaryStructureControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse updateApprovalStatus(Integer employeeId, String approvalStatus, String requestId) {
+        log.info("Start updating salary structure approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+
+        // Validate the approval status
+        if (approvalStatus == null ||
+                (!"Approved".equalsIgnoreCase(approvalStatus) &&
+                        !"Rejected".equalsIgnoreCase(approvalStatus) &&
+                        !"Pending".equalsIgnoreCase(approvalStatus))) {
+
+            log.error("Invalid approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid approval status", requestId)
+            );
+        }
+
+        // Fetch the existing salary structure
+        EmployeeSalaryStructure salaryStructure = employeeSalaryStructureRepository.findByEmployeeId(employeeId);
+        if (salaryStructure == null) {
+            log.error("Salary structure not found - RequestId: {}, EmployeeId: {}", requestId, employeeId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Salary structure not found for this employee", requestId)
+            );
+        }
+
+        // Update the approval status
+        salaryStructure.setApprovalStatus(approvalStatus);
+        salaryStructure.setUpdatedAt(LocalDateTime.now());
+
+        try {
+            employeeSalaryStructureRepository.persist(salaryStructure);
+            log.info("Successfully updated salary structure approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+        } catch (Exception e) {
+            log.error("Error while updating salary structure approval status - RequestId: {}, EmployeeId: {}", requestId, employeeId, e);
+            return new ApiResponse(
+                    new Status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Error updating salary structure approval status", requestId)
+            );
+        }
+
+        log.info("End updating salary structure approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), approvalStatus + " updated", requestId)
+        );
+    }
+
 
 }
