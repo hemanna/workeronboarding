@@ -5,8 +5,10 @@ import com.sbd.common.Jsonb.EmployeeSalaryStructureJsonb;
 import com.sbd.common.Jsonb.PayrollJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
+import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.request.EmployeeDetailsRequest;
 import com.sbd.common.response.ApiResponse;
+import com.sbd.common.response.Status;
 import com.sbd.record.control.SalaryStructureControl;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -72,4 +74,30 @@ public class SalaryStructureResource {
         String requestId = UUID.randomUUID().toString();
         return salaryStructureControl.updateSalaryStructure(employeeId, apiRequest, requestId);
     }
+
+    @PATCH
+    @Path("ApprovalStatus/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse updateApprovalStatus(@PathParam("employeeId") Integer employeeId, ApiRequest<EmployeeSalaryStructureJsonb> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Update Employee Approval Status Request: EmployeeId: {}", requestId, employeeId);
+
+        if (apiRequest == null || apiRequest.getData() == null) {
+            log.error("Null request or data - RequestId: {}", requestId);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Request or data cannot be null", requestId)
+            );
+        }
+
+        String approvalStatus = apiRequest.getData().getApprovalStatus();
+        if (approvalStatus == null || approvalStatus.isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Approval status is required", requestId)
+            );
+        }
+
+        return salaryStructureControl.updateApprovalStatus(employeeId, approvalStatus, requestId);
+    }
+
 }
