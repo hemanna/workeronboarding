@@ -17,6 +17,6 @@ public class PayrollDTO {
     private LocalDate generatedOn;
     private Integer month;
     private Integer year;
-    private List<SalaryStructureDTO> components;
+    private List<EmployeeSalaryStructureJsonb> components;
 
 }

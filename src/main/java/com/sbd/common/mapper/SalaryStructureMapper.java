@@ -14,4 +14,6 @@ public interface SalaryStructureMapper {
     SalaryStructureDTO toDTO(SalaryStructure entity);
 
     SalaryStructureDTO toDTO(PayrollComponent entity);
+
+
 }

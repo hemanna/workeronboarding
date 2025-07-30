@@ -52,7 +52,7 @@ public class SalaryStructureService implements SalaryStructureControl {
         Integer month = requestDTO.getMonth();
         Integer year = requestDTO.getYear();
 
-        log.info("Start fetching payslip data - RequestId: {}, EmployeeId: {}, Month: {}, Year: {}",
+        log.info("Start fetching salary structure - RequestId: {}, EmployeeId: {}, Month: {}, Year: {}",
                 requestId, employeeId, month, year);
 
         EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
@@ -60,144 +60,173 @@ public class SalaryStructureService implements SalaryStructureControl {
             return new ApiResponse(new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId));
         }
 
-        List<Payroll> payrolls;
+        // Fetch EmployeeSalaryStructure records for the given employee
+        List<EmployeeSalaryStructure> structures = employeeSalaryStructureRepository
+                .find("employee.id = ?1", employeeId)
+                .list();
 
-        if (month != null && year != null) {
-            payrolls = payrollRepository.find("employeeId = ?1 and month = ?2 and year = ?3", employee, month, year).list();
-        } else if (year != null) {
-            payrolls = payrollRepository.find("employeeId = ?1 and year = ?2", employee, year).list();
-        } else {
-            payrolls = payrollRepository.find("employeeId = ?1", employee).list();
+        if (structures.isEmpty()) {
+            return new ApiResponse(new Status(Response.Status.NOT_FOUND.getStatusCode(), "Salary structure not found", requestId));
         }
 
-        if (payrolls.isEmpty()) {
-            return new ApiResponse(new Status(Response.Status.NOT_FOUND.getStatusCode(), "Payroll data not found", requestId));
-        }
+        // Map entity to JSONB DTO
+        List<EmployeeSalaryStructureJsonb> structureJsonbList = structures.stream()
+                .map(structure -> {
+                    EmployeeSalaryStructureJsonb dto = new EmployeeSalaryStructureJsonb();
+                    dto.setSalaryStructureId(structure.getId());
+                    dto.setEmployeeId(employee.getId().intValue());
+                    dto.setDepartmentId(structure.getDepartment().getId());
+                    dto.setLocation(structure.getLocation());
 
-        List<PayrollDTO> responseList = payrolls.stream().map(payroll -> {
-            List<PayrollComponent> components = payrollComponentRepository.find("payrollId = ?1", payroll).list();
-            List<SalaryStructureDTO> componentDTOs = components.stream()
-                    .map(SalaryStructureMapper.INSTANCE::toDTO)
-                    .collect(Collectors.toList());
-            return new PayrollDTO(
-                    payroll.getGrossSalary(),
-                    payroll.getNetSalary(),
-                    payroll.getGeneratedOn(),
-                    payroll.getMonth(),
-                    payroll.getYear(),
-                    componentDTOs
-            );
-        }).collect(Collectors.toList());
+                    dto.setBasicSalary(structure.getBasicSalary());
+                    dto.setHouseRentAllowance(structure.getHouseRentAllowance());
+                    dto.setSpecialAllowance(structure.getSpecialAllowance());
+                    dto.setNpsEmployer(structure.getNpsEmployer());
+                    dto.setCarReimbursement(structure.getCarReimbursement());
+                    dto.setDriverReimbursement(structure.getDriverReimbursement());
+                    dto.setPdReimbursement(structure.getPdReimbursement());
+                    dto.setTelephoneReimbursement(structure.getTelephoneReimbursement());
+
+                    dto.setGrossSalary(structure.getGrossSalary());
+                    dto.setPfContribution(structure.getPfContribution());
+                    dto.setEsiContribution(structure.getEsiContribution());
+                    dto.setFixedSalary(structure.getFixedSalary());
+                    dto.setGratuityPayable(structure.getGratuityPayable());
+                    dto.setBonusPayable(structure.getBonusPayable());
+                    dto.setLtaPayable(structure.getLtaPayable());
+                    dto.setVariablePayable(structure.getVariablePayable());
+                    dto.setMediclaimBenefits(structure.getMediclaimBenefits());
+                    dto.setGrandTotalCtc(structure.getGrandTotalCtc());
+
+                    dto.setMonthlySalary(structure.getMonthlySalary());
+                    dto.setAnnualCtc(structure.getAnnualCtc());
+                    dto.setApprovalStatus(structure.getApprovalStatus());
+                    dto.setSalaryStatus(structure.getSalaryStatus());
+
+                    dto.setPfApplicable(structure.getPfApplicable());
+                    dto.setPfLimit(structure.getPfLimit());
+                    dto.setEsiApplicable(structure.getEsiApplicable());
+                    dto.setGratuityApplicable(structure.getGratuityApplicable());
+                    dto.setBonusApplicable(structure.getBonusApplicable());
+
+                    dto.setBasicSalaryPercent(structure.getBasicSalaryPercent());
+                    dto.setHraPercent(structure.getHraPercent());
+                    dto.setNpsPercent(structure.getNpsPercent());
+                    dto.setMinimumWage(structure.getMinimumWage());
+
+                    return dto;
+                })
+                .collect(Collectors.toList());
 
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Payslip fetched successfully", requestId),
-                responseList
+                new Status(Response.Status.OK.getStatusCode(), "Salary structure fetched successfully", requestId),
+                structureJsonbList
         );
     }
 
 
-    @Transactional
-    @Override
-    public ApiResponse fetchSalaryStructure(PayrollJsonb requestDTO,String requestId) throws BusinessException {
-        log.info("Start generating payslip - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-
-        EmployeeDetails employee = employeeDetailsRepository.findById(requestDTO.getEmployeeId());
-        if (employee == null) {
-            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-            return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
-            );
-        }
-
-        Payroll existingPayroll = payrollRepository.find("employeeId = ?1 and month = ?2 and year = ?3",
-                        employee, requestDTO.getMonth(), requestDTO.getYear())
-                .firstResult();
-
-        List<SalaryStructureDTO> components;
-        Payroll payroll;
-
-        if (existingPayroll != null) {
-            log.info("Payslip already generated - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-            payroll = existingPayroll;
-            List<PayrollComponent> componentEntities = payrollComponentRepository
-                    .find("payrollId = ?1", payroll)
-                    .list();
-
-            components = componentEntities.stream()
-                    .map(SalaryStructureMapper.INSTANCE::toDTO)
-                    .collect(Collectors.toList());
-
-        } else {
-            log.info("Generating new payslip - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-            List<SalaryStructure> structures = salaryStructureRepository
-                    .find("employeeId = ?1", employee)
-                    .list();
-
-            if (structures.isEmpty()) {
-                log.error("Salary structure not defined for employee - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-                return new ApiResponse(
-                        new Status(Response.Status.NOT_FOUND.getStatusCode(), "Salary structure not found for employee", requestId)
-                );
-            }
-
-            components = structures.stream()
-                    .map(SalaryStructureMapper.INSTANCE::toDTO)
-                    .collect(Collectors.toList());
-
-            BigDecimal grossSalary = structures.stream()
-                    .filter(s -> s.getType().equalsIgnoreCase("earning") || s.getType().equalsIgnoreCase("reimbursement"))
-                    .map(SalaryStructure::getAmount)
-                    .reduce(BigDecimal.ZERO, BigDecimal::add);
-
-            BigDecimal totalDeductions = structures.stream()
-                    .filter(s -> s.getType().equalsIgnoreCase("deduction"))
-                    .map(SalaryStructure::getAmount)
-                    .reduce(BigDecimal.ZERO, BigDecimal::add);
-
-            BigDecimal netSalary = grossSalary.subtract(totalDeductions);
-
-            payroll = new Payroll();
-            payroll.setEmployeeId(employee);
-            payroll.setMonth(requestDTO.getMonth());
-            payroll.setYear(requestDTO.getYear());
-            payroll.setGrossSalary(grossSalary);
-            payroll.setNetSalary(netSalary);
-            payroll.setGeneratedOn(LocalDate.now());
-            payroll.setStatus("GENERATED");
-            payroll.setCreatedAt(LocalDateTime.now());
-            payroll.setUpdatedAt(LocalDateTime.now());
-
-            payrollRepository.persist(payroll);
-
-            for (SalaryStructure s : structures) {
-                PayrollComponent pc = new PayrollComponent();
-                pc.setPayrollId(payroll);
-                pc.setComponentName(s.getComponentName());
-                pc.setAmount(s.getAmount());
-                pc.setType(s.getType());
-                pc.setCreatedAt(LocalDateTime.now());
-                pc.setUpdatedAt(LocalDateTime.now());
-                payrollComponentRepository.persist(pc);
-            }
-
-            log.info("Payslip generated and saved - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-        }
-
-        PayrollDTO response = new PayrollDTO(
-                payroll.getGrossSalary(),
-                payroll.getNetSalary(),
-                payroll.getGeneratedOn(),
-                payroll.getMonth(),
-                payroll.getYear(),
-                components
-        );
-
-        log.info("End generating payslip - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Payslip generated successfully", requestId),
-                response
-        );
-    }
+//    @Transactional
+//    @Override
+//    public ApiResponse fetchSalaryStructure(PayrollJsonb requestDTO,String requestId) throws BusinessException {
+//        log.info("Start generating payslip - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//
+//        EmployeeDetails employee = employeeDetailsRepository.findById(requestDTO.getEmployeeId());
+//        if (employee == null) {
+//            log.error("Employee not found - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//            return new ApiResponse(
+//                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+//            );
+//        }
+//
+//        Payroll existingPayroll = payrollRepository.find("employeeId = ?1 and month = ?2 and year = ?3",
+//                        employee, requestDTO.getMonth(), requestDTO.getYear())
+//                .firstResult();
+//
+//        List<SalaryStructureDTO> components;
+//        Payroll payroll;
+//
+//        if (existingPayroll != null) {
+//            log.info("Payslip already generated - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//            payroll = existingPayroll;
+//            List<PayrollComponent> componentEntities = payrollComponentRepository
+//                    .find("payrollId = ?1", payroll)
+//                    .list();
+//
+//            components = componentEntities.stream()
+//                    .map(SalaryStructureMapper.INSTANCE::toDTO)
+//                    .collect(Collectors.toList());
+//
+//        } else {
+//            log.info("Generating new payslip - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//            List<SalaryStructure> structures = salaryStructureRepository
+//                    .find("employeeId = ?1", employee)
+//                    .list();
+//
+//            if (structures.isEmpty()) {
+//                log.error("Salary structure not defined for employee - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//                return new ApiResponse(
+//                        new Status(Response.Status.NOT_FOUND.getStatusCode(), "Salary structure not found for employee", requestId)
+//                );
+//            }
+//
+//            components = structures.stream()
+//                    .map(SalaryStructureMapper.INSTANCE::toDTO)
+//                    .collect(Collectors.toList());
+//
+//            BigDecimal grossSalary = structures.stream()
+//                    .filter(s -> s.getType().equalsIgnoreCase("earning") || s.getType().equalsIgnoreCase("reimbursement"))
+//                    .map(SalaryStructure::getAmount)
+//                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+//
+//            BigDecimal totalDeductions = structures.stream()
+//                    .filter(s -> s.getType().equalsIgnoreCase("deduction"))
+//                    .map(SalaryStructure::getAmount)
+//                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+//
+//            BigDecimal netSalary = grossSalary.subtract(totalDeductions);
+//
+//            payroll = new Payroll();
+//            payroll.setEmployeeId(employee);
+//            payroll.setMonth(requestDTO.getMonth());
+//            payroll.setYear(requestDTO.getYear());
+//            payroll.setGrossSalary(grossSalary);
+//            payroll.setNetSalary(netSalary);
+//            payroll.setGeneratedOn(LocalDate.now());
+//            payroll.setStatus("GENERATED");
+//            payroll.setCreatedAt(LocalDateTime.now());
+//            payroll.setUpdatedAt(LocalDateTime.now());
+//
+//            payrollRepository.persist(payroll);
+//
+//            for (SalaryStructure s : structures) {
+//                PayrollComponent pc = new PayrollComponent();
+//                pc.setPayrollId(payroll);
+//                pc.setComponentName(s.getComponentName());
+//                pc.setAmount(s.getAmount());
+//                pc.setType(s.getType());
+//                pc.setCreatedAt(LocalDateTime.now());
+//                pc.setUpdatedAt(LocalDateTime.now());
+//                payrollComponentRepository.persist(pc);
+//            }
+//
+//            log.info("Payslip generated and saved - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//        }
+//
+//        PayrollDTO response = new PayrollDTO(
+//                payroll.getGrossSalary(),
+//                payroll.getNetSalary(),
+//                payroll.getGeneratedOn(),
+//                payroll.getMonth(),
+//                payroll.getYear(),
+//                components
+//        );
+//
+//        log.info("End generating payslip - RequestId: {}, EmployeeId: {}", requestId, requestDTO.getEmployeeId());
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(), "Payslip generated successfully", requestId),
+//                response
+//        );
+//    }
 
     @Override
     @Transactional
