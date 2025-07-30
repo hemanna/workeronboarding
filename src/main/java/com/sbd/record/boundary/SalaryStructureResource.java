@@ -38,14 +38,14 @@ public class SalaryStructureResource {
 
 
 
-//    @POST
-//    @Path("/generatePayslip")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public ApiResponse generatePayslip(PayrollJsonb requestDTO) throws BusinessException {
-//        String requestId = UUID.randomUUID().toString();
-//        return salaryStructureControl.fetchSalaryStructure(requestDTO, requestId);
-//    }
+    @POST
+    @Path("/generatePayslip")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse generatePayslip(PayrollJsonb requestDTO) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        return salaryStructureControl.fetchSalaryStructure(requestDTO, requestId);
+    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
