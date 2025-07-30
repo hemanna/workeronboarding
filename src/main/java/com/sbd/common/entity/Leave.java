@@ -56,4 +56,8 @@ public class Leave {
 
     @Column(name = "admin_remarks")
     private String adminRemarks;
+
+    @Column(name = "leave_duration")
+    private String leaveDuration;
+
 }

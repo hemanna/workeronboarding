@@ -40,4 +40,6 @@ public class LeaveRequest {
     @FormParam("adminRemarks")
     private String adminRemarks;
 
+    @FormParam("leaveDuration")
+    private String leaveDuration;
 }

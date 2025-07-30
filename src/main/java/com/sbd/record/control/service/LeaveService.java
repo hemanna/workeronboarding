@@ -299,6 +299,7 @@ public class LeaveService implements LeaveControl {
         leave.setStartDate(leaveRequest.getStartDate());
         leave.setEndDate(leaveRequest.getEndDate());
         leave.setReason(leaveRequest.getReason());
+        leave.setLeaveDuration(leaveRequest.getLeaveDuration());
         leave.setStatus("pending");
         leave.setAdminRemarks(leaveRequest.getAdminRemarks());
         leave.setAppliedDate(LocalDate.now());
