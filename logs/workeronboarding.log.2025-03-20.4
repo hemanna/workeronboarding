@@ -1,0 +1,55 @@
+2025-03-20 13:14:24,055 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 1.603s. Listening on: http://0.0.0.0:8080
+2025-03-20 13:14:24,059 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-03-20 13:14:24,060 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-03-20 13:14:24,061 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 5.210s 
+2025-03-20 13:14:24,064 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload took more than 4 seconds, you may want to enable instrumentation based reload (quarkus.live-reload.instrumentation=true). This allows small changes to take effect without restarting Quarkus.
+2025-03-20 13:14:24,091 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: e9522778-a0bc-453f-868d-b31c7329de46 | Fetching all employees
+2025-03-20 13:14:24,101 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees - RequestId: e9522778-a0bc-453f-868d-b31c7329de46
+2025-03-20 13:14:24,159 laptop-t3siq6r0 workeronboarding-dev.jar[32720] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 6de034c9-48d2-4b24-9d8e-f684b7a59088 | message : org.hibernate.query.sqm.ParsingException: line 1:51 mismatched input 'ORDER' expecting {<EOF>, ',', FETCH, LIMIT, NULLS, OFFSET} | cause : {}: java.lang.IllegalArgumentException: org.hibernate.query.sqm.ParsingException: line 1:51 mismatched input 'ORDER' expecting {<EOF>, ',', FETCH, LIMIT, NULLS, OFFSET}
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:162)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:168)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:795)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:704)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:120)
+	at io.quarkus.hibernate.orm.runtime.session.TransactionScopedSession.createQuery(TransactionScopedSession.java:367)
+	at org.hibernate.engine.spi.SessionLazyDelegator.createQuery(SessionLazyDelegator.java:548)
+	at org.hibernate.engine.spi.SessionLazyDelegator.createQuery(SessionLazyDelegator.java:66)
+	at org.hibernate.Session_OpdLahisOZ9nWRPXMsEFQmQU03A_Synthetic_ClientProxy.createQuery(Unknown Source)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.createBaseQuery(CommonPanacheQueryImpl.java:366)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.createQuery(CommonPanacheQueryImpl.java:327)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:278)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at com.sbd.common.repository.EmployeeDetailsRepository.listAll(EmployeeDetailsRepository.java:33)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.listAll(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService.fetchAllEmployee(EmployeeRecordService.java:397)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.fetchAllEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.fetchAllEmployee(EmployeeRecordResource.java:88)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$fetchAllEmployee_db7532ad4dd6fc58cd0e563a22f6ee2415f7cdcd.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.hibernate.query.sqm.ParsingException: line 1:51 mismatched input 'ORDER' expecting {<EOF>, ',', FETCH, LIMIT, NULLS, OFFSET}
+	at org.hibernate.query.hql.internal.StandardHqlTranslator$1.syntaxError(StandardHqlTranslator.java:46)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:543)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at org.hibernate.grammars.hql.HqlParser.statement(HqlParser.java:361)
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.parseHql(StandardHqlTranslator.java:127)
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:77)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.createHqlInterpretation(QueryInterpretationCacheStandardImpl.java:165)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.resolveHqlInterpretation(QueryInterpretationCacheStandardImpl.java:147)
+	at org.hibernate.internal.AbstractSharedSessionContract.interpretHql(AbstractSharedSessionContract.java:741)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:786)
+	... 26 more
+
+2025-03-20 13:17:35,346 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in EmployeeDetailsRepository$QueryEnum.class, EmployeeDetailsRepository.class.
+2025-03-20 13:17:35,377 laptop-t3siq6r0 workeronboarding-dev.jar[32720] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.030s

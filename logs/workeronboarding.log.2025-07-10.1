@@ -1,0 +1,275 @@
+2025-07-10 13:10:06,823 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 7.363s. Listening on: http://0.0.0.0:8080
+2025-07-10 13:10:06,830 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-07-10 13:10:06,831 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-07-10 13:10:17,162 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-1) RequestId: cb5c4cec-4819-4dad-bde0-442d14f59b8a | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@6c020d04, type=null, pagination=null)
+2025-07-10 13:10:17,224 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) Start Login user  - RequestId: cb5c4cec-4819-4dad-bde0-442d14f59b8a
+2025-07-10 13:10:17,992 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) End user Login  - RequestId: cb5c4cec-4819-4dad-bde0-442d14f59b8a
+2025-07-10 13:10:21,004 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 0d32b5a5-7f9d-43f8-b93b-34b055909089 | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:10:21,039 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : ff514f88-a0a5-4b67-aab1-1151a67d6137 | get employee by id: 80
+2025-07-10 13:10:21,041 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 0347f0e4-833b-4ee8-9f60-7cf002a3b51a | get employee by id: 80
+2025-07-10 13:10:21,046 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetch employee attendance - RequestId: ff514f88-a0a5-4b67-aab1-1151a67d6137
+2025-07-10 13:10:21,046 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetch employee attendance - RequestId: 0347f0e4-833b-4ee8-9f60-7cf002a3b51a
+2025-07-10 13:10:21,259 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 23025169-1747-45a2-9b2c-b368bd14af94 | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:10:21,458 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) End fetch employee attendance - RequestId: ff514f88-a0a5-4b67-aab1-1151a67d6137
+2025-07-10 13:10:21,482 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetch employee attendance - RequestId: 0347f0e4-833b-4ee8-9f60-7cf002a3b51a
+2025-07-10 13:10:43,526 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-3) request_id : f79362d5-af19-4371-8355-e1ebe48858bb | get employee by id: 80
+2025-07-10 13:10:43,530 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-3) Start fetching bank details - RequestId: f79362d5-af19-4371-8355-e1ebe48858bb, EmployeeId: 80
+2025-07-10 13:10:43,558 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-2) request_id : 21f0bdd4-fce4-40f9-a9b0-de7204b77c90 | get employee by id: 80
+2025-07-10 13:10:43,560 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-2) Start fetching bank details - RequestId: 21f0bdd4-fce4-40f9-a9b0-de7204b77c90, EmployeeId: 80
+2025-07-10 13:10:43,591 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) Start generating payslip - RequestId: 515b13ed-53fe-4ae3-8883-055cbfe8fc3d, EmployeeId: 80
+2025-07-10 13:10:43,591 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start generating payslip - RequestId: 541880f0-c1c2-4f99-98ef-ab349b8d3728, EmployeeId: 80
+2025-07-10 13:10:43,593 laptop-t3siq6r0 workeronboarding-dev.jar[7576] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-2) Bank details not found - RequestId: 21f0bdd4-fce4-40f9-a9b0-de7204b77c90, EmployeeId: 80
+2025-07-10 13:10:43,593 laptop-t3siq6r0 workeronboarding-dev.jar[7576] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-3) Bank details not found - RequestId: f79362d5-af19-4371-8355-e1ebe48858bb, EmployeeId: 80
+2025-07-10 13:10:43,627 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Payslip already generated - RequestId: 541880f0-c1c2-4f99-98ef-ab349b8d3728, EmployeeId: 80
+2025-07-10 13:10:43,627 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) Payslip already generated - RequestId: 515b13ed-53fe-4ae3-8883-055cbfe8fc3d, EmployeeId: 80
+2025-07-10 13:10:43,644 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) End generating payslip - RequestId: 541880f0-c1c2-4f99-98ef-ab349b8d3728, EmployeeId: 80
+2025-07-10 13:10:43,644 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) End generating payslip - RequestId: 515b13ed-53fe-4ae3-8883-055cbfe8fc3d, EmployeeId: 80
+2025-07-10 13:10:48,291 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) requestId: f471e633-cb6e-4ee1-80a6-6b88ab4b1abe | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:10:48,306 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 47360af8-accc-4931-8669-796b3f9328e2 | get employee by id: 80
+2025-07-10 13:10:48,307 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: 47360af8-accc-4931-8669-796b3f9328e2
+2025-07-10 13:10:48,311 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: 47360af8-accc-4931-8669-796b3f9328e2
+2025-07-10 13:10:48,352 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : a49f6851-3401-42af-afd0-a876f966ed57 | get employee by id: 80
+2025-07-10 13:10:48,354 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: a49f6851-3401-42af-afd0-a876f966ed57
+2025-07-10 13:10:48,359 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: a49f6851-3401-42af-afd0-a876f966ed57
+2025-07-10 13:10:48,364 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) requestId: 4d6d32b3-fb48-483b-82fb-5fedda33ec6f | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:10:52,946 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-4) request_id : 2c784e8b-5f2f-4469-b5a4-8dbcff98ea1c | get all employee attendance
+2025-07-10 13:10:52,949 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) Start fetching all attendance records - RequestId: 2c784e8b-5f2f-4469-b5a4-8dbcff98ea1c
+2025-07-10 13:10:52,985 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 34216dcf-e908-4817-81ce-34d5ff3f07ce | get all employee attendance
+2025-07-10 13:10:52,987 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching all attendance records - RequestId: 34216dcf-e908-4817-81ce-34d5ff3f07ce
+2025-07-10 13:10:53,054 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) End fetching all attendance records - RequestId: 2c784e8b-5f2f-4469-b5a4-8dbcff98ea1c
+2025-07-10 13:10:53,127 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching all attendance records - RequestId: 34216dcf-e908-4817-81ce-34d5ff3f07ce
+2025-07-10 13:10:53,168 laptop-t3siq6r0 workeronboarding-dev.jar[7576] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-4) Generating incomplete JSON
+2025-07-10 13:10:53,168 laptop-t3siq6r0 workeronboarding-dev.jar[7576] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-1) Generating incomplete JSON
+2025-07-10 13:10:53,174 laptop-t3siq6r0 workeronboarding-dev.jar[7576] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-4) correlation-id : 6b435071-88cb-46f0-9016-0111ea6f1946 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employee' from com.sbd.common.entity.EmployeeAttendance
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employeeSkills' from com.sbd.common.entity.EmployeeDetails
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.sbd.common.entity.EmployeeDetails.employeeSkills: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:635)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:218)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentBag.iterator(PersistentBag.java:371)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:74)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 64 more
+
+2025-07-10 13:10:53,174 laptop-t3siq6r0 workeronboarding-dev.jar[7576] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : e2a11ed4-bfa0-41cb-88b9-b777623cf9d5 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employee' from com.sbd.common.entity.EmployeeAttendance
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employeeSkills' from com.sbd.common.entity.EmployeeDetails
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.sbd.common.entity.EmployeeDetails.employeeSkills: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:635)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:218)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentBag.iterator(PersistentBag.java:371)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:74)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 64 more
+
+2025-07-10 13:10:54,942 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) requestId: b61e48ee-3dd6-4752-a875-40f188e3ac66 | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:10:54,951 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : fb2bd9e7-30e4-44dc-bca5-ddf3ff07b1f9 | get employee by id: 80
+2025-07-10 13:10:54,952 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: fb2bd9e7-30e4-44dc-bca5-ddf3ff07b1f9
+2025-07-10 13:10:54,956 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: fb2bd9e7-30e4-44dc-bca5-ddf3ff07b1f9
+2025-07-10 13:10:54,985 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 0ffdcdd5-722b-45b3-bd6f-c1e055dc6c66 | get employee by id: 80
+2025-07-10 13:10:54,986 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: 0ffdcdd5-722b-45b3-bd6f-c1e055dc6c66
+2025-07-10 13:10:54,990 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: 0ffdcdd5-722b-45b3-bd6f-c1e055dc6c66
+2025-07-10 13:10:54,997 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 47afaf25-844a-476f-927b-9b7f56cad5a0 | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:10:59,785 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 6fdff31f-ec6f-49e2-8ef6-c3801d351a2b | Fetching attendance for Year: 2025
+2025-07-10 13:10:59,787 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching attendance - RequestId: 6fdff31f-ec6f-49e2-8ef6-c3801d351a2b, Year: 2025, Month: null
+2025-07-10 13:10:59,818 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-4) RequestId: 571d1840-0a18-46eb-a34e-a54fda103d44 | Fetching attendance for Year: 2025
+2025-07-10 13:10:59,821 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) Start fetching attendance - RequestId: 571d1840-0a18-46eb-a34e-a54fda103d44, Year: 2025, Month: null
+2025-07-10 13:11:09,689 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) requestId: cd56d654-d644-4873-aed0-40b825b56a2d | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:11:09,700 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : bb15d53c-8a65-4e83-8f21-2afcccaf0475 | get employee by id: 80
+2025-07-10 13:11:09,702 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: bb15d53c-8a65-4e83-8f21-2afcccaf0475
+2025-07-10 13:11:09,707 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: bb15d53c-8a65-4e83-8f21-2afcccaf0475
+2025-07-10 13:11:09,738 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 833a3660-ecfa-4821-85d1-58fd267beacb | get employee by id: 80
+2025-07-10 13:11:09,739 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: 833a3660-ecfa-4821-85d1-58fd267beacb
+2025-07-10 13:11:09,744 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: 833a3660-ecfa-4821-85d1-58fd267beacb
+2025-07-10 13:11:09,750 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 1363c5e5-7426-4f7e-afa7-6808e4e7342e | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:16:54,676 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-1) RequestId: 477f355a-dfd5-4fad-bf47-e83a0064602c | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@683b1de0, type=null, pagination=null)
+2025-07-10 13:16:54,677 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) Start Login user  - RequestId: 477f355a-dfd5-4fad-bf47-e83a0064602c
+2025-07-10 13:16:54,693 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) End user Login  - RequestId: 477f355a-dfd5-4fad-bf47-e83a0064602c
+2025-07-10 13:16:57,681 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 7f06c994-edca-4853-b546-b91fc551b27a | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:16:57,705 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-6) request_id : 23d9ef9f-b1a2-4f9e-b608-0f92454f3b6d | get employee by id: 80
+2025-07-10 13:16:57,705 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 441a128b-25e5-427f-96f3-98fd33516196 | get employee by id: 80
+2025-07-10 13:16:57,706 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) Start fetch employee attendance - RequestId: 23d9ef9f-b1a2-4f9e-b608-0f92454f3b6d
+2025-07-10 13:16:57,707 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 441a128b-25e5-427f-96f3-98fd33516196
+2025-07-10 13:16:57,709 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) End fetch employee attendance - RequestId: 23d9ef9f-b1a2-4f9e-b608-0f92454f3b6d
+2025-07-10 13:16:57,723 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 80558c29-97b8-4cfb-8f2c-b7f4606b257f | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:16:57,738 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 441a128b-25e5-427f-96f3-98fd33516196
+2025-07-10 13:16:59,589 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-1) request_id : c61529cd-3f87-489f-8d28-41f18e63fc9c | get employee by id: 80
+2025-07-10 13:16:59,589 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-5) request_id : 97a3ee72-45c4-47aa-a3aa-b64b931a9e6e | get employee by id: 80
+2025-07-10 13:16:59,589 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-1) Start fetching bank details - RequestId: c61529cd-3f87-489f-8d28-41f18e63fc9c, EmployeeId: 80
+2025-07-10 13:16:59,590 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-5) Start fetching bank details - RequestId: 97a3ee72-45c4-47aa-a3aa-b64b931a9e6e, EmployeeId: 80
+2025-07-10 13:16:59,597 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) Start generating payslip - RequestId: fc1df9dd-d326-42ca-ac59-27706e29eae0, EmployeeId: 80
+2025-07-10 13:16:59,604 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-7) Start generating payslip - RequestId: 6adba834-f23f-4f31-9e11-fa2722b346f8, EmployeeId: 80
+2025-07-10 13:16:59,606 laptop-t3siq6r0 workeronboarding-dev.jar[7576] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-1) Bank details not found - RequestId: c61529cd-3f87-489f-8d28-41f18e63fc9c, EmployeeId: 80
+2025-07-10 13:16:59,611 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) Payslip already generated - RequestId: fc1df9dd-d326-42ca-ac59-27706e29eae0, EmployeeId: 80
+2025-07-10 13:16:59,614 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) End generating payslip - RequestId: fc1df9dd-d326-42ca-ac59-27706e29eae0, EmployeeId: 80
+2025-07-10 13:16:59,658 laptop-t3siq6r0 workeronboarding-dev.jar[7576] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-5) Bank details not found - RequestId: 97a3ee72-45c4-47aa-a3aa-b64b931a9e6e, EmployeeId: 80
+2025-07-10 13:16:59,673 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-7) Payslip already generated - RequestId: 6adba834-f23f-4f31-9e11-fa2722b346f8, EmployeeId: 80
+2025-07-10 13:16:59,677 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-7) End generating payslip - RequestId: 6adba834-f23f-4f31-9e11-fa2722b346f8, EmployeeId: 80
+2025-07-10 13:17:02,066 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) requestId: 166a1e19-c95e-4c29-a736-c22335fce669 | Fetch leave balances for employee 80 and year 0
+2025-07-10 13:17:02,067 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 05177ae8-b069-46dc-8af8-200faf1517a3 | get employee by id: 80
+2025-07-10 13:17:02,068 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 05177ae8-b069-46dc-8af8-200faf1517a3
+2025-07-10 13:17:02,071 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 05177ae8-b069-46dc-8af8-200faf1517a3
+2025-07-10 13:17:02,093 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 1da9bce7-5df1-4307-b035-006ca96ddd58 | get employee by id: 80
+2025-07-10 13:17:02,094 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 1da9bce7-5df1-4307-b035-006ca96ddd58
+2025-07-10 13:17:02,097 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 1da9bce7-5df1-4307-b035-006ca96ddd58
+2025-07-10 13:17:02,125 laptop-t3siq6r0 workeronboarding-dev.jar[7576] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) requestId: 240cb82a-4578-47fe-9237-36e9e95dc600 | Fetch leave balances for employee 80 and year 0

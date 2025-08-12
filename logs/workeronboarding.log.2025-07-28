@@ -1,0 +1,1032 @@
+2025-07-28 23:18:24,491 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 8.717s. Listening on: http://0.0.0.0:8080
+2025-07-28 23:18:24,497 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-07-28 23:18:24,497 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-07-28 23:21:13,377 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-1) RequestId: ea11fd66-0fdd-411f-9d04-657b87455353 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@157797c2, type=null, pagination=null)
+2025-07-28 23:21:13,422 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) Start Login user  - RequestId: ea11fd66-0fdd-411f-9d04-657b87455353
+2025-07-28 23:21:14,159 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) End user Login  - RequestId: ea11fd66-0fdd-411f-9d04-657b87455353
+2025-07-28 23:21:16,429 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 7a03dbd9-e34e-48b4-aa6c-02e871f7bf98 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:16,448 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : a8d1dcd1-4a0b-48ff-8a06-74a71757e4ab | get employee by id: 80
+2025-07-28 23:21:16,452 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : aa522fc4-2190-4766-aa47-c7ad010794d1 | get employee by id: 80
+2025-07-28 23:21:16,453 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetch employee attendance - RequestId: a8d1dcd1-4a0b-48ff-8a06-74a71757e4ab
+2025-07-28 23:21:16,453 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetch employee attendance - RequestId: aa522fc4-2190-4766-aa47-c7ad010794d1
+2025-07-28 23:21:16,681 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: 6fcf9c9d-f1c5-4121-b83c-852034265883 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:16,776 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) End fetch employee attendance - RequestId: a8d1dcd1-4a0b-48ff-8a06-74a71757e4ab
+2025-07-28 23:21:16,776 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetch employee attendance - RequestId: aa522fc4-2190-4766-aa47-c7ad010794d1
+2025-07-28 23:21:19,442 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) requestId: c60725b3-5b40-4d6c-afd7-cf14284d998f | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:19,442 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 515030c1-d93c-47f4-8717-bc8a97abbed5 | get employee by id: 80
+2025-07-28 23:21:19,444 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetch employee attendance - RequestId: 515030c1-d93c-47f4-8717-bc8a97abbed5
+2025-07-28 23:21:19,449 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetch employee attendance - RequestId: 515030c1-d93c-47f4-8717-bc8a97abbed5
+2025-07-28 23:21:19,469 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 6d19b257-bb07-4ebb-aa4c-e60ff0fccb55 | get employee by id: 80
+2025-07-28 23:21:19,470 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetch employee attendance - RequestId: 6d19b257-bb07-4ebb-aa4c-e60ff0fccb55
+2025-07-28 23:21:19,473 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetch employee attendance - RequestId: 6d19b257-bb07-4ebb-aa4c-e60ff0fccb55
+2025-07-28 23:21:19,498 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) requestId: f85479b9-3e52-4379-8b54-099d6722a11d | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:20,681 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : d4fdb04f-d552-4386-8845-5c434c330c0f | get all employee attendance
+2025-07-28 23:21:20,682 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetching all attendance records - RequestId: d4fdb04f-d552-4386-8845-5c434c330c0f
+2025-07-28 23:21:20,682 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 553fed84-0bc6-412e-a202-2dcd1ddb66d1 | get all employee attendance
+2025-07-28 23:21:20,683 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all attendance records - RequestId: 553fed84-0bc6-412e-a202-2dcd1ddb66d1
+2025-07-28 23:21:20,813 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all attendance records - RequestId: 553fed84-0bc6-412e-a202-2dcd1ddb66d1
+2025-07-28 23:21:20,827 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) End fetching all attendance records - RequestId: d4fdb04f-d552-4386-8845-5c434c330c0f
+2025-07-28 23:21:20,878 laptop-t3siq6r0 workeronboarding-dev.jar[7580] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-2) Generating incomplete JSON
+2025-07-28 23:21:20,878 laptop-t3siq6r0 workeronboarding-dev.jar[7580] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-3) Generating incomplete JSON
+2025-07-28 23:21:20,881 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-2) correlation-id : 1812787d-4a65-47cb-ae02-9438a8287b94 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employee' from com.sbd.common.entity.EmployeeAttendance
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employeeSkills' from com.sbd.common.entity.EmployeeDetails
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.sbd.common.entity.EmployeeDetails.employeeSkills: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:635)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:218)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentBag.iterator(PersistentBag.java:371)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:74)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 64 more
+
+2025-07-28 23:21:20,881 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-3) correlation-id : 77684080-91a5-48f2-939a-e7a0df1827c6 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employee' from com.sbd.common.entity.EmployeeAttendance
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'employeeSkills' from com.sbd.common.entity.EmployeeDetails
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.sbd.common.entity.EmployeeDetails.employeeSkills: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:635)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:218)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentBag.iterator(PersistentBag.java:371)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:74)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 64 more
+
+2025-07-28 23:21:22,317 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : b95d6103-d37e-45f2-9efd-84eff0060315 | get employee by id: 80
+2025-07-28 23:21:22,318 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetch employee attendance - RequestId: b95d6103-d37e-45f2-9efd-84eff0060315
+2025-07-28 23:21:22,324 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetch employee attendance - RequestId: b95d6103-d37e-45f2-9efd-84eff0060315
+2025-07-28 23:21:22,331 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 725e5395-6c3d-4c62-95be-d69103fb3c6c | get employee by id: 80
+2025-07-28 23:21:22,333 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetch employee attendance - RequestId: 725e5395-6c3d-4c62-95be-d69103fb3c6c
+2025-07-28 23:21:22,336 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetch employee attendance - RequestId: 725e5395-6c3d-4c62-95be-d69103fb3c6c
+2025-07-28 23:21:22,340 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-3) requestId: 81a597a4-c92a-4ab7-a67f-35532b0b449f | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:22,387 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-3) requestId: d8d597d8-fd68-49a0-bdb9-3ce8a8bd35dc | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:23,654 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-3) request_id : 0b8d84ba-f3ec-4b0e-9652-3fceebd5e743 | get employee by id: 80
+2025-07-28 23:21:23,654 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-2) request_id : 7201c148-ef1b-4da9-8e18-934b9b999938 | get employee by id: 80
+2025-07-28 23:21:23,657 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-3) Start fetching bank details - RequestId: 0b8d84ba-f3ec-4b0e-9652-3fceebd5e743, EmployeeId: 80
+2025-07-28 23:21:23,657 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-2) Start fetching bank details - RequestId: 7201c148-ef1b-4da9-8e18-934b9b999938, EmployeeId: 80
+2025-07-28 23:21:23,673 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start generating payslip - RequestId: 75184fb7-2eda-4bde-80cc-1b4dbc85a8fd, EmployeeId: 80
+2025-07-28 23:21:23,686 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) Start generating payslip - RequestId: 68b8045f-a60c-4268-9751-e546be7a89a3, EmployeeId: 80
+2025-07-28 23:21:23,699 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-3) Bank details not found - RequestId: 0b8d84ba-f3ec-4b0e-9652-3fceebd5e743, EmployeeId: 80
+2025-07-28 23:21:23,699 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-2) Bank details not found - RequestId: 7201c148-ef1b-4da9-8e18-934b9b999938, EmployeeId: 80
+2025-07-28 23:21:23,737 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) Payslip already generated - RequestId: 68b8045f-a60c-4268-9751-e546be7a89a3, EmployeeId: 80
+2025-07-28 23:21:23,737 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Payslip already generated - RequestId: 75184fb7-2eda-4bde-80cc-1b4dbc85a8fd, EmployeeId: 80
+2025-07-28 23:21:23,754 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) End generating payslip - RequestId: 75184fb7-2eda-4bde-80cc-1b4dbc85a8fd, EmployeeId: 80
+2025-07-28 23:21:23,754 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) End generating payslip - RequestId: 68b8045f-a60c-4268-9751-e546be7a89a3, EmployeeId: 80
+2025-07-28 23:21:28,598 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) requestId: 3415c3ea-c9e9-4540-b4c8-48d859e69326 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:28,662 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-4) request_id : e752d497-648a-430a-87ff-6d2737b3305e | get employee by id: 80
+2025-07-28 23:21:28,662 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 01f0c4c9-87dc-4a40-8556-8bd79399d1ad | get employee by id: 80
+2025-07-28 23:21:28,663 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) Start fetch employee attendance - RequestId: e752d497-648a-430a-87ff-6d2737b3305e
+2025-07-28 23:21:28,663 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: 01f0c4c9-87dc-4a40-8556-8bd79399d1ad
+2025-07-28 23:21:28,666 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: 01f0c4c9-87dc-4a40-8556-8bd79399d1ad
+2025-07-28 23:21:28,666 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) End fetch employee attendance - RequestId: e752d497-648a-430a-87ff-6d2737b3305e
+2025-07-28 23:21:28,667 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) requestId: 5f34ce89-f000-4bf8-b74f-dff55436f5e7 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:21:34,857 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: 6bb38c4a-ed0b-4984-bbb8-0c1d45ce85bf | Fetching all employees
+2025-07-28 23:21:34,857 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: ca46722b-c124-4d87-98b4-516afe6fc474 | Fetching all employees
+2025-07-28 23:21:34,857 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 4a55a182-f218-4b75-b4af-e1b72db28a0f | Fetching all employees
+2025-07-28 23:21:34,857 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: ac4b5f12-1fe3-4f40-a088-2710aff4114d | Fetching all employees
+2025-07-28 23:21:34,860 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Start fetching employees - RequestId: 6bb38c4a-ed0b-4984-bbb8-0c1d45ce85bf
+2025-07-28 23:21:34,862 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching skill wise employee count - RequestId: 4a55a182-f218-4b75-b4af-e1b72db28a0f
+2025-07-28 23:21:34,862 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching skill wise employee count - RequestId: ca46722b-c124-4d87-98b4-516afe6fc474
+2025-07-28 23:21:34,860 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching employees - RequestId: ac4b5f12-1fe3-4f40-a088-2710aff4114d
+2025-07-28 23:21:34,870 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching skill-wise employee count - RequestId: 4a55a182-f218-4b75-b4af-e1b72db28a0f
+2025-07-28 23:21:34,870 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching skill-wise employee count - RequestId: ca46722b-c124-4d87-98b4-516afe6fc474
+2025-07-28 23:21:34,971 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching employees - RequestId: ac4b5f12-1fe3-4f40-a088-2710aff4114d
+2025-07-28 23:21:34,978 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) End fetching employees - RequestId: 6bb38c4a-ed0b-4984-bbb8-0c1d45ce85bf
+2025-07-28 23:24:39,857 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-0) correlation-id : 0427efce-6dce-42b5-8272-259e062917cb | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-28 23:24:39,885 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : d95fa45c-9cce-40e1-b6d9-50984e72759d | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-28 23:25:15,677 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : 7c66ee2d-8a62-4520-a620-1032e4873fb8 | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-28 23:25:24,905 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-5) request_id: 17c23f1f-8423-417a-99c0-1d1269e24b71 | Fetching all employees
+2025-07-28 23:25:24,905 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: a143d246-6f86-491a-bf88-af669c8db61d | Fetching all employees
+2025-07-28 23:25:24,906 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: af079e98-2c7f-4f4f-9621-419e5720860e | Fetching all employees
+2025-07-28 23:25:24,906 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching employees - RequestId: a143d246-6f86-491a-bf88-af669c8db61d
+2025-07-28 23:25:24,906 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-5) Start fetching skill wise employee count - RequestId: 17c23f1f-8423-417a-99c0-1d1269e24b71
+2025-07-28 23:25:24,907 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching skill wise employee count - RequestId: af079e98-2c7f-4f4f-9621-419e5720860e
+2025-07-28 23:25:24,910 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-5) End fetching skill-wise employee count - RequestId: 17c23f1f-8423-417a-99c0-1d1269e24b71
+2025-07-28 23:25:24,913 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching skill-wise employee count - RequestId: af079e98-2c7f-4f4f-9621-419e5720860e
+2025-07-28 23:25:24,956 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: 7ce1fdd1-330b-457c-b6b0-3d723e998205 | Fetching all employees
+2025-07-28 23:25:24,956 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching employees - RequestId: 7ce1fdd1-330b-457c-b6b0-3d723e998205
+2025-07-28 23:25:24,987 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching employees - RequestId: a143d246-6f86-491a-bf88-af669c8db61d
+2025-07-28 23:25:25,040 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching employees - RequestId: 7ce1fdd1-330b-457c-b6b0-3d723e998205
+2025-07-28 23:25:31,049 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-0) correlation-id : 549a8e2c-1910-4b91-9b6d-76830fd32c92 | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-28 23:25:31,078 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : ac8a660b-2cd3-4cfb-a1ae-9c938d21a7fb | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-28 23:26:22,868 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-6) request_id: 59ce2105-6900-4f17-96a9-2fe26241363f | Fetching all employees
+2025-07-28 23:26:22,870 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) Start fetching all employees salary structure data - RequestId: 59ce2105-6900-4f17-96a9-2fe26241363f, Month: 7, Year: 2025
+2025-07-28 23:26:22,909 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-7) request_id: 16f56307-672a-4ac5-ae47-52c89d416dd5 | Fetching all employees
+2025-07-28 23:26:22,910 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-7) Start fetching all employees salary structure data - RequestId: 16f56307-672a-4ac5-ae47-52c89d416dd5, Month: 7, Year: 2025
+2025-07-28 23:26:35,997 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-7) request_id: b59f43a0-71c3-4e01-b79a-e6b13440004a | Fetching all employees
+2025-07-28 23:26:35,999 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-7) Start fetching all employees salary structure data - RequestId: b59f43a0-71c3-4e01-b79a-e6b13440004a, Month: 7, Year: 2025
+2025-07-28 23:26:36,016 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-6) request_id: e82ce27a-2a93-40a4-bf94-48cb84db46d4 | Fetching all employees
+2025-07-28 23:26:36,017 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) Start fetching all employees salary structure data - RequestId: e82ce27a-2a93-40a4-bf94-48cb84db46d4, Month: 7, Year: 2025
+2025-07-28 23:32:06,523 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: 054024e9-4e45-43b3-abb1-767d92ad6507 | Fetching all employees
+2025-07-28 23:32:06,525 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching skill wise employee count - RequestId: 054024e9-4e45-43b3-abb1-767d92ad6507
+2025-07-28 23:32:06,525 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: ed2ebaa4-d088-4a93-b85b-cf420fd0af90 | Fetching all employees
+2025-07-28 23:32:06,526 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching employees - RequestId: ed2ebaa4-d088-4a93-b85b-cf420fd0af90
+2025-07-28 23:32:06,529 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching skill-wise employee count - RequestId: 054024e9-4e45-43b3-abb1-767d92ad6507
+2025-07-28 23:32:06,571 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: 4a651b55-f21f-4539-838d-0876235f82b6 | Fetching all employees
+2025-07-28 23:32:06,571 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching skill wise employee count - RequestId: 4a651b55-f21f-4539-838d-0876235f82b6
+2025-07-28 23:32:06,575 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching skill-wise employee count - RequestId: 4a651b55-f21f-4539-838d-0876235f82b6
+2025-07-28 23:32:06,590 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: 6be90a7e-523b-4824-a7b7-2821afc086e1 | Fetching all employees
+2025-07-28 23:32:06,590 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching employees - RequestId: 6be90a7e-523b-4824-a7b7-2821afc086e1
+2025-07-28 23:32:06,641 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) End fetching employees - RequestId: ed2ebaa4-d088-4a93-b85b-cf420fd0af90
+2025-07-28 23:32:06,709 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching employees - RequestId: 6be90a7e-523b-4824-a7b7-2821afc086e1
+2025-07-28 23:32:09,531 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-6) request_id: 2be4d6bd-31d0-4ef7-95bb-51b142b4dfed | Fetching all employees
+2025-07-28 23:32:09,532 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) Start fetching all employees salary structure data - RequestId: 2be4d6bd-31d0-4ef7-95bb-51b142b4dfed, Month: 7, Year: 2025
+2025-07-28 23:32:09,562 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-8) request_id: 2ec3bd43-676a-42c5-92d0-7eb497880013 | Fetching all employees
+2025-07-28 23:32:09,562 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-8) Start fetching all employees salary structure data - RequestId: 2ec3bd43-676a-42c5-92d0-7eb497880013, Month: 7, Year: 2025
+2025-07-28 23:32:35,907 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-8) request_id: 443ce6e3-b018-4bf3-831c-30878e0cd640 | Fetching all employees
+2025-07-28 23:32:35,908 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-8) Start fetching all employees salary structure data - RequestId: 443ce6e3-b018-4bf3-831c-30878e0cd640, Month: 7, Year: 2025
+2025-07-28 23:32:35,932 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-6) request_id: 9a0db57e-0ff3-4441-9dfa-e4e3430a7256 | Fetching all employees
+2025-07-28 23:32:35,933 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-6) Start fetching all employees salary structure data - RequestId: 9a0db57e-0ff3-4441-9dfa-e4e3430a7256, Month: 7, Year: 2025
+2025-07-28 23:32:43,256 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: fd530ba2-3192-47ea-b66f-ac8caa7bc514 | Fetching all employees
+2025-07-28 23:32:43,257 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: b1085f6b-69e7-4f26-8848-f4b6182ec0a7 | Fetching all employees
+2025-07-28 23:32:43,257 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-9) request_id: 3b127e31-3811-4fe7-a9f3-08d5fdaae191 | Fetching all employees
+2025-07-28 23:32:43,257 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching skill wise employee count - RequestId: fd530ba2-3192-47ea-b66f-ac8caa7bc514
+2025-07-28 23:32:43,258 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching skill wise employee count - RequestId: b1085f6b-69e7-4f26-8848-f4b6182ec0a7
+2025-07-28 23:32:43,258 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-9) Start fetching employees - RequestId: 3b127e31-3811-4fe7-a9f3-08d5fdaae191
+2025-07-28 23:32:43,259 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-10) request_id: 6696c231-227f-44fa-9a14-d8924acf920a | Fetching all employees
+2025-07-28 23:32:43,261 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching skill-wise employee count - RequestId: b1085f6b-69e7-4f26-8848-f4b6182ec0a7
+2025-07-28 23:32:43,261 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) Start fetching employees - RequestId: 6696c231-227f-44fa-9a14-d8924acf920a
+2025-07-28 23:32:43,263 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) End fetching skill-wise employee count - RequestId: fd530ba2-3192-47ea-b66f-ac8caa7bc514
+2025-07-28 23:32:43,389 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-9) End fetching employees - RequestId: 3b127e31-3811-4fe7-a9f3-08d5fdaae191
+2025-07-28 23:32:43,393 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) End fetching employees - RequestId: 6696c231-227f-44fa-9a14-d8924acf920a
+2025-07-28 23:32:46,001 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-9) request_id: d62f46f0-8743-469b-a6ab-df15cac8d464 | Fetching all employees
+2025-07-28 23:32:46,004 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-9) Start fetching all employees salary structure data - RequestId: d62f46f0-8743-469b-a6ab-df15cac8d464, Month: 7, Year: 2025
+2025-07-28 23:32:46,025 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-10) request_id: ca62d7c5-ffff-4c2c-9a9b-faaab7cd0267 | Fetching all employees
+2025-07-28 23:32:46,026 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-10) Start fetching all employees salary structure data - RequestId: ca62d7c5-ffff-4c2c-9a9b-faaab7cd0267, Month: 7, Year: 2025
+2025-07-28 23:33:14,537 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-10) request_id: b13c79d3-e732-4a6e-97bc-abc6ed476bbf | Fetching all employees
+2025-07-28 23:33:14,538 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-10) Start fetching all employees salary structure data - RequestId: b13c79d3-e732-4a6e-97bc-abc6ed476bbf, Month: 7, Year: 2025
+2025-07-28 23:33:14,622 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-10) request_id: a50f18d4-2fc2-45f6-82e4-1d4404067936 | Fetching all employees
+2025-07-28 23:33:14,622 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-10) Start fetching all employees salary structure data - RequestId: a50f18d4-2fc2-45f6-82e4-1d4404067936, Month: 7, Year: 2025
+2025-07-28 23:33:22,719 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-10) request_id: c5cbacbf-20cf-4a9f-a2f0-d86cbdfad555 | Fetching all employees
+2025-07-28 23:33:22,722 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-11) request_id: feea74db-3709-4b7c-b4a2-d2c8d269ead8 | Fetching all employees
+2025-07-28 23:33:22,722 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) Start fetching employees - RequestId: c5cbacbf-20cf-4a9f-a2f0-d86cbdfad555
+2025-07-28 23:33:22,722 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-12) request_id: 33e08451-76a1-4841-be6c-66bc8d9d30cb | Fetching all employees
+2025-07-28 23:33:22,722 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) Start fetching skill wise employee count - RequestId: feea74db-3709-4b7c-b4a2-d2c8d269ead8
+2025-07-28 23:33:22,724 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) Start fetching skill wise employee count - RequestId: 33e08451-76a1-4841-be6c-66bc8d9d30cb
+2025-07-28 23:33:22,728 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) End fetching skill-wise employee count - RequestId: feea74db-3709-4b7c-b4a2-d2c8d269ead8
+2025-07-28 23:33:22,729 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) End fetching skill-wise employee count - RequestId: 33e08451-76a1-4841-be6c-66bc8d9d30cb
+2025-07-28 23:33:22,750 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-12) request_id: ee24fd84-4372-43aa-b741-cc78c1ff4311 | Fetching all employees
+2025-07-28 23:33:22,752 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) Start fetching employees - RequestId: ee24fd84-4372-43aa-b741-cc78c1ff4311
+2025-07-28 23:33:22,829 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) End fetching employees - RequestId: c5cbacbf-20cf-4a9f-a2f0-d86cbdfad555
+2025-07-28 23:33:22,859 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) End fetching employees - RequestId: ee24fd84-4372-43aa-b741-cc78c1ff4311
+2025-07-28 23:33:25,089 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-10) request_id: 9c21824d-74c8-4ce0-951b-7d326ea40856 | Fetching all employees
+2025-07-28 23:33:25,091 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-10) Start fetching all employees salary structure data - RequestId: 9c21824d-74c8-4ce0-951b-7d326ea40856, Month: 7, Year: 2025
+2025-07-28 23:33:25,150 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: c81c9eca-9a3c-4460-af02-102269db20a8 | Fetching all employees
+2025-07-28 23:33:25,151 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: c81c9eca-9a3c-4460-af02-102269db20a8, Month: 7, Year: 2025
+2025-07-28 23:36:25,002 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 9cbb91b6-2558-4d84-8284-f5708125f976 | Fetching all employees
+2025-07-28 23:36:25,002 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 9cbb91b6-2558-4d84-8284-f5708125f976, Month: 7, Year: 2025
+2025-07-28 23:36:29,985 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 2f06e7bf-8221-4fe7-ae65-8abcea2b30d3 | Fetching all employees
+2025-07-28 23:36:29,985 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 2f06e7bf-8221-4fe7-ae65-8abcea2b30d3, Month: 7, Year: 2025
+2025-07-28 23:36:30,010 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-13) request_id: 77aec33b-077c-4901-983c-82ba2f0dfc2f | Fetching all employees
+2025-07-28 23:36:30,011 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-13) Start fetching all employees salary structure data - RequestId: 77aec33b-077c-4901-983c-82ba2f0dfc2f, Month: 7, Year: 2025
+2025-07-28 23:36:30,158 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-13) request_id: 7e9a6513-06c6-4361-b71d-842c10ad63f5 | Fetching all employees
+2025-07-28 23:36:30,159 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-13) Start fetching all employees salary structure data - RequestId: 7e9a6513-06c6-4361-b71d-842c10ad63f5, Month: 7, Year: 2025
+2025-07-28 23:36:30,172 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 61863010-ff8c-4667-9fff-2a7506111fa1 | Fetching all employees
+2025-07-28 23:36:30,173 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 61863010-ff8c-4667-9fff-2a7506111fa1, Month: 7, Year: 2025
+2025-07-28 23:36:36,539 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: 849e8bf8-d393-49a1-a542-0323af4117c5 | Fetching all employees
+2025-07-28 23:36:36,540 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-15) request_id: 5f6fd61a-f650-4954-b554-7916e045c3ff | Fetching all employees
+2025-07-28 23:36:36,540 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching skill wise employee count - RequestId: 849e8bf8-d393-49a1-a542-0323af4117c5
+2025-07-28 23:36:36,541 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) Start fetching employees - RequestId: 5f6fd61a-f650-4954-b554-7916e045c3ff
+2025-07-28 23:36:36,540 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-11) request_id: 235ed0fa-2007-4558-9a26-ece9b8f72995 | Fetching all employees
+2025-07-28 23:36:36,542 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) Start fetching employees - RequestId: 235ed0fa-2007-4558-9a26-ece9b8f72995
+2025-07-28 23:36:36,544 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching skill-wise employee count - RequestId: 849e8bf8-d393-49a1-a542-0323af4117c5
+2025-07-28 23:36:36,550 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-14) request_id: d5715822-49d6-4ddd-b7c4-0576edae6a31 | Fetching all employees
+2025-07-28 23:36:36,551 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) Start fetching skill wise employee count - RequestId: d5715822-49d6-4ddd-b7c4-0576edae6a31
+2025-07-28 23:36:36,553 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) End fetching skill-wise employee count - RequestId: d5715822-49d6-4ddd-b7c4-0576edae6a31
+2025-07-28 23:36:36,612 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) End fetching employees - RequestId: 5f6fd61a-f650-4954-b554-7916e045c3ff
+2025-07-28 23:36:36,617 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) End fetching employees - RequestId: 235ed0fa-2007-4558-9a26-ece9b8f72995
+2025-07-28 23:36:39,126 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-15) request_id: 459a2b63-eef4-49fd-8319-8dd19c85df88 | Fetching all employees
+2025-07-28 23:36:39,126 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-15) Start fetching all employees salary structure data - RequestId: 459a2b63-eef4-49fd-8319-8dd19c85df88, Month: 7, Year: 2025
+2025-07-28 23:36:39,152 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: fc5ea348-b1bf-49b8-8ace-79d864cbd71e | Fetching all employees
+2025-07-28 23:36:39,152 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: fc5ea348-b1bf-49b8-8ace-79d864cbd71e, Month: 7, Year: 2025
+2025-07-28 23:36:39,244 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: af8a2b28-ddbf-4885-bf21-bd71d4496dec | Fetching all employees
+2025-07-28 23:36:39,244 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: af8a2b28-ddbf-4885-bf21-bd71d4496dec, Month: 7, Year: 2025
+2025-07-28 23:36:39,271 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-15) request_id: d68e898c-d8d4-4e73-969f-bf5c8c644f2e | Fetching all employees
+2025-07-28 23:36:39,272 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-15) Start fetching all employees salary structure data - RequestId: d68e898c-d8d4-4e73-969f-bf5c8c644f2e, Month: 7, Year: 2025
+2025-07-28 23:36:44,034 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-15) request_id: 07412e0c-4cff-41a7-9594-0b2815b546dd | Fetching all employees
+2025-07-28 23:36:44,036 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-15) Start fetching all employees salary structure data - RequestId: 07412e0c-4cff-41a7-9594-0b2815b546dd, Month: 7, Year: 2025
+2025-07-28 23:36:52,433 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-15) request_id: 42b8f5f3-b4e6-4573-af9f-df10c2568606 | Fetching all employees
+2025-07-28 23:36:52,435 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-11) request_id: 8f493d21-ed09-42c0-aa79-04ed20413055 | Fetching all employees
+2025-07-28 23:36:52,434 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) Start fetching employees - RequestId: 42b8f5f3-b4e6-4573-af9f-df10c2568606
+2025-07-28 23:36:52,435 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) Start fetching skill wise employee count - RequestId: 8f493d21-ed09-42c0-aa79-04ed20413055
+2025-07-28 23:36:52,436 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-14) request_id: 698f5788-6e0e-40df-9a2a-c57e25dbfb2a | Fetching all employees
+2025-07-28 23:36:52,438 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) Start fetching skill wise employee count - RequestId: 698f5788-6e0e-40df-9a2a-c57e25dbfb2a
+2025-07-28 23:36:52,438 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) End fetching skill-wise employee count - RequestId: 8f493d21-ed09-42c0-aa79-04ed20413055
+2025-07-28 23:36:52,442 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) End fetching skill-wise employee count - RequestId: 698f5788-6e0e-40df-9a2a-c57e25dbfb2a
+2025-07-28 23:36:52,460 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-14) request_id: ae29d074-1788-4108-b607-7430d2563da2 | Fetching all employees
+2025-07-28 23:36:52,461 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) Start fetching employees - RequestId: ae29d074-1788-4108-b607-7430d2563da2
+2025-07-28 23:36:52,505 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) End fetching employees - RequestId: 42b8f5f3-b4e6-4573-af9f-df10c2568606
+2025-07-28 23:36:52,531 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) End fetching employees - RequestId: ae29d074-1788-4108-b607-7430d2563da2
+2025-07-28 23:36:54,754 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-15) request_id: 609b439d-ffea-461e-a7bc-6066595971bf | Fetching all employees
+2025-07-28 23:36:54,754 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-15) Start fetching all employees salary structure data - RequestId: 609b439d-ffea-461e-a7bc-6066595971bf, Month: 7, Year: 2025
+2025-07-28 23:36:54,781 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: ef723705-a987-45de-9c99-0399bf3aa6b0 | Fetching all employees
+2025-07-28 23:36:54,782 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: ef723705-a987-45de-9c99-0399bf3aa6b0, Month: 7, Year: 2025
+2025-07-28 23:36:55,067 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 6443a599-bf9b-4716-ac3a-672cbaaae54e | Fetching all employees
+2025-07-28 23:36:55,068 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 6443a599-bf9b-4716-ac3a-672cbaaae54e, Month: 7, Year: 2025
+2025-07-28 23:37:41,472 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-11) request_id: 86252baa-bce7-48c9-82fc-68f87e5a5879 | Fetching all employees
+2025-07-28 23:37:41,472 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) Start fetching employees - RequestId: 86252baa-bce7-48c9-82fc-68f87e5a5879
+2025-07-28 23:37:41,472 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-17) request_id: af064a03-eca5-4e66-8e34-5d4219ddd1ff | Fetching all employees
+2025-07-28 23:37:41,473 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-17) Start fetching skill wise employee count - RequestId: af064a03-eca5-4e66-8e34-5d4219ddd1ff
+2025-07-28 23:37:41,473 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-16) request_id: 7d3292cd-ef0f-40cb-9d4f-a67daf27fc5d | Fetching all employees
+2025-07-28 23:37:41,475 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-17) End fetching skill-wise employee count - RequestId: af064a03-eca5-4e66-8e34-5d4219ddd1ff
+2025-07-28 23:37:41,477 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-16) Start fetching skill wise employee count - RequestId: 7d3292cd-ef0f-40cb-9d4f-a67daf27fc5d
+2025-07-28 23:37:41,480 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-16) End fetching skill-wise employee count - RequestId: 7d3292cd-ef0f-40cb-9d4f-a67daf27fc5d
+2025-07-28 23:37:41,533 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-16) request_id: 028fafe4-5fc5-42f8-be69-53c57e81608b | Fetching all employees
+2025-07-28 23:37:41,534 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-16) Start fetching employees - RequestId: 028fafe4-5fc5-42f8-be69-53c57e81608b
+2025-07-28 23:37:41,534 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) End fetching employees - RequestId: 86252baa-bce7-48c9-82fc-68f87e5a5879
+2025-07-28 23:37:41,633 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-16) End fetching employees - RequestId: 028fafe4-5fc5-42f8-be69-53c57e81608b
+2025-07-28 23:44:53,485 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-11) RequestId: e125c9dc-86cf-4384-81b5-4a96396277c4 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@56680689, type=null, pagination=null)
+2025-07-28 23:44:53,485 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-11) Start Login user  - RequestId: e125c9dc-86cf-4384-81b5-4a96396277c4
+2025-07-28 23:44:53,535 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-11) End user Login  - RequestId: e125c9dc-86cf-4384-81b5-4a96396277c4
+2025-07-28 23:44:55,230 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-11) requestId: b42dd64e-3766-478a-a20e-7290349e7b36 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:44:55,231 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : ed85ef6f-6df0-411d-b07e-8d744a35b1d9 | get employee by id: 80
+2025-07-28 23:44:55,232 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: ed85ef6f-6df0-411d-b07e-8d744a35b1d9
+2025-07-28 23:44:55,243 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-19) request_id : 869060c6-dec1-4841-98c2-de3fc63fdad9 | get employee by id: 80
+2025-07-28 23:44:55,244 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) Start fetch employee attendance - RequestId: 869060c6-dec1-4841-98c2-de3fc63fdad9
+2025-07-28 23:44:55,257 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: ed85ef6f-6df0-411d-b07e-8d744a35b1d9
+2025-07-28 23:44:55,272 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) End fetch employee attendance - RequestId: 869060c6-dec1-4841-98c2-de3fc63fdad9
+2025-07-28 23:44:55,278 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-19) requestId: 82e89504-6654-4b78-bdd8-527c855f0a3f | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:44:56,454 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 568d7ab8-2c00-4cea-8985-fa51b923aba1 | get employee by id: 80
+2025-07-28 23:44:56,455 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 568d7ab8-2c00-4cea-8985-fa51b923aba1, EmployeeId: 80
+2025-07-28 23:44:56,467 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start generating payslip - RequestId: aa538d70-5378-40b7-9119-df678c72a69b, EmployeeId: 80
+2025-07-28 23:44:56,476 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 568d7ab8-2c00-4cea-8985-fa51b923aba1, EmployeeId: 80
+2025-07-28 23:44:56,477 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-18) Start generating payslip - RequestId: 5fb73919-f03c-493d-93ff-5d933d020397, EmployeeId: 80
+2025-07-28 23:44:56,484 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Payslip already generated - RequestId: aa538d70-5378-40b7-9119-df678c72a69b, EmployeeId: 80
+2025-07-28 23:44:56,486 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 49b8aefe-b37e-4ab3-8429-0e6085d7d2f5 | get employee by id: 80
+2025-07-28 23:44:56,486 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 49b8aefe-b37e-4ab3-8429-0e6085d7d2f5, EmployeeId: 80
+2025-07-28 23:44:56,489 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) End generating payslip - RequestId: aa538d70-5378-40b7-9119-df678c72a69b, EmployeeId: 80
+2025-07-28 23:44:56,492 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-18) Payslip already generated - RequestId: 5fb73919-f03c-493d-93ff-5d933d020397, EmployeeId: 80
+2025-07-28 23:44:56,495 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-18) End generating payslip - RequestId: 5fb73919-f03c-493d-93ff-5d933d020397, EmployeeId: 80
+2025-07-28 23:44:56,501 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 49b8aefe-b37e-4ab3-8429-0e6085d7d2f5, EmployeeId: 80
+2025-07-28 23:44:58,706 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 6ba85d6f-3f76-4804-b108-89f396118b9d | get employee by id: 80
+2025-07-28 23:44:58,707 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 6ba85d6f-3f76-4804-b108-89f396118b9d, EmployeeId: 80
+2025-07-28 23:44:58,721 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 6ba85d6f-3f76-4804-b108-89f396118b9d, EmployeeId: 80
+2025-07-28 23:44:58,731 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 04263309-6624-4da3-a7c0-229772bc0938 | get employee by id: 80
+2025-07-28 23:44:58,732 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 04263309-6624-4da3-a7c0-229772bc0938, EmployeeId: 80
+2025-07-28 23:44:58,744 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 04263309-6624-4da3-a7c0-229772bc0938, EmployeeId: 80
+2025-07-28 23:45:12,428 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : ab8616d5-6952-4210-a867-f0692d25c802 | get employee by id: 80
+2025-07-28 23:45:12,429 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: ab8616d5-6952-4210-a867-f0692d25c802, EmployeeId: 80
+2025-07-28 23:45:12,442 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: ab8616d5-6952-4210-a867-f0692d25c802, EmployeeId: 80
+2025-07-28 23:45:12,452 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 8fafb3e3-2b09-4256-8842-c67d7f4930e4 | get employee by id: 80
+2025-07-28 23:45:12,452 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 8fafb3e3-2b09-4256-8842-c67d7f4930e4, EmployeeId: 80
+2025-07-28 23:45:12,467 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 8fafb3e3-2b09-4256-8842-c67d7f4930e4, EmployeeId: 80
+2025-07-28 23:45:14,272 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 25d88f92-6159-4770-a397-3d6c244fed1c | get employee by id: 80
+2025-07-28 23:45:14,272 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 25d88f92-6159-4770-a397-3d6c244fed1c, EmployeeId: 80
+2025-07-28 23:45:14,272 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-18) request_id : 92462c46-a316-4d9d-b39c-b48acfaf7fcf | get employee by id: 80
+2025-07-28 23:45:14,273 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-18) Start fetching bank details - RequestId: 92462c46-a316-4d9d-b39c-b48acfaf7fcf, EmployeeId: 80
+2025-07-28 23:45:14,290 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start generating payslip - RequestId: add9eeae-47da-4996-b161-e84a739dc921, EmployeeId: 80
+2025-07-28 23:45:14,291 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-20) Start generating payslip - RequestId: 9b23930c-1986-475e-8995-750a845bbef3, EmployeeId: 80
+2025-07-28 23:45:14,294 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-18) Bank details not found - RequestId: 92462c46-a316-4d9d-b39c-b48acfaf7fcf, EmployeeId: 80
+2025-07-28 23:45:14,297 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 25d88f92-6159-4770-a397-3d6c244fed1c, EmployeeId: 80
+2025-07-28 23:45:14,308 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-20) Payslip already generated - RequestId: 9b23930c-1986-475e-8995-750a845bbef3, EmployeeId: 80
+2025-07-28 23:45:14,310 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-20) End generating payslip - RequestId: 9b23930c-1986-475e-8995-750a845bbef3, EmployeeId: 80
+2025-07-28 23:45:14,312 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Payslip already generated - RequestId: add9eeae-47da-4996-b161-e84a739dc921, EmployeeId: 80
+2025-07-28 23:45:14,315 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) End generating payslip - RequestId: add9eeae-47da-4996-b161-e84a739dc921, EmployeeId: 80
+2025-07-28 23:45:15,808 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-11) requestId: b52970ff-5053-47c8-82eb-70f4e3e42210 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:45:15,819 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-20) request_id : 072dfa95-fc89-49c9-b0d5-ee9251b3ba2a | get employee by id: 80
+2025-07-28 23:45:15,820 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-20) Start fetch employee attendance - RequestId: 072dfa95-fc89-49c9-b0d5-ee9251b3ba2a
+2025-07-28 23:45:15,823 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-20) End fetch employee attendance - RequestId: 072dfa95-fc89-49c9-b0d5-ee9251b3ba2a
+2025-07-28 23:45:15,846 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-20) requestId: 4f866b29-c02d-43c6-be79-0cbe9cdcbeb2 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:45:15,846 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : e1cea816-ebc7-4f86-bc7c-5d69f9a94309 | get employee by id: 80
+2025-07-28 23:45:15,846 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetch employee attendance - RequestId: e1cea816-ebc7-4f86-bc7c-5d69f9a94309
+2025-07-28 23:45:15,848 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetch employee attendance - RequestId: e1cea816-ebc7-4f86-bc7c-5d69f9a94309
+2025-07-28 23:45:21,030 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-20) RequestId: 8f3c03f7-2b44-4e02-b862-77b3c711beba | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@328be72d, type=null, pagination=null)
+2025-07-28 23:45:21,031 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-20) Start Login user  - RequestId: 8f3c03f7-2b44-4e02-b862-77b3c711beba
+2025-07-28 23:45:21,050 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-20) End user Login  - RequestId: 8f3c03f7-2b44-4e02-b862-77b3c711beba
+2025-07-28 23:45:23,515 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-20) requestId: c9471dc3-9038-4815-af16-9bbbf4775c04 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:45:23,516 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : 262fc7e4-6e64-4940-8df0-2dea48a5077b | get employee by id: 80
+2025-07-28 23:45:23,517 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetch employee attendance - RequestId: 262fc7e4-6e64-4940-8df0-2dea48a5077b
+2025-07-28 23:45:23,518 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-19) request_id : 0811df11-88d7-42e5-8e4d-a2b936f759c8 | get employee by id: 80
+2025-07-28 23:45:23,518 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) Start fetch employee attendance - RequestId: 0811df11-88d7-42e5-8e4d-a2b936f759c8
+2025-07-28 23:45:23,520 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetch employee attendance - RequestId: 262fc7e4-6e64-4940-8df0-2dea48a5077b
+2025-07-28 23:45:23,521 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) End fetch employee attendance - RequestId: 0811df11-88d7-42e5-8e4d-a2b936f759c8
+2025-07-28 23:45:23,589 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-20) requestId: 5d34ac5d-aa03-46c4-a6bd-549ee9424fb7 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:45:24,921 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-19) request_id : 9cdd1876-7733-4ec0-9668-e8c2d71b3349 | get employee by id: 80
+2025-07-28 23:45:24,921 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Start fetching bank details - RequestId: 9cdd1876-7733-4ec0-9668-e8c2d71b3349, EmployeeId: 80
+2025-07-28 23:45:24,922 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-20) request_id : e2a336ba-8fd0-4edc-9126-89cf47b1cc8a | get employee by id: 80
+2025-07-28 23:45:24,922 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-20) Start fetching bank details - RequestId: e2a336ba-8fd0-4edc-9126-89cf47b1cc8a, EmployeeId: 80
+2025-07-28 23:45:24,932 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-18) Start generating payslip - RequestId: 55c079bb-542e-4f66-a281-5127e9267b17, EmployeeId: 80
+2025-07-28 23:45:24,936 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start generating payslip - RequestId: 4708d1f1-62fd-42a7-92a5-0cccf29f5652, EmployeeId: 80
+2025-07-28 23:45:24,938 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-19) Bank details not found - RequestId: 9cdd1876-7733-4ec0-9668-e8c2d71b3349, EmployeeId: 80
+2025-07-28 23:45:24,939 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-20) Bank details not found - RequestId: e2a336ba-8fd0-4edc-9126-89cf47b1cc8a, EmployeeId: 80
+2025-07-28 23:45:24,948 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-18) Payslip already generated - RequestId: 55c079bb-542e-4f66-a281-5127e9267b17, EmployeeId: 80
+2025-07-28 23:45:24,950 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-18) End generating payslip - RequestId: 55c079bb-542e-4f66-a281-5127e9267b17, EmployeeId: 80
+2025-07-28 23:45:24,957 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Payslip already generated - RequestId: 4708d1f1-62fd-42a7-92a5-0cccf29f5652, EmployeeId: 80
+2025-07-28 23:45:24,960 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) End generating payslip - RequestId: 4708d1f1-62fd-42a7-92a5-0cccf29f5652, EmployeeId: 80
+2025-07-28 23:45:26,867 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-11) request_id : 092e8567-7df6-49be-a8cc-428039caa309 | get employee by id: 80
+2025-07-28 23:45:26,868 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Start fetching bank details - RequestId: 092e8567-7df6-49be-a8cc-428039caa309, EmployeeId: 80
+2025-07-28 23:45:26,880 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Bank details not found - RequestId: 092e8567-7df6-49be-a8cc-428039caa309, EmployeeId: 80
+2025-07-28 23:45:26,895 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-11) request_id : 57dd852b-691f-4307-89f3-03eb28f7f886 | get employee by id: 80
+2025-07-28 23:45:26,895 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Start fetching bank details - RequestId: 57dd852b-691f-4307-89f3-03eb28f7f886, EmployeeId: 80
+2025-07-28 23:45:26,908 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Bank details not found - RequestId: 57dd852b-691f-4307-89f3-03eb28f7f886, EmployeeId: 80
+2025-07-28 23:46:25,439 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-11) request_id : cbf5fb76-0961-4f65-b431-d60cdeeb939a | get employee by id: 80
+2025-07-28 23:46:25,440 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Start fetching bank details - RequestId: cbf5fb76-0961-4f65-b431-d60cdeeb939a, EmployeeId: 80
+2025-07-28 23:46:25,456 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Bank details not found - RequestId: cbf5fb76-0961-4f65-b431-d60cdeeb939a, EmployeeId: 80
+2025-07-28 23:46:25,463 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-11) request_id : ed5bab89-9519-47eb-aea5-59b6e79c56c6 | get employee by id: 80
+2025-07-28 23:46:25,463 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Start fetching bank details - RequestId: ed5bab89-9519-47eb-aea5-59b6e79c56c6, EmployeeId: 80
+2025-07-28 23:46:25,475 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Bank details not found - RequestId: ed5bab89-9519-47eb-aea5-59b6e79c56c6, EmployeeId: 80
+2025-07-28 23:46:26,873 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-11) request_id : 733b91f6-b032-4266-8ba2-03505d69b758 | get employee by id: 80
+2025-07-28 23:46:26,873 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Start fetching bank details - RequestId: 733b91f6-b032-4266-8ba2-03505d69b758, EmployeeId: 80
+2025-07-28 23:46:26,874 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-21) request_id : d4c4386b-9992-4fdb-8c48-234f913d2297 | get employee by id: 80
+2025-07-28 23:46:26,875 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Start fetching bank details - RequestId: d4c4386b-9992-4fdb-8c48-234f913d2297, EmployeeId: 80
+2025-07-28 23:46:26,895 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) Start generating payslip - RequestId: d91a3887-9d99-465e-9196-1d4a3c9fd3b7, EmployeeId: 80
+2025-07-28 23:46:26,896 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Bank details not found - RequestId: d4c4386b-9992-4fdb-8c48-234f913d2297, EmployeeId: 80
+2025-07-28 23:46:26,896 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Bank details not found - RequestId: 733b91f6-b032-4266-8ba2-03505d69b758, EmployeeId: 80
+2025-07-28 23:46:26,898 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) Start generating payslip - RequestId: 0d645116-6283-490a-ad59-53bbb719e9bb, EmployeeId: 80
+2025-07-28 23:46:26,911 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) Payslip already generated - RequestId: d91a3887-9d99-465e-9196-1d4a3c9fd3b7, EmployeeId: 80
+2025-07-28 23:46:26,912 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) Payslip already generated - RequestId: 0d645116-6283-490a-ad59-53bbb719e9bb, EmployeeId: 80
+2025-07-28 23:46:26,913 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) End generating payslip - RequestId: d91a3887-9d99-465e-9196-1d4a3c9fd3b7, EmployeeId: 80
+2025-07-28 23:46:26,914 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) End generating payslip - RequestId: 0d645116-6283-490a-ad59-53bbb719e9bb, EmployeeId: 80
+2025-07-28 23:46:27,181 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) requestId: a3cb452b-db21-408f-8abb-dabf5bdbdcf4 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:46:27,188 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-21) request_id : 05addf67-b596-44b8-9a32-eea9edd562cf | get employee by id: 80
+2025-07-28 23:46:27,189 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : e94c1c7b-ad3f-4127-b7a8-c1133d69f194 | get employee by id: 80
+2025-07-28 23:46:27,189 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) Start fetch employee attendance - RequestId: 05addf67-b596-44b8-9a32-eea9edd562cf
+2025-07-28 23:46:27,189 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: e94c1c7b-ad3f-4127-b7a8-c1133d69f194
+2025-07-28 23:46:27,191 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) End fetch employee attendance - RequestId: 05addf67-b596-44b8-9a32-eea9edd562cf
+2025-07-28 23:46:27,191 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: e94c1c7b-ad3f-4127-b7a8-c1133d69f194
+2025-07-28 23:46:27,223 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) requestId: d6784789-e316-4340-9fed-616657521849 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:46:31,723 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-23) RequestId: 7e33f431-d6fe-42e5-b193-a2d0172ce739 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@5412d112, type=null, pagination=null)
+2025-07-28 23:46:31,723 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-23) Start Login user  - RequestId: 7e33f431-d6fe-42e5-b193-a2d0172ce739
+2025-07-28 23:46:31,738 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-23) End user Login  - RequestId: 7e33f431-d6fe-42e5-b193-a2d0172ce739
+2025-07-28 23:46:34,349 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) requestId: e045e8e9-3fd5-44ff-ab08-512c4213abaa | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:46:34,365 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-21) request_id : d3617eb8-c314-458e-8c62-9ae97cc206b9 | get employee by id: 80
+2025-07-28 23:46:34,366 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) Start fetch employee attendance - RequestId: d3617eb8-c314-458e-8c62-9ae97cc206b9
+2025-07-28 23:46:34,368 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) End fetch employee attendance - RequestId: d3617eb8-c314-458e-8c62-9ae97cc206b9
+2025-07-28 23:46:34,386 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 290b8f08-d155-4f81-bd0c-1a59de47dbef | get employee by id: 80
+2025-07-28 23:46:34,386 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) requestId: 70d7c300-42e2-46cc-b8b5-d3ff94b422bb | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:46:34,387 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetch employee attendance - RequestId: 290b8f08-d155-4f81-bd0c-1a59de47dbef
+2025-07-28 23:46:34,389 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetch employee attendance - RequestId: 290b8f08-d155-4f81-bd0c-1a59de47dbef
+2025-07-28 23:46:35,884 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-23) request_id : 9c368eb8-3fc4-4b6d-b9fb-19e3a6d802ba | get employee by id: 80
+2025-07-28 23:46:35,885 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-23) Start fetching bank details - RequestId: 9c368eb8-3fc4-4b6d-b9fb-19e3a6d802ba, EmployeeId: 80
+2025-07-28 23:46:35,885 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-21) request_id : 6b2d725b-e8b3-43dc-a7d9-b6c347471b62 | get employee by id: 80
+2025-07-28 23:46:35,885 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Start fetching bank details - RequestId: 6b2d725b-e8b3-43dc-a7d9-b6c347471b62, EmployeeId: 80
+2025-07-28 23:46:35,897 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-23) Bank details not found - RequestId: 9c368eb8-3fc4-4b6d-b9fb-19e3a6d802ba, EmployeeId: 80
+2025-07-28 23:46:35,901 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) Start generating payslip - RequestId: 53d7cfdb-cac3-420e-9130-29aa2052c0e4, EmployeeId: 80
+2025-07-28 23:46:35,903 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Bank details not found - RequestId: 6b2d725b-e8b3-43dc-a7d9-b6c347471b62, EmployeeId: 80
+2025-07-28 23:46:35,903 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) Start generating payslip - RequestId: 30d3873f-ea77-41f5-a1ea-c4773ab1e8e6, EmployeeId: 80
+2025-07-28 23:46:35,914 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) Payslip already generated - RequestId: 53d7cfdb-cac3-420e-9130-29aa2052c0e4, EmployeeId: 80
+2025-07-28 23:46:35,915 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) End generating payslip - RequestId: 53d7cfdb-cac3-420e-9130-29aa2052c0e4, EmployeeId: 80
+2025-07-28 23:46:35,919 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) Payslip already generated - RequestId: 30d3873f-ea77-41f5-a1ea-c4773ab1e8e6, EmployeeId: 80
+2025-07-28 23:46:35,921 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) End generating payslip - RequestId: 30d3873f-ea77-41f5-a1ea-c4773ab1e8e6, EmployeeId: 80
+2025-07-28 23:46:37,318 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : b2473d0c-6764-44fb-b227-55ad62b64af5 | get employee by id: 80
+2025-07-28 23:46:37,319 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: b2473d0c-6764-44fb-b227-55ad62b64af5, EmployeeId: 80
+2025-07-28 23:46:37,334 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: b2473d0c-6764-44fb-b227-55ad62b64af5, EmployeeId: 80
+2025-07-28 23:46:37,342 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : e2e41c14-b462-4235-8872-0c1eac385378 | get employee by id: 80
+2025-07-28 23:46:37,342 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: e2e41c14-b462-4235-8872-0c1eac385378, EmployeeId: 80
+2025-07-28 23:46:37,354 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: e2e41c14-b462-4235-8872-0c1eac385378, EmployeeId: 80
+2025-07-28 23:47:28,591 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-22) RequestId: 32758c3b-f92c-42e1-a71b-7e0b001ef441 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@1364f839, type=null, pagination=null)
+2025-07-28 23:47:28,591 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-22) Start Login user  - RequestId: 32758c3b-f92c-42e1-a71b-7e0b001ef441
+2025-07-28 23:47:28,614 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-22) End user Login  - RequestId: 32758c3b-f92c-42e1-a71b-7e0b001ef441
+2025-07-28 23:47:37,195 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 5cd51076-6b9c-4863-b9b4-14d8236b2140 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:47:37,204 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : b6e382cc-1146-4b43-a548-20ae699d77e9 | get employee by id: 80
+2025-07-28 23:47:37,204 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetch employee attendance - RequestId: b6e382cc-1146-4b43-a548-20ae699d77e9
+2025-07-28 23:47:37,206 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetch employee attendance - RequestId: b6e382cc-1146-4b43-a548-20ae699d77e9
+2025-07-28 23:47:37,224 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 6fe5fc7e-515e-48da-893b-d29f24d7826c | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:47:37,227 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 07438438-24f0-4a09-b5e9-07b53342cba2 | get employee by id: 80
+2025-07-28 23:47:37,227 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetch employee attendance - RequestId: 07438438-24f0-4a09-b5e9-07b53342cba2
+2025-07-28 23:47:37,228 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetch employee attendance - RequestId: 07438438-24f0-4a09-b5e9-07b53342cba2
+2025-07-28 23:47:38,766 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : 085acdf9-9a92-4ced-b428-f31624e2c292 | get employee by id: 80
+2025-07-28 23:47:38,766 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-23) request_id : fa3dfae9-0924-4c77-b6d4-7c9703eb5e82 | get employee by id: 80
+2025-07-28 23:47:38,766 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: 085acdf9-9a92-4ced-b428-f31624e2c292, EmployeeId: 80
+2025-07-28 23:47:38,767 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-23) Start fetching bank details - RequestId: fa3dfae9-0924-4c77-b6d4-7c9703eb5e82, EmployeeId: 80
+2025-07-28 23:47:38,775 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-21) Start generating payslip - RequestId: ff0397ff-193a-4d7a-a64d-aaa1d4872d9f, EmployeeId: 80
+2025-07-28 23:47:38,775 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-24) Start generating payslip - RequestId: 8b2482f0-d20b-4593-94c9-bfd98e5fa410, EmployeeId: 80
+2025-07-28 23:47:38,780 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: 085acdf9-9a92-4ced-b428-f31624e2c292, EmployeeId: 80
+2025-07-28 23:47:38,780 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-23) Bank details not found - RequestId: fa3dfae9-0924-4c77-b6d4-7c9703eb5e82, EmployeeId: 80
+2025-07-28 23:47:38,786 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-21) Payslip already generated - RequestId: ff0397ff-193a-4d7a-a64d-aaa1d4872d9f, EmployeeId: 80
+2025-07-28 23:47:38,788 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-21) End generating payslip - RequestId: ff0397ff-193a-4d7a-a64d-aaa1d4872d9f, EmployeeId: 80
+2025-07-28 23:47:38,811 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-24) Payslip already generated - RequestId: 8b2482f0-d20b-4593-94c9-bfd98e5fa410, EmployeeId: 80
+2025-07-28 23:47:38,812 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-24) End generating payslip - RequestId: 8b2482f0-d20b-4593-94c9-bfd98e5fa410, EmployeeId: 80
+2025-07-28 23:47:41,224 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-24) request_id : dcda0bd5-4386-406f-90ce-3b2bb4c149fc | get employee by id: 80
+2025-07-28 23:47:41,225 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-24) Start fetching bank details - RequestId: dcda0bd5-4386-406f-90ce-3b2bb4c149fc, EmployeeId: 80
+2025-07-28 23:47:41,235 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-24) Bank details not found - RequestId: dcda0bd5-4386-406f-90ce-3b2bb4c149fc, EmployeeId: 80
+2025-07-28 23:47:41,244 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-24) request_id : 01411904-eb8c-4d2e-8fad-eb19856ecbf4 | get employee by id: 80
+2025-07-28 23:47:41,245 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-24) Start fetching bank details - RequestId: 01411904-eb8c-4d2e-8fad-eb19856ecbf4, EmployeeId: 80
+2025-07-28 23:47:41,254 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-24) Bank details not found - RequestId: 01411904-eb8c-4d2e-8fad-eb19856ecbf4, EmployeeId: 80
+2025-07-28 23:47:45,022 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-24) request_id : 26e95543-df61-4c7f-b8d2-50a8848675e5 | get employee by id: 80
+2025-07-28 23:47:45,022 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-24) Start fetch employee attendance - RequestId: 26e95543-df61-4c7f-b8d2-50a8848675e5
+2025-07-28 23:47:45,025 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-24) End fetch employee attendance - RequestId: 26e95543-df61-4c7f-b8d2-50a8848675e5
+2025-07-28 23:47:45,034 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) requestId: 1089d4d0-f9f4-4a9f-a203-544724ab7876 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:47:45,067 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-24) request_id : 003c94bd-49d9-4f1e-b9b2-f9b9dffe3b3a | get employee by id: 80
+2025-07-28 23:47:45,067 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-24) Start fetch employee attendance - RequestId: 003c94bd-49d9-4f1e-b9b2-f9b9dffe3b3a
+2025-07-28 23:47:45,069 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) requestId: aef1c2ee-87bc-4724-9c39-58ced8594605 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:47:45,069 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-24) End fetch employee attendance - RequestId: 003c94bd-49d9-4f1e-b9b2-f9b9dffe3b3a
+2025-07-28 23:47:48,289 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-21) request_id : 608318d1-4098-45aa-b8ea-177883e005de | get employee by id: 80
+2025-07-28 23:47:48,290 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Start fetching bank details - RequestId: 608318d1-4098-45aa-b8ea-177883e005de, EmployeeId: 80
+2025-07-28 23:47:48,307 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Bank details not found - RequestId: 608318d1-4098-45aa-b8ea-177883e005de, EmployeeId: 80
+2025-07-28 23:47:48,320 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-21) request_id : 14c8ae66-1618-4bd0-a92c-39b3ded3c3f8 | get employee by id: 80
+2025-07-28 23:47:48,321 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Start fetching bank details - RequestId: 14c8ae66-1618-4bd0-a92c-39b3ded3c3f8, EmployeeId: 80
+2025-07-28 23:47:48,332 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Bank details not found - RequestId: 14c8ae66-1618-4bd0-a92c-39b3ded3c3f8, EmployeeId: 80
+2025-07-28 23:47:48,482 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-24) request_id : 44e39ee7-1711-48fd-a7d0-7571aa6af26e | get employee by id: 80
+2025-07-28 23:47:48,482 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-21) request_id : ae7e33dd-8a36-40fd-a6e9-c02ee1e3827d | get employee by id: 80
+2025-07-28 23:47:48,483 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-24) Start fetching bank details - RequestId: 44e39ee7-1711-48fd-a7d0-7571aa6af26e, EmployeeId: 80
+2025-07-28 23:47:48,483 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Start fetching bank details - RequestId: ae7e33dd-8a36-40fd-a6e9-c02ee1e3827d, EmployeeId: 80
+2025-07-28 23:47:48,486 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) Start generating payslip - RequestId: 3bba85c4-749f-4f00-a162-c433fa0018de, EmployeeId: 80
+2025-07-28 23:47:48,491 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) Start generating payslip - RequestId: c70d71b3-7338-4c48-939b-921ff60e8ea3, EmployeeId: 80
+2025-07-28 23:47:48,496 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-24) Bank details not found - RequestId: 44e39ee7-1711-48fd-a7d0-7571aa6af26e, EmployeeId: 80
+2025-07-28 23:47:48,496 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-21) Bank details not found - RequestId: ae7e33dd-8a36-40fd-a6e9-c02ee1e3827d, EmployeeId: 80
+2025-07-28 23:47:48,499 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) Payslip already generated - RequestId: 3bba85c4-749f-4f00-a162-c433fa0018de, EmployeeId: 80
+2025-07-28 23:47:48,501 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-22) End generating payslip - RequestId: 3bba85c4-749f-4f00-a162-c433fa0018de, EmployeeId: 80
+2025-07-28 23:47:48,502 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) Payslip already generated - RequestId: c70d71b3-7338-4c48-939b-921ff60e8ea3, EmployeeId: 80
+2025-07-28 23:47:48,504 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-23) End generating payslip - RequestId: c70d71b3-7338-4c48-939b-921ff60e8ea3, EmployeeId: 80
+2025-07-28 23:47:48,622 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : f9542cdf-0a91-4ea8-8896-cd3700a162cb | get employee by id: 80
+2025-07-28 23:47:48,622 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetch employee attendance - RequestId: f9542cdf-0a91-4ea8-8896-cd3700a162cb
+2025-07-28 23:47:48,624 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetch employee attendance - RequestId: f9542cdf-0a91-4ea8-8896-cd3700a162cb
+2025-07-28 23:47:48,630 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 396bc881-bff4-4ed2-9c3b-eeb77623ee1e | get employee by id: 80
+2025-07-28 23:47:48,630 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: b68e8409-7695-44ed-822a-77dd789886eb | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:47:48,630 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetch employee attendance - RequestId: 396bc881-bff4-4ed2-9c3b-eeb77623ee1e
+2025-07-28 23:47:48,632 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetch employee attendance - RequestId: 396bc881-bff4-4ed2-9c3b-eeb77623ee1e
+2025-07-28 23:47:48,666 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 60973306-807d-43e3-b535-626d778e0071 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:53:09,827 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-22) RequestId: 5e53a093-af0b-4e26-9b0d-675dfb46aa4a | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@53b55afb, type=null, pagination=null)
+2025-07-28 23:53:09,827 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-22) Start Login user  - RequestId: 5e53a093-af0b-4e26-9b0d-675dfb46aa4a
+2025-07-28 23:53:09,844 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-22) End user Login  - RequestId: 5e53a093-af0b-4e26-9b0d-675dfb46aa4a
+2025-07-28 23:53:12,295 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 335d4eb4-4a94-4be8-959b-21389a4097fc | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:53:12,324 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : 51c10810-3d49-45c3-8f5b-561f69852683 | get employee by id: 80
+2025-07-28 23:53:12,324 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: 51c10810-3d49-45c3-8f5b-561f69852683
+2025-07-28 23:53:12,326 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: 51c10810-3d49-45c3-8f5b-561f69852683
+2025-07-28 23:53:12,331 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : bd6fa8aa-ec35-48da-82ad-eea1054a1720 | get employee by id: 80
+2025-07-28 23:53:12,332 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: bd6fa8aa-ec35-48da-82ad-eea1054a1720
+2025-07-28 23:53:12,332 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-25) requestId: 82903b74-fbd9-4976-8ea2-adea1e396f6f | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:53:12,334 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: bd6fa8aa-ec35-48da-82ad-eea1054a1720
+2025-07-28 23:53:13,820 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-25) request_id : 23fdfc68-c1c2-4456-8d6b-29ef3907e52f | get employee by id: 80
+2025-07-28 23:53:13,820 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : 185c170e-31e5-423f-b66f-162906939c06 | get employee by id: 80
+2025-07-28 23:53:13,820 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-25) Start fetching bank details - RequestId: 23fdfc68-c1c2-4456-8d6b-29ef3907e52f, EmployeeId: 80
+2025-07-28 23:53:13,820 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: 185c170e-31e5-423f-b66f-162906939c06, EmployeeId: 80
+2025-07-28 23:53:13,834 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-25) Bank details not found - RequestId: 23fdfc68-c1c2-4456-8d6b-29ef3907e52f, EmployeeId: 80
+2025-07-28 23:53:13,836 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-26) Start generating payslip - RequestId: 5dac917b-7483-4734-8538-3092b7c2f88a, EmployeeId: 80
+2025-07-28 23:53:13,838 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: 185c170e-31e5-423f-b66f-162906939c06, EmployeeId: 80
+2025-07-28 23:53:13,851 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-26) Payslip already generated - RequestId: 5dac917b-7483-4734-8538-3092b7c2f88a, EmployeeId: 80
+2025-07-28 23:53:13,852 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-26) End generating payslip - RequestId: 5dac917b-7483-4734-8538-3092b7c2f88a, EmployeeId: 80
+2025-07-28 23:53:13,858 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-26) Start generating payslip - RequestId: 70c5e559-c3a8-4608-9fe6-8447782ad09a, EmployeeId: 80
+2025-07-28 23:53:13,870 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-26) Payslip already generated - RequestId: 70c5e559-c3a8-4608-9fe6-8447782ad09a, EmployeeId: 80
+2025-07-28 23:53:13,877 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-26) End generating payslip - RequestId: 70c5e559-c3a8-4608-9fe6-8447782ad09a, EmployeeId: 80
+2025-07-28 23:53:15,348 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-26) request_id : a6ae14ce-0dba-4a4d-8736-3196f83c0773 | get employee by id: 80
+2025-07-28 23:53:15,348 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-26) Start fetching bank details - RequestId: a6ae14ce-0dba-4a4d-8736-3196f83c0773, EmployeeId: 80
+2025-07-28 23:53:15,360 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-26) Bank details not found - RequestId: a6ae14ce-0dba-4a4d-8736-3196f83c0773, EmployeeId: 80
+2025-07-28 23:53:15,372 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-26) request_id : 145d57e5-fa29-41ec-bac3-eeba00fd5afe | get employee by id: 80
+2025-07-28 23:53:15,372 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-26) Start fetching bank details - RequestId: 145d57e5-fa29-41ec-bac3-eeba00fd5afe, EmployeeId: 80
+2025-07-28 23:53:15,387 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-26) Bank details not found - RequestId: 145d57e5-fa29-41ec-bac3-eeba00fd5afe, EmployeeId: 80
+2025-07-28 23:53:18,696 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) requestId: e1b6144d-d063-4cd5-ad0a-69cb0a5bdb2c | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:53:18,728 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : a6394e7e-9f8f-446d-99b9-94ace50dfea6 | get employee by id: 80
+2025-07-28 23:53:18,729 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: a6394e7e-9f8f-446d-99b9-94ace50dfea6
+2025-07-28 23:53:18,731 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: a6394e7e-9f8f-446d-99b9-94ace50dfea6
+2025-07-28 23:53:18,732 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : bb471b83-c38d-42cc-89ca-4bc59fccfad2 | get employee by id: 80
+2025-07-28 23:53:18,734 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: bb471b83-c38d-42cc-89ca-4bc59fccfad2
+2025-07-28 23:53:18,736 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: bb471b83-c38d-42cc-89ca-4bc59fccfad2
+2025-07-28 23:53:18,738 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: a7542219-f59a-4dcb-9d2a-2f9d65b5a46d | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:55:39,433 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 67fb4902-7ef8-42db-918f-5f818cb1ae67 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:55:39,453 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-27) request_id : 31b864ef-20f6-41ae-bfd2-f462c81a5844 | get employee by id: 80
+2025-07-28 23:55:39,453 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-27) Start fetch employee attendance - RequestId: 31b864ef-20f6-41ae-bfd2-f462c81a5844
+2025-07-28 23:55:39,456 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-27) End fetch employee attendance - RequestId: 31b864ef-20f6-41ae-bfd2-f462c81a5844
+2025-07-28 23:55:39,473 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 030c1639-07c6-421d-b05e-60878c23b4a4 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:55:39,513 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : bd98c48f-b7b8-4a3b-9a14-8a3125e33a6a | get employee by id: 80
+2025-07-28 23:55:39,514 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: bd98c48f-b7b8-4a3b-9a14-8a3125e33a6a
+2025-07-28 23:55:39,517 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: bd98c48f-b7b8-4a3b-9a14-8a3125e33a6a
+2025-07-28 23:55:42,506 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : a9fa8ac9-3f89-4030-8564-b06094199f65 | get employee by id: 80
+2025-07-28 23:55:42,506 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: a9fa8ac9-3f89-4030-8564-b06094199f65, EmployeeId: 80
+2025-07-28 23:55:42,521 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: a9fa8ac9-3f89-4030-8564-b06094199f65, EmployeeId: 80
+2025-07-28 23:55:42,532 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : b873a889-39d1-473d-b5b8-19cb07485e90 | get employee by id: 80
+2025-07-28 23:55:42,532 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: b873a889-39d1-473d-b5b8-19cb07485e90, EmployeeId: 80
+2025-07-28 23:55:42,549 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: b873a889-39d1-473d-b5b8-19cb07485e90, EmployeeId: 80
+2025-07-28 23:55:43,221 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-27) request_id : 92873e06-7e32-4512-94c5-69593dc2dba7 | get employee by id: 80
+2025-07-28 23:55:43,222 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-27) Start fetching bank details - RequestId: 92873e06-7e32-4512-94c5-69593dc2dba7, EmployeeId: 80
+2025-07-28 23:55:43,222 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-22) request_id : 57ca479b-5bf2-4410-85cc-149327b4cf90 | get employee by id: 80
+2025-07-28 23:55:43,222 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Start fetching bank details - RequestId: 57ca479b-5bf2-4410-85cc-149327b4cf90, EmployeeId: 80
+2025-07-28 23:55:43,237 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-27) Bank details not found - RequestId: 92873e06-7e32-4512-94c5-69593dc2dba7, EmployeeId: 80
+2025-07-28 23:55:43,238 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-28) Start generating payslip - RequestId: 0e356b46-3c39-4e81-8eed-83a93cf0233f, EmployeeId: 80
+2025-07-28 23:55:43,238 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-22) Bank details not found - RequestId: 57ca479b-5bf2-4410-85cc-149327b4cf90, EmployeeId: 80
+2025-07-28 23:55:43,237 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-29) Start generating payslip - RequestId: 42989b58-db82-4c51-ae84-c875d3e684a7, EmployeeId: 80
+2025-07-28 23:55:43,255 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-28) Payslip already generated - RequestId: 0e356b46-3c39-4e81-8eed-83a93cf0233f, EmployeeId: 80
+2025-07-28 23:55:43,256 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-29) Payslip already generated - RequestId: 42989b58-db82-4c51-ae84-c875d3e684a7, EmployeeId: 80
+2025-07-28 23:55:43,257 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-28) End generating payslip - RequestId: 0e356b46-3c39-4e81-8eed-83a93cf0233f, EmployeeId: 80
+2025-07-28 23:55:43,257 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-29) End generating payslip - RequestId: 42989b58-db82-4c51-ae84-c875d3e684a7, EmployeeId: 80
+2025-07-28 23:55:45,580 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-29) request_id : 9cac7b42-5de0-401c-b995-3b0393e356e6 | get employee by id: 80
+2025-07-28 23:55:45,581 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-29) Start fetching bank details - RequestId: 9cac7b42-5de0-401c-b995-3b0393e356e6, EmployeeId: 80
+2025-07-28 23:55:45,598 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-29) Bank details not found - RequestId: 9cac7b42-5de0-401c-b995-3b0393e356e6, EmployeeId: 80
+2025-07-28 23:55:45,608 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-29) request_id : 4f87579d-33e6-4b33-b7fb-cbad3836f73a | get employee by id: 80
+2025-07-28 23:55:45,609 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-29) Start fetching bank details - RequestId: 4f87579d-33e6-4b33-b7fb-cbad3836f73a, EmployeeId: 80
+2025-07-28 23:55:45,622 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-29) Bank details not found - RequestId: 4f87579d-33e6-4b33-b7fb-cbad3836f73a, EmployeeId: 80
+2025-07-28 23:55:49,754 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-29) requestId: 8ee3840b-1590-4b5a-bb1d-6e9875abd35f | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:55:49,769 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : 5bf964ce-6817-4bd7-8f81-f32873240a5f | get employee by id: 80
+2025-07-28 23:55:49,769 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-28) request_id : b6a5ca16-ab21-46aa-b4b6-5650f5c7fe21 | get employee by id: 80
+2025-07-28 23:55:49,770 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: 5bf964ce-6817-4bd7-8f81-f32873240a5f
+2025-07-28 23:55:49,770 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-28) Start fetch employee attendance - RequestId: b6a5ca16-ab21-46aa-b4b6-5650f5c7fe21
+2025-07-28 23:55:49,773 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-28) End fetch employee attendance - RequestId: b6a5ca16-ab21-46aa-b4b6-5650f5c7fe21
+2025-07-28 23:55:49,802 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: 5bf964ce-6817-4bd7-8f81-f32873240a5f
+2025-07-28 23:55:49,833 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 765dd1a8-a103-4339-a7ee-70a6b33784c6 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:56:25,208 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) requestId: 1aac7bb7-1725-4c43-a858-929652780876 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:56:25,216 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-30) request_id : 2437e099-fa08-4833-aa8d-758a62ca491d | get employee by id: 80
+2025-07-28 23:56:25,217 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-30) Start fetch employee attendance - RequestId: 2437e099-fa08-4833-aa8d-758a62ca491d
+2025-07-28 23:56:25,219 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-30) End fetch employee attendance - RequestId: 2437e099-fa08-4833-aa8d-758a62ca491d
+2025-07-28 23:56:25,246 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : 9c0f0be3-5fe3-4566-a782-a9680556f776 | get employee by id: 80
+2025-07-28 23:56:25,246 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-30) requestId: 0d7ef62c-f035-4bce-97b1-3a78f2567096 | Fetch leave balances for employee 80 and year 0
+2025-07-28 23:56:25,246 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetch employee attendance - RequestId: 9c0f0be3-5fe3-4566-a782-a9680556f776
+2025-07-28 23:56:25,248 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetch employee attendance - RequestId: 9c0f0be3-5fe3-4566-a782-a9680556f776

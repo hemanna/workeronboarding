@@ -1,0 +1,135 @@
+2025-07-29 00:05:07,970 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-30) requestId: 1aac12e0-88e2-4a4f-b1a8-44fd0856df4e | Fetch leave balances for employee 80 and year 0
+2025-07-29 00:05:08,004 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-31) request_id : 53f3a9bb-26db-49fe-a527-ffd94fdcb212 | get employee by id: 80
+2025-07-29 00:05:08,005 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-31) Start fetch employee attendance - RequestId: 53f3a9bb-26db-49fe-a527-ffd94fdcb212
+2025-07-29 00:05:08,009 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-32) request_id : e891605f-6585-45f7-9408-74af652b1ed5 | get employee by id: 80
+2025-07-29 00:05:08,010 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-32) Start fetch employee attendance - RequestId: e891605f-6585-45f7-9408-74af652b1ed5
+2025-07-29 00:05:08,028 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-31) End fetch employee attendance - RequestId: 53f3a9bb-26db-49fe-a527-ffd94fdcb212
+2025-07-29 00:05:08,049 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-30) requestId: 6842eb5b-e67d-4c89-88a6-333e8d948e0a | Fetch leave balances for employee 80 and year 0
+2025-07-29 00:05:08,052 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-32) End fetch employee attendance - RequestId: e891605f-6585-45f7-9408-74af652b1ed5
+2025-07-29 00:10:48,596 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-30) request_id : be488459-f27d-40f3-b8e5-162ed6704eb4 | get payslip for employeeId: null, month: 7, year: 2025
+2025-07-29 00:10:48,628 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-30) Start fetching payslip data - RequestId: be488459-f27d-40f3-b8e5-162ed6704eb4, EmployeeId: null, Month: 7, Year: 2025
+2025-07-29 00:10:48,808 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-30) correlation-id : 8c3680ae-8409-4469-8bb0-bd69853ad547 | message : id to load is required for loading | cause : {}: java.lang.IllegalArgumentException: id to load is required for loading
+	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:77)
+	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:43)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:198)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:107)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2406)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2372)
+	at io.quarkus.hibernate.orm.runtime.session.TransactionScopedSession.find(TransactionScopedSession.java:175)
+	at org.hibernate.engine.spi.SessionLazyDelegator.find(SessionLazyDelegator.java:784)
+	at org.hibernate.Session_OpdLahisOZ9nWRPXMsEFQmQU03A_Synthetic_ClientProxy.find(Unknown Source)
+	at io.quarkus.hibernate.orm.panache.common.runtime.AbstractJpaOperations.findById(AbstractJpaOperations.java:179)
+	at com.sbd.common.repository.EmployeeDetailsRepository.findById(EmployeeDetailsRepository.java)
+	at com.sbd.common.repository.EmployeeDetailsRepository.findById(EmployeeDetailsRepository.java)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.findById(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService.fetchPayslipData(SalaryStructureService.java:58)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.fetchPayslipData$$superforward(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass$$function$$3.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.fetchPayslipData(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.fetchPayslipData(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.fetchPayslipData(SalaryStructureResource.java:34)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$fetchPayslipData_bfb72e524333f9033fec06de5edd7519d455a45f.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-29 00:11:01,382 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-30) correlation-id : 9790df13-d242-4e76-8aaf-25939a44c84f | message : Internal error: Invalid token=EOF at (line no=5, column no=4, offset=7). Expected tokens are: [CURLYOPEN, SQUAREOPEN, STRING, NUMBER, TRUE, FALSE, NULL] | cause : {}: jakarta.json.bind.JsonbException: Internal error: Invalid token=EOF at (line no=5, column no=4, offset=7). Expected tokens are: [CURLYOPEN, SQUAREOPEN, STRING, NUMBER, TRUE, FALSE, NULL]
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:142)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserialize(DeserializationContextImpl.java:127)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:55)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:102)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.doReadFrom(JsonbMessageBodyReader.java:57)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.readFrom(JsonbMessageBodyReader.java:39)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.readFrom(RequestDeserializeHandler.java:126)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.handle(RequestDeserializeHandler.java:84)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:135)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: jakarta.json.stream.JsonParsingException: Invalid token=EOF at (line no=5, column no=4, offset=7). Expected tokens are: [CURLYOPEN, SQUAREOPEN, STRING, NUMBER, TRUE, FALSE, NULL]
+	at org.eclipse.parsson.JsonParserImpl.parsingException(JsonParserImpl.java:455)
+	at org.eclipse.parsson.JsonParserImpl.access$1000(JsonParserImpl.java:53)
+	at org.eclipse.parsson.JsonParserImpl$NoneContext.getNextEvent(JsonParserImpl.java:443)
+	at org.eclipse.parsson.JsonParserImpl.next(JsonParserImpl.java:363)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:134)
+	... 16 more
+
+2025-07-29 00:11:18,568 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-30) request_id : d6efb3db-a1c9-4a91-8d11-fe86a1a49724 | get payslip for employeeId: null, month: null, year: null
+2025-07-29 00:11:18,568 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-30) Start fetching payslip data - RequestId: d6efb3db-a1c9-4a91-8d11-fe86a1a49724, EmployeeId: null, Month: null, Year: null
+2025-07-29 00:11:18,569 laptop-t3siq6r0 workeronboarding-dev.jar[7580] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-30) correlation-id : 2f7cefd4-005f-42d0-b87a-cd2f95c76cc0 | message : id to load is required for loading | cause : {}: java.lang.IllegalArgumentException: id to load is required for loading
+	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:77)
+	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:43)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:198)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:107)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2406)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2372)
+	at io.quarkus.hibernate.orm.runtime.session.TransactionScopedSession.find(TransactionScopedSession.java:175)
+	at org.hibernate.engine.spi.SessionLazyDelegator.find(SessionLazyDelegator.java:784)
+	at org.hibernate.Session_OpdLahisOZ9nWRPXMsEFQmQU03A_Synthetic_ClientProxy.find(Unknown Source)
+	at io.quarkus.hibernate.orm.panache.common.runtime.AbstractJpaOperations.findById(AbstractJpaOperations.java:179)
+	at com.sbd.common.repository.EmployeeDetailsRepository.findById(EmployeeDetailsRepository.java)
+	at com.sbd.common.repository.EmployeeDetailsRepository.findById(EmployeeDetailsRepository.java)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.findById(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService.fetchPayslipData(SalaryStructureService.java:58)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.fetchPayslipData$$superforward(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass$$function$$3.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.fetchPayslipData(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.fetchPayslipData(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.fetchPayslipData(SalaryStructureResource.java:34)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$fetchPayslipData_bfb72e524333f9033fec06de5edd7519d455a45f.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-29 00:15:19,176 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-30) request_id : 048d328f-4430-4368-95b5-30f01d29f7dc | get payslip for employeeId: 80, month: 7, year: 2025
+2025-07-29 00:15:19,177 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-30) Start fetching payslip data - RequestId: 048d328f-4430-4368-95b5-30f01d29f7dc, EmployeeId: 80, Month: 7, Year: 2025
+2025-07-29 00:32:05,408 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2025-07-29 00:32:08,169 laptop-t3siq6r0 workeronboarding-dev.jar[7580] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\SalaryStructureService.java uses unchecked or unsafe operations., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\SalaryStructureService.java
+2025-07-29 00:32:08,171 laptop-t3siq6r0 workeronboarding-dev.jar[7580] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) Recompile with -Xlint:unchecked for details., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\SalaryStructureService.java
+2025-07-29 00:32:08,199 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in SalaryStructureResource.class, SalaryStructureControl.class, SalaryStructureService.class.
+2025-07-29 00:32:08,380 laptop-t3siq6r0 workeronboarding-dev.jar[7580] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.177s

@@ -1,0 +1,666 @@
+2025-05-04 22:41:10,345 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 6.346s. Listening on: http://0.0.0.0:8080
+2025-05-04 22:41:10,350 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-05-04 22:41:10,351 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-05-04 22:42:52,218 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: 2384eec3-210c-41e2-938d-f4357d2b80d4 | Fetching all employees
+2025-05-04 22:42:52,218 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 597d24d8-8878-4ad5-bfd9-a7cf5c019403 | Fetching all employees
+2025-05-04 22:42:52,220 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: fda114e3-457c-4855-ade4-f1fc12da8ff9 | Fetching all employees
+2025-05-04 22:42:52,230 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching employees - RequestId: fda114e3-457c-4855-ade4-f1fc12da8ff9
+2025-05-04 22:42:52,307 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching skill wise employee count - RequestId: 2384eec3-210c-41e2-938d-f4357d2b80d4
+2025-05-04 22:42:52,307 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching skill wise employee count - RequestId: 597d24d8-8878-4ad5-bfd9-a7cf5c019403
+2025-05-04 22:42:52,516 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching skill-wise employee count - RequestId: 2384eec3-210c-41e2-938d-f4357d2b80d4
+2025-05-04 22:42:52,516 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching skill-wise employee count - RequestId: 597d24d8-8878-4ad5-bfd9-a7cf5c019403
+2025-05-04 22:42:52,615 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: 2c1c24c6-6e89-4267-b61c-6adb072ecf5a | Fetching all employees
+2025-05-04 22:42:52,617 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: 2c1c24c6-6e89-4267-b61c-6adb072ecf5a
+2025-05-04 22:42:52,859 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: 2c1c24c6-6e89-4267-b61c-6adb072ecf5a
+2025-05-04 22:42:52,859 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching employees - RequestId: fda114e3-457c-4855-ade4-f1fc12da8ff9
+2025-05-04 22:42:54,958 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 716ef003-9976-4614-a080-92cabe7985f9 | Fetching all leave requests
+2025-05-04 22:42:54,961 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 716ef003-9976-4614-a080-92cabe7985f9
+2025-05-04 22:42:54,977 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) Request ID: b75739f7-bf23-4da8-a4bf-a1a3e05ae9e3 | Fetching all leave requests
+2025-05-04 22:42:54,979 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-4) Start fetching all leave requests - RequestId: b75739f7-bf23-4da8-a4bf-a1a3e05ae9e3
+2025-05-04 22:42:55,755 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-4) End fetching all leave requests - RequestId: b75739f7-bf23-4da8-a4bf-a1a3e05ae9e3
+2025-05-04 22:42:55,755 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) End fetching all leave requests - RequestId: 716ef003-9976-4614-a080-92cabe7985f9
+2025-05-04 22:42:59,485 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 0629a845-9025-440b-ab34-143ca39ffabc | get all employee attendance
+2025-05-04 22:42:59,488 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all attendance records - RequestId: 0629a845-9025-440b-ab34-143ca39ffabc
+2025-05-04 22:42:59,498 laptop-t3siq6r0 workeronboarding-dev.jar[24020] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) No attendance records found - RequestId: 0629a845-9025-440b-ab34-143ca39ffabc
+2025-05-04 22:42:59,508 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : cc3066ff-ee33-45e6-9fac-e530edc94371 | get all employee attendance
+2025-05-04 22:42:59,510 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all attendance records - RequestId: cc3066ff-ee33-45e6-9fac-e530edc94371
+2025-05-04 22:42:59,514 laptop-t3siq6r0 workeronboarding-dev.jar[24020] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) No attendance records found - RequestId: cc3066ff-ee33-45e6-9fac-e530edc94371
+2025-05-04 22:43:34,372 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 18c1bb83-1f4c-40fa-9287-3b2f80d2558d | Fetching all leave requests
+2025-05-04 22:43:34,373 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) Request ID: b7ea018c-9b14-4138-872f-367e903b6e3d | Fetching all leave requests
+2025-05-04 22:43:34,374 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 18c1bb83-1f4c-40fa-9287-3b2f80d2558d
+2025-05-04 22:43:34,374 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-4) Start fetching all leave requests - RequestId: b7ea018c-9b14-4138-872f-367e903b6e3d
+2025-05-04 22:43:35,137 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-4) End fetching all leave requests - RequestId: b7ea018c-9b14-4138-872f-367e903b6e3d
+2025-05-04 22:43:35,156 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) End fetching all leave requests - RequestId: 18c1bb83-1f4c-40fa-9287-3b2f80d2558d
+2025-05-04 23:12:54,218 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 6a672e51-734f-4703-9dee-3ee8541bd3c1 | Fetching all leave requests
+2025-05-04 23:12:54,218 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) Request ID: 2922ecda-cf47-4f60-8447-11af6b3ba35a | Fetching all leave requests
+2025-05-04 23:12:54,295 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 6a672e51-734f-4703-9dee-3ee8541bd3c1
+2025-05-04 23:12:54,295 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all leave requests - RequestId: 2922ecda-cf47-4f60-8447-11af6b3ba35a
+2025-05-04 23:12:59,428 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) Acquisition timeout while waiting for new connection
+2025-05-04 23:12:59,428 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-5) Acquisition timeout while waiting for new connection
+2025-05-04 23:12:59,595 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 3dd1d765-c65d-4aae-92b1-aa9256033799 | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.LeaveRepository.findAllWithLeaveDays(LeaveRepository.java:26)
+	at com.sbd.common.repository.LeaveRepository_ClientProxy.findAllWithLeaveDays(Unknown Source)
+	at com.sbd.record.control.service.LeaveService.fetchAllLeaveRequest(LeaveService.java:139)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$2.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.fetchAllLeaveRequests(LeaveResource.java:68)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$fetchAllLeaveRequests_3e2d99b3d6b2b7ef7e1c9524d69a7d297b23c9a1.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 54 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 59 more
+
+2025-05-04 23:12:59,595 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-5) correlation-id : 31e392d3-bdab-4c5e-a2f1-46da8c5e046d | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.LeaveRepository.findAllWithLeaveDays(LeaveRepository.java:26)
+	at com.sbd.common.repository.LeaveRepository_ClientProxy.findAllWithLeaveDays(Unknown Source)
+	at com.sbd.record.control.service.LeaveService.fetchAllLeaveRequest(LeaveService.java:139)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$2.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.fetchAllLeaveRequests(LeaveResource.java:68)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$fetchAllLeaveRequests_3e2d99b3d6b2b7ef7e1c9524d69a7d297b23c9a1.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 54 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 59 more
+
+2025-05-04 23:13:07,633 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) Request ID: 7e0d9256-87bc-4ad4-b52d-0ed450c9481d | Fetching all leave requests
+2025-05-04 23:13:07,634 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all leave requests - RequestId: 7e0d9256-87bc-4ad4-b52d-0ed450c9481d
+2025-05-04 23:13:07,662 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: c4575367-ff45-41f8-bea2-ca286aa1d378 | Fetching all leave requests
+2025-05-04 23:13:07,663 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: c4575367-ff45-41f8-bea2-ca286aa1d378
+2025-05-04 23:13:12,648 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-5) Acquisition timeout while waiting for new connection
+2025-05-04 23:13:12,650 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-5) correlation-id : 7c08c4ea-62cd-497f-8bb6-a86c2a15abd3 | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.LeaveRepository.findAllWithLeaveDays(LeaveRepository.java:26)
+	at com.sbd.common.repository.LeaveRepository_ClientProxy.findAllWithLeaveDays(Unknown Source)
+	at com.sbd.record.control.service.LeaveService.fetchAllLeaveRequest(LeaveService.java:139)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$2.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.fetchAllLeaveRequests(LeaveResource.java:68)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$fetchAllLeaveRequests_3e2d99b3d6b2b7ef7e1c9524d69a7d297b23c9a1.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 54 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 59 more
+
+2025-05-04 23:13:12,677 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) Acquisition timeout while waiting for new connection
+2025-05-04 23:13:12,679 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 7b233b31-9a20-47ba-9ef6-1460bc3e3d7f | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.LeaveRepository.findAllWithLeaveDays(LeaveRepository.java:26)
+	at com.sbd.common.repository.LeaveRepository_ClientProxy.findAllWithLeaveDays(Unknown Source)
+	at com.sbd.record.control.service.LeaveService.fetchAllLeaveRequest(LeaveService.java:139)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$2.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.fetchAllLeaveRequests(LeaveResource.java:68)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$fetchAllLeaveRequests_3e2d99b3d6b2b7ef7e1c9524d69a7d297b23c9a1.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 54 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 59 more
+
+2025-05-04 23:13:44,336 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 46dd67dc-e005-47c3-9c73-384a982b21df | Fetching all leave requests
+2025-05-04 23:13:44,337 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 46dd67dc-e005-47c3-9c73-384a982b21df
+2025-05-04 23:13:44,345 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-6) Request ID: 2c32d173-a310-473c-8370-e13f5b8208fc | Fetching all leave requests
+2025-05-04 23:13:44,346 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) Start fetching all leave requests - RequestId: 2c32d173-a310-473c-8370-e13f5b8208fc
+2025-05-04 23:13:45,907 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) End fetching all leave requests - RequestId: 46dd67dc-e005-47c3-9c73-384a982b21df
+2025-05-04 23:13:45,923 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) End fetching all leave requests - RequestId: 2c32d173-a310-473c-8370-e13f5b8208fc
+2025-05-04 23:14:03,204 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) Request ID: 028d86ff-3edb-4f60-9cfe-a01b3ed06c8a | Fetching all leave requests
+2025-05-04 23:14:03,205 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-7) Start fetching all leave requests - RequestId: 028d86ff-3edb-4f60-9cfe-a01b3ed06c8a
+2025-05-04 23:14:03,248 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) Request ID: 23c148be-f480-490b-afaa-24aedbb960b7 | Fetching all leave requests
+2025-05-04 23:14:03,249 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all leave requests - RequestId: 23c148be-f480-490b-afaa-24aedbb960b7
+2025-05-04 23:14:03,703 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-7) End fetching all leave requests - RequestId: 028d86ff-3edb-4f60-9cfe-a01b3ed06c8a
+2025-05-04 23:14:03,733 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all leave requests - RequestId: 23c148be-f480-490b-afaa-24aedbb960b7
+2025-05-04 23:14:56,118 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) Request ID: 942f4749-d699-48ae-94aa-e19f5230aef4 | Fetching all leave requests
+2025-05-04 23:14:56,118 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) Request ID: c5e060db-3759-4aab-9450-bbd37181a13e | Fetching all leave requests
+2025-05-04 23:14:56,119 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all leave requests - RequestId: 942f4749-d699-48ae-94aa-e19f5230aef4
+2025-05-04 23:14:56,119 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-7) Start fetching all leave requests - RequestId: c5e060db-3759-4aab-9450-bbd37181a13e
+2025-05-04 23:14:56,792 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-7) End fetching all leave requests - RequestId: c5e060db-3759-4aab-9450-bbd37181a13e
+2025-05-04 23:14:56,833 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all leave requests - RequestId: 942f4749-d699-48ae-94aa-e19f5230aef4
+2025-05-04 23:16:35,868 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) Request ID: 82b935f6-2581-4708-8127-12b011601bf4 | Fetching all leave requests
+2025-05-04 23:16:35,871 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all leave requests - RequestId: 82b935f6-2581-4708-8127-12b011601bf4
+2025-05-04 23:16:35,924 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-9) Request ID: 28ad611b-4b3b-4bc4-bfbd-48e3cdc0dee9 | Fetching all leave requests
+2025-05-04 23:16:35,926 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-9) Start fetching all leave requests - RequestId: 28ad611b-4b3b-4bc4-bfbd-48e3cdc0dee9
+2025-05-04 23:16:36,594 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all leave requests - RequestId: 82b935f6-2581-4708-8127-12b011601bf4
+2025-05-04 23:16:36,659 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-9) End fetching all leave requests - RequestId: 28ad611b-4b3b-4bc4-bfbd-48e3cdc0dee9
+2025-05-04 23:16:40,215 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-10) Request ID: 487bf9b8-86a4-4e47-b95d-195a608341af | Fetching all leave requests
+2025-05-04 23:16:40,217 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-10) Start fetching all leave requests - RequestId: 487bf9b8-86a4-4e47-b95d-195a608341af
+2025-05-04 23:16:40,279 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-11) Request ID: 6d3073c9-6de2-4f58-95d7-7451fe29409e | Fetching all leave requests
+2025-05-04 23:16:40,280 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) Start fetching all leave requests - RequestId: 6d3073c9-6de2-4f58-95d7-7451fe29409e
+2025-05-04 23:16:40,932 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-10) End fetching all leave requests - RequestId: 487bf9b8-86a4-4e47-b95d-195a608341af
+2025-05-04 23:16:41,004 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) End fetching all leave requests - RequestId: 6d3073c9-6de2-4f58-95d7-7451fe29409e
+2025-05-04 23:18:04,052 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-11) Request ID: 606ec32d-35c3-4300-9a19-179197f3820c | Fetching all leave requests
+2025-05-04 23:18:04,053 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) Start fetching all leave requests - RequestId: 606ec32d-35c3-4300-9a19-179197f3820c
+2025-05-04 23:18:04,097 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-12) Request ID: 1e3ec106-1f98-4610-ab90-c30f4eb5cafb | Fetching all leave requests
+2025-05-04 23:18:04,100 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-12) Start fetching all leave requests - RequestId: 1e3ec106-1f98-4610-ab90-c30f4eb5cafb
+2025-05-04 23:18:04,962 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) End fetching all leave requests - RequestId: 606ec32d-35c3-4300-9a19-179197f3820c
+2025-05-04 23:18:04,978 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-12) End fetching all leave requests - RequestId: 1e3ec106-1f98-4610-ab90-c30f4eb5cafb
+2025-05-04 23:18:27,143 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-13) Request ID: c18eb891-04f1-4f71-9619-85f22cf19f9e | Fetching all leave requests
+2025-05-04 23:18:27,144 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) Start fetching all leave requests - RequestId: c18eb891-04f1-4f71-9619-85f22cf19f9e
+2025-05-04 23:18:27,222 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-14) Request ID: d9bbf192-552d-46d8-abb7-57dd40d940d9 | Fetching all leave requests
+2025-05-04 23:18:27,224 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-14) Start fetching all leave requests - RequestId: d9bbf192-552d-46d8-abb7-57dd40d940d9
+2025-05-04 23:18:27,882 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) End fetching all leave requests - RequestId: c18eb891-04f1-4f71-9619-85f22cf19f9e
+2025-05-04 23:18:27,971 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-14) End fetching all leave requests - RequestId: d9bbf192-552d-46d8-abb7-57dd40d940d9
+2025-05-04 23:20:36,342 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-13) Request ID: d4c4381e-9d58-4865-8387-236600f17816 | Fetching all leave requests
+2025-05-04 23:20:36,343 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) Start fetching all leave requests - RequestId: d4c4381e-9d58-4865-8387-236600f17816
+2025-05-04 23:20:36,397 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-15) Request ID: c5d51033-7d35-4377-9fff-0ca532163863 | Fetching all leave requests
+2025-05-04 23:20:36,399 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) Start fetching all leave requests - RequestId: c5d51033-7d35-4377-9fff-0ca532163863
+2025-05-04 23:20:37,065 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) End fetching all leave requests - RequestId: d4c4381e-9d58-4865-8387-236600f17816
+2025-05-04 23:20:37,106 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) End fetching all leave requests - RequestId: c5d51033-7d35-4377-9fff-0ca532163863
+2025-05-04 23:21:28,971 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-15) Request ID: baff2baf-cde8-4fbf-85ef-8138c4c2ac2c | Fetching all leave requests
+2025-05-04 23:21:28,973 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) Start fetching all leave requests - RequestId: baff2baf-cde8-4fbf-85ef-8138c4c2ac2c
+2025-05-04 23:21:29,733 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) End fetching all leave requests - RequestId: baff2baf-cde8-4fbf-85ef-8138c4c2ac2c
+2025-05-04 23:24:47,899 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-15) Request ID: 572ec10d-0032-4a8f-b0eb-2dd933ce272d | Fetching all leave requests
+2025-05-04 23:24:47,900 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) Start fetching all leave requests - RequestId: 572ec10d-0032-4a8f-b0eb-2dd933ce272d
+2025-05-04 23:24:47,961 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) Request ID: 410ee1de-560c-484b-81b8-ef60c426b095 | Fetching all leave requests
+2025-05-04 23:24:47,961 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all leave requests - RequestId: 410ee1de-560c-484b-81b8-ef60c426b095
+2025-05-04 23:24:48,662 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) End fetching all leave requests - RequestId: 572ec10d-0032-4a8f-b0eb-2dd933ce272d
+2025-05-04 23:24:48,754 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all leave requests - RequestId: 410ee1de-560c-484b-81b8-ef60c426b095
+2025-05-04 23:25:54,872 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) Request ID: 6f92d3dc-6049-4b6f-976b-45641e3b1a2b | Fetching all leave requests
+2025-05-04 23:25:54,873 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all leave requests - RequestId: 6f92d3dc-6049-4b6f-976b-45641e3b1a2b
+2025-05-04 23:25:54,939 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-17) Request ID: fb3c011d-e081-44f3-81c7-548b935eb129 | Fetching all leave requests
+2025-05-04 23:25:54,940 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) Start fetching all leave requests - RequestId: fb3c011d-e081-44f3-81c7-548b935eb129
+2025-05-04 23:25:55,627 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all leave requests - RequestId: 6f92d3dc-6049-4b6f-976b-45641e3b1a2b
+2025-05-04 23:25:55,673 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) End fetching all leave requests - RequestId: fb3c011d-e081-44f3-81c7-548b935eb129
+2025-05-04 23:26:02,809 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) Request ID: 9ce74494-646e-48a7-94fb-3fe62284d886 | Fetching all leave requests
+2025-05-04 23:26:02,811 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) Start fetching all leave requests - RequestId: 9ce74494-646e-48a7-94fb-3fe62284d886
+2025-05-04 23:26:02,875 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-19) Request ID: fd46a5f2-47b5-4aaf-93ed-3bcf1342b47e | Fetching all leave requests
+2025-05-04 23:26:02,876 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) Start fetching all leave requests - RequestId: fd46a5f2-47b5-4aaf-93ed-3bcf1342b47e
+2025-05-04 23:26:03,572 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) End fetching all leave requests - RequestId: 9ce74494-646e-48a7-94fb-3fe62284d886
+2025-05-04 23:26:03,663 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) End fetching all leave requests - RequestId: fd46a5f2-47b5-4aaf-93ed-3bcf1342b47e
+2025-05-04 23:26:24,138 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-17) Request ID: d6d59f16-d4f8-48e8-958a-1ac366af4c6e | Fetching all leave requests
+2025-05-04 23:26:24,139 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) Request ID: 3d8ac04c-3eb8-4325-8f67-741a62765e25 | Fetching all leave requests
+2025-05-04 23:26:24,140 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) Start fetching all leave requests - RequestId: d6d59f16-d4f8-48e8-958a-1ac366af4c6e
+2025-05-04 23:26:24,140 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all leave requests - RequestId: 3d8ac04c-3eb8-4325-8f67-741a62765e25
+2025-05-04 23:26:24,883 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) End fetching all leave requests - RequestId: d6d59f16-d4f8-48e8-958a-1ac366af4c6e
+2025-05-04 23:26:24,884 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all leave requests - RequestId: 3d8ac04c-3eb8-4325-8f67-741a62765e25
+2025-05-04 23:26:25,732 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-20) Request ID: b6994929-319c-4d97-b41a-c5fd32b4fc7e | Fetching all leave requests
+2025-05-04 23:26:25,733 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-20) Start fetching all leave requests - RequestId: b6994929-319c-4d97-b41a-c5fd32b4fc7e
+2025-05-04 23:26:25,801 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) Request ID: 7766928f-46d7-46ea-8a2a-c4be771b4fa1 | Fetching all leave requests
+2025-05-04 23:26:25,802 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-21) Start fetching all leave requests - RequestId: 7766928f-46d7-46ea-8a2a-c4be771b4fa1
+2025-05-04 23:26:26,469 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-20) End fetching all leave requests - RequestId: b6994929-319c-4d97-b41a-c5fd32b4fc7e
+2025-05-04 23:26:26,564 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-21) End fetching all leave requests - RequestId: 7766928f-46d7-46ea-8a2a-c4be771b4fa1
+2025-05-04 23:26:43,065 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) Request ID: 98b2e0b7-54e3-4b9b-8627-af9fa61492de | Fetching all leave requests
+2025-05-04 23:26:43,066 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) Start fetching all leave requests - RequestId: 98b2e0b7-54e3-4b9b-8627-af9fa61492de
+2025-05-04 23:26:43,779 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) End fetching all leave requests - RequestId: 98b2e0b7-54e3-4b9b-8627-af9fa61492de
+2025-05-04 23:26:44,475 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-19) Request ID: b5e0acdf-a5ac-42ea-954b-1dfde4fdc965 | Fetching all leave requests
+2025-05-04 23:26:44,477 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) Start fetching all leave requests - RequestId: b5e0acdf-a5ac-42ea-954b-1dfde4fdc965
+2025-05-04 23:26:45,115 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) End fetching all leave requests - RequestId: b5e0acdf-a5ac-42ea-954b-1dfde4fdc965
+2025-05-04 23:27:08,595 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) Request ID: 50928cdc-2c3d-4956-8ab1-bfedae56fa7b | Fetching all leave requests
+2025-05-04 23:27:08,596 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) Start fetching all leave requests - RequestId: 50928cdc-2c3d-4956-8ab1-bfedae56fa7b
+2025-05-04 23:27:09,281 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) End fetching all leave requests - RequestId: 50928cdc-2c3d-4956-8ab1-bfedae56fa7b
+2025-05-04 23:27:27,383 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) Request ID: 6ee432e7-3f8e-4d19-af44-24fd02769564 | Fetching all leave requests
+2025-05-04 23:27:27,385 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) Start fetching all leave requests - RequestId: 6ee432e7-3f8e-4d19-af44-24fd02769564
+2025-05-04 23:27:28,002 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) End fetching all leave requests - RequestId: 6ee432e7-3f8e-4d19-af44-24fd02769564
+2025-05-04 23:28:12,737 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) Request ID: af279c5d-5b42-46da-bbdf-e42b94d5535b | Fetching all leave requests
+2025-05-04 23:28:12,738 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all leave requests - RequestId: af279c5d-5b42-46da-bbdf-e42b94d5535b
+2025-05-04 23:28:12,826 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-20) Request ID: b98da638-6a86-48bb-b5dc-acb7a186fce5 | Fetching all leave requests
+2025-05-04 23:28:12,827 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-20) Start fetching all leave requests - RequestId: b98da638-6a86-48bb-b5dc-acb7a186fce5
+2025-05-04 23:28:13,476 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all leave requests - RequestId: af279c5d-5b42-46da-bbdf-e42b94d5535b
+2025-05-04 23:28:13,535 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-20) End fetching all leave requests - RequestId: b98da638-6a86-48bb-b5dc-acb7a186fce5
+2025-05-04 23:28:34,484 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) Request ID: 116fb91a-37eb-425c-8586-d527dcf78cc9 | Fetching all leave requests
+2025-05-04 23:28:34,486 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all leave requests - RequestId: 116fb91a-37eb-425c-8586-d527dcf78cc9
+2025-05-04 23:28:35,236 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all leave requests - RequestId: 116fb91a-37eb-425c-8586-d527dcf78cc9
+2025-05-04 23:28:53,574 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) Request ID: 662d49de-01a5-491b-8091-24bdbbd2f56f | Fetching all leave requests
+2025-05-04 23:28:53,575 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-22) Start fetching all leave requests - RequestId: 662d49de-01a5-491b-8091-24bdbbd2f56f
+2025-05-04 23:28:54,276 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-22) End fetching all leave requests - RequestId: 662d49de-01a5-491b-8091-24bdbbd2f56f
+2025-05-04 23:28:58,442 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) Request ID: 3e12b2de-0069-4cd9-a96f-d27c4e5891d4 | Fetching all leave requests
+2025-05-04 23:28:58,443 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) Start fetching all leave requests - RequestId: 3e12b2de-0069-4cd9-a96f-d27c4e5891d4
+2025-05-04 23:28:58,506 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) Request ID: 7d666fc3-2fe0-4292-a022-561c6894c127 | Fetching all leave requests
+2025-05-04 23:28:58,510 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) Start fetching all leave requests - RequestId: 7d666fc3-2fe0-4292-a022-561c6894c127
+2025-05-04 23:28:59,230 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) End fetching all leave requests - RequestId: 3e12b2de-0069-4cd9-a96f-d27c4e5891d4
+2025-05-04 23:28:59,294 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) End fetching all leave requests - RequestId: 7d666fc3-2fe0-4292-a022-561c6894c127
+2025-05-04 23:29:08,087 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-25) Request ID: 858c034f-a4a5-4b56-8ecf-22ab3bb961c9 | Fetching all leave requests
+2025-05-04 23:29:08,088 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-25) Start fetching all leave requests - RequestId: 858c034f-a4a5-4b56-8ecf-22ab3bb961c9
+2025-05-04 23:29:08,823 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-25) End fetching all leave requests - RequestId: 858c034f-a4a5-4b56-8ecf-22ab3bb961c9
+2025-05-04 23:29:16,848 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) Request ID: 049bbd24-6c72-4a37-b682-fb4d4f676ae5 | Fetching all leave requests
+2025-05-04 23:29:16,849 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) Start fetching all leave requests - RequestId: 049bbd24-6c72-4a37-b682-fb4d4f676ae5
+2025-05-04 23:29:17,581 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) End fetching all leave requests - RequestId: 049bbd24-6c72-4a37-b682-fb4d4f676ae5
+2025-05-04 23:29:53,829 laptop-t3siq6r0 workeronboarding-dev.jar[24020] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-22) Generating incomplete JSON
+2025-05-04 23:29:53,832 laptop-t3siq6r0 workeronboarding-dev.jar[24020] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-22) correlation-id : 36eaf64b-12ef-441c-9e98-bd4a9b1f3567 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.serialization.DynamicEntityWriter.write(DynamicEntityWriter.java:106)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:32)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 13 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'attachment' from com.sbd.common.Jsonb.LeaveDTO
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 23 more
+Caused by: jakarta.json.JsonException: I/O error while writing in JsonGenerator
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:652)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeString(JsonGeneratorImpl.java:605)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeEscapedString(JsonGeneratorImpl.java:559)
+	at org.eclipse.parsson.JsonGeneratorImpl.write(JsonGeneratorImpl.java:360)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:28)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 49 more
+Caused by: java.io.IOException: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:216)
+	at org.jboss.resteasy.reactive.server.NoopCloseAndFlushOutputStream.write(NoopCloseAndFlushOutputStream.java:39)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:303)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:648)
+	... 60 more
+Caused by: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:117)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.writeBlocking(ResteasyReactiveOutputStream.java:222)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:210)
+	... 67 more
+Caused by: java.io.IOException: Connection has been closed
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.awaitWriteable(ResteasyReactiveOutputStream.java:136)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:90)
+	... 69 more
+
+2025-05-04 23:33:37,976 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) Request ID: 1bc54beb-515a-49cd-b99c-412fa16ba36c | Fetching all leave requests
+2025-05-04 23:33:37,977 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all leave requests - RequestId: 1bc54beb-515a-49cd-b99c-412fa16ba36c
+2025-05-04 23:33:37,980 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) Request ID: 0469ef8d-9c80-43b6-9694-acc69a9130b0 | Fetching all leave requests
+2025-05-04 23:33:37,982 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) Start fetching all leave requests - RequestId: 0469ef8d-9c80-43b6-9694-acc69a9130b0
+2025-05-04 23:33:38,710 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all leave requests - RequestId: 1bc54beb-515a-49cd-b99c-412fa16ba36c
+2025-05-04 23:33:38,766 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) End fetching all leave requests - RequestId: 0469ef8d-9c80-43b6-9694-acc69a9130b0
+2025-05-04 23:33:42,031 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-27) Request ID: 08850402-455a-4966-ad53-82ff73ff19e4 | Fetching all leave requests
+2025-05-04 23:33:42,032 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-27) Start fetching all leave requests - RequestId: 08850402-455a-4966-ad53-82ff73ff19e4
+2025-05-04 23:33:42,120 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-28) Request ID: cf530f8c-7d47-4479-b7e7-64d2de34bee6 | Fetching all leave requests
+2025-05-04 23:33:42,121 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) Start fetching all leave requests - RequestId: cf530f8c-7d47-4479-b7e7-64d2de34bee6
+2025-05-04 23:33:42,803 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-27) End fetching all leave requests - RequestId: 08850402-455a-4966-ad53-82ff73ff19e4
+2025-05-04 23:33:42,876 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) End fetching all leave requests - RequestId: cf530f8c-7d47-4479-b7e7-64d2de34bee6
+2025-05-04 23:34:37,613 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) Request ID: 36e81e1d-0894-4aa5-bb91-740d288e533d | Fetching all leave requests
+2025-05-04 23:34:37,614 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-29) Request ID: f0fe8545-f494-4cc4-83fb-fd0ff18186b2 | Fetching all leave requests
+2025-05-04 23:34:37,614 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) Start fetching all leave requests - RequestId: 36e81e1d-0894-4aa5-bb91-740d288e533d
+2025-05-04 23:34:37,615 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-29) Start fetching all leave requests - RequestId: f0fe8545-f494-4cc4-83fb-fd0ff18186b2
+2025-05-04 23:34:38,354 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) End fetching all leave requests - RequestId: 36e81e1d-0894-4aa5-bb91-740d288e533d
+2025-05-04 23:34:38,354 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-29) End fetching all leave requests - RequestId: f0fe8545-f494-4cc4-83fb-fd0ff18186b2
+2025-05-04 23:35:05,925 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) Request ID: f5556ac0-ae5b-493f-a003-634a8af34812 | Fetching all leave requests
+2025-05-04 23:35:05,926 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) Start fetching all leave requests - RequestId: f5556ac0-ae5b-493f-a003-634a8af34812
+2025-05-04 23:35:05,985 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-29) Request ID: 82bc0dce-c883-4d8e-964f-444ab64c1141 | Fetching all leave requests
+2025-05-04 23:35:05,986 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-29) Start fetching all leave requests - RequestId: 82bc0dce-c883-4d8e-964f-444ab64c1141
+2025-05-04 23:35:06,672 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) End fetching all leave requests - RequestId: f5556ac0-ae5b-493f-a003-634a8af34812
+2025-05-04 23:35:06,797 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-29) End fetching all leave requests - RequestId: 82bc0dce-c883-4d8e-964f-444ab64c1141
+2025-05-04 23:35:10,805 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-30) Request ID: 837d7fd9-88ef-455d-a7eb-4c4e521b1ddf | Fetching all leave requests
+2025-05-04 23:35:10,806 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-30) Start fetching all leave requests - RequestId: 837d7fd9-88ef-455d-a7eb-4c4e521b1ddf
+2025-05-04 23:35:10,863 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: c329f490-db78-48bf-b66a-e10fccdc583e | Fetching all leave requests
+2025-05-04 23:35:10,865 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: c329f490-db78-48bf-b66a-e10fccdc583e
+2025-05-04 23:35:11,526 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-30) End fetching all leave requests - RequestId: 837d7fd9-88ef-455d-a7eb-4c4e521b1ddf
+2025-05-04 23:35:11,605 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: c329f490-db78-48bf-b66a-e10fccdc583e
+2025-05-04 23:35:23,793 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) Request ID: c35272c7-3586-4b7d-9d3d-6c37c5f74577 | Fetching all leave requests
+2025-05-04 23:35:23,795 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) Start fetching all leave requests - RequestId: c35272c7-3586-4b7d-9d3d-6c37c5f74577
+2025-05-04 23:35:23,812 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-32) Request ID: d4f84321-5069-4e78-9fc5-c816a72d039d | Fetching all leave requests
+2025-05-04 23:35:23,813 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-32) Start fetching all leave requests - RequestId: d4f84321-5069-4e78-9fc5-c816a72d039d
+2025-05-04 23:35:24,551 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-32) End fetching all leave requests - RequestId: d4f84321-5069-4e78-9fc5-c816a72d039d
+2025-05-04 23:35:24,551 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) End fetching all leave requests - RequestId: c35272c7-3586-4b7d-9d3d-6c37c5f74577
+2025-05-04 23:36:40,960 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: a84def87-82df-4df2-b560-7e045efeec6b | Fetching all leave requests
+2025-05-04 23:36:40,961 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: a84def87-82df-4df2-b560-7e045efeec6b
+2025-05-04 23:36:40,968 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-33) Request ID: 8b257adc-8ac6-49b4-aae3-67f651bafb1c | Fetching all leave requests
+2025-05-04 23:36:40,970 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-33) Start fetching all leave requests - RequestId: 8b257adc-8ac6-49b4-aae3-67f651bafb1c
+2025-05-04 23:36:41,691 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: a84def87-82df-4df2-b560-7e045efeec6b
+2025-05-04 23:36:41,736 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-33) End fetching all leave requests - RequestId: 8b257adc-8ac6-49b4-aae3-67f651bafb1c
+2025-05-04 23:38:16,761 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: 3853314f-27ba-49a7-8db0-c9d44c370bf8 | Fetching all leave requests
+2025-05-04 23:38:16,762 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: 3853314f-27ba-49a7-8db0-c9d44c370bf8
+2025-05-04 23:38:16,843 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-34) Request ID: 47f276f5-0bf2-446b-aa9f-5bf770c7a55c | Fetching all leave requests
+2025-05-04 23:38:16,844 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) Start fetching all leave requests - RequestId: 47f276f5-0bf2-446b-aa9f-5bf770c7a55c
+2025-05-04 23:38:17,498 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: 3853314f-27ba-49a7-8db0-c9d44c370bf8
+2025-05-04 23:38:17,600 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) End fetching all leave requests - RequestId: 47f276f5-0bf2-446b-aa9f-5bf770c7a55c
+2025-05-04 23:38:37,344 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-34) Request ID: 33f6a220-e830-491c-80e1-8c72075040eb | Fetching all leave requests
+2025-05-04 23:38:37,345 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) Start fetching all leave requests - RequestId: 33f6a220-e830-491c-80e1-8c72075040eb
+2025-05-04 23:38:37,407 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: 43547af6-9564-48c9-b3df-476897e71929 | Fetching all leave requests
+2025-05-04 23:38:37,408 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: 43547af6-9564-48c9-b3df-476897e71929
+2025-05-04 23:38:38,063 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) End fetching all leave requests - RequestId: 33f6a220-e830-491c-80e1-8c72075040eb
+2025-05-04 23:38:38,145 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: 43547af6-9564-48c9-b3df-476897e71929
+2025-05-04 23:38:58,845 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-34) Request ID: 14e809ea-7d72-402b-a923-0eb6855a94da | Fetching all leave requests
+2025-05-04 23:38:58,846 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) Start fetching all leave requests - RequestId: 14e809ea-7d72-402b-a923-0eb6855a94da
+2025-05-04 23:38:58,925 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: 70aa405a-898e-4481-bbbe-8ff03be363a3 | Fetching all leave requests
+2025-05-04 23:38:58,927 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: 70aa405a-898e-4481-bbbe-8ff03be363a3
+2025-05-04 23:38:59,577 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) End fetching all leave requests - RequestId: 14e809ea-7d72-402b-a923-0eb6855a94da
+2025-05-04 23:38:59,648 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: 70aa405a-898e-4481-bbbe-8ff03be363a3
+2025-05-04 23:39:03,851 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-35) Request ID: 86beeb4c-dd33-49db-ae43-0605ddc841b9 | Fetching all leave requests
+2025-05-04 23:39:03,852 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-35) Start fetching all leave requests - RequestId: 86beeb4c-dd33-49db-ae43-0605ddc841b9
+2025-05-04 23:39:03,906 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-36) Request ID: fe3375b9-a667-4b1a-a75c-9117e23a77a2 | Fetching all leave requests
+2025-05-04 23:39:03,907 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-36) Start fetching all leave requests - RequestId: fe3375b9-a667-4b1a-a75c-9117e23a77a2
+2025-05-04 23:39:04,590 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-35) End fetching all leave requests - RequestId: 86beeb4c-dd33-49db-ae43-0605ddc841b9
+2025-05-04 23:39:04,659 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-36) End fetching all leave requests - RequestId: fe3375b9-a667-4b1a-a75c-9117e23a77a2
+2025-05-04 23:39:10,157 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: 2d5ea312-90e1-4820-9cb3-0c97adb962e3 | Fetching all leave requests
+2025-05-04 23:39:10,160 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: 2d5ea312-90e1-4820-9cb3-0c97adb962e3
+2025-05-04 23:39:10,167 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-34) Request ID: 3661fe40-3c31-4c0a-9a22-f1fb7eec260d | Fetching all leave requests
+2025-05-04 23:39:10,168 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) Start fetching all leave requests - RequestId: 3661fe40-3c31-4c0a-9a22-f1fb7eec260d
+2025-05-04 23:39:10,914 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) End fetching all leave requests - RequestId: 3661fe40-3c31-4c0a-9a22-f1fb7eec260d
+2025-05-04 23:39:10,921 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: 2d5ea312-90e1-4820-9cb3-0c97adb962e3
+2025-05-04 23:39:22,647 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-34) request_id : 0d48c992-75c8-405d-926e-062471addb68 | get all employee attendance
+2025-05-04 23:39:22,648 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-36) request_id : 29680938-cd9d-4581-9488-c975779bea86 | get all employee attendance
+2025-05-04 23:39:22,649 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-34) Start fetching all attendance records - RequestId: 0d48c992-75c8-405d-926e-062471addb68
+2025-05-04 23:39:22,649 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-36) Start fetching all attendance records - RequestId: 29680938-cd9d-4581-9488-c975779bea86
+2025-05-04 23:39:22,658 laptop-t3siq6r0 workeronboarding-dev.jar[24020] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-36) No attendance records found - RequestId: 29680938-cd9d-4581-9488-c975779bea86
+2025-05-04 23:39:22,658 laptop-t3siq6r0 workeronboarding-dev.jar[24020] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-34) No attendance records found - RequestId: 0d48c992-75c8-405d-926e-062471addb68
+2025-05-04 23:39:50,046 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: 8376ac00-4719-4cb8-b433-d8b189c31dc5 | Fetching all leave requests
+2025-05-04 23:39:50,047 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: 8376ac00-4719-4cb8-b433-d8b189c31dc5
+2025-05-04 23:39:50,143 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-34) Request ID: aff80a5c-6ce0-4f6e-93af-09846846a896 | Fetching all leave requests
+2025-05-04 23:39:50,144 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) Start fetching all leave requests - RequestId: aff80a5c-6ce0-4f6e-93af-09846846a896
+2025-05-04 23:39:50,839 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: 8376ac00-4719-4cb8-b433-d8b189c31dc5
+2025-05-04 23:39:50,920 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-34) End fetching all leave requests - RequestId: aff80a5c-6ce0-4f6e-93af-09846846a896
+2025-05-04 23:55:05,616 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: ee888132-4442-4b98-a56e-dcde44f96dfb | Fetching all leave requests
+2025-05-04 23:55:05,617 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: ee888132-4442-4b98-a56e-dcde44f96dfb
+2025-05-04 23:55:05,698 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-37) Request ID: cb8a9870-f4cd-47ff-b464-eb11360f964b | Fetching all leave requests
+2025-05-04 23:55:05,700 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) Start fetching all leave requests - RequestId: cb8a9870-f4cd-47ff-b464-eb11360f964b
+2025-05-04 23:55:06,571 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: ee888132-4442-4b98-a56e-dcde44f96dfb
+2025-05-04 23:55:06,665 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) End fetching all leave requests - RequestId: cb8a9870-f4cd-47ff-b464-eb11360f964b
+2025-05-04 23:55:20,875 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-31) Request ID: 490bc298-2503-41f0-b2e3-4c4a2ad6dea8 | Fetching all leave requests
+2025-05-04 23:55:20,876 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) Start fetching all leave requests - RequestId: 490bc298-2503-41f0-b2e3-4c4a2ad6dea8
+2025-05-04 23:55:20,941 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-37) Request ID: 535dabc2-7bfb-4651-b739-3021d9c189c6 | Fetching all leave requests
+2025-05-04 23:55:20,942 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) Start fetching all leave requests - RequestId: 535dabc2-7bfb-4651-b739-3021d9c189c6
+2025-05-04 23:55:21,606 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-31) End fetching all leave requests - RequestId: 490bc298-2503-41f0-b2e3-4c4a2ad6dea8
+2025-05-04 23:55:21,651 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) End fetching all leave requests - RequestId: 535dabc2-7bfb-4651-b739-3021d9c189c6
+2025-05-04 23:55:27,834 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-38) Request ID: 92a9874e-acfe-4f86-b97b-4a25bebf51c8 | Fetching all leave requests
+2025-05-04 23:55:27,834 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-39) Request ID: 0331a372-5c31-4e97-9cb0-371bc2fcf7d9 | Fetching all leave requests
+2025-05-04 23:55:27,835 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-39) Start fetching all leave requests - RequestId: 0331a372-5c31-4e97-9cb0-371bc2fcf7d9
+2025-05-04 23:55:27,835 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-38) Start fetching all leave requests - RequestId: 92a9874e-acfe-4f86-b97b-4a25bebf51c8
+2025-05-04 23:55:28,655 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-38) End fetching all leave requests - RequestId: 92a9874e-acfe-4f86-b97b-4a25bebf51c8
+2025-05-04 23:55:28,670 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-39) End fetching all leave requests - RequestId: 0331a372-5c31-4e97-9cb0-371bc2fcf7d9
+2025-05-04 23:55:40,205 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-39) Request ID: 15004470-3ce4-46f1-a066-01620daa2a1c | Fetching all leave requests
+2025-05-04 23:55:40,206 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-39) Start fetching all leave requests - RequestId: 15004470-3ce4-46f1-a066-01620daa2a1c
+2025-05-04 23:55:40,538 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-38) Request ID: 7a7df365-72a2-4151-aee8-01f3cbb9ca01 | Fetching all leave requests
+2025-05-04 23:55:40,538 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-38) Start fetching all leave requests - RequestId: 7a7df365-72a2-4151-aee8-01f3cbb9ca01
+2025-05-04 23:55:40,875 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-39) End fetching all leave requests - RequestId: 15004470-3ce4-46f1-a066-01620daa2a1c
+2025-05-04 23:55:41,204 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-38) End fetching all leave requests - RequestId: 7a7df365-72a2-4151-aee8-01f3cbb9ca01
+2025-05-04 23:55:45,060 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-37) Request ID: bbf0bf87-628d-489a-8b0d-eed0f37db817 | Fetching all leave requests
+2025-05-04 23:55:45,061 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) Start fetching all leave requests - RequestId: bbf0bf87-628d-489a-8b0d-eed0f37db817
+2025-05-04 23:55:45,090 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-40) Request ID: 7aa83046-5dd1-4010-80f3-638487a4eb0b | Fetching all leave requests
+2025-05-04 23:55:45,090 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-40) Start fetching all leave requests - RequestId: 7aa83046-5dd1-4010-80f3-638487a4eb0b
+2025-05-04 23:55:45,592 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) End fetching all leave requests - RequestId: bbf0bf87-628d-489a-8b0d-eed0f37db817
+2025-05-04 23:55:45,666 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-40) End fetching all leave requests - RequestId: 7aa83046-5dd1-4010-80f3-638487a4eb0b
+2025-05-04 23:58:41,477 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-37) Request ID: ab838fe1-99b3-47be-957f-4175a112fe73 | Fetching all leave requests
+2025-05-04 23:58:41,478 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) Start fetching all leave requests - RequestId: ab838fe1-99b3-47be-957f-4175a112fe73
+2025-05-04 23:58:41,488 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-41) Request ID: 207b5a5d-ce74-4fd5-82cf-173b13f7f211 | Fetching all leave requests
+2025-05-04 23:58:41,489 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-41) Start fetching all leave requests - RequestId: 207b5a5d-ce74-4fd5-82cf-173b13f7f211
+2025-05-04 23:58:42,265 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-41) End fetching all leave requests - RequestId: 207b5a5d-ce74-4fd5-82cf-173b13f7f211
+2025-05-04 23:58:42,271 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-37) End fetching all leave requests - RequestId: ab838fe1-99b3-47be-957f-4175a112fe73
+2025-05-04 23:59:30,211 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-41) Request ID: f730725e-d366-4473-a9d4-5df02ffb2b1f | Fetching all leave requests
+2025-05-04 23:59:30,212 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-41) Start fetching all leave requests - RequestId: f730725e-d366-4473-a9d4-5df02ffb2b1f
+2025-05-04 23:59:30,872 laptop-t3siq6r0 workeronboarding-dev.jar[24020] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-41) End fetching all leave requests - RequestId: f730725e-d366-4473-a9d4-5df02ffb2b1f

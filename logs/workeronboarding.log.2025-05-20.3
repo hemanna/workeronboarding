@@ -1,0 +1,91 @@
+2025-05-20 22:40:56,819 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 6.537s. Listening on: http://0.0.0.0:8080
+2025-05-20 22:40:56,825 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-05-20 22:40:56,825 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-05-20 22:42:03,867 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 8e431dbc-6c0d-4a89-a385-9c9537d79697 | Fetching all leave requests
+2025-05-20 22:42:04,002 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 8e431dbc-6c0d-4a89-a385-9c9537d79697
+2025-05-20 22:42:05,031 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) End fetching all leave requests - RequestId: 8e431dbc-6c0d-4a89-a385-9c9537d79697
+2025-05-20 22:43:03,411 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-1) RequestId: b30ea6ad-5d1e-4363-86a6-d52927dcdaca | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@5939b9af, type=null, pagination=null)
+2025-05-20 22:43:03,411 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) Start Login user  - RequestId: b30ea6ad-5d1e-4363-86a6-d52927dcdaca
+2025-05-20 22:43:03,753 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) End user Login  - RequestId: b30ea6ad-5d1e-4363-86a6-d52927dcdaca
+2025-05-20 22:43:51,119 laptop-t3siq6r0 workeronboarding-dev.jar[12892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : f284e04c-93da-4c07-bea0-fbd998dc079a | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.LeaveService.createLeaveRequest(LeaveService.java:206)
+	at com.sbd.record.control.service.LeaveService_Subclass.createLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$1.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.createLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.createLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.applyLeave(LeaveResource.java:40)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$applyLeave_320953e4bef3c79a57e9e8463c12acb05a9446df.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-05-20 22:48:51,234 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: 1373d01c-a96e-4b47-9aff-2977efb3ac20 | Deleting employee with ID: 79
+2025-05-20 22:48:51,283 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Request ID: 1373d01c-a96e-4b47-9aff-2977efb3ac20 | Deleting employee with ID: 79
+2025-05-20 22:48:51,429 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Request ID: 1373d01c-a96e-4b47-9aff-2977efb3ac20 | Employee with ID 79 deleted successfully
+2025-05-20 22:49:35,280 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: e8a82bae-8eb0-4d71-ad39-e779db9d81dd | Deleting employee with ID: 81
+2025-05-20 22:49:35,282 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Request ID: e8a82bae-8eb0-4d71-ad39-e779db9d81dd | Deleting employee with ID: 81
+2025-05-20 22:49:35,317 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Request ID: e8a82bae-8eb0-4d71-ad39-e779db9d81dd | Employee with ID 81 deleted successfully
+2025-05-20 22:56:14,370 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-4) correlation-id : null | status code : 500 | message : Employee not found for ID: 79
+2025-05-20 22:58:26,155 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-5) request_id: 1dbdb57f-ed9a-49e7-a389-c36544bf07e9 | Fetching all employees
+2025-05-20 22:58:26,155 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-7) request_id: 62b90abf-cccb-4960-9e73-d1f428f6c180 | Fetching all employees
+2025-05-20 22:58:26,158 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: a6b10c62-2168-44e9-9906-29b2c42ab058 | Fetching all employees
+2025-05-20 22:58:26,158 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: d0536f49-fa0f-4767-ac15-01af3823d82a | Fetching all employees
+2025-05-20 22:58:26,159 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) Start fetching skill wise employee count - RequestId: 62b90abf-cccb-4960-9e73-d1f428f6c180
+2025-05-20 22:58:26,159 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-5) Start fetching skill wise employee count - RequestId: 1dbdb57f-ed9a-49e7-a389-c36544bf07e9
+2025-05-20 22:58:26,159 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching employees - RequestId: a6b10c62-2168-44e9-9906-29b2c42ab058
+2025-05-20 22:58:26,161 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching employees - RequestId: d0536f49-fa0f-4767-ac15-01af3823d82a
+2025-05-20 22:58:26,303 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) End fetching skill-wise employee count - RequestId: 62b90abf-cccb-4960-9e73-d1f428f6c180
+2025-05-20 22:58:26,308 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-5) End fetching skill-wise employee count - RequestId: 1dbdb57f-ed9a-49e7-a389-c36544bf07e9
+2025-05-20 22:58:26,535 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching employees - RequestId: d0536f49-fa0f-4767-ac15-01af3823d82a
+2025-05-20 22:58:26,566 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) End fetching employees - RequestId: a6b10c62-2168-44e9-9906-29b2c42ab058
+2025-05-20 22:58:58,362 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-6) RequestId: cec8071b-139a-45ea-8e5c-c1515ca799ea | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@71814377, type=null, pagination=null)
+2025-05-20 22:58:58,364 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-6) Start Login user  - RequestId: cec8071b-139a-45ea-8e5c-c1515ca799ea
+2025-05-20 22:58:58,391 laptop-t3siq6r0 workeronboarding-dev.jar[12892] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-6) End user Login  - RequestId: cec8071b-139a-45ea-8e5c-c1515ca799ea
+2025-05-20 22:59:41,848 laptop-t3siq6r0 workeronboarding-dev.jar[12892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-6) correlation-id : b4a0d63c-7a41-47b6-857c-41dcbdd72139 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.LeaveService.createLeaveRequest(LeaveService.java:206)
+	at com.sbd.record.control.service.LeaveService_Subclass.createLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$1.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.createLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.createLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.applyLeave(LeaveResource.java:40)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$applyLeave_320953e4bef3c79a57e9e8463c12acb05a9446df.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+

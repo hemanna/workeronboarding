@@ -1,0 +1,56 @@
+2025-03-26 23:54:38,894 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 2.262s. Listening on: http://0.0.0.0:8080
+2025-03-26 23:54:38,895 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-03-26 23:54:38,896 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-03-26 23:54:38,904 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 6.266s 
+2025-03-26 23:54:38,906 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload took more than 4 seconds, you may want to enable instrumentation based reload (quarkus.live-reload.instrumentation=true). This allows small changes to take effect without restarting Quarkus.
+2025-03-26 23:54:38,910 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 7a33686a-1629-413a-ba4f-ac1adf2a038d | Fetching all leave requests
+2025-03-26 23:54:38,917 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 7a33686a-1629-413a-ba4f-ac1adf2a038d
+2025-03-26 23:54:38,928 laptop-t3siq6r0 workeronboarding-dev.jar[23328] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 8619ee22-5fef-48bc-8f1d-6c079327398a | message : Cannot instantiate class 'com.sbd.common.Jsonb.LeaveDTO' (it has no constructor with signature [java.lang.Integer, java.lang.Integer, java.lang.Integer, java.time.LocalDate, java.time.LocalDate, java.lang.Integer, java.lang.String, java.time.LocalDate, java.lang.String, java.lang.String, byte[], java.lang.String], and not every argument has an alias) | cause : {}: java.lang.IllegalStateException: Cannot instantiate class 'com.sbd.common.Jsonb.LeaveDTO' (it has no constructor with signature [java.lang.Integer, java.lang.Integer, java.lang.Integer, java.time.LocalDate, java.time.LocalDate, java.lang.Integer, java.lang.String, java.time.LocalDate, java.lang.String, java.lang.String, byte[], java.lang.String], and not every argument has an alias)
+	at org.hibernate.sql.results.graph.instantiation.internal.DynamicInstantiationResultImpl.resolveAssembler(DynamicInstantiationResultImpl.java:187)
+	at org.hibernate.sql.results.graph.instantiation.internal.DynamicInstantiationResultImpl.createResultAssembler(DynamicInstantiationResultImpl.java:107)
+	at org.hibernate.sql.results.jdbc.internal.StandardJdbcValuesMapping.resolveAssemblers(StandardJdbcValuesMapping.java:53)
+	at org.hibernate.sql.results.internal.ResultsHelper.createRowReader(ResultsHelper.java:75)
+	at org.hibernate.sql.results.internal.ResultsHelper.createRowReader(ResultsHelper.java:60)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:340)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.LeaveRepository.findAllWithLeaveDays(LeaveRepository.java:28)
+	at com.sbd.common.repository.LeaveRepository_ClientProxy.findAllWithLeaveDays(Unknown Source)
+	at com.sbd.record.control.service.LeaveService.fetchAllLeaveRequest(LeaveService.java:138)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest$$superforward(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.LeaveService_Subclass.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.control.service.LeaveService_ClientProxy.fetchAllLeaveRequest(Unknown Source)
+	at com.sbd.record.boundary.LeaveResource.fetchAllLeaveRequests(LeaveResource.java:68)
+	at com.sbd.record.boundary.LeaveResource$quarkusrestinvoker$fetchAllLeaveRequests_3e2d99b3d6b2b7ef7e1c9524d69a7d297b23c9a1.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-03-26 23:58:04,198 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in LeaveMapper.class.
+2025-03-26 23:58:04,274 laptop-t3siq6r0 workeronboarding-dev.jar[23328] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.059s
