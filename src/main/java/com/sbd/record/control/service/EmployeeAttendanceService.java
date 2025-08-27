@@ -6,6 +6,7 @@ import com.sbd.common.mapper.EmployeeAttendanceMapper;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
+import com.sbd.common.request.EmployeeAttendanceDTO;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
@@ -254,12 +255,32 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
+        List<EmployeeAttendanceDTO> responseList = attendanceList.stream()
+                .map(att -> EmployeeAttendanceDTO.builder()
+                        .id(att.getId())
+                        .employeeId(att.getEmployee().getId())
+                        .departmentId(att.getEmployee().getDepartment().getId())
+                        .roleId(att.getEmployee().getRole().getId())
+                        .date(att.getDate())
+                        .checkinTime(att.getCheckinTime())
+                        .checkoutTime(att.getCheckoutTime())
+                        .workingHours(att.getWorkingHours())
+                        .overtime(att.getOvertime())
+                        .shiftDetails(att.getShiftDetails())
+                        .location(att.getLocation())
+                        .photo(att.getPhoto())
+                        .approvalStatus(att.getApprovalStatus())
+                        .status(att.getStatus())
+                        .leaveId(att.getLeave().getId())
+                        .build()
+                )
+                .collect(Collectors.toList());
 
         log.info("End fetching all attendance records - RequestId: {}", requestId);
 
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
-                attendanceList
+                responseList
         );
     }
 
