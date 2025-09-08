@@ -7,6 +7,8 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "employee_attendance")
@@ -29,11 +31,11 @@ public class EmployeeAttendance {
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
-    @Column(name = "checkin_time")
-    private LocalTime checkinTime;
-
-    @Column(name = "checkout_time")
-    private LocalTime checkoutTime;
+//    @Column(name = "checkin_time")
+//    private LocalTime checkinTime;
+//
+//    @Column(name = "checkout_time")
+//    private LocalTime checkoutTime;
 
     @Column(name = "working_hours")
     private BigDecimal workingHours;
@@ -69,4 +71,8 @@ public class EmployeeAttendance {
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
     private Role role;
+
+    @OneToMany(mappedBy = "attendance", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<EmployeeAttendanceSession> sessions = new ArrayList<>();
+
 }

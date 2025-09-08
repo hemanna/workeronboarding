@@ -1,6 +1,7 @@
 package com.sbd.common.repository;
 
 import com.sbd.common.entity.EmployeeAttendance;
+import com.sbd.common.entity.EmployeeDetails;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,9 @@ import java.util.Optional;
 @ApplicationScoped
 public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeAttendance> {
 
+    public EmployeeAttendance findById(Integer employeeId) {
+        return find("id", employeeId).firstResult();
+    }
 
     public EmployeeAttendance findByEmployeeAndDate(int employeeId, LocalDate date) {
         return find("employee.id = ?1 and date = ?2", employeeId, date).firstResult();

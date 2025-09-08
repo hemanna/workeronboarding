@@ -1,5 +1,7 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
+import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
@@ -22,7 +24,7 @@ public class EmployeeAttendanceResource {
     @Path("/attendance")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public ApiResponse createAttendance(ApiRequest<EmployeeDTO.EmployeeAttendanceDTO> apiRequest) {
+    public ApiResponse createAttendance(ApiRequest<EmployeeAttendanceDTO> apiRequest) {
         String requestId = UUID.randomUUID().toString();
         log.info("RequestId: {} | Create Employee Attendance Request: {}", requestId, apiRequest);
         return employeeAttendanceControl.createAttendance(apiRequest, requestId);
@@ -137,5 +139,20 @@ public class EmployeeAttendanceResource {
         log.info("request_id : {} | get employee by id: {}", requestId, employeeId);
         return employeeAttendanceControl.fetchStatusById(employeeId, requestId);
     }
+
+    @POST
+    @Path("/regularization/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse createRegularization(
+            @PathParam("employeeId") Integer employeeId,
+            ApiRequest<EmployeeAttendanceRegularizationJsonb> apiRequest) {
+
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Create Employee Regularization Request: {}, EmployeeId: {}", requestId, apiRequest, employeeId);
+
+        return employeeAttendanceControl.createRegularization(employeeId, apiRequest, requestId);
+    }
+
 
 }

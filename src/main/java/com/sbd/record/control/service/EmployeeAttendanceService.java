@@ -1,12 +1,14 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
+import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
 import com.sbd.common.Jsonb.EmployeeAttendanceResponseDTO;
+import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
 import com.sbd.common.entity.*;
 import com.sbd.common.mapper.EmployeeAttendanceMapper;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
-import com.sbd.common.request.EmployeeAttendanceDTO;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
@@ -46,14 +48,17 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
     @Inject
     private RoleRepository roleRepository;
 
+    @Inject
+    private RegularizedAttendanceRepository regularizedAttendanceRepository;
+
     private final EmployeeAttendanceMapper attendanceMapper=EmployeeAttendanceMapper.INSTANCE;
 
     @Override
     @Transactional
-    public ApiResponse createAttendance(ApiRequest<EmployeeDTO.EmployeeAttendanceDTO> apiRequest, String requestId) {
+    public ApiResponse createAttendance(ApiRequest<EmployeeAttendanceDTO> apiRequest, String requestId) {
         log.info("Start creating employee attendance - RequestId: {}", requestId);
 
-        EmployeeDTO.EmployeeAttendanceDTO attendanceDTO = apiRequest.getData();
+        EmployeeAttendanceDTO attendanceDTO = apiRequest.getData();
 
         // Validate that departmentId is not null
         if (attendanceDTO.getDepartmentId() == null) {
@@ -116,8 +121,37 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         }
 
         // Create EmployeeAttendance
-        EmployeeAttendance employeeAttendance = mapEmployeeAttendance(attendanceDTO, details, department, role, leave);
+        EmployeeAttendance employeeAttendance = new EmployeeAttendance();
+        employeeAttendance.setEmployee(details);
+        employeeAttendance.setDepartment(department);
+        employeeAttendance.setRole(role);
+        employeeAttendance.setLeave(leave);
+        employeeAttendance.setDate(attendanceDTO.getDate());
+        employeeAttendance.setWorkingHours(attendanceDTO.getWorkingHours());
+        employeeAttendance.setOvertime(attendanceDTO.getOvertime());
+        employeeAttendance.setShiftDetails(attendanceDTO.getShiftDetails());
+        employeeAttendance.setLocation(attendanceDTO.getLocation());
+        employeeAttendance.setPhoto(attendanceDTO.getPhoto());
+        employeeAttendance.setApprovalStatus(attendanceDTO.getApprovalStatus());
+        employeeAttendance.setStatus(attendanceDTO.getStatus());
+
+        // Map Sessions
+        if (attendanceDTO.getSessions() != null && !attendanceDTO.getSessions().isEmpty()) {
+            for (EmployeeAttendanceSessionDTO sessionDTO : attendanceDTO.getSessions()) {
+                EmployeeAttendanceSession session = new EmployeeAttendanceSession();
+                session.setAttendance(employeeAttendance);
+                session.setCheckIn(sessionDTO.getCheckIn());
+                session.setCheckOut(sessionDTO.getCheckOut());
+                session.setLocation(sessionDTO.getLocation());
+
+                employeeAttendance.getSessions().add(session);
+            }
+        }
+
+        // Persist (sessions cascade automatically)
         employeeAttendanceRepository.persist(employeeAttendance);
+
+
 
         log.info("End creating employee attendance - RequestId: {}", requestId);
 
@@ -179,8 +213,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         // Update attendance details
         EmployeeDTO.EmployeeAttendanceDTO attendanceDTO = employeeDTO.getEmployeeAttendanceDTO();
         employeeAttendance.setDate(attendanceDTO.getDate());
-        employeeAttendance.setCheckinTime(attendanceDTO.getCheckinTime());
-        employeeAttendance.setCheckoutTime(attendanceDTO.getCheckoutTime());
+//        employeeAttendance.setCheckinTime(attendanceDTO.getCheckinTime());
+//        employeeAttendance.setCheckoutTime(attendanceDTO.getCheckoutTime());
         employeeAttendance.setWorkingHours(attendanceDTO.getWorkingHours());
         employeeAttendance.setOvertime(attendanceDTO.getOvertime());
         employeeAttendance.setShiftDetails(attendanceDTO.getShiftDetails());
@@ -199,26 +233,26 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
     }
 
 
-    private EmployeeAttendance mapEmployeeAttendance(EmployeeDTO.EmployeeAttendanceDTO attendanceDTO,
-                                                     EmployeeDetails employeeDetails, Department department,
-                                                     Role role, Leave leave) {
-        EmployeeAttendance employeeAttendance = new EmployeeAttendance();
-        employeeAttendance.setEmployee(employeeDetails);
-        employeeAttendance.setRole(role);
-        employeeAttendance.setLeave(leave);
-        employeeAttendance.setDate(attendanceDTO.getDate());
-        employeeAttendance.setCheckinTime(attendanceDTO.getCheckinTime());
-        employeeAttendance.setCheckoutTime(attendanceDTO.getCheckoutTime());
-        employeeAttendance.setWorkingHours(attendanceDTO.getWorkingHours());
-        employeeAttendance.setOvertime(attendanceDTO.getOvertime());
-        employeeAttendance.setShiftDetails(attendanceDTO.getShiftDetails());
-        employeeAttendance.setLocation(attendanceDTO.getLocation());
-        employeeAttendance.setPhoto(attendanceDTO.getPhoto());
-        employeeAttendance.setApprovalStatus(attendanceDTO.getApprovalStatus());
-        employeeAttendance.setStatus(attendanceDTO.getStatus());
-        employeeAttendance.setDepartment(department);
-        return employeeAttendance;
-    }
+//    private EmployeeAttendance mapEmployeeAttendance(EmployeeDTO.EmployeeAttendanceDTO attendanceDTO,
+//                                                     EmployeeDetails employeeDetails, Department department,
+//                                                     Role role, Leave leave) {
+//        EmployeeAttendance employeeAttendance = new EmployeeAttendance();
+//        employeeAttendance.setEmployee(employeeDetails);
+//        employeeAttendance.setRole(role);
+//        employeeAttendance.setLeave(leave);
+//        employeeAttendance.setDate(attendanceDTO.getDate());
+////        employeeAttendance.setCheckinTime(attendanceDTO.getCheckinTime());
+////        employeeAttendance.setCheckoutTime(attendanceDTO.getCheckoutTime());
+//        employeeAttendance.setWorkingHours(attendanceDTO.getWorkingHours());
+//        employeeAttendance.setOvertime(attendanceDTO.getOvertime());
+//        employeeAttendance.setShiftDetails(attendanceDTO.getShiftDetails());
+//        employeeAttendance.setLocation(attendanceDTO.getLocation());
+//        employeeAttendance.setPhoto(attendanceDTO.getPhoto());
+//        employeeAttendance.setApprovalStatus(attendanceDTO.getApprovalStatus());
+//        employeeAttendance.setStatus(attendanceDTO.getStatus());
+//        employeeAttendance.setDepartment(department);
+//        return employeeAttendance;
+//    }
 
     @Override
     @Transactional
@@ -262,8 +296,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                         .departmentId(att.getEmployee().getDepartment().getId())
                         .roleId(att.getEmployee().getRole().getId())
                         .date(att.getDate())
-                        .checkinTime(att.getCheckinTime())
-                        .checkoutTime(att.getCheckoutTime())
+//                        .checkinTime(att.getCheckinTime())
+//                        .checkoutTime(att.getCheckoutTime())
                         .workingHours(att.getWorkingHours())
                         .overtime(att.getOvertime())
                         .shiftDetails(att.getShiftDetails())
@@ -506,6 +540,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+
     private EmployeeDTO.EmployeeAttendanceDTO mapToDTO(EmployeeAttendance attendance) {
         EmployeeDTO.EmployeeAttendanceDTO dto = new EmployeeDTO.EmployeeAttendanceDTO();
 
@@ -516,8 +551,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         dto.setLeaveId(attendance.getLeave() != null ? attendance.getLeave().getId() : null);
 
         dto.setDate(attendance.getDate());
-        dto.setCheckinTime(attendance.getCheckinTime());
-        dto.setCheckoutTime(attendance.getCheckoutTime());
+//        dto.setCheckinTime(attendance.getCheckinTime());
+//        dto.setCheckoutTime(attendance.getCheckoutTime());
         dto.setWorkingHours(attendance.getWorkingHours());
         dto.setOvertime(attendance.getOvertime());
         dto.setShiftDetails(attendance.getShiftDetails());
@@ -529,5 +564,48 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         return dto;
     }
 
+    @Override
+    @Transactional
+    public ApiResponse createRegularization(Integer employeeId, ApiRequest<EmployeeAttendanceRegularizationJsonb> apiRequest, String requestId) {
+        log.info("Start createRegularization - RequestId: {}", requestId);
+
+        EmployeeAttendanceRegularizationJsonb dto = apiRequest.getData();
+
+        EmployeeAttendance attendance = employeeAttendanceRepository.findById(dto.getAttendanceId());
+        if (attendance == null) {
+            log.error("Attendance record not found - RequestId: {}, EmployeeId: {}", requestId, dto.getEmployeeId());
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Attendance record not found", requestId)
+            );
+        }
+
+        // Use employeeId from URL
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Create Regularization Request
+        EmployeeAttendanceRegularization reg = new EmployeeAttendanceRegularization();
+        reg.setAttendance(attendance);
+        reg.setEmployee(employee);
+        reg.setDate(dto.getDate());
+        reg.setCurrentStatus(dto.getCurrentStatus());
+        reg.setNewCheckin(dto.getNewCheckin());
+        reg.setNewCheckout(dto.getNewCheckout());
+        reg.setNewLocation(dto.getNewLocation());
+        reg.setReason(dto.getReason());
+        reg.setStatus("PENDING");
+
+
+        regularizedAttendanceRepository.persist(reg);
+
+        log.info("Regularization request created - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Regularization request submitted successfully", requestId)
+        );
+    }
 
 }

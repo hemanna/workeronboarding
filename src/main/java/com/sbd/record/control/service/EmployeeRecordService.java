@@ -16,7 +16,10 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @ApplicationScoped
 @Slf4j
@@ -50,7 +53,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
     @Inject
     private EmployeeSkillsRepository employeeSkillsRepository;
 
-
+    @Override
     @Transactional
     public ApiResponse createEmployeeDetails(EmployeeDetailsRequest employeeDetailsRequest, String requestId) throws BusinessException {
 
@@ -134,9 +137,13 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         // Convert Entity to DTO using MapStruct
         EmployeeDTO.EmployeeDetailsDTO employeeDTO = EmployeeDetailsMapper.INSTANCE.toDTO(employeeDetails);
 
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Employee details created successfully", requestId)
+        // ✅ Only return the generated employeeId
+        Map<String, Object> responseData = new HashMap<>();
+        responseData.put("employeeId", employeeDetails.getId()); // or getEmployeeId() if that's the field name
 
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Employee details created successfully", requestId),
+                responseData
         );
 
     }
