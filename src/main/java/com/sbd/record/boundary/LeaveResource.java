@@ -103,6 +103,7 @@ public class LeaveResource {
             @PathParam("employeeId") int employeeId,
             @PathParam("year") int year) {
         String requestId = UUID.randomUUID().toString();
+
         log.info("requestId: {} | Fetch leave balances for employee {} and year {}", requestId, employeeId, year);
         return leaveControl.fetchLeaveBalancesByEmployeeId(employeeId, year, requestId);
     }
