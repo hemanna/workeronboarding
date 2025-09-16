@@ -42,6 +42,9 @@ public class LeaveService implements LeaveControl {
     @Inject
     LeaveBalanceRepository leaveBalanceRepository;
 
+    @Inject
+    CompanyHolidayRepository companyHolidayRepository;
+
     @Override
     @Transactional
     public ApiResponse<EmployeeDTO.LeaveDTO> fetchLeaveById(Long leaveId, String requestId) {
@@ -268,7 +271,6 @@ public class LeaveService implements LeaveControl {
 
 
 
-
     @Transactional
     public ApiResponse createLeaveRequest(LeaveRequest leaveRequest, String requestId)
             throws IOException, BusinessException {
@@ -316,4 +318,18 @@ public class LeaveService implements LeaveControl {
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Leave request submitted successfully", requestId));
     }
+
+    @Override
+    public ApiResponse fetchAllHolidays(String requestId) {
+        log.info("Start fetching all holidays records - RequestId: {}", requestId);
+
+        List<CompanyHoliday> holidays = companyHolidayRepository.listAllHolidays();
+
+        log.info("End fetching all holidays records - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Fetched holidays successfully", requestId),
+                holidays
+        );
+    }
+
 }

@@ -108,5 +108,14 @@ public class LeaveResource {
         return leaveControl.fetchLeaveBalancesByEmployeeId(employeeId, year, requestId);
     }
 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/list_all_holidays")
+    public ApiResponse fetchAllHolidays() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | get all holidays", requestId);
+        return leaveControl.fetchAllHolidays(requestId);
+    }
 
 }

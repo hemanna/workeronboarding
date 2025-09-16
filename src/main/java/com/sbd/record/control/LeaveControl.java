@@ -19,7 +19,7 @@ public interface LeaveControl {
     ApiResponse fetchAllLeaveRequest(String requestId);
     ApiResponse updateApprovalStatus(Integer leaveId, String approvalStatus, String requestId);
     ApiResponse <List<LeaveBalanceJsonb>> fetchLeaveBalancesByEmployeeId(int employeeId, int year, String requestId);
-        ;
+    ApiResponse fetchAllHolidays(String requestId);
 
 }
 
