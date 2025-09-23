@@ -1,7 +1,9 @@
 package com.sbd.record.control;
 
+import com.sbd.common.Jsonb.CheckInJsonb;
 import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
 import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
+import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
@@ -19,7 +21,7 @@ public interface EmployeeAttendanceControl {
     ApiResponse fetchStatusById(Long employeeId, String requestId );
     ApiResponse fetchAttendanceByYearAndMonth(String year, String month, String requestId);
     ApiResponse createRegularization(Integer employeeId, ApiRequest<EmployeeAttendanceRegularizationJsonb> apiRequest, String requestId);
-
-
-
+    ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId);
+    ApiResponse fetchAllRegularizationAttendance(String requestId);
+    ApiResponse checkIn(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId);
 }

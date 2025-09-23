@@ -325,7 +325,7 @@ public class LeaveService implements LeaveControl {
 
         List<CompanyHoliday> holidays = companyHolidayRepository.listAllHolidays();
 
-        log.info("End fetching all holidays records - RequestId: {}", requestId);
+        log.info("End fetching all holidaysz records - RequestId: {}", requestId);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Fetched holidays successfully", requestId),
                 holidays

@@ -1,9 +1,6 @@
 package com.sbd.record.control.service;
 
-import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
-import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
-import com.sbd.common.Jsonb.EmployeeAttendanceResponseDTO;
-import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
+import com.sbd.common.Jsonb.*;
 import com.sbd.common.entity.*;
 import com.sbd.common.mapper.EmployeeAttendanceMapper;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
@@ -14,6 +11,7 @@ import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeAttendanceControl;
 import com.sbd.record.control.EmployeeRecordControl;
+import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -21,6 +19,8 @@ import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -607,6 +607,151 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                 new Status(Response.Status.OK.getStatusCode(), "Regularization request submitted successfully", requestId)
         );
     }
+
+
+
+    @Override
+    @Transactional
+    public ApiResponse checkIn(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId) {
+        log.info("Start Check-In - RequestId: {}", requestId);
+
+        EmployeeAttendanceSessionDTO sessionDTO = apiRequest.getData();
+
+        // 1. Validate employee
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+            );
+        }
+
+        // Explicitly fetch role & department like in createAttendance
+        Department department = employee.getDepartment() != null
+                ? departmentRepository.findById(employee.getDepartment().getId())
+                : null;
+        Role role = employee.getRole() != null
+                ? roleRepository.findByRoleId(employee.getRole().getId())
+                : null;
+
+        if (department == null || role == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
+                            "Employee is missing department or role", requestId)
+            );
+        }
+
+        // 2. Find or create today's attendance
+        LocalDate today = LocalDate.now();
+        EmployeeAttendance attendance = employeeAttendanceRepository.findByEmployeeAndDate(employeeId, today);
+
+        if (attendance == null) {
+            attendance = new EmployeeAttendance();
+            attendance.setEmployee(employee);
+            attendance.setDepartment(department);
+            attendance.setRole(role);
+            attendance.setDate(today);
+            attendance.setStatus("Present");
+            attendance.setApprovalStatus("Pending");
+            attendance.setShiftDetails("General");
+            attendance.setLocation("Unknown"); // required field
+            employeeAttendanceRepository.persist(attendance);
+        }
+
+        // 3. Create session
+        EmployeeAttendanceSession session = new EmployeeAttendanceSession();
+        session.setAttendance(attendance);
+        session.setCheckIn(sessionDTO.getCheckIn() != null ? sessionDTO.getCheckIn() : LocalTime.now());
+        session.setLocation(sessionDTO.getLocation() != null ? sessionDTO.getLocation() : "Unknown");
+
+        attendance.getSessions().add(session);
+
+        log.info("End Check-In - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Check-In successful", requestId)
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId) {
+        log.info("Start updating regularization status - RequestId: {}, RegularizationId: {}, NewStatus: {}",
+                requestId, regularizationId, newStatus);
+
+        // Validate status
+        if (newStatus == null ||
+                (!"PENDING".equalsIgnoreCase(newStatus) &&
+                        !"APPROVED".equalsIgnoreCase(newStatus) &&
+                        !"REJECTED".equalsIgnoreCase(newStatus))) {
+            log.error("Invalid status - RequestId: {}, RegularizationId: {}, Status: {}", requestId, regularizationId, newStatus);
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Invalid status value", requestId)
+            );
+        }
+
+        // Fetch the regularization record
+        EmployeeAttendanceRegularization reg = regularizedAttendanceRepository.findByRegularizationId(regularizationId);
+        if (reg == null) {
+            log.error("Regularization request not found - RequestId: {}, RegularizationId: {}", requestId, regularizationId);
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Regularization request not found", requestId)
+            );
+        }
+
+        // Prevent changing status if already APPROVED or REJECTED
+        if ("APPROVED".equalsIgnoreCase(reg.getStatus()) || "REJECTED".equalsIgnoreCase(reg.getStatus())) {
+            log.warn("Cannot change status of already finalized request - RequestId: {}, RegularizationId: {}, CurrentStatus: {}",
+                    requestId, regularizationId, reg.getStatus());
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
+                            "Cannot change status of already approved/rejected request", requestId)
+            );
+        }
+
+        // Update the status and approvedAt timestamp
+        reg.setStatus(newStatus.toUpperCase());
+        if ("APPROVED".equalsIgnoreCase(newStatus) || "REJECTED".equalsIgnoreCase(newStatus)) {
+            reg.setApprovedAt(LocalDateTime.now());
+            // Optionally: reg.setApprovedBy(currentUserId);
+        }
+
+        // No need to call persist() for an existing entity; Panache tracks changes automatically
+        log.info("Successfully updated regularization status - RequestId: {}, RegularizationId: {}, NewStatus: {}",
+                requestId, regularizationId, newStatus);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Regularization status updated to " + newStatus, requestId)
+        );
+    }
+
+    @Transactional
+    public ApiResponse fetchAllRegularizationAttendance(String requestId) {
+        log.info("Start fetching all Regularization Attendance records - RequestId: {}", requestId);
+
+        List<EmployeeAttendanceRegularization> regs =
+                regularizedAttendanceRepository.listAllRegularizationAttendance();
+
+        List<EmployeeAttendanceRegularizationResponseDto> dtos = regs.stream().map(reg -> {
+            EmployeeAttendanceRegularizationResponseDto dto = new EmployeeAttendanceRegularizationResponseDto();
+            dto.setId(reg.getId());
+            dto.setAttendanceId(reg.getAttendance().getId());
+            dto.setEmployeeId(reg.getEmployee().getId()); // Only ID
+            dto.setStatus(reg.getStatus());
+            dto.setDate(reg.getDate());
+            dto.setCurrentStatus(reg.getCurrentStatus());
+            dto.setNewCheckin(reg.getNewCheckin());
+            dto.setNewCheckout(reg.getNewCheckout());
+            dto.setNewLocation(reg.getNewLocation());
+            dto.setReason(reg.getReason());
+            return dto;
+        }).collect(Collectors.toList());
+
+        log.info("End fetching all Regularization Attendance records - RequestId: {}", requestId);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Fetched regularizations successfully ", requestId),
+        dtos);
+    }
+
 
 }
 

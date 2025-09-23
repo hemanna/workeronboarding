@@ -1,14 +1,18 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.CheckInJsonb;
 import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
 import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
+import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
+import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeAttendanceControl;
 import com.sbd.record.control.EmployeeRecordControl;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,6 +33,7 @@ public class EmployeeAttendanceResource {
         log.info("RequestId: {} | Create Employee Attendance Request: {}", requestId, apiRequest);
         return employeeAttendanceControl.createAttendance(apiRequest, requestId);
     }
+
 
     @PATCH
     @Path("/attendance/{Id}")
@@ -109,6 +114,7 @@ public class EmployeeAttendanceResource {
         log.info("RequestId: {} | Fetching pending attendance approvals", requestId);
         return employeeAttendanceControl.fetchAttendancePending(requestId);
     }
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/get_attendance_by_range/{fromDate}/{toDate}")
@@ -152,6 +158,41 @@ public class EmployeeAttendanceResource {
         log.info("RequestId: {} | Create Employee Regularization Request: {}, EmployeeId: {}", requestId, apiRequest, employeeId);
 
         return employeeAttendanceControl.createRegularization(employeeId, apiRequest, requestId);
+    }
+
+    @PATCH
+    @Path("/regularization/{regularizationId}/status")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse patchRegularizationStatus(
+            @PathParam("regularizationId") Integer regularizationId,
+            ApiRequest<String> apiRequest) {
+
+        String requestId = UUID.randomUUID().toString();
+        String newStatus = apiRequest.getData();
+
+        log.info("RequestId: {} | PATCH Regularization Status: {}, RegularizationId: {}", requestId, newStatus, regularizationId);
+
+        return employeeAttendanceControl.updateRegularizationStatus(regularizationId, newStatus, requestId);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_all_regularization_attendance")
+    public ApiResponse fetchAllRegularizationAttendance() {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | fetch All Regularization Attendance ", requestId);
+        return employeeAttendanceControl.fetchAllRegularizationAttendance(requestId);
+    }
+
+    @POST
+    @Path("/attendance/checkin/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse checkIn(@PathParam("Id") Integer Id, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest){
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Check-In Request: Id: {}", requestId, Id);
+        return employeeAttendanceControl.checkIn(Id, apiRequest, requestId);
     }
 
 
