@@ -1,5 +1,6 @@
 package com.sbd.record.control;
 
+import com.sbd.common.Jsonb.CompanyHolidayJsonb;
 import com.sbd.common.Jsonb.LeaveBalanceJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.exception.TechnicalException;
@@ -20,6 +21,7 @@ public interface LeaveControl {
     ApiResponse updateApprovalStatus(Integer leaveId, String approvalStatus, String requestId);
     ApiResponse <List<LeaveBalanceJsonb>> fetchLeaveBalancesByEmployeeId(int employeeId, int year, String requestId);
     ApiResponse fetchAllHolidays(String requestId);
+    ApiResponse createHoliday(ApiRequest<CompanyHolidayJsonb> apiRequest , String requestId)throws IOException, BusinessException;
 
 }
 

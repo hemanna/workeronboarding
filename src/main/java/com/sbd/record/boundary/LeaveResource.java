@@ -1,5 +1,6 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.CompanyHolidayJsonb;
 import com.sbd.common.Jsonb.LeaveBalanceJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
@@ -118,4 +119,14 @@ public class LeaveResource {
         return leaveControl.fetchAllHolidays(requestId);
     }
 
+    @POST
+    @Path("/insert_holidays")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse createHoliday(ApiRequest<CompanyHolidayJsonb> apiRequest) throws BusinessException, IOException {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Create Holiday Request", requestId);
+
+        return leaveControl.createHoliday(apiRequest, requestId);
+    }
 }

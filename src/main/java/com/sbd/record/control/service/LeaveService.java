@@ -1,5 +1,6 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.CompanyHolidayJsonb;
 import com.sbd.common.Jsonb.LeaveBalanceJsonb;
 import com.sbd.common.Jsonb.LeaveDTO;
 import com.sbd.common.entity.*;
@@ -320,6 +321,7 @@ public class LeaveService implements LeaveControl {
     }
 
     @Override
+    @Transactional
     public ApiResponse fetchAllHolidays(String requestId) {
         log.info("Start fetching all holidays records - RequestId: {}", requestId);
 
@@ -329,6 +331,31 @@ public class LeaveService implements LeaveControl {
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Fetched holidays successfully", requestId),
                 holidays
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse createHoliday(ApiRequest<CompanyHolidayJsonb> apiRequest, String requestId) throws IOException, BusinessException {
+        log.info("Start creating holiday - RequestId: {}", requestId);
+
+        CompanyHolidayJsonb dto = apiRequest.getData();
+
+        if (dto.getHolidayDate() == null || dto.getReason() == null || dto.getReason().isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Holiday date and reason are required", requestId)
+            );
+        }
+
+        CompanyHoliday holiday = new CompanyHoliday();
+        holiday.setHolidayDate(dto.getHolidayDate());
+        holiday.setReason(dto.getReason());
+
+        companyHolidayRepository.persist(holiday);
+
+        log.info("End creating holiday - RequestId: {}", requestId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Holiday created successfully", requestId)
         );
     }
 
