@@ -22,7 +22,11 @@ public interface LeaveControl {
     ApiResponse <List<LeaveBalanceJsonb>> fetchLeaveBalancesByEmployeeId(int employeeId, int year, String requestId);
     ApiResponse fetchAllHolidays(String requestId);
     ApiResponse createHoliday(ApiRequest<CompanyHolidayJsonb> apiRequest , String requestId)throws IOException, BusinessException;
-
+    ApiResponse updateHoliday(Integer companyholidayId, ApiRequest<CompanyHolidayJsonb> apiRequest, String requestId);
+    ApiResponse deleteHoliday(
+            String requestId,
+            Integer companyholidayId)
+            throws BusinessException;
 }
 
 

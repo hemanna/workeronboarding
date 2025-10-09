@@ -129,4 +129,25 @@ public class LeaveResource {
 
         return leaveControl.createHoliday(apiRequest, requestId);
     }
+
+    @PATCH
+    @Path("/updateholiday/{companyholidayId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse updateHoliday(@PathParam("companyholidayId") Integer companyholidayId, ApiRequest<CompanyHolidayJsonb> apiRequest) {
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Update company holidays Request: companyholidayId: {}", requestId, companyholidayId);
+        return leaveControl.updateHoliday(companyholidayId, apiRequest, requestId);
+    }
+
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/delete_holiday/{companyholidayId}")
+    public ApiResponse deleteHoliday(@PathParam("companyholidayId") Integer companyholidayId) throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id: {} | Deleting company holiday Id: {}", requestId, companyholidayId);
+
+        return leaveControl.deleteHoliday(requestId, companyholidayId);
+    }
 }

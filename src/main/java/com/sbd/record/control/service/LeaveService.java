@@ -359,4 +359,76 @@ public class LeaveService implements LeaveControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse updateHoliday(Integer companyHolidayId, ApiRequest<CompanyHolidayJsonb> apiRequest, String requestId) {
+        log.info("RequestId: {} | Updating Company Holiday with Id: {}", requestId, companyHolidayId);
+
+        // Fetch existing holiday record
+        CompanyHoliday existingHoliday = companyHolidayRepository.findById(companyHolidayId);
+        if (existingHoliday == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Holiday not found", requestId)
+            );
+        }
+
+        // Extract DTO data
+        CompanyHolidayJsonb dto = apiRequest.getData();
+        if (dto == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Request data cannot be null", requestId)
+            );
+        }
+
+        // Validate inputs
+        if (dto.getHolidayDate() == null || dto.getReason() == null || dto.getReason().isEmpty()) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Holiday date and reason are required", requestId)
+            );
+        }
+
+        // Update fields
+        existingHoliday.setHolidayDate(dto.getHolidayDate());
+        existingHoliday.setReason(dto.getReason());
+
+        // Persist updated entity
+        companyHolidayRepository.persist(existingHoliday);
+
+        log.info("RequestId: {} | Company Holiday with Id: {} updated successfully", requestId, companyHolidayId);
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(), "Holiday updated successfully", requestId)
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse deleteHoliday(String requestId, Integer companyHolidayId) throws BusinessException {
+        log.info("RequestId: {} | Deleting Company Holiday with Id: {}", requestId, companyHolidayId);
+
+        // Fetch the holiday from the database
+        CompanyHoliday existingHoliday = companyHolidayRepository.findById(companyHolidayId);
+
+        // If holiday does not exist, return a NOT FOUND response
+        if (existingHoliday == null) {
+            log.warn("RequestId: {} | Company Holiday with Id {} not found", requestId, companyHolidayId);
+            throw new BusinessException(
+                    Response.Status.NOT_FOUND.getStatusCode(),
+                    requestId,
+                    "Company Holiday not found"
+            );
+        }
+
+        // Delete the holiday record
+        companyHolidayRepository.delete(existingHoliday);
+        log.info("RequestId: {} | Company Holiday with Id {} deleted successfully", requestId, companyHolidayId);
+
+        // Return success response
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(),
+                        "Company Holiday deleted successfully", requestId)
+        );
+    }
+
+
+
 }
