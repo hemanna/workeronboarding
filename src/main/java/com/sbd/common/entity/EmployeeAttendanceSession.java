@@ -22,10 +22,10 @@ public class EmployeeAttendanceSession {
     @JoinColumn(name = "attendance_id", referencedColumnName = "id", nullable = false)
     private EmployeeAttendance attendance;
 
-    @Column(name = "check_in", nullable = false)
+    @Column(name = "check_in")
     private LocalTime checkIn;
 
-    @Column(name = "check_out", nullable = false)
+    @Column(name = "check_out")
     private LocalTime checkOut;
 
     @Column(name = "location")

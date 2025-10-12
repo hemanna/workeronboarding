@@ -189,11 +189,14 @@ public class EmployeeAttendanceResource {
     @Path("/attendance/checkin/{employeeId}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public ApiResponse checkIn(@PathParam("Id") Integer Id, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest){
+    public ApiResponse checkIn(@PathParam("employeeId") Integer employeeId,
+                               ApiRequest<EmployeeAttendanceSessionDTO> apiRequest) {
         String requestId = UUID.randomUUID().toString();
-        log.info("RequestId: {} | Check-In Request: Id: {}", requestId, Id);
-        return employeeAttendanceControl.checkIn(Id, apiRequest, requestId);
+        log.info("RequestId: {} | Check-In Request: employeeId: {}", requestId, employeeId);
+
+        return employeeAttendanceControl.checkIn(employeeId, apiRequest, requestId);
     }
+
 
 
 }

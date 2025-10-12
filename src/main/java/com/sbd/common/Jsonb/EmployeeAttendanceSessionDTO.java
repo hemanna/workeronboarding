@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL) // ignore nulls in JSON output
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class EmployeeAttendanceSessionDTO {
     private LocalTime checkIn;
     private LocalTime checkOut;
