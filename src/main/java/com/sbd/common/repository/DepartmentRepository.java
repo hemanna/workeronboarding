@@ -6,8 +6,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class DepartmentRepository implements PanacheRepository<Department> {
-
-
     public Department findById(int id) {
         return find("id", id).firstResult();
     }

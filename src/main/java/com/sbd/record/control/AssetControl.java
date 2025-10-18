@@ -11,4 +11,13 @@ public interface AssetControl {
              String requestId)
             throws BusinessException;
 
+    ApiResponse fetchAllAssets
+            (String requestId)
+            throws BusinessException;
+
+    ApiResponse fetchCountAssets
+            (String requestId)
+            throws BusinessException;
+
+
 }

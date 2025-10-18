@@ -409,6 +409,7 @@ public class EmployeeRecordService implements EmployeeRecordControl {
 
 
     @Override
+    @Transactional
     public ApiResponse fetchAllEmployee(String requestId, ApiRequest<EmployeeDetailsRequest> apiRequest) throws BusinessException {
         log.info("Start fetching employees - RequestId: {}", requestId);
 
