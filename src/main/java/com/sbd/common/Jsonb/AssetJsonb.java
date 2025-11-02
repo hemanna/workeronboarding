@@ -1,13 +1,12 @@
 package com.sbd.common.Jsonb;
 
 import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.core.MediaType;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.jboss.resteasy.reactive.PartType;
+import org.jboss.resteasy.reactive.multipart.FileUpload;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,23 +29,22 @@ public class AssetJsonb {
     @FormParam("serialNumber")
     private String serialNumber;
 
-    @FormParam("purchaseDate")
-    private LocalDate purchaseDate;
-
-    @FormParam("purchaseCost")
-    private BigDecimal purchaseCost;
+    @FormParam("status")
+    private String status;
 
     @FormParam("vendor")
     private String vendor;
 
+    @FormParam("purchaseDate")
+    private String purchaseDate;
+
     @FormParam("warrantyExpiry")
-    private LocalDate warrantyExpiry;
+    private String warrantyExpiry;
 
-    @FormParam("status")
-    private String status;
+    @FormParam("purchaseCost")
+    private String purchaseCost;
 
-    @FormParam("assetImage")
-    @PartType(MediaType.APPLICATION_OCTET_STREAM)
-    private byte[] assetImage;
+    @FormParam("files")
+    private List<FileUpload> files;
 
 }

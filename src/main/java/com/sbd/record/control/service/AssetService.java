@@ -15,11 +15,18 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.jboss.resteasy.reactive.multipart.FileUpload;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
@@ -29,60 +36,85 @@ public class AssetService implements AssetControl {
     @Inject
     AssetRepository assetRepository;
 
-@Override
-@Transactional
-    public ApiResponse createAsset(AssetJsonb assetRequest, String requestId) throws BusinessException {
+    private static final String UPLOAD_DIR = "uploads/assets";
 
-        // Check if assetTag already exists
-        Asset existing = assetRepository.findByAssetTag(assetRequest.getAssetTag());
+    @Override
+    @Transactional
+    public ApiResponse createAsset(AssetJsonb assetJsonb, String requestId) throws BusinessException {
+        log.info("Start creating asset - RequestId: {}", requestId);
+
+        // ✅ Check if asset tag exists
+        Asset existing = assetRepository.findByAssetTag(assetJsonb.getAssetTag());
         if (existing != null) {
             return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(), "Asset tag already exists", requestId)
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
+                            "Asset tag already exists", requestId)
             );
         }
 
-        // Create Asset entity
+        // ✅ Ensure upload directory exists
+        try {
+            Files.createDirectories(Path.of(UPLOAD_DIR));
+        } catch (IOException e) {
+            throw new BusinessException("Could not create upload directory");
+        }
+
+        // ✅ Save uploaded images
+        List<FileUpload> files = assetJsonb.getFiles();
+        StringBuilder imagePaths = new StringBuilder();
+
+        if (files != null && !files.isEmpty()) {
+            for (FileUpload file : files) {
+                try {
+                    String uniqueFileName = UUID.randomUUID() + "_" + file.fileName();
+                    Path dest = Path.of(UPLOAD_DIR, uniqueFileName);
+
+                    // ✅ Correct: uploadedFile() returns Path already
+                    Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
+
+                    imagePaths.append(uniqueFileName).append(",");
+                } catch (IOException e) {
+                    log.error("Error saving file: {}", file.fileName(), e);
+                    throw new BusinessException("Error saving uploaded file: " + file.fileName());
+                }
+            }
+        }
+
+        // ✅ Create and persist Asset
         Asset asset = new Asset();
-        asset.setAssetTag(assetRequest.getAssetTag());
-        asset.setAssetName(assetRequest.getAssetName());
-        asset.setAssetType(assetRequest.getAssetType());
-        asset.setBrand(assetRequest.getBrand());
-        asset.setModel(assetRequest.getModel());
-        asset.setSerialNumber(assetRequest.getSerialNumber());
-        asset.setPurchaseDate(assetRequest.getPurchaseDate());
-        asset.setPurchaseCost(assetRequest.getPurchaseCost());
-        asset.setVendor(assetRequest.getVendor());
-        asset.setWarrantyExpiry(assetRequest.getWarrantyExpiry());
-        asset.setStatus(assetRequest.getStatus());
+        asset.setAssetTag(assetJsonb.getAssetTag());
+        asset.setAssetName(assetJsonb.getAssetName());
+        asset.setAssetType(assetJsonb.getAssetType());
+        asset.setBrand(assetJsonb.getBrand());
+        asset.setModel(assetJsonb.getModel());
+        asset.setSerialNumber(assetJsonb.getSerialNumber());
+        asset.setVendor(assetJsonb.getVendor());
+        asset.setStatus(assetJsonb.getStatus());
+        asset.setAssetImage(imagePaths.toString());
         asset.setCreatedAt(LocalDateTime.now());
         asset.setUpdatedAt(LocalDateTime.now());
 
-        // Save first image (asset image)
-        if (assetRequest.getAssetImage() != null) {
-            asset.setAssetImage(new String(assetRequest.getAssetImage())); // store as String, or use byte[] if preferred
+        if (assetJsonb.getPurchaseDate() != null && !assetJsonb.getPurchaseDate().isEmpty()) {
+            asset.setPurchaseDate(LocalDate.parse(assetJsonb.getPurchaseDate()));
+        }
+        if (assetJsonb.getWarrantyExpiry() != null && !assetJsonb.getWarrantyExpiry().isEmpty()) {
+            asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
         }
 
-        // Save second image if available (example: handover image)
-        // Assuming you extend AssetRequest to have byte[] handoverImage
-        // asset.setHandoverImage(assetRequest.getHandoverImage() != null ? new String(assetRequest.getHandoverImage()) : null);
-
-        // Persist entity
         assetRepository.persist(asset);
-        assetRepository.flush();
 
-        // Convert to DTO
-        AssetDTO assetDTO = AssetMapper.INSTANCE.toDTO(asset);
-
-//        // Prepare response
-//        Map<String, Object> responseData = new HashMap<>();
-//        responseData.put("asset", assetDTO);
-
+        log.info("Asset created successfully - RequestId: {}", requestId);
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Asset created successfully", requestId)
+                new Status(Response.Status.OK.getStatusCode(),
+                        "Asset created successfully", requestId)
         );
     }
 
+
+
+
     @Override
+    @Transactional
     public ApiResponse fetchAllAssets(String requestId) throws BusinessException {
         log.info("Start fetching all assets - RequestId: {}", requestId);
 

@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,5 +22,5 @@ public class AssetDTO {
     private String vendor;
     private LocalDate warrantyExpiry;
     private String status;
-    private String assetImageUrl;
+    private List<String> assetImagesBase64;
 }
