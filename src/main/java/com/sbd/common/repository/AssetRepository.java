@@ -46,6 +46,13 @@ public class AssetRepository implements PanacheRepository<Asset>{
                 ))
                 .collect(Collectors.toList());
     }
+    public List<Object[]> getAssetTypeWiseCount() {
+        return em.createNativeQuery(
+                "SELECT asset_type, COUNT(*) AS count " +
+                        "FROM assets " +
+                        "GROUP BY asset_type"
+        ).getResultList();
+    }
 
     @Getter
     @AllArgsConstructor

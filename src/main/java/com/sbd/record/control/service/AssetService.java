@@ -59,7 +59,7 @@ public class AssetService implements AssetControl {
             throw new BusinessException("Could not create upload directory");
         }
 
-        // ✅ Save uploaded images
+        //  Save uploaded images
         List<FileUpload> files = assetJsonb.getFiles();
         StringBuilder imagePaths = new StringBuilder();
 
@@ -69,7 +69,7 @@ public class AssetService implements AssetControl {
                     String uniqueFileName = UUID.randomUUID() + "_" + file.fileName();
                     Path dest = Path.of(UPLOAD_DIR, uniqueFileName);
 
-                    // ✅ Correct: uploadedFile() returns Path already
+                    //  Correct: uploadedFile() returns Path already
                     Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
 
                     imagePaths.append(uniqueFileName).append(",");
@@ -80,7 +80,7 @@ public class AssetService implements AssetControl {
             }
         }
 
-        // ✅ Create and persist Asset
+        //  Create and persist Asset
         Asset asset = new Asset();
         asset.setAssetTag(assetJsonb.getAssetTag());
         asset.setAssetName(assetJsonb.getAssetName());
@@ -156,6 +156,48 @@ public class AssetService implements AssetControl {
                 responseData
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchAssetByType( String requestId) throws BusinessException {
+        log.info("Start fetching assets grouped by type - RequestId: {}", requestId);
+
+        try {
+            //Get counts of assets grouped by type
+            List<Object[]> results = assetRepository.getAssetTypeWiseCount();
+
+            //  Handle empty results
+            if (results == null || results.isEmpty()) {
+                log.warn("No assets found - RequestId: {}", requestId);
+                return new ApiResponse(
+                        new Status(Response.Status.NOT_FOUND.getStatusCode(),
+                                "No assets found", requestId)
+                );
+            }
+
+            // Convert List<Object[]> → Map<String, Long>
+            Map<String, Long> assetTypeCounts = new HashMap<>();
+            for (Object[] row : results) {
+                String type = (String) row[0];
+                Long count = ((Number) row[1]).longValue();
+                assetTypeCounts.put(type, count);
+            }
+
+            log.info("End fetching asset counts by type - RequestId: {}", requestId);
+
+            // Return final response
+            return new ApiResponse(
+                    new Status(Response.Status.OK.getStatusCode(),
+                            "Assets grouped by type fetched successfully", requestId),
+                    assetTypeCounts
+            );
+
+        } catch (Exception e) {
+            log.error("Error fetching asset counts by type - RequestId: {}", requestId, e);
+            throw new BusinessException("Failed to fetch asset counts by type: " + e.getMessage());
+        }
+    }
+
 
 
 }

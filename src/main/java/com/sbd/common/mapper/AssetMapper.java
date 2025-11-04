@@ -21,16 +21,16 @@ public interface AssetMapper {
 
     AssetMapper INSTANCE = Mappers.getMapper(AssetMapper.class);
 
-    // ✅ Map Asset entity → AssetDTO using Base64 encoded images
+    // Map Asset entity → AssetDTO using Base64 encoded images
     @Mapping(target = "assetImagesBase64", expression = "java(mapImagesToBase64(asset.getAssetImage()))")
     AssetDTO toDTO(Asset asset);
 
-    // ✅ Convert entity list → DTO list
+    //  Convert entity list → DTO list
     default List<AssetDTO> toDTOList(List<Asset> assets) {
         return assets.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
-    // ✅ Convert comma-separated filenames to Base64-encoded image data
+    // Convert comma-separated filenames to Base64-encoded image data
     default List<String> mapImagesToBase64(String assetImage) {
         if (assetImage == null || assetImage.isEmpty()) return null;
 

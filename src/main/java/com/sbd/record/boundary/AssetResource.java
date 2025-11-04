@@ -54,4 +54,15 @@ public class AssetResource {
 
         return assetService.fetchCountAssets(requestId);
     }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_assets_by_type")
+    public ApiResponse fetchAssetsByType() throws BusinessException {
+        String requestId = UUID.randomUUID().toString();
+        log.info("request_id : {} | fetching all assets grouped by type", requestId);
+        return assetControl.fetchAssetByType(requestId);
+    }
+
 }
