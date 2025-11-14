@@ -26,6 +26,6 @@ public class BusinessException extends Exception {
     this.status = 500;
     this.requestId = null;
   }
-
 }
+
 

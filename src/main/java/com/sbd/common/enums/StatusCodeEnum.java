@@ -5,11 +5,14 @@ import lombok.Getter;
 @Getter
 public enum StatusCodeEnum {
     SUCCESS("Success"),
-    TECHNICAL_FAILURE("The system encountered an unexpected error. Please contact support."),
+    SUCCESSUPDATED("SuccessFully Updated"),
+    TECHNICAL_FAILURE("Technical Failure"),
     BAD_REQUEST("Bad Request"),
-    REQUIRED_FIELDS_MISSING("Missing required fields. Please provide the required data to proceed."),
-    AUTHENTICATION_REQUIRED("Access forbidden: Authentication required."),
-    NO_CONTENT("Request successful; no content to return.");
+    REQUIRED_FIELDS_MISSING("Required Fields Missing"),
+    AUTHENTICATION_REQUIRED("Authentication required"),
+    NO_CONTENT("No Content"),
+    CONFLICT("Duplicate Record"),
+    PRECONDITION_FAILED_SAVE("Failed to save record");
 
     private final String value;
 

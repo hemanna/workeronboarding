@@ -1,12 +1,17 @@
 package com.sbd.record.boundary;
 
 import com.sbd.common.Jsonb.AssetJsonb;
+import com.sbd.common.Jsonb.AssetListRequest;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.request.ApiRequest;
+import com.sbd.common.request.SearchText;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.AssetControl;
 import com.sbd.record.control.service.AssetService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
@@ -25,13 +30,13 @@ public class AssetResource {
     AssetService assetService;
     private final AssetControl assetControl;
 
-    @POST
-    @Path("/create")
-    public Response createAsset(@BeanParam AssetJsonb assetRequest) throws BusinessException {
-        String requestId = UUID.randomUUID().toString();
-        ApiResponse response = assetControl.createAsset(assetRequest, requestId);
-        return Response.ok(response).build();
-    }
+//    @POST
+//    @Path("/create")
+//    public Response createAsset(@BeanParam AssetJsonb assetRequest) throws BusinessException {
+//        String requestId = UUID.randomUUID().toString();
+//        ApiResponse response = assetControl.createAsset(assetRequest, requestId);
+//        return Response.ok(response).build();
+//    }
 
     @GET
     @Path("/get_all_assets")
@@ -63,6 +68,17 @@ public class AssetResource {
         String requestId = UUID.randomUUID().toString();
         log.info("request_id : {} | fetching all assets grouped by type", requestId);
         return assetControl.fetchAssetByType(requestId);
+    }
+
+    @POST
+    @Path("/list")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response assetList(@Context HttpHeaders httpHeaders,
+                              ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = assetControl.listAssets(correlationId,apiRequest);
+        return Response.ok(response).build();
     }
 
 }

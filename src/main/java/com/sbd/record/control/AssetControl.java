@@ -1,15 +1,18 @@
 package com.sbd.record.control;
 
 import com.sbd.common.Jsonb.AssetJsonb;
+import com.sbd.common.Jsonb.AssetListRequest;
 import com.sbd.common.entity.AssetRequest;
 import com.sbd.common.exception.BusinessException;
+import com.sbd.common.request.ApiRequest;
+import com.sbd.common.request.SearchText;
 import com.sbd.common.response.ApiResponse;
 
 public interface AssetControl {
-    ApiResponse createAsset
-            (AssetJsonb assetRequest,
-             String requestId)
-            throws BusinessException;
+//    ApiResponse createAsset
+//            (AssetJsonb assetRequest,
+//             String requestId)
+//            throws BusinessException;
 
     ApiResponse fetchAllAssets
             (String requestId)
@@ -23,4 +26,7 @@ public interface AssetControl {
             String requestId )
             throws BusinessException;
 
+    ApiResponse listAssets(
+            String correlationId,
+            ApiRequest<AssetListRequest> apiRequest) throws BusinessException;
 }

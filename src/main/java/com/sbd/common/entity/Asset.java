@@ -6,6 +6,7 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,8 +28,10 @@ public class Asset {
     @Column(name = "asset_name", nullable = false)
     private String assetName;
 
-    @Column(name = "asset_type")
-    private String assetType;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "asset_type_id")
+    private AssetType assetType;
+
 
     @Column(name = "brand")
     private String brand;
@@ -63,10 +66,10 @@ public class Asset {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "asset", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<AssetAllocation> allocations;
+    @OneToMany(mappedBy = "asset", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<AssetAllocation> allocations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "asset", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<AssetMaintenance> maintenances;
+    @OneToMany(mappedBy = "asset", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<AssetMaintenance> maintenances = new ArrayList<>();
 
 }

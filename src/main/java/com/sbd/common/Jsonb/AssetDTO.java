@@ -13,7 +13,7 @@ public class AssetDTO {
     private Integer assetId;
     private String assetTag;
     private String assetName;
-    private String assetType;
+    private Integer assetType;
     private String brand;
     private String model;
     private String serialNumber;

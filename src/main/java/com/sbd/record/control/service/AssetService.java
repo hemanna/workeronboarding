@@ -2,14 +2,23 @@ package com.sbd.record.control.service;
 
 import com.sbd.common.Jsonb.AssetDTO;
 import com.sbd.common.Jsonb.AssetJsonb;
+import com.sbd.common.Jsonb.AssetListRequest;
 import com.sbd.common.Jsonb.AssetStatusCountDTO;
 import com.sbd.common.entity.Asset;
+import com.sbd.common.enums.AssetActionEnum;
+import com.sbd.common.enums.LogEnum;
+import com.sbd.common.enums.StatusCodeEnum;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.AssetMapper;
+import com.sbd.common.mapper.mapperimpl.AssetMapperImpl;
 import com.sbd.common.repository.AssetRepository;
+import com.sbd.common.request.ApiRequest;
+import com.sbd.common.request.Pagination;
+import com.sbd.common.request.SearchText;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.AssetControl;
+import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -36,79 +45,81 @@ public class AssetService implements AssetControl {
     @Inject
     AssetRepository assetRepository;
 
+    @Inject
+    AssetMapperImpl assetMapper;
     private static final String UPLOAD_DIR = "uploads/assets";
 
-    @Override
-    @Transactional
-    public ApiResponse createAsset(AssetJsonb assetJsonb, String requestId) throws BusinessException {
-        log.info("Start creating asset - RequestId: {}", requestId);
-
-        // ✅ Check if asset tag exists
-        Asset existing = assetRepository.findByAssetTag(assetJsonb.getAssetTag());
-        if (existing != null) {
-            return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
-                            "Asset tag already exists", requestId)
-            );
-        }
-
-        // ✅ Ensure upload directory exists
-        try {
-            Files.createDirectories(Path.of(UPLOAD_DIR));
-        } catch (IOException e) {
-            throw new BusinessException("Could not create upload directory");
-        }
-
-        //  Save uploaded images
-        List<FileUpload> files = assetJsonb.getFiles();
-        StringBuilder imagePaths = new StringBuilder();
-
-        if (files != null && !files.isEmpty()) {
-            for (FileUpload file : files) {
-                try {
-                    String uniqueFileName = UUID.randomUUID() + "_" + file.fileName();
-                    Path dest = Path.of(UPLOAD_DIR, uniqueFileName);
-
-                    //  Correct: uploadedFile() returns Path already
-                    Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
-
-                    imagePaths.append(uniqueFileName).append(",");
-                } catch (IOException e) {
-                    log.error("Error saving file: {}", file.fileName(), e);
-                    throw new BusinessException("Error saving uploaded file: " + file.fileName());
-                }
-            }
-        }
-
-        //  Create and persist Asset
-        Asset asset = new Asset();
-        asset.setAssetTag(assetJsonb.getAssetTag());
-        asset.setAssetName(assetJsonb.getAssetName());
-        asset.setAssetType(assetJsonb.getAssetType());
-        asset.setBrand(assetJsonb.getBrand());
-        asset.setModel(assetJsonb.getModel());
-        asset.setSerialNumber(assetJsonb.getSerialNumber());
-        asset.setVendor(assetJsonb.getVendor());
-        asset.setStatus(assetJsonb.getStatus());
-        asset.setAssetImage(imagePaths.toString());
-        asset.setCreatedAt(LocalDateTime.now());
-        asset.setUpdatedAt(LocalDateTime.now());
-
-        if (assetJsonb.getPurchaseDate() != null && !assetJsonb.getPurchaseDate().isEmpty()) {
-            asset.setPurchaseDate(LocalDate.parse(assetJsonb.getPurchaseDate()));
-        }
-        if (assetJsonb.getWarrantyExpiry() != null && !assetJsonb.getWarrantyExpiry().isEmpty()) {
-            asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
-        }
-
-        assetRepository.persist(asset);
-
-        log.info("Asset created successfully - RequestId: {}", requestId);
-        return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(),
-                        "Asset created successfully", requestId)
-        );
-    }
+//    @Override
+//    @Transactional
+//    public ApiResponse createAsset(AssetJsonb assetJsonb, String requestId) throws BusinessException {
+//        log.info("Start creating asset - RequestId: {}", requestId);
+//
+//        // ✅ Check if asset tag exists
+//        Asset existing = assetRepository.findByAssetTag(assetJsonb.getAssetTag());
+//        if (existing != null) {
+//            return new ApiResponse(
+//                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
+//                            "Asset tag already exists", requestId)
+//            );
+//        }
+//
+//        // ✅ Ensure upload directory exists
+//        try {
+//            Files.createDirectories(Path.of(UPLOAD_DIR));
+//        } catch (IOException e) {
+//            throw new BusinessException("Could not create upload directory");
+//        }
+//
+//        //  Save uploaded images
+//        List<FileUpload> files = assetJsonb.getFiles();
+//        StringBuilder imagePaths = new StringBuilder();
+//
+//        if (files != null && !files.isEmpty()) {
+//            for (FileUpload file : files) {
+//                try {
+//                    String uniqueFileName = UUID.randomUUID() + "_" + file.fileName();
+//                    Path dest = Path.of(UPLOAD_DIR, uniqueFileName);
+//
+//                    //  Correct: uploadedFile() returns Path already
+//                    Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
+//
+//                    imagePaths.append(uniqueFileName).append(",");
+//                } catch (IOException e) {
+//                    log.error("Error saving file: {}", file.fileName(), e);
+//                    throw new BusinessException("Error saving uploaded file: " + file.fileName());
+//                }
+//            }
+//        }
+//
+//        //  Create and persist Asset
+//        Asset asset = new Asset();
+//        asset.setAssetTag(assetJsonb.getAssetTag());
+//        asset.setAssetName(assetJsonb.getAssetName());
+//        asset.setAssetType(assetJsonb.getAssetType());
+//        asset.setBrand(assetJsonb.getBrand());
+//        asset.setModel(assetJsonb.getModel());
+//        asset.setSerialNumber(assetJsonb.getSerialNumber());
+//        asset.setVendor(assetJsonb.getVendor());
+//        asset.setStatus(assetJsonb.getStatus());
+//        asset.setAssetImage(imagePaths.toString());
+//        asset.setCreatedAt(LocalDateTime.now());
+//        asset.setUpdatedAt(LocalDateTime.now());
+//
+//        if (assetJsonb.getPurchaseDate() != null && !assetJsonb.getPurchaseDate().isEmpty()) {
+//            asset.setPurchaseDate(LocalDate.parse(assetJsonb.getPurchaseDate()));
+//        }
+//        if (assetJsonb.getWarrantyExpiry() != null && !assetJsonb.getWarrantyExpiry().isEmpty()) {
+//            asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
+//        }
+//
+//        assetRepository.persist(asset);
+//
+//        log.info("Asset created successfully - RequestId: {}", requestId);
+//        return new ApiResponse(
+//                new Status(Response.Status.OK.getStatusCode(),
+//                        "Asset created successfully", requestId)
+//        );
+//    }
 
 
 
@@ -198,6 +209,79 @@ public class AssetService implements AssetControl {
         }
     }
 
+    @Override
+    public ApiResponse listAssets(String correlationId, ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
 
+        log.info( LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_LIST.getValue(),
+                LogEnum.LogMessage.STARTED.getValue() );
 
-}
+        // Validate the data
+        AssetListRequest assetListRequest = apiRequest.getData();
+        if (assetListRequest == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+            );
+        }
+
+        // Validate pagination
+        Pagination pagination = assetListRequest.getPagination();
+        if (pagination == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+            );
+        }
+
+        String type = assetListRequest.getType();
+
+        // Fetch assets based on type filter
+        List<Asset> assets;
+        if (type != null && !type.equalsIgnoreCase("ALL")) {
+
+            assets = assetRepository.listByType(type, pagination.getPageIndex(), pagination.getPageSize());
+
+            // LIKE search
+            if (assets.isEmpty()) {
+                assets = assetRepository.listByTypeLike(type, pagination.getPageIndex(), pagination.getPageSize());
+            }
+
+        } else {
+            // Fetch all assets
+            assets = assetRepository.listAllAssets(pagination.getPageIndex(), pagination.getPageSize());
+        }
+
+        if (assets == null || assets.isEmpty()) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    ),
+                    null
+            );
+        }
+
+        // Convert to DTOs
+        List<AssetDTO> assetDTOs = AssetMapper.INSTANCE.toDTOList(assets);
+
+        log.info( LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_LIST.getValue(),
+                LogEnum.LogMessage.ENDED.getValue() );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                assetDTOs
+        );
+    }
+ }
+
