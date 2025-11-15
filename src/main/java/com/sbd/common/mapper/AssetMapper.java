@@ -22,7 +22,7 @@ public interface AssetMapper {
     AssetMapper INSTANCE = Mappers.getMapper(AssetMapper.class);
 
     // Entity to DTO
-    @Mapping(target = "assetType", source = "assetType.typeId") // map AssetType → Integer
+    @Mapping(target = "assetType", source = "assetType.typeId")
     @Mapping(target = "assetImagesBase64", expression = "java(mapImagesToBase64(asset.getAssetImage()))")
     AssetDTO toDTO(Asset asset);
 

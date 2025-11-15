@@ -2,9 +2,9 @@ package com.sbd.record.boundary;
 
 import com.sbd.common.Jsonb.AssetJsonb;
 import com.sbd.common.Jsonb.AssetListRequest;
+import com.sbd.common.Jsonb.AssetTypeJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
-import com.sbd.common.request.SearchText;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.AssetControl;
 import com.sbd.record.control.service.AssetService;
@@ -30,13 +30,22 @@ public class AssetResource {
     AssetService assetService;
     private final AssetControl assetControl;
 
-//    @POST
-//    @Path("/create")
-//    public Response createAsset(@BeanParam AssetJsonb assetRequest) throws BusinessException {
-//        String requestId = UUID.randomUUID().toString();
-//        ApiResponse response = assetControl.createAsset(assetRequest, requestId);
-//        return Response.ok(response).build();
-//    }
+    @POST
+    @Path("/create")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public Response saveAsset(
+            @Context HttpHeaders httpHeaders,
+            @BeanParam AssetJsonb assetJsonb
+    ) throws BusinessException {
+        ApiRequest<AssetJsonb> apiRequest = new ApiRequest<>();
+        apiRequest.setData(assetJsonb);
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = assetControl.createAsset(correlationId, apiRequest);
+        return Response.ok(response).build();
+    }
+
+
+
 
     @GET
     @Path("/get_all_assets")
@@ -73,6 +82,7 @@ public class AssetResource {
     @POST
     @Path("/list")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response assetList(@Context HttpHeaders httpHeaders,
                               ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
 
@@ -81,4 +91,15 @@ public class AssetResource {
         return Response.ok(response).build();
     }
 
+    @POST
+    @Path("/save_asset_type")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response saveAssetType(@Context HttpHeaders httpHeaders,
+                              ApiRequest<AssetTypeJsonb> apiRequest) throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = assetControl.createAssetType(correlationId,apiRequest);
+        return Response.ok(response).build();
+    }
 }

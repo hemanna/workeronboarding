@@ -18,7 +18,7 @@ public class AssetJsonb {
     private String assetName;
 
     @FormParam("assetType")
-    private String assetType;
+    private Integer assetType;
 
     @FormParam("brand")
     private String brand;
