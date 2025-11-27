@@ -15,7 +15,7 @@ public interface EmployeeAttendanceMapper {
 
     default EmployeeAttendanceResponseDTO toDto(Map<String, Object> data) {
         return new EmployeeAttendanceResponseDTO(
-                ((Number) data.get("employeeId")).longValue(),  // ✅ Ensures correct type
+                ((Number) data.get("employeeId")).longValue(),
                 ((Number) data.get("presentDays")).intValue(),
                 ((Number) data.get("pendingDays")).intValue(),
                 ((Number) data.get("totalRecords")).intValue(),

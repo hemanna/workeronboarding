@@ -673,6 +673,67 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
     @Override
     @Transactional
+    public ApiResponse checkOut(Integer employeeId,
+                                ApiRequest<EmployeeAttendanceSessionDTO> apiRequest,
+                                String requestId) {
+
+        log.info("Start Check-Out - RequestId: {}", requestId);
+
+        EmployeeAttendanceSessionDTO sessionDTO = apiRequest.getData();
+
+        // 1. Validate employee
+        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.NOT_FOUND.getStatusCode(),
+                            "Employee not found", requestId)
+            );
+        }
+
+        // 2. Find today's attendance
+        LocalDate today = LocalDate.now();
+        EmployeeAttendance attendance =
+                employeeAttendanceRepository.findByEmployeeAndDate(employeeId, today);
+
+        if (attendance == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
+                            "No attendance record found for today", requestId)
+            );
+        }
+
+        // 3. Find the last session where checkOut IS NULL → current active session
+        EmployeeAttendanceSession session = attendance.getSessions()
+                .stream()
+                .filter(s -> s.getCheckOut() == null)
+                .reduce((first, second) -> second)   // last session
+                .orElse(null);
+
+        if (session == null) {
+            return new ApiResponse(
+                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
+                            "No active check-in session found", requestId)
+            );
+        }
+
+        // 4. Set checkout time
+        session.setCheckOut(
+                sessionDTO.getCheckOut() != null
+                        ? sessionDTO.getCheckOut()
+                        : LocalTime.now()
+        );
+
+        log.info("End Check-Out - RequestId: {}", requestId);
+
+        return new ApiResponse(
+                new Status(Response.Status.OK.getStatusCode(),
+                        "Check-Out successful", requestId)
+        );
+    }
+
+
+    @Override
+    @Transactional
     public ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId) {
         log.info("Start updating regularization status - RequestId: {}, RegularizationId: {}, NewStatus: {}",
                 requestId, regularizationId, newStatus);

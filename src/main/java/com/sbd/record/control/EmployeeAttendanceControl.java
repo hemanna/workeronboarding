@@ -24,4 +24,5 @@ public interface EmployeeAttendanceControl {
     ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId);
     ApiResponse fetchAllRegularizationAttendance(String requestId);
     ApiResponse checkIn(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId);
+    ApiResponse checkOut(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId);
 }

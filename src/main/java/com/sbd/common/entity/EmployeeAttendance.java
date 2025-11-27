@@ -31,12 +31,6 @@ public class EmployeeAttendance {
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
-//    @Column(name = "checkin_time")
-//    private LocalTime checkinTime;
-//
-//    @Column(name = "checkout_time")
-//    private LocalTime checkoutTime;
-
     @Column(name = "working_hours")
     private BigDecimal workingHours;
 

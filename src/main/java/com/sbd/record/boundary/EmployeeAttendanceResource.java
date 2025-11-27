@@ -1,18 +1,14 @@
 package com.sbd.record.boundary;
 
-import com.sbd.common.Jsonb.CheckInJsonb;
 import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
 import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
 import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
-import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeAttendanceControl;
-import com.sbd.record.control.EmployeeRecordControl;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -64,6 +60,17 @@ public class EmployeeAttendanceResource {
         return employeeAttendanceControl.fetchAllAttendance(requestId);
     }
 
+//        @POST
+//    @Path("/list")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response assetList(@Context HttpHeaders httpHeaders,
+//                              ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
+//
+//        String correlationId = UUID.randomUUID().toString();
+//        ApiResponse response = assetControl.listAssets(correlationId,apiRequest);
+//        return Response.ok(response).build();
+//    }
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/get_attendance_by_date/{date}")
@@ -197,6 +204,17 @@ public class EmployeeAttendanceResource {
         return employeeAttendanceControl.checkIn(employeeId, apiRequest, requestId);
     }
 
+    @POST
+    @Path("/attendance/checkout/{employeeId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ApiResponse checkOut(@PathParam("employeeId") Integer employeeId,
+                                ApiRequest<EmployeeAttendanceSessionDTO> apiRequest) {
 
+        String requestId = UUID.randomUUID().toString();
+        log.info("RequestId: {} | Check-Out Request: employeeId: {}", requestId, employeeId);
+
+        return employeeAttendanceControl.checkOut(employeeId, apiRequest, requestId);
+    }
 
 }
