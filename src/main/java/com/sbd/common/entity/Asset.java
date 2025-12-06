@@ -72,4 +72,10 @@ public class Asset {
     @OneToMany(mappedBy = "asset", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<AssetMaintenance> maintenances = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id", nullable = false)
+    private EmployeeDetails employee;
+
+    @Column(name = "assign_date")
+    private LocalDate assignDate;
 }

@@ -3,6 +3,7 @@ package com.sbd.record.control.service;
 import com.sbd.common.Jsonb.*;
 import com.sbd.common.entity.Asset;
 import com.sbd.common.entity.AssetType;
+import com.sbd.common.entity.EmployeeDetails;
 import com.sbd.common.enums.AssetActionEnum;
 import com.sbd.common.enums.LogEnum;
 import com.sbd.common.enums.StatusCodeEnum;
@@ -11,6 +12,7 @@ import com.sbd.common.mapper.AssetMapper;
 import com.sbd.common.mapper.mapperimpl.AssetMapperImpl;
 import com.sbd.common.repository.AssetRepository;
 import com.sbd.common.repository.AssetTypeRepository;
+import com.sbd.common.repository.EmployeeDetailsRepository;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.Pagination;
 import com.sbd.common.response.ApiResponse;
@@ -44,6 +46,9 @@ public class AssetService implements AssetControl {
 
     @Inject
     AssetTypeRepository assetTypeRepository;
+
+    @Inject
+    EmployeeDetailsRepository employeeDetailsRepository;
 
     @Inject
     AssetMapperImpl assetMapper;
@@ -410,6 +415,91 @@ public class AssetService implements AssetControl {
                 )
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse createAssignasset(
+            String correlationId,
+            ApiRequest<AssetAssignJsonb> apiRequest) throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_ASSIGN_SAVE.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        //Validate data
+        AssetAssignJsonb data = apiRequest.getData();
+
+        if (data == null ||
+                data.getAssetId() == null ||
+                data.getEmployeeId() == null ||
+                data.getAssignDate() == null) {
+
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+            );
+        }
+
+        //Validate Asset
+        Asset asset = assetRepository.find("assetId", data.getAssetId()).firstResult();
+        if (asset == null) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NOT_FOUND.getStatusCode(),
+                            "ASSET_NOT_FOUND",
+                            correlationId
+                    )
+            );
+        }
+
+        // Validate Employee
+        EmployeeDetails employee = employeeDetailsRepository.find("id", data.getEmployeeId()).firstResult();
+        if (employee == null) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NOT_FOUND.getStatusCode(),
+                            "EMPLOYEE_NOT_FOUND",
+                            correlationId
+                    )
+            );
+        }
+
+        // Prevent Re-Assigning Already Assigned Asset
+        if (asset.getEmployee() != null) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.CONFLICT.getStatusCode(),
+                            "ASSET_ALREADY_ASSIGNED",
+                            correlationId
+                    )
+            );
+        }
+
+        // Save Asset Assign
+        asset.setEmployee(employee);
+        asset.setAssignDate(data.getAssignDate());
+        assetRepository.persist(asset);
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_ASSIGN_SAVE.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                )
+        );
+    }
+
 }
 
 

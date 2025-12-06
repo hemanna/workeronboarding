@@ -1,5 +1,6 @@
 package com.sbd.record.control;
 
+import com.sbd.common.Jsonb.AssetAssignJsonb;
 import com.sbd.common.Jsonb.AssetJsonb;
 import com.sbd.common.Jsonb.AssetListRequest;
 import com.sbd.common.Jsonb.AssetTypeJsonb;
@@ -27,9 +28,16 @@ public interface AssetControl {
 
     ApiResponse listAssets(
             String correlationId,
-            ApiRequest<AssetListRequest> apiRequest) throws BusinessException;
+            ApiRequest<AssetListRequest> apiRequest)
+            throws BusinessException;
 
     ApiResponse createAssetType(
             String correlationId,
-            ApiRequest<AssetTypeJsonb> apiRequest) throws BusinessException;
+            ApiRequest<AssetTypeJsonb> apiRequest)
+            throws BusinessException;
+
+    ApiResponse createAssignasset(
+            String correlationId,
+            ApiRequest<AssetAssignJsonb> apiRequest)
+            throws BusinessException;
 }

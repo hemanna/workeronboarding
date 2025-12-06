@@ -11,7 +11,9 @@ public enum AssetActionEnum {
     ASSET_TYPE_SAVE("Asset Save"),
     ASSET_UPDATE("Asset Update"),
     ASSET_DELETE("Asset Delete"),
+    ASSET_ASSIGN_SAVE("Assign Asset Save"),
     ASSET_DETAIL("Asset Detail");
+
 
 
     private final String value;

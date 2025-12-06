@@ -1,5 +1,6 @@
 package com.sbd.record.boundary;
 
+import com.sbd.common.Jsonb.AssetAssignJsonb;
 import com.sbd.common.Jsonb.AssetJsonb;
 import com.sbd.common.Jsonb.AssetListRequest;
 import com.sbd.common.Jsonb.AssetTypeJsonb;
@@ -100,6 +101,18 @@ public class AssetResource {
 
         String correlationId = UUID.randomUUID().toString();
         ApiResponse response = assetControl.createAssetType(correlationId,apiRequest);
+        return Response.ok(response).build();
+    }
+
+    @POST
+    @Path("/assign_asset")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response AssignAsset(@Context HttpHeaders httpHeaders,
+                                  ApiRequest<AssetAssignJsonb> apiRequest) throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = assetControl.createAssignasset(correlationId,apiRequest);
         return Response.ok(response).build();
     }
 }
