@@ -9,6 +9,7 @@ import com.sbd.common.enums.LogEnum;
 import com.sbd.common.enums.StatusCodeEnum;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.AssetMapper;
+import com.sbd.common.mapper.AssetTypeMapper;
 import com.sbd.common.mapper.mapperimpl.AssetMapperImpl;
 import com.sbd.common.repository.AssetRepository;
 import com.sbd.common.repository.AssetTypeRepository;
@@ -499,6 +500,70 @@ public class AssetService implements AssetControl {
                 )
         );
     }
+
+    @Override
+    public ApiResponse getAllAssetTypes(String correlationId, ApiRequest<AssetListRequest> apiRequest)
+            throws BusinessException {
+
+        log.info(LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_TYPE_LIST.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        // Validate request
+        AssetListRequest assetListRequest = apiRequest.getData();
+        if (assetListRequest == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+            );
+        }
+
+        // Validate pagination
+        Pagination pagination = assetListRequest.getPagination();
+        if (pagination == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+            );
+        }
+
+        // Fetch all asset types
+        List<AssetType> assetTypes =
+                assetTypeRepository.listAssetTypes(pagination.getPageIndex(), pagination.getPageSize());
+
+        if (assetTypes == null || assetTypes.isEmpty()) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    )
+            );
+        }
+
+        // Convert entities to Jsonb
+        List<AssetTypeJsonb> typeDTOs = AssetTypeMapper.INSTANCE.toDTOList(assetTypes);
+
+        log.info(LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_TYPE_LIST.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                typeDTOs
+        );
+    }
+
 
 }
 

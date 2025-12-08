@@ -40,4 +40,9 @@ public interface AssetControl {
             String correlationId,
             ApiRequest<AssetAssignJsonb> apiRequest)
             throws BusinessException;
+
+    ApiResponse getAllAssetTypes(
+            String correlationId,
+            ApiRequest<AssetListRequest> apiRequest)
+            throws BusinessException;
 }

@@ -81,7 +81,7 @@ public class AssetResource {
     }
 
     @POST
-    @Path("/list")
+    @Path("/list_assets_by_type")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response assetList(@Context HttpHeaders httpHeaders,
@@ -113,6 +113,18 @@ public class AssetResource {
 
         String correlationId = UUID.randomUUID().toString();
         ApiResponse response = assetControl.createAssignasset(correlationId,apiRequest);
+        return Response.ok(response).build();
+    }
+
+    @GET
+    @Path("/assets_types")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response listAssetTypes(@Context HttpHeaders httpHeaders,
+                              ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = assetControl.getAllAssetTypes(correlationId,apiRequest);
         return Response.ok(response).build();
     }
 }
