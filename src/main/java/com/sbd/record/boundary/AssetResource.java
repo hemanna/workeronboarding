@@ -116,7 +116,7 @@ public class AssetResource {
         return Response.ok(response).build();
     }
 
-    @GET
+    @POST
     @Path("/assets_types")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

@@ -142,7 +142,8 @@ public class AssetService implements AssetControl {
         Asset asset = new Asset();
         asset.setAssetTag(assetJsonb.getAssetTag());
         asset.setAssetName(assetJsonb.getAssetName());
-        asset.setAssetType(type); // ← FIXED
+        asset.setAssetType(type);
+
         asset.setBrand(assetJsonb.getBrand());
         asset.setModel(assetJsonb.getModel());
         asset.setSerialNumber(assetJsonb.getSerialNumber());

@@ -73,7 +73,7 @@ public class Asset {
     private List<AssetMaintenance> maintenances = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private EmployeeDetails employee;
 
     @Column(name = "assign_date")
