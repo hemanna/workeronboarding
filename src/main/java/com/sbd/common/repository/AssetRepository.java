@@ -2,7 +2,9 @@ package com.sbd.common.repository;
 
 import com.sbd.common.Jsonb.AssetStatusCountDTO;
 import com.sbd.common.entity.Asset;
+import com.sbd.common.entity.EmployeeDetails;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 import io.quarkus.panache.common.Parameters;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -14,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
-public class AssetRepository implements PanacheRepository<Asset> {
+public class AssetRepository implements PanacheRepositoryBase<Asset,Integer> {
 
     @Inject
     EntityManager em;

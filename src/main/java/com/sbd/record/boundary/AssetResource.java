@@ -45,6 +45,19 @@ public class AssetResource {
         return Response.ok(response).build();
     }
 
+    @PATCH
+    @Path("/update/{id}")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateAsset(
+            @PathParam("id") Integer assetId,
+            @BeanParam AssetJsonb assetJsonb) throws BusinessException {
+        ApiRequest<AssetJsonb> apiRequest = new ApiRequest<>();
+        apiRequest.setData(assetJsonb);
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = assetControl.updateAsset(assetId, correlationId, apiRequest);
+        return Response.ok(response).build();
+    }
 
 
 

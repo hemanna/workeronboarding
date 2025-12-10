@@ -14,6 +14,11 @@ public interface AssetControl {
             ApiRequest<AssetJsonb> apiRequest)
             throws BusinessException;
 
+    ApiResponse updateAsset(
+            Integer id, String correlationId,
+            ApiRequest<AssetJsonb> apiRequest)
+            throws BusinessException;
+
     ApiResponse fetchAllAssets
             (String requestId)
             throws BusinessException;

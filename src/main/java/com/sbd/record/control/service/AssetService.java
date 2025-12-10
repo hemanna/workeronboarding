@@ -53,6 +53,7 @@ public class AssetService implements AssetControl {
 
     @Inject
     AssetMapperImpl assetMapper;
+
     private static final String UPLOAD_DIR = "uploads/assets";
 
     @Override
@@ -179,6 +180,128 @@ public class AssetService implements AssetControl {
                 )
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse updateAsset(Integer id, String correlationId, ApiRequest<AssetJsonb> apiRequest) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_UPDATE.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        AssetJsonb assetJsonb = apiRequest.getData();
+
+        if (assetJsonb == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+            );
+        }
+
+        // FETCH EXISTING ASSET (FIXED assetId → id)
+        Asset asset = assetRepository.findById(id);
+        if (asset == null) {
+            throw new BusinessException(
+                    Response.Status.NOT_FOUND.getStatusCode(),
+                    correlationId,
+                    "Asset not found"
+            );
+        }
+
+        // VALIDATE ASSET TYPE
+        AssetType type = assetTypeRepository.findById(assetJsonb.getAssetType());
+        if (type == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    "Invalid asset type"
+            );
+        }
+
+        // ENSURE UPLOAD DIRECTORY EXISTS
+        try {
+            Files.createDirectories(Path.of(UPLOAD_DIR));
+        } catch (IOException e) {
+            throw new BusinessException(
+                    Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
+                    correlationId,
+                    StatusCodeEnum.TECHNICAL_FAILURE.getValue()
+            );
+        }
+
+        List<FileUpload> newFiles = assetJsonb.getFiles();
+        String finalImageString = asset.getAssetImage();  // keep old if no new files
+
+        if (newFiles != null && !newFiles.isEmpty()) {
+
+            StringBuilder imageNames = new StringBuilder();
+
+            for (FileUpload file : newFiles) {
+                try {
+                    String name = UUID.randomUUID() + "_" + file.fileName();
+                    Path dest = Path.of(UPLOAD_DIR, name);
+
+                    Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
+
+                    imageNames.append(name).append(",");
+                } catch (IOException e) {
+                    throw new BusinessException(
+                            Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
+                            correlationId,
+                            "Failed to upload file: " + file.fileName()
+                    );
+                }
+            }
+
+            finalImageString = imageNames.toString();
+            if (finalImageString.endsWith(",")) {
+                finalImageString = finalImageString.substring(0, finalImageString.length() - 1);
+            }
+        }
+
+        // UPDATE ENTITY FIELDS
+        asset.setAssetName(assetJsonb.getAssetName());
+        asset.setAssetTag(assetJsonb.getAssetTag());
+        asset.setAssetType(type);
+
+        asset.setBrand(assetJsonb.getBrand());
+        asset.setModel(assetJsonb.getModel());
+        asset.setSerialNumber(assetJsonb.getSerialNumber());
+        asset.setVendor(assetJsonb.getVendor());
+        asset.setStatus(assetJsonb.getStatus());
+        asset.setAssetImage(finalImageString);
+        asset.setUpdatedAt(LocalDateTime.now());
+
+        if (assetJsonb.getPurchaseDate() != null && !assetJsonb.getPurchaseDate().isBlank()) {
+            asset.setPurchaseDate(LocalDate.parse(assetJsonb.getPurchaseDate()));
+        }
+
+        if (assetJsonb.getWarrantyExpiry() != null && !assetJsonb.getWarrantyExpiry().isBlank()) {
+            asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
+        }
+
+        assetRepository.persist(asset);
+        assetRepository.flush();
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                AssetActionEnum.ASSET_UPDATE.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                )
+        );
+    }
+
 
 
     @Override
