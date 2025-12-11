@@ -47,4 +47,6 @@ public class AssetJsonb {
     @FormParam("files")
     private List<FileUpload> files;
 
+    @FormParam("removedImages")
+    private List<FileUpload> removedImages;
 }

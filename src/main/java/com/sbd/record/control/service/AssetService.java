@@ -33,10 +33,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
@@ -195,7 +192,6 @@ public class AssetService implements AssetControl {
         );
 
         AssetJsonb assetJsonb = apiRequest.getData();
-
         if (assetJsonb == null) {
             throw new BusinessException(
                     Response.Status.BAD_REQUEST.getStatusCode(),
@@ -214,7 +210,7 @@ public class AssetService implements AssetControl {
             );
         }
 
-        // AssetType is required
+        // Validate AssetType
         if (assetJsonb.getAssetType() == null) {
             throw new BusinessException(
                     Response.Status.BAD_REQUEST.getStatusCode(),
@@ -223,7 +219,6 @@ public class AssetService implements AssetControl {
             );
         }
 
-        // Validate AssetType
         AssetType type = assetTypeRepository.findById(assetJsonb.getAssetType());
         if (type == null) {
             throw new BusinessException(
@@ -244,27 +239,32 @@ public class AssetService implements AssetControl {
             );
         }
 
-        //  IMAGE HANDLING (OPTIONAL)
+// IMAGE HANDLING
         String existingImages = asset.getAssetImage() != null ? asset.getAssetImage() : "";
-        StringBuilder finalImages = new StringBuilder(existingImages);
+        List<String> currentImages = Arrays.stream(existingImages.split(","))
+                .filter(s -> !s.isBlank())
+                .collect(Collectors.toList());
 
-        List<FileUpload> newFiles = assetJsonb.getFiles();
-
-        if (newFiles != null && !newFiles.isEmpty()) {
-
-            if (!existingImages.isBlank() && !existingImages.endsWith(",")) {
-                finalImages.append(",");
+// Remove deleted images
+        if (assetJsonb.getRemovedImages() != null && !assetJsonb.getRemovedImages().isEmpty()) {
+            for (FileUpload removedFile : assetJsonb.getRemovedImages()) {
+                String fileName = removedFile.fileName(); // original filename
+                currentImages.remove(fileName);
+                try {
+                    Files.deleteIfExists(Path.of(UPLOAD_DIR, fileName));
+                } catch (IOException ignored) {}
             }
+        }
 
-            for (FileUpload file : newFiles) {
+
+// Add new uploaded files
+        if (assetJsonb.getFiles() != null && !assetJsonb.getFiles().isEmpty()) {
+            for (FileUpload file : assetJsonb.getFiles()) {
                 try {
                     String name = UUID.randomUUID() + "_" + file.fileName();
                     Path dest = Path.of(UPLOAD_DIR, name);
-
                     Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
-
-                    finalImages.append(name).append(",");
-
+                    currentImages.add(name);
                 } catch (IOException e) {
                     throw new BusinessException(
                             Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
@@ -273,17 +273,13 @@ public class AssetService implements AssetControl {
                     );
                 }
             }
-
-            // remove trailing comma
-            if (finalImages.toString().endsWith(",")) {
-                finalImages.setLength(finalImages.length() - 1);
-            }
         }
 
-        //FIELD UPDATES
+
+        // UPDATE OTHER FIELDS
         if (assetJsonb.getAssetTag() != null) asset.setAssetTag(assetJsonb.getAssetTag());
         if (assetJsonb.getAssetName() != null) asset.setAssetName(assetJsonb.getAssetName());
-        asset.setAssetType(type);  // required
+        asset.setAssetType(type);
 
         if (assetJsonb.getBrand() != null) asset.setBrand(assetJsonb.getBrand());
         if (assetJsonb.getModel() != null) asset.setModel(assetJsonb.getModel());
@@ -291,12 +287,10 @@ public class AssetService implements AssetControl {
         if (assetJsonb.getVendor() != null) asset.setVendor(assetJsonb.getVendor());
         if (assetJsonb.getStatus() != null) asset.setStatus(assetJsonb.getStatus());
 
-        // PurchaseCost
         if (assetJsonb.getPurchaseCost() != null && !assetJsonb.getPurchaseCost().isBlank()) {
             asset.setPurchaseCost(new BigDecimal(assetJsonb.getPurchaseCost()));
         }
 
-        // Dates
         if (assetJsonb.getPurchaseDate() != null && !assetJsonb.getPurchaseDate().isBlank()) {
             asset.setPurchaseDate(LocalDate.parse(assetJsonb.getPurchaseDate()));
         }
@@ -305,8 +299,8 @@ public class AssetService implements AssetControl {
             asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
         }
 
-        // Image string
-        asset.setAssetImage(finalImages.toString());
+        // Save final image list
+        asset.setAssetImage(String.join(",", currentImages));
         asset.setUpdatedAt(LocalDateTime.now());
 
         assetRepository.persist(asset);
@@ -327,6 +321,7 @@ public class AssetService implements AssetControl {
                 )
         );
     }
+
 
 
 
