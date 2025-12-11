@@ -49,6 +49,7 @@ public class AssetResource {
     @Path("/update/{id}")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
+
     public Response updateAsset(
             @PathParam("id") Integer assetId,
             @BeanParam AssetJsonb assetJsonb) throws BusinessException {

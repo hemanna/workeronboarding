@@ -27,6 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.jboss.resteasy.reactive.multipart.FileUpload;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -71,31 +72,30 @@ public class AssetService implements AssetControl {
 
         AssetJsonb assetJsonb = apiRequest.getData();
 
-        if (assetJsonb == null ||
-                assetJsonb.getAssetTag() == null ||
-                assetJsonb.getAssetTag().isBlank() ||
-                assetJsonb.getAssetType() == null) {
-
+        // assetType is mandatory now
+        if (assetJsonb == null || assetJsonb.getAssetType() == null) {
             throw new BusinessException(
                     Response.Status.BAD_REQUEST.getStatusCode(),
                     correlationId,
-                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+                    "Asset Type is required"
             );
         }
 
-        // CHECK DUPLICATE
-        Asset existing = assetRepository.findByAssetTag(assetJsonb.getAssetTag());
-        if (existing != null) {
-            return new ApiResponse(
-                    new Status(
-                            Response.Status.CONFLICT.getStatusCode(),
-                            StatusCodeEnum.CONFLICT.getValue(),
-                            correlationId
-                    )
-            );
+        // Check if assetTag provided, then check duplicate
+        if (assetJsonb.getAssetTag() != null && !assetJsonb.getAssetTag().isBlank()) {
+            Asset existing = assetRepository.findByAssetTag(assetJsonb.getAssetTag());
+            if (existing != null) {
+                return new ApiResponse(
+                        new Status(
+                                Response.Status.CONFLICT.getStatusCode(),
+                                StatusCodeEnum.CONFLICT.getValue(),
+                                correlationId
+                        )
+                );
+            }
         }
 
-        // FETCH ASSET TYPE BY ID
+        // Validate AssetType
         AssetType type = assetTypeRepository.findById(assetJsonb.getAssetType());
         if (type == null) {
             throw new BusinessException(
@@ -105,7 +105,7 @@ public class AssetService implements AssetControl {
             );
         }
 
-        // UPLOAD DIRECTORY
+        // Ensure upload directory exists
         try {
             Files.createDirectories(Path.of(UPLOAD_DIR));
         } catch (IOException e) {
@@ -116,7 +116,7 @@ public class AssetService implements AssetControl {
             );
         }
 
-        // HANDLE FILE UPLOAD
+        // File Upload
         List<FileUpload> files = assetJsonb.getFiles();
         StringBuilder imagePaths = new StringBuilder();
 
@@ -139,12 +139,11 @@ public class AssetService implements AssetControl {
             }
         }
 
-        // CREATE ENTITY
+        // CREATE Asset Entity
         Asset asset = new Asset();
         asset.setAssetTag(assetJsonb.getAssetTag());
         asset.setAssetName(assetJsonb.getAssetName());
         asset.setAssetType(type);
-
         asset.setBrand(assetJsonb.getBrand());
         asset.setModel(assetJsonb.getModel());
         asset.setSerialNumber(assetJsonb.getSerialNumber());
@@ -162,7 +161,6 @@ public class AssetService implements AssetControl {
             asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
         }
 
-        // Save
         assetRepository.persist(asset);
 
         log.info(
@@ -181,9 +179,14 @@ public class AssetService implements AssetControl {
         );
     }
 
+
     @Override
     @Transactional
-    public ApiResponse updateAsset(Integer id, String correlationId, ApiRequest<AssetJsonb> apiRequest) throws BusinessException {
+    public ApiResponse updateAsset(
+            Integer id,
+            String correlationId,
+            ApiRequest<AssetJsonb> apiRequest) throws BusinessException {
+
         log.info(
                 LogEnum.ACTIVITY.getValue(),
                 correlationId,
@@ -197,11 +200,11 @@ public class AssetService implements AssetControl {
             throw new BusinessException(
                     Response.Status.BAD_REQUEST.getStatusCode(),
                     correlationId,
-                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+                    "Invalid request"
             );
         }
 
-        // FETCH EXISTING ASSET (FIXED assetId → id)
+        // Fetch existing asset
         Asset asset = assetRepository.findById(id);
         if (asset == null) {
             throw new BusinessException(
@@ -211,7 +214,16 @@ public class AssetService implements AssetControl {
             );
         }
 
-        // VALIDATE ASSET TYPE
+        // AssetType is required
+        if (assetJsonb.getAssetType() == null) {
+            throw new BusinessException(
+                    Response.Status.BAD_REQUEST.getStatusCode(),
+                    correlationId,
+                    "Asset Type is required"
+            );
+        }
+
+        // Validate AssetType
         AssetType type = assetTypeRepository.findById(assetJsonb.getAssetType());
         if (type == null) {
             throw new BusinessException(
@@ -221,7 +233,7 @@ public class AssetService implements AssetControl {
             );
         }
 
-        // ENSURE UPLOAD DIRECTORY EXISTS
+        // Ensure upload directory exists
         try {
             Files.createDirectories(Path.of(UPLOAD_DIR));
         } catch (IOException e) {
@@ -232,12 +244,17 @@ public class AssetService implements AssetControl {
             );
         }
 
+        //  IMAGE HANDLING (OPTIONAL)
+        String existingImages = asset.getAssetImage() != null ? asset.getAssetImage() : "";
+        StringBuilder finalImages = new StringBuilder(existingImages);
+
         List<FileUpload> newFiles = assetJsonb.getFiles();
-        String finalImageString = asset.getAssetImage();  // keep old if no new files
 
         if (newFiles != null && !newFiles.isEmpty()) {
 
-            StringBuilder imageNames = new StringBuilder();
+            if (!existingImages.isBlank() && !existingImages.endsWith(",")) {
+                finalImages.append(",");
+            }
 
             for (FileUpload file : newFiles) {
                 try {
@@ -246,35 +263,40 @@ public class AssetService implements AssetControl {
 
                     Files.copy(file.uploadedFile(), dest, StandardCopyOption.REPLACE_EXISTING);
 
-                    imageNames.append(name).append(",");
+                    finalImages.append(name).append(",");
+
                 } catch (IOException e) {
                     throw new BusinessException(
                             Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
                             correlationId,
-                            "Failed to upload file: " + file.fileName()
+                            "Failed to upload file"
                     );
                 }
             }
 
-            finalImageString = imageNames.toString();
-            if (finalImageString.endsWith(",")) {
-                finalImageString = finalImageString.substring(0, finalImageString.length() - 1);
+            // remove trailing comma
+            if (finalImages.toString().endsWith(",")) {
+                finalImages.setLength(finalImages.length() - 1);
             }
         }
 
-        // UPDATE ENTITY FIELDS
-        asset.setAssetName(assetJsonb.getAssetName());
-        asset.setAssetTag(assetJsonb.getAssetTag());
-        asset.setAssetType(type);
+        //FIELD UPDATES
+        if (assetJsonb.getAssetTag() != null) asset.setAssetTag(assetJsonb.getAssetTag());
+        if (assetJsonb.getAssetName() != null) asset.setAssetName(assetJsonb.getAssetName());
+        asset.setAssetType(type);  // required
 
-        asset.setBrand(assetJsonb.getBrand());
-        asset.setModel(assetJsonb.getModel());
-        asset.setSerialNumber(assetJsonb.getSerialNumber());
-        asset.setVendor(assetJsonb.getVendor());
-        asset.setStatus(assetJsonb.getStatus());
-        asset.setAssetImage(finalImageString);
-        asset.setUpdatedAt(LocalDateTime.now());
+        if (assetJsonb.getBrand() != null) asset.setBrand(assetJsonb.getBrand());
+        if (assetJsonb.getModel() != null) asset.setModel(assetJsonb.getModel());
+        if (assetJsonb.getSerialNumber() != null) asset.setSerialNumber(assetJsonb.getSerialNumber());
+        if (assetJsonb.getVendor() != null) asset.setVendor(assetJsonb.getVendor());
+        if (assetJsonb.getStatus() != null) asset.setStatus(assetJsonb.getStatus());
 
+        // PurchaseCost
+        if (assetJsonb.getPurchaseCost() != null && !assetJsonb.getPurchaseCost().isBlank()) {
+            asset.setPurchaseCost(new BigDecimal(assetJsonb.getPurchaseCost()));
+        }
+
+        // Dates
         if (assetJsonb.getPurchaseDate() != null && !assetJsonb.getPurchaseDate().isBlank()) {
             asset.setPurchaseDate(LocalDate.parse(assetJsonb.getPurchaseDate()));
         }
@@ -282,6 +304,10 @@ public class AssetService implements AssetControl {
         if (assetJsonb.getWarrantyExpiry() != null && !assetJsonb.getWarrantyExpiry().isBlank()) {
             asset.setWarrantyExpiry(LocalDate.parse(assetJsonb.getWarrantyExpiry()));
         }
+
+        // Image string
+        asset.setAssetImage(finalImages.toString());
+        asset.setUpdatedAt(LocalDateTime.now());
 
         assetRepository.persist(asset);
         assetRepository.flush();
@@ -301,6 +327,7 @@ public class AssetService implements AssetControl {
                 )
         );
     }
+
 
 
 
