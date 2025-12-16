@@ -1,9 +1,6 @@
 package com.sbd.record.boundary;
 
-import com.sbd.common.Jsonb.AssetAssignJsonb;
-import com.sbd.common.Jsonb.AssetJsonb;
-import com.sbd.common.Jsonb.AssetListRequest;
-import com.sbd.common.Jsonb.AssetTypeJsonb;
+import com.sbd.common.Jsonb.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.response.ApiResponse;
@@ -47,14 +44,14 @@ public class AssetResource {
 
     @PATCH
     @Path("/update/{id}")
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response updateAsset(
             @PathParam("id") Integer assetId,
-            @BeanParam AssetJsonb assetJsonb) throws BusinessException {
-        ApiRequest<AssetJsonb> apiRequest = new ApiRequest<>();
-        apiRequest.setData(assetJsonb);
+            AssetDTO assetDTO) throws BusinessException {
+        ApiRequest<AssetDTO> apiRequest = new ApiRequest<>();
+        apiRequest.setData(assetDTO);
         String correlationId = UUID.randomUUID().toString();
         ApiResponse response = assetControl.updateAsset(assetId, correlationId, apiRequest);
         return Response.ok(response).build();
@@ -141,4 +138,24 @@ public class AssetResource {
         ApiResponse response = assetControl.getAllAssetTypes(correlationId,apiRequest);
         return Response.ok(response).build();
     }
+
+    @PATCH
+    @Path("/update-images/{assetId}")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public Response updateAssetImages(
+            @PathParam("assetId") Integer assetId,
+            @BeanParam AssetImagesJsonb assetImagesJsonb,
+            @Context HttpHeaders httpHeaders
+    ) throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+
+        ApiRequest<AssetImagesJsonb> apiRequest = new ApiRequest<>();
+        assetImagesJsonb.setAssetId(assetId);
+        apiRequest.setData(assetImagesJsonb);
+        ApiResponse response =
+                assetControl.updateAssetImages(correlationId, apiRequest);
+        return Response.ok(response).build();
+    }
+
 }
