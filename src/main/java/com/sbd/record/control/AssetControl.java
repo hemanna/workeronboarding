@@ -48,9 +48,9 @@ public interface AssetControl {
             ApiRequest<AssetListRequest> apiRequest)
             throws BusinessException;
 
-    ApiResponse updateAssetImages(
-            String correlationId,
-            ApiRequest<AssetImagesJsonb> apiRequest
-    ) throws BusinessException;
+//    ApiResponse updateAssetImages(
+//            String correlationId,
+//            ApiRequest<AssetImagesJsonb> apiRequest
+//    ) throws BusinessException;
 
 }

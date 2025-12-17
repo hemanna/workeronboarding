@@ -723,61 +723,61 @@ public class AssetService implements AssetControl {
         );
     }
 
-    @Override
-    public ApiResponse updateAssetImages(String correlationId, ApiRequest<AssetImagesJsonb> apiRequest)
-            throws BusinessException {
-
-        AssetImagesJsonb req = apiRequest.getData();
-
-        // Validate asset
-        Asset asset = assetRepository.findById(req.getAssetId());
-        if (asset == null) {
-            throw new BusinessException(404, correlationId, "Asset not found");
-        }
-
-        List<String> existing = new ArrayList<>();
-
-        try {
-            //  Parse existing images from JSON array in DB
-            if (asset.getAssetImage() != null && !asset.getAssetImage().isBlank()) {
-                existing = new ObjectMapper().readValue(
-                        asset.getAssetImage(),
-                        new TypeReference<List<String>>() {}
-                );
-            }
-
-            // Delete removed images
-            if (req.getRemovedImages() != null) {
-                for (String img : req.getRemovedImages()) {
-                    existing.remove(img);
-                    Files.deleteIfExists(Path.of(UPLOAD_DIR, img));
-                }
-            }
-
-            //  Upload new files
-            if (req.getFiles() != null) {
-                for (FileUpload file : req.getFiles()) {
-                    String newName = UUID.randomUUID() + "_" + file.fileName();
-                    Path target = Path.of(UPLOAD_DIR, newName);
-                    Files.copy(file.uploadedFile(), target, StandardCopyOption.REPLACE_EXISTING);
-                    existing.add(newName);
-                }
-            }
-
-            // Save updated list back to DB as JSON
-            asset.setAssetImage(new ObjectMapper().writeValueAsString(existing));
-            asset.setUpdatedAt(LocalDateTime.now());
-            assetRepository.persist(asset);
-
-        } catch (IOException e) {
-            throw new BusinessException(500, correlationId, "File processing failed: " + e.getMessage());
-        } catch (Exception e) {
-            throw new BusinessException(500, correlationId, "Unexpected error: " + e.getMessage());
-        }
-
-        // Success
-        return new ApiResponse(new Status(200, "SUCCESS", correlationId));
-    }
+//    @Override
+//    public ApiResponse updateAssetImages(String correlationId, ApiRequest<AssetImagesJsonb> apiRequest)
+//            throws BusinessException {
+//
+//        AssetImagesJsonb req = apiRequest.getData();
+//
+//        // Validate asset
+//        Asset asset = assetRepository.findById(req.getAssetId());
+//        if (asset == null) {
+//            throw new BusinessException(404, correlationId, "Asset not found");
+//        }
+//
+//        List<String> existing = new ArrayList<>();
+//
+//        try {
+//            //  Parse existing images from JSON array in DB
+//            if (asset.getAssetImage() != null && !asset.getAssetImage().isBlank()) {
+//                existing = new ObjectMapper().readValue(
+//                        asset.getAssetImage(),
+//                        new TypeReference<List<String>>() {}
+//                );
+//            }
+//
+//            // Delete removed images
+//            if (req.getRemovedImages() != null) {
+//                for (String img : req.getRemovedImages()) {
+//                    existing.remove(img);
+//                    Files.deleteIfExists(Path.of(UPLOAD_DIR, img));
+//                }
+//            }
+//
+//            //  Upload new files
+//            if (req.getFiles() != null) {
+//                for (FileUpload file : req.getFiles()) {
+//                    String newName = UUID.randomUUID() + "_" + file.fileName();
+//                    Path target = Path.of(UPLOAD_DIR, newName);
+//                    Files.copy(file.uploadedFile(), target, StandardCopyOption.REPLACE_EXISTING);
+//                    existing.add(newName);
+//                }
+//            }
+//
+//            // Save updated list back to DB as JSON
+//            asset.setAssetImage(new ObjectMapper().writeValueAsString(existing));
+//            asset.setUpdatedAt(LocalDateTime.now());
+//            assetRepository.persist(asset);
+//
+//        } catch (IOException e) {
+//            throw new BusinessException(500, correlationId, "File processing failed: " + e.getMessage());
+//        } catch (Exception e) {
+//            throw new BusinessException(500, correlationId, "Unexpected error: " + e.getMessage());
+//        }
+//
+//        // Success
+//        return new ApiResponse(new Status(200, "SUCCESS", correlationId));
+//    }
 }
 
 

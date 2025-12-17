@@ -139,23 +139,23 @@ public class AssetResource {
         return Response.ok(response).build();
     }
 
-    @PATCH
-    @Path("/update-images/{assetId}")
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response updateAssetImages(
-            @PathParam("assetId") Integer assetId,
-            @BeanParam AssetImagesJsonb assetImagesJsonb,
-            @Context HttpHeaders httpHeaders
-    ) throws BusinessException {
-
-        String correlationId = UUID.randomUUID().toString();
-
-        ApiRequest<AssetImagesJsonb> apiRequest = new ApiRequest<>();
-        assetImagesJsonb.setAssetId(assetId);
-        apiRequest.setData(assetImagesJsonb);
-        ApiResponse response =
-                assetControl.updateAssetImages(correlationId, apiRequest);
-        return Response.ok(response).build();
-    }
+//    @PATCH
+//    @Path("/update-images/{assetId}")
+//    @Consumes(MediaType.MULTIPART_FORM_DATA)
+//    public Response updateAssetImages(
+//            @PathParam("assetId") Integer assetId,
+//            @BeanParam AssetImagesJsonb assetImagesJsonb,
+//            @Context HttpHeaders httpHeaders
+//    ) throws BusinessException {
+//
+//        String correlationId = UUID.randomUUID().toString();
+//
+//        ApiRequest<AssetImagesJsonb> apiRequest = new ApiRequest<>();
+//        assetImagesJsonb.setAssetId(assetId);
+//        apiRequest.setData(assetImagesJsonb);
+//        ApiResponse response =
+//                assetControl.updateAssetImages(correlationId, apiRequest);
+//        return Response.ok(response).build();
+//    }
 
 }
