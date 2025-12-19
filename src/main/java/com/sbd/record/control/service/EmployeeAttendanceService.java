@@ -2,11 +2,16 @@ package com.sbd.record.control.service;
 
 import com.sbd.common.Jsonb.*;
 import com.sbd.common.entity.*;
+import com.sbd.common.enums.EmployeeAttendanceActionEnum;
+import com.sbd.common.enums.LogEnum;
+import com.sbd.common.enums.StatusCodeEnum;
+import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.EmployeeAttendanceMapper;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.*;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
+import com.sbd.common.request.Pagination;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.EmployeeAttendanceControl;
@@ -275,49 +280,128 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+
     @Override
     @Transactional
-    public ApiResponse fetchAllAttendance(String requestId) {
-        log.info("Start fetching all attendance records - RequestId: {}", requestId);
+    public ApiResponse fetchAllAttendance(
+            String correlationId,
+            ApiRequest<EmployeeAttendanceListRequest> apiRequest)
+            throws BusinessException {
 
-        // Fetch all attendance records
-        List<EmployeeAttendance> attendanceList = employeeAttendanceRepository.listAll();
+        log.info( LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.Attendance_LIST.getValue(),
+                LogEnum.LogMessage.STARTED.getValue());
+
+        Pagination pagination = apiRequest.getPagination();
+
+        List<EmployeeAttendance> attendanceList =
+                employeeAttendanceRepository.listAllAttendance(
+                        pagination.getPageIndex(),
+                        pagination.getPageSize()
+                );
+
         if (attendanceList == null || attendanceList.isEmpty()) {
-            log.warn("No attendance records found - RequestId: {}", requestId);
             return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "No attendance records found", requestId)
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    )
             );
         }
 
-        List<EmployeeAttendanceDTO> responseList = attendanceList.stream()
-                .map(att -> EmployeeAttendanceDTO.builder()
-                        .id(att.getId())
-                        .employeeId(att.getEmployee().getId())
-                        .departmentId(att.getEmployee().getDepartment().getId())
-                        .roleId(att.getEmployee().getRole().getId())
-                        .date(att.getDate())
-//                        .checkinTime(att.getCheckinTime())
-//                        .checkoutTime(att.getCheckoutTime())
-                        .workingHours(att.getWorkingHours())
-                        .overtime(att.getOvertime())
-                        .shiftDetails(att.getShiftDetails())
-                        .location(att.getLocation())
-                        .photo(att.getPhoto())
-                        .approvalStatus(att.getApprovalStatus())
-                        .status(att.getStatus())
-                        .leaveId(att.getLeave().getId())
-                        .build()
-                )
-                .collect(Collectors.toList());
+        List<EmployeeAttendanceDTO> responseList =
+                EmployeeAttendanceMapper.INSTANCE.toDTOList(attendanceList);
 
-        log.info("End fetching all attendance records - RequestId: {}", requestId);
+        log.info( LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.Attendance_LIST.getValue(),
+                LogEnum.LogMessage.ENDED.getValue() );
 
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Attendance records fetched successfully", requestId),
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
                 responseList
         );
     }
 
+//    @Override
+//    public ApiResponse listAssets(String correlationId, ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
+//
+//        log.info( LogEnum.ACTIVITY.getValue(),
+//                correlationId,
+//                AssetActionEnum.ASSET_LIST.getValue(),
+//                LogEnum.LogMessage.STARTED.getValue() );
+//
+//        // Validate the data
+//        AssetListRequest assetListRequest = apiRequest.getData();
+//        if (assetListRequest == null) {
+//            throw new BusinessException(
+//                    Response.Status.BAD_REQUEST.getStatusCode(),
+//                    correlationId,
+//                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+//            );
+//        }
+//
+//        // Validate pagination
+//        Pagination pagination = assetListRequest.getPagination();
+//        if (pagination == null) {
+//            throw new BusinessException(
+//                    Response.Status.BAD_REQUEST.getStatusCode(),
+//                    correlationId,
+//                    StatusCodeEnum.REQUIRED_FIELDS_MISSING.getValue()
+//            );
+//        }
+//
+//        String type = assetListRequest.getType();
+//
+//        // Fetch assets based on type filter
+//        List<Asset> assets;
+//        if (type != null && !type.equalsIgnoreCase("ALL")) {
+//
+//            assets = assetRepository.listByType(type, pagination.getPageIndex(), pagination.getPageSize());
+//
+//            // LIKE search
+//            if (assets.isEmpty()) {
+//                assets = assetRepository.listByTypeLike(type, pagination.getPageIndex(), pagination.getPageSize());
+//            }
+//
+//        } else {
+//            // Fetch all assets
+//            assets = assetRepository.listAllAssets(pagination.getPageIndex(), pagination.getPageSize());
+//        }
+//
+//        if (assets == null || assets.isEmpty()) {
+//            return new ApiResponse(
+//                    new Status(
+//                            Response.Status.NO_CONTENT.getStatusCode(),
+//                            StatusCodeEnum.NO_CONTENT.getValue(),
+//                            correlationId
+//                    )
+//            );
+//        }
+//
+//        // Convert to DTOs
+//        List<AssetDTO> assetDTOs = AssetMapper.INSTANCE.toDTOList(assets);
+//
+//        log.info( LogEnum.ACTIVITY.getValue(),
+//                correlationId,
+//                AssetActionEnum.ASSET_LIST.getValue(),
+//                LogEnum.LogMessage.ENDED.getValue() );
+//
+//        return new ApiResponse(
+//                new Status(
+//                        Response.Status.OK.getStatusCode(),
+//                        StatusCodeEnum.SUCCESS.getValue(),
+//                        correlationId
+//                ),
+//                assetDTOs
+//        );
+//    }
     @Override
     @Transactional
     public ApiResponse fetchAttendanceByDate(String date, String requestId) {

@@ -46,6 +46,17 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 .findFirst();
     }
 
+    public List<EmployeeAttendance> listAllAttendance(
+            int pageIndex, int pageSize) {
+
+        return find(QueryEnum.QUERY_LIST_ALL.getValue())
+                .page(pageIndex, pageSize)
+                .list();
+    }
+
+
+
+
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {
@@ -61,6 +72,10 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 "AND FUNCTION('YEAR', e.date) = FUNCTION('YEAR', CURRENT_DATE) " +
                 "AND FUNCTION('MONTH', e.date) = FUNCTION('MONTH', CURRENT_DATE) " +
                 "GROUP BY e.employee.id"),
+        QUERY_LIST_ALL(
+                "SELECT ea FROM EmployeeAttendance ea ORDER BY ea.date DESC"
+        ),
+
 
         EMPLOYEE_ID("employeeId");
 

@@ -1,14 +1,17 @@
 package com.sbd.record.boundary;
 
 import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
+import com.sbd.common.Jsonb.EmployeeAttendanceListRequest;
 import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
 import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
+import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.record.control.EmployeeAttendanceControl;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -54,10 +57,10 @@ public class EmployeeAttendanceResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/get_all_attendance")
-    public ApiResponse fetchAllAttendance() {
-        String requestId = UUID.randomUUID().toString();
-        log.info("request_id : {} | get all employee attendance", requestId);
-        return employeeAttendanceControl.fetchAllAttendance(requestId);
+    public Response fetchAllAttendance(ApiRequest<EmployeeAttendanceListRequest> apiRequest)  throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = employeeAttendanceControl.fetchAllAttendance(correlationId, apiRequest);
+        return Response.ok(response).build();
     }
 
 //        @POST
