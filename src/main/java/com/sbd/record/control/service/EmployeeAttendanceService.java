@@ -329,7 +329,9 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
-//    @Override
+
+
+    //    @Override
 //    public ApiResponse listAssets(String correlationId, ApiRequest<AssetListRequest> apiRequest) throws BusinessException {
 //
 //        log.info( LogEnum.ACTIVITY.getValue(),
@@ -897,6 +899,56 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         dtos);
     }
 
+    @Override
+    public ApiResponse fetchOvertimeAttendance(
+            String correlationId,
+            ApiRequest<EmployeeAttendanceListRequest> apiRequest)
+            throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.OVERTIME_LIST.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        Pagination pagination = apiRequest.getData().getPagination();
+
+        List<EmployeeAttendance> attendanceList =
+                employeeAttendanceRepository.listOvertimeForCurrentMonth(
+                        pagination.getPageIndex(),
+                        pagination.getPageSize()
+                );
+
+        if (attendanceList == null || attendanceList.isEmpty()) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    )
+            );
+        }
+
+        List<EmployeeAttendanceDTO> responseList =
+                EmployeeAttendanceMapper.INSTANCE.toDTOList(attendanceList);
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.OVERTIME_LIST.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                responseList
+        );
+
+    }
 
 }
 

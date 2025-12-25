@@ -220,4 +220,12 @@ public class EmployeeAttendanceResource {
         return employeeAttendanceControl.checkOut(employeeId, apiRequest, requestId);
     }
 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/get_overtime_attendance")
+    public Response fetchOvertimeAttendance(ApiRequest<EmployeeAttendanceListRequest> apiRequest)  throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        ApiResponse response = employeeAttendanceControl.fetchOvertimeAttendance(correlationId, apiRequest);
+        return Response.ok(response).build();
+    }
 }

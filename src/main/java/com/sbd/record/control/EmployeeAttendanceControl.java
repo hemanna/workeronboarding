@@ -16,6 +16,11 @@ public interface EmployeeAttendanceControl {
             ApiRequest<EmployeeAttendanceListRequest> apiRequest)
             throws BusinessException;
 
+    ApiResponse fetchOvertimeAttendance(
+            String correlationId,
+            ApiRequest<EmployeeAttendanceListRequest> apiRequest)
+            throws BusinessException;
+
     ApiResponse fetchAttendanceByDate(String date, String requestId);
     ApiResponse fetchAttendanceByMonth(String month, String requestId);
     ApiResponse fetchAttendancePending(String requestId);

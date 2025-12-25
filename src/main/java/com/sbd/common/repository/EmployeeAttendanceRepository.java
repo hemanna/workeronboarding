@@ -54,6 +54,14 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 .list();
     }
 
+    public List<EmployeeAttendance> listOvertimeForCurrentMonth(
+            int pageIndex,
+            int pageSize
+    ) {
+        return find(QueryEnum.QUERY_LIST_OVERTIME_CURRENT_MONTH.getValue())
+                .page(pageIndex, pageSize)
+                .list();
+    }
 
 
 
@@ -74,6 +82,14 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 "GROUP BY e.employee.id"),
         QUERY_LIST_ALL(
                 "SELECT ea FROM EmployeeAttendance ea ORDER BY ea.date DESC"
+        ),
+        QUERY_LIST_OVERTIME_CURRENT_MONTH(
+                "SELECT ea FROM EmployeeAttendance ea " +
+                        "WHERE ea.overtime IS NOT NULL " +
+                        "AND ea.overtime > 0 " +
+                        "AND FUNCTION('MONTH', ea.date) = FUNCTION('MONTH', CURRENT_DATE) " +
+                        "AND FUNCTION('YEAR', ea.date) = FUNCTION('YEAR', CURRENT_DATE) " +
+                        "ORDER BY ea.date DESC"
         ),
 
 
