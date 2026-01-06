@@ -1,12 +1,9 @@
 package com.sbd.record.boundary;
 
-import com.sbd.common.Jsonb.BankDetailsJsonb;
 import com.sbd.common.Jsonb.EmployeeSalaryStructureJsonb;
 import com.sbd.common.Jsonb.PayrollJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
-import com.sbd.common.request.EmployeeDTO;
-import com.sbd.common.request.EmployeeDetailsRequest;
 import com.sbd.common.response.ApiResponse;
 import com.sbd.common.response.Status;
 import com.sbd.record.control.SalaryStructureControl;
@@ -98,6 +95,16 @@ public class SalaryStructureResource {
         }
 
         return salaryStructureControl.updateApprovalStatus(employeeId, approvalStatus, requestId);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/salary/dashboard")
+    public ApiResponse getSalaryDashboard() throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        log.info("correlation_Id: {} | Fetching salary dashboard", correlationId);
+        return salaryStructureControl.fetchSalaryDashboard(correlationId);
     }
 
 }

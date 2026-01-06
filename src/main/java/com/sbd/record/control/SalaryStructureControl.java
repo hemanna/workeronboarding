@@ -24,4 +24,7 @@ public interface SalaryStructureControl {
             String approvalStatus,
             String requestId);
 
+    ApiResponse fetchSalaryDashboard(
+            String correlationId) throws BusinessException;
+
 }

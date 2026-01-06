@@ -2,6 +2,9 @@ package com.sbd.record.control.service;
 
 import com.sbd.common.Jsonb.*;
 import com.sbd.common.entity.*;
+import com.sbd.common.enums.LogEnum;
+import com.sbd.common.enums.SalaryActionEnum;
+import com.sbd.common.enums.StatusCodeEnum;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.EmployeeSalaryStructureMapper;
 import com.sbd.common.mapper.SalaryStructureMapper;
@@ -20,6 +23,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -471,6 +475,41 @@ public class SalaryStructureService implements SalaryStructureControl {
         log.info("End updating salary structure approval status - RequestId: {}, EmployeeId: {}, ApprovalStatus: {}", requestId, employeeId, approvalStatus);
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), approvalStatus + " updated", requestId)
+        );
+    }
+
+    @Override
+    public ApiResponse fetchSalaryDashboard(String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.SALARY_DASHBOARD.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        // Fetch aggregated salary data
+        Map<String, Object> rawData =
+                salaryStructureRepository.fetchSalaryDashboardSummary();
+
+        // Map result → DTO
+        SalaryDashboardDTO response =
+                SalaryStructureMapper.INSTANCE.toDTO(rawData);
+
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.SALARY_DASHBOARD.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                response
         );
     }
 
