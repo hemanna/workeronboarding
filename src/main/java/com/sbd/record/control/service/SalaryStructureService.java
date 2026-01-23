@@ -513,5 +513,42 @@ public class SalaryStructureService implements SalaryStructureControl {
         );
     }
 
+    @Override
+    public ApiResponse fetchSalaryReport(SalaryReportJsonb salaryReportJsonb, String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.SALARY_REPORT.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+        log.info("correlationId={} | Fetching Payroll Summary for month={} year={}",
+                correlationId, salaryReportJsonb.getMonth(), salaryReportJsonb.getYear());
+
+        Map<String, Object> rawData =
+                salaryStructureRepository.fetchPayrollSummary(
+                        salaryReportJsonb.getMonth(),
+                        salaryReportJsonb.getYear()
+                );
+
+        SalaryDashboardDTO response =
+                SalaryStructureMapper.INSTANCE.toDTO(rawData);
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.SALARY_REPORT.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                response
+        );
+
+    }
+
 
 }

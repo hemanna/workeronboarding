@@ -28,7 +28,36 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                 "employeeCount", r[3]
         );
     }
-        @Getter
+
+    public Map<String, Object> fetchPayrollSummary(Integer month, Integer year) {
+
+        String query;
+        Object[] r;
+
+        if (month != null) {
+            // Monthly summary
+            query = QueryEnum.MONTHLY_PAYROLL_SUMMARY.getValue();
+            r = (Object[]) em.createNativeQuery(query)
+                    .setParameter(1, month)
+                    .setParameter(2, year)
+                    .getSingleResult();
+        } else {
+            // Yearly summary
+            query = QueryEnum.YEARLY_PAYROLL_SUMMARY.getValue();
+            r = (Object[]) em.createNativeQuery(query)
+                    .setParameter(1, year)
+                    .getSingleResult();
+        }
+
+        return Map.of(
+                "totalGrossPay", r[0],
+                "totalDeduction", r[1],
+                "totalNetPay", r[2],
+                "employeeCount", r[3]
+        );
+    }
+
+    @Getter
         @AllArgsConstructor
         public enum QueryEnum {
 
@@ -41,9 +70,32 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                             "FROM employee_salary_structure " +
                             "WHERE salary_status = 'Active' " +
                             "AND approval_status = 'Approved'"
-            );
+            ),
+        MONTHLY_PAYROLL_SUMMARY(
+                "SELECT " +
+                        "IFNULL(SUM(gross_salary),0), " +
+                        "IFNULL(SUM(gross_salary - net_salary),0), " +
+                        "IFNULL(SUM(net_salary),0), " +
+                        "COUNT(DISTINCT employee_id) " +
+                        "FROM payroll " +
+                        "WHERE month = ?1 " +
+                        "AND year = ?2 " +
+                        "AND status = 'GENERATED'"
+        ),
 
-            private final String value;
+        YEARLY_PAYROLL_SUMMARY(
+                "SELECT " +
+                        "IFNULL(SUM(gross_salary),0), " +
+                        "IFNULL(SUM(gross_salary - net_salary),0), " +
+                        "IFNULL(SUM(net_salary),0), " +
+                        "COUNT(DISTINCT employee_id) " +
+                        "FROM payroll " +
+                        "WHERE year = ?1 " +
+                        "AND status = 'GENERATED'"
+        );
+
+
+        private final String value;
         }
 
     }

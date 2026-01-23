@@ -3,6 +3,7 @@ package com.sbd.record.control;
 import com.sbd.common.Jsonb.BankDetailsJsonb;
 import com.sbd.common.Jsonb.EmployeeSalaryStructureJsonb;
 import com.sbd.common.Jsonb.PayrollJsonb;
+import com.sbd.common.Jsonb.SalaryReportJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.response.ApiResponse;
@@ -25,6 +26,9 @@ public interface SalaryStructureControl {
             String requestId);
 
     ApiResponse fetchSalaryDashboard(
+            String correlationId) throws BusinessException;
+
+    ApiResponse fetchSalaryReport(SalaryReportJsonb salaryReportJsonb,
             String correlationId) throws BusinessException;
 
 }

@@ -2,6 +2,7 @@ package com.sbd.record.boundary;
 
 import com.sbd.common.Jsonb.EmployeeSalaryStructureJsonb;
 import com.sbd.common.Jsonb.PayrollJsonb;
+import com.sbd.common.Jsonb.SalaryReportJsonb;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.response.ApiResponse;
@@ -105,6 +106,16 @@ public class SalaryStructureResource {
         String correlationId = UUID.randomUUID().toString();
         log.info("correlation_Id: {} | Fetching salary dashboard", correlationId);
         return salaryStructureControl.fetchSalaryDashboard(correlationId);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/salary_report")
+    public ApiResponse getSalaryReport(SalaryReportJsonb salaryReportJsonb) throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        log.info("correlation_Id: {} | Fetching salary report", correlationId);
+        return salaryStructureControl.fetchSalaryReport(salaryReportJsonb,correlationId);
     }
 
 }
