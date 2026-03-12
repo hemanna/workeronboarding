@@ -118,4 +118,17 @@ public class SalaryStructureResource {
         return salaryStructureControl.fetchSalaryReport(salaryReportJsonb,correlationId);
     }
 
+    @POST
+    @Path("/deduction_report")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse getDeductionReport(SalaryReportJsonb salaryReportJsonb)
+            throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        log.info("correlation_Id: {} | Fetching deduction report", correlationId);
+        return salaryStructureControl.fetchDeductionReport(
+                salaryReportJsonb,
+                correlationId
+        );
+    }
 }

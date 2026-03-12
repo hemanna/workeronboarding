@@ -7,6 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum SalaryActionEnum {
     SALARY_REPORT("Salary report Detail"),
+    DEDUCTION_REPORT("Deduction report Detail"),
     SALARY_DASHBOARD("Salary Detail");
 
     private final String value;

@@ -22,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -539,6 +540,44 @@ public class SalaryStructureService implements SalaryStructureControl {
                 SalaryActionEnum.SALARY_REPORT.getValue(),
                 LogEnum.LogMessage.ENDED.getValue()
         );
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                response
+        );
+
+    }
+
+    @Override
+    public ApiResponse fetchDeductionReport(SalaryReportJsonb salaryReportJsonb, String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.DEDUCTION_REPORT.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+        List<Object[]> rows =
+                salaryStructureRepository.fetchDeductionReport(
+                        salaryReportJsonb.getMonth(),
+                        salaryReportJsonb.getYear()
+                );
+
+        List<DeductionReportDTO> response = new ArrayList<>();
+
+        for (Object[] r : rows) {
+            response.add(SalaryStructureMapper.INSTANCE.toDeductionDTO(r));
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.DEDUCTION_REPORT.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
         return new ApiResponse(
                 new Status(
                         Response.Status.OK.getStatusCode(),
