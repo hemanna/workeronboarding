@@ -122,13 +122,14 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                         "JOIN employee_salary_structure ess ON ess.id = esd.salary_structure_id " +
                         "JOIN employee_details ed ON ed.id = ess.employee_id " +
 
+                        "JOIN payroll p ON p.employee_id = ess.employee_id " +
+
                         "WHERE ess.salary_status='Active' " +
-                        "AND ess.month = ?1 " +
-                        "AND ess.year = ?2 " +
+                        "AND p.month = ?1 " +
+                        "AND p.year = ?2 " +
 
                         "GROUP BY ed.employee_name"
         );
-
 
         private final String value;
         }
