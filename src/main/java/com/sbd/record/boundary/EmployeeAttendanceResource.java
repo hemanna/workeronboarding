@@ -1,9 +1,6 @@
 package com.sbd.record.boundary;
 
-import com.sbd.common.Jsonb.EmployeeAttendanceDTO;
-import com.sbd.common.Jsonb.EmployeeAttendanceListRequest;
-import com.sbd.common.Jsonb.EmployeeAttendanceRegularizationJsonb;
-import com.sbd.common.Jsonb.EmployeeAttendanceSessionDTO;
+import com.sbd.common.Jsonb.*;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.request.ApiRequest;
 import com.sbd.common.request.EmployeeDTO;
@@ -228,4 +225,17 @@ public class EmployeeAttendanceResource {
         ApiResponse response = employeeAttendanceControl.fetchOvertimeAttendance(correlationId, apiRequest);
         return Response.ok(response).build();
     }
+
+    @PATCH
+    @Path("/lock_attendance")
+    public ApiResponse lockAttendance(
+            ApiRequest<AttendanceLockJsonb> request
+    ) throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+
+        return employeeAttendanceControl.lockAttendance(request, correlationId);
+    }
+
+
 }

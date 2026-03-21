@@ -33,4 +33,10 @@ public interface EmployeeAttendanceControl {
     ApiResponse fetchAllRegularizationAttendance(String requestId);
     ApiResponse checkIn(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId);
     ApiResponse checkOut(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId);
+
+    ApiResponse lockAttendance(
+            ApiRequest<AttendanceLockJsonb> apiRequest,
+            String correlationId
+    ) throws BusinessException;
+
 }

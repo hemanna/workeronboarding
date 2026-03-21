@@ -42,6 +42,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
     private EmployeeAttendanceRepository employeeAttendanceRepository;
 
     @Inject
+    private AttendanceLockRepository attendanceLockRepository;
+    @Inject
     private EmployeeDetailsRepository employeeDetailsRepository;
 
     @Inject
@@ -817,6 +819,74 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse lockAttendance(ApiRequest<AttendanceLockJsonb> apiRequest, String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.ATTENDANCE_LOCK.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        AttendanceLockJsonb request = apiRequest.getData();
+        Integer month = request.getMonth();
+        Integer year = request.getYear();
+
+        log.info("correlationId={} | Locking attendance for month={} year={}",
+                correlationId, month, year);
+
+        // Check attendance exists
+        Long attendanceCount = attendanceLockRepository.countAttendance(month, year);
+
+        if (attendanceCount == 0) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    ),
+                    "No attendance found for given month/year"
+            );
+        }
+
+        // Check already locked
+        Long lockedCount = attendanceLockRepository.countLocked(month, year);
+
+        if (lockedCount > 0) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.CONFLICT.getStatusCode(),
+                            "ALREADY_LOCKED",
+                            correlationId
+                    ),
+                    "Attendance already locked for this month/year"
+            );
+        }
+
+        // Insert lock
+        int lockedRows = attendanceLockRepository.insertLock(month, year);
+
+        // Update attendance status
+        int updatedRows = attendanceLockRepository.updateAttendanceStatus(month, year);
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.ATTENDANCE_LOCK.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                "Attendance Locked Successfully | Employees: " + lockedRows +
+                        " | Updated Records: " + updatedRows
+        );
+    }
 
     @Override
     @Transactional
@@ -949,6 +1019,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
 
     }
+
 
 }
 
