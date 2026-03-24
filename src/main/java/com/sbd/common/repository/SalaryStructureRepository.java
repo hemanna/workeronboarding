@@ -1,5 +1,6 @@
 package com.sbd.common.repository;
 
+import com.sbd.common.Jsonb.PayrollStatusJsonb;
 import com.sbd.common.entity.SalaryStructure;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -10,6 +11,7 @@ import lombok.Getter;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class SalaryStructureRepository implements PanacheRepository<SalaryStructure> {
@@ -64,6 +66,23 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                 .setParameter(2, year)
                 .getResultList();
     }
+
+    public List<PayrollStatusJsonb> fetchApprovedAttendanceStatus() {
+
+        List<Object[]> resultList = em
+                .createNativeQuery(QueryEnum.FETCH_APPROVED_STATUS.getValue())
+                .getResultList();
+
+        return resultList.stream()
+                .map(row -> new PayrollStatusJsonb(
+                        (String) row[0],  // month
+                        (String) row[1],  // attendance_status
+                        (String) row[2]   // payroll_status
+                ))
+                .collect(Collectors.toList());
+    }
+
+
     @Getter
         @AllArgsConstructor
         public enum QueryEnum {
@@ -129,6 +148,30 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                         "AND p.year = ?2 " +
 
                         "GROUP BY ed.employee_name"
+        ),
+
+        FETCH_APPROVED_STATUS(
+                "SELECT " +
+                        " DATE_FORMAT(a.date, '%b %Y') AS month, " +
+                        " 'Approved' AS attendance_status, " +
+                        " CASE " +
+                        "   WHEN COUNT(DISTINCT p.employee_id) = COUNT(DISTINCT a.employee_id) " +
+                        "   THEN 'Paid' " +
+                        "   ELSE 'Not Started' " +
+                        " END AS payroll_status " +
+                        "FROM employee_attendance a " +
+                        "LEFT JOIN attendance_lock al " +
+                        " ON al.employee_id = a.employee_id " +
+                        " AND al.month = MONTH(a.date) " +
+                        " AND al.year = YEAR(a.date) " +
+                        " AND al.locked = 1 " +
+                        "LEFT JOIN payroll p " +
+                        " ON p.employee_id = a.employee_id " +
+                        " AND p.month = MONTH(a.date) " +
+                        " AND p.year = YEAR(a.date) " +
+                        "GROUP BY YEAR(a.date), MONTH(a.date), DATE_FORMAT(a.date, '%b %Y') " +
+                        "HAVING COUNT(DISTINCT a.employee_id) = COUNT(DISTINCT al.employee_id) " +
+                        "ORDER BY YEAR(a.date) DESC, MONTH(a.date) DESC"
         );
 
         private final String value;

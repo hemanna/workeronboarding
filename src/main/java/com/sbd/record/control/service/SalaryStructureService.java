@@ -589,5 +589,43 @@ public class SalaryStructureService implements SalaryStructureControl {
 
     }
 
+    @Override
+    @Transactional
+    public ApiResponse fetchPayrollStatus(String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.APPROVED_ATTENDANCE.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
 
+        List<PayrollStatusJsonb> list =
+                salaryStructureRepository.fetchApprovedAttendanceStatus();
+
+        if (list == null || list.isEmpty()) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    )
+            );
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                SalaryActionEnum.APPROVED_ATTENDANCE.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                list
+        );
+    }
 }

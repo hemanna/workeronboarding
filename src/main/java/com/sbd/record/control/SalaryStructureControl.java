@@ -34,4 +34,6 @@ public interface SalaryStructureControl {
     ApiResponse fetchDeductionReport(SalaryReportJsonb salaryReportJsonb,
                                   String correlationId) throws BusinessException;
 
+    ApiResponse fetchPayrollStatus(
+            String correlationId) throws BusinessException;
 }
