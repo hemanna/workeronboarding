@@ -14,6 +14,7 @@ import java.util.List;
 public class EmployeeAttendanceDTO {
     private Integer id;
     private Integer employeeId;
+    private String employeeName;
     private Integer departmentId;
     private Integer roleId;
     private LocalDate date;

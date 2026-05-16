@@ -17,6 +17,7 @@ public interface EmployeeAttendanceMapper {
     EmployeeAttendanceMapper INSTANCE = Mappers.getMapper(EmployeeAttendanceMapper.class);
 
     @Mapping(target = "employeeId", source = "employee.id")
+    @Mapping(target = "employeeName", source = "employee.employeeName")
     @Mapping(target = "departmentId", source = "employee.department.id")
     @Mapping(target = "roleId", source = "employee.role.id")
     @Mapping(target = "leaveId", source = "leave.id")
