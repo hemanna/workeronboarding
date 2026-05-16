@@ -13,6 +13,9 @@ public class LeaveDTO {
     private Integer id;
     private Integer employeeId;
     private Integer leaveTypeId;
+    private String employeeName;
+    private String departmentName;
+    private String leaveType;
     private LocalDate startDate;
     private LocalDate endDate;
     private Integer departmentId;

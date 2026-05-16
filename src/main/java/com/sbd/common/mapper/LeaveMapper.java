@@ -19,15 +19,24 @@ public interface LeaveMapper {
     LeaveMapper INSTANCE = Mappers.getMapper(LeaveMapper.class);
 
     @Mapping(target = "employeeId", source = "employee.id")
+    @Mapping(target = "employeeName", source = "employee.employeeName")
+
     @Mapping(target = "leaveTypeId", source = "leaveType.id")
+    @Mapping(target = "leaveType", source = "leaveType.type")
+
     @Mapping(target = "departmentId", source = "department.id")
+    @Mapping(target = "departmentName", source = "department.name")
+
     @Mapping(target = "attachment", source = "attachment", qualifiedByName = "mapToBase64")
     LeaveDTO toDTO(Leave leave);
 
     @Mapping(target = "attachment", ignore = true)
+    @Mapping(target = "employee", ignore = true)
+    @Mapping(target = "leaveType", ignore = true)
+    @Mapping(target = "department", ignore = true)
     Leave toEntity(LeaveDTO leaveDTO);
 
-    //  New Method: Convert List of Leave to List of LeaveDTO
+    //Convert List of Leave to List of LeaveDTO
     default List<LeaveDTO> toDTOList(List<Leave> leaves) {
         return leaves.stream().map(this::toDTO).collect(Collectors.toList());
     }
