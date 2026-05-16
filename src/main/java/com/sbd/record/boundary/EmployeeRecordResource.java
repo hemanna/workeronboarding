@@ -119,4 +119,14 @@ public class EmployeeRecordResource {
 
         return employeeRecordControl.skillcountEmployee(requestId, apiRequest);
     }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/employee_dashboard")
+    public ApiResponse getEmployeeDashboard() throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        log.info("correlation_Id: {} | Fetching employee dashboard", correlationId);
+        return employeeRecordControl.fetchEmployeeDashboard(correlationId);
+    }
 }

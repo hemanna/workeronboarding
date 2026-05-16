@@ -1,7 +1,11 @@
 package com.sbd.record.control.service;
 
+import com.sbd.common.Jsonb.EmployeeDashboardDTO;
 import com.sbd.common.Jsonb.SkillCountDTO;
 import com.sbd.common.entity.*;
+import com.sbd.common.enums.EmployeeActionEnum;
+import com.sbd.common.enums.LogEnum;
+import com.sbd.common.enums.StatusCodeEnum;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.EmployeeDetailsMapper;
 import com.sbd.common.repository.*;
@@ -493,6 +497,40 @@ public class EmployeeRecordService implements EmployeeRecordControl {
         return new ApiResponse(
                 new Status(Response.Status.OK.getStatusCode(), "Skill wise employee count fetched successfully", requestId),
                 skillCounts
+        );
+    }
+
+    @Override
+    public ApiResponse fetchEmployeeDashboard(String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeActionEnum.EMPLOYEE_DASHBOARD.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        // FETCH DASHBOARD DATA
+        Map<String, Object> rawData =
+                employeeDetailsRepository.fetchEmployeeDashboard();
+
+        // RESPONSE DTO
+        EmployeeDashboardDTO response =
+                EmployeeDetailsMapper.INSTANCE.toDashboardDTO(rawData);
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeActionEnum.EMPLOYEE_DASHBOARD.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                response
         );
     }
 

@@ -41,4 +41,7 @@ ApiResponse fetchAllEmployee(
             String requestId ,
             ApiRequest<EmployeeDetailsRequest> apiRequest)
             throws BusinessException;
+
+    ApiResponse fetchEmployeeDashboard(
+            String correlationId) throws BusinessException;
 }

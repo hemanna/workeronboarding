@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -59,6 +60,21 @@ public List<EmployeeDetails> listAll(Pagination pagination) {
         return delete("id", employeeId) > 0;
     }
 
+    // EMPLOYEE DASHBOARD
+    public Map<String, Object> fetchEmployeeDashboard() {
+
+        Object[] r = (Object[]) em.createNativeQuery(
+                QueryEnum.EMPLOYEE_DASHBOARD.getValue()
+        ).getSingleResult();
+
+        return Map.of(
+                "totalEmployees", r[0],
+                "approvedEmployees", r[1],
+                "activeEmployees", r[2],
+                "inactiveEmployees", r[3]
+        );
+    }
+
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {
@@ -69,7 +85,28 @@ public List<EmployeeDetails> listAll(Pagination pagination) {
                 "JOIN employee_skills es ON s.id = es.skill_id " +
                 "GROUP BY s.id, s.skill_name"),
         EMPLOYEE_ID("employeeId"),
-        EMPLOYEE_NAME("employeeName");
+        EMPLOYEE_NAME("employeeName"),
+        EMPLOYEE_DASHBOARD(
+
+                "SELECT " +
+
+                        "COUNT(*) AS total_employees, " +
+
+                        "SUM(CASE " +
+                        "WHEN approval_status = 'Approved' " +
+                        "THEN 1 ELSE 0 END) AS approved_employees, " +
+
+                        "SUM(CASE " +
+                        "WHEN status = 'Active' " +
+                        "THEN 1 ELSE 0 END) AS active_employees, " +
+
+                        "SUM(CASE " +
+                        "WHEN approval_status != 'Approved' " +
+                        "OR status != 'Active' " +
+                        "THEN 1 ELSE 0 END) AS inactive_employees " +
+
+                        "FROM employee_details"
+        );
 
         private final String value;
     }

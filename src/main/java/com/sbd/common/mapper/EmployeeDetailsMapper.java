@@ -1,5 +1,6 @@
 package com.sbd.common.mapper;
 
+import com.sbd.common.Jsonb.EmployeeDashboardDTO;
 import com.sbd.common.entity.EmployeeDetails;
 import com.sbd.common.entity.EmployeeSkills;
 import com.sbd.common.entity.Leave;
@@ -12,6 +13,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.Base64;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
@@ -51,6 +53,23 @@ public interface EmployeeDetailsMapper {
                     dto.setId(empSkill.getSkill().getId());
                     return dto;
                 }).collect(Collectors.toList());
+    }
+
+    // DASHBOARD DTO
+    default EmployeeDashboardDTO toDashboardDTO(
+            Map<String, Object> map
+    ) {
+
+        return new EmployeeDashboardDTO(
+
+                ((Number) map.get("totalEmployees")).longValue(),
+
+                ((Number) map.get("approvedEmployees")).longValue(),
+
+                ((Number) map.get("activeEmployees")).longValue(),
+
+                ((Number) map.get("inactiveEmployees")).longValue()
+        );
     }
 
 }
