@@ -129,7 +129,7 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                         "SUM(CASE WHEN sc.component_code = 'PT' THEN esd.amount ELSE 0 END) AS pt, " +
                         "SUM(CASE WHEN sc.component_code = 'LOP' THEN esd.amount ELSE 0 END) AS lop, " +
 
-                        "0 AS advance, " +
+                        "CAST(0 AS DECIMAL(10,2)) AS advance, " +
 
                         "SUM(CASE WHEN sc.component_code NOT IN ('PF','ESI','PT','LOP') THEN esd.amount ELSE 0 END) AS other, " +
 
