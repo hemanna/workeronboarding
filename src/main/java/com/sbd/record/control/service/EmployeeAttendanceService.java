@@ -728,7 +728,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
-        // 2. Find or create today's attendance
+        //Find or create today's attendance
         LocalDate today = LocalDate.now();
         EmployeeAttendance attendance = employeeAttendanceRepository.findByEmployeeAndDate(employeeId, today);
 
@@ -741,7 +741,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             attendance.setStatus("Present");
             attendance.setApprovalStatus("Pending");
             attendance.setShiftDetails("General");
-            attendance.setLocation("Unknown"); // required field
+            attendance.setLocation("Unknown");
             employeeAttendanceRepository.persist(attendance);
         }
 
@@ -769,7 +769,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
         EmployeeAttendanceSessionDTO sessionDTO = apiRequest.getData();
 
-        // 1. Validate employee
+        //Validate employee
         EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
         if (employee == null) {
             return new ApiResponse(
@@ -778,7 +778,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
-        // 2. Find today's attendance
+        //Find today's attendance
         LocalDate today = LocalDate.now();
         EmployeeAttendance attendance =
                 employeeAttendanceRepository.findByEmployeeAndDate(employeeId, today);
@@ -790,7 +790,7 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
-        // 3. Find the last session where checkOut IS NULL → current active session
+        // Find the last session where checkOut IS NULL → current active session
         EmployeeAttendanceSession session = attendance.getSessions()
                 .stream()
                 .filter(s -> s.getCheckOut() == null)
@@ -804,11 +804,29 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
-        // 4. Set checkout time
+        // Set checkout time
         session.setCheckOut(
                 sessionDTO.getCheckOut() != null
                         ? sessionDTO.getCheckOut()
                         : LocalTime.now()
+        );
+
+        // CALCULATE TOTAL WORKING HOURS
+        Double totalHours =
+                employeeAttendanceRepository.calculateWorkingHours(
+                        attendance.getId()
+                );
+
+        // UPDATE employee_attendance TABLE
+        employeeAttendanceRepository.updateWorkingHours(
+                attendance.getId(),
+                totalHours
+        );
+
+        log.info(
+                "Working hours updated: {} | attendanceId: {}",
+                totalHours,
+                attendance.getId()
         );
 
         log.info("End Check-Out - RequestId: {}", requestId);

@@ -4,9 +4,12 @@ import com.sbd.common.entity.EmployeeAttendance;
 import com.sbd.common.entity.EmployeeDetails;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -15,12 +18,55 @@ import java.util.Optional;
 @ApplicationScoped
 public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeAttendance> {
 
+    @Inject
+    EntityManager em;
+
+
     public EmployeeAttendance findById(Integer employeeId) {
         return find("id", employeeId).firstResult();
     }
 
     public EmployeeAttendance findByEmployeeAndDate(int employeeId, LocalDate date) {
         return find("employee.id = ?1 and date = ?2", employeeId, date).firstResult();
+    }
+
+    public EmployeeAttendance findByEmployeeAndDate(
+            Integer employeeId,
+            LocalDate date
+    ) {
+
+        return find(
+                QueryEnum.FIND_BY_EMPLOYEE_AND_DATE.getValue(),
+                employeeId,
+                date
+        ).firstResult();
+    }
+
+    // CALCULATE TOTAL WORKING HOURS
+    public Double calculateWorkingHours(Integer attendanceId) {
+
+        Object result = em.createNativeQuery(
+                        QueryEnum.CALCULATE_WORKING_HOURS.getValue()
+                )
+                .setParameter(1, attendanceId)
+                .getSingleResult();
+
+        return result != null
+                ? ((Number) result).doubleValue()
+                : 0.0;
+    }
+
+    // UPDATE employee_attendance TABLE
+    public int updateWorkingHours(
+            Integer attendanceId,
+            Double hours
+    ) {
+
+        return update(
+                QueryEnum.UPDATE_WORKING_HOURS.getValue(),
+                BigDecimal.valueOf(hours),
+                attendanceId
+        );
     }
 
     // find all attendance by date
@@ -91,7 +137,22 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                         "AND FUNCTION('YEAR', ea.date) = FUNCTION('YEAR', CURRENT_DATE) " +
                         "ORDER BY ea.date DESC"
         ),
+        FIND_BY_EMPLOYEE_AND_DATE(
+                "employee.id = ?1 and date = ?2"
+        ),
 
+        CALCULATE_WORKING_HOURS(
+                "SELECT " +
+                        "IFNULL(SUM(TIMESTAMPDIFF(MINUTE, check_in, check_out)),0) / 60 " +
+                        "FROM employee_attendance_sessions " +
+                        "WHERE attendance_id = ?1 " +
+                        "AND check_in IS NOT NULL " +
+                        "AND check_out IS NOT NULL"
+        ),
+
+        UPDATE_WORKING_HOURS(
+                "workingHours = ?1 where id = ?2"
+        ),
 
         EMPLOYEE_ID("employeeId");
 
