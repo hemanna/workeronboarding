@@ -969,7 +969,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             EmployeeAttendanceRegularizationResponseDto dto = new EmployeeAttendanceRegularizationResponseDto();
             dto.setId(reg.getId());
             dto.setAttendanceId(reg.getAttendance().getId());
-            dto.setEmployeeId(reg.getEmployee().getId()); // Only ID
+            dto.setEmployeeId(reg.getEmployee().getId());
+            dto.setEmployeeName(reg.getEmployee().getEmployeeName());
             dto.setStatus(reg.getStatus());
             dto.setDate(reg.getDate());
             dto.setCurrentStatus(reg.getCurrentStatus());

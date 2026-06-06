@@ -24,5 +24,6 @@ public class EmployeeAttendanceRegularizationResponseDto {
     private LocalTime newCheckout;
     private String newLocation;
     private String reason;
+    private String employeeName;
 
 }
