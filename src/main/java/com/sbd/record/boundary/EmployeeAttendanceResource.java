@@ -237,5 +237,21 @@ public class EmployeeAttendanceResource {
         return employeeAttendanceControl.lockAttendance(request, correlationId);
     }
 
+    @POST
+    @Path("/submit_attendance")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse submitAttendance(
+            ApiRequest<AttendanceSubmitJsonb> apiRequest)
+            throws BusinessException {
+
+        String correlationId =
+                UUID.randomUUID().toString();
+
+        return employeeAttendanceControl.submitAttendance(
+                apiRequest,
+                correlationId
+        );
+    }
 
 }

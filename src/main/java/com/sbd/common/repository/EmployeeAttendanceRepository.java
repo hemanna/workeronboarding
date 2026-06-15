@@ -109,6 +109,9 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 .list();
     }
 
+    public void saveAttendance(EmployeeAttendance attendance) {
+        persist(attendance);
+    }
 
 
     @Getter

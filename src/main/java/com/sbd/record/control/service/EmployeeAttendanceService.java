@@ -908,6 +908,121 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
     @Override
     @Transactional
+    public ApiResponse submitAttendance(
+            ApiRequest<AttendanceSubmitJsonb> apiRequest,
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.SUBMIT_ATTENDANCE.getValue(),
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        AttendanceSubmitJsonb request =
+                apiRequest.getData();
+
+        if (request == null ||
+                request.getAttendances() == null ||
+                request.getAttendances().isEmpty()) {
+
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    ),
+                    "No attendance data found"
+            );
+        }
+
+        LocalDate attendanceDate = LocalDate.now();
+
+        int savedCount = 0;
+
+        for (AttendanceMarkingJsonb item :
+                request.getAttendances()) {
+
+            EmployeeAttendance existing =
+                    employeeAttendanceRepository.findByEmployeeAndDate(
+                            item.getEmployeeId(),
+                            attendanceDate
+                    );
+
+            if (existing != null) {
+                continue;
+            }
+
+            EmployeeDetails employee =
+                    employeeDetailsRepository.findById(
+                            item.getEmployeeId()
+                    );
+
+            if (employee == null) {
+                continue;
+            }
+
+            EmployeeAttendance attendance =
+                    new EmployeeAttendance();
+
+            attendance.setEmployee(employee);
+
+            attendance.setDepartment(
+                    employee.getDepartment()
+            );
+
+            attendance.setRole(
+                    employee.getRole()
+            );
+
+            attendance.setDate(
+                    attendanceDate
+            );
+
+            attendance.setStatus(
+                    item.getStatus()
+            );
+
+            attendance.setApprovalStatus(
+                    "PENDING"
+            );
+
+            attendance.setShiftDetails(
+                    "GENERAL"
+            );
+
+            attendance.setLocation(
+                    "OFFICE"
+            );
+
+            employeeAttendanceRepository.saveAttendance(
+                    attendance
+            );
+
+            savedCount++;
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                EmployeeAttendanceActionEnum.SUBMIT_ATTENDANCE.getValue(),
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                "Attendance Submitted Successfully. Records Saved : "
+                        + savedCount
+        );
+    }
+
+    @Override
+    @Transactional
     public ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId) {
         log.info("Start updating regularization status - RequestId: {}, RegularizationId: {}, NewStatus: {}",
                 requestId, regularizationId, newStatus);
