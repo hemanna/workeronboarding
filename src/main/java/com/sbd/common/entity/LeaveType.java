@@ -1,5 +1,6 @@
 package com.sbd.common.entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,8 +30,10 @@ public class LeaveType {
     private Boolean isCarryForwardAllowed;
 
     @OneToMany(mappedBy = "leaveType")
+    @JsonbTransient
     private Set<Leave> leaves;
 
     @OneToMany(mappedBy = "leaveType")
+    @JsonbTransient
     private Set<LeaveBalance> leaveBalances;
 }
