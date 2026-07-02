@@ -35,6 +35,10 @@ public interface LeaveControl {
     ApiResponse fetchLeaveStatusDistribution(
             String correlationId
     ) throws BusinessException;
+
+    ApiResponse fetchLast10DaysLeaveTrend(
+            String correlationId)
+            throws BusinessException;
 }
 
 

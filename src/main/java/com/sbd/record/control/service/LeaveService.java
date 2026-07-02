@@ -533,4 +533,58 @@ public class LeaveService implements LeaveControl {
                 response
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchLast10DaysLeaveTrend(
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "LAST 10 DAYS LEAVE TREND",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        List<LeaveTrendJsonb> trendList =
+                leaveRepository.fetchLast10DaysLeaveTrend();
+
+        if (trendList == null || trendList.isEmpty()) {
+
+            return new ApiResponse(
+
+                    new Status(
+
+                            Response.Status.NO_CONTENT.getStatusCode(),
+
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+
+                            correlationId
+                    )
+            );
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "LAST 10 DAYS LEAVE TREND",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                trendList
+        );
+
+    }
 }

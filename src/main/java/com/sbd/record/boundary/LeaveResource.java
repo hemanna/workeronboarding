@@ -183,4 +183,22 @@ public class LeaveResource {
                 correlationId
         );
     }
+
+    @GET
+    @Path("/dashboard/leave_trend")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchLast10DaysLeaveTrend()
+            throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+
+        log.info(
+                "RequestId : {} | Fetch Last 10 Days Leave Trend",
+                correlationId
+        );
+
+        return leaveControl.fetchLast10DaysLeaveTrend(
+                correlationId
+        );
+    }
 }

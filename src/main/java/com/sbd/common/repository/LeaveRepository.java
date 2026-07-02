@@ -3,6 +3,7 @@ package com.sbd.common.repository;
 import com.sbd.common.Jsonb.LeaveDTO;
 import com.sbd.common.Jsonb.LeaveStatusDistributionJsonb;
 import com.sbd.common.Jsonb.LeaveSummaryJsonb;
+import com.sbd.common.Jsonb.LeaveTrendJsonb;
 import com.sbd.common.entity.Leave;
 import com.sbd.common.mapper.LeaveMapper;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -101,6 +102,24 @@ public class LeaveRepository implements PanacheRepository<Leave> {
         return response;
     }
 
+    public List<LeaveTrendJsonb> fetchLast10DaysLeaveTrend() {
+
+        List<Object[]> rows =
+                em.createNativeQuery(
+                        LeaveQueryEnum.GET_LAST_10_DAYS_TREND.getValue()
+                ).getResultList();
+
+        return rows.stream()
+                .map(row -> new LeaveTrendJsonb(
+
+                        row[0].toString(),
+
+                        ((Number) row[1]).longValue()
+
+                ))
+                .collect(Collectors.toList());
+    }
+
     @Getter
     @AllArgsConstructor
     private enum LeaveQueryEnum {
@@ -141,6 +160,23 @@ public class LeaveRepository implements PanacheRepository<Leave> {
                         "ON l.leave_type_id = lt.id " +
                         "GROUP BY lt.type " +
                         "ORDER BY COUNT(l.id) DESC"
+
+        ),
+        GET_LAST_10_DAYS_TREND(
+
+                "SELECT " +
+
+                        "DATE(applied_date) AS leaveDate, " +
+
+                        "COUNT(*) AS total " +
+
+                        "FROM leave_requests " +
+
+                        "WHERE applied_date >= DATE_SUB(CURDATE(), INTERVAL 9 DAY) " +
+
+                        "GROUP BY DATE(applied_date) " +
+
+                        "ORDER BY leaveDate"
 
         ),
 
