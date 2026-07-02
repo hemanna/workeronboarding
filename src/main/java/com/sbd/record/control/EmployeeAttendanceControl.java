@@ -43,4 +43,8 @@ public interface EmployeeAttendanceControl {
             ApiRequest<AttendanceSubmitJsonb> apiRequest,
             String correlationId)
             throws BusinessException;
+
+    ApiResponse fetchAttendanceSummary(
+            String correlationId)
+            throws BusinessException;
 }

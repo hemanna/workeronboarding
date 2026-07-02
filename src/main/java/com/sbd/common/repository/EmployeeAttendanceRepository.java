@@ -113,6 +113,51 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
         persist(attendance);
     }
 
+    public Long getPresentToday(LocalDate date) {
+
+        return count(
+                QueryEnum.GET_PRESENT_TODAY.getValue(),
+                date
+        );
+    }
+
+    public Long getAbsentToday(LocalDate date) {
+
+        return count(
+                QueryEnum.GET_ABSENT_TODAY.getValue(),
+                date
+        );
+    }
+
+    public Long getTimeShortage(LocalDate date) {
+
+        return count(
+                QueryEnum.GET_TIME_SHORTAGE.getValue(),
+                date
+        );
+    }
+
+    public Double getAttendancePercentage(LocalDate date) {
+
+        Object result = getEntityManager()
+                .createQuery(
+                        QueryEnum.GET_ATTENDANCE_PERCENTAGE.getValue()
+                )
+                .setParameter(1, date)
+                .getSingleResult();
+
+        return result == null ? 0.0 : ((Number) result).doubleValue();
+    }
+
+    public Long getLateArrivals(LocalDate date) {
+
+        Object result = em.createNativeQuery(
+                        QueryEnum.GET_LATE_ARRIVALS.getValue())
+                .setParameter(1, date)
+                .getSingleResult();
+
+        return result == null ? 0L : ((Number) result).longValue();
+    }
 
     @Getter
     @AllArgsConstructor
@@ -155,6 +200,34 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
 
         UPDATE_WORKING_HOURS(
                 "workingHours = ?1 where id = ?2"
+        ),
+        GET_PRESENT_TODAY(
+                "date=?1 AND status='PRESENT'"
+        ),
+
+        GET_ABSENT_TODAY(
+                "date=?1 AND status='ABSENT'"
+        ),
+
+        GET_TIME_SHORTAGE(
+                "date=?1 AND workingHours < 8"
+        ),
+
+        GET_ATTENDANCE_PERCENTAGE(
+
+                "SELECT " +
+                        "(SUM(CASE WHEN e.status='PRESENT' THEN 1 ELSE 0 END)*100.0)/COUNT(e) " +
+                        "FROM EmployeeAttendance e " +
+                        "WHERE e.date=?1"
+
+        ),
+
+        GET_LATE_ARRIVALS(
+                "SELECT COUNT(*) " +
+                        "FROM employee_attendance_sessions s " +
+                        "JOIN employee_attendance a ON s.attendance_id = a.id " +
+                        "WHERE a.date = ?1 " +
+                        "AND s.check_in > '09:30:00'"
         ),
 
         EMPLOYEE_ID("employeeId");

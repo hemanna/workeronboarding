@@ -1023,6 +1023,71 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
     @Override
     @Transactional
+    public ApiResponse fetchAttendanceSummary(
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "ATTENDANCE SUMMARY",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        LocalDate today = LocalDate.now();
+
+        AttendanceSummaryJsonb response =
+                new AttendanceSummaryJsonb();
+
+        response.setPresentToday(
+                employeeAttendanceRepository
+                        .getPresentToday(today)
+        );
+
+        response.setAbsentToday(
+                employeeAttendanceRepository
+                        .getAbsentToday(today)
+        );
+
+        response.setLateArrivals(
+                employeeAttendanceRepository
+                        .getLateArrivals(today)
+        );
+
+        response.setTimeShortage(
+                employeeAttendanceRepository
+                        .getTimeShortage(today)
+        );
+
+        response.setAttendancePercentage(
+                employeeAttendanceRepository
+                        .getAttendancePercentage(today)
+        );
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "ATTENDANCE SUMMARY",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                response
+        );
+    }
+
+    @Override
+    @Transactional
     public ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId) {
         log.info("Start updating regularization status - RequestId: {}, RegularizationId: {}, NewStatus: {}",
                 requestId, regularizationId, newStatus);
