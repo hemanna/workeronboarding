@@ -1,7 +1,6 @@
 package com.sbd.common.repository;
 
 import com.sbd.common.entity.EmployeeAttendance;
-import com.sbd.common.entity.EmployeeDetails;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -159,6 +158,18 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
         return result == null ? 0L : ((Number) result).longValue();
     }
 
+    public List<Object[]> fetchMonthlyAttendanceTrend(
+            Integer year,
+            Integer month
+    ) {
+
+        return em.createNativeQuery(
+                        QueryEnum.MONTHLY_ATTENDANCE_TREND.getValue()
+                )
+                .setParameter(1, year)
+                .setParameter(2, month)
+                .getResultList();
+    }
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {
@@ -228,6 +239,20 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                         "JOIN employee_attendance a ON s.attendance_id = a.id " +
                         "WHERE a.date = ?1 " +
                         "AND s.check_in > '09:30:00'"
+        ),
+        MONTHLY_ATTENDANCE_TREND(
+
+                "SELECT " +
+                        "DAY(date) day, " +
+                        "ROUND( " +
+                        "(SUM(CASE WHEN status='PRESENT' THEN 1 ELSE 0 END) *100.0) / COUNT(*),2 " +
+                        ") attendancePercentage " +
+                        "FROM employee_attendance " +
+                        "WHERE YEAR(date)=?1 " +
+                        "AND MONTH(date)=?2 " +
+                        "GROUP BY DAY(date) " +
+                        "ORDER BY DAY(date)"
+
         ),
 
         EMPLOYEE_ID("employeeId");

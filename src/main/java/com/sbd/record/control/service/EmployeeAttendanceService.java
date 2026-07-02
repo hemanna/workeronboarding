@@ -26,6 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -1083,6 +1084,77 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                 ),
 
                 response
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchMonthlyAttendanceTrend(
+            ApiRequest<AttendanceTrendRequestJsonb> apiRequest,
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "MONTHLY ATTENDANCE TREND",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        AttendanceTrendRequestJsonb request =
+                apiRequest.getData();
+
+        List<Object[]> result =
+                employeeAttendanceRepository
+                        .fetchMonthlyAttendanceTrend(
+                                request.getYear(),
+                                request.getMonth()
+                        );
+
+        if (result == null || result.isEmpty()) {
+
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.NO_CONTENT.getStatusCode(),
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+                            correlationId
+                    )
+            );
+        }
+
+        List<AttendanceTrendJsonb> trendList =
+                new ArrayList<>();
+
+        for (Object[] row : result) {
+
+            AttendanceTrendJsonb trend =
+                    new AttendanceTrendJsonb();
+
+            trend.setDay(
+                    ((Number) row[0]).intValue()
+            );
+
+            trend.setAttendancePercentage(
+                    ((Number) row[1]).doubleValue()
+            );
+
+            trendList.add(trend);
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "MONTHLY ATTENDANCE TREND",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                trendList
         );
     }
 

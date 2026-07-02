@@ -269,4 +269,21 @@ public class EmployeeAttendanceResource {
                 );
     }
 
+    @POST
+    @Path("/monthly_attendance_trend")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchMonthlyAttendanceTrend(
+            ApiRequest<AttendanceTrendRequestJsonb> apiRequest)
+            throws BusinessException {
+
+        String correlationId =
+                UUID.randomUUID().toString();
+
+        return employeeAttendanceControl
+                .fetchMonthlyAttendanceTrend(
+                        apiRequest,
+                        correlationId
+                );
+    }
 }

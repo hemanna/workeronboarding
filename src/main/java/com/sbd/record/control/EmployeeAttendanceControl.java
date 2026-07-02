@@ -47,4 +47,9 @@ public interface EmployeeAttendanceControl {
     ApiResponse fetchAttendanceSummary(
             String correlationId)
             throws BusinessException;
+
+    ApiResponse fetchMonthlyAttendanceTrend(
+            ApiRequest<AttendanceTrendRequestJsonb> apiRequest,
+            String correlationId)
+            throws BusinessException;
 }
