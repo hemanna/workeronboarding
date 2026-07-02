@@ -1,9 +1,6 @@
 package com.sbd.record.control.service;
 
-import com.sbd.common.Jsonb.CompanyHolidayJsonb;
-import com.sbd.common.Jsonb.LeaveBalanceJsonb;
-import com.sbd.common.Jsonb.LeaveDTO;
-import com.sbd.common.Jsonb.LeaveSummaryJsonb;
+import com.sbd.common.Jsonb.*;
 import com.sbd.common.entity.*;
 import com.sbd.common.enums.LogEnum;
 import com.sbd.common.enums.StatusCodeEnum;
@@ -481,6 +478,59 @@ public class LeaveService implements LeaveControl {
                 ),
 
                 summary
+        );
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchLeaveStatusDistribution(
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "LEAVE STATUS DISTRIBUTION",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        List<LeaveStatusDistributionJsonb> response =
+                leaveRepository.fetchLeaveStatusDistribution();
+
+        if (response == null || response.isEmpty()) {
+
+            return new ApiResponse(
+
+                    new Status(
+
+                            Response.Status.NO_CONTENT.getStatusCode(),
+
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+
+                            correlationId
+                    )
+            );
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "LEAVE STATUS DISTRIBUTION",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                response
         );
     }
 }

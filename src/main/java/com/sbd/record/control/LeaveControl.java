@@ -31,6 +31,10 @@ public interface LeaveControl {
     ApiResponse fetchLeaveSummary(
             String correlationId)
             throws BusinessException;
+
+    ApiResponse fetchLeaveStatusDistribution(
+            String correlationId
+    ) throws BusinessException;
 }
 
 

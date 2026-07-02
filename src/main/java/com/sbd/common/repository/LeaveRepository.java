@@ -1,6 +1,7 @@
 package com.sbd.common.repository;
 
 import com.sbd.common.Jsonb.LeaveDTO;
+import com.sbd.common.Jsonb.LeaveStatusDistributionJsonb;
 import com.sbd.common.Jsonb.LeaveSummaryJsonb;
 import com.sbd.common.entity.Leave;
 import com.sbd.common.mapper.LeaveMapper;
@@ -13,6 +14,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -72,6 +74,33 @@ public class LeaveRepository implements PanacheRepository<Leave> {
         return response;
     }
 
+    public List<LeaveStatusDistributionJsonb> fetchLeaveStatusDistribution() {
+
+        List<Object[]> rows =
+                em.createNativeQuery(
+                        LeaveQueryEnum.GET_LEAVE_STATUS_DISTRIBUTION.getValue()
+                ).getResultList();
+
+        List<LeaveStatusDistributionJsonb> response =
+                new ArrayList<>();
+
+        for (Object[] row : rows) {
+
+            response.add(
+
+                    new LeaveStatusDistributionJsonb(
+
+                            row[0].toString(),
+
+                            ((Number) row[1]).longValue()
+
+                    )
+            );
+        }
+
+        return response;
+    }
+
     @Getter
     @AllArgsConstructor
     private enum LeaveQueryEnum {
@@ -102,6 +131,18 @@ public class LeaveRepository implements PanacheRepository<Leave> {
 
         ),
 
+        GET_LEAVE_STATUS_DISTRIBUTION(
+
+                "SELECT " +
+                        "lt.type, " +
+                        "COUNT(l.id) " +
+                        "FROM leave_requests l " +
+                        "INNER JOIN leave_type lt " +
+                        "ON l.leave_type_id = lt.id " +
+                        "GROUP BY lt.type " +
+                        "ORDER BY COUNT(l.id) DESC"
+
+        ),
 
         EMPLOYEE_ID("employeeId"),
         YEAR("year");

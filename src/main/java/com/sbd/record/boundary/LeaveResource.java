@@ -169,4 +169,18 @@ public class LeaveResource {
                 correlationId
         );
     }
+
+    @GET
+    @Path("/dashboard/leave-status-distribution")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchLeaveStatusDistribution()
+            throws BusinessException {
+
+        String correlationId =
+                UUID.randomUUID().toString();
+
+        return leaveControl.fetchLeaveStatusDistribution(
+                correlationId
+        );
+    }
 }
