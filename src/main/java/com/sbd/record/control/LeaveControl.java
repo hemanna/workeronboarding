@@ -39,6 +39,9 @@ public interface LeaveControl {
     ApiResponse fetchLast10DaysLeaveTrend(
             String correlationId)
             throws BusinessException;
+    ApiResponse fetchEmployeeLeaveBalance(
+            String correlationId)
+            throws BusinessException;
 }
 
 

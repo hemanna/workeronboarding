@@ -31,6 +31,9 @@ public class LeaveService implements LeaveControl {
     LeaveRepository leaveRepository;
 
     @Inject
+    LeaveBalanceRepository leaveBalanceRepository;
+
+    @Inject
     EmployeeDetailsRepository employeeDetailsRepository;
 
     @Inject
@@ -38,9 +41,6 @@ public class LeaveService implements LeaveControl {
 
     @Inject
     DepartmentRepository departmentRepository;
-
-    @Inject
-    LeaveBalanceRepository leaveBalanceRepository;
 
     @Inject
     CompanyHolidayRepository companyHolidayRepository;
@@ -586,5 +586,58 @@ public class LeaveService implements LeaveControl {
                 trendList
         );
 
+    }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchEmployeeLeaveBalance(
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "EMPLOYEE LEAVE BALANCE",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        List<EmployeeLeaveBalanceJsonb> list =
+                leaveBalanceRepository.fetchEmployeeLeaveBalance();
+
+        if (list == null || list.isEmpty()) {
+
+            return new ApiResponse(
+
+                    new Status(
+
+                            Response.Status.NO_CONTENT.getStatusCode(),
+
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+
+                            correlationId
+                    )
+            );
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "EMPLOYEE LEAVE BALANCE",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                list
+        );
     }
 }

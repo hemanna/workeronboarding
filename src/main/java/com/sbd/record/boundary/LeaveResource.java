@@ -201,4 +201,18 @@ public class LeaveResource {
                 correlationId
         );
     }
+
+    @GET
+    @Path("/dashboard/employee_leave_balance")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchEmployeeLeaveBalance()
+            throws BusinessException {
+
+        String correlationId =
+                UUID.randomUUID().toString();
+
+        return leaveControl.fetchEmployeeLeaveBalance(
+                correlationId
+        );
+    }
 }
