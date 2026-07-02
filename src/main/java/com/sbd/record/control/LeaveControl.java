@@ -27,6 +27,10 @@ public interface LeaveControl {
             String requestId,
             Integer companyholidayId)
             throws BusinessException;
+
+    ApiResponse fetchLeaveSummary(
+            String correlationId)
+            throws BusinessException;
 }
 
 

@@ -3,7 +3,10 @@ package com.sbd.record.control.service;
 import com.sbd.common.Jsonb.CompanyHolidayJsonb;
 import com.sbd.common.Jsonb.LeaveBalanceJsonb;
 import com.sbd.common.Jsonb.LeaveDTO;
+import com.sbd.common.Jsonb.LeaveSummaryJsonb;
 import com.sbd.common.entity.*;
+import com.sbd.common.enums.LogEnum;
+import com.sbd.common.enums.StatusCodeEnum;
 import com.sbd.common.exception.BusinessException;
 import com.sbd.common.mapper.LeaveMapper;
 import com.sbd.common.repository.*;
@@ -21,7 +24,6 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @ApplicationScoped
@@ -429,6 +431,56 @@ public class LeaveService implements LeaveControl {
         );
     }
 
+    @Override
+    @Transactional
+    public ApiResponse fetchLeaveSummary(
+            String correlationId)
+            throws BusinessException {
 
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "LEAVE DASHBOARD SUMMARY",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
 
+        LeaveSummaryJsonb summary =
+                leaveRepository.fetchLeaveSummary();
+
+        if (summary == null) {
+
+            return new ApiResponse(
+
+                    new Status(
+
+                            Response.Status.NO_CONTENT.getStatusCode(),
+
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+
+                            correlationId
+                    )
+            );
+        }
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "LEAVE DASHBOARD SUMMARY",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                summary
+        );
+    }
 }

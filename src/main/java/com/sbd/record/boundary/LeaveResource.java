@@ -150,4 +150,23 @@ public class LeaveResource {
 
         return leaveControl.deleteHoliday(requestId, companyholidayId);
     }
+
+    @GET
+    @Path("/dashboard/summary")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchLeaveSummary()
+            throws BusinessException {
+
+        String correlationId =
+                UUID.randomUUID().toString();
+
+        log.info(
+                "RequestId : {} | Fetch Leave Dashboard Summary",
+                correlationId
+        );
+
+        return leaveControl.fetchLeaveSummary(
+                correlationId
+        );
+    }
 }
