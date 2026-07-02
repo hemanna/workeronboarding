@@ -286,4 +286,19 @@ public class EmployeeAttendanceResource {
                         correlationId
                 );
     }
+
+    @GET
+    @Path("/present_absent_summary")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchPresentAbsentSummary()
+            throws BusinessException {
+
+        String correlationId =
+                UUID.randomUUID().toString();
+
+        return employeeAttendanceControl
+                .fetchPresentAbsentSummary(
+                        correlationId
+                );
+    }
 }

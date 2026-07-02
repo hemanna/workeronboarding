@@ -1160,6 +1160,61 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
     @Override
     @Transactional
+    public ApiResponse fetchPresentAbsentSummary(
+            String correlationId)
+            throws BusinessException {
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "PRESENT ABSENT SUMMARY",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+
+        LocalDate today = LocalDate.now();
+
+        PresentAbsentJsonb response =
+                new PresentAbsentJsonb();
+
+        response.setPresent(
+                employeeAttendanceRepository
+                        .getPresentCount(today)
+        );
+
+        response.setAbsent(
+                employeeAttendanceRepository
+                        .getAbsentCount(today)
+        );
+
+        response.setTotalEmployees(
+                employeeDetailsRepository
+                        .getTotalEmployees()
+        );
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "PRESENT ABSENT SUMMARY",
+                LogEnum.LogMessage.ENDED.getValue()
+        );
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                response
+        );
+    }
+
+    @Override
+    @Transactional
     public ApiResponse updateRegularizationStatus(Integer regularizationId, String newStatus, String requestId) {
         log.info("Start updating regularization status - RequestId: {}, RegularizationId: {}, NewStatus: {}",
                 requestId, regularizationId, newStatus);

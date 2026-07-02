@@ -170,6 +170,23 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 .setParameter(2, month)
                 .getResultList();
     }
+
+    public Long getPresentCount(LocalDate date) {
+
+        return count(
+                QueryEnum.GET_PRESENT_COUNT.getValue(),
+                date
+        );
+    }
+
+    public Long getAbsentCount(LocalDate date) {
+
+        return count(
+                QueryEnum.GET_ABSENT_COUNT.getValue(),
+                date
+        );
+    }
+
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {
@@ -253,7 +270,18 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                         "GROUP BY DAY(date) " +
                         "ORDER BY DAY(date)"
 
+        ),GET_PRESENT_COUNT(
+
+                "date=?1 AND status='PRESENT'"
+
         ),
+
+        GET_ABSENT_COUNT(
+
+                "date=?1 AND status='ABSENT'"
+
+        ),
+
 
         EMPLOYEE_ID("employeeId");
 

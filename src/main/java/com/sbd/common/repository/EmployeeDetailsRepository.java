@@ -74,6 +74,9 @@ public List<EmployeeDetails> listAll(Pagination pagination) {
                 "inactiveEmployees", r[3]
         );
     }
+    public Long getTotalEmployees() {
+        return count();
+    }
 
     @Getter
     @AllArgsConstructor
