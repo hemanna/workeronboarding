@@ -301,4 +301,22 @@ public class EmployeeAttendanceResource {
                         correlationId
                 );
     }
+
+    @GET
+    @Path("/today_attendance")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchTodayAttendance()
+            throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+
+        log.info(
+                "Request Id : {} | Fetch Today Attendance",
+                correlationId
+        );
+
+        return employeeAttendanceControl.fetchTodayAttendance(
+                correlationId
+        );
+    }
 }

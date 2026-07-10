@@ -52,6 +52,12 @@ public class EmployeeAttendance {
     @Column(name = "status", nullable = false)
     private String status;
 
+    @Column(name = "check_in")
+    private LocalTime checkIn;
+
+    @Column(name = "check_out")
+    private LocalTime checkOut;
+
     @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "leave_id", referencedColumnName = "id")

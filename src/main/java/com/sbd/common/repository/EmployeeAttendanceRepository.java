@@ -1,5 +1,6 @@
 package com.sbd.common.repository;
 
+import com.sbd.common.Jsonb.AttendanceTodayJsonb;
 import com.sbd.common.entity.EmployeeAttendance;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -9,7 +10,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.math.BigDecimal;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -187,6 +191,41 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
         );
     }
 
+    public List<AttendanceTodayJsonb> fetchTodayAttendance() {
+
+        List<Object[]> rows = em.createNativeQuery(
+                QueryEnum.GET_TODAY_ATTENDANCE.getValue()
+        ).getResultList();
+
+        List<AttendanceTodayJsonb> response = new ArrayList<>();
+
+        for (Object[] row : rows) {
+
+            LocalTime checkIn = null;
+            LocalTime checkOut = null;
+
+            if (row[3] != null) {
+                checkIn = ((Time) row[3]).toLocalTime();
+            }
+
+            if (row[4] != null) {
+                checkOut = ((Time) row[4]).toLocalTime();
+            }
+
+            response.add(
+                    new AttendanceTodayJsonb(
+                            ((Number) row[0]).intValue(),
+                            row[1] == null ? "" : row[1].toString(),
+                            row[2] == null ? "" : row[2].toString(),
+                            checkIn,
+                            checkOut,
+                            (BigDecimal) row[5]
+                    )
+            );
+        }
+
+        return response;
+    }
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {
@@ -279,6 +318,22 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
         GET_ABSENT_COUNT(
 
                 "date=?1 AND status='ABSENT'"
+
+        ),
+        GET_TODAY_ATTENDANCE(
+
+                "SELECT " +
+                        "ed.id, " +
+                        "ed.employee_name, " +
+                        "d.name, " +
+                        "ea.check_in, " +
+                        "ea.check_out, " +
+                        "ea.working_hours " +
+                        "FROM employee_attendance ea " +
+                        "INNER JOIN employee_details ed ON ea.employee_id = ed.id " +
+                        "INNER JOIN department d ON ea.department_id = d.id " +
+                        "WHERE ea.date = CURDATE() " +
+                        "ORDER BY ed.employee_name"
 
         ),
 
