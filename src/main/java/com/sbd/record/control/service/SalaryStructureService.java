@@ -632,13 +632,9 @@ public class SalaryStructureService implements SalaryStructureControl {
     @Override
     @Transactional
     public ApiResponse fetchMonthlyPayroll(
-
             Integer month,
-
             Integer year,
-
             String correlationId)
-
             throws BusinessException {
 
         List<MonthlyPayrollJsonb> payrollList =
@@ -647,34 +643,55 @@ public class SalaryStructureService implements SalaryStructureControl {
                         .fetchMonthlyPayroll(
                                 month,
                                 year);
-
         if (payrollList == null || payrollList.isEmpty()) {
-
             return new ApiResponse(
-
                     new Status(
-
                             Response.Status.NO_CONTENT.getStatusCode(),
-
                             StatusCodeEnum.NO_CONTENT.getValue(),
-
                             correlationId
                     )
             );
         }
-
         return new ApiResponse(
-
                 new Status(
-
                         Response.Status.OK.getStatusCode(),
-
                         StatusCodeEnum.SUCCESS.getValue(),
-
                         correlationId
                 ),
 
                 payrollList
+        );
+    }
+
+    @Override
+    public ApiResponse fetchPayrollReport(Integer month, Integer year, String correlationId) throws BusinessException {
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "PAYROLL SUMMARY",
+                LogEnum.LogMessage.STARTED.getValue()
+        );
+        PayrollSummaryJsonb response =
+                salaryStructureRepository.fetchPayrollreport(
+                        month,
+                        year
+
+                );
+
+        log.info(
+                LogEnum.ACTIVITY.getValue(),
+                correlationId,
+                "PAYROLL SUMMARY",
+                LogEnum.LogMessage.ENDED.getValue()
+
+        );
+        return new ApiResponse(
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        StatusCodeEnum.SUCCESS.getValue(),
+                        correlationId
+                ),
+                response
         );
     }
 }

@@ -2,6 +2,7 @@ package com.sbd.common.repository;
 
 import com.sbd.common.Jsonb.MonthlyPayrollJsonb;
 import com.sbd.common.Jsonb.PayrollStatusJsonb;
+import com.sbd.common.Jsonb.PayrollSummaryJsonb;
 import com.sbd.common.entity.SalaryStructure;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -129,6 +130,30 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
         return response;
     }
 
+    public PayrollSummaryJsonb fetchPayrollreport(
+            Integer month,
+            Integer year) {
+
+        Object[] row = (Object[]) em.createNativeQuery(
+
+                        QueryEnum.GET_PAYROLL_SUMMARY.getValue())
+
+                .setParameter(1, month)
+
+                .setParameter(2, year)
+
+                .getSingleResult();
+
+        return new PayrollSummaryJsonb(
+
+                (BigDecimal) row[0],
+
+                (BigDecimal) row[1],
+
+                (BigDecimal) row[2]
+
+        );
+    }
     @Getter
         @AllArgsConstructor
         public enum QueryEnum {
@@ -273,6 +298,23 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                         "p.status " +
 
                         "ORDER BY ed.employee_name"
+
+        ),
+        GET_PAYROLL_SUMMARY(
+
+                "SELECT " +
+
+                        "COALESCE(SUM(gross_salary),0), " +
+
+                        "COALESCE(SUM(gross_salary-net_salary),0), " +
+
+                        "COALESCE(SUM(net_salary),0) " +
+
+                        "FROM payroll " +
+
+                        "WHERE month=?1 " +
+
+                        "AND year=?2"
 
         );
 

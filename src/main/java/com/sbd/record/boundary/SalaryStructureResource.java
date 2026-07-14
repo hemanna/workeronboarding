@@ -158,4 +158,24 @@ public class SalaryStructureResource {
                 correlationId
         );
     }
+
+    @POST
+    @Path("/payroll_summary")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchPayrollSummary(
+
+            SalaryReportJsonb request)
+            throws BusinessException {
+        String correlationId = UUID.randomUUID().toString();
+        log.info("Request Id : {} | Payroll Summary",
+                correlationId
+        );
+        return salaryStructureControl.fetchPayrollReport(
+                request.getMonth(),
+                request.getYear(),
+                correlationId
+
+        );
+    }
 }

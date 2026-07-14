@@ -42,4 +42,10 @@ public interface SalaryStructureControl {
             Integer year,
             String correlationId)
             throws BusinessException;
+
+    ApiResponse fetchPayrollReport(
+            Integer month,
+            Integer year,
+            String correlationId
+    ) throws BusinessException;
 }
