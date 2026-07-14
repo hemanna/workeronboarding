@@ -141,4 +141,21 @@ public class SalaryStructureResource {
         log.info("correlation_Id: {} | Fetching payroll month list", correlationId);
         return salaryStructureControl.fetchPayrollStatus(correlationId);
     }
+
+    @POST
+    @Path("/monthly_payroll")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse fetchMonthlyPayroll(
+            SalaryReportJsonb request)
+            throws BusinessException {
+
+        String correlationId = UUID.randomUUID().toString();
+
+        return salaryStructureControl.fetchMonthlyPayroll(
+                request.getMonth(),
+                request.getYear(),
+                correlationId
+        );
+    }
 }

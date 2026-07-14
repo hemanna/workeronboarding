@@ -628,4 +628,54 @@ public class SalaryStructureService implements SalaryStructureControl {
                 list
         );
     }
+
+    @Override
+    @Transactional
+    public ApiResponse fetchMonthlyPayroll(
+
+            Integer month,
+
+            Integer year,
+
+            String correlationId)
+
+            throws BusinessException {
+
+        List<MonthlyPayrollJsonb> payrollList =
+
+                salaryStructureRepository
+                        .fetchMonthlyPayroll(
+                                month,
+                                year);
+
+        if (payrollList == null || payrollList.isEmpty()) {
+
+            return new ApiResponse(
+
+                    new Status(
+
+                            Response.Status.NO_CONTENT.getStatusCode(),
+
+                            StatusCodeEnum.NO_CONTENT.getValue(),
+
+                            correlationId
+                    )
+            );
+        }
+
+        return new ApiResponse(
+
+                new Status(
+
+                        Response.Status.OK.getStatusCode(),
+
+                        StatusCodeEnum.SUCCESS.getValue(),
+
+                        correlationId
+                ),
+
+                payrollList
+        );
+    }
 }
+

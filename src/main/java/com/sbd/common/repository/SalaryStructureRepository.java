@@ -1,5 +1,6 @@
 package com.sbd.common.repository;
 
+import com.sbd.common.Jsonb.MonthlyPayrollJsonb;
 import com.sbd.common.Jsonb.PayrollStatusJsonb;
 import com.sbd.common.entity.SalaryStructure;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -9,6 +10,8 @@ import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -82,6 +85,49 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                 .collect(Collectors.toList());
     }
 
+    public List<MonthlyPayrollJsonb> fetchMonthlyPayroll(
+            Integer month,
+            Integer year) {
+
+        List<Object[]> rows = em.createNativeQuery(
+                        QueryEnum.GET_MONTHLY_PAYROLL.getValue())
+                .setParameter(1, month)
+                .setParameter(2, year)
+                .getResultList();
+
+        List<MonthlyPayrollJsonb> response = new ArrayList<>();
+
+        for (Object[] row : rows) {
+
+            response.add(
+
+                    new MonthlyPayrollJsonb(
+
+                            ((Number) row[0]).intValue(),
+
+                            row[1].toString(),
+
+                            BigDecimal.valueOf(((Number) row[2]).doubleValue()),
+
+                            BigDecimal.valueOf(((Number) row[3]).doubleValue()),
+
+                            BigDecimal.valueOf(((Number) row[4]).doubleValue()),
+
+                            BigDecimal.valueOf(((Number) row[5]).doubleValue()),
+
+                            BigDecimal.valueOf(((Number) row[6]).doubleValue()),
+
+                            BigDecimal.valueOf(((Number) row[7]).doubleValue()),
+
+                            BigDecimal.valueOf(((Number) row[8]).doubleValue()),
+
+                            row[9].toString()
+                    )
+            );
+        }
+
+        return response;
+    }
 
     @Getter
         @AllArgsConstructor
@@ -172,6 +218,62 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                         "GROUP BY YEAR(a.date), MONTH(a.date), DATE_FORMAT(a.date, '%b %Y') " +
                         "HAVING COUNT(DISTINCT a.employee_id) = COUNT(DISTINCT al.employee_id) " +
                         "ORDER BY YEAR(a.date) DESC, MONTH(a.date) DESC"
+        ),
+        GET_MONTHLY_PAYROLL(
+
+                "SELECT " +
+                        "ed.id AS employeeId, " +
+                        "ed.employee_name AS employeeName, " +
+
+                        "COALESCE(SUM(CASE " +
+                        "WHEN ss.component_name='Basic' THEN ss.amount " +
+                        "ELSE 0 END),0) AS basic, " +
+
+                        "COALESCE(( " +
+                        "SELECT SUM(overtime) " +
+                        "FROM employee_attendance ea " +
+                        "WHERE ea.employee_id=ed.id " +
+                        "AND MONTH(ea.date)=?1 " +
+                        "AND YEAR(ea.date)=?2 " +
+                        "),0) AS ot, " +
+
+                        "COALESCE(SUM(CASE " +
+                        "WHEN ss.component_name='Bonus' THEN ss.amount " +
+                        "ELSE 0 END),0) AS bonus, " +
+
+                        "0 AS lop, " +
+
+                        "p.gross_salary AS gross, " +
+
+                        "COALESCE(SUM(CASE " +
+                        "WHEN ss.type='deduction' THEN ss.amount " +
+                        "ELSE 0 END),0) AS deductions, " +
+
+                        "p.net_salary AS net, " +
+
+                        "p.status " +
+
+                        "FROM payroll p " +
+
+                        "INNER JOIN employee_details ed " +
+                        "ON p.employee_id=ed.id " +
+
+                        "LEFT JOIN salary_structure ss " +
+                        "ON ss.employee_id=ed.id " +
+
+                        "WHERE p.month=?1 " +
+                        "AND p.year=?2 " +
+
+                        "GROUP BY " +
+                        "p.payroll_id, " +
+                        "ed.id, " +
+                        "ed.employee_name, " +
+                        "p.gross_salary, " +
+                        "p.net_salary, " +
+                        "p.status " +
+
+                        "ORDER BY ed.employee_name"
+
         );
 
         private final String value;
