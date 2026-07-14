@@ -598,7 +598,6 @@ public class SalaryStructureService implements SalaryStructureControl {
                 SalaryActionEnum.APPROVED_ATTENDANCE.getValue(),
                 LogEnum.LogMessage.STARTED.getValue()
         );
-
         List<PayrollStatusJsonb> list =
                 salaryStructureRepository.fetchApprovedAttendanceStatus();
 
@@ -636,7 +635,6 @@ public class SalaryStructureService implements SalaryStructureControl {
             Integer year,
             String correlationId)
             throws BusinessException {
-
         List<MonthlyPayrollJsonb> payrollList =
 
                 salaryStructureRepository
@@ -658,7 +656,6 @@ public class SalaryStructureService implements SalaryStructureControl {
                         StatusCodeEnum.SUCCESS.getValue(),
                         correlationId
                 ),
-
                 payrollList
         );
     }
@@ -675,7 +672,6 @@ public class SalaryStructureService implements SalaryStructureControl {
                 salaryStructureRepository.fetchPayrollreport(
                         month,
                         year
-
                 );
 
         log.info(

@@ -149,9 +149,7 @@ public class SalaryStructureResource {
     public ApiResponse fetchMonthlyPayroll(
             SalaryReportJsonb request)
             throws BusinessException {
-
         String correlationId = UUID.randomUUID().toString();
-
         return salaryStructureControl.fetchMonthlyPayroll(
                 request.getMonth(),
                 request.getYear(),
@@ -164,18 +162,15 @@ public class SalaryStructureResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public ApiResponse fetchPayrollSummary(
-
             SalaryReportJsonb request)
             throws BusinessException {
         String correlationId = UUID.randomUUID().toString();
         log.info("Request Id : {} | Payroll Summary",
-                correlationId
-        );
+                correlationId);
         return salaryStructureControl.fetchPayrollReport(
                 request.getMonth(),
                 request.getYear(),
                 correlationId
-
         );
     }
 }
