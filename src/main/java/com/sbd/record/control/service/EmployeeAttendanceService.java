@@ -23,6 +23,9 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -921,12 +924,11 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                 LogEnum.LogMessage.STARTED.getValue()
         );
 
-        AttendanceSubmitJsonb request =
-                apiRequest.getData();
+        AttendanceSubmitJsonb request = apiRequest.getData();
 
-        if (request == null ||
-                request.getAttendances() == null ||
-                request.getAttendances().isEmpty()) {
+        if (request == null
+                || request.getAttendances() == null
+                || request.getAttendances().isEmpty()) {
 
             return new ApiResponse(
                     new Status(
@@ -938,70 +940,38 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
-        LocalDate attendanceDate = LocalDate.now();
+        int updatedCount = 0;
 
-        int savedCount = 0;
-
-        for (AttendanceMarkingJsonb item :
-                request.getAttendances()) {
-
-            EmployeeAttendance existing =
-                    employeeAttendanceRepository.findByEmployeeAndDate(
-                            item.getEmployeeId(),
-                            attendanceDate
-                    );
-
-            if (existing != null) {
-                continue;
-            }
-
-            EmployeeDetails employee =
-                    employeeDetailsRepository.findById(
-                            item.getEmployeeId()
-                    );
-
-            if (employee == null) {
-                continue;
-            }
+        for (AttendanceMarkingJsonb item : request.getAttendances()) {
 
             EmployeeAttendance attendance =
-                    new EmployeeAttendance();
+                    employeeAttendanceRepository.findByEmployeeAndDate(
+                            item.getEmployeeId(),
+                            LocalDate.now());
 
-            attendance.setEmployee(employee);
+            if (attendance == null) {
 
-            attendance.setDepartment(
-                    employee.getDepartment()
-            );
+                throw new BusinessException(
+                        "Attendance not found for Employee Id : "
+                                + item.getEmployeeId());
+            }
 
-            attendance.setRole(
-                    employee.getRole()
-            );
+            int rows =
+                    employeeAttendanceRepository.updateAttendance(
 
-            attendance.setDate(
-                    attendanceDate
-            );
+                            item.getStatus(),
 
-            attendance.setStatus(
-                    item.getStatus()
-            );
+                            item.getCheckIn(),
 
-            attendance.setApprovalStatus(
-                    "PENDING"
-            );
+                            item.getCheckOut(),
 
-            attendance.setShiftDetails(
-                    "GENERAL"
-            );
+                            item.getOtHours(),
 
-            attendance.setLocation(
-                    "OFFICE"
-            );
+                            item.getEmployeeId());
 
-            employeeAttendanceRepository.saveAttendance(
-                    attendance
-            );
-
-            savedCount++;
+            if (rows > 0) {
+                updatedCount++;
+            }
         }
 
         log.info(
@@ -1017,8 +987,8 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                         StatusCodeEnum.SUCCESS.getValue(),
                         correlationId
                 ),
-                "Attendance Submitted Successfully. Records Saved : "
-                        + savedCount
+                "Attendance Updated Successfully. Records Updated : "
+                        + updatedCount
         );
     }
 

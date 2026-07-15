@@ -113,7 +113,7 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
     }
 
     public void saveAttendance(EmployeeAttendance attendance) {
-        persist(attendance);
+        getEntityManager().persist(attendance);
     }
 
     public Long getPresentToday(LocalDate date) {
@@ -226,6 +226,24 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
 
         return response;
     }
+
+    public int updateAttendance(
+            String status,
+            LocalTime checkIn,
+            LocalTime checkOut,
+            BigDecimal overtime,
+            Integer employeeId) {
+
+        return em.createNativeQuery(
+                        QueryEnum.UPDATE_ATTENDANCE.getValue())
+                .setParameter(1, status)
+                .setParameter(2, checkIn)
+                .setParameter(3, checkOut)
+                .setParameter(4, overtime)
+                .setParameter(5, employeeId)
+                .executeUpdate();
+    }
+
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {
@@ -336,7 +354,17 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                         "ORDER BY ed.employee_name"
 
         ),
+        UPDATE_ATTENDANCE(
 
+                "UPDATE employee_attendance " +
+                        "SET status=?1, " +
+                        "check_in=?2, " +
+                        "check_out=?3, " +
+                        "overtime=?4 " +
+                        "WHERE employee_id=?5 " +
+                        "AND date=CURDATE()"
+
+        ),
 
         EMPLOYEE_ID("employeeId");
 
