@@ -74,14 +74,16 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
     public List<PayrollStatusJsonb> fetchApprovedAttendanceStatus() {
 
         List<Object[]> resultList = em
-                .createNativeQuery(QueryEnum.FETCH_APPROVED_STATUS.getValue())
+                .createNativeQuery(
+                        QueryEnum.FETCH_PAYROLL_MONTH_STATUS.getValue()
+                )
                 .getResultList();
 
         return resultList.stream()
                 .map(row -> new PayrollStatusJsonb(
-                        (String) row[0],  // month
-                        (String) row[1],  // attendance_status
-                        (String) row[2]   // payroll_status
+                        row[0] != null ? row[0].toString() : null,
+                        row[1] != null ? row[1].toString() : null,
+                        row[2] != null ? row[2].toString() : null
                 ))
                 .collect(Collectors.toList());
     }
@@ -221,28 +223,45 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
                         "GROUP BY ed.employee_name"
         ),
 
-        FETCH_APPROVED_STATUS(
+        FETCH_PAYROLL_MONTH_STATUS(
                 "SELECT " +
-                        " DATE_FORMAT(a.date, '%b %Y') AS month, " +
-                        " 'Approved' AS attendance_status, " +
-                        " CASE " +
-                        "   WHEN COUNT(DISTINCT p.employee_id) = COUNT(DISTINCT a.employee_id) " +
-                        "   THEN 'Paid' " +
-                        "   ELSE 'Not Started' " +
-                        " END AS payroll_status " +
+                        "    DATE_FORMAT(MIN(a.date), '%b %Y') AS month, " +
+
+                        "    CASE " +
+                        "        WHEN COUNT(*) = SUM( " +
+                        "            CASE " +
+                        "                WHEN UPPER(a.approval_status) = 'APPROVED' " +
+                        "                THEN 1 " +
+                        "                ELSE 0 " +
+                        "            END " +
+                        "        ) " +
+                        "        THEN 'Approved' " +
+                        "        ELSE 'Pending' " +
+                        "    END AS attendance_status, " +
+
+                        "    COALESCE( " +
+                        "        GROUP_CONCAT( " +
+                        "            DISTINCT p.status " +
+                        "            ORDER BY p.status " +
+                        "            SEPARATOR ', ' " +
+                        "        ), " +
+                        "        'Not Started' " +
+                        "    ) AS payroll_status " +
+
                         "FROM employee_attendance a " +
-                        "LEFT JOIN attendance_lock al " +
-                        " ON al.employee_id = a.employee_id " +
-                        " AND al.month = MONTH(a.date) " +
-                        " AND al.year = YEAR(a.date) " +
-                        " AND al.locked = 1 " +
+
                         "LEFT JOIN payroll p " +
-                        " ON p.employee_id = a.employee_id " +
-                        " AND p.month = MONTH(a.date) " +
-                        " AND p.year = YEAR(a.date) " +
-                        "GROUP BY YEAR(a.date), MONTH(a.date), DATE_FORMAT(a.date, '%b %Y') " +
-                        "HAVING COUNT(DISTINCT a.employee_id) = COUNT(DISTINCT al.employee_id) " +
-                        "ORDER BY YEAR(a.date) DESC, MONTH(a.date) DESC"
+                        "    ON p.employee_id = a.employee_id " +
+                        "    AND p.month = MONTH(a.date) " +
+                        "    AND p.year = YEAR(a.date) " +
+
+                        "GROUP BY " +
+                        "    YEAR(a.date), " +
+                        "    MONTH(a.date) " +
+
+                        "ORDER BY " +
+                        "    YEAR(a.date) DESC, " +
+                        "    MONTH(a.date) DESC"
         ),
         GET_MONTHLY_PAYROLL(
 
