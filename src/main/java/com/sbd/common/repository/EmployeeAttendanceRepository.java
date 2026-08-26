@@ -244,6 +244,7 @@ public class EmployeeAttendanceRepository implements PanacheRepository<EmployeeA
                 .executeUpdate();
     }
 
+
     @Getter
     @AllArgsConstructor
     private enum QueryEnum {

@@ -47,6 +47,10 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
     @Inject
     private AttendanceLockRepository attendanceLockRepository;
+
+    @Inject
+    private EmployeeAttendanceSessionRepository employeeAttendanceSessionRepository;
+
     @Inject
     private EmployeeDetailsRepository employeeDetailsRepository;
 
@@ -705,63 +709,203 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
     @Override
     @Transactional
     public ApiResponse checkIn(Integer employeeId, ApiRequest<EmployeeAttendanceSessionDTO> apiRequest, String requestId) {
-        log.info("Start Check-In - RequestId: {}", requestId);
+        log.info(
+                "Start Check-In | RequestId: {} | employeeId: {}",
+                requestId,
+                employeeId
+        );
 
-        EmployeeAttendanceSessionDTO sessionDTO = apiRequest.getData();
 
-        // 1. Validate employee
-        EmployeeDetails employee = employeeDetailsRepository.findById(employeeId);
+        // VALIDATE EMPLOYEE
+        EmployeeDetails employee =
+                employeeDetailsRepository.findById(employeeId);
+
         if (employee == null) {
+
             return new ApiResponse(
-                    new Status(Response.Status.NOT_FOUND.getStatusCode(), "Employee not found", requestId)
+                    new Status(
+                            Response.Status.NOT_FOUND.getStatusCode(),
+                            "Employee not found",
+                            requestId
+                    )
             );
         }
 
-        // Explicitly fetch role & department like in createAttendance
-        Department department = employee.getDepartment() != null
-                ? departmentRepository.findById(employee.getDepartment().getId())
-                : null;
-        Role role = employee.getRole() != null
-                ? roleRepository.findByRoleId(employee.getRole().getId())
-                : null;
+
+
+        // GET DEPARTMENT
+        Department department =
+                employee.getDepartment() != null
+                        ? departmentRepository.findById(
+                        employee.getDepartment().getId()
+                )
+                        : null;
+
+
+        //GET ROLE
+
+        Role role =
+                employee.getRole() != null
+                        ? roleRepository.findByRoleId(
+                        employee.getRole().getId()
+                )
+                        : null;
+
 
         if (department == null || role == null) {
+
             return new ApiResponse(
-                    new Status(Response.Status.BAD_REQUEST.getStatusCode(),
-                            "Employee is missing department or role", requestId)
+                    new Status(
+                            Response.Status.BAD_REQUEST.getStatusCode(),
+                            "Employee is missing department or role",
+                            requestId
+                    )
             );
         }
 
-        //Find or create today's attendance
+
+        //GET CURRENT DATE
+
         LocalDate today = LocalDate.now();
-        EmployeeAttendance attendance = employeeAttendanceRepository.findByEmployeeAndDate(employeeId, today);
+
+
+        //GET REQUEST DATA
+
+        EmployeeAttendanceSessionDTO sessionDTO =
+                apiRequest != null
+                        ? apiRequest.getData()
+                        : null;
+
+
+        // FIND TODAY'S ATTENDANCE
+
+        EmployeeAttendance attendance =
+                employeeAttendanceRepository
+                        .findByEmployeeAndDate(
+                                employeeId,
+                                today
+                        );
+
+        // IF TODAY'S ATTENDANCE DOES NOT EXIST CREATE IT
 
         if (attendance == null) {
+
             attendance = new EmployeeAttendance();
+
             attendance.setEmployee(employee);
+
             attendance.setDepartment(department);
+
             attendance.setRole(role);
+
             attendance.setDate(today);
+
             attendance.setStatus("Present");
+
             attendance.setApprovalStatus("Pending");
+
             attendance.setShiftDetails("General");
-            attendance.setLocation("Unknown");
+
+
+            LocalTime checkInTime =
+                    sessionDTO != null &&
+                            sessionDTO.getCheckIn() != null
+                            ? sessionDTO.getCheckIn()
+                            : LocalTime.now();
+
+
+            String location =
+                    sessionDTO != null &&
+                            sessionDTO.getLocation() != null
+                            ? sessionDTO.getLocation()
+                            : "Unknown";
+
+
+            // First check-in of today
+            attendance.setCheckIn(checkInTime);
+
+            // No checkout yet
+            attendance.setCheckOut(null);
+
+            attendance.setWorkingHours(null);
+
+            attendance.setOvertime(null);
+
+            attendance.setLocation(location);
+
+
             employeeAttendanceRepository.persist(attendance);
+
+
+            log.info(
+                    "Today's attendance created | " +
+                            "attendanceId: {} | employeeId: {} | date: {}",
+                    attendance.getId(),
+                    employeeId,
+                    today
+            );
         }
 
-        // 3. Create session
-        EmployeeAttendanceSession session = new EmployeeAttendanceSession();
+
+
+        // CREATE FIRST CHECK-IN SESSION
+
+        EmployeeAttendanceSession session =
+                new EmployeeAttendanceSession();
+
+
+        LocalTime checkInTime =
+                sessionDTO != null &&
+                        sessionDTO.getCheckIn() != null
+                        ? sessionDTO.getCheckIn()
+                        : LocalTime.now();
+
+
+        String location =
+                sessionDTO != null &&
+                        sessionDTO.getLocation() != null
+                        ? sessionDTO.getLocation()
+                        : "Unknown";
+
+
         session.setAttendance(attendance);
-        session.setCheckIn(sessionDTO.getCheckIn() != null ? sessionDTO.getCheckIn() : LocalTime.now());
-        session.setLocation(sessionDTO.getLocation() != null ? sessionDTO.getLocation() : "Unknown");
 
-        attendance.getSessions().add(session);
+        session.setCheckIn(checkInTime);
 
-        log.info("End Check-In - RequestId: {}", requestId);
+        session.setCheckOut(null);
+
+        session.setLocation(location);
+
+        //SAVE SESSION
+
+        employeeAttendanceSessionRepository.persist(session);
+
+
+        log.info(
+                "Check-In session created | " +
+                        "sessionId: {} | attendanceId: {} | " +
+                        "checkIn: {}",
+                session.getId(),
+                attendance.getId(),
+                checkInTime
+        );
+
+
+        log.info(
+                "End Check-In | RequestId: {}",
+                requestId
+        );
+
+
         return new ApiResponse(
-                new Status(Response.Status.OK.getStatusCode(), "Check-In successful", requestId)
+                new Status(
+                        Response.Status.OK.getStatusCode(),
+                        "Check-In successful",
+                        requestId
+                )
         );
     }
+
 
     @Override
     @Transactional
