@@ -1,0 +1,68 @@
+2025-10-18 11:38:14,537 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 11.881s. Listening on: http://0.0.0.0:8080
+2025-10-18 11:38:14,545 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-10-18 11:38:14,546 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-10-18 11:41:23,864 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-1) request_id: 4bdcf0e2-21b0-420c-8211-09feaf383821 | Fetching all assets
+2025-10-18 11:41:25,476 laptop-t3siq6r0 workeronboarding-dev.jar[10428] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) Table 'workeronboarding.asset' doesn't exist
+2025-10-18 11:41:25,606 laptop-t3siq6r0 workeronboarding-dev.jar[10428] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 35786cc5-9833-4e7b-a8e3-a9d96d284f5b | message : JDBC exception executing SQL [SELECT status, COUNT(*) AS count FROM asset GROUP BY status] [Table 'workeronboarding.asset' doesn't exist] [n/a] | cause : {}: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [SELECT status, COUNT(*) AS count FROM asset GROUP BY status] [Table 'workeronboarding.asset' doesn't exist] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:257)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getMetaData(AbstractResultSetAccess.java:36)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getColumnCount(AbstractResultSetAccess.java:52)
+	at org.hibernate.query.results.ResultSetMappingImpl.resolve(ResultSetMappingImpl.java:193)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:477)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:267)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sql.internal.NativeSelectQueryPlanImpl.performList(NativeSelectQueryPlanImpl.java:97)
+	at org.hibernate.query.sql.internal.NativeQueryImpl.doList(NativeQueryImpl.java:626)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.AssetRepository.getStatusWiseAssetCount(AssetRepository.java:40)
+	at com.sbd.common.repository.AssetRepository_ClientProxy.getStatusWiseAssetCount(Unknown Source)
+	at com.sbd.record.control.service.AssetService.fetchCountAssets(AssetService.java:114)
+	at com.sbd.record.control.service.AssetService_Subclass.fetchCountAssets$$superforward(Unknown Source)
+	at com.sbd.record.control.service.AssetService_Subclass$$function$$2.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.AssetService_Subclass.fetchCountAssets(Unknown Source)
+	at com.sbd.record.control.service.AssetService_ClientProxy.fetchCountAssets(Unknown Source)
+	at com.sbd.record.boundary.AssetResource.fetchCountAssets(AssetResource.java:55)
+	at com.sbd.record.boundary.AssetResource$quarkusrestinvoker$fetchCountAssets_df8a93a8766e65bcf99020262aa067c4616f35bd.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'workeronboarding.asset' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeQuery(PreparedStatementWrapper.java:78)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:239)
+	... 43 more
+
+2025-10-18 11:48:22,969 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2025-10-18 11:48:26,232 laptop-t3siq6r0 workeronboarding-dev.jar[10428] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) C:\Users\91819\workeronboarding\src\main\java\com\sbd\common\repository\AssetRepository.java uses unchecked or unsafe operations., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\common\repository\AssetRepository.java
+2025-10-18 11:48:26,239 laptop-t3siq6r0 workeronboarding-dev.jar[10428] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) Recompile with -Xlint:unchecked for details., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\common\repository\AssetRepository.java
+2025-10-18 11:48:26,297 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in AssetRepository$QueryEnum.class, AssetRepository.class.
+2025-10-18 11:48:26,696 laptop-t3siq6r0 workeronboarding-dev.jar[10428] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.387s

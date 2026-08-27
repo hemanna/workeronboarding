@@ -1,0 +1,47 @@
+2025-12-30 23:41:16,150 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 10.956s. Listening on: http://0.0.0.0:8080
+2025-12-30 23:41:16,162 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-12-30 23:41:16,164 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-12-30 23:53:29,423 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id: 0a3bcbc6-a60a-44ea-86d3-dbad2be3cfde | Fetching all employees
+2025-12-30 23:53:29,919 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start fetching all employees salary structure data - RequestId: 0a3bcbc6-a60a-44ea-86d3-dbad2be3cfde, Month: 7, Year: 2025
+2025-12-30 23:53:48,639 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id: 67459b24-9361-4f36-9c40-1bd9603c5a44 | Fetching all employees
+2025-12-30 23:53:48,639 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start fetching all employees salary structure data - RequestId: 67459b24-9361-4f36-9c40-1bd9603c5a44, Month: null, Year: 2025
+2025-12-30 23:54:26,688 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id: 60c90cc9-1e19-4426-99b7-53de7afdcede | Fetching all employees
+2025-12-30 23:54:26,690 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start fetching all employees salary structure data - RequestId: 60c90cc9-1e19-4426-99b7-53de7afdcede, Month: 7, Year: 2025
+2025-12-30 23:55:28,722 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id: a1974a3f-63cd-48e0-aa68-21bd0e9c0888 | Fetching all employees
+2025-12-30 23:55:28,725 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start fetching all employees salary structure data - RequestId: a1974a3f-63cd-48e0-aa68-21bd0e9c0888, Month: null, Year: 2025
+2025-12-30 23:55:42,754 laptop-t3siq6r0 workeronboarding-dev.jar[11544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 5bd1e63d-c074-4d79-850c-71a84ddb73e7 | message : Internal error: Invalid token=CURLYCLOSE at (line no=4, column no=1, offset=19). Expected tokens are: [STRING] | cause : {}: jakarta.json.bind.JsonbException: Internal error: Invalid token=CURLYCLOSE at (line no=4, column no=1, offset=19). Expected tokens are: [STRING]
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:142)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserialize(DeserializationContextImpl.java:127)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:55)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:102)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.doReadFrom(JsonbMessageBodyReader.java:57)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.readFrom(JsonbMessageBodyReader.java:39)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.readFrom(RequestDeserializeHandler.java:126)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.handle(RequestDeserializeHandler.java:84)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:135)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: jakarta.json.stream.JsonParsingException: Invalid token=CURLYCLOSE at (line no=4, column no=1, offset=19). Expected tokens are: [STRING]
+	at org.eclipse.parsson.JsonParserImpl.parsingException(JsonParserImpl.java:455)
+	at org.eclipse.parsson.JsonParserImpl.access$1000(JsonParserImpl.java:53)
+	at org.eclipse.parsson.JsonParserImpl$ObjectContext.getNextEvent(JsonParserImpl.java:516)
+	at org.eclipse.parsson.JsonParserImpl.next(JsonParserImpl.java:363)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:63)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:31)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:57)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:29)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:138)
+	... 16 more
+
+2025-12-30 23:55:52,364 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id: a05cc46d-8896-4be4-abcd-eed2a41485e5 | Fetching all employees
+2025-12-30 23:55:52,365 laptop-t3siq6r0 workeronboarding-dev.jar[11544] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start fetching all employees salary structure data - RequestId: a05cc46d-8896-4be4-abcd-eed2a41485e5, Month: 7, Year: null

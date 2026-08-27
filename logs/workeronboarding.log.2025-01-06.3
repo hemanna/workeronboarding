@@ -1,0 +1,89 @@
+2025-01-06 23:25:08,696 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 6.374s. Listening on: http://0.0.0.0:8001
+2025-01-06 23:25:08,700 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-01-06 23:25:08,700 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-01-06 23:25:21,785 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: 12fc04aa-eed8-418b-994e-5d17690a60e3 | Create Employee Details Request: ApiRequest(data=EmployeeDTO(departmentDTO=EmployeeDTO.DepartmentDTO(id=null, name=Engineering), employeeAttendanceDTO=EmployeeDTO.EmployeeAttendanceDTO(id=1, employeeId=1, departmentId=9, roleId=1, date=2025-01-06, checkinTime=09:00, checkoutTime=18:00, workingHours=8, overtime=1, shiftDetails=Day Shift, location=Office HQ, photo=attendancePhoto.jpg, approvalStatus=Pending, status=Active, leaveId=20), employeeDetailsDTO=EmployeeDTO.EmployeeDetailsDTO(id=null, employeeName=John Doe, guardianName=Jane Doe, aadharNumber=995393769894, pancard=NEWPANCARD6164, dob=1990-01-01, gender=Male, phoneNumber=9876543210, emergencyNumber=9988776655, nationality=Indian, bloodGroup=O+, addressLine1=123 Street, addressLine2=Apt 4B, state=StateName, district=DistrictName, postalCode=123456, roleId=2, experience=5, dateOfJoining=2020-06-15, profilePic=profilePic.jpg, aadharPic=aadharPic.jpg, pancardPic=pancardPic.jpg, status=Active, approvalStatus=Pending, departmentId=9), leaveDTO=EmployeeDTO.LeaveDTO(id=null, employeeId=null, leaveTypeId=null, startDate=2025-01-10, endDate=2025-01-15, departmentId=null, reason=Flu), leaveTypeDTO=EmployeeDTO.LeaveTypeDTO(id=null, type=Sick Leave), roleDTO=EmployeeDTO.RoleDTO(id=null, roleId=2, roleName=Software Engineer, createdBy=admin, creationDate=2020-01-01T00:00, status=null)), type=null, pagination=null)
+2025-01-06 23:25:21,836 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating employee details - RequestId: 12fc04aa-eed8-418b-994e-5d17690a60e3
+2025-01-06 23:25:22,225 desktop-0ebg92j workeronboarding-dev.jar[17624] ERROR [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Aadhar number already exists for RequestId: 12fc04aa-eed8-418b-994e-5d17690a60e3 - Aadhar Number: 995393769894
+2025-01-06 23:25:33,503 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) RequestId: c95a6269-7847-46ac-9995-229815ac7f31 | Create Employee Details Request: ApiRequest(data=EmployeeDTO(departmentDTO=EmployeeDTO.DepartmentDTO(id=null, name=Engineering), employeeAttendanceDTO=EmployeeDTO.EmployeeAttendanceDTO(id=1, employeeId=1, departmentId=9, roleId=1, date=2025-01-06, checkinTime=09:00, checkoutTime=18:00, workingHours=8, overtime=1, shiftDetails=Day Shift, location=Office HQ, photo=attendancePhoto.jpg, approvalStatus=Pending, status=Active, leaveId=20), employeeDetailsDTO=EmployeeDTO.EmployeeDetailsDTO(id=null, employeeName=John Doe, guardianName=Jane Doe, aadharNumber=995303769894, pancard=NEWPANCARD6064, dob=1990-01-01, gender=Male, phoneNumber=9876543210, emergencyNumber=9988776655, nationality=Indian, bloodGroup=O+, addressLine1=123 Street, addressLine2=Apt 4B, state=StateName, district=DistrictName, postalCode=123456, roleId=2, experience=5, dateOfJoining=2020-06-15, profilePic=profilePic.jpg, aadharPic=aadharPic.jpg, pancardPic=pancardPic.jpg, status=Active, approvalStatus=Pending, departmentId=9), leaveDTO=EmployeeDTO.LeaveDTO(id=null, employeeId=null, leaveTypeId=null, startDate=2025-01-10, endDate=2025-01-15, departmentId=null, reason=Flu), leaveTypeDTO=EmployeeDTO.LeaveTypeDTO(id=null, type=Sick Leave), roleDTO=EmployeeDTO.RoleDTO(id=null, roleId=2, roleName=Software Engineer, createdBy=admin, creationDate=2020-01-01T00:00, status=null)), type=null, pagination=null)
+2025-01-06 23:25:33,505 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start creating employee details - RequestId: c95a6269-7847-46ac-9995-229815ac7f31
+2025-01-06 23:25:33,581 desktop-0ebg92j workeronboarding-dev.jar[17624] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End creating employee details - RequestId: c95a6269-7847-46ac-9995-229815ac7f31
+2025-01-06 23:25:33,687 desktop-0ebg92j workeronboarding-dev.jar[17624] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-1) Generating incomplete JSON
+2025-01-06 23:25:33,690 desktop-0ebg92j workeronboarding-dev.jar[17624] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 744415e4-3bda-4374-b8ad-51a15f17f5b9 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'role' from com.sbd.common.entity.EmployeeDetails
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'attendances' from com.sbd.common.entity.Role
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 38 more
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.sbd.common.entity.Role.attendances: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:635)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:218)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentSet.iterator(PersistentSet.java:169)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:74)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 52 more
+

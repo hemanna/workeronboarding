@@ -1,0 +1,518 @@
+2025-11-15 23:14:56,375 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 14.007s. Listening on: http://0.0.0.0:8080
+2025-11-15 23:14:56,385 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-11-15 23:14:56,386 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-11-15 23:15:28,601 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-1) RequestId: c357c5a7-e79a-4eaf-b059-0c498279cf4a | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@5b947617, type=null, pagination=null)
+2025-11-15 23:15:28,683 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) Start Login user  - RequestId: c357c5a7-e79a-4eaf-b059-0c498279cf4a
+2025-11-15 23:15:29,619 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) End user Login  - RequestId: c357c5a7-e79a-4eaf-b059-0c498279cf4a
+2025-11-15 23:15:33,845 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-3) request_id : 07780b05-4ee3-445a-9641-5999d70b85b6 | get all holidays
+2025-11-15 23:15:33,866 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : 667867d7-1c1b-4319-9e02-e8a6f8bfc04a | get all employee attendance
+2025-11-15 23:15:33,871 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-4) request_id : 745fe665-fa8b-40b2-9c5e-bddabd86ef8f | get payslip for employeeId: 78, month: 11, year: 2025
+2025-11-15 23:15:33,871 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-5) request_id : 64b579da-4daa-4c09-b29f-936220954fd9 | get payslip for employeeId: 78, month: 11, year: 2025
+2025-11-15 23:15:33,873 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: f69a81c7-342a-4c3d-b366-929639452705 | Fetch leave balances for employee 78 and year 0
+2025-11-15 23:15:33,880 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-3) Start fetching all holidays records - RequestId: 07780b05-4ee3-445a-9641-5999d70b85b6
+2025-11-15 23:15:33,884 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetching all attendance records - RequestId: 667867d7-1c1b-4319-9e02-e8a6f8bfc04a
+2025-11-15 23:15:33,884 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-4) Start fetching salary structure - RequestId: 745fe665-fa8b-40b2-9c5e-bddabd86ef8f, EmployeeId: 78, Month: 11, Year: 2025
+2025-11-15 23:15:33,886 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-5) Start fetching salary structure - RequestId: 64b579da-4daa-4c09-b29f-936220954fd9, EmployeeId: 78, Month: 11, Year: 2025
+2025-11-15 23:15:33,982 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-6) request_id : f99f1215-71d4-4799-b6bf-e7ae2380fb95 | get all holidays
+2025-11-15 23:15:33,983 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) Start fetching all holidays records - RequestId: f99f1215-71d4-4799-b6bf-e7ae2380fb95
+2025-11-15 23:15:34,056 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-3) End fetching all holidaysz records - RequestId: 07780b05-4ee3-445a-9641-5999d70b85b6
+2025-11-15 23:15:34,105 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) End fetching all holidaysz records - RequestId: f99f1215-71d4-4799-b6bf-e7ae2380fb95
+2025-11-15 23:15:34,113 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-6) request_id : a5060087-8dea-4e84-9a76-13df9710cc38 | get all employee attendance
+2025-11-15 23:15:34,116 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) Start fetching all attendance records - RequestId: a5060087-8dea-4e84-9a76-13df9710cc38
+2025-11-15 23:15:34,116 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-2) correlation-id : 0d2b3b2d-ce1d-4302-a5e8-a2e332ebee32 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:60)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-15 23:15:34,380 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-6) correlation-id : 575f49e4-55e9-4d9f-a7fe-1d1810d631fe | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:60)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-15 23:15:34,453 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) requestId: ca96cfb0-aa8d-423a-bb67-e160685570d4 | Fetch leave balances for employee 78 and year 0
+2025-11-15 23:17:07,523 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) requestId: 9c9441b3-fee3-428f-bc22-4bed5c549b99 | Fetch leave balances for employee 78 and year 0
+2025-11-15 23:17:07,525 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id : 3a896bc4-62e9-43a0-ac25-01c0f94d0399 | get payslip for employeeId: 78, month: 11, year: 2025
+2025-11-15 23:17:07,526 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-9) request_id : 8437074e-9880-4129-bc1e-22e9993e19bb | get all holidays
+2025-11-15 23:17:07,529 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) request_id : 2eb7f96b-b3a0-4c3c-977c-32932bebd0bc | get all holidays
+2025-11-15 23:17:07,529 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-9) Start fetching all holidays records - RequestId: 8437074e-9880-4129-bc1e-22e9993e19bb
+2025-11-15 23:17:07,531 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all holidays records - RequestId: 2eb7f96b-b3a0-4c3c-977c-32932bebd0bc
+2025-11-15 23:17:07,529 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start fetching salary structure - RequestId: 3a896bc4-62e9-43a0-ac25-01c0f94d0399, EmployeeId: 78, Month: 11, Year: 2025
+2025-11-15 23:17:07,529 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-10) request_id : 9f2c36b2-6c7c-4391-8b1b-a2a1b2007a13 | get payslip for employeeId: 78, month: 11, year: 2025
+2025-11-15 23:17:07,538 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-9) End fetching all holidaysz records - RequestId: 8437074e-9880-4129-bc1e-22e9993e19bb
+2025-11-15 23:17:07,542 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all holidaysz records - RequestId: 2eb7f96b-b3a0-4c3c-977c-32932bebd0bc
+2025-11-15 23:17:07,543 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-10) Start fetching salary structure - RequestId: 9f2c36b2-6c7c-4391-8b1b-a2a1b2007a13, EmployeeId: 78, Month: 11, Year: 2025
+2025-11-15 23:17:07,553 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-8) request_id : 784c3af7-5fab-4602-9b89-308ec34502ef | get all employee attendance
+2025-11-15 23:17:07,556 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) Start fetching all attendance records - RequestId: 784c3af7-5fab-4602-9b89-308ec34502ef
+2025-11-15 23:17:07,623 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-9) request_id : c215182a-d66b-4ba5-99b5-b5c9bf72a692 | get all employee attendance
+2025-11-15 23:17:07,624 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-9) Start fetching all attendance records - RequestId: c215182a-d66b-4ba5-99b5-b5c9bf72a692
+2025-11-15 23:17:07,670 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) requestId: 9f021c0c-4091-4d98-bbea-ce7d2fb504a0 | Fetch leave balances for employee 78 and year 0
+2025-11-15 23:17:07,698 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-8) correlation-id : af259bad-312c-4a80-9b29-dff98e1a2609 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:60)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-15 23:17:07,740 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-9) correlation-id : ac4e7d24-beb5-4761-8a3d-f99b2b2ba072 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:60)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-15 23:18:51,651 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) requestId: 1cff405b-460a-4ee8-8dce-4c974b0b771c | Fetch leave balances for employee 78 and year 0
+2025-11-15 23:18:51,665 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-12) request_id : ccdcf1f7-d20a-4856-a26b-d9cd63b8945d | get all employee attendance
+2025-11-15 23:18:51,665 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id : 44fdec50-f2e8-4503-9959-3bf3b29f22fe | get payslip for employeeId: 78, month: 11, year: 2025
+2025-11-15 23:18:51,668 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching salary structure - RequestId: 44fdec50-f2e8-4503-9959-3bf3b29f22fe, EmployeeId: 78, Month: 11, Year: 2025
+2025-11-15 23:18:51,670 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) Start fetching all attendance records - RequestId: ccdcf1f7-d20a-4856-a26b-d9cd63b8945d
+2025-11-15 23:18:51,672 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-13) request_id : 5b04743e-9770-4271-aca3-709c3392e7ae | get all holidays
+2025-11-15 23:18:51,674 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) Start fetching all holidays records - RequestId: 5b04743e-9770-4271-aca3-709c3392e7ae
+2025-11-15 23:18:51,681 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) End fetching all holidaysz records - RequestId: 5b04743e-9770-4271-aca3-709c3392e7ae
+2025-11-15 23:18:51,681 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-14) request_id : 637f2551-f5f2-4fb2-82a7-9e1268571fe4 | get payslip for employeeId: 78, month: 11, year: 2025
+2025-11-15 23:18:51,686 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-14) Start fetching salary structure - RequestId: 637f2551-f5f2-4fb2-82a7-9e1268571fe4, EmployeeId: 78, Month: 11, Year: 2025
+2025-11-15 23:18:51,699 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-13) request_id : f4ad506e-64bf-4250-8db9-43f3dcf390c5 | get all holidays
+2025-11-15 23:18:51,705 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) Start fetching all holidays records - RequestId: f4ad506e-64bf-4250-8db9-43f3dcf390c5
+2025-11-15 23:18:51,710 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) End fetching all holidaysz records - RequestId: f4ad506e-64bf-4250-8db9-43f3dcf390c5
+2025-11-15 23:18:51,787 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : 24b81244-3a25-43bc-a1a5-6356dcdfb781 | get all employee attendance
+2025-11-15 23:18:51,788 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all attendance records - RequestId: 24b81244-3a25-43bc-a1a5-6356dcdfb781
+2025-11-15 23:18:51,810 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) requestId: 36d85e02-3da6-4dfa-9943-df2664dd8252 | Fetch leave balances for employee 78 and year 0
+2025-11-15 23:18:51,842 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-12) correlation-id : 4ed1c242-6135-4929-8661-6178584c016e | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:60)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-15 23:18:51,931 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-11) correlation-id : d99a19b3-168d-4214-a4e1-635fa723233b | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:60)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-15 23:18:57,705 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-7) request_id : 29128bb5-42bd-4ebf-8f7e-d6421016483c | fetch All Regularization Attendance 
+2025-11-15 23:18:57,706 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-7) Start fetching all Regularization Attendance records - RequestId: 29128bb5-42bd-4ebf-8f7e-d6421016483c
+2025-11-15 23:18:57,710 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-11) request_id : 42b00a55-ecb0-4848-9773-f824c5eabb5b | get all holidays
+2025-11-15 23:18:57,715 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) Start fetching all holidays records - RequestId: 42b00a55-ecb0-4848-9773-f824c5eabb5b
+2025-11-15 23:18:57,726 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) End fetching all holidaysz records - RequestId: 42b00a55-ecb0-4848-9773-f824c5eabb5b
+2025-11-15 23:18:57,746 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : a46d0116-dcc4-4574-baa3-0e240e149426 | fetch All Regularization Attendance 
+2025-11-15 23:18:57,748 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: a46d0116-dcc4-4574-baa3-0e240e149426
+2025-11-15 23:18:57,752 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-7) End fetching all Regularization Attendance records - RequestId: 29128bb5-42bd-4ebf-8f7e-d6421016483c
+2025-11-15 23:18:57,757 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: a46d0116-dcc4-4574-baa3-0e240e149426
+2025-11-15 23:18:57,795 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-7) request_id : 0400e7da-1e67-46ad-94e8-e9c2ef5e9bd5 | get all holidays
+2025-11-15 23:18:57,796 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-7) Start fetching all holidays records - RequestId: 0400e7da-1e67-46ad-94e8-e9c2ef5e9bd5
+2025-11-15 23:18:57,800 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-12) request_id: 183e8dbb-8afb-4d99-a36c-f2768c0b98f8 | Fetching all employees
+2025-11-15 23:18:57,801 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: df3dcb03-73db-4604-b91e-0dabd67a51cc | Fetching all employees
+2025-11-15 23:18:57,800 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-14) request_id: 3cf165bf-88a8-4498-b056-1604e083ee28 | Fetching all employees
+2025-11-15 23:18:57,803 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-7) End fetching all holidaysz records - RequestId: 0400e7da-1e67-46ad-94e8-e9c2ef5e9bd5
+2025-11-15 23:18:57,810 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) Start fetching skill wise employee count - RequestId: 183e8dbb-8afb-4d99-a36c-f2768c0b98f8
+2025-11-15 23:18:57,810 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching skill wise employee count - RequestId: df3dcb03-73db-4604-b91e-0dabd67a51cc
+2025-11-15 23:18:57,810 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) Start fetching employees - RequestId: 3cf165bf-88a8-4498-b056-1604e083ee28
+2025-11-15 23:18:57,827 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching skill-wise employee count - RequestId: df3dcb03-73db-4604-b91e-0dabd67a51cc
+2025-11-15 23:18:57,827 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) End fetching skill-wise employee count - RequestId: 183e8dbb-8afb-4d99-a36c-f2768c0b98f8
+2025-11-15 23:18:57,855 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: ba1e404f-b032-4b7d-aab5-f4255e639837 | Fetching all employees
+2025-11-15 23:18:57,857 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching employees - RequestId: ba1e404f-b032-4b7d-aab5-f4255e639837
+2025-11-15 23:18:58,110 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) End fetching employees - RequestId: 3cf165bf-88a8-4498-b056-1604e083ee28
+2025-11-15 23:18:58,114 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching employees - RequestId: ba1e404f-b032-4b7d-aab5-f4255e639837
+2025-11-15 23:18:59,374 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-7) request_id: 34d4b3a1-0671-4389-924e-7be008c027fe | Fetching all assets
+2025-11-15 23:18:59,374 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-12) request_id: ad65abcf-14ae-4c6b-94cf-54676980d833 | Fetching all assets
+2025-11-15 23:18:59,394 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-7) Start fetching counts assets - RequestId: 34d4b3a1-0671-4389-924e-7be008c027fe
+2025-11-15 23:18:59,394 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) Start fetching all assets - RequestId: ad65abcf-14ae-4c6b-94cf-54676980d833
+2025-11-15 23:18:59,464 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-7) End fetching counts assets - RequestId: 34d4b3a1-0671-4389-924e-7be008c027fe
+2025-11-15 23:18:59,512 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) End fetching all assets - RequestId: ad65abcf-14ae-4c6b-94cf-54676980d833
+2025-11-15 23:19:00,074 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-13) request_id: e57012b9-5b62-402f-829e-6dd2afa0d43a | Fetching all assets
+2025-11-15 23:19:00,075 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) Start fetching counts assets - RequestId: e57012b9-5b62-402f-829e-6dd2afa0d43a
+2025-11-15 23:19:00,085 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) End fetching counts assets - RequestId: e57012b9-5b62-402f-829e-6dd2afa0d43a
+2025-11-15 23:19:00,163 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-13) request_id: 646d2c1e-2555-468b-ac53-c8f2528d7685 | Fetching all assets
+2025-11-15 23:19:00,164 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) Start fetching all assets - RequestId: 646d2c1e-2555-468b-ac53-c8f2528d7685
+2025-11-15 23:19:00,218 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) End fetching all assets - RequestId: 646d2c1e-2555-468b-ac53-c8f2528d7685
+2025-11-15 23:20:09,751 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) correlation-id : b9e2b512-42ee-4bc5-a221-269c85129b64 | activity : Asset Save | message : Started
+2025-11-15 23:20:09,753 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-12) correlation-id : b9e2b512-42ee-4bc5-a221-269c85129b64 | status code : 400 | message : Required Fields Missing
+2025-11-15 23:24:22,184 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) correlation-id : 92aea28a-eea4-4430-a9f6-a9db6f587869 | activity : Asset Save | message : Started
+2025-11-15 23:24:23,768 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) correlation-id : 92aea28a-eea4-4430-a9f6-a9db6f587869 | activity : Asset Save | message : Ended
+2025-11-15 23:27:21,553 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-12) request_id : 444cacea-3039-4306-92ca-4a6680fe66bf | fetch All Regularization Attendance 
+2025-11-15 23:27:21,561 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-15) request_id : a08ac913-0a44-4c70-b17d-9694c2cac31d | get all holidays
+2025-11-15 23:27:21,561 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) request_id : 7c8d6a0e-0110-4778-bc68-e1b8561d39b4 | get all holidays
+2025-11-15 23:27:21,561 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) Start fetching all Regularization Attendance records - RequestId: 444cacea-3039-4306-92ca-4a6680fe66bf
+2025-11-15 23:27:21,563 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) Start fetching all holidays records - RequestId: 7c8d6a0e-0110-4778-bc68-e1b8561d39b4
+2025-11-15 23:27:21,563 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) Start fetching all holidays records - RequestId: a08ac913-0a44-4c70-b17d-9694c2cac31d
+2025-11-15 23:27:21,669 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-17) request_id : b13ed4be-31ff-44fc-bea5-a4647d41bcac | fetch All Regularization Attendance 
+2025-11-15 23:27:21,670 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-17) Start fetching all Regularization Attendance records - RequestId: b13ed4be-31ff-44fc-bea5-a4647d41bcac
+2025-11-15 23:27:21,779 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) End fetching all holidaysz records - RequestId: a08ac913-0a44-4c70-b17d-9694c2cac31d
+2025-11-15 23:27:22,550 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-16) End fetching all holidaysz records - RequestId: 7c8d6a0e-0110-4778-bc68-e1b8561d39b4
+2025-11-15 23:27:22,688 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-17) End fetching all Regularization Attendance records - RequestId: b13ed4be-31ff-44fc-bea5-a4647d41bcac
+2025-11-15 23:27:22,689 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) End fetching all Regularization Attendance records - RequestId: 444cacea-3039-4306-92ca-4a6680fe66bf
+2025-11-15 23:27:24,245 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-17) request_id: 4e97ef91-fb8e-488f-adaa-f0373c972e2c | Fetching all assets
+2025-11-15 23:27:24,245 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) Start fetching counts assets - RequestId: 4e97ef91-fb8e-488f-adaa-f0373c972e2c
+2025-11-15 23:27:24,346 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) End fetching counts assets - RequestId: 4e97ef91-fb8e-488f-adaa-f0373c972e2c
+2025-11-15 23:27:24,349 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-12) request_id: 0ff607a9-cdcf-4647-9078-9abe8042eee6 | Fetching all assets
+2025-11-15 23:27:24,349 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) Start fetching all assets - RequestId: 0ff607a9-cdcf-4647-9078-9abe8042eee6
+2025-11-15 23:27:24,364 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-17) request_id: 9e53b00d-55f8-40ce-a0da-950b31474916 | Fetching all assets
+2025-11-15 23:27:24,364 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) Start fetching counts assets - RequestId: 9e53b00d-55f8-40ce-a0da-950b31474916
+2025-11-15 23:27:24,371 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) End fetching counts assets - RequestId: 9e53b00d-55f8-40ce-a0da-950b31474916
+2025-11-15 23:27:24,553 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) End fetching all assets - RequestId: 0ff607a9-cdcf-4647-9078-9abe8042eee6
+2025-11-15 23:27:24,593 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-17) request_id: c0dab343-c031-4972-8e3f-57a617cb28b6 | Fetching all assets
+2025-11-15 23:27:24,609 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) Start fetching all assets - RequestId: c0dab343-c031-4972-8e3f-57a617cb28b6
+2025-11-15 23:27:24,746 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) End fetching all assets - RequestId: c0dab343-c031-4972-8e3f-57a617cb28b6
+2025-11-15 23:29:51,055 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) correlation-id : 66d1e2df-0410-4c85-b991-f1f045a02c4f | activity : Asset Save | message : Started
+2025-11-15 23:29:51,069 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) correlation-id : 66d1e2df-0410-4c85-b991-f1f045a02c4f | activity : Asset Save | message : Ended
+2025-11-15 23:34:09,836 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-17) correlation-id : 605dd0d9-867b-4110-a942-235aa2d39a50 | message : HTTP 400 Bad Request | cause : {}: jakarta.ws.rs.BadRequestException: HTTP 400 Bad Request
+	at com.sbd.common.Jsonb.AssetJsonb.__quarkus_rest_inject(AssetJsonb.java)
+	at org.jboss.resteasy.reactive.server.core.parameters.InjectParamExtractor.extractParameter(InjectParamExtractor.java:26)
+	at org.jboss.resteasy.reactive.server.handlers.ParameterHandler.handle(ParameterHandler.java:45)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:137)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NumberFormatException: For input string: "Desktop"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at io.quarkus.generated.java.lang.Integer$quarkusrestparamConverter$.convert(Unknown Source)
+	... 12 more
+
+2025-11-15 23:34:26,694 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-18) correlation-id : ddc1cd46-98b2-4a61-b581-9d7d3b4b5530 | message : HTTP 400 Bad Request | cause : {}: jakarta.ws.rs.BadRequestException: HTTP 400 Bad Request
+	at com.sbd.common.Jsonb.AssetJsonb.__quarkus_rest_inject(AssetJsonb.java)
+	at org.jboss.resteasy.reactive.server.core.parameters.InjectParamExtractor.extractParameter(InjectParamExtractor.java:26)
+	at org.jboss.resteasy.reactive.server.handlers.ParameterHandler.handle(ParameterHandler.java:45)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:137)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NumberFormatException: For input string: "Desktop"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at io.quarkus.generated.java.lang.Integer$quarkusrestparamConverter$.convert(Unknown Source)
+	... 12 more
+
+2025-11-15 23:34:29,541 laptop-t3siq6r0 workeronboarding-dev.jar[13692] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-17) correlation-id : 4047aed4-2604-4b03-9322-2479b4922bc5 | message : HTTP 400 Bad Request | cause : {}: jakarta.ws.rs.BadRequestException: HTTP 400 Bad Request
+	at com.sbd.common.Jsonb.AssetJsonb.__quarkus_rest_inject(AssetJsonb.java)
+	at org.jboss.resteasy.reactive.server.core.parameters.InjectParamExtractor.extractParameter(InjectParamExtractor.java:26)
+	at org.jboss.resteasy.reactive.server.handlers.ParameterHandler.handle(ParameterHandler.java:45)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:137)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NumberFormatException: For input string: "Desktop"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at io.quarkus.generated.java.lang.Integer$quarkusrestparamConverter$.convert(Unknown Source)
+	... 12 more
+
+2025-11-15 23:46:15,235 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-18) request_id: e2a93101-6c9f-4863-991f-57c267d8603b | Fetching all employees
+2025-11-15 23:46:15,256 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) Start fetching employees - RequestId: e2a93101-6c9f-4863-991f-57c267d8603b
+2025-11-15 23:46:16,117 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-22) request_id : d7d54c90-0b6b-45ad-b7d3-7da6512cc625 | get all holidays
+2025-11-15 23:46:16,117 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 8c0107fd-7d08-4575-9e1a-7bb25974a3f7 | fetch All Regularization Attendance 
+2025-11-15 23:46:16,118 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-19) request_id: d85083df-82c8-4083-ba8f-301ae1da90ec | Fetching all employees
+2025-11-15 23:46:16,120 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-21) request_id: e7f87b21-99db-45bb-b19f-2298250e0804 | Fetching all employees
+2025-11-15 23:46:16,121 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-20) request_id: 18744332-e721-49c1-99a6-494c934ea023 | Fetching all employees
+2025-11-15 23:46:16,121 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-21) Start fetching employees - RequestId: e7f87b21-99db-45bb-b19f-2298250e0804
+2025-11-15 23:46:16,121 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-22) Start fetching all holidays records - RequestId: d7d54c90-0b6b-45ad-b7d3-7da6512cc625
+2025-11-15 23:46:16,122 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) Start fetching skill wise employee count - RequestId: d85083df-82c8-4083-ba8f-301ae1da90ec
+2025-11-15 23:46:16,122 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-20) Start fetching skill wise employee count - RequestId: 18744332-e721-49c1-99a6-494c934ea023
+2025-11-15 23:46:16,122 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetching all Regularization Attendance records - RequestId: 8c0107fd-7d08-4575-9e1a-7bb25974a3f7
+2025-11-15 23:46:17,403 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) End fetching skill-wise employee count - RequestId: d85083df-82c8-4083-ba8f-301ae1da90ec
+2025-11-15 23:46:17,403 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-20) End fetching skill-wise employee count - RequestId: 18744332-e721-49c1-99a6-494c934ea023
+2025-11-15 23:46:17,407 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-22) End fetching all holidaysz records - RequestId: d7d54c90-0b6b-45ad-b7d3-7da6512cc625
+2025-11-15 23:46:17,478 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetching all Regularization Attendance records - RequestId: 8c0107fd-7d08-4575-9e1a-7bb25974a3f7
+2025-11-15 23:46:17,599 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) request_id : 3db93ea3-584f-4f13-af58-ff6d4b04adf0 | get all holidays
+2025-11-15 23:46:17,600 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) Start fetching all holidays records - RequestId: 3db93ea3-584f-4f13-af58-ff6d4b04adf0
+2025-11-15 23:46:17,604 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) End fetching all holidaysz records - RequestId: 3db93ea3-584f-4f13-af58-ff6d4b04adf0
+2025-11-15 23:46:17,645 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 98f252ab-a765-4232-8810-0d02f0780345 | fetch All Regularization Attendance 
+2025-11-15 23:46:17,645 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetching all Regularization Attendance records - RequestId: 98f252ab-a765-4232-8810-0d02f0780345
+2025-11-15 23:46:17,654 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetching all Regularization Attendance records - RequestId: 98f252ab-a765-4232-8810-0d02f0780345
+2025-11-15 23:46:17,756 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) End fetching employees - RequestId: e2a93101-6c9f-4863-991f-57c267d8603b
+2025-11-15 23:46:17,756 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-21) End fetching employees - RequestId: e7f87b21-99db-45bb-b19f-2298250e0804
+2025-11-15 23:46:18,591 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-23) request_id: 7c28c5e1-da7a-4534-a857-29824c41a483 | Fetching all assets
+2025-11-15 23:46:18,591 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-22) request_id: d9b10bf1-c3ec-4f26-9311-6ba4b5ffe286 | Fetching all assets
+2025-11-15 23:46:18,591 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) Start fetching all assets - RequestId: 7c28c5e1-da7a-4534-a857-29824c41a483
+2025-11-15 23:46:18,591 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-22) Start fetching counts assets - RequestId: d9b10bf1-c3ec-4f26-9311-6ba4b5ffe286
+2025-11-15 23:46:18,629 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-22) End fetching counts assets - RequestId: d9b10bf1-c3ec-4f26-9311-6ba4b5ffe286
+2025-11-15 23:46:18,689 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) End fetching all assets - RequestId: 7c28c5e1-da7a-4534-a857-29824c41a483
+2025-11-15 23:46:19,228 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-20) request_id: 82a39af5-3884-4254-800e-d005bee363e9 | Fetching all assets
+2025-11-15 23:46:19,228 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-22) request_id: f83c92f2-e24c-4c58-b174-1e0dce3d054f | Fetching all assets
+2025-11-15 23:46:19,230 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) Start fetching all assets - RequestId: 82a39af5-3884-4254-800e-d005bee363e9
+2025-11-15 23:46:19,230 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-22) Start fetching counts assets - RequestId: f83c92f2-e24c-4c58-b174-1e0dce3d054f
+2025-11-15 23:46:19,233 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-22) End fetching counts assets - RequestId: f83c92f2-e24c-4c58-b174-1e0dce3d054f
+2025-11-15 23:46:19,306 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) End fetching all assets - RequestId: 82a39af5-3884-4254-800e-d005bee363e9
+2025-11-15 23:49:27,143 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) correlation-id : 4890d5ea-914d-4b13-aaca-190bf5db9917 | activity : Asset Save | message : Started
+2025-11-15 23:49:27,581 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) correlation-id : 4890d5ea-914d-4b13-aaca-190bf5db9917 | activity : Asset Save | message : Ended
+2025-11-15 23:49:27,848 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-24) correlation-id : c31dda4f-2cbc-4f6f-918f-5cc68e9b5791 | activity : Asset Save | message : Started
+2025-11-15 23:49:27,851 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-24) correlation-id : c31dda4f-2cbc-4f6f-918f-5cc68e9b5791 | status code : 400 | message : Required Fields Missing
+2025-11-15 23:49:33,991 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) request_id : fb3b1cde-8c4c-4058-bdf6-3c059cd78c44 | get all holidays
+2025-11-15 23:49:33,992 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) Start fetching all holidays records - RequestId: fb3b1cde-8c4c-4058-bdf6-3c059cd78c44
+2025-11-15 23:49:33,997 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-24) request_id : 6d791885-da46-4bfd-9249-435716fe971a | fetch All Regularization Attendance 
+2025-11-15 23:49:33,998 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) End fetching all holidaysz records - RequestId: fb3b1cde-8c4c-4058-bdf6-3c059cd78c44
+2025-11-15 23:49:33,998 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-24) Start fetching all Regularization Attendance records - RequestId: 6d791885-da46-4bfd-9249-435716fe971a
+2025-11-15 23:49:33,999 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-25) request_id : 81663938-83d7-43ff-8db1-1e12e9901b9b | get all holidays
+2025-11-15 23:49:34,000 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-25) Start fetching all holidays records - RequestId: 81663938-83d7-43ff-8db1-1e12e9901b9b
+2025-11-15 23:49:34,006 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-25) End fetching all holidaysz records - RequestId: 81663938-83d7-43ff-8db1-1e12e9901b9b
+2025-11-15 23:49:34,006 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-24) End fetching all Regularization Attendance records - RequestId: 6d791885-da46-4bfd-9249-435716fe971a
+2025-11-15 23:49:34,083 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-25) request_id : 274797c5-9c8f-4f76-b880-c5ba457cee02 | fetch All Regularization Attendance 
+2025-11-15 23:49:34,084 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) Start fetching all Regularization Attendance records - RequestId: 274797c5-9c8f-4f76-b880-c5ba457cee02
+2025-11-15 23:49:34,091 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) End fetching all Regularization Attendance records - RequestId: 274797c5-9c8f-4f76-b880-c5ba457cee02
+2025-11-15 23:49:38,105 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-25) request_id : 1f2dba6a-02a4-4346-bfa8-af2ac252d2ef | fetch All Regularization Attendance 
+2025-11-15 23:49:38,106 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) Start fetching all Regularization Attendance records - RequestId: 1f2dba6a-02a4-4346-bfa8-af2ac252d2ef
+2025-11-15 23:49:38,106 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) request_id : b8ee8e8a-6e58-4f9d-a083-60f02c961871 | get all holidays
+2025-11-15 23:49:38,107 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : d5bd9764-0d0c-4130-b57f-1c39bfd988cd | fetch All Regularization Attendance 
+2025-11-15 23:49:38,107 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) Start fetching all holidays records - RequestId: b8ee8e8a-6e58-4f9d-a083-60f02c961871
+2025-11-15 23:49:38,108 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetching all Regularization Attendance records - RequestId: d5bd9764-0d0c-4130-b57f-1c39bfd988cd
+2025-11-15 23:49:38,112 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) End fetching all holidaysz records - RequestId: b8ee8e8a-6e58-4f9d-a083-60f02c961871
+2025-11-15 23:49:38,113 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) End fetching all Regularization Attendance records - RequestId: 1f2dba6a-02a4-4346-bfa8-af2ac252d2ef
+2025-11-15 23:49:38,113 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) End fetching all Regularization Attendance records - RequestId: d5bd9764-0d0c-4130-b57f-1c39bfd988cd
+2025-11-15 23:49:38,114 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) request_id : d5e10345-04d2-4b3f-acc7-e10c191604af | get all holidays
+2025-11-15 23:49:38,116 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) Start fetching all holidays records - RequestId: d5e10345-04d2-4b3f-acc7-e10c191604af
+2025-11-15 23:49:38,118 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-27) request_id: fc97e07b-8d84-4061-8d39-25aede265e61 | Fetching all employees
+2025-11-15 23:49:38,119 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-27) Start fetching skill wise employee count - RequestId: fc97e07b-8d84-4061-8d39-25aede265e61
+2025-11-15 23:49:38,123 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) End fetching all holidaysz records - RequestId: d5e10345-04d2-4b3f-acc7-e10c191604af
+2025-11-15 23:49:38,124 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-27) End fetching skill-wise employee count - RequestId: fc97e07b-8d84-4061-8d39-25aede265e61
+2025-11-15 23:49:38,132 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-26) request_id: 5934465c-5495-4026-8cee-2e34d48db200 | Fetching all employees
+2025-11-15 23:49:38,132 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-27) request_id: c5ddee1f-87b0-4d20-9c71-982911df4fd5 | Fetching all employees
+2025-11-15 23:49:38,134 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-27) Start fetching employees - RequestId: c5ddee1f-87b0-4d20-9c71-982911df4fd5
+2025-11-15 23:49:38,135 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-26) Start fetching skill wise employee count - RequestId: 5934465c-5495-4026-8cee-2e34d48db200
+2025-11-15 23:49:38,139 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-26) End fetching skill-wise employee count - RequestId: 5934465c-5495-4026-8cee-2e34d48db200
+2025-11-15 23:49:38,200 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-26) request_id: 311b7537-8017-4818-92ce-34043a100159 | Fetching all employees
+2025-11-15 23:49:38,201 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-26) Start fetching employees - RequestId: 311b7537-8017-4818-92ce-34043a100159
+2025-11-15 23:49:38,396 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-27) End fetching employees - RequestId: c5ddee1f-87b0-4d20-9c71-982911df4fd5
+2025-11-15 23:49:38,436 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-26) End fetching employees - RequestId: 311b7537-8017-4818-92ce-34043a100159
+2025-11-15 23:49:40,220 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-23) request_id: 51aead57-6ecc-425c-907f-bb502c929be7 | Fetching all assets
+2025-11-15 23:49:40,221 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) Start fetching counts assets - RequestId: 51aead57-6ecc-425c-907f-bb502c929be7
+2025-11-15 23:49:40,224 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) End fetching counts assets - RequestId: 51aead57-6ecc-425c-907f-bb502c929be7
+2025-11-15 23:49:40,289 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-23) request_id: 38844ca6-2a39-4ebc-b57b-a304afb797d8 | Fetching all assets
+2025-11-15 23:49:40,290 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) Start fetching all assets - RequestId: 38844ca6-2a39-4ebc-b57b-a304afb797d8
+2025-11-15 23:49:40,337 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) End fetching all assets - RequestId: 38844ca6-2a39-4ebc-b57b-a304afb797d8
+2025-11-15 23:49:40,825 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-25) request_id: 19bdabad-1f91-4ebf-a4fa-a668859d807d | Fetching all assets
+2025-11-15 23:49:40,827 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) Start fetching counts assets - RequestId: 19bdabad-1f91-4ebf-a4fa-a668859d807d
+2025-11-15 23:49:40,832 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) End fetching counts assets - RequestId: 19bdabad-1f91-4ebf-a4fa-a668859d807d
+2025-11-15 23:49:41,168 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-25) request_id: 57d51602-6f95-4976-bf22-a1c3f5573ba4 | Fetching all assets
+2025-11-15 23:49:41,169 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) Start fetching all assets - RequestId: 57d51602-6f95-4976-bf22-a1c3f5573ba4
+2025-11-15 23:49:41,224 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) End fetching all assets - RequestId: 57d51602-6f95-4976-bf22-a1c3f5573ba4
+2025-11-15 23:55:02,161 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-25) request_id : 10246b25-1227-4d91-8b7d-8408b5111910 | get all holidays
+2025-11-15 23:55:02,162 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-25) Start fetching all holidays records - RequestId: 10246b25-1227-4d91-8b7d-8408b5111910
+2025-11-15 23:55:02,163 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-28) request_id : 96639b67-e569-45d2-9c07-45224eacec0a | get all holidays
+2025-11-15 23:55:02,163 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-29) request_id : 0d614356-fb5d-4b11-9167-46781100c9a6 | fetch All Regularization Attendance 
+2025-11-15 23:55:02,164 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-29) Start fetching all Regularization Attendance records - RequestId: 0d614356-fb5d-4b11-9167-46781100c9a6
+2025-11-15 23:55:02,164 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) Start fetching all holidays records - RequestId: 96639b67-e569-45d2-9c07-45224eacec0a
+2025-11-15 23:55:02,166 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-25) End fetching all holidaysz records - RequestId: 10246b25-1227-4d91-8b7d-8408b5111910
+2025-11-15 23:55:02,170 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-29) End fetching all Regularization Attendance records - RequestId: 0d614356-fb5d-4b11-9167-46781100c9a6
+2025-11-15 23:55:02,176 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) End fetching all holidaysz records - RequestId: 96639b67-e569-45d2-9c07-45224eacec0a
+2025-11-15 23:55:02,228 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-28) request_id : 963af6d5-b33f-4627-a285-033d802944ca | fetch All Regularization Attendance 
+2025-11-15 23:55:02,229 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-28) Start fetching all Regularization Attendance records - RequestId: 963af6d5-b33f-4627-a285-033d802944ca
+2025-11-15 23:55:02,236 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-28) End fetching all Regularization Attendance records - RequestId: 963af6d5-b33f-4627-a285-033d802944ca
+2025-11-15 23:55:27,023 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-28) RequestId: ec72c6ec-fcbb-46cc-b5ff-b09034921511 | Update company holidays Request: companyholidayId: 1
+2025-11-15 23:55:27,024 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) RequestId: ec72c6ec-fcbb-46cc-b5ff-b09034921511 | Updating Company Holiday with Id: 1
+2025-11-15 23:55:29,148 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-28) request_id : f2c3632d-ffe0-4bb9-8d89-ed39aab00da2 | get all holidays
+2025-11-15 23:55:29,149 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) Start fetching all holidays records - RequestId: f2c3632d-ffe0-4bb9-8d89-ed39aab00da2
+2025-11-15 23:55:29,152 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) End fetching all holidaysz records - RequestId: f2c3632d-ffe0-4bb9-8d89-ed39aab00da2
+2025-11-15 23:56:06,074 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-28) RequestId: 77defc20-c66f-41ae-9a84-27f7c1a90359 | Update company holidays Request: companyholidayId: 1
+2025-11-15 23:56:06,075 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) RequestId: 77defc20-c66f-41ae-9a84-27f7c1a90359 | Updating Company Holiday with Id: 1
+2025-11-15 23:56:07,941 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-28) request_id : 3f565e25-890a-4e74-ac14-22a6010562d6 | get all holidays
+2025-11-15 23:56:07,942 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) Start fetching all holidays records - RequestId: 3f565e25-890a-4e74-ac14-22a6010562d6
+2025-11-15 23:56:07,946 laptop-t3siq6r0 workeronboarding-dev.jar[13692] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-28) End fetching all holidaysz records - RequestId: 3f565e25-890a-4e74-ac14-22a6010562d6

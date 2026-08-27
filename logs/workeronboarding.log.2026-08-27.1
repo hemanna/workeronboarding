@@ -1,0 +1,150 @@
+2026-08-26 23:35:23,525 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 16.643s. Listening on: http://0.0.0.0:8080
+2026-08-26 23:35:23,536 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-08-26 23:35:23,538 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-08-26 23:35:38,857 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: e149db2b-bad9-493e-b810-e0973b8acde2 | Check-In Request: employeeId: 80
+2026-08-26 23:35:38,944 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start Check-In | RequestId: e149db2b-bad9-493e-b810-e0973b8acde2 | employeeId: 80
+2026-08-26 23:35:39,685 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Today's attendance created | attendanceId: 47 | employeeId: 80 | date: 2026-08-26
+2026-08-26 23:35:39,691 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Check-In session created | sessionId: 15 | attendanceId: 47 | checkIn: 20:40
+2026-08-26 23:35:39,692 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End Check-In | RequestId: e149db2b-bad9-493e-b810-e0973b8acde2
+2026-08-26 23:36:36,006 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 3906d357-8111-4616-9fa6-b3e17c17e4be | Check-In Request: employeeId: 80
+2026-08-26 23:36:36,007 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start Check-In | RequestId: 3906d357-8111-4616-9fa6-b3e17c17e4be | employeeId: 80
+2026-08-26 23:36:36,051 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Check-In session created | sessionId: 16 | attendanceId: 47 | checkIn: 20:40
+2026-08-26 23:36:36,051 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End Check-In | RequestId: 3906d357-8111-4616-9fa6-b3e17c17e4be
+2026-08-26 23:37:47,960 laptop-t3siq6r0 workeronboarding-dev.jar[22928] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 7a4a55ff-3161-490f-b4e5-52acea202b7c | message : Unable to deserialize property 'data' because of: Unable to deserialize property 'checkIn' because of: Error parsing class java.time.LocalTime from value: 2:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING. | cause : {}: jakarta.json.bind.JsonbException: Unable to deserialize property 'data' because of: Unable to deserialize property 'checkIn' because of: Error parsing class java.time.LocalTime from value: 2:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING.
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:80)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:31)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:57)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:29)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:138)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserialize(DeserializationContextImpl.java:127)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:55)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:102)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.doReadFrom(JsonbMessageBodyReader.java:57)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.readFrom(JsonbMessageBodyReader.java:39)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.readFrom(RequestDeserializeHandler.java:126)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.handle(RequestDeserializeHandler.java:84)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:135)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: jakarta.json.bind.JsonbException: Unable to deserialize property 'checkIn' because of: Error parsing class java.time.LocalTime from value: 2:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING.
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:80)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:31)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:57)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:29)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.deserializer.ContextSwitcher.deserialize(ContextSwitcher.java:36)
+	at org.eclipse.yasson.internal.deserializer.ContextSwitcher.deserialize(ContextSwitcher.java:22)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:78)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Error parsing class java.time.LocalTime from value: 2:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING.
+	at org.eclipse.yasson.internal.deserializer.types.AbstractDateDeserializer.lambda$actualDeserializer$4(AbstractDateDeserializer.java:75)
+	at org.eclipse.yasson.internal.deserializer.types.AbstractDateDeserializer.deserializeStringValue(AbstractDateDeserializer.java:90)
+	at org.eclipse.yasson.internal.deserializer.types.TypeDeserializer.deserialize(TypeDeserializer.java:37)
+	at org.eclipse.yasson.internal.deserializer.ValueExtractor.deserialize(ValueExtractor.java:47)
+	at org.eclipse.yasson.internal.deserializer.ValueExtractor.deserialize(ValueExtractor.java:24)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:78)
+	... 34 more
+Caused by: java.time.format.DateTimeParseException: Text '2:00' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948)
+	at java.base/java.time.LocalTime.parse(LocalTime.java:463)
+	at org.eclipse.yasson.internal.deserializer.types.LocalTimeDeserializer.parseDefault(LocalTimeDeserializer.java:41)
+	at org.eclipse.yasson.internal.deserializer.types.LocalTimeDeserializer.parseDefault(LocalTimeDeserializer.java:28)
+	at org.eclipse.yasson.internal.deserializer.types.AbstractDateDeserializer.lambda$actualDeserializer$4(AbstractDateDeserializer.java:73)
+	... 43 more
+
+2026-08-26 23:37:59,688 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 5a1f1661-9524-4c27-bbaa-043d5776c359 | Check-In Request: employeeId: 80
+2026-08-26 23:37:59,689 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start Check-In | RequestId: 5a1f1661-9524-4c27-bbaa-043d5776c359 | employeeId: 80
+2026-08-26 23:37:59,731 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Check-In session created | sessionId: 17 | attendanceId: 47 | checkIn: 02:00
+2026-08-26 23:37:59,732 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End Check-In | RequestId: 5a1f1661-9524-4c27-bbaa-043d5776c359
+2026-08-26 23:46:23,334 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: 6b2fa146-9fea-49fc-9e95-be7ad068fd95 | Check-In Request: employeeId: 82
+2026-08-26 23:46:23,358 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start Check-In | RequestId: 6b2fa146-9fea-49fc-9e95-be7ad068fd95 | employeeId: 82
+2026-08-26 23:46:23,746 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Today's attendance created | attendanceId: 48 | employeeId: 82 | date: 2026-08-26
+2026-08-26 23:46:23,754 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Check-In session created | sessionId: 18 | attendanceId: 48 | checkIn: 09:00
+2026-08-26 23:46:23,755 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End Check-In | RequestId: 6b2fa146-9fea-49fc-9e95-be7ad068fd95
+2026-08-26 23:46:46,877 laptop-t3siq6r0 workeronboarding-dev.jar[22928] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 1db00554-d9d7-4212-9331-20cb875695dc | message : Unable to deserialize property 'data' because of: Unable to deserialize property 'checkIn' because of: Error parsing class java.time.LocalTime from value: 8:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING. | cause : {}: jakarta.json.bind.JsonbException: Unable to deserialize property 'data' because of: Unable to deserialize property 'checkIn' because of: Error parsing class java.time.LocalTime from value: 8:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING.
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:80)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:31)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:57)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:29)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:138)
+	at org.eclipse.yasson.internal.DeserializationContextImpl.deserialize(DeserializationContextImpl.java:127)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:55)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:102)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.doReadFrom(JsonbMessageBodyReader.java:57)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyReader.readFrom(JsonbMessageBodyReader.java:39)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.readFrom(RequestDeserializeHandler.java:126)
+	at org.jboss.resteasy.reactive.server.handlers.RequestDeserializeHandler.handle(RequestDeserializeHandler.java:84)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:135)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: jakarta.json.bind.JsonbException: Unable to deserialize property 'checkIn' because of: Error parsing class java.time.LocalTime from value: 8:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING.
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:80)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:31)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:57)
+	at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.deserialize(DefaultObjectInstanceCreator.java:29)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.deserializer.ContextSwitcher.deserialize(ContextSwitcher.java:36)
+	at org.eclipse.yasson.internal.deserializer.ContextSwitcher.deserialize(ContextSwitcher.java:22)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:78)
+	... 24 more
+Caused by: jakarta.json.bind.JsonbException: Error parsing class java.time.LocalTime from value: 8:00. Check your @JsonbDateFormat has all time units for class java.time.LocalTime type, or consider using org.eclipse.yasson.YassonConfig#ZERO_TIME_PARSE_DEFAULTING.
+	at org.eclipse.yasson.internal.deserializer.types.AbstractDateDeserializer.lambda$actualDeserializer$4(AbstractDateDeserializer.java:75)
+	at org.eclipse.yasson.internal.deserializer.types.AbstractDateDeserializer.deserializeStringValue(AbstractDateDeserializer.java:90)
+	at org.eclipse.yasson.internal.deserializer.types.TypeDeserializer.deserialize(TypeDeserializer.java:37)
+	at org.eclipse.yasson.internal.deserializer.ValueExtractor.deserialize(ValueExtractor.java:47)
+	at org.eclipse.yasson.internal.deserializer.ValueExtractor.deserialize(ValueExtractor.java:24)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:85)
+	at org.eclipse.yasson.internal.deserializer.PositionChecker.deserialize(PositionChecker.java:34)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:46)
+	at org.eclipse.yasson.internal.deserializer.NullCheckDeserializer.deserialize(NullCheckDeserializer.java:26)
+	at org.eclipse.yasson.internal.deserializer.ObjectDeserializer.deserialize(ObjectDeserializer.java:78)
+	... 34 more
+Caused by: java.time.format.DateTimeParseException: Text '8:00' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948)
+	at java.base/java.time.LocalTime.parse(LocalTime.java:463)
+	at org.eclipse.yasson.internal.deserializer.types.LocalTimeDeserializer.parseDefault(LocalTimeDeserializer.java:41)
+	at org.eclipse.yasson.internal.deserializer.types.LocalTimeDeserializer.parseDefault(LocalTimeDeserializer.java:28)
+	at org.eclipse.yasson.internal.deserializer.types.AbstractDateDeserializer.lambda$actualDeserializer$4(AbstractDateDeserializer.java:73)
+	... 43 more
+
+2026-08-26 23:46:55,216 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: a599d1fd-6665-4632-ab00-b0f392173cee | Check-In Request: employeeId: 78
+2026-08-26 23:46:55,218 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start Check-In | RequestId: a599d1fd-6665-4632-ab00-b0f392173cee | employeeId: 78
+2026-08-26 23:46:55,346 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Today's attendance created | attendanceId: 49 | employeeId: 78 | date: 2026-08-26
+2026-08-26 23:46:55,351 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Check-In session created | sessionId: 19 | attendanceId: 49 | checkIn: 08:00
+2026-08-26 23:46:55,352 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End Check-In | RequestId: a599d1fd-6665-4632-ab00-b0f392173cee
+2026-08-26 23:47:03,908 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) RequestId: db08e788-f230-4103-83ad-ba2d4c0923f4 | Check-In Request: employeeId: 78
+2026-08-26 23:47:03,910 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start Check-In | RequestId: db08e788-f230-4103-83ad-ba2d4c0923f4 | employeeId: 78
+2026-08-26 23:47:04,014 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Check-In session created | sessionId: 20 | attendanceId: 49 | checkIn: 02:00
+2026-08-26 23:47:04,015 laptop-t3siq6r0 workeronboarding-dev.jar[22928] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End Check-In | RequestId: db08e788-f230-4103-83ad-ba2d4c0923f4

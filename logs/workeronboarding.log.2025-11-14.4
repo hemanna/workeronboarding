@@ -1,0 +1,40 @@
+2025-11-14 13:52:57,637 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 16.474s. Listening on: http://0.0.0.0:8080
+2025-11-14 13:52:57,646 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-11-14 13:52:57,647 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-11-14 13:53:59,904 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 58a20246-7381-4491-87a4-0201366562b0 | activity : Asset List | message : Started
+2025-11-14 13:53:59,933 laptop-t3siq6r0 workeronboarding-dev.jar[22404] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-1) HTTP Request to /assets/list failed, error id: d7b13198-7bf6-4886-b19b-c81a7749928a-1: java.lang.NoSuchMethodError: 'java.lang.String com.sbd.common.exception.BusinessException.getRequestId()'
+	at com.sbd.common.exception.mapper.BusinessExceptionMapper.toResponse(BusinessExceptionMapper.java:20)
+	at com.sbd.common.exception.mapper.BusinessExceptionMapper.toResponse(BusinessExceptionMapper.java:12)
+	at org.jboss.resteasy.reactive.server.core.RuntimeExceptionMapper.mapException(RuntimeExceptionMapper.java:100)
+	at org.jboss.resteasy.reactive.server.core.ResteasyReactiveRequestContext.mapExceptionIfPresent(ResteasyReactiveRequestContext.java:345)
+	at org.jboss.resteasy.reactive.server.handlers.ExceptionHandler.handle(ExceptionHandler.java:15)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:150)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-14 13:54:08,223 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 878e1df6-1903-4076-a3fb-7e4a34c86359 | activity : Asset List | message : Started
+2025-11-14 13:54:08,225 laptop-t3siq6r0 workeronboarding-dev.jar[22404] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-1) HTTP Request to /assets/list failed, error id: d7b13198-7bf6-4886-b19b-c81a7749928a-2: java.lang.NoSuchMethodError: 'java.lang.String com.sbd.common.exception.BusinessException.getRequestId()'
+	at com.sbd.common.exception.mapper.BusinessExceptionMapper.toResponse(BusinessExceptionMapper.java:20)
+	at com.sbd.common.exception.mapper.BusinessExceptionMapper.toResponse(BusinessExceptionMapper.java:12)
+	at org.jboss.resteasy.reactive.server.core.RuntimeExceptionMapper.mapException(RuntimeExceptionMapper.java:100)
+	at org.jboss.resteasy.reactive.server.core.ResteasyReactiveRequestContext.mapExceptionIfPresent(ResteasyReactiveRequestContext.java:345)
+	at org.jboss.resteasy.reactive.server.handlers.ExceptionHandler.handle(ExceptionHandler.java:15)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:150)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-14 13:58:29,882 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2025-11-14 13:58:33,187 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in BusinessException.class.
+2025-11-14 13:58:33,474 laptop-t3siq6r0 workeronboarding-dev.jar[22404] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.278s

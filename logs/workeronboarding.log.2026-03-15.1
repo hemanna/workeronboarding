@@ -1,0 +1,50 @@
+2026-03-15 22:27:27,117 laptop-t3siq6r0 workeronboarding-dev.jar[7020] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 19.101s. Listening on: http://0.0.0.0:8080
+2026-03-15 22:27:27,129 laptop-t3siq6r0 workeronboarding-dev.jar[7020] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-03-15 22:27:27,131 laptop-t3siq6r0 workeronboarding-dev.jar[7020] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-03-15 22:27:49,589 laptop-t3siq6r0 workeronboarding-dev.jar[7020] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: 317e023d-c115-45e3-a20d-63c8b6489ac9 | Fetching deduction report
+2026-03-15 22:27:49,604 laptop-t3siq6r0 workeronboarding-dev.jar[7020] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : 317e023d-c115-45e3-a20d-63c8b6489ac9 | activity : Deduction report Detail | message : Started
+2026-03-15 22:27:49,846 laptop-t3siq6r0 workeronboarding-dev.jar[7020] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) Unknown column 'ess.month' in 'where clause'
+2026-03-15 22:27:49,869 laptop-t3siq6r0 workeronboarding-dev.jar[7020] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : d204e719-9fcd-42eb-97d0-118352a65629 | message : JDBC exception executing SQL [SELECT ed.employee_name AS name, SUM(CASE WHEN sc.component_code = 'PF' THEN esd.amount ELSE 0 END) AS pf, SUM(CASE WHEN sc.component_code = 'ESI' THEN esd.amount ELSE 0 END) AS esi, SUM(CASE WHEN sc.component_code = 'PT' THEN esd.amount ELSE 0 END) AS pt, SUM(CASE WHEN sc.component_code = 'LOP' THEN esd.amount ELSE 0 END) AS lop, 0 AS advance, SUM(CASE WHEN sc.component_code NOT IN ('PF','ESI','PT','LOP') THEN esd.amount ELSE 0 END) AS other, SUM(esd.amount) AS total_deduction FROM employee_salary_deductions esd JOIN salary_component sc ON sc.id = esd.component_id JOIN employee_salary_structure ess ON ess.id = esd.salary_structure_id JOIN employee_details ed ON ed.id = ess.employee_id WHERE ess.salary_status='Active' AND ess.month = ? AND ess.year = ? GROUP BY ed.employee_name] [Unknown column 'ess.month' in 'where clause'] [n/a] | cause : {}: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [SELECT ed.employee_name AS name, SUM(CASE WHEN sc.component_code = 'PF' THEN esd.amount ELSE 0 END) AS pf, SUM(CASE WHEN sc.component_code = 'ESI' THEN esd.amount ELSE 0 END) AS esi, SUM(CASE WHEN sc.component_code = 'PT' THEN esd.amount ELSE 0 END) AS pt, SUM(CASE WHEN sc.component_code = 'LOP' THEN esd.amount ELSE 0 END) AS lop, 0 AS advance, SUM(CASE WHEN sc.component_code NOT IN ('PF','ESI','PT','LOP') THEN esd.amount ELSE 0 END) AS other, SUM(esd.amount) AS total_deduction FROM employee_salary_deductions esd JOIN salary_component sc ON sc.id = esd.component_id JOIN employee_salary_structure ess ON ess.id = esd.salary_structure_id JOIN employee_details ed ON ed.id = ess.employee_id WHERE ess.salary_status='Active' AND ess.month = ? AND ess.year = ? GROUP BY ed.employee_name] [Unknown column 'ess.month' in 'where clause'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:257)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getMetaData(AbstractResultSetAccess.java:36)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getColumnCount(AbstractResultSetAccess.java:52)
+	at org.hibernate.query.results.ResultSetMappingImpl.resolve(ResultSetMappingImpl.java:193)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:477)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:267)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sql.internal.NativeSelectQueryPlanImpl.performList(NativeSelectQueryPlanImpl.java:97)
+	at org.hibernate.query.sql.internal.NativeQueryImpl.doList(NativeQueryImpl.java:626)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.SalaryStructureRepository.fetchDeductionReport(SalaryStructureRepository.java:65)
+	at com.sbd.common.repository.SalaryStructureRepository_ClientProxy.fetchDeductionReport(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService.fetchDeductionReport(SalaryStructureService.java:563)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.fetchDeductionReport(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.getDeductionReport(SalaryStructureResource.java:129)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$getDeductionReport_66cfffea6e1da2d4a6c58e4e5db084ec7185060b.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'ess.month' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeQuery(PreparedStatementWrapper.java:78)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:239)
+	... 29 more
+

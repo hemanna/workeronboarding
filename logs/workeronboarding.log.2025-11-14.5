@@ -1,0 +1,32 @@
+2025-11-14 13:35:35,397 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 9.848s. Listening on: http://0.0.0.0:8080
+2025-11-14 13:35:35,404 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-11-14 13:35:35,405 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-11-14 13:36:02,748 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 564c33bb-7c36-402d-9d16-d7cef332270a | activity : Asset List | message : Started
+2025-11-14 13:36:03,586 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 564c33bb-7c36-402d-9d16-d7cef332270a | activity : Asset List | message : Ended
+2025-11-14 13:36:34,251 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : a7f62cb0-7e2e-4ad5-b68a-bf1e160ee7fb | activity : Asset List | message : Started
+2025-11-14 13:36:34,285 laptop-t3siq6r0 workeronboarding-dev.jar[20848] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-1) HTTP Request to /assets/list failed, error id: eedadd22-81be-4986-bde6-ade540585c15-1: java.lang.NoSuchMethodError: 'java.lang.String com.sbd.common.exception.BusinessException.getRequestId()'
+	at com.sbd.common.exception.mapper.BusinessExceptionMapper.toResponse(BusinessExceptionMapper.java:20)
+	at com.sbd.common.exception.mapper.BusinessExceptionMapper.toResponse(BusinessExceptionMapper.java:12)
+	at org.jboss.resteasy.reactive.server.core.RuntimeExceptionMapper.mapException(RuntimeExceptionMapper.java:100)
+	at org.jboss.resteasy.reactive.server.core.ResteasyReactiveRequestContext.mapExceptionIfPresent(ResteasyReactiveRequestContext.java:345)
+	at org.jboss.resteasy.reactive.server.handlers.ExceptionHandler.handle(ExceptionHandler.java:15)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:150)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-14 13:36:52,203 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : f6222b04-2051-41c8-aabf-a87472ed4ff8 | activity : Asset List | message : Started
+2025-11-14 13:36:52,338 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : f6222b04-2051-41c8-aabf-a87472ed4ff8 | activity : Asset List | message : Ended
+2025-11-14 13:37:11,198 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : d8783eab-1d41-407e-bcab-cbefd39e9c12 | activity : Asset List | message : Started
+2025-11-14 13:37:11,254 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : d8783eab-1d41-407e-bcab-cbefd39e9c12 | activity : Asset List | message : Ended
+2025-11-14 13:39:05,485 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : b3be2a93-32c9-4bd9-8982-251a75c865c8 | activity : Asset List | message : Started
+2025-11-14 13:39:05,524 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : b3be2a93-32c9-4bd9-8982-251a75c865c8 | activity : Asset List | message : Ended
+2025-11-14 13:39:42,338 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 7a3cc99b-9ba0-4399-8adb-14aea2be1b8c | activity : Asset List | message : Started
+2025-11-14 13:39:42,679 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 7a3cc99b-9ba0-4399-8adb-14aea2be1b8c | statusCode : 204 | activity : Ended | message : {}
+2025-11-14 13:39:54,996 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 8b7d8939-1acb-413f-8abb-ada18591dc8b | activity : Asset List | message : Started
+2025-11-14 13:39:55,041 laptop-t3siq6r0 workeronboarding-dev.jar[20848] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 8b7d8939-1acb-413f-8abb-ada18591dc8b | activity : Asset List | message : Ended

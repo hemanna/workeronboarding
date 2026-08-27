@@ -1,0 +1,64 @@
+2025-12-08 23:19:59,982 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 14.066s. Listening on: http://0.0.0.0:8080
+2025-12-08 23:19:59,991 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-12-08 23:19:59,992 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-12-08 23:20:11,327 laptop-t3siq6r0 workeronboarding-dev.jar[19016] WARN  [com.sbd.com.exc.map.NotAllowedExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : f594c6b6-3dc7-412e-b296-ed20eb64c09c | message : HTTP 405 Method Not Allowed | cause : {}: jakarta.ws.rs.NotAllowedException: HTTP 405 Method Not Allowed
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:99)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:138)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:192)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:181)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.lambda$emitSuccess$0(FutureBase.java:54)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-12-08 23:20:19,127 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 3a171b71-bb64-4c64-b299-4c32568b7aac | activity : Asset Type List | message : Started
+2025-12-08 23:20:20,081 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 3a171b71-bb64-4c64-b299-4c32568b7aac | activity : Asset Type List | message : Ended
+2025-12-08 23:26:30,482 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-3) request_id : 0ddee26d-ba36-4f58-95d4-b9a2dea6c8c6 | get all holidays
+2025-12-08 23:26:30,482 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : a44b72e7-67a5-4365-a3c7-24a2e29a5dba | fetch All Regularization Attendance 
+2025-12-08 23:26:30,610 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: bba19479-fc7c-475d-afa8-9e80e18ab162 | Fetching all employees
+2025-12-08 23:26:30,610 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 6146a898-1eba-4b5f-ab91-75995021854a | Fetching all employees
+2025-12-08 23:26:30,610 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: 0ff7bea8-9d2b-4e52-a4db-1c9a1cc5fc18 | Fetching all employees
+2025-12-08 23:26:30,861 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-3) Start fetching all holidays records - RequestId: 0ddee26d-ba36-4f58-95d4-b9a2dea6c8c6
+2025-12-08 23:26:30,861 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees - RequestId: 6146a898-1eba-4b5f-ab91-75995021854a
+2025-12-08 23:26:30,861 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Start fetching skill wise employee count - RequestId: 0ff7bea8-9d2b-4e52-a4db-1c9a1cc5fc18
+2025-12-08 23:26:30,861 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetching all Regularization Attendance records - RequestId: a44b72e7-67a5-4365-a3c7-24a2e29a5dba
+2025-12-08 23:26:30,861 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching skill wise employee count - RequestId: bba19479-fc7c-475d-afa8-9e80e18ab162
+2025-12-08 23:26:33,677 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-3) End fetching all holidaysz records - RequestId: 0ddee26d-ba36-4f58-95d4-b9a2dea6c8c6
+2025-12-08 23:26:33,714 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetching all Regularization Attendance records - RequestId: a44b72e7-67a5-4365-a3c7-24a2e29a5dba
+2025-12-08 23:26:33,786 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) End fetching skill-wise employee count - RequestId: 0ff7bea8-9d2b-4e52-a4db-1c9a1cc5fc18
+2025-12-08 23:26:33,786 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching skill-wise employee count - RequestId: bba19479-fc7c-475d-afa8-9e80e18ab162
+2025-12-08 23:26:33,888 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 61816b68-dec1-4109-b575-37a2592fde35 | fetch All Regularization Attendance 
+2025-12-08 23:26:33,890 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all Regularization Attendance records - RequestId: 61816b68-dec1-4109-b575-37a2592fde35
+2025-12-08 23:26:33,905 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all Regularization Attendance records - RequestId: 61816b68-dec1-4109-b575-37a2592fde35
+2025-12-08 23:26:34,201 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2025-12-08 23:26:34,289 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employees - RequestId: 6146a898-1eba-4b5f-ab91-75995021854a
+2025-12-08 23:26:38,099 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in AssetTypeRepository$QueryEnum.class, AssetTypeRepository.class.
+2025-12-08 23:26:38,319 laptop-t3siq6r0 workeronboarding-dev.jar[19016] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.199s

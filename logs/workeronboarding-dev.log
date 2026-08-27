@@ -1,0 +1,312 @@
+2025-01-01 00:42:37,025 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.boo.cla.QuarkusClassLoader] (main) Adding elements io.quarkus.bootstrap.classloading.MemoryClassPathElement@f679798 to QuarkusClassLoader Quarkus Runtime ClassLoader: DEV for workeronboarding-1.0.0-SNAPSHOT restart no:0
+2025-01-01 00:42:37,025 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.boo.cla.QuarkusClassLoader] (main) Adding elements io.quarkus.bootstrap.classloading.PathTreeClassPathElement[C:\node\workeronboarding\target\classes runtime=true resources=58] to QuarkusClassLoader Quarkus Runtime ClassLoader: DEV for workeronboarding-1.0.0-SNAPSHOT restart no:0
+2025-01-01 00:42:37,279 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.hibernate-orm.jdbc.batch-size" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2025-01-01 00:42:37,279 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.datasource.jdbc.validation-query" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2025-01-01 00:42:37,280 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.hibernate-orm.batch-size" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2025-01-01 00:42:37,281 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.hibernate-orm.aggressive-fetch" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2025-01-01 00:42:37,281 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.hibernate-orm.sql-load-script-source" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2025-01-01 00:42:37,325 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.hib.orm] (Quarkus Main Thread) List of entities found by Quarkus deployment:
+[com.sbd.common.entity.Department, com.sbd.common.entity.EmployeeAttendance, com.sbd.common.entity.EmployeeDetails, com.sbd.common.entity.Leave, com.sbd.common.entity.LeaveType, com.sbd.common.entity.Role]
+2025-01-01 00:42:37,462 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.int.InternalThreadLocalMap] (Quarkus Main Thread) -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2025-01-01 00:42:37,462 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.int.InternalThreadLocalMap] (Quarkus Main Thread) -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2025-01-01 00:42:37,471 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.impl] (Quarkus Main Thread) ArC DI container initialized [beans=100, observers=4]
+2025-01-01 00:42:38,006 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (Quarkus Main Thread) Stop region factory
+2025-01-01 00:42:38,006 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (Quarkus Main Thread) Clear region references
+2025-01-01 00:42:38,016 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.ArcRecorder] (Quarkus Main Thread) Bean container listener io.quarkus.hibernate.orm.runtime.HibernateOrmRecorder$1 finished in 545 ms
+2025-01-01 00:42:38,054 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.impl] (Quarkus Main Thread) Loaded 63 removed beans lazily
+2025-01-01 00:42:38,054 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.vertx.serializers.ServerVertxBufferMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,055 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.vertx.serializers.ServerMutinyBufferMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,057 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.vertx.serializers.ServerVertxAsyncFileMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,058 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.vertx.serializers.ServerMutinyAsyncFileMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,060 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.jackson.runtime.serialisers.vertx.VertxJsonArrayMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,061 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.jackson.runtime.serialisers.vertx.VertxJsonObjectMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,061 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.server.runtime.QuarkusServerPathBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.jackson.runtime.serialisers.vertx.VertxJsonArrayMessageBodyReader and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.jackson.runtime.serialisers.vertx.VertxJsonObjectMessageBodyReader and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerStringMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerStringMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerStringMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerStringMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerStringMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerCharArrayMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,062 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerByteArrayMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerFormUrlEncodedProvider and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerInputStreamMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.StreamingOutputMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerReaderBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerFileBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerFilePartBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.core.multipart.MultipartMessageBodyWriter and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerPathBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerPathPartBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerStringMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerBooleanMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerCharacterMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerNumberMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerInputStreamMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,063 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerReaderBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,064 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.server.runtime.QuarkusServerFileBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,064 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerByteArrayMessageBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,064 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class org.jboss.resteasy.reactive.server.providers.serialisers.ServerDefaultTextPlainBodyHandler and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,065 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.server.runtime.exceptionmappers.ForbiddenExceptionMapper and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,065 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.jackson.runtime.mappers.DefaultMismatchedInputException and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,065 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.server.runtime.exceptionmappers.AuthenticationRedirectExceptionMapper and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,065 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.resteasy.reactive.server.runtime.exceptionmappers.AuthenticationCompletionExceptionMapper and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,066 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.run.BeanContainerImpl] (Quarkus Main Thread) No matching bean found for type class io.quarkus.rest.runtime.__QuarkusInit and qualifiers []. The bean might have been marked as unused and removed during build.
+2025-01-01 00:42:38,121 desktop-0ebg92j workeronboarding-dev.jar[20016] FINE  [jak.jso.spi.JsonProvider] (Quarkus Main Thread) Checking system property jakarta.json.provider
+2025-01-01 00:42:38,121 desktop-0ebg92j workeronboarding-dev.jar[20016] FINE  [jak.jso.spi.JsonProvider] (Quarkus Main Thread) Checking ServiceLoader
+2025-01-01 00:42:38,124 desktop-0ebg92j workeronboarding-dev.jar[20016] FINE  [jak.jso.spi.JsonProvider] (Quarkus Main Thread) ServiceLoader loading Facility used; returning object [org.eclipse.parsson.JsonProviderImpl]
+2025-01-01 00:42:38,393 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.cha.DefaultChannelId] (Thread-134) -Dio.netty.processId: 20016 (auto-detected)
+2025-01-01 00:42:38,396 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.cha.DefaultChannelId] (Thread-134) -Dio.netty.machineId: 5f:5d:8d:eb:7d:59:62:e6 (user-set)
+2025-01-01 00:42:38,446 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.ver.cor.log.LoggerFactory] (Quarkus Main Thread) Using io.vertx.core.logging.SLF4JLogDelegateFactory
+2025-01-01 00:42:38,457 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.ver.cor.run.VertxCoreRecorder] (Quarkus Main Thread) Vert.x Cache configured to: C:\Users\kk\AppData\Local\Temp\vertx-cache\9061953906832917981
+2025-01-01 00:42:38,471 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.ResourceLeakDetector] (Quarkus Main Thread) -Dio.netty.leakDetection.level: simple
+2025-01-01 00:42:38,471 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.ResourceLeakDetector] (Quarkus Main Thread) -Dio.netty.leakDetection.targetRecords: 4
+2025-01-01 00:42:38,489 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.cha.MultithreadEventLoopGroup] (Quarkus Main Thread) -Dio.netty.eventLoopThreads: 8
+2025-01-01 00:42:38,499 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.con.GlobalEventExecutor] (Quarkus Main Thread) -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+2025-01-01 00:42:38,509 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.cha.nio.NioEventLoop] (Quarkus Main Thread) -Dio.netty.noKeySetOptimization: false
+2025-01-01 00:42:38,509 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.cha.nio.NioEventLoop] (Quarkus Main Thread) -Dio.netty.selectorAutoRebuildThreshold: 512
+2025-01-01 00:42:38,515 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.int.PlatformDependent] (Quarkus Main Thread) org.jctools-core.MpscChunkedArrayQueue: available
+2025-01-01 00:42:38,596 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.ver.cor.run.VertxCoreRecorder] (Quarkus Main Thread) Vertx has Native Transport Enabled: false
+2025-01-01 00:42:38,626 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [com.arj.ats.jta] (Quarkus Main Thread) Setting up node identifiers '[quarkus]' for which recovery will be performed
+2025-01-01 00:42:38,675 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.hib.orm.run.FastBootHibernatePersistenceProvider] (JPA Startup Thread) Located 1 persistence units; checking each
+2025-01-01 00:42:38,678 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.hib.orm.run.FastBootHibernatePersistenceProvider] (JPA Startup Thread) Checking persistence-unit [name=<default>, explicit-provider=null] against incoming persistence unit name [<default>]
+2025-01-01 00:42:38,678 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.hib.orm.run.FastBootHibernatePersistenceProvider] (JPA Startup Thread) No PersistenceProvider explicitly requested, assuming Hibernate
+2025-01-01 00:42:38,717 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.agr.run.DataSources] (JPA Startup Thread) Started datasource <default> connected to jdbc:mysql://localhost:3306/workeronboarding-dev
+2025-01-01 00:42:39,239 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,246 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,279 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:39,328 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:39,328 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:39,352 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,355 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,364 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:39,372 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:39,372 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:39,393 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,396 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,405 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:39,409 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:39,410 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:39,427 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,429 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,438 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:39,444 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:39,445 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:39,471 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,479 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,502 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:39,509 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:39,510 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:39,542 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,545 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:39,553 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:39,559 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:39,559 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:39,695 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (JPA Startup Thread) Starting Infinispan region factory
+2025-01-01 00:42:39,699 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (JPA Startup Thread) Building timestamps cache region [default-update-timestamps-region]
+2025-01-01 00:42:39,715 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (JPA Startup Thread) Building query results cache region [default-query-results-region]
+2025-01-01 00:42:40,559 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:2, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_Server_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:741379968, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:40,560 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11) X509Certificate: Alg:SHA256withRSA, Serial:1, Subject:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Issuer:CN=MySQL_Server_8.0.39_Auto_Generated_CA_Certificate, Key type:RSA, Length:2048, Cert Id:978999850, Valid from:10/1/24, 11:08 PM, Valid until:9/29/34, 11:08 PM
+2025-01-01 00:42:40,567 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [jdk.eve.security] (agroal-11)  TLSHandshake: localhost:3306, TLSv1.3, TLS_AES_256_GCM_SHA384, 741379968
+2025-01-01 00:42:40,572 desktop-0ebg92j workeronboarding-dev.jar[20016] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:40,573 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.agr.pool] (agroal-11) Cause: : java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-01-01 00:42:40,577 desktop-0ebg92j workeronboarding-dev.jar[20016] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (JPA Startup Thread) Unknown database 'workeronboarding-dev'
+2025-01-01 00:42:40,580 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (JPA Startup Thread) Stop region factory
+2025-01-01 00:42:40,581 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [org.inf.qua.hib.cac.QuarkusInfinispanRegionFactory] (JPA Startup Thread) Clear region references
+2025-01-01 00:42:40,600 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.arc.impl] (Quarkus Main Thread) ArC DI container shut down
+2025-01-01 00:42:40,607 desktop-0ebg92j workeronboarding-dev.jar[20016] ERROR [io.qua.run.Application] (Quarkus Main Thread) Failed to start application (with profile [dev]): java.lang.RuntimeException: Failed to start quarkus
+	at io.quarkus.runner.ApplicationImpl.doStart(Unknown Source)
+	at io.quarkus.runtime.Application.start(Application.java:101)
+	at io.quarkus.runtime.ApplicationLifecycleManager.run(ApplicationLifecycleManager.java:111)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:71)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:44)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:124)
+	at io.quarkus.runner.GeneratedMain.main(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.quarkus.runner.bootstrap.StartupActionImpl$1.run(StartupActionImpl.java:113)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.RuntimeException: jakarta.persistence.PersistenceException: [PersistenceUnit: <default>] Unable to build Hibernate SessionFactory
+	at io.quarkus.hibernate.orm.runtime.JPAConfig.startAll(JPAConfig.java:78)
+	at io.quarkus.hibernate.orm.runtime.HibernateOrmRecorder.startAllPersistenceUnits(HibernateOrmRecorder.java:101)
+	at io.quarkus.deployment.steps.HibernateOrmProcessor$startPersistenceUnits1868654632.deploy_0(Unknown Source)
+	at io.quarkus.deployment.steps.HibernateOrmProcessor$startPersistenceUnits1868654632.deploy(Unknown Source)
+	... 13 more
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: <default>] Unable to build Hibernate SessionFactory
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.persistenceException(FastBootEntityManagerFactoryBuilder.java:126)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:86)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:74)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:156)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:64)
+	... 1 more
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Unknown database 'workeronboarding-dev'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jta.internal.DdlTransactionIsolatorJtaImpl.getIsolatedConnection(DdlTransactionIsolatorJtaImpl.java:77)
+	at org.hibernate.resource.transaction.backend.jta.internal.DdlTransactionIsolatorJtaImpl.getIsolatedConnection(DdlTransactionIsolatorJtaImpl.java:67)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:64)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140)
+	at io.quarkus.hibernate.orm.runtime.observers.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:21)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:293)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:84)
+	... 6 more
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'workeronboarding-dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 more
+
+2025-01-01 00:42:40,615 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.qua.run.Application] (Quarkus Main Thread) Stopping application
+2025-01-01 00:42:40,692 desktop-0ebg92j workeronboarding-dev.jar[20016] INFO  [io.qua.dep.dev.IsolatedDevModeMain] (main) Attempting to start live reload endpoint to recover from previous Quarkus startup failure
+2025-01-01 00:42:40,753 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.NetUtil] (vert.x-eventloop-thread-0) -Djava.net.preferIPv4Stack: false
+2025-01-01 00:42:40,754 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.NetUtil] (vert.x-eventloop-thread-0) -Djava.net.preferIPv6Addresses: false
+2025-01-01 00:42:40,795 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.NetUtilInitializations] (vert.x-eventloop-thread-0) Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2025-01-01 00:42:40,799 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.uti.NetUtil] (vert.x-eventloop-thread-0) Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+2025-01-01 00:42:40,875 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.numHeapArenas: 8
+2025-01-01 00:42:40,876 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.numDirectArenas: 8
+2025-01-01 00:42:40,878 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.pageSize: 8192
+2025-01-01 00:42:40,878 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.maxOrder: 3
+2025-01-01 00:42:40,880 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.chunkSize: 65536
+2025-01-01 00:42:40,882 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.smallCacheSize: 256
+2025-01-01 00:42:40,883 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.normalCacheSize: 64
+2025-01-01 00:42:40,884 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2025-01-01 00:42:40,885 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.cacheTrimInterval: 8192
+2025-01-01 00:42:40,886 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+2025-01-01 00:42:40,887 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.useCacheForAllThreads: false
+2025-01-01 00:42:40,888 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-1) -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+2025-01-01 00:42:41,014 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.ByteBufUtil] (vert.x-eventloop-thread-1) -Dio.netty.allocator.type: pooled
+2025-01-01 00:42:41,015 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.ByteBufUtil] (vert.x-eventloop-thread-1) -Dio.netty.threadLocalDirectBufferSize: 0
+2025-01-01 00:42:41,016 desktop-0ebg92j workeronboarding-dev.jar[20016] DEBUG [io.net.buf.ByteBufUtil] (vert.x-eventloop-thread-1) -Dio.netty.maxThreadLocalCharBufferSize: 16384

@@ -1,0 +1,34 @@
+2025-07-04 23:12:25,401 laptop-t3siq6r0 workeronboarding-dev.jar[22288] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 5.327s. Listening on: http://0.0.0.0:8080
+2025-07-04 23:12:25,407 laptop-t3siq6r0 workeronboarding-dev.jar[22288] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-07-04 23:12:25,408 laptop-t3siq6r0 workeronboarding-dev.jar[22288] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-07-04 23:12:47,334 laptop-t3siq6r0 workeronboarding-dev.jar[22288] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) request_id: f9b5bd26-2c2c-40e1-ab29-7460ff3c5520 | Fetching all employees
+2025-07-04 23:12:47,386 laptop-t3siq6r0 workeronboarding-dev.jar[22288] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 8a3c7023-3f58-4fb6-84ef-ee2a8f5ba787 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.SalaryStructureService.fetchAllEmployeesPayslipData(SalaryStructureService.java:206)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.fetchAllEmployeesPayslipData$$superforward(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass$$function$$1.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.fetchAllEmployeesPayslipData(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.fetchAllEmployeesPayslipData(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.fetchAllEmployeesPayslipData(SalaryStructureResource.java:53)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$fetchAllEmployeesPayslipData_9df978f71f9292f5eafbc7741bc338ffa831e3d1.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+

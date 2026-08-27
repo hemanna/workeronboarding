@@ -1,0 +1,30 @@
+2026-03-22 01:56:24,622 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 12.020s. Listening on: http://0.0.0.0:8080
+2026-03-22 01:56:24,630 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-03-22 01:56:24,634 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-03-22 01:56:58,953 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlation-id : 9a9272c5-9260-4d58-9382-96458d6f49fa | activity : Employee Attendance Lock | message : Started
+2026-03-22 01:56:58,960 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlationId=9a9272c5-9260-4d58-9382-96458d6f49fa | Locking attendance for month=6 year=2025
+2026-03-22 01:56:59,140 laptop-t3siq6r0 workeronboarding-dev.jar[24356] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 0b0dcba6-dd43-4ff3-bcd8-7e4bdbd19155 | message : Executing an update/delete query | cause : {}: jakarta.persistence.TransactionRequiredException: Executing an update/delete query
+	at org.hibernate.internal.AbstractSharedSessionContract.checkTransactionNeededForUpdateOperation(AbstractSharedSessionContract.java:471)
+	at org.hibernate.query.spi.AbstractQuery.executeUpdate(AbstractQuery.java:633)
+	at com.sbd.common.repository.AttendanceLockRepository.lockAttendance(AttendanceLockRepository.java:23)
+	at com.sbd.common.repository.AttendanceLockRepository_ClientProxy.lockAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService.lockAttendance(EmployeeAttendanceService.java:836)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.lockAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.lockAttendance(EmployeeAttendanceResource.java:237)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$lockAttendance_9b6c22cad55c8af42263830c21ff0ed4f5d3eb54.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2026-03-22 02:00:37,785 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2026-03-22 02:00:42,857 laptop-t3siq6r0 workeronboarding-dev.jar[24356] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\EmployeeAttendanceService.java uses unchecked or unsafe operations., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\EmployeeAttendanceService.java
+2026-03-22 02:00:42,860 laptop-t3siq6r0 workeronboarding-dev.jar[24356] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) Recompile with -Xlint:unchecked for details., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\EmployeeAttendanceService.java
+2026-03-22 02:00:42,932 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in EmployeeAttendanceService.class.
+2026-03-22 02:00:43,205 laptop-t3siq6r0 workeronboarding-dev.jar[24356] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.256s

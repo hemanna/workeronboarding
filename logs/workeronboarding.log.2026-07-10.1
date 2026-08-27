@@ -1,0 +1,37 @@
+2026-07-10 14:19:42,130 laptop-t3siq6r0 workeronboarding-dev.jar[8424] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 12.620s. Listening on: http://0.0.0.0:8080
+2026-07-10 14:19:42,138 laptop-t3siq6r0 workeronboarding-dev.jar[8424] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-07-10 14:19:42,139 laptop-t3siq6r0 workeronboarding-dev.jar[8424] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-07-10 14:19:49,418 laptop-t3siq6r0 workeronboarding-dev.jar[8424] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) Request Id : 98a822ca-303e-4d4e-95d4-47abd9444b5d | Fetch Today Attendance
+2026-07-10 14:19:49,515 laptop-t3siq6r0 workeronboarding-dev.jar[8424] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlation-id : 98a822ca-303e-4d4e-95d4-47abd9444b5d | activity : TODAY ATTENDANCE | message : Started
+2026-07-10 14:19:49,822 laptop-t3siq6r0 workeronboarding-dev.jar[8424] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 2e4e9a6e-395a-40dc-bed7-cb3aff1626e5 | message : class java.sql.Time cannot be cast to class java.time.LocalTime (java.sql.Time is in module java.sql of loader 'platform'; java.time.LocalTime is in module java.base of loader 'bootstrap') | cause : {}: java.lang.ClassCastException: class java.sql.Time cannot be cast to class java.time.LocalTime (java.sql.Time is in module java.sql of loader 'platform'; java.time.LocalTime is in module java.base of loader 'bootstrap')
+	at com.sbd.common.repository.EmployeeAttendanceRepository.fetchTodayAttendance(EmployeeAttendanceRepository.java:216)
+	at com.sbd.common.repository.EmployeeAttendanceRepository_ClientProxy.fetchTodayAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchTodayAttendance(EmployeeAttendanceService.java:1231)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchTodayAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$18.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchTodayAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchTodayAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchTodayAttendance(EmployeeAttendanceResource.java:318)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchTodayAttendance_de495e7b45f431cc2e4b94a180b9651073d7b844.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+

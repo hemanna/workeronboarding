@@ -1,0 +1,1074 @@
+2025-10-13 23:30:41,308 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 10.800s. Listening on: http://0.0.0.0:8080
+2025-10-13 23:30:41,315 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-10-13 23:30:41,316 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-10-13 23:42:04,094 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : d3cf7740-ee94-465b-a849-1f9dcfa21adc | fetch All Regularization Attendance 
+2025-10-13 23:42:04,094 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : c615909a-2f79-4695-b99e-6f0559c9a709 | fetch All Regularization Attendance 
+2025-10-13 23:42:04,331 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetching all Regularization Attendance records - RequestId: d3cf7740-ee94-465b-a849-1f9dcfa21adc
+2025-10-13 23:42:04,331 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetching all Regularization Attendance records - RequestId: c615909a-2f79-4695-b99e-6f0559c9a709
+2025-10-13 23:42:04,341 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: 9e641c82-5684-4008-8f55-b29c03b5f703 | Fetching all employees
+2025-10-13 23:42:04,341 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: 07faaeaa-8367-40f9-86dd-09664e90fe83 | Fetching all employees
+2025-10-13 23:42:04,341 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: 6498b2b0-20a5-4dde-9b74-b7af3c76242b | Fetching all employees
+2025-10-13 23:42:04,341 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 5e2306fb-2807-4618-9407-8e3b7a7c0ced | Fetching all employees
+2025-10-13 23:42:04,348 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: 6498b2b0-20a5-4dde-9b74-b7af3c76242b
+2025-10-13 23:42:04,349 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching skill wise employee count - RequestId: 9e641c82-5684-4008-8f55-b29c03b5f703
+2025-10-13 23:42:04,348 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees - RequestId: 5e2306fb-2807-4618-9407-8e3b7a7c0ced
+2025-10-13 23:42:04,348 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Start fetching skill wise employee count - RequestId: 07faaeaa-8367-40f9-86dd-09664e90fe83
+2025-10-13 23:42:06,231 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching skill-wise employee count - RequestId: 9e641c82-5684-4008-8f55-b29c03b5f703
+2025-10-13 23:42:06,231 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) End fetching skill-wise employee count - RequestId: 07faaeaa-8367-40f9-86dd-09664e90fe83
+2025-10-13 23:42:06,293 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) End fetching all Regularization Attendance records - RequestId: d3cf7740-ee94-465b-a849-1f9dcfa21adc
+2025-10-13 23:42:06,293 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetching all Regularization Attendance records - RequestId: c615909a-2f79-4695-b99e-6f0559c9a709
+2025-10-13 23:42:06,589 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: 6498b2b0-20a5-4dde-9b74-b7af3c76242b
+2025-10-13 23:42:06,589 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employees - RequestId: 5e2306fb-2807-4618-9407-8e3b7a7c0ced
+2025-10-13 23:42:36,870 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 7641bb66-d83c-4b82-98b5-7c5c6a3fdb2f | fetch All Regularization Attendance 
+2025-10-13 23:42:36,872 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching all Regularization Attendance records - RequestId: 7641bb66-d83c-4b82-98b5-7c5c6a3fdb2f
+2025-10-13 23:42:36,880 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching all Regularization Attendance records - RequestId: 7641bb66-d83c-4b82-98b5-7c5c6a3fdb2f
+2025-10-13 23:42:36,925 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 4503da51-5531-4446-a8d2-a0df7e113409 | fetch All Regularization Attendance 
+2025-10-13 23:42:36,927 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching all Regularization Attendance records - RequestId: 4503da51-5531-4446-a8d2-a0df7e113409
+2025-10-13 23:42:36,932 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching all Regularization Attendance records - RequestId: 4503da51-5531-4446-a8d2-a0df7e113409
+2025-10-13 23:42:38,818 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : aa206680-da2a-461b-84ed-7194e91f467b | get all employee attendance
+2025-10-13 23:42:38,819 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 84875b70-3e5d-4ab8-8c8f-bbb88ad96f26 | get all employee attendance
+2025-10-13 23:42:38,820 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching all attendance records - RequestId: aa206680-da2a-461b-84ed-7194e91f467b
+2025-10-13 23:42:38,820 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all attendance records - RequestId: 84875b70-3e5d-4ab8-8c8f-bbb88ad96f26
+2025-10-13 23:42:39,074 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 286eeecb-0111-4fc7-aecc-a8fec47bc572 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:42:39,074 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-3) correlation-id : 289fa5bd-cbe2-42b9-ad81-77a8bc7aeb41 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:42:41,147 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 4e383694-0e7f-4028-8f89-ec73097f9ccd | fetch All Regularization Attendance 
+2025-10-13 23:42:41,148 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all Regularization Attendance records - RequestId: 4e383694-0e7f-4028-8f89-ec73097f9ccd
+2025-10-13 23:42:41,155 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all Regularization Attendance records - RequestId: 4e383694-0e7f-4028-8f89-ec73097f9ccd
+2025-10-13 23:42:41,189 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 3e59cc26-c60f-4bab-a846-3867ba12f819 | fetch All Regularization Attendance 
+2025-10-13 23:42:41,190 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all Regularization Attendance records - RequestId: 3e59cc26-c60f-4bab-a846-3867ba12f819
+2025-10-13 23:42:41,195 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all Regularization Attendance records - RequestId: 3e59cc26-c60f-4bab-a846-3867ba12f819
+2025-10-13 23:42:44,656 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 47618ac3-82d3-4bc8-9ab0-5b4940a03d46 | fetch All Regularization Attendance 
+2025-10-13 23:42:44,657 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all Regularization Attendance records - RequestId: 47618ac3-82d3-4bc8-9ab0-5b4940a03d46
+2025-10-13 23:42:44,663 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all Regularization Attendance records - RequestId: 47618ac3-82d3-4bc8-9ab0-5b4940a03d46
+2025-10-13 23:42:44,706 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : dab48712-7a06-4517-9c86-237ba0c8d81e | fetch All Regularization Attendance 
+2025-10-13 23:42:44,707 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all Regularization Attendance records - RequestId: dab48712-7a06-4517-9c86-237ba0c8d81e
+2025-10-13 23:42:44,713 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all Regularization Attendance records - RequestId: dab48712-7a06-4517-9c86-237ba0c8d81e
+2025-10-13 23:42:46,292 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : 03654e4c-cff1-4fc3-8120-bf943bf2ea3f | get all employee attendance
+2025-10-13 23:42:46,293 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 0f1223f2-9a54-41f0-a07d-66e9975bb2d5 | get all employee attendance
+2025-10-13 23:42:46,294 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all attendance records - RequestId: 03654e4c-cff1-4fc3-8120-bf943bf2ea3f
+2025-10-13 23:42:46,294 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching all attendance records - RequestId: 0f1223f2-9a54-41f0-a07d-66e9975bb2d5
+2025-10-13 23:42:46,385 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : b3c4e683-96ba-45a0-9c10-7ee506e04c88 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:42:46,385 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-3) correlation-id : f6085ca2-70ec-4e82-9ade-f6b34adc9506 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:47:12,455 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: fba0624a-7109-4f2a-be96-9a03a8bdaad6 | Fetching all employees
+2025-10-13 23:47:12,458 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: fba0624a-7109-4f2a-be96-9a03a8bdaad6
+2025-10-13 23:47:12,462 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-9) request_id : 150e8494-1f6b-4688-9fd1-73ae02798cef | fetch All Regularization Attendance 
+2025-10-13 23:47:12,463 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-7) request_id: a1d041fa-ca02-40dd-9dca-91f37297138c | Fetching all employees
+2025-10-13 23:47:12,465 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) Start fetching skill wise employee count - RequestId: a1d041fa-ca02-40dd-9dca-91f37297138c
+2025-10-13 23:47:12,465 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-9) Start fetching all Regularization Attendance records - RequestId: 150e8494-1f6b-4688-9fd1-73ae02798cef
+2025-10-13 23:47:12,465 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: 4507ed34-b712-49f5-978e-86beded82abf | Fetching all employees
+2025-10-13 23:47:12,468 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching skill wise employee count - RequestId: 4507ed34-b712-49f5-978e-86beded82abf
+2025-10-13 23:47:12,473 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-10) request_id: 112c5652-384e-414e-8e66-c236695a2345 | Fetching all employees
+2025-10-13 23:47:12,475 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) Start fetching employees - RequestId: 112c5652-384e-414e-8e66-c236695a2345
+2025-10-13 23:47:12,480 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-9) End fetching all Regularization Attendance records - RequestId: 150e8494-1f6b-4688-9fd1-73ae02798cef
+2025-10-13 23:47:12,480 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) End fetching skill-wise employee count - RequestId: a1d041fa-ca02-40dd-9dca-91f37297138c
+2025-10-13 23:47:12,484 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) End fetching skill-wise employee count - RequestId: 4507ed34-b712-49f5-978e-86beded82abf
+2025-10-13 23:47:12,551 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-8) request_id : d9a7ae08-0f9c-4640-af7a-05bca286ea00 | fetch All Regularization Attendance 
+2025-10-13 23:47:12,554 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) Start fetching all Regularization Attendance records - RequestId: d9a7ae08-0f9c-4640-af7a-05bca286ea00
+2025-10-13 23:47:12,561 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) End fetching all Regularization Attendance records - RequestId: d9a7ae08-0f9c-4640-af7a-05bca286ea00
+2025-10-13 23:47:12,644 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: fba0624a-7109-4f2a-be96-9a03a8bdaad6
+2025-10-13 23:47:12,655 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) End fetching employees - RequestId: 112c5652-384e-414e-8e66-c236695a2345
+2025-10-13 23:47:46,737 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-10) request_id : 58f5e7c4-e1d6-4618-b9d2-b0c862bc1d5c | get all employee attendance
+2025-10-13 23:47:46,739 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-10) Start fetching all attendance records - RequestId: 58f5e7c4-e1d6-4618-b9d2-b0c862bc1d5c
+2025-10-13 23:47:46,835 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : e5974a51-fc87-4c28-90d5-ba5b591939a2 | get all employee attendance
+2025-10-13 23:47:46,836 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all attendance records - RequestId: e5974a51-fc87-4c28-90d5-ba5b591939a2
+2025-10-13 23:47:46,865 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-10) correlation-id : d29f4258-6673-48ed-a4aa-6c9908b454df | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:47:47,017 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-11) correlation-id : f835ce38-5035-49c9-8f3c-92f9cc542a9f | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:48:30,409 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : d803999f-1dbe-4451-a1d4-36b85462f345 | fetch All Regularization Attendance 
+2025-10-13 23:48:30,411 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: d803999f-1dbe-4451-a1d4-36b85462f345
+2025-10-13 23:48:30,420 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: d803999f-1dbe-4451-a1d4-36b85462f345
+2025-10-13 23:48:30,552 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : b826c499-318f-4d1a-b4d6-fd13ae8c3452 | fetch All Regularization Attendance 
+2025-10-13 23:48:30,553 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: b826c499-318f-4d1a-b4d6-fd13ae8c3452
+2025-10-13 23:48:30,560 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: b826c499-318f-4d1a-b4d6-fd13ae8c3452
+2025-10-13 23:48:34,304 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-11) Request ID: 897652b3-83af-44a3-af9a-aa9e44e225d0 | Fetching all leave requests
+2025-10-13 23:48:34,311 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) Start fetching all leave requests - RequestId: 897652b3-83af-44a3-af9a-aa9e44e225d0
+2025-10-13 23:48:34,363 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-12) Request ID: c1226c25-983f-468a-bffb-0427c31b0074 | Fetching all leave requests
+2025-10-13 23:48:34,365 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-12) Start fetching all leave requests - RequestId: c1226c25-983f-468a-bffb-0427c31b0074
+2025-10-13 23:48:34,591 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-11) End fetching all leave requests - RequestId: 897652b3-83af-44a3-af9a-aa9e44e225d0
+2025-10-13 23:48:34,646 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-12) End fetching all leave requests - RequestId: c1226c25-983f-468a-bffb-0427c31b0074
+2025-10-13 23:48:39,068 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-12) request_id : b2f80bca-df8a-43e7-b3f6-5852760599b4 | fetch All Regularization Attendance 
+2025-10-13 23:48:39,069 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) Start fetching all Regularization Attendance records - RequestId: b2f80bca-df8a-43e7-b3f6-5852760599b4
+2025-10-13 23:48:39,076 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) End fetching all Regularization Attendance records - RequestId: b2f80bca-df8a-43e7-b3f6-5852760599b4
+2025-10-13 23:48:39,168 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-12) request_id : 57dde35b-56f5-4f29-b0fe-7985c5df4fce | fetch All Regularization Attendance 
+2025-10-13 23:48:39,169 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) Start fetching all Regularization Attendance records - RequestId: 57dde35b-56f5-4f29-b0fe-7985c5df4fce
+2025-10-13 23:48:39,174 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-12) End fetching all Regularization Attendance records - RequestId: 57dde35b-56f5-4f29-b0fe-7985c5df4fce
+2025-10-13 23:48:40,671 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-12) request_id: ee125ace-8132-49a4-bc25-065e4d7ecf32 | Fetching all employees
+2025-10-13 23:48:40,671 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 4cc256af-1f16-401e-923e-14c038dbf8f3 | Fetching all employees
+2025-10-13 23:48:40,687 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-12) Start fetching all employees salary structure data - RequestId: ee125ace-8132-49a4-bc25-065e4d7ecf32, Month: 10, Year: 2025
+2025-10-13 23:48:40,687 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 4cc256af-1f16-401e-923e-14c038dbf8f3, Month: 10, Year: 2025
+2025-10-13 23:48:53,705 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 935fb2b8-e210-4c05-bf89-b9c5ab95e84d | Fetching all employees
+2025-10-13 23:48:53,706 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 935fb2b8-e210-4c05-bf89-b9c5ab95e84d, Month: 2, Year: 2025
+2025-10-13 23:48:56,408 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 7c97fffc-5dfb-41e3-be83-8c314f34989e | Fetching all employees
+2025-10-13 23:48:56,410 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 7c97fffc-5dfb-41e3-be83-8c314f34989e, Month: 1, Year: 2025
+2025-10-13 23:48:58,873 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: d8f26c69-6d7d-4148-89ad-1aaf2679bacb | Fetching all employees
+2025-10-13 23:48:58,874 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: d8f26c69-6d7d-4148-89ad-1aaf2679bacb, Month: 3, Year: 2025
+2025-10-13 23:49:01,530 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 97987e16-485e-4369-a60e-49c872354e86 | Fetching all employees
+2025-10-13 23:49:01,531 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 97987e16-485e-4369-a60e-49c872354e86, Month: 5, Year: 2025
+2025-10-13 23:49:08,586 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : e9b6e24f-30ab-46a4-9187-bef367fd74a0 | fetch All Regularization Attendance 
+2025-10-13 23:49:08,587 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: e9b6e24f-30ab-46a4-9187-bef367fd74a0
+2025-10-13 23:49:08,594 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: e9b6e24f-30ab-46a4-9187-bef367fd74a0
+2025-10-13 23:49:08,642 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : e4f93b71-50d2-4e51-ae6c-4d3a399ce226 | fetch All Regularization Attendance 
+2025-10-13 23:49:08,643 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: e4f93b71-50d2-4e51-ae6c-4d3a399ce226
+2025-10-13 23:49:08,648 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: e4f93b71-50d2-4e51-ae6c-4d3a399ce226
+2025-10-13 23:49:24,425 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-11) request_id : 859c5521-3662-458f-9e56-60573ebcccd1 | get employee by id: 104
+2025-10-13 23:49:24,429 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) Start fetching bank details - RequestId: 859c5521-3662-458f-9e56-60573ebcccd1, EmployeeId: 104
+2025-10-13 23:49:24,481 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.BankDetailsResource] (executor-thread-13) request_id : dc044d2e-6db9-46fd-b731-624be45513bc | get employee by id: 104
+2025-10-13 23:49:24,483 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-13) Start fetching bank details - RequestId: dc044d2e-6db9-46fd-b731-624be45513bc, EmployeeId: 104
+2025-10-13 23:49:24,515 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-11) End fetching bank details - RequestId: 859c5521-3662-458f-9e56-60573ebcccd1, EmployeeId: 104
+2025-10-13 23:49:24,515 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.BankDetailsService] (executor-thread-13) End fetching bank details - RequestId: dc044d2e-6db9-46fd-b731-624be45513bc, EmployeeId: 104
+2025-10-13 23:49:29,196 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-13) request_id : e39a7ee4-3590-478f-a156-f9f6460ac133 | get payslip for employeeId: 104, month: 10, year: 2025
+2025-10-13 23:49:29,196 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-13) Start fetching salary structure - RequestId: e39a7ee4-3590-478f-a156-f9f6460ac133, EmployeeId: 104, Month: 10, Year: 2025
+2025-10-13 23:49:29,262 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-13) request_id : b60d6329-399a-459a-ae29-531512fa0b2d | get payslip for employeeId: 104, month: 10, year: 2025
+2025-10-13 23:49:29,263 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-13) Start fetching salary structure - RequestId: b60d6329-399a-459a-ae29-531512fa0b2d, EmployeeId: 104, Month: 10, Year: 2025
+2025-10-13 23:49:33,232 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : d3a68462-d904-4eb4-af94-d8f906e36e54 | fetch All Regularization Attendance 
+2025-10-13 23:49:33,234 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetching all Regularization Attendance records - RequestId: d3a68462-d904-4eb4-af94-d8f906e36e54
+2025-10-13 23:49:33,239 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) End fetching all Regularization Attendance records - RequestId: d3a68462-d904-4eb4-af94-d8f906e36e54
+2025-10-13 23:49:33,324 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : 9563a59f-e63d-4656-bb7c-dcbc0029b50a | fetch All Regularization Attendance 
+2025-10-13 23:49:33,327 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetching all Regularization Attendance records - RequestId: 9563a59f-e63d-4656-bb7c-dcbc0029b50a
+2025-10-13 23:49:33,331 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) End fetching all Regularization Attendance records - RequestId: 9563a59f-e63d-4656-bb7c-dcbc0029b50a
+2025-10-13 23:49:41,274 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : 0680289e-7201-4e25-8b6c-da52f812e613 | get all employee attendance
+2025-10-13 23:49:41,276 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetching all attendance records - RequestId: 0680289e-7201-4e25-8b6c-da52f812e613
+2025-10-13 23:49:41,282 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : 411c103e-9242-4031-b5f4-2430181acc1e | get all employee attendance
+2025-10-13 23:49:41,283 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all attendance records - RequestId: 411c103e-9242-4031-b5f4-2430181acc1e
+2025-10-13 23:49:41,381 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-13) correlation-id : a0670278-9e90-4f8b-9d7a-4f5407df6676 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:49:41,398 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-11) correlation-id : 57cd58e1-59f9-49b4-9392-56695cf0fe18 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:50:34,589 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : a2fa5531-56dc-4710-9285-2907923385f6 | fetch All Regularization Attendance 
+2025-10-13 23:50:34,591 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: a2fa5531-56dc-4710-9285-2907923385f6
+2025-10-13 23:50:34,597 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: a2fa5531-56dc-4710-9285-2907923385f6
+2025-10-13 23:50:34,663 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-11) request_id : dceae943-70ef-48e7-af3b-6e67e8da018b | fetch All Regularization Attendance 
+2025-10-13 23:50:34,665 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) Start fetching all Regularization Attendance records - RequestId: dceae943-70ef-48e7-af3b-6e67e8da018b
+2025-10-13 23:50:34,668 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-11) End fetching all Regularization Attendance records - RequestId: dceae943-70ef-48e7-af3b-6e67e8da018b
+2025-10-13 23:50:36,108 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-11) request_id: 60cf6944-e298-4c97-a7d1-f0bbaa25f74b | Fetching all employees
+2025-10-13 23:50:36,109 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-11) Start fetching all employees salary structure data - RequestId: 60cf6944-e298-4c97-a7d1-f0bbaa25f74b, Month: 10, Year: 2025
+2025-10-13 23:50:36,109 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-14) request_id: 3be23ac4-271d-4201-8b05-ea8c29f92e24 | Fetching all employees
+2025-10-13 23:50:36,110 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-14) Start fetching all employees salary structure data - RequestId: 3be23ac4-271d-4201-8b05-ea8c29f92e24, Month: 10, Year: 2025
+2025-10-13 23:50:44,764 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-14) request_id : 1773e040-fd8f-4b02-ae54-433cf1a47d33 | fetch All Regularization Attendance 
+2025-10-13 23:50:44,765 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-14) Start fetching all Regularization Attendance records - RequestId: 1773e040-fd8f-4b02-ae54-433cf1a47d33
+2025-10-13 23:50:44,770 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-14) End fetching all Regularization Attendance records - RequestId: 1773e040-fd8f-4b02-ae54-433cf1a47d33
+2025-10-13 23:50:44,822 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-14) request_id : 2ab23add-9b25-43a3-8da4-5735cb32a15f | fetch All Regularization Attendance 
+2025-10-13 23:50:44,823 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-14) Start fetching all Regularization Attendance records - RequestId: 2ab23add-9b25-43a3-8da4-5735cb32a15f
+2025-10-13 23:50:44,826 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-14) End fetching all Regularization Attendance records - RequestId: 2ab23add-9b25-43a3-8da4-5735cb32a15f
+2025-10-13 23:51:04,115 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-14) RequestId: 2b773e2b-ac48-49a8-a91f-0871f383aabd | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@7f87c750, type=null, pagination=null)
+2025-10-13 23:51:04,116 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-14) Start Login user  - RequestId: 2b773e2b-ac48-49a8-a91f-0871f383aabd
+2025-10-13 23:51:04,216 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-14) End user Login  - RequestId: 2b773e2b-ac48-49a8-a91f-0871f383aabd
+2025-10-13 23:51:07,258 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-14) request_id : f44f355f-bc24-400e-905b-1c9c1d4dfa7b | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:51:07,259 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-14) Start fetching salary structure - RequestId: f44f355f-bc24-400e-905b-1c9c1d4dfa7b, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:51:07,262 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-15) request_id : 1d4e4cb4-5190-4bc1-8e87-f1235173b223 | get all holidays
+2025-10-13 23:51:07,263 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) Start fetching all holidays records - RequestId: 1d4e4cb4-5190-4bc1-8e87-f1235173b223
+2025-10-13 23:51:07,265 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-16) request_id : 259b1276-ddcf-40b1-9388-983b81f9422a | get all employee attendance
+2025-10-13 23:51:07,269 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-16) Start fetching all attendance records - RequestId: 259b1276-ddcf-40b1-9388-983b81f9422a
+2025-10-13 23:51:07,279 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-17) request_id : ccc90c25-c991-42f9-8bab-a0ccb312c867 | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:51:07,280 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-17) Start fetching salary structure - RequestId: ccc90c25-c991-42f9-8bab-a0ccb312c867, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:51:07,315 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-15) End fetching all holidaysz records - RequestId: 1d4e4cb4-5190-4bc1-8e87-f1235173b223
+2025-10-13 23:51:07,325 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) requestId: e0f3c987-a341-4268-afa3-a7c0d273f0b1 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:51:07,364 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-14) request_id : 8854f295-e688-481f-bc1d-83ae6b154aca | get all holidays
+2025-10-13 23:51:07,366 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-14) Start fetching all holidays records - RequestId: 8854f295-e688-481f-bc1d-83ae6b154aca
+2025-10-13 23:51:07,370 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-14) End fetching all holidaysz records - RequestId: 8854f295-e688-481f-bc1d-83ae6b154aca
+2025-10-13 23:51:07,424 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-16) correlation-id : a2e4de98-85fb-4918-952d-7ec1b9947435 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:51:07,438 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-16) request_id : 5e687383-be2e-4a51-8ff3-10b797294ba1 | get all employee attendance
+2025-10-13 23:51:07,440 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-16) Start fetching all attendance records - RequestId: 5e687383-be2e-4a51-8ff3-10b797294ba1
+2025-10-13 23:51:07,603 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-16) correlation-id : 40bed042-de5f-42d9-ac52-301e46ef1f00 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:51:07,632 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) requestId: c9b84338-fbbf-4304-8a9d-93be85bcce69 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:51:14,045 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : 9d95bb5a-ac40-444c-a1ae-2eca3ff9aa05 | get all employee attendance
+2025-10-13 23:51:14,046 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetching all attendance records - RequestId: 9d95bb5a-ac40-444c-a1ae-2eca3ff9aa05
+2025-10-13 23:51:14,056 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-16) request_id : a81372a8-a8c3-4f26-b925-e71e93fec0af | get all employee attendance
+2025-10-13 23:51:14,057 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-16) Start fetching all attendance records - RequestId: a81372a8-a8c3-4f26-b925-e71e93fec0af
+2025-10-13 23:51:14,151 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-18) correlation-id : 94520888-5595-454c-a4b5-64a8c1dd1f82 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:51:14,160 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-16) correlation-id : 5393fb5a-28a1-457b-b1fe-48d403e0045e | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:51:20,846 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-16) requestId: 598ee447-2e0f-4682-99e5-da9d0cd907a5 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:51:20,866 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : c2e6be7e-9bfe-4af0-83da-f19cda5ec9f3 | get all employee attendance
+2025-10-13 23:51:20,867 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetching all attendance records - RequestId: c2e6be7e-9bfe-4af0-83da-f19cda5ec9f3
+2025-10-13 23:51:20,868 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-17) request_id : 7ca9ea7d-fbce-4326-be63-2c9eab94804d | get all holidays
+2025-10-13 23:51:20,870 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-14) request_id : 275c50db-b30c-44a3-a538-8ca197910661 | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:51:20,870 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) Start fetching all holidays records - RequestId: 7ca9ea7d-fbce-4326-be63-2c9eab94804d
+2025-10-13 23:51:20,871 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-14) Start fetching salary structure - RequestId: 275c50db-b30c-44a3-a538-8ca197910661, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:51:20,875 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) End fetching all holidaysz records - RequestId: 7ca9ea7d-fbce-4326-be63-2c9eab94804d
+2025-10-13 23:51:20,884 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-15) request_id : 770d539a-86c5-4ce4-b484-34e6f26d8d97 | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:51:20,884 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-15) Start fetching salary structure - RequestId: 770d539a-86c5-4ce4-b484-34e6f26d8d97, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:51:20,894 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-17) request_id : be70c13e-dfa6-4832-82c4-5181dacb97f2 | get all holidays
+2025-10-13 23:51:20,895 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) Start fetching all holidays records - RequestId: be70c13e-dfa6-4832-82c4-5181dacb97f2
+2025-10-13 23:51:20,900 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-17) End fetching all holidaysz records - RequestId: be70c13e-dfa6-4832-82c4-5181dacb97f2
+2025-10-13 23:51:20,935 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-17) request_id : 9eb1ce62-5169-49a3-8953-ff6e8a294398 | get all employee attendance
+2025-10-13 23:51:20,936 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-17) Start fetching all attendance records - RequestId: 9eb1ce62-5169-49a3-8953-ff6e8a294398
+2025-10-13 23:51:20,973 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-15) requestId: 58dd13c8-7fda-44bc-9142-f3f1502aaa10 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:51:20,995 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-18) correlation-id : d5494885-1720-4d9a-8cff-99b22643841b | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:51:21,034 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-17) correlation-id : 7d7e3ce0-0e98-4d04-842e-69d2d2f93731 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:53:27,268 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-17) RequestId: f22a5f56-b138-41e0-9110-fa7c2d2eae70 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@111bc05c, type=null, pagination=null)
+2025-10-13 23:53:27,269 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-17) Start Login user  - RequestId: f22a5f56-b138-41e0-9110-fa7c2d2eae70
+2025-10-13 23:53:27,352 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-17) End user Login  - RequestId: f22a5f56-b138-41e0-9110-fa7c2d2eae70
+2025-10-13 23:53:29,916 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-17) requestId: 32e17ece-149e-4f90-8d76-90114b94fac4 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:53:29,945 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-19) request_id : 2130a2c3-8127-4ba2-9308-afdb70b21ae3 | get all holidays
+2025-10-13 23:53:29,946 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-20) request_id : 535b03d7-d8bd-43fe-8645-0c2d1c2247f7 | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:53:29,947 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) Start fetching all holidays records - RequestId: 2130a2c3-8127-4ba2-9308-afdb70b21ae3
+2025-10-13 23:53:29,946 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-21) request_id : 3237bd6c-a4d0-43ec-8f2c-6dadafdf9a4a | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:53:29,947 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-21) Start fetching salary structure - RequestId: 3237bd6c-a4d0-43ec-8f2c-6dadafdf9a4a, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:53:29,947 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-20) Start fetching salary structure - RequestId: 535b03d7-d8bd-43fe-8645-0c2d1c2247f7, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:53:29,952 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) End fetching all holidaysz records - RequestId: 2130a2c3-8127-4ba2-9308-afdb70b21ae3
+2025-10-13 23:53:29,952 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : 6563fd61-4473-4862-b306-fa23210525c0 | get all employee attendance
+2025-10-13 23:53:29,963 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetching all attendance records - RequestId: 6563fd61-4473-4862-b306-fa23210525c0
+2025-10-13 23:53:29,977 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-19) request_id : 46205c2b-100a-4e90-a83f-28230395d550 | get all holidays
+2025-10-13 23:53:29,979 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) Start fetching all holidays records - RequestId: 46205c2b-100a-4e90-a83f-28230395d550
+2025-10-13 23:53:29,983 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) End fetching all holidaysz records - RequestId: 46205c2b-100a-4e90-a83f-28230395d550
+2025-10-13 23:53:30,014 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-19) request_id : e9ab9a96-3231-41dd-97ac-d47b893ff4ac | get all employee attendance
+2025-10-13 23:53:30,022 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) Start fetching all attendance records - RequestId: e9ab9a96-3231-41dd-97ac-d47b893ff4ac
+2025-10-13 23:53:30,072 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) requestId: d9069064-8489-48ed-97ac-e279fbf0b185 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:53:30,104 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-22) correlation-id : 50ce87ae-9760-44db-876f-1db9af62516a | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:53:30,144 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-19) correlation-id : 91165b1e-1cc2-46aa-9e66-ab919110de84 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:55:08,286 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-21) request_id : 529cb8a4-fc73-466b-a5c2-945ff1a47a61 | get all employee attendance
+2025-10-13 23:55:08,297 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) Start fetching all attendance records - RequestId: 529cb8a4-fc73-466b-a5c2-945ff1a47a61
+2025-10-13 23:55:08,352 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 98e51d86-975d-4420-ad0a-0acf7f9a48c8 | get all employee attendance
+2025-10-13 23:55:08,353 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetching all attendance records - RequestId: 98e51d86-975d-4420-ad0a-0acf7f9a48c8
+2025-10-13 23:55:08,395 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-21) correlation-id : d301ff6b-db1c-45a9-9457-38de652193d3 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:55:08,446 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-23) correlation-id : 6a60b882-030f-4ac8-a6d7-75484ff43be2 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:55:12,683 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-23) request_id : 9b2bc817-c585-498a-bce0-44c977fbf4b1 | get all employee attendance
+2025-10-13 23:55:12,683 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) requestId: 69dc313b-71b3-4df4-89b3-168906f3d74a | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:55:12,685 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-23) Start fetching all attendance records - RequestId: 9b2bc817-c585-498a-bce0-44c977fbf4b1
+2025-10-13 23:55:12,734 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) request_id : 3ee5f99f-b192-4989-9246-faed5e5dff6c | get all holidays
+2025-10-13 23:55:12,735 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) Start fetching all holidays records - RequestId: 3ee5f99f-b192-4989-9246-faed5e5dff6c
+2025-10-13 23:55:12,737 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) End fetching all holidaysz records - RequestId: 3ee5f99f-b192-4989-9246-faed5e5dff6c
+2025-10-13 23:55:12,750 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-25) request_id : ee9f6bce-7a67-494c-bb85-2142f3a6cfe1 | get all employee attendance
+2025-10-13 23:55:12,752 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) Start fetching all attendance records - RequestId: ee9f6bce-7a67-494c-bb85-2142f3a6cfe1
+2025-10-13 23:55:12,753 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-24) request_id : c3b8f203-c6e1-4de6-b2d7-3f249d97e7cc | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:55:12,755 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-24) Start fetching salary structure - RequestId: c3b8f203-c6e1-4de6-b2d7-3f249d97e7cc, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:55:12,771 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-26) request_id : f7bbfc4a-9773-46a8-9b4e-502394508db6 | get all holidays
+2025-10-13 23:55:12,772 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) Start fetching all holidays records - RequestId: f7bbfc4a-9773-46a8-9b4e-502394508db6
+2025-10-13 23:55:12,781 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-26) End fetching all holidaysz records - RequestId: f7bbfc4a-9773-46a8-9b4e-502394508db6
+2025-10-13 23:55:12,815 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) requestId: 7d0aec78-fd12-4949-a40a-f4a715215296 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:55:12,825 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-23) correlation-id : d560ba0a-179b-45c5-911c-85ae62995d23 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:55:12,856 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-24) request_id : 6a256ad9-6cd2-4031-8df0-8958497402c5 | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:55:12,857 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-24) Start fetching salary structure - RequestId: 6a256ad9-6cd2-4031-8df0-8958497402c5, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:55:12,876 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-25) correlation-id : 9965b19c-cbc6-420b-85bc-e2717f3304f1 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:57:33,129 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-24) RequestId: 79aa8715-54fc-4c81-95e1-af6cf925bac5 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@87738e0, type=null, pagination=null)
+2025-10-13 23:57:33,130 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-24) Start Login user  - RequestId: 79aa8715-54fc-4c81-95e1-af6cf925bac5
+2025-10-13 23:57:33,183 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-24) End user Login  - RequestId: 79aa8715-54fc-4c81-95e1-af6cf925bac5
+2025-10-13 23:57:35,454 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) requestId: fec98519-c085-4cb6-81b0-f8c790e2770a | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:57:35,468 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-27) request_id : dffb0024-2a49-4862-8c72-9d1830dfdbf3 | get all employee attendance
+2025-10-13 23:57:35,479 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-27) Start fetching all attendance records - RequestId: dffb0024-2a49-4862-8c72-9d1830dfdbf3
+2025-10-13 23:57:35,484 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-28) request_id : 8c245623-0639-4529-ad1d-d6d419b976d5 | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:57:35,485 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-29) request_id : a317e094-f420-4766-a391-17a39c77dd9f | get payslip for employeeId: 78, month: 10, year: 2025
+2025-10-13 23:57:35,485 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-28) Start fetching salary structure - RequestId: 8c245623-0639-4529-ad1d-d6d419b976d5, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:57:35,485 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-29) Start fetching salary structure - RequestId: a317e094-f420-4766-a391-17a39c77dd9f, EmployeeId: 78, Month: 10, Year: 2025
+2025-10-13 23:57:35,520 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-30) request_id : b5ba334c-7e3c-4df1-8aac-eee39b09b185 | get all holidays
+2025-10-13 23:57:35,521 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-30) Start fetching all holidays records - RequestId: b5ba334c-7e3c-4df1-8aac-eee39b09b185
+2025-10-13 23:57:35,523 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-30) End fetching all holidaysz records - RequestId: b5ba334c-7e3c-4df1-8aac-eee39b09b185
+2025-10-13 23:57:35,541 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-30) request_id : 675d6815-5736-4efa-a516-66ecf863cb82 | get all holidays
+2025-10-13 23:57:35,543 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-30) Start fetching all holidays records - RequestId: 675d6815-5736-4efa-a516-66ecf863cb82
+2025-10-13 23:57:35,546 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-30) End fetching all holidaysz records - RequestId: 675d6815-5736-4efa-a516-66ecf863cb82
+2025-10-13 23:57:35,555 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-29) requestId: d75624fe-ed5c-443b-b38e-db60a79cd9d3 | Fetch leave balances for employee 78 and year 0
+2025-10-13 23:57:35,577 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-27) correlation-id : e6c5b014-77fe-488e-aea5-c42dbf0069b3 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-10-13 23:57:35,582 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-27) request_id : 7ed6e4ab-1aba-4d22-a902-a5c317c68308 | get all employee attendance
+2025-10-13 23:57:35,583 laptop-t3siq6r0 workeronboarding-dev.jar[23096] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-27) Start fetching all attendance records - RequestId: 7ed6e4ab-1aba-4d22-a902-a5c317c68308
+2025-10-13 23:57:35,702 laptop-t3siq6r0 workeronboarding-dev.jar[23096] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-27) correlation-id : 56080d15-6620-4b1a-8377-2faace5cf664 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.EmployeeAttendanceService.lambda$fetchAllAttendance$0(EmployeeAttendanceService.java:308)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchAllAttendance(EmployeeAttendanceService.java:311)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchAllAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchAllAttendance(EmployeeAttendanceResource.java:64)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchAllAttendance_d939d51ab5deebeb9236331d5ef241f95bb51662.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+

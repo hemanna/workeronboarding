@@ -1,0 +1,67 @@
+2025-12-11 22:49:46,168 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 11.997s. Listening on: http://0.0.0.0:8080
+2025-12-11 22:49:46,176 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-12-11 22:49:46,177 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-12-11 23:03:03,201 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 95658d27-737b-4607-83c0-9dc019167312 | activity : Asset Type List | message : Started
+2025-12-11 23:03:03,201 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : ee80d908-62b9-4692-a3b2-56713b425bae | activity : Asset Type List | message : Started
+2025-12-11 23:03:04,349 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : ee80d908-62b9-4692-a3b2-56713b425bae | activity : Asset Type List | message : Ended
+2025-12-11 23:03:04,349 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 95658d27-737b-4607-83c0-9dc019167312 | activity : Asset Type List | message : Ended
+2025-12-11 23:03:21,766 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : e64eb7ee-22e0-494c-aa9a-82994e5b3807 | activity : Asset Type List | message : Started
+2025-12-11 23:03:21,776 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : e64eb7ee-22e0-494c-aa9a-82994e5b3807 | activity : Asset Type List | message : Ended
+2025-12-11 23:05:07,373 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : 72907afe-d723-47ee-8a52-39562b75c6a1 | activity : Asset Type List | message : Started
+2025-12-11 23:05:07,381 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : 72907afe-d723-47ee-8a52-39562b75c6a1 | activity : Asset Type List | message : Ended
+2025-12-11 23:05:07,451 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : 2268cf09-62f2-4ad4-b96a-500c774dd20f | activity : Asset Type List | message : Started
+2025-12-11 23:05:07,458 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : 2268cf09-62f2-4ad4-b96a-500c774dd20f | activity : Asset Type List | message : Ended
+2025-12-11 23:05:34,559 laptop-t3siq6r0 workeronboarding-dev.jar[21472] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-2) correlation-id : 0dde0994-45f0-45d0-95c7-1991b6df7add | message : HTTP 413 Request Entity Too Large | cause : {}: jakarta.ws.rs.WebApplicationException: HTTP 413 Request Entity Too Large
+	at org.jboss.resteasy.reactive.server.core.multipart.MultiPartParserDefinition$MultiPartUploadHandler.data(MultiPartParserDefinition.java:318)
+	at org.jboss.resteasy.reactive.server.core.multipart.MultipartParser$IdentityEncoding.handle(MultipartParser.java:343)
+	at org.jboss.resteasy.reactive.server.core.multipart.MultipartParser$ParseState.entity(MultipartParser.java:322)
+	at org.jboss.resteasy.reactive.server.core.multipart.MultipartParser$ParseState.parse(MultipartParser.java:108)
+	at org.jboss.resteasy.reactive.server.core.multipart.MultiPartParserDefinition$MultiPartUploadHandler.parseBlocking(MultiPartParserDefinition.java:234)
+	at org.jboss.resteasy.reactive.server.handlers.FormBodyHandler.handle(FormBodyHandler.java:94)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:150)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-12-11 23:08:46,775 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : 932d139d-087e-4e80-8308-a2d7ffbd0de6 | activity : Asset Save | message : Started
+2025-12-11 23:08:48,647 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : 932d139d-087e-4e80-8308-a2d7ffbd0de6 | activity : Asset Save | message : Ended
+2025-12-11 23:09:18,808 laptop-t3siq6r0 workeronboarding-dev.jar[21472] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-4) correlation-id : eea1d3c4-c64e-4b3f-b89e-15ca19bf79bc | message : HTTP 400 Bad Request | cause : {}: org.jboss.resteasy.reactive.server.multipart.MultipartPartReadingException: HTTP 400 Bad Request
+	at org.jboss.resteasy.reactive.server.core.multipart.MultipartSupport.getStrings(MultipartSupport.java:231)
+	at org.jboss.resteasy.reactive.server.core.multipart.MultipartSupport.getStrings(MultipartSupport.java:215)
+	at com.sbd.common.Jsonb.AssetJsonb.__quarkus_rest_inject(AssetJsonb.java)
+	at org.jboss.resteasy.reactive.server.core.parameters.InjectParamExtractor.extractParameter(InjectParamExtractor.java:26)
+	at org.jboss.resteasy.reactive.server.handlers.ParameterHandler.handle(ParameterHandler.java:45)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:137)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.nio.charset.UnmappableCharacterException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:275)
+	at java.base/java.lang.StringCoding.newStringNoRepl1(StringCoding.java:1065)
+	at java.base/java.lang.StringCoding.newStringNoRepl(StringCoding.java:1015)
+	at java.base/java.lang.System$2.newStringNoRepl(System.java:2214)
+	at java.base/java.nio.file.Files.readString(Files.java:3287)
+	at org.jboss.resteasy.reactive.server.core.multipart.MultipartSupport.getStrings(MultipartSupport.java:229)
+	... 13 more
+
+2025-12-11 23:11:16,829 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : 77fd6381-49e4-4911-b9b2-f99304ae81e1 | activity : Asset Type List | message : Started
+2025-12-11 23:11:16,959 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : 77fd6381-49e4-4911-b9b2-f99304ae81e1 | activity : Asset Type List | message : Ended
+2025-12-11 23:11:26,505 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : ee15580f-6223-4ede-9f78-701bbc685dc5 | activity : Asset Type List | message : Started
+2025-12-11 23:11:26,517 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : ee15580f-6223-4ede-9f78-701bbc685dc5 | activity : Asset Type List | message : Ended
+2025-12-11 23:11:26,637 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : cbdc6b78-97c9-4647-a3ef-cd273eadeca1 | activity : Asset Type List | message : Started
+2025-12-11 23:11:26,648 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : cbdc6b78-97c9-4647-a3ef-cd273eadeca1 | activity : Asset Type List | message : Ended
+2025-12-11 23:11:39,252 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : f272e17a-136f-4eeb-8069-a214cb342e11 | activity : Asset Type List | message : Started
+2025-12-11 23:11:39,262 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) correlation-id : f272e17a-136f-4eeb-8069-a214cb342e11 | activity : Asset Type List | message : Ended
+2025-12-11 23:11:41,343 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2025-12-11 23:11:45,353 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in AssetJsonb.class.
+2025-12-11 23:11:45,464 laptop-t3siq6r0 workeronboarding-dev.jar[21472] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.104s

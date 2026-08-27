@@ -1,0 +1,25 @@
+2025-12-10 14:14:11,928 laptop-t3siq6r0 workeronboarding-dev.jar[23448] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 10.681s. Listening on: http://0.0.0.0:8080
+2025-12-10 14:14:11,935 laptop-t3siq6r0 workeronboarding-dev.jar[23448] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-12-10 14:14:11,936 laptop-t3siq6r0 workeronboarding-dev.jar[23448] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-12-10 14:14:18,275 laptop-t3siq6r0 workeronboarding-dev.jar[23448] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 2c7aeaed-fdf4-4917-819c-bfdaeb54f79a | message : HTTP 400 Bad Request | cause : {}: jakarta.ws.rs.BadRequestException: HTTP 400 Bad Request
+	at com.sbd.common.Jsonb.AssetJsonb.__quarkus_rest_inject(AssetJsonb.java)
+	at org.jboss.resteasy.reactive.server.core.parameters.InjectParamExtractor.extractParameter(InjectParamExtractor.java:26)
+	at org.jboss.resteasy.reactive.server.handlers.ParameterHandler.handle(ParameterHandler.java:45)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:137)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NumberFormatException: For input string: "LAPTOP"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at io.quarkus.generated.java.lang.Integer$quarkusrestparamConverter$.convert(Unknown Source)
+	... 12 more
+
+2025-12-10 14:15:24,553 laptop-t3siq6r0 workeronboarding-dev.jar[23448] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : f1f4c2e4-3525-4c8c-8133-f295f469a618 | activity : Asset Update | message : Started
+2025-12-10 14:15:25,262 laptop-t3siq6r0 workeronboarding-dev.jar[23448] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) correlation-id : f1f4c2e4-3525-4c8c-8133-f295f469a618 | activity : Asset Update | message : Ended

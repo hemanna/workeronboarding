@@ -1,0 +1,465 @@
+2025-04-03 07:50:33,195 laptop-t3siq6r0 workeronboarding-dev.jar[13544] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-04-03 07:50:33,912 laptop-t3siq6r0 workeronboarding-dev.jar[13544] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-04-03 07:50:33,913 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (Hibernate post-boot validation thread for <default>) Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-04-03 07:50:33,917 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [io.qua.hib.orm.run.sch.SchemaManagementIntegrator] (Hibernate post-boot validation thread for <default>) Failed to run post-boot validation: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:98)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jta.internal.DdlTransactionIsolatorJtaImpl.getIsolatedConnection(DdlTransactionIsolatorJtaImpl.java:77)
+	at org.hibernate.resource.transaction.backend.jta.internal.DdlTransactionIsolatorJtaImpl.getIsolatedConnection(DdlTransactionIsolatorJtaImpl.java:67)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:64)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:41)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:75)
+	at io.quarkus.hibernate.orm.runtime.schema.SchemaManagementIntegrator.runPostBootValidation(SchemaManagementIntegrator.java:140)
+	at io.quarkus.hibernate.orm.runtime.HibernateOrmRecorder$6.run(HibernateOrmRecorder.java:166)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1126)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	... 1 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 11 more
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 14 more
+
+2025-04-03 07:50:34,218 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 5.466s. Listening on: http://0.0.0.0:8080
+2025-04-03 07:50:34,222 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-04-03 07:50:34,224 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-04-03 07:55:20,768 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: d4ae7d46-ef90-46e8-a5c4-25a4e31f7b43 | Fetching all employees
+2025-04-03 07:55:20,768 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: 1851b9e7-a2cb-4279-8b05-6fda707f9291 | Fetching all employees
+2025-04-03 07:55:20,768 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 5a8fa33c-0a63-4d70-a2ae-6e78b07d3d6a | Fetching all employees
+2025-04-03 07:55:20,779 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees - RequestId: 5a8fa33c-0a63-4d70-a2ae-6e78b07d3d6a
+2025-04-03 07:55:20,779 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching employees - RequestId: 1851b9e7-a2cb-4279-8b05-6fda707f9291
+2025-04-03 07:55:20,779 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: d4ae7d46-ef90-46e8-a5c4-25a4e31f7b43
+2025-04-03 07:55:21,152 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: 5a197e22-0242-43c1-bb52-461d3ea41c52 | Fetching all employees
+2025-04-03 07:55:21,153 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Start fetching employees - RequestId: 5a197e22-0242-43c1-bb52-461d3ea41c52
+2025-04-03 07:55:22,346 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) End fetching employees - RequestId: 5a197e22-0242-43c1-bb52-461d3ea41c52
+2025-04-03 07:55:22,346 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: d4ae7d46-ef90-46e8-a5c4-25a4e31f7b43
+2025-04-03 07:55:22,346 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employees - RequestId: 5a8fa33c-0a63-4d70-a2ae-6e78b07d3d6a
+2025-04-03 07:55:22,346 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching employees - RequestId: 1851b9e7-a2cb-4279-8b05-6fda707f9291
+2025-04-03 07:55:50,857 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 61aba6f0-50c4-4f41-87fa-c389da34d91c | Fetching all leave requests
+2025-04-03 07:55:50,857 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) Request ID: eab10bbd-2fcc-48e2-87d3-86c22c049391 | Fetching all leave requests
+2025-04-03 07:55:50,935 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 61aba6f0-50c4-4f41-87fa-c389da34d91c
+2025-04-03 07:55:50,935 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start fetching all leave requests - RequestId: eab10bbd-2fcc-48e2-87d3-86c22c049391
+2025-04-03 07:55:51,853 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) End fetching all leave requests - RequestId: 61aba6f0-50c4-4f41-87fa-c389da34d91c
+2025-04-03 07:55:51,859 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End fetching all leave requests - RequestId: eab10bbd-2fcc-48e2-87d3-86c22c049391
+2025-04-03 07:56:21,085 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) RequestId: 79ec3a6c-1260-4a9a-82e1-02a88cfaf71d | Update Employee Approval Status Request: LeaveId: 23
+2025-04-03 07:56:21,087 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start updating approval status - RequestId: 79ec3a6c-1260-4a9a-82e1-02a88cfaf71d, LeaveId: 23, ApprovalStatus: Rejected
+2025-04-03 07:56:21,366 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Successfully updated approval status - RequestId: 79ec3a6c-1260-4a9a-82e1-02a88cfaf71d, LeaveId: 23, ApprovalStatus: Rejected
+2025-04-03 07:56:21,367 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End updating approval status - RequestId: 79ec3a6c-1260-4a9a-82e1-02a88cfaf71d, LeaveId: 23, ApprovalStatus: Rejected
+2025-04-03 07:56:28,133 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) RequestId: 36957563-83e4-445a-8c8e-4fab5489c9c9 | Update Employee Approval Status Request: LeaveId: 23
+2025-04-03 07:56:28,135 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start updating approval status - RequestId: 36957563-83e4-445a-8c8e-4fab5489c9c9, LeaveId: 23, ApprovalStatus: Rejected
+2025-04-03 07:56:28,220 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Successfully updated approval status - RequestId: 36957563-83e4-445a-8c8e-4fab5489c9c9, LeaveId: 23, ApprovalStatus: Rejected
+2025-04-03 07:56:28,220 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End updating approval status - RequestId: 36957563-83e4-445a-8c8e-4fab5489c9c9, LeaveId: 23, ApprovalStatus: Rejected
+2025-04-03 07:56:34,188 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) Request ID: e2c2bcbf-61eb-470e-a287-91ddca304eb6 | Fetching all leave requests
+2025-04-03 07:56:34,189 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start fetching all leave requests - RequestId: e2c2bcbf-61eb-470e-a287-91ddca304eb6
+2025-04-03 07:56:34,207 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-1) Request ID: 28528bd2-d411-47c8-af27-6497bc5b4a5a | Fetching all leave requests
+2025-04-03 07:56:34,208 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) Start fetching all leave requests - RequestId: 28528bd2-d411-47c8-af27-6497bc5b4a5a
+2025-04-03 07:56:34,877 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End fetching all leave requests - RequestId: e2c2bcbf-61eb-470e-a287-91ddca304eb6
+2025-04-03 07:56:34,902 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-1) End fetching all leave requests - RequestId: 28528bd2-d411-47c8-af27-6497bc5b4a5a
+2025-04-03 07:57:00,122 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : 10a53026-698b-4a99-8291-85b87e91315e | get all employee attendance
+2025-04-03 07:57:00,126 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetching all attendance records - RequestId: 10a53026-698b-4a99-8291-85b87e91315e
+2025-04-03 07:57:00,148 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 2f8473b3-5b32-406e-892b-09de969e5773 | get all employee attendance
+2025-04-03 07:57:00,152 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetching all attendance records - RequestId: 2f8473b3-5b32-406e-892b-09de969e5773
+2025-04-03 07:57:00,408 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) End fetching all attendance records - RequestId: 10a53026-698b-4a99-8291-85b87e91315e
+2025-04-03 07:57:00,427 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetching all attendance records - RequestId: 2f8473b3-5b32-406e-892b-09de969e5773
+2025-04-03 08:07:56,167 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-1) RequestId: 3ae68045-9622-41a9-a553-cf7f31a8938d | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@42881477, type=null, pagination=null)
+2025-04-03 08:07:56,171 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) Start Login user  - RequestId: 3ae68045-9622-41a9-a553-cf7f31a8938d
+2025-04-03 08:07:56,317 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-1) End user Login  - RequestId: 3ae68045-9622-41a9-a553-cf7f31a8938d
+2025-04-03 08:07:59,106 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) request_id : 896a4c1f-3868-4df1-854c-cb3b2cc44f75 | get employee by id: 64
+2025-04-03 08:07:59,109 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) Start fetch employee attendance - RequestId: 896a4c1f-3868-4df1-854c-cb3b2cc44f75
+2025-04-03 08:07:59,126 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 09191e7a-6112-4289-a78b-5cd517159435 | get employee by id: 64
+2025-04-03 08:07:59,127 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 09191e7a-6112-4289-a78b-5cd517159435
+2025-04-03 08:07:59,498 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) End fetch employee attendance - RequestId: 896a4c1f-3868-4df1-854c-cb3b2cc44f75
+2025-04-03 08:07:59,513 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 09191e7a-6112-4289-a78b-5cd517159435
+2025-04-03 08:10:32,749 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 55076362-b4e5-47dd-b1ce-1658b453cf85 | get employee by id: 64
+2025-04-03 08:10:32,750 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 55076362-b4e5-47dd-b1ce-1658b453cf85
+2025-04-03 08:10:32,756 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 55076362-b4e5-47dd-b1ce-1658b453cf85
+2025-04-03 08:10:32,833 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 4780e507-1015-408e-bbc5-7084208ab899 | get employee by id: 64
+2025-04-03 08:10:32,835 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 4780e507-1015-408e-bbc5-7084208ab899
+2025-04-03 08:10:32,839 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 4780e507-1015-408e-bbc5-7084208ab899
+2025-04-03 08:10:38,466 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : 2b3ebb41-0b18-4301-a574-8472c7dc868b | get employee by id: 64
+2025-04-03 08:10:38,468 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-6) request_id : 5cc7a078-a661-4746-8a1a-cda24ffc9fc4 | get employee by id: 64
+2025-04-03 08:10:38,468 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetch employee attendance - RequestId: 2b3ebb41-0b18-4301-a574-8472c7dc868b
+2025-04-03 08:10:38,469 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) Start fetch employee attendance - RequestId: 5cc7a078-a661-4746-8a1a-cda24ffc9fc4
+2025-04-03 08:10:38,472 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetch employee attendance - RequestId: 2b3ebb41-0b18-4301-a574-8472c7dc868b
+2025-04-03 08:10:38,472 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) End fetch employee attendance - RequestId: 5cc7a078-a661-4746-8a1a-cda24ffc9fc4
+2025-04-03 09:08:52,084 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-7) request_id: 39f88b96-1141-4ad5-9c25-4c018304e8f6 | Fetching all employees
+2025-04-03 09:08:52,084 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-9) request_id: ca0642f5-157d-4d9f-b6a9-a871786fbb2f | Fetching all employees
+2025-04-03 09:08:52,084 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: 1dc6944e-41f6-4ee0-b9bc-88314aa11653 | Fetching all employees
+2025-04-03 09:08:52,096 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching employees - RequestId: 1dc6944e-41f6-4ee0-b9bc-88314aa11653
+2025-04-03 09:08:52,096 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-9) Start fetching employees - RequestId: ca0642f5-157d-4d9f-b6a9-a871786fbb2f
+2025-04-03 09:08:52,096 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) Start fetching employees - RequestId: 39f88b96-1141-4ad5-9c25-4c018304e8f6
+2025-04-03 09:08:52,975 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-10) request_id: 3b822a4e-9507-4157-9ea1-a72e270b99f6 | Fetching all employees
+2025-04-03 09:08:52,977 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) Start fetching employees - RequestId: 3b822a4e-9507-4157-9ea1-a72e270b99f6
+2025-04-03 09:08:57,144 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-8) Acquisition timeout while waiting for new connection
+2025-04-03 09:08:57,144 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-9) Acquisition timeout while waiting for new connection
+2025-04-03 09:08:57,144 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-7) Acquisition timeout while waiting for new connection
+2025-04-03 09:08:57,249 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-9) correlation-id : b7f5f59c-253e-4720-9dec-5f002832dc5e | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:280)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at com.sbd.common.repository.EmployeeDetailsRepository.listAll(EmployeeDetailsRepository.java:35)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.listAll(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService.fetchAllEmployee(EmployeeRecordService.java:400)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.fetchAllEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.fetchAllEmployee(EmployeeRecordResource.java:88)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$fetchAllEmployee_db7532ad4dd6fc58cd0e563a22f6ee2415f7cdcd.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 42 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 47 more
+
+2025-04-03 09:08:57,249 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-8) correlation-id : 0e06d95d-198a-4a74-a605-4873b34cee81 | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:280)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at com.sbd.common.repository.EmployeeDetailsRepository.listAll(EmployeeDetailsRepository.java:35)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.listAll(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService.fetchAllEmployee(EmployeeRecordService.java:400)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.fetchAllEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.fetchAllEmployee(EmployeeRecordResource.java:88)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$fetchAllEmployee_db7532ad4dd6fc58cd0e563a22f6ee2415f7cdcd.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 42 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 47 more
+
+2025-04-03 09:08:57,249 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-7) correlation-id : bfa00639-182e-4084-b970-41c7f25275f2 | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:280)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at com.sbd.common.repository.EmployeeDetailsRepository.listAll(EmployeeDetailsRepository.java:35)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.listAll(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService.fetchAllEmployee(EmployeeRecordService.java:400)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.fetchAllEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.fetchAllEmployee(EmployeeRecordResource.java:88)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$fetchAllEmployee_db7532ad4dd6fc58cd0e563a22f6ee2415f7cdcd.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 42 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 47 more
+
+2025-04-03 09:08:57,990 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-10) Acquisition timeout while waiting for new connection
+2025-04-03 09:08:57,991 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-10) correlation-id : 4abaaa5c-9dcd-40db-b453-b71404e0057e | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:280)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at com.sbd.common.repository.EmployeeDetailsRepository.listAll(EmployeeDetailsRepository.java:35)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.listAll(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService.fetchAllEmployee(EmployeeRecordService.java:400)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.fetchAllEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.fetchAllEmployee(EmployeeRecordResource.java:88)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$fetchAllEmployee_db7532ad4dd6fc58cd0e563a22f6ee2415f7cdcd.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 42 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 47 more
+
+2025-04-03 09:09:02,985 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-10) RequestId: 8c20e250-35bf-4af4-9fa8-51c2e8e4e8a4 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@721c6a61, type=null, pagination=null)
+2025-04-03 09:09:02,999 laptop-t3siq6r0 workeronboarding-dev.jar[13544] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-10) Start Login user  - RequestId: 8c20e250-35bf-4af4-9fa8-51c2e8e4e8a4
+2025-04-03 09:09:08,007 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-10) Acquisition timeout while waiting for new connection
+2025-04-03 09:09:08,053 laptop-t3siq6r0 workeronboarding-dev.jar[13544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-10) correlation-id : 0731dbdf-8675-4a66-b100-4797b5b7c78d | message : Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a] | cause : {}: org.hibernate.exception.GenericJDBCException: Unable to acquire JDBC Connection [Acquisition timeout while waiting for new connection] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:51)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:150)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:177)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:152)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.lambda$list$0(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:226)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:254)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:134)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:198)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:110)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:244)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:518)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.firstResult(CommonPanacheQueryImpl.java:296)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.firstResult(PanacheQueryImpl.java:159)
+	at com.sbd.common.repository.EmployeeDetailsRepository.findByEmailOrPhone(EmployeeDetailsRepository.java:21)
+	at com.sbd.common.repository.EmployeeDetailsRepository_ClientProxy.findByEmailOrPhone(Unknown Source)
+	at com.sbd.record.control.service.UserCredentialService.UserLogin(UserCredentialService.java:43)
+	at com.sbd.record.control.service.UserCredentialService_Subclass.UserLogin$$superforward(Unknown Source)
+	at com.sbd.record.control.service.UserCredentialService_Subclass$$function$$1.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.UserCredentialService_Subclass.UserLogin(Unknown Source)
+	at com.sbd.record.control.service.UserCredentialService_ClientProxy.UserLogin(Unknown Source)
+	at com.sbd.record.boundary.UserCredentialsResource.UserLogin(UserCredentialsResource.java:32)
+	at com.sbd.record.boundary.UserCredentialsResource$quarkusrestinvoker$UserLogin_ceeade376831dbee50eb978c8ddf7e35e9978ed0.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLException: Acquisition timeout while waiting for new connection
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:321)
+	at io.agroal.pool.ConnectionPool.getConnection(ConnectionPool.java:249)
+	at io.agroal.pool.DataSource.getConnection(DataSource.java:86)
+	at io.quarkus.hibernate.orm.runtime.customized.QuarkusConnectionProvider.getConnection(QuarkusConnectionProvider.java:23)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 56 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at io.agroal.pool.ConnectionPool.handlerFromSharedCache(ConnectionPool.java:298)
+	... 61 more
+

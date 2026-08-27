@@ -1,0 +1,568 @@
+2025-12-12 16:01:44,457 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 13.920s. Listening on: http://0.0.0.0:8080
+2025-12-12 16:01:44,465 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-12-12 16:01:44,468 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-12-12 16:02:19,171 laptop-t3siq6r0 workeronboarding-dev.jar[24892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-0) correlation-id : 0def3fd7-7fe6-4731-b5b8-135bbd4e0475 | message : HTTP 404 Not Found | cause : {}: jakarta.ws.rs.NotFoundException: HTTP 404 Not Found
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.handle(RestInitialHandler.java:71)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:121)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:138)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:192)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:181)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.lambda$emitSuccess$0(FutureBase.java:54)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-12-12 16:04:40,992 laptop-t3siq6r0 workeronboarding-dev.jar[24892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : 2bd284bd-0120-457e-a1b2-ee633415615e | message : HTTP 404 Not Found | cause : {}: jakarta.ws.rs.NotFoundException: HTTP 404 Not Found
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.handle(RestInitialHandler.java:71)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:121)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:138)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:192)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$4.handle(VertxHttpHotReplacementSetup.java:181)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.lambda$emitSuccess$0(FutureBase.java:54)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-12-12 16:09:02,086 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 5284901b-04ea-421d-963d-c6829886341f | activity : Asset Save | message : Started
+2025-12-12 16:09:06,380 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-1) correlation-id : 5284901b-04ea-421d-963d-c6829886341f | activity : Asset Save | message : Ended
+2025-12-12 16:09:25,621 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-2) correlation-id : bb5923b2-44a4-4ad6-aa9e-864cb5bcd6c3 | status code : 404 | message : Asset not found
+2025-12-12 16:09:39,798 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-1) correlation-id : 81c16a3a-094e-41fd-a56b-f167db033ad8 | status code : 500 | message : File processing failed: Unexpected character ('c' (code 99)): Expected space separating root-level values
+ at [Source: (String)"7e24c59a-6056-435e-ade8-ba90268fcadf_1393442.jpg,8f1794a5-f915-43db-ab1f-cd42da3cea60_Screenshot 2025-11-24 211234.png,"; line: 1, column: 6]
+2025-12-12 16:10:13,786 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-2) correlation-id : f4ce83a9-6963-4163-b928-fbfa651d9f33 | status code : 500 | message : File processing failed: Unexpected character ('c' (code 99)): Expected space separating root-level values
+ at [Source: (String)"7e24c59a-6056-435e-ade8-ba90268fcadf_1393442.jpg,8f1794a5-f915-43db-ab1f-cd42da3cea60_Screenshot 2025-11-24 211234.png,"; line: 1, column: 6]
+2025-12-12 16:10:46,303 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-6) request_id : 1a656e9d-d93d-41d8-80d6-a46ba176b6d9 | get all holidays
+2025-12-12 16:10:46,307 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-7) request_id : d782a9d5-3da2-4492-a2f9-d41f170c504c | fetch All Regularization Attendance 
+2025-12-12 16:10:46,331 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) Start fetching all holidays records - RequestId: 1a656e9d-d93d-41d8-80d6-a46ba176b6d9
+2025-12-12 16:10:46,335 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-7) Start fetching all Regularization Attendance records - RequestId: d782a9d5-3da2-4492-a2f9-d41f170c504c
+2025-12-12 16:10:46,426 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) End fetching all holidaysz records - RequestId: 1a656e9d-d93d-41d8-80d6-a46ba176b6d9
+2025-12-12 16:10:46,932 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: 63abbee3-92ba-4f2f-aa4f-27d5f61c6cc3 | Fetching all employees
+2025-12-12 16:10:46,932 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: 722207b8-1515-4bb2-b39c-d34883497429 | Fetching all employees
+2025-12-12 16:10:46,937 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: 584702ad-3d35-44d4-b0c9-cc586a708f99 | Fetching all employees
+2025-12-12 16:10:46,937 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-5) request_id: 2fe9e012-70fd-45e8-9d52-dc4e4d9a2de6 | Fetching all employees
+2025-12-12 16:10:46,947 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Start fetching skill wise employee count - RequestId: 63abbee3-92ba-4f2f-aa4f-27d5f61c6cc3
+2025-12-12 16:10:46,947 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching skill wise employee count - RequestId: 722207b8-1515-4bb2-b39c-d34883497429
+2025-12-12 16:10:46,947 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-5) Start fetching employees - RequestId: 2fe9e012-70fd-45e8-9d52-dc4e4d9a2de6
+2025-12-12 16:10:46,947 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: 584702ad-3d35-44d4-b0c9-cc586a708f99
+2025-12-12 16:10:47,042 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-6) request_id : 98aaa489-cf0d-4551-af52-0456dcbe2ff6 | fetch All Regularization Attendance 
+2025-12-12 16:10:47,056 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) Start fetching all Regularization Attendance records - RequestId: 98aaa489-cf0d-4551-af52-0456dcbe2ff6
+2025-12-12 16:10:47,155 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-6) End fetching all Regularization Attendance records - RequestId: 98aaa489-cf0d-4551-af52-0456dcbe2ff6
+2025-12-12 16:10:47,155 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-7) End fetching all Regularization Attendance records - RequestId: d782a9d5-3da2-4492-a2f9-d41f170c504c
+2025-12-12 16:10:47,381 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-6) request_id : 94e37f50-2dc7-49a5-9173-3639239aa245 | get all holidays
+2025-12-12 16:10:47,382 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) Start fetching all holidays records - RequestId: 94e37f50-2dc7-49a5-9173-3639239aa245
+2025-12-12 16:10:47,388 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) End fetching all holidaysz records - RequestId: 94e37f50-2dc7-49a5-9173-3639239aa245
+2025-12-12 16:10:47,438 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) End fetching skill-wise employee count - RequestId: 63abbee3-92ba-4f2f-aa4f-27d5f61c6cc3
+2025-12-12 16:10:47,438 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) End fetching skill-wise employee count - RequestId: 722207b8-1515-4bb2-b39c-d34883497429
+2025-12-12 16:10:47,640 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-5) End fetching employees - RequestId: 2fe9e012-70fd-45e8-9d52-dc4e4d9a2de6
+2025-12-12 16:10:47,646 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: 584702ad-3d35-44d4-b0c9-cc586a708f99
+2025-12-12 16:10:48,610 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: 032873f5-7c0a-495e-a493-2d4ed3d73b5a | Fetching all assets
+2025-12-12 16:10:48,610 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-4) request_id: 3cf3cd9b-dfc6-43e5-9e5c-f2c77fc6735d | Fetching all assets
+2025-12-12 16:10:48,614 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching counts assets - RequestId: 032873f5-7c0a-495e-a493-2d4ed3d73b5a
+2025-12-12 16:10:48,614 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-4) Start fetching all assets - RequestId: 3cf3cd9b-dfc6-43e5-9e5c-f2c77fc6735d
+2025-12-12 16:10:48,682 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching counts assets - RequestId: 032873f5-7c0a-495e-a493-2d4ed3d73b5a
+2025-12-12 16:10:48,909 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-4) End fetching all assets - RequestId: 3cf3cd9b-dfc6-43e5-9e5c-f2c77fc6735d
+2025-12-12 16:10:52,945 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: c7b7325c-58dc-4c08-a0a1-8ebea01dad1b | Fetching all assets
+2025-12-12 16:10:52,947 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching counts assets - RequestId: c7b7325c-58dc-4c08-a0a1-8ebea01dad1b
+2025-12-12 16:10:52,951 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : c9c96d0f-ce1e-44b7-8cc9-1398d859ba92 | activity : Asset Type List | message : Started
+2025-12-12 16:10:52,958 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching counts assets - RequestId: c7b7325c-58dc-4c08-a0a1-8ebea01dad1b
+2025-12-12 16:10:52,974 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : c9c96d0f-ce1e-44b7-8cc9-1398d859ba92 | activity : Asset Type List | message : Ended
+2025-12-12 16:10:53,052 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : ab631f6a-323f-48c3-882d-d2d9e89eb963 | activity : Asset Type List | message : Started
+2025-12-12 16:10:53,060 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : ab631f6a-323f-48c3-882d-d2d9e89eb963 | activity : Asset Type List | message : Ended
+2025-12-12 16:10:55,196 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-6) request_id: 1cc84bd3-6374-447c-9a5f-3a4a65dda616 | Fetching all assets
+2025-12-12 16:10:55,198 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) Start fetching all assets - RequestId: 1cc84bd3-6374-447c-9a5f-3a4a65dda616
+2025-12-12 16:10:55,341 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) End fetching all assets - RequestId: 1cc84bd3-6374-447c-9a5f-3a4a65dda616
+2025-12-12 16:11:22,523 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-8) correlation-id : 47b6d601-cd3c-4239-b009-0f67cce82fc4 | status code : 500 | message : File processing failed: Unexpected character ('c' (code 99)): Expected space separating root-level values
+ at [Source: (String)"7e24c59a-6056-435e-ade8-ba90268fcadf_1393442.jpg,8f1794a5-f915-43db-ab1f-cd42da3cea60_Screenshot 2025-11-24 211234.png,"; line: 1, column: 6]
+2025-12-12 16:12:49,632 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-10) correlation-id : 9daf772a-593b-4050-8412-1a45cbbf875a | status code : 500 | message : File processing failed: Unexpected character ('c' (code 99)): Expected space separating root-level values
+ at [Source: (String)"7e24c59a-6056-435e-ade8-ba90268fcadf_1393442.jpg,8f1794a5-f915-43db-ab1f-cd42da3cea60_Screenshot 2025-11-24 211234.png,"; line: 1, column: 6]
+2025-12-12 16:14:49,759 laptop-t3siq6r0 workeronboarding-dev.jar[24892] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-5) Generating incomplete JSON
+2025-12-12 16:14:49,763 laptop-t3siq6r0 workeronboarding-dev.jar[24892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-5) correlation-id : ba10f551-bcd6-4841-b965-16f845fdccae | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'pancardPicUrl' from com.sbd.common.request.EmployeeDTO.EmployeeDetailsDTO
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.JsonException: I/O error while writing in JsonGenerator
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:652)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeString(JsonGeneratorImpl.java:605)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeEscapedString(JsonGeneratorImpl.java:559)
+	at org.eclipse.parsson.JsonGeneratorImpl.write(JsonGeneratorImpl.java:360)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:28)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: java.io.IOException: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:216)
+	at org.jboss.resteasy.reactive.server.NoopCloseAndFlushOutputStream.write(NoopCloseAndFlushOutputStream.java:39)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:303)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:648)
+	... 61 more
+Caused by: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:117)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.writeBlocking(ResteasyReactiveOutputStream.java:222)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:210)
+	... 68 more
+Caused by: java.io.IOException: Connection has been closed
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.awaitWriteable(ResteasyReactiveOutputStream.java:136)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:90)
+	... 70 more
+
+2025-12-12 16:14:53,596 laptop-t3siq6r0 workeronboarding-dev.jar[24892] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-3) Generating incomplete JSON
+2025-12-12 16:14:53,601 laptop-t3siq6r0 workeronboarding-dev.jar[24892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-3) correlation-id : b606c7ad-04c2-4c0b-9ed6-3363c17373ae | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'aadhaarPicUrl' from com.sbd.common.request.EmployeeDTO.EmployeeDetailsDTO
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.JsonException: I/O error while writing in JsonGenerator
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:652)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeString(JsonGeneratorImpl.java:605)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeEscapedString(JsonGeneratorImpl.java:559)
+	at org.eclipse.parsson.JsonGeneratorImpl.write(JsonGeneratorImpl.java:360)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:28)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: java.io.IOException: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:216)
+	at org.jboss.resteasy.reactive.server.NoopCloseAndFlushOutputStream.write(NoopCloseAndFlushOutputStream.java:39)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:303)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:648)
+	... 61 more
+Caused by: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:117)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.writeBlocking(ResteasyReactiveOutputStream.java:222)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:210)
+	... 68 more
+Caused by: java.io.IOException: Connection has been closed
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.awaitWriteable(ResteasyReactiveOutputStream.java:136)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:90)
+	... 70 more
+
+2025-12-12 16:15:00,525 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-3) request_id : e9949703-c17f-499c-a0b9-e4280fec2843 | fetch All Regularization Attendance 
+2025-12-12 16:15:00,525 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) request_id : 98fac56b-e3e2-4afc-b8ed-b0ea549b2a34 | get all holidays
+2025-12-12 16:15:00,531 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) Start fetching all Regularization Attendance records - RequestId: e9949703-c17f-499c-a0b9-e4280fec2843
+2025-12-12 16:15:00,531 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all holidays records - RequestId: 98fac56b-e3e2-4afc-b8ed-b0ea549b2a34
+2025-12-12 16:15:00,547 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-12) request_id: e9b486cd-9552-44df-9aea-5d765bda9d46 | Fetching all employees
+2025-12-12 16:15:00,564 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) Start fetching employees - RequestId: e9b486cd-9552-44df-9aea-5d765bda9d46
+2025-12-12 16:15:00,567 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: caec52db-d899-4137-9d68-8f8b7b22878c | Fetching all employees
+2025-12-12 16:15:00,568 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-14) request_id: da747624-8eec-4482-8d8a-480c3d577b99 | Fetching all employees
+2025-12-12 16:15:00,569 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching skill wise employee count - RequestId: caec52db-d899-4137-9d68-8f8b7b22878c
+2025-12-12 16:15:00,570 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) Start fetching employees - RequestId: da747624-8eec-4482-8d8a-480c3d577b99
+2025-12-12 16:15:00,599 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-15) request_id : 560dd177-5440-4e71-addf-beb1810b27d5 | fetch All Regularization Attendance 
+2025-12-12 16:15:00,600 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-15) Start fetching all Regularization Attendance records - RequestId: 560dd177-5440-4e71-addf-beb1810b27d5
+2025-12-12 16:15:01,014 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) End fetching all holidaysz records - RequestId: 98fac56b-e3e2-4afc-b8ed-b0ea549b2a34
+2025-12-12 16:15:01,017 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-3) End fetching all Regularization Attendance records - RequestId: e9949703-c17f-499c-a0b9-e4280fec2843
+2025-12-12 16:15:01,017 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-15) End fetching all Regularization Attendance records - RequestId: 560dd177-5440-4e71-addf-beb1810b27d5
+2025-12-12 16:15:01,042 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-3) request_id : cb02d754-4a4d-4a3f-9db2-cc55b7be0878 | get all holidays
+2025-12-12 16:15:01,045 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-3) Start fetching all holidays records - RequestId: cb02d754-4a4d-4a3f-9db2-cc55b7be0878
+2025-12-12 16:15:01,046 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-15) request_id: 8e0047ab-066a-49a1-9bac-0d98e27c452f | Fetching all employees
+2025-12-12 16:15:01,047 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) Start fetching skill wise employee count - RequestId: 8e0047ab-066a-49a1-9bac-0d98e27c452f
+2025-12-12 16:15:01,057 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) End fetching skill-wise employee count - RequestId: 8e0047ab-066a-49a1-9bac-0d98e27c452f
+2025-12-12 16:15:01,057 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching skill-wise employee count - RequestId: caec52db-d899-4137-9d68-8f8b7b22878c
+2025-12-12 16:15:01,060 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-3) End fetching all holidaysz records - RequestId: cb02d754-4a4d-4a3f-9db2-cc55b7be0878
+2025-12-12 16:15:01,362 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) End fetching employees - RequestId: e9b486cd-9552-44df-9aea-5d765bda9d46
+2025-12-12 16:15:01,362 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) End fetching employees - RequestId: da747624-8eec-4482-8d8a-480c3d577b99
+2025-12-12 16:15:02,800 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-3) request_id: 97d8cdcd-f376-493f-98d6-ced9e7c4d927 | Fetching all assets
+2025-12-12 16:15:02,801 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-13) request_id: be4a108b-16d3-411b-8c8b-8d57de0a9ea2 | Fetching all assets
+2025-12-12 16:15:02,803 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) Start fetching counts assets - RequestId: be4a108b-16d3-411b-8c8b-8d57de0a9ea2
+2025-12-12 16:15:02,805 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) Start fetching all assets - RequestId: 97d8cdcd-f376-493f-98d6-ced9e7c4d927
+2025-12-12 16:15:02,875 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) End fetching counts assets - RequestId: be4a108b-16d3-411b-8c8b-8d57de0a9ea2
+2025-12-12 16:15:02,971 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) End fetching all assets - RequestId: 97d8cdcd-f376-493f-98d6-ced9e7c4d927
+2025-12-12 16:15:03,014 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) correlation-id : c0ca0eab-b14c-48a2-84a0-c88647e05cd5 | activity : Asset Type List | message : Started
+2025-12-12 16:15:03,020 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) correlation-id : c0ca0eab-b14c-48a2-84a0-c88647e05cd5 | activity : Asset Type List | message : Ended
+2025-12-12 16:15:03,089 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-13) request_id: 1ee42bf5-6098-42fa-b3b1-b68a965eef05 | Fetching all assets
+2025-12-12 16:15:03,090 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) Start fetching counts assets - RequestId: 1ee42bf5-6098-42fa-b3b1-b68a965eef05
+2025-12-12 16:15:03,096 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) End fetching counts assets - RequestId: 1ee42bf5-6098-42fa-b3b1-b68a965eef05
+2025-12-12 16:15:03,131 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) correlation-id : 3b6ef14e-45ff-49c8-bb8e-8f7b7f5f1910 | activity : Asset Type List | message : Started
+2025-12-12 16:15:03,137 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) correlation-id : 3b6ef14e-45ff-49c8-bb8e-8f7b7f5f1910 | activity : Asset Type List | message : Ended
+2025-12-12 16:15:03,239 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-14) request_id: 12115916-e932-44a7-b3ce-3981a9b0a0a9 | Fetching all assets
+2025-12-12 16:15:03,240 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) Start fetching all assets - RequestId: 12115916-e932-44a7-b3ce-3981a9b0a0a9
+2025-12-12 16:15:03,330 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) End fetching all assets - RequestId: 12115916-e932-44a7-b3ce-3981a9b0a0a9
+2025-12-12 16:15:10,282 laptop-t3siq6r0 workeronboarding-dev.jar[24892] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-4) Generating incomplete JSON
+2025-12-12 16:15:10,283 laptop-t3siq6r0 workeronboarding-dev.jar[24892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-4) correlation-id : cfbc88f0-6763-44b9-9227-0cbdc64fd6de | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'assetImagesBase64' from com.sbd.common.Jsonb.AssetDTO
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.JsonException: I/O error while writing in JsonGenerator
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:652)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeString(JsonGeneratorImpl.java:605)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeEscapedString(JsonGeneratorImpl.java:559)
+	at org.eclipse.parsson.JsonGeneratorImpl.write(JsonGeneratorImpl.java:360)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:28)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: java.io.IOException: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:216)
+	at org.jboss.resteasy.reactive.server.NoopCloseAndFlushOutputStream.write(NoopCloseAndFlushOutputStream.java:39)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:303)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:648)
+	... 67 more
+Caused by: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:117)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.writeBlocking(ResteasyReactiveOutputStream.java:222)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:210)
+	... 74 more
+Caused by: java.io.IOException: Connection has been closed
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.awaitWriteable(ResteasyReactiveOutputStream.java:136)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:90)
+	... 76 more
+
+2025-12-12 16:15:14,008 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-3) request_id : f9866caf-497a-427c-8023-63f3fa9ec6f5 | fetching all assets grouped by type
+2025-12-12 16:15:14,010 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) Start fetching assets grouped by type - RequestId: f9866caf-497a-427c-8023-63f3fa9ec6f5
+2025-12-12 16:15:14,018 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) End fetching asset counts by type - RequestId: f9866caf-497a-427c-8023-63f3fa9ec6f5
+2025-12-12 16:15:14,046 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-3) request_id : c8d4203b-7611-4a79-959b-2fe320f37b73 | fetching all assets grouped by type
+2025-12-12 16:15:14,047 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) Start fetching assets grouped by type - RequestId: c8d4203b-7611-4a79-959b-2fe320f37b73
+2025-12-12 16:15:14,053 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) End fetching asset counts by type - RequestId: c8d4203b-7611-4a79-959b-2fe320f37b73
+2025-12-12 16:15:19,708 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) correlation-id : 0b7b13f8-c47d-4b51-bf03-34809febaf8a | activity : Asset Type List | message : Started
+2025-12-12 16:15:19,717 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) correlation-id : 0b7b13f8-c47d-4b51-bf03-34809febaf8a | activity : Asset Type List | message : Ended
+2025-12-12 16:15:19,838 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) correlation-id : c2daac88-8d26-48b4-8b92-1589c6b3e2db | activity : Asset Type List | message : Started
+2025-12-12 16:15:19,848 laptop-t3siq6r0 workeronboarding-dev.jar[24892] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-3) correlation-id : c2daac88-8d26-48b4-8b92-1589c6b3e2db | activity : Asset Type List | message : Ended
+2025-12-12 16:15:41,481 laptop-t3siq6r0 workeronboarding-dev.jar[24892] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-6) Generating incomplete JSON
+2025-12-12 16:15:41,482 laptop-t3siq6r0 workeronboarding-dev.jar[24892] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-6) correlation-id : de08babb-e2af-4317-a0c4-a74c8c97b071 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'assetImagesBase64' from com.sbd.common.Jsonb.AssetDTO
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.JsonException: I/O error while writing in JsonGenerator
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:652)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeString(JsonGeneratorImpl.java:605)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeEscapedString(JsonGeneratorImpl.java:559)
+	at org.eclipse.parsson.JsonGeneratorImpl.write(JsonGeneratorImpl.java:360)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:28)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: java.io.IOException: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:216)
+	at org.jboss.resteasy.reactive.server.NoopCloseAndFlushOutputStream.write(NoopCloseAndFlushOutputStream.java:39)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:303)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:648)
+	... 67 more
+Caused by: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:117)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.writeBlocking(ResteasyReactiveOutputStream.java:222)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:210)
+	... 74 more
+Caused by: java.io.IOException: Connection has been closed
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.awaitWriteable(ResteasyReactiveOutputStream.java:136)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:90)
+	... 76 more
+

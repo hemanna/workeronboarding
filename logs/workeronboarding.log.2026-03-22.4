@@ -1,0 +1,29 @@
+2026-03-22 00:59:33,191 laptop-t3siq6r0 workeronboarding-dev.jar[21544] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 9.577s. Listening on: http://0.0.0.0:8080
+2026-03-22 00:59:33,197 laptop-t3siq6r0 workeronboarding-dev.jar[21544] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-03-22 00:59:33,197 laptop-t3siq6r0 workeronboarding-dev.jar[21544] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-03-22 00:59:45,859 laptop-t3siq6r0 workeronboarding-dev.jar[21544] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) correlationId=c4b638ce-595b-40af-b367-ee499fcdc30e | Lock attendance API called for month=null year=null
+2026-03-22 00:59:45,878 laptop-t3siq6r0 workeronboarding-dev.jar[21544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlation-id : c4b638ce-595b-40af-b367-ee499fcdc30e | activity : Employee Attendance Lock | message : Started
+2026-03-22 00:59:45,878 laptop-t3siq6r0 workeronboarding-dev.jar[21544] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlationId=c4b638ce-595b-40af-b367-ee499fcdc30e | Locking attendance for month=null year=null
+2026-03-22 00:59:46,342 laptop-t3siq6r0 workeronboarding-dev.jar[21544] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : c1518385-0526-4488-ad17-59b7e6fd8b53 | message : Executing an update/delete query | cause : {}: jakarta.persistence.TransactionRequiredException: Executing an update/delete query
+	at org.hibernate.internal.AbstractSharedSessionContract.checkTransactionNeededForUpdateOperation(AbstractSharedSessionContract.java:471)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.executeUpdate(QuerySqmImpl.java:701)
+	at io.quarkus.hibernate.orm.panache.common.runtime.AbstractJpaOperations.executeUpdate(AbstractJpaOperations.java:475)
+	at io.quarkus.hibernate.orm.panache.common.runtime.AbstractJpaOperations.update(AbstractJpaOperations.java:506)
+	at com.sbd.common.repository.AttendanceLockRepository.update(AttendanceLockRepository.java)
+	at com.sbd.common.repository.AttendanceLockRepository.lockAttendance(AttendanceLockRepository.java:13)
+	at com.sbd.common.repository.AttendanceLockRepository_ClientProxy.lockAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService.lockAttendance(EmployeeAttendanceService.java:834)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.lockAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.lockAttendance(EmployeeAttendanceResource.java:240)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$lockAttendance_149f5086fc904e66213a327af548be1d474665f8.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+

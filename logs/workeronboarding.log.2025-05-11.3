@@ -1,0 +1,542 @@
+2025-05-08 22:34:12,040 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 5.934s. Listening on: http://0.0.0.0:8080
+2025-05-08 22:34:12,044 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-05-08 22:34:12,046 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-05-08 22:34:19,866 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: f9afe239-2bce-4b0b-b6e8-ac71568d3c70 | Deleting employee with ID: 80
+2025-05-08 22:34:19,940 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Request ID: f9afe239-2bce-4b0b-b6e8-ac71568d3c70 | Deleting employee with ID: 80
+2025-05-08 22:34:20,225 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Request ID: f9afe239-2bce-4b0b-b6e8-ac71568d3c70 | Employee with ID 80 deleted successfully
+2025-05-08 22:34:20,271 laptop-t3siq6r0 workeronboarding-dev.jar[9668] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) Cannot delete or update a parent row: a foreign key constraint fails (`workeronboarding`.`employee_skills`, CONSTRAINT `employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee_details` (`id`))
+2025-05-08 22:34:20,285 laptop-t3siq6r0 workeronboarding-dev.jar[9668] WARN  [com.arj.ats.arjuna] (executor-thread-1) ARJUNA012125: TwoPhaseCoordinator.beforeCompletion - failed for SynchronizationImple< 0:ffffc0a87f41:d2ca:681ce413:1, org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization@7054b728 >: org.hibernate.exception.ConstraintViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`workeronboarding`.`employee_skills`, CONSTRAINT `employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee_details` (`id`))] [delete from employee_details where id=?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:60)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:278)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:107)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
+	at org.hibernate.persister.entity.mutation.DeleteCoordinator.doStaticDelete(DeleteCoordinator.java:304)
+	at org.hibernate.persister.entity.mutation.DeleteCoordinator.coordinateDelete(DeleteCoordinator.java:89)
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:2896)
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:635)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:502)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:364)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1412)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:485)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2301)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1966)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:336)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:52)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:351)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:69)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:138)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1271)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:104)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:406)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:171)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeRecordService_Subclass.deleteEmployee(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.deleteEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.deleteEmployee(EmployeeRecordResource.java:100)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$deleteEmployee_106d90d499ae20dd1ffa1cdb794020ec71bbcee2.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`workeronboarding`.`employee_skills`, CONSTRAINT `employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee_details` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:88)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:275)
+	... 51 more
+
+2025-05-08 22:34:20,320 laptop-t3siq6r0 workeronboarding-dev.jar[9668] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 07b0231e-34be-495b-8b16-4102f7accd98 | message : Error invoking subclass method | cause : {}: io.quarkus.arc.ArcUndeclaredThrowableException: Error invoking subclass method
+	at com.sbd.record.control.service.EmployeeRecordService_Subclass.deleteEmployee(Unknown Source)
+	at com.sbd.record.control.service.EmployeeRecordService_ClientProxy.deleteEmployee(Unknown Source)
+	at com.sbd.record.boundary.EmployeeRecordResource.deleteEmployee(EmployeeRecordResource.java:100)
+	at com.sbd.record.boundary.EmployeeRecordResource$quarkusrestinvoker$deleteEmployee_106d90d499ae20dd1ffa1cdb794020ec71bbcee2.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: jakarta.transaction.RollbackException: ARJUNA016053: Could not commit transaction.
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1283)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:104)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:406)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:171)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	... 14 more
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`workeronboarding`.`employee_skills`, CONSTRAINT `employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee_details` (`id`))] [delete from employee_details where id=?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:60)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:278)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:107)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
+	at org.hibernate.persister.entity.mutation.DeleteCoordinator.doStaticDelete(DeleteCoordinator.java:304)
+	at org.hibernate.persister.entity.mutation.DeleteCoordinator.coordinateDelete(DeleteCoordinator.java:89)
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:2896)
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:635)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:502)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:364)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1412)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:485)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2301)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1966)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:336)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:52)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:351)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:69)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:138)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1271)
+	... 26 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`workeronboarding`.`employee_skills`, CONSTRAINT `employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee_details` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:88)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:275)
+	... 51 more
+
+2025-05-08 22:39:20,307 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-4) request_id: c0824ffc-2b69-469a-9b60-011fff63a06e | Fetching all employees
+2025-05-08 22:39:20,307 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 4fe254d2-dbe6-4f4b-b3dd-bf8660e66877 | Fetching all employees
+2025-05-08 22:39:20,308 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: 86a5228a-e222-484d-b22b-0e342871deb9 | Fetching all employees
+2025-05-08 22:39:20,308 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: 5c05ad43-2ac4-4a09-b6bb-64b9add0a823 | Fetching all employees
+2025-05-08 22:39:20,309 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: 86a5228a-e222-484d-b22b-0e342871deb9
+2025-05-08 22:39:20,309 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching employees - RequestId: 5c05ad43-2ac4-4a09-b6bb-64b9add0a823
+2025-05-08 22:39:20,310 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) Start fetching skill wise employee count - RequestId: c0824ffc-2b69-469a-9b60-011fff63a06e
+2025-05-08 22:39:20,310 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching skill wise employee count - RequestId: 4fe254d2-dbe6-4f4b-b3dd-bf8660e66877
+2025-05-08 22:39:20,416 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching skill-wise employee count - RequestId: 4fe254d2-dbe6-4f4b-b3dd-bf8660e66877
+2025-05-08 22:39:20,434 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-4) End fetching skill-wise employee count - RequestId: c0824ffc-2b69-469a-9b60-011fff63a06e
+2025-05-08 22:39:20,738 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: 86a5228a-e222-484d-b22b-0e342871deb9
+2025-05-08 22:39:20,738 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching employees - RequestId: 5c05ad43-2ac4-4a09-b6bb-64b9add0a823
+2025-05-08 22:39:53,103 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : 5e296d6e-01db-4680-b101-7ab624c98fea | get all employee attendance
+2025-05-08 22:39:53,110 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetching all attendance records - RequestId: 5e296d6e-01db-4680-b101-7ab624c98fea
+2025-05-08 22:39:53,126 laptop-t3siq6r0 workeronboarding-dev.jar[9668] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) No attendance records found - RequestId: 5e296d6e-01db-4680-b101-7ab624c98fea
+2025-05-08 22:39:53,150 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-2) request_id : f357da8b-a349-4c02-8237-1b5eb5bf6c49 | get all employee attendance
+2025-05-08 22:39:53,151 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) Start fetching all attendance records - RequestId: f357da8b-a349-4c02-8237-1b5eb5bf6c49
+2025-05-08 22:39:53,157 laptop-t3siq6r0 workeronboarding-dev.jar[9668] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-2) No attendance records found - RequestId: f357da8b-a349-4c02-8237-1b5eb5bf6c49
+2025-05-08 22:39:56,988 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) Request ID: 459da79d-3677-4d68-be87-cac3e5835760 | Fetching all leave requests
+2025-05-08 22:39:56,991 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start fetching all leave requests - RequestId: 459da79d-3677-4d68-be87-cac3e5835760
+2025-05-08 22:39:57,022 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) Request ID: 3be9e98a-9228-4b36-9d62-54d0a3f56ab9 | Fetching all leave requests
+2025-05-08 22:39:57,023 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all leave requests - RequestId: 3be9e98a-9228-4b36-9d62-54d0a3f56ab9
+2025-05-08 22:39:58,028 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End fetching all leave requests - RequestId: 459da79d-3677-4d68-be87-cac3e5835760
+2025-05-08 22:39:58,035 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) End fetching all leave requests - RequestId: 3be9e98a-9228-4b36-9d62-54d0a3f56ab9
+2025-05-08 22:40:26,897 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) Request ID: cbebe6ba-227c-4113-b7a7-2fa529efefbe | Fetching all leave requests
+2025-05-08 22:40:26,898 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start fetching all leave requests - RequestId: cbebe6ba-227c-4113-b7a7-2fa529efefbe
+2025-05-08 22:40:26,951 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) Request ID: 48e04063-7845-4fbb-9611-6c1b9966ed24 | Fetching all leave requests
+2025-05-08 22:40:26,952 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all leave requests - RequestId: 48e04063-7845-4fbb-9611-6c1b9966ed24
+2025-05-08 22:40:27,661 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End fetching all leave requests - RequestId: cbebe6ba-227c-4113-b7a7-2fa529efefbe
+2025-05-08 22:40:27,716 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) End fetching all leave requests - RequestId: 48e04063-7845-4fbb-9611-6c1b9966ed24
+2025-05-08 22:40:47,665 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) Request ID: f261d07a-bcaf-4050-b18c-a3bd4064108b | Fetching all leave requests
+2025-05-08 22:40:47,666 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all leave requests - RequestId: f261d07a-bcaf-4050-b18c-a3bd4064108b
+2025-05-08 22:40:48,280 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-2) Request ID: 3573ff15-6085-436c-be46-80d7784d2b8e | Fetching all leave requests
+2025-05-08 22:40:48,281 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) Start fetching all leave requests - RequestId: 3573ff15-6085-436c-be46-80d7784d2b8e
+2025-05-08 22:40:48,418 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) End fetching all leave requests - RequestId: f261d07a-bcaf-4050-b18c-a3bd4064108b
+2025-05-08 22:40:48,998 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-2) End fetching all leave requests - RequestId: 3573ff15-6085-436c-be46-80d7784d2b8e
+2025-05-08 22:48:41,535 laptop-t3siq6r0 workeronboarding-dev.jar[9668] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : 5e2ce087-4c7a-416d-9cc6-f5aa475e4b87 | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-05-08 22:54:35,248 laptop-t3siq6r0 workeronboarding-dev.jar[9668] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : 37167714-7d8b-4ca8-9de1-028497780cb4 | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xUpgradeToH2CHandler.channelRead(Http1xUpgradeToH2CHandler.java:124)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.end(Http1xOrH2CHandler.java:61)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.channelRead(Http1xOrH2CHandler.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-05-08 22:54:35,268 laptop-t3siq6r0 workeronboarding-dev.jar[9668] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (vert.x-eventloop-thread-1) correlation-id : 83761d91-e6f3-4c7e-b156-1383bc00e6c7 | message : Unable to find matching target resource method | cause : {}: jakarta.ws.rs.NotFoundException: Unable to find matching target resource method
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.throwNotFound(ClassRoutingHandler.java:231)
+	at org.jboss.resteasy.reactive.server.handlers.ClassRoutingHandler.handle(ClassRoutingHandler.java:102)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:123)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at org.jboss.resteasy.reactive.server.handlers.RestInitialHandler.beginProcessing(RestInitialHandler.java:48)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:23)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveVertxHandler.handle(ResteasyReactiveVertxHandler.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:59)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$1.handle(HttpServerCommonHandlers.java:37)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:339)
+	at io.quarkus.resteasy.reactive.server.runtime.ResteasyReactiveRecorder$13.handle(ResteasyReactiveRecorder.java:332)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:199)
+	at io.quarkus.vertx.http.runtime.cors.CORSFilter.handle(CORSFilter.java:21)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup.handleHotReplacementRequest(VertxHttpHotReplacementSetup.java:133)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:426)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$5.handle(VertxHttpRecorder.java:422)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1286)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:144)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:68)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:83)
+	at io.quarkus.vertx.http.runtime.options.HttpServerCommonHandlers$2.handle(HttpServerCommonHandlers.java:66)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:162)
+	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$1.handle(VertxHttpRecorder.java:138)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:55)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:179)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-05-08 22:55:08,553 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: 035736ff-bf2a-4d7e-9557-5c6894895657 | Fetching all employees
+2025-05-08 22:55:08,554 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching employees - RequestId: 035736ff-bf2a-4d7e-9557-5c6894895657
+2025-05-08 22:55:08,554 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-7) request_id: 1d79ac8f-6abf-407d-bbd3-101708c063fd | Fetching all employees
+2025-05-08 22:55:08,555 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) Start fetching employees - RequestId: 1d79ac8f-6abf-407d-bbd3-101708c063fd
+2025-05-08 22:55:08,585 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-8) request_id: 365cd054-493a-42fb-96c5-9294af8e00ea | Fetching all employees
+2025-05-08 22:55:08,586 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) Start fetching skill wise employee count - RequestId: 365cd054-493a-42fb-96c5-9294af8e00ea
+2025-05-08 22:55:08,593 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-9) request_id: e0bbd085-3c50-4a1d-a6b0-e3a0cf82c5a0 | Fetching all employees
+2025-05-08 22:55:08,595 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-9) Start fetching skill wise employee count - RequestId: e0bbd085-3c50-4a1d-a6b0-e3a0cf82c5a0
+2025-05-08 22:55:08,652 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-8) End fetching skill-wise employee count - RequestId: 365cd054-493a-42fb-96c5-9294af8e00ea
+2025-05-08 22:55:08,689 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-9) End fetching skill-wise employee count - RequestId: e0bbd085-3c50-4a1d-a6b0-e3a0cf82c5a0
+2025-05-08 22:55:08,827 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching employees - RequestId: 035736ff-bf2a-4d7e-9557-5c6894895657
+2025-05-08 22:55:08,832 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) End fetching employees - RequestId: 1d79ac8f-6abf-407d-bbd3-101708c063fd
+2025-05-08 23:03:15,982 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-7) request_id: 079474c2-b157-46cf-ac60-511acc63f778 | Fetching all employees
+2025-05-08 23:03:15,983 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) Start fetching employees - RequestId: 079474c2-b157-46cf-ac60-511acc63f778
+2025-05-08 23:03:15,985 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-11) request_id: 03eb777b-e071-427e-bed3-1e02518b2866 | Fetching all employees
+2025-05-08 23:03:15,985 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-10) request_id: 205c2c89-3f9d-417a-99fe-fb6961421b0d | Fetching all employees
+2025-05-08 23:03:15,986 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-12) request_id: bd04191b-4923-47cc-8ce7-f0a8c7a4c0c8 | Fetching all employees
+2025-05-08 23:03:15,986 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) Start fetching employees - RequestId: 205c2c89-3f9d-417a-99fe-fb6961421b0d
+2025-05-08 23:03:15,986 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) Start fetching skill wise employee count - RequestId: 03eb777b-e071-427e-bed3-1e02518b2866
+2025-05-08 23:03:15,986 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) Start fetching skill wise employee count - RequestId: bd04191b-4923-47cc-8ce7-f0a8c7a4c0c8
+2025-05-08 23:03:15,990 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-11) End fetching skill-wise employee count - RequestId: 03eb777b-e071-427e-bed3-1e02518b2866
+2025-05-08 23:03:15,992 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-12) End fetching skill-wise employee count - RequestId: bd04191b-4923-47cc-8ce7-f0a8c7a4c0c8
+2025-05-08 23:03:16,118 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) End fetching employees - RequestId: 079474c2-b157-46cf-ac60-511acc63f778
+2025-05-08 23:03:16,127 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-10) End fetching employees - RequestId: 205c2c89-3f9d-417a-99fe-fb6961421b0d
+2025-05-08 23:16:39,656 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-7) request_id: 3fdc7dd4-53b9-40e3-9798-2e5016e4306d | Fetching all employees
+2025-05-08 23:16:39,660 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) Start fetching employees - RequestId: 3fdc7dd4-53b9-40e3-9798-2e5016e4306d
+2025-05-08 23:16:39,661 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: fc2c2af3-3713-4d2f-b655-2681fe312247 | Fetching all employees
+2025-05-08 23:16:39,662 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching employees - RequestId: fc2c2af3-3713-4d2f-b655-2681fe312247
+2025-05-08 23:16:39,661 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-14) request_id: dcae4065-a9a2-43c2-9888-fed08f658872 | Fetching all employees
+2025-05-08 23:16:39,664 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-15) request_id: 7c6dc9b0-fbf9-46b3-a164-7710fb79ff66 | Fetching all employees
+2025-05-08 23:16:39,664 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) Start fetching skill wise employee count - RequestId: dcae4065-a9a2-43c2-9888-fed08f658872
+2025-05-08 23:16:39,667 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) Start fetching skill wise employee count - RequestId: 7c6dc9b0-fbf9-46b3-a164-7710fb79ff66
+2025-05-08 23:16:39,726 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-14) End fetching skill-wise employee count - RequestId: dcae4065-a9a2-43c2-9888-fed08f658872
+2025-05-08 23:16:39,770 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-15) End fetching skill-wise employee count - RequestId: 7c6dc9b0-fbf9-46b3-a164-7710fb79ff66
+2025-05-08 23:16:39,879 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-7) End fetching employees - RequestId: 3fdc7dd4-53b9-40e3-9798-2e5016e4306d
+2025-05-08 23:16:39,919 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching employees - RequestId: fc2c2af3-3713-4d2f-b655-2681fe312247
+2025-05-08 23:17:26,736 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-16) request_id: 2fe77e91-266a-450d-9cc4-bc721aea4b34 | Fetching all employees
+2025-05-08 23:17:26,737 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-17) request_id: 5afb113b-83ef-4f51-89a4-1f847d15e7d2 | Fetching all employees
+2025-05-08 23:17:26,736 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: 4fc03620-cacc-4ca0-8696-6feaff563b29 | Fetching all employees
+2025-05-08 23:17:26,738 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-17) Start fetching skill wise employee count - RequestId: 5afb113b-83ef-4f51-89a4-1f847d15e7d2
+2025-05-08 23:17:26,737 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-16) Start fetching employees - RequestId: 2fe77e91-266a-450d-9cc4-bc721aea4b34
+2025-05-08 23:17:26,738 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching employees - RequestId: 4fc03620-cacc-4ca0-8696-6feaff563b29
+2025-05-08 23:17:26,743 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-17) End fetching skill-wise employee count - RequestId: 5afb113b-83ef-4f51-89a4-1f847d15e7d2
+2025-05-08 23:17:26,766 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-17) request_id: 30c61730-0c3c-4913-b875-f81509412478 | Fetching all employees
+2025-05-08 23:17:26,767 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-17) Start fetching skill wise employee count - RequestId: 30c61730-0c3c-4913-b875-f81509412478
+2025-05-08 23:17:26,770 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-17) End fetching skill-wise employee count - RequestId: 30c61730-0c3c-4913-b875-f81509412478
+2025-05-08 23:17:26,986 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-16) End fetching employees - RequestId: 2fe77e91-266a-450d-9cc4-bc721aea4b34
+2025-05-08 23:17:26,993 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching employees - RequestId: 4fc03620-cacc-4ca0-8696-6feaff563b29
+2025-05-08 23:19:06,043 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: e2119378-da2e-4ca7-ab45-0170ee5b1cad | Fetching all employees
+2025-05-08 23:19:06,044 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-18) request_id: bc58948b-45f9-40ce-9961-338221781719 | Fetching all employees
+2025-05-08 23:19:06,045 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching employees - RequestId: e2119378-da2e-4ca7-ab45-0170ee5b1cad
+2025-05-08 23:19:06,045 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-20) request_id: c368a069-5158-4cc3-9f0c-d1351e746f4a | Fetching all employees
+2025-05-08 23:19:06,047 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-20) Start fetching skill wise employee count - RequestId: c368a069-5158-4cc3-9f0c-d1351e746f4a
+2025-05-08 23:19:06,045 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) Start fetching employees - RequestId: bc58948b-45f9-40ce-9961-338221781719
+2025-05-08 23:19:06,046 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-19) request_id: f66ea50e-e5e0-4909-bab7-d04eb55653ce | Fetching all employees
+2025-05-08 23:19:06,057 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) Start fetching skill wise employee count - RequestId: f66ea50e-e5e0-4909-bab7-d04eb55653ce
+2025-05-08 23:19:06,060 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-20) End fetching skill-wise employee count - RequestId: c368a069-5158-4cc3-9f0c-d1351e746f4a
+2025-05-08 23:19:06,073 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) End fetching skill-wise employee count - RequestId: f66ea50e-e5e0-4909-bab7-d04eb55653ce
+2025-05-08 23:19:06,231 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching employees - RequestId: e2119378-da2e-4ca7-ab45-0170ee5b1cad
+2025-05-08 23:19:06,268 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) End fetching employees - RequestId: bc58948b-45f9-40ce-9961-338221781719
+2025-05-08 23:19:16,601 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-18) RequestId: 6ae87812-24ca-4252-aaed-ff08dc1337d6 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@692f733c, type=null, pagination=null)
+2025-05-08 23:19:16,604 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-18) Start Login user  - RequestId: 6ae87812-24ca-4252-aaed-ff08dc1337d6
+2025-05-08 23:19:16,701 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-18) End user Login  - RequestId: 6ae87812-24ca-4252-aaed-ff08dc1337d6
+2025-05-08 23:19:19,302 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : eb55f9f0-7ee3-4043-a4e3-5185044c09c8 | get employee by id: 79
+2025-05-08 23:19:19,303 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: eb55f9f0-7ee3-4043-a4e3-5185044c09c8
+2025-05-08 23:19:19,339 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : cf9ff5bf-0127-456c-8ca4-2c3d9d89ee0b | get employee by id: 79
+2025-05-08 23:19:19,342 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetch employee attendance - RequestId: cf9ff5bf-0127-456c-8ca4-2c3d9d89ee0b
+2025-05-08 23:19:19,725 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: eb55f9f0-7ee3-4043-a4e3-5185044c09c8
+2025-05-08 23:19:19,725 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) End fetch employee attendance - RequestId: cf9ff5bf-0127-456c-8ca4-2c3d9d89ee0b
+2025-05-08 23:19:25,302 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : d5bee00f-277e-4a77-b709-f021cb6e16c2 | get employee by id: 79
+2025-05-08 23:19:25,303 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetch employee attendance - RequestId: d5bee00f-277e-4a77-b709-f021cb6e16c2
+2025-05-08 23:19:25,308 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) End fetch employee attendance - RequestId: d5bee00f-277e-4a77-b709-f021cb6e16c2
+2025-05-08 23:19:25,393 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : d7e3200c-f616-477c-8967-19f21da48ead | get employee by id: 79
+2025-05-08 23:19:25,394 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetch employee attendance - RequestId: d7e3200c-f616-477c-8967-19f21da48ead
+2025-05-08 23:19:25,397 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) End fetch employee attendance - RequestId: d7e3200c-f616-477c-8967-19f21da48ead
+2025-05-08 23:19:27,249 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : 2aef6b0b-efe8-4737-a3ae-30abbf3dda5a | get all employee attendance
+2025-05-08 23:19:27,249 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : 2c6d9d3c-b63e-4e10-bc64-b80f9bdb2b54 | get all employee attendance
+2025-05-08 23:19:27,251 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetching all attendance records - RequestId: 2c6d9d3c-b63e-4e10-bc64-b80f9bdb2b54
+2025-05-08 23:19:27,251 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetching all attendance records - RequestId: 2aef6b0b-efe8-4737-a3ae-30abbf3dda5a
+2025-05-08 23:19:27,255 laptop-t3siq6r0 workeronboarding-dev.jar[9668] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) No attendance records found - RequestId: 2aef6b0b-efe8-4737-a3ae-30abbf3dda5a
+2025-05-08 23:19:27,255 laptop-t3siq6r0 workeronboarding-dev.jar[9668] WARN  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) No attendance records found - RequestId: 2c6d9d3c-b63e-4e10-bc64-b80f9bdb2b54
+2025-05-08 23:19:28,985 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : 74250278-3b46-4f8f-b1bb-b00892d849dc | get employee by id: 79
+2025-05-08 23:19:28,986 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: 74250278-3b46-4f8f-b1bb-b00892d849dc
+2025-05-08 23:19:28,990 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: 74250278-3b46-4f8f-b1bb-b00892d849dc
+2025-05-08 23:19:29,022 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : 072eea7d-9b60-41ae-8acb-84b40c4745e7 | get employee by id: 79
+2025-05-08 23:19:29,023 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: 072eea7d-9b60-41ae-8acb-84b40c4745e7
+2025-05-08 23:19:29,026 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: 072eea7d-9b60-41ae-8acb-84b40c4745e7
+2025-05-08 23:19:33,900 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : 1ff821ab-577b-4a9e-929a-6ff455cc7aec | get employee by id: 79
+2025-05-08 23:19:33,901 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: 1ff821ab-577b-4a9e-929a-6ff455cc7aec
+2025-05-08 23:19:33,905 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: 1ff821ab-577b-4a9e-929a-6ff455cc7aec
+2025-05-08 23:19:33,995 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : ec1e5bf3-5567-4c6e-ba9a-cbcc4a179953 | get employee by id: 79
+2025-05-08 23:19:33,996 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: ec1e5bf3-5567-4c6e-ba9a-cbcc4a179953
+2025-05-08 23:19:34,000 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: ec1e5bf3-5567-4c6e-ba9a-cbcc4a179953
+2025-05-08 23:19:56,431 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-18) request_id: e894881b-668d-45b3-86d2-8df1d4b12ed2 | Fetching all employees
+2025-05-08 23:19:56,431 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: 69b62bea-e06e-4cd6-9fcf-e0a5989343e6 | Fetching all employees
+2025-05-08 23:19:56,432 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) Start fetching employees - RequestId: e894881b-668d-45b3-86d2-8df1d4b12ed2
+2025-05-08 23:19:56,433 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching skill wise employee count - RequestId: 69b62bea-e06e-4cd6-9fcf-e0a5989343e6
+2025-05-08 23:19:56,446 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching skill-wise employee count - RequestId: 69b62bea-e06e-4cd6-9fcf-e0a5989343e6
+2025-05-08 23:19:56,499 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-13) request_id: 2e67573e-de4d-4087-9bb0-455fa10f9ce9 | Fetching all employees
+2025-05-08 23:19:56,500 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) Start fetching employees - RequestId: 2e67573e-de4d-4087-9bb0-455fa10f9ce9
+2025-05-08 23:19:56,539 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-21) request_id: 30df5869-3923-4952-a566-1be72309a2b2 | Fetching all employees
+2025-05-08 23:19:56,540 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-21) Start fetching skill wise employee count - RequestId: 30df5869-3923-4952-a566-1be72309a2b2
+2025-05-08 23:19:56,546 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-21) End fetching skill-wise employee count - RequestId: 30df5869-3923-4952-a566-1be72309a2b2
+2025-05-08 23:19:56,663 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) End fetching employees - RequestId: e894881b-668d-45b3-86d2-8df1d4b12ed2
+2025-05-08 23:19:56,720 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-13) End fetching employees - RequestId: 2e67573e-de4d-4087-9bb0-455fa10f9ce9
+2025-05-08 23:26:37,175 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-18) request_id: 41168cd9-45c3-48d7-b0e4-c9dd55e44d01 | Fetching all employees
+2025-05-08 23:26:37,176 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) Start fetching employees - RequestId: 41168cd9-45c3-48d7-b0e4-c9dd55e44d01
+2025-05-08 23:26:37,192 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-22) request_id: 0805c5fe-879a-487b-9333-ec6bd259bc5d | Fetching all employees
+2025-05-08 23:26:37,194 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-23) request_id: ed9d6e6f-68ea-428b-a262-907f1119b0f4 | Fetching all employees
+2025-05-08 23:26:37,195 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-22) Start fetching skill wise employee count - RequestId: 0805c5fe-879a-487b-9333-ec6bd259bc5d
+2025-05-08 23:26:37,196 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-23) Start fetching skill wise employee count - RequestId: ed9d6e6f-68ea-428b-a262-907f1119b0f4
+2025-05-08 23:26:37,200 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-24) request_id: 120e9286-0150-4581-b7bd-478065cf14dd | Fetching all employees
+2025-05-08 23:26:37,201 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-24) Start fetching employees - RequestId: 120e9286-0150-4581-b7bd-478065cf14dd
+2025-05-08 23:26:37,201 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-22) End fetching skill-wise employee count - RequestId: 0805c5fe-879a-487b-9333-ec6bd259bc5d
+2025-05-08 23:26:37,202 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-23) End fetching skill-wise employee count - RequestId: ed9d6e6f-68ea-428b-a262-907f1119b0f4
+2025-05-08 23:26:37,335 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-18) End fetching employees - RequestId: 41168cd9-45c3-48d7-b0e4-c9dd55e44d01
+2025-05-08 23:26:37,398 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-24) End fetching employees - RequestId: 120e9286-0150-4581-b7bd-478065cf14dd
+2025-05-08 23:26:44,344 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) Request ID: 9c2cc395-0e44-4b83-a5f8-2f116cbc5ba7 | Fetching all leave requests
+2025-05-08 23:26:44,345 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) Start fetching all leave requests - RequestId: 9c2cc395-0e44-4b83-a5f8-2f116cbc5ba7
+2025-05-08 23:26:44,373 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-18) Request ID: fc8be8a0-4081-45d3-bc85-cf9afd0537b4 | Fetching all leave requests
+2025-05-08 23:26:44,374 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) Start fetching all leave requests - RequestId: fc8be8a0-4081-45d3-bc85-cf9afd0537b4
+2025-05-08 23:26:45,195 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-18) End fetching all leave requests - RequestId: fc8be8a0-4081-45d3-bc85-cf9afd0537b4
+2025-05-08 23:26:45,209 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) End fetching all leave requests - RequestId: 9c2cc395-0e44-4b83-a5f8-2f116cbc5ba7
+2025-05-08 23:27:43,064 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.UserCredentialsResource] (executor-thread-18) RequestId: 040f8430-0144-4053-a58f-7bd753406786 | Login User Request: ApiRequest(data=com.sbd.common.Jsonb.UserCredentialRequest@b80ea76, type=null, pagination=null)
+2025-05-08 23:27:43,065 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-18) Start Login user  - RequestId: 040f8430-0144-4053-a58f-7bd753406786
+2025-05-08 23:27:43,138 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.UserCredentialService] (executor-thread-18) End user Login  - RequestId: 040f8430-0144-4053-a58f-7bd753406786
+2025-05-08 23:27:47,746 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-18) request_id : fbd757a1-4c9a-4f3b-9263-870724123b26 | get employee by id: 79
+2025-05-08 23:27:47,746 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) Start fetch employee attendance - RequestId: fbd757a1-4c9a-4f3b-9263-870724123b26
+2025-05-08 23:27:47,750 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-18) End fetch employee attendance - RequestId: fbd757a1-4c9a-4f3b-9263-870724123b26
+2025-05-08 23:27:47,757 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-25) request_id : 42bd009e-6faf-45d5-a6eb-a7b7abf443e6 | get employee by id: 79
+2025-05-08 23:27:47,757 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) Start fetch employee attendance - RequestId: 42bd009e-6faf-45d5-a6eb-a7b7abf443e6
+2025-05-08 23:27:47,764 laptop-t3siq6r0 workeronboarding-dev.jar[9668] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) End fetch employee attendance - RequestId: 42bd009e-6faf-45d5-a6eb-a7b7abf443e6

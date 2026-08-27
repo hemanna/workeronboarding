@@ -1,0 +1,571 @@
+2025-12-10 22:54:05,168 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 12.006s. Listening on: http://0.0.0.0:8080
+2025-12-10 22:54:05,183 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-12-10 22:54:05,184 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-12-10 22:54:27,630 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-1) request_id: 74925148-3cde-40f3-b4e5-cbcdde599cfd | Fetching all employees
+2025-12-10 22:54:27,696 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) Start fetching employees - RequestId: 74925148-3cde-40f3-b4e5-cbcdde599cfd
+2025-12-10 22:54:27,776 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-2) request_id: 6fd83a7f-2423-464f-a813-8e661b614656 | Fetching all employees
+2025-12-10 22:54:27,777 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) Start fetching skill wise employee count - RequestId: 6fd83a7f-2423-464f-a813-8e661b614656
+2025-12-10 22:54:27,797 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-3) request_id: 01d719b0-5271-4ad6-91b7-1fd63a87ae00 | Fetching all employees
+2025-12-10 22:54:27,796 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-4) request_id : 25b5d678-89f6-4b06-a59f-1c7a6fec26ca | get all holidays
+2025-12-10 22:54:27,798 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) Start fetching employees - RequestId: 01d719b0-5271-4ad6-91b7-1fd63a87ae00
+2025-12-10 22:54:27,800 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-6) request_id: d76315e0-665b-44a4-8218-afd5ff3ec77f | Fetching all employees
+2025-12-10 22:54:27,801 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) Start fetching skill wise employee count - RequestId: d76315e0-665b-44a4-8218-afd5ff3ec77f
+2025-12-10 22:54:27,803 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-5) request_id : a213e901-ddd3-444b-8f08-42b3571e574a | fetch All Regularization Attendance 
+2025-12-10 22:54:27,805 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-4) Start fetching all holidays records - RequestId: 25b5d678-89f6-4b06-a59f-1c7a6fec26ca
+2025-12-10 22:54:27,811 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) Start fetching all Regularization Attendance records - RequestId: a213e901-ddd3-444b-8f08-42b3571e574a
+2025-12-10 22:54:28,423 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-2) End fetching skill-wise employee count - RequestId: 6fd83a7f-2423-464f-a813-8e661b614656
+2025-12-10 22:54:28,423 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-6) End fetching skill-wise employee count - RequestId: d76315e0-665b-44a4-8218-afd5ff3ec77f
+2025-12-10 22:54:28,425 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-4) End fetching all holidaysz records - RequestId: 25b5d678-89f6-4b06-a59f-1c7a6fec26ca
+2025-12-10 22:54:28,426 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-5) End fetching all Regularization Attendance records - RequestId: a213e901-ddd3-444b-8f08-42b3571e574a
+2025-12-10 22:54:28,537 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-4) request_id : 12dfac73-a6b7-42f1-83f7-aa4e35be59d4 | fetch All Regularization Attendance 
+2025-12-10 22:54:28,537 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-5) request_id : 6c64accf-de8c-43ad-8b56-bdfa4172a947 | get all holidays
+2025-12-10 22:54:28,538 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) Start fetching all Regularization Attendance records - RequestId: 12dfac73-a6b7-42f1-83f7-aa4e35be59d4
+2025-12-10 22:54:28,538 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) Start fetching all holidays records - RequestId: 6c64accf-de8c-43ad-8b56-bdfa4172a947
+2025-12-10 22:54:28,548 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-5) End fetching all holidaysz records - RequestId: 6c64accf-de8c-43ad-8b56-bdfa4172a947
+2025-12-10 22:54:28,549 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-4) End fetching all Regularization Attendance records - RequestId: 12dfac73-a6b7-42f1-83f7-aa4e35be59d4
+2025-12-10 22:54:28,637 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-3) End fetching employees - RequestId: 01d719b0-5271-4ad6-91b7-1fd63a87ae00
+2025-12-10 22:54:28,637 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-1) End fetching employees - RequestId: 74925148-3cde-40f3-b4e5-cbcdde599cfd
+2025-12-10 22:54:29,935 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-4) request_id: bf3c0b71-0fe7-4c1c-bd36-f7bc522cc2cd | Fetching all assets
+2025-12-10 22:54:29,936 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-5) request_id: 637afdab-ba08-412c-af57-aaa2cd674250 | Fetching all assets
+2025-12-10 22:54:29,941 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-4) Start fetching counts assets - RequestId: bf3c0b71-0fe7-4c1c-bd36-f7bc522cc2cd
+2025-12-10 22:54:29,941 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) Start fetching all assets - RequestId: 637afdab-ba08-412c-af57-aaa2cd674250
+2025-12-10 22:54:29,979 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-4) End fetching counts assets - RequestId: bf3c0b71-0fe7-4c1c-bd36-f7bc522cc2cd
+2025-12-10 22:54:30,052 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) End fetching all assets - RequestId: 637afdab-ba08-412c-af57-aaa2cd674250
+2025-12-10 22:54:30,261 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-2) request_id: 0d4f781e-da74-4cc9-a2f9-995fdaf9dafd | Fetching all assets
+2025-12-10 22:54:30,263 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) Start fetching counts assets - RequestId: 0d4f781e-da74-4cc9-a2f9-995fdaf9dafd
+2025-12-10 22:54:30,268 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-2) End fetching counts assets - RequestId: 0d4f781e-da74-4cc9-a2f9-995fdaf9dafd
+2025-12-10 22:54:30,272 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : bd9cd042-ef92-4d39-9459-9ede5f2bb985 | activity : Asset Type List | message : Started
+2025-12-10 22:54:30,272 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-4) correlation-id : bd9c1f34-7500-4c58-9b6e-9f97dfbcbc76 | activity : Asset Type List | message : Started
+2025-12-10 22:54:30,286 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : bd9cd042-ef92-4d39-9459-9ede5f2bb985 | activity : Asset Type List | message : Ended
+2025-12-10 22:54:30,286 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-4) correlation-id : bd9c1f34-7500-4c58-9b6e-9f97dfbcbc76 | activity : Asset Type List | message : Ended
+2025-12-10 22:54:30,407 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-6) request_id: 29685ae8-4eea-43ce-8999-54903f01a754 | Fetching all assets
+2025-12-10 22:54:30,408 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) Start fetching all assets - RequestId: 29685ae8-4eea-43ce-8999-54903f01a754
+2025-12-10 22:54:30,443 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) End fetching all assets - RequestId: 29685ae8-4eea-43ce-8999-54903f01a754
+2025-12-10 22:54:42,874 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-5) request_id : 9b6a74a2-9d84-46cc-b540-298c162ab88e | fetching all assets grouped by type
+2025-12-10 22:54:42,875 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) Start fetching assets grouped by type - RequestId: 9b6a74a2-9d84-46cc-b540-298c162ab88e
+2025-12-10 22:54:42,881 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) End fetching asset counts by type - RequestId: 9b6a74a2-9d84-46cc-b540-298c162ab88e
+2025-12-10 22:54:43,003 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-5) request_id : 6238af41-6348-4cb7-ab21-274d422be5a3 | fetching all assets grouped by type
+2025-12-10 22:54:43,004 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) Start fetching assets grouped by type - RequestId: 6238af41-6348-4cb7-ab21-274d422be5a3
+2025-12-10 22:54:43,007 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-5) End fetching asset counts by type - RequestId: 6238af41-6348-4cb7-ab21-274d422be5a3
+2025-12-10 23:29:16,086 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-7) request_id: 7c240db1-fcf6-4279-8409-b361a6a609ec | Fetching all assets
+2025-12-10 23:29:16,086 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-6) request_id: 82b4fd4d-254a-46f5-bf40-4a12a8d833f8 | Fetching all assets
+2025-12-10 23:29:16,108 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) Start fetching counts assets - RequestId: 82b4fd4d-254a-46f5-bf40-4a12a8d833f8
+2025-12-10 23:29:16,108 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-7) Start fetching all assets - RequestId: 7c240db1-fcf6-4279-8409-b361a6a609ec
+2025-12-10 23:29:16,202 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) End fetching counts assets - RequestId: 82b4fd4d-254a-46f5-bf40-4a12a8d833f8
+2025-12-10 23:29:16,225 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : f2a6c996-f9ca-47db-98af-41ac9df3c7e6 | activity : Asset Type List | message : Started
+2025-12-10 23:29:16,225 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 102b7bbd-1adb-4e9b-9dc3-9c05c11a3d71 | activity : Asset Type List | message : Started
+2025-12-10 23:29:16,227 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-9) request_id: d7217f93-4b26-4262-bbf8-88384ab0d25e | Fetching all assets
+2025-12-10 23:29:16,229 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-9) Start fetching counts assets - RequestId: d7217f93-4b26-4262-bbf8-88384ab0d25e
+2025-12-10 23:29:16,234 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : f2a6c996-f9ca-47db-98af-41ac9df3c7e6 | activity : Asset Type List | message : Ended
+2025-12-10 23:29:16,261 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 102b7bbd-1adb-4e9b-9dc3-9c05c11a3d71 | activity : Asset Type List | message : Ended
+2025-12-10 23:29:16,372 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-9) End fetching counts assets - RequestId: d7217f93-4b26-4262-bbf8-88384ab0d25e
+2025-12-10 23:29:16,387 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-7) End fetching all assets - RequestId: 7c240db1-fcf6-4279-8409-b361a6a609ec
+2025-12-10 23:29:16,420 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-9) request_id: a79178b7-ff69-4a55-80f8-2a18ccea685e | Fetching all assets
+2025-12-10 23:29:16,421 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-9) Start fetching all assets - RequestId: a79178b7-ff69-4a55-80f8-2a18ccea685e
+2025-12-10 23:29:16,481 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-9) End fetching all assets - RequestId: a79178b7-ff69-4a55-80f8-2a18ccea685e
+2025-12-10 23:29:19,922 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) request_id : 555f4801-6516-4edc-b754-0f2511e27936 | get all holidays
+2025-12-10 23:29:19,923 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all holidays records - RequestId: 555f4801-6516-4edc-b754-0f2511e27936
+2025-12-10 23:29:19,926 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all holidaysz records - RequestId: 555f4801-6516-4edc-b754-0f2511e27936
+2025-12-10 23:29:20,064 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-8) request_id : 10ee0329-8761-45fa-81a5-9cdc927a9c85 | fetch All Regularization Attendance 
+2025-12-10 23:29:20,064 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) Start fetching all Regularization Attendance records - RequestId: 10ee0329-8761-45fa-81a5-9cdc927a9c85
+2025-12-10 23:29:20,067 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) End fetching all Regularization Attendance records - RequestId: 10ee0329-8761-45fa-81a5-9cdc927a9c85
+2025-12-10 23:29:20,136 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-8) request_id : ac39f9d7-c7a5-4b89-8da2-7bead8477b4d | fetch All Regularization Attendance 
+2025-12-10 23:29:20,137 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-6) request_id : 41214979-5d18-4862-aac2-d0d10d295341 | get all holidays
+2025-12-10 23:29:20,137 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) Start fetching all holidays records - RequestId: 41214979-5d18-4862-aac2-d0d10d295341
+2025-12-10 23:29:20,137 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) Start fetching all Regularization Attendance records - RequestId: ac39f9d7-c7a5-4b89-8da2-7bead8477b4d
+2025-12-10 23:29:20,141 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) End fetching all Regularization Attendance records - RequestId: ac39f9d7-c7a5-4b89-8da2-7bead8477b4d
+2025-12-10 23:29:20,142 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-6) End fetching all holidaysz records - RequestId: 41214979-5d18-4862-aac2-d0d10d295341
+2025-12-10 23:29:21,770 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-6) request_id: 31112e20-95d0-46b1-b00d-e870b38101c5 | Fetching all assets
+2025-12-10 23:29:21,771 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: 72f38bac-091d-4c83-b581-23b72df3e8c4 | Fetching all assets
+2025-12-10 23:29:21,771 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) Start fetching counts assets - RequestId: 31112e20-95d0-46b1-b00d-e870b38101c5
+2025-12-10 23:29:21,771 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: 72f38bac-091d-4c83-b581-23b72df3e8c4
+2025-12-10 23:29:21,776 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) End fetching counts assets - RequestId: 31112e20-95d0-46b1-b00d-e870b38101c5
+2025-12-10 23:29:21,818 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: 72f38bac-091d-4c83-b581-23b72df3e8c4
+2025-12-10 23:29:22,126 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-10) request_id: a1c7800b-b495-4416-8518-11ac1f6672a0 | Fetching all assets
+2025-12-10 23:29:22,126 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : fc87f9b4-6d14-4695-9890-a300103f67de | activity : Asset Type List | message : Started
+2025-12-10 23:29:22,127 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-11) request_id: 0c4e36ce-d4f0-4ca8-ac19-336a80b3aa96 | Fetching all assets
+2025-12-10 23:29:22,127 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-10) Start fetching counts assets - RequestId: a1c7800b-b495-4416-8518-11ac1f6672a0
+2025-12-10 23:29:22,128 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-11) Start fetching all assets - RequestId: 0c4e36ce-d4f0-4ca8-ac19-336a80b3aa96
+2025-12-10 23:29:22,131 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-6) correlation-id : fc87f9b4-6d14-4695-9890-a300103f67de | activity : Asset Type List | message : Ended
+2025-12-10 23:29:22,133 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-10) End fetching counts assets - RequestId: a1c7800b-b495-4416-8518-11ac1f6672a0
+2025-12-10 23:29:22,176 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-11) End fetching all assets - RequestId: 0c4e36ce-d4f0-4ca8-ac19-336a80b3aa96
+2025-12-10 23:29:22,365 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-7) correlation-id : 277e1acb-77ca-4866-989c-244225206830 | activity : Asset Type List | message : Started
+2025-12-10 23:29:22,372 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-7) correlation-id : 277e1acb-77ca-4866-989c-244225206830 | activity : Asset Type List | message : Ended
+2025-12-10 23:29:29,688 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-11) request_id : 25c648b4-e7a3-4ded-93e0-b1d00e80c0d2 | fetching all assets grouped by type
+2025-12-10 23:29:29,689 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-11) Start fetching assets grouped by type - RequestId: 25c648b4-e7a3-4ded-93e0-b1d00e80c0d2
+2025-12-10 23:29:29,695 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-11) End fetching asset counts by type - RequestId: 25c648b4-e7a3-4ded-93e0-b1d00e80c0d2
+2025-12-10 23:29:29,790 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-11) request_id : 1ef3909b-9c95-43d3-a0e5-0c85b9c3da7a | fetching all assets grouped by type
+2025-12-10 23:29:29,792 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-11) Start fetching assets grouped by type - RequestId: 1ef3909b-9c95-43d3-a0e5-0c85b9c3da7a
+2025-12-10 23:29:29,795 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-11) End fetching asset counts by type - RequestId: 1ef3909b-9c95-43d3-a0e5-0c85b9c3da7a
+2025-12-10 23:29:36,730 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 718f231a-b04b-4870-a763-f7ce27427f42 | activity : Asset Type List | message : Started
+2025-12-10 23:29:36,734 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 718f231a-b04b-4870-a763-f7ce27427f42 | activity : Asset Type List | message : Ended
+2025-12-10 23:29:36,780 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 0b816809-3a14-4596-9fad-c1f399803f69 | activity : Asset Type List | message : Started
+2025-12-10 23:29:36,785 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 0b816809-3a14-4596-9fad-c1f399803f69 | activity : Asset Type List | message : Ended
+2025-12-10 23:29:41,858 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 42bc2615-5178-454e-8113-4bc2f0bc0945 | activity : Asset Type List | message : Started
+2025-12-10 23:29:41,862 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 42bc2615-5178-454e-8113-4bc2f0bc0945 | activity : Asset Type List | message : Ended
+2025-12-10 23:29:41,914 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : ff2a3eab-8868-4c13-b513-bb42ee3e2fd0 | activity : Asset Type List | message : Started
+2025-12-10 23:29:41,917 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : ff2a3eab-8868-4c13-b513-bb42ee3e2fd0 | activity : Asset Type List | message : Ended
+2025-12-10 23:30:24,359 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: 40c8863e-7983-4104-a82b-25ce4e997e1d | Fetching all assets
+2025-12-10 23:30:24,361 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-12) request_id: 9a49fba1-529c-4a21-b012-e4875740e5b7 | Fetching all assets
+2025-12-10 23:30:24,361 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching counts assets - RequestId: 40c8863e-7983-4104-a82b-25ce4e997e1d
+2025-12-10 23:30:24,362 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) Start fetching all assets - RequestId: 9a49fba1-529c-4a21-b012-e4875740e5b7
+2025-12-10 23:30:24,366 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching counts assets - RequestId: 40c8863e-7983-4104-a82b-25ce4e997e1d
+2025-12-10 23:30:24,413 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) End fetching all assets - RequestId: 9a49fba1-529c-4a21-b012-e4875740e5b7
+2025-12-10 23:30:24,440 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 72bdcbb2-204d-44b6-813d-a25b6d79baa7 | activity : Asset Type List | message : Started
+2025-12-10 23:30:24,445 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 72bdcbb2-204d-44b6-813d-a25b6d79baa7 | activity : Asset Type List | message : Ended
+2025-12-10 23:30:28,014 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-8) request_id : 1c006b1c-a907-477f-acba-0dbed85102bc | fetch All Regularization Attendance 
+2025-12-10 23:30:28,015 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) Start fetching all Regularization Attendance records - RequestId: 1c006b1c-a907-477f-acba-0dbed85102bc
+2025-12-10 23:30:28,020 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-8) End fetching all Regularization Attendance records - RequestId: 1c006b1c-a907-477f-acba-0dbed85102bc
+2025-12-10 23:30:28,146 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) request_id : bdd9ee26-9248-4f9c-98a5-d4b5a747bed8 | get all holidays
+2025-12-10 23:30:28,147 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all holidays records - RequestId: bdd9ee26-9248-4f9c-98a5-d4b5a747bed8
+2025-12-10 23:30:28,147 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-13) request_id : 586a0ce6-329f-467c-a9f4-d7f58dc61eac | get all holidays
+2025-12-10 23:30:28,148 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) Start fetching all holidays records - RequestId: 586a0ce6-329f-467c-a9f4-d7f58dc61eac
+2025-12-10 23:30:28,151 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all holidaysz records - RequestId: bdd9ee26-9248-4f9c-98a5-d4b5a747bed8
+2025-12-10 23:30:28,152 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-13) End fetching all holidaysz records - RequestId: 586a0ce6-329f-467c-a9f4-d7f58dc61eac
+2025-12-10 23:30:28,181 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-13) request_id : 83872c1f-1d41-479e-8056-26aec194317c | fetch All Regularization Attendance 
+2025-12-10 23:30:28,183 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) Start fetching all Regularization Attendance records - RequestId: 83872c1f-1d41-479e-8056-26aec194317c
+2025-12-10 23:30:28,188 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-13) End fetching all Regularization Attendance records - RequestId: 83872c1f-1d41-479e-8056-26aec194317c
+2025-12-10 23:30:29,346 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: f0ad933b-3672-41ea-9daf-5e1308ecc836 | Fetching all assets
+2025-12-10 23:30:29,346 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) correlation-id : 489f3105-2dba-4f09-baef-94ee52cb01f0 | activity : Asset Type List | message : Started
+2025-12-10 23:30:29,346 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) correlation-id : 422eb579-356c-46e3-910f-01997243e433 | activity : Asset Type List | message : Started
+2025-12-10 23:30:29,347 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: f0ad933b-3672-41ea-9daf-5e1308ecc836
+2025-12-10 23:30:29,348 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-14) request_id: 0aeb4179-1e76-4ed6-a7ad-7a0371cbbda0 | Fetching all assets
+2025-12-10 23:30:29,349 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) Start fetching counts assets - RequestId: 0aeb4179-1e76-4ed6-a7ad-7a0371cbbda0
+2025-12-10 23:30:29,351 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-12) correlation-id : 422eb579-356c-46e3-910f-01997243e433 | activity : Asset Type List | message : Ended
+2025-12-10 23:30:29,351 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-13) correlation-id : 489f3105-2dba-4f09-baef-94ee52cb01f0 | activity : Asset Type List | message : Ended
+2025-12-10 23:30:29,354 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) End fetching counts assets - RequestId: 0aeb4179-1e76-4ed6-a7ad-7a0371cbbda0
+2025-12-10 23:30:29,372 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-14) request_id: 80da17a7-1c6a-465c-8e7b-bc682d9440a2 | Fetching all assets
+2025-12-10 23:30:29,373 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) Start fetching counts assets - RequestId: 80da17a7-1c6a-465c-8e7b-bc682d9440a2
+2025-12-10 23:30:29,377 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) End fetching counts assets - RequestId: 80da17a7-1c6a-465c-8e7b-bc682d9440a2
+2025-12-10 23:30:29,397 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: f0ad933b-3672-41ea-9daf-5e1308ecc836
+2025-12-10 23:30:29,416 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-14) request_id: 52ce6c0f-07d6-4e12-8cfc-b2ea9079e505 | Fetching all assets
+2025-12-10 23:30:29,418 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) Start fetching all assets - RequestId: 52ce6c0f-07d6-4e12-8cfc-b2ea9079e505
+2025-12-10 23:30:29,448 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) End fetching all assets - RequestId: 52ce6c0f-07d6-4e12-8cfc-b2ea9079e505
+2025-12-10 23:30:36,542 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-14) request_id : 7f82ef21-d58a-4241-b2ec-8471bf0a312a | fetching all assets grouped by type
+2025-12-10 23:30:36,543 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) Start fetching assets grouped by type - RequestId: 7f82ef21-d58a-4241-b2ec-8471bf0a312a
+2025-12-10 23:30:36,546 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) End fetching asset counts by type - RequestId: 7f82ef21-d58a-4241-b2ec-8471bf0a312a
+2025-12-10 23:30:36,693 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-14) request_id : 1b8439a2-620f-45df-ab64-c5f6c3e17264 | fetching all assets grouped by type
+2025-12-10 23:30:36,694 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) Start fetching assets grouped by type - RequestId: 1b8439a2-620f-45df-ab64-c5f6c3e17264
+2025-12-10 23:30:36,698 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-14) End fetching asset counts by type - RequestId: 1b8439a2-620f-45df-ab64-c5f6c3e17264
+2025-12-10 23:31:58,183 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 166ddf10-9724-4259-bff6-526ccc70d9b0 | activity : Asset Type List | message : Started
+2025-12-10 23:31:58,186 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 166ddf10-9724-4259-bff6-526ccc70d9b0 | activity : Asset Type List | message : Ended
+2025-12-10 23:31:58,233 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 01145bb1-8d56-47e8-a447-a90f9a2fdfb5 | activity : Asset Type List | message : Started
+2025-12-10 23:31:58,236 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 01145bb1-8d56-47e8-a447-a90f9a2fdfb5 | activity : Asset Type List | message : Ended
+2025-12-10 23:32:02,569 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : e3a72ece-c79a-4900-9ff6-36bbcc533360 | activity : Asset Type List | message : Started
+2025-12-10 23:32:02,572 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : e3a72ece-c79a-4900-9ff6-36bbcc533360 | activity : Asset Type List | message : Ended
+2025-12-10 23:32:02,616 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 7972b85f-3032-415a-aa8a-6f9938e937f6 | activity : Asset Type List | message : Started
+2025-12-10 23:32:02,618 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 7972b85f-3032-415a-aa8a-6f9938e937f6 | activity : Asset Type List | message : Ended
+2025-12-10 23:32:08,764 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : ca6c8de4-97a4-4bf0-b32f-2ad08555709d | activity : Asset Type List | message : Started
+2025-12-10 23:32:08,769 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : ca6c8de4-97a4-4bf0-b32f-2ad08555709d | activity : Asset Type List | message : Ended
+2025-12-10 23:32:08,816 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 08efc9b0-b194-4711-aa79-7b35e88c5a9b | activity : Asset Type List | message : Started
+2025-12-10 23:32:08,818 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 08efc9b0-b194-4711-aa79-7b35e88c5a9b | activity : Asset Type List | message : Ended
+2025-12-10 23:32:39,150 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: acdbe7b7-dc92-4b4d-91bd-0da11562c716 | Fetching all assets
+2025-12-10 23:32:39,151 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: acdbe7b7-dc92-4b4d-91bd-0da11562c716
+2025-12-10 23:32:39,151 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-15) request_id: 4f478d98-a20f-47a9-9c98-e51bcc40398b | Fetching all assets
+2025-12-10 23:32:39,151 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-15) Start fetching counts assets - RequestId: 4f478d98-a20f-47a9-9c98-e51bcc40398b
+2025-12-10 23:32:39,155 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-15) End fetching counts assets - RequestId: 4f478d98-a20f-47a9-9c98-e51bcc40398b
+2025-12-10 23:32:39,199 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: acdbe7b7-dc92-4b4d-91bd-0da11562c716
+2025-12-10 23:32:39,411 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-15) correlation-id : 0efe6c14-3929-4010-bbf3-760fd37c793e | activity : Asset Type List | message : Started
+2025-12-10 23:32:39,416 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-15) correlation-id : 0efe6c14-3929-4010-bbf3-760fd37c793e | activity : Asset Type List | message : Ended
+2025-12-10 23:32:43,364 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 40116291-2c4b-44c0-bf8b-3ba5391cecee | fetching all assets grouped by type
+2025-12-10 23:32:43,365 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 40116291-2c4b-44c0-bf8b-3ba5391cecee
+2025-12-10 23:32:43,369 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 40116291-2c4b-44c0-bf8b-3ba5391cecee
+2025-12-10 23:32:43,406 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : b971c3fd-1a05-4333-90a4-7aa86423f838 | fetching all assets grouped by type
+2025-12-10 23:32:43,407 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: b971c3fd-1a05-4333-90a4-7aa86423f838
+2025-12-10 23:32:43,410 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: b971c3fd-1a05-4333-90a4-7aa86423f838
+2025-12-10 23:33:16,186 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: 55385a60-300a-41f6-9279-db8911a1cb2b | Fetching all assets
+2025-12-10 23:33:16,187 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: 55385a60-300a-41f6-9279-db8911a1cb2b
+2025-12-10 23:33:16,187 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-16) request_id: 512e9379-7944-4810-9192-9042ed0aa2c0 | Fetching all assets
+2025-12-10 23:33:16,188 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-16) Start fetching counts assets - RequestId: 512e9379-7944-4810-9192-9042ed0aa2c0
+2025-12-10 23:33:16,192 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-16) End fetching counts assets - RequestId: 512e9379-7944-4810-9192-9042ed0aa2c0
+2025-12-10 23:33:16,220 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: 55385a60-300a-41f6-9279-db8911a1cb2b
+2025-12-10 23:33:16,390 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-16) correlation-id : 09a266ef-438d-4cf2-bf9b-1acd4f0869e3 | activity : Asset Type List | message : Started
+2025-12-10 23:33:16,393 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-16) correlation-id : 09a266ef-438d-4cf2-bf9b-1acd4f0869e3 | activity : Asset Type List | message : Ended
+2025-12-10 23:33:20,487 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 5c71f99b-1eb3-4036-a144-505624da6e8a | fetching all assets grouped by type
+2025-12-10 23:33:20,488 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 5c71f99b-1eb3-4036-a144-505624da6e8a
+2025-12-10 23:33:20,492 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 5c71f99b-1eb3-4036-a144-505624da6e8a
+2025-12-10 23:33:20,500 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 632f4111-49e2-4c67-b135-9114ee767c5c | fetching all assets grouped by type
+2025-12-10 23:33:20,500 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 632f4111-49e2-4c67-b135-9114ee767c5c
+2025-12-10 23:33:20,504 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 632f4111-49e2-4c67-b135-9114ee767c5c
+2025-12-10 23:35:22,228 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: ddf47fac-fb2a-4340-aa98-602987eee901 | Fetching all assets
+2025-12-10 23:35:22,229 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-17) request_id: 1c122bef-f56b-414b-9a34-16b769f42335 | Fetching all assets
+2025-12-10 23:35:22,229 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: ddf47fac-fb2a-4340-aa98-602987eee901
+2025-12-10 23:35:22,231 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) Start fetching counts assets - RequestId: 1c122bef-f56b-414b-9a34-16b769f42335
+2025-12-10 23:35:22,234 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) End fetching counts assets - RequestId: 1c122bef-f56b-414b-9a34-16b769f42335
+2025-12-10 23:35:22,268 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: ddf47fac-fb2a-4340-aa98-602987eee901
+2025-12-10 23:35:22,562 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) correlation-id : f63e298e-3033-4391-8dce-7b4e2121697d | activity : Asset Type List | message : Started
+2025-12-10 23:35:22,566 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) correlation-id : f63e298e-3033-4391-8dce-7b4e2121697d | activity : Asset Type List | message : Ended
+2025-12-10 23:35:26,502 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 0e2eb1e2-a051-45af-b52c-4ddf991e2fb2 | fetching all assets grouped by type
+2025-12-10 23:35:26,503 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 0e2eb1e2-a051-45af-b52c-4ddf991e2fb2
+2025-12-10 23:35:26,514 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 0e2eb1e2-a051-45af-b52c-4ddf991e2fb2
+2025-12-10 23:35:26,530 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 7872c4e0-a1a8-4035-bc70-352ffced410b | fetching all assets grouped by type
+2025-12-10 23:35:26,530 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 7872c4e0-a1a8-4035-bc70-352ffced410b
+2025-12-10 23:35:26,533 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 7872c4e0-a1a8-4035-bc70-352ffced410b
+2025-12-10 23:35:32,173 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: baa004d1-efba-42be-aabb-eb30c5ad9d2f | Fetching all assets
+2025-12-10 23:35:32,174 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-17) request_id: c60d07e4-de85-4a9f-b7e2-d7699f31976a | Fetching all assets
+2025-12-10 23:35:32,174 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: baa004d1-efba-42be-aabb-eb30c5ad9d2f
+2025-12-10 23:35:32,175 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) Start fetching counts assets - RequestId: c60d07e4-de85-4a9f-b7e2-d7699f31976a
+2025-12-10 23:35:32,178 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) End fetching counts assets - RequestId: c60d07e4-de85-4a9f-b7e2-d7699f31976a
+2025-12-10 23:35:32,214 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: baa004d1-efba-42be-aabb-eb30c5ad9d2f
+2025-12-10 23:35:32,424 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) correlation-id : 9d6b8908-ce1c-4a35-8638-e555f433f20d | activity : Asset Type List | message : Started
+2025-12-10 23:35:32,428 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-17) correlation-id : 9d6b8908-ce1c-4a35-8638-e555f433f20d | activity : Asset Type List | message : Ended
+2025-12-10 23:35:36,400 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 6e21da62-1a1d-4698-b049-0c8bc1f49315 | fetching all assets grouped by type
+2025-12-10 23:35:36,401 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 6e21da62-1a1d-4698-b049-0c8bc1f49315
+2025-12-10 23:35:36,403 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 6e21da62-1a1d-4698-b049-0c8bc1f49315
+2025-12-10 23:35:36,416 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 2b7db76b-7901-4317-b773-f1fb0b4d966d | fetching all assets grouped by type
+2025-12-10 23:35:36,416 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 2b7db76b-7901-4317-b773-f1fb0b4d966d
+2025-12-10 23:35:36,419 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 2b7db76b-7901-4317-b773-f1fb0b4d966d
+2025-12-10 23:35:41,663 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 656a312a-ea38-4e31-80f6-8c924e2ec305 | activity : Asset Type List | message : Started
+2025-12-10 23:35:41,667 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 656a312a-ea38-4e31-80f6-8c924e2ec305 | activity : Asset Type List | message : Ended
+2025-12-10 23:35:41,710 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : a4dc1d5f-8772-4489-aa74-32e41f7eacef | activity : Asset Type List | message : Started
+2025-12-10 23:35:41,712 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : a4dc1d5f-8772-4489-aa74-32e41f7eacef | activity : Asset Type List | message : Ended
+2025-12-10 23:37:00,213 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 1dc7252e-83fc-4963-9168-f3b61cc0ba45 | activity : Asset Type List | message : Started
+2025-12-10 23:37:00,216 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 1dc7252e-83fc-4963-9168-f3b61cc0ba45 | activity : Asset Type List | message : Ended
+2025-12-10 23:37:19,392 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 135d9dee-7392-4a2a-b1d4-5d0304bcd640 | activity : Asset Type List | message : Started
+2025-12-10 23:37:19,394 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 135d9dee-7392-4a2a-b1d4-5d0304bcd640 | activity : Asset Type List | message : Ended
+2025-12-10 23:37:19,547 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 61b93c09-3898-44ab-b1b9-b6993dd1b254 | activity : Asset Type List | message : Started
+2025-12-10 23:37:19,550 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 61b93c09-3898-44ab-b1b9-b6993dd1b254 | activity : Asset Type List | message : Ended
+2025-12-10 23:37:37,520 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 64e6c5ba-4941-45ca-9b2a-3e93084f300e | activity : Asset Type List | message : Started
+2025-12-10 23:37:37,523 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 64e6c5ba-4941-45ca-9b2a-3e93084f300e | activity : Asset Type List | message : Ended
+2025-12-10 23:37:37,571 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : a069ed7e-5210-4830-aa70-340712642ab3 | activity : Asset Type List | message : Started
+2025-12-10 23:37:37,575 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : a069ed7e-5210-4830-aa70-340712642ab3 | activity : Asset Type List | message : Ended
+2025-12-10 23:38:38,483 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 41fae4f5-21b0-4866-b807-423608d8e846 | activity : Asset Type List | message : Started
+2025-12-10 23:38:38,486 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 41fae4f5-21b0-4866-b807-423608d8e846 | activity : Asset Type List | message : Ended
+2025-12-10 23:38:38,844 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : d9c5b2e0-0638-454b-93fb-5486ab15c01f | activity : Asset Type List | message : Started
+2025-12-10 23:38:38,846 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : d9c5b2e0-0638-454b-93fb-5486ab15c01f | activity : Asset Type List | message : Ended
+2025-12-10 23:39:48,563 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : d8be7e8a-aea5-4cb9-9b78-5bb02d7ae957 | activity : Asset Type List | message : Started
+2025-12-10 23:39:48,567 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : d8be7e8a-aea5-4cb9-9b78-5bb02d7ae957 | activity : Asset Type List | message : Ended
+2025-12-10 23:39:48,615 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 74e86173-b542-4915-9947-cc9799cafc64 | activity : Asset Type List | message : Started
+2025-12-10 23:39:48,617 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 74e86173-b542-4915-9947-cc9799cafc64 | activity : Asset Type List | message : Ended
+2025-12-10 23:40:11,268 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : b0f61b3b-b431-426c-af1f-152b540fcad7 | activity : Asset Type List | message : Started
+2025-12-10 23:40:11,270 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : b0f61b3b-b431-426c-af1f-152b540fcad7 | activity : Asset Type List | message : Ended
+2025-12-10 23:40:11,341 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 749f9e0c-46ad-4c1c-81b7-a0ff3a15f0c0 | activity : Asset Type List | message : Started
+2025-12-10 23:40:11,343 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 749f9e0c-46ad-4c1c-81b7-a0ff3a15f0c0 | activity : Asset Type List | message : Ended
+2025-12-10 23:40:53,490 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 6dfeb271-e155-427a-a423-67e2854bd6d2 | activity : Asset Type List | message : Started
+2025-12-10 23:40:53,492 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : 6dfeb271-e155-427a-a423-67e2854bd6d2 | activity : Asset Type List | message : Ended
+2025-12-10 23:40:53,551 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : fad85ac9-8ce0-40d0-9925-2f86d2a65f10 | activity : Asset Type List | message : Started
+2025-12-10 23:40:53,554 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) correlation-id : fad85ac9-8ce0-40d0-9925-2f86d2a65f10 | activity : Asset Type List | message : Ended
+2025-12-10 23:44:23,299 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: 39aebab8-4e2f-42a2-8a07-95dd9ae20d35 | Fetching all assets
+2025-12-10 23:44:23,300 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: 39aebab8-4e2f-42a2-8a07-95dd9ae20d35
+2025-12-10 23:44:23,308 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-18) request_id: 74d2ad22-984b-41af-ab7f-1072c737736e | Fetching all assets
+2025-12-10 23:44:23,309 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-18) Start fetching counts assets - RequestId: 74d2ad22-984b-41af-ab7f-1072c737736e
+2025-12-10 23:44:23,348 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-18) End fetching counts assets - RequestId: 74d2ad22-984b-41af-ab7f-1072c737736e
+2025-12-10 23:44:23,352 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: 39aebab8-4e2f-42a2-8a07-95dd9ae20d35
+2025-12-10 23:44:23,364 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-18) correlation-id : 42f9e3c9-2c7a-407d-8481-becabc3af97d | activity : Asset Type List | message : Started
+2025-12-10 23:44:23,368 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-18) correlation-id : 42f9e3c9-2c7a-407d-8481-becabc3af97d | activity : Asset Type List | message : Ended
+2025-12-10 23:44:27,656 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : d03a0790-ee46-496a-a15a-aa373a468b36 | fetching all assets grouped by type
+2025-12-10 23:44:27,657 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: d03a0790-ee46-496a-a15a-aa373a468b36
+2025-12-10 23:44:27,661 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: d03a0790-ee46-496a-a15a-aa373a468b36
+2025-12-10 23:44:27,673 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 4b3b7ce3-8d8a-4782-8cf6-90a9154a08d4 | fetching all assets grouped by type
+2025-12-10 23:44:27,673 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 4b3b7ce3-8d8a-4782-8cf6-90a9154a08d4
+2025-12-10 23:44:27,677 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 4b3b7ce3-8d8a-4782-8cf6-90a9154a08d4
+2025-12-10 23:45:50,075 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: c3fe4493-1fec-49ac-a203-aeee1bd8b4db | Fetching all assets
+2025-12-10 23:45:50,076 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: c3fe4493-1fec-49ac-a203-aeee1bd8b4db
+2025-12-10 23:45:50,078 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: 7e629d03-f7f8-4967-9893-c049c505f088 | Fetching all assets
+2025-12-10 23:45:50,079 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching counts assets - RequestId: 7e629d03-f7f8-4967-9893-c049c505f088
+2025-12-10 23:45:50,090 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching counts assets - RequestId: 7e629d03-f7f8-4967-9893-c049c505f088
+2025-12-10 23:45:50,367 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: c3fe4493-1fec-49ac-a203-aeee1bd8b4db
+2025-12-10 23:45:50,413 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) correlation-id : 3207ec8d-a7d6-47d8-a471-534217c3fecb | activity : Asset Type List | message : Started
+2025-12-10 23:45:50,416 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) correlation-id : 3207ec8d-a7d6-47d8-a471-534217c3fecb | activity : Asset Type List | message : Ended
+2025-12-10 23:45:55,350 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : ed03bf5d-04d2-4164-acd0-36fd94afc92b | fetching all assets grouped by type
+2025-12-10 23:45:55,351 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: ed03bf5d-04d2-4164-acd0-36fd94afc92b
+2025-12-10 23:45:55,354 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: ed03bf5d-04d2-4164-acd0-36fd94afc92b
+2025-12-10 23:45:55,369 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 0030ebc9-d333-4f45-9509-58874337d57b | fetching all assets grouped by type
+2025-12-10 23:45:55,369 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 0030ebc9-d333-4f45-9509-58874337d57b
+2025-12-10 23:45:55,373 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 0030ebc9-d333-4f45-9509-58874337d57b
+2025-12-10 23:45:56,723 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) request_id : 4189b99c-6704-44ec-98ec-267401d6f87c | get all holidays
+2025-12-10 23:45:56,725 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-19) request_id : 2c5b37e3-ce0d-4953-a284-4f59c0eed8ae | fetch All Regularization Attendance 
+2025-12-10 23:45:56,725 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all holidays records - RequestId: 4189b99c-6704-44ec-98ec-267401d6f87c
+2025-12-10 23:45:56,730 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) Start fetching all Regularization Attendance records - RequestId: 2c5b37e3-ce0d-4953-a284-4f59c0eed8ae
+2025-12-10 23:45:56,730 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-20) request_id : 5374a191-28ca-43f8-b572-2f56d91d23e0 | fetch All Regularization Attendance 
+2025-12-10 23:45:56,731 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-20) Start fetching all Regularization Attendance records - RequestId: 5374a191-28ca-43f8-b572-2f56d91d23e0
+2025-12-10 23:45:56,735 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-21) request_id : 77d1f58a-0a42-4537-b7ca-6a2931f28946 | get all holidays
+2025-12-10 23:45:56,737 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-21) Start fetching all holidays records - RequestId: 77d1f58a-0a42-4537-b7ca-6a2931f28946
+2025-12-10 23:45:56,741 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all holidaysz records - RequestId: 4189b99c-6704-44ec-98ec-267401d6f87c
+2025-12-10 23:45:56,745 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-19) End fetching all Regularization Attendance records - RequestId: 2c5b37e3-ce0d-4953-a284-4f59c0eed8ae
+2025-12-10 23:45:56,774 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-20) End fetching all Regularization Attendance records - RequestId: 5374a191-28ca-43f8-b572-2f56d91d23e0
+2025-12-10 23:45:56,802 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-21) End fetching all holidaysz records - RequestId: 77d1f58a-0a42-4537-b7ca-6a2931f28946
+2025-12-10 23:46:00,993 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-20) request_id: 25bc278e-8835-4399-8949-4128b3a6a245 | Fetching all assets
+2025-12-10 23:46:00,993 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-21) request_id: d53b9b4d-f4fe-4ec6-ab7c-0ce9f56d43d9 | Fetching all assets
+2025-12-10 23:46:00,994 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) Start fetching counts assets - RequestId: 25bc278e-8835-4399-8949-4128b3a6a245
+2025-12-10 23:46:00,995 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-21) Start fetching all assets - RequestId: d53b9b4d-f4fe-4ec6-ab7c-0ce9f56d43d9
+2025-12-10 23:46:01,003 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) End fetching counts assets - RequestId: 25bc278e-8835-4399-8949-4128b3a6a245
+2025-12-10 23:46:01,005 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) correlation-id : 641ecf8e-0d4d-47c9-9a4f-27a1da5d0188 | activity : Asset Type List | message : Started
+2025-12-10 23:46:01,010 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) correlation-id : 641ecf8e-0d4d-47c9-9a4f-27a1da5d0188 | activity : Asset Type List | message : Ended
+2025-12-10 23:46:01,019 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: b151926d-f0ab-4c05-9e04-fbd165bbb43c | Fetching all assets
+2025-12-10 23:46:01,020 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching counts assets - RequestId: b151926d-f0ab-4c05-9e04-fbd165bbb43c
+2025-12-10 23:46:01,023 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching counts assets - RequestId: b151926d-f0ab-4c05-9e04-fbd165bbb43c
+2025-12-10 23:46:01,207 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-21) End fetching all assets - RequestId: d53b9b4d-f4fe-4ec6-ab7c-0ce9f56d43d9
+2025-12-10 23:46:01,259 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: 95ada6b9-e285-4570-9b83-e41619b7e79a | Fetching all assets
+2025-12-10 23:46:01,261 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching all assets - RequestId: 95ada6b9-e285-4570-9b83-e41619b7e79a
+2025-12-10 23:46:01,264 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) correlation-id : c56f8fc3-d7f0-44ce-a4de-60f00c83a66c | activity : Asset Type List | message : Started
+2025-12-10 23:46:01,268 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) correlation-id : c56f8fc3-d7f0-44ce-a4de-60f00c83a66c | activity : Asset Type List | message : Ended
+2025-12-10 23:46:01,323 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching all assets - RequestId: 95ada6b9-e285-4570-9b83-e41619b7e79a
+2025-12-10 23:46:02,629 laptop-t3siq6r0 workeronboarding-dev.jar[2556] SEVERE [org.ecl.yas.int.SerializationContextImpl] (executor-thread-21) Generating incomplete JSON
+2025-12-10 23:46:02,637 laptop-t3siq6r0 workeronboarding-dev.jar[2556] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-21) correlation-id : 30050960-d136-4d86-80b3-3ac72fa9ebc2 | message : Unable to serialize property 'data' from com.sbd.common.response.ApiResponse | cause : {}: jakarta.json.bind.JsonbException: Unable to serialize property 'data' from com.sbd.common.response.ApiResponse
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.SerializationContextImpl.serializeObject(SerializationContextImpl.java:197)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:133)
+	at org.eclipse.yasson.internal.SerializationContextImpl.marshall(SerializationContextImpl.java:159)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:173)
+	at org.jboss.resteasy.reactive.server.jsonb.JsonbMessageBodyWriter.writeResponse(JsonbMessageBodyWriter.java:50)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:227)
+	at org.jboss.resteasy.reactive.server.core.ServerSerialisers.invokeWriter(ServerSerialisers.java:195)
+	at org.jboss.resteasy.reactive.server.core.serialization.FixedEntityWriter.write(FixedEntityWriter.java:28)
+	at org.jboss.resteasy.reactive.server.handlers.ResponseWriterHandler.handle(ResponseWriterHandler.java:34)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:147)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: jakarta.json.stream.JsonGenerationException: Generating incomplete JSON
+		at org.eclipse.parsson.JsonGeneratorImpl.close(JsonGeneratorImpl.java:521)
+		at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:172)
+		... 14 more
+Caused by: jakarta.json.bind.JsonbException: Unable to serialize property 'assetImagesBase64' from com.sbd.common.Jsonb.AssetDTO
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:43)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serialize(ObjectSerializer.java:38)
+	at org.eclipse.yasson.internal.serializer.RecursionChecker.serialize(RecursionChecker.java:38)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.findSerializer(ObjectTypeSerializer.java:68)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serializeValue(ObjectTypeSerializer.java:50)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.types.ObjectTypeSerializer.serialize(ObjectTypeSerializer.java:31)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 24 more
+Caused by: jakarta.json.JsonException: I/O error while writing in JsonGenerator
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:652)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeString(JsonGeneratorImpl.java:605)
+	at org.eclipse.parsson.JsonGeneratorImpl.writeEscapedString(JsonGeneratorImpl.java:559)
+	at org.eclipse.parsson.JsonGeneratorImpl.write(JsonGeneratorImpl.java:360)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.types.StringSerializer.serializeValue(StringSerializer.java:28)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer$ValueSerializer.serialize(TypeSerializer.java:51)
+	at org.eclipse.yasson.internal.serializer.types.TypeSerializer.serialize(TypeSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.lambda$serialize$0(CollectionSerializer.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serialize(CollectionSerializer.java:37)
+	at org.eclipse.yasson.internal.serializer.KeyWriter.serialize(KeyWriter.java:41)
+	at org.eclipse.yasson.internal.serializer.NullVisibilitySwitcher.serialize(NullVisibilitySwitcher.java:40)
+	at org.eclipse.yasson.internal.serializer.NullSerializer.serialize(NullSerializer.java:67)
+	at org.eclipse.yasson.internal.serializer.ValueGetterSerializer.serialize(ValueGetterSerializer.java:43)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.lambda$serialize$0(ObjectSerializer.java:41)
+	... 50 more
+Caused by: java.io.IOException: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:216)
+	at org.jboss.resteasy.reactive.server.NoopCloseAndFlushOutputStream.write(NoopCloseAndFlushOutputStream.java:39)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:303)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at org.eclipse.parsson.JsonGeneratorImpl.flushBuffer(JsonGeneratorImpl.java:648)
+	... 67 more
+Caused by: java.io.IOException: Failed to write
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:117)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.writeBlocking(ResteasyReactiveOutputStream.java:222)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:210)
+	... 74 more
+Caused by: java.io.IOException: Connection has been closed
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.awaitWriteable(ResteasyReactiveOutputStream.java:136)
+	at org.jboss.resteasy.reactive.server.vertx.ResteasyReactiveOutputStream.write(ResteasyReactiveOutputStream.java:90)
+	... 76 more
+
+2025-12-10 23:46:09,046 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-21) request_id : fab159a6-e825-4310-b8e5-cc44c1effa1f | fetch All Regularization Attendance 
+2025-12-10 23:46:09,046 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-19) request_id : dd5f28f1-4a05-43de-b528-4fced4d99a18 | get all holidays
+2025-12-10 23:46:09,048 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-8) request_id : 0c2b13ec-dd7b-4d7f-bfdb-50fdf78f3a25 | get all holidays
+2025-12-10 23:46:09,049 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) Start fetching all holidays records - RequestId: 0c2b13ec-dd7b-4d7f-bfdb-50fdf78f3a25
+2025-12-10 23:46:09,049 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) Start fetching all holidays records - RequestId: dd5f28f1-4a05-43de-b528-4fced4d99a18
+2025-12-10 23:46:09,049 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) Start fetching all Regularization Attendance records - RequestId: fab159a6-e825-4310-b8e5-cc44c1effa1f
+2025-12-10 23:46:09,051 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-20) request_id: cef58d98-2610-4435-af07-86f19ce9e3f9 | Fetching all employees
+2025-12-10 23:46:09,051 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-22) request_id : d7a38198-8128-404a-a1b8-170112d18763 | fetch All Regularization Attendance 
+2025-12-10 23:46:09,052 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-20) Start fetching skill wise employee count - RequestId: cef58d98-2610-4435-af07-86f19ce9e3f9
+2025-12-10 23:46:09,052 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) Start fetching all Regularization Attendance records - RequestId: d7a38198-8128-404a-a1b8-170112d18763
+2025-12-10 23:46:09,054 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-8) End fetching all holidaysz records - RequestId: 0c2b13ec-dd7b-4d7f-bfdb-50fdf78f3a25
+2025-12-10 23:46:09,055 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-19) End fetching all holidaysz records - RequestId: dd5f28f1-4a05-43de-b528-4fced4d99a18
+2025-12-10 23:46:09,056 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-21) End fetching all Regularization Attendance records - RequestId: fab159a6-e825-4310-b8e5-cc44c1effa1f
+2025-12-10 23:46:09,060 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-22) End fetching all Regularization Attendance records - RequestId: d7a38198-8128-404a-a1b8-170112d18763
+2025-12-10 23:46:09,073 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-19) request_id: b5d05c91-f91e-421a-ae83-7526925fc4f2 | Fetching all employees
+2025-12-10 23:46:09,073 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-21) request_id: 1af10492-a018-48c4-bf37-d119d188fdfa | Fetching all employees
+2025-12-10 23:46:09,074 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) Start fetching skill wise employee count - RequestId: b5d05c91-f91e-421a-ae83-7526925fc4f2
+2025-12-10 23:46:09,074 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-21) Start fetching employees - RequestId: 1af10492-a018-48c4-bf37-d119d188fdfa
+2025-12-10 23:46:09,094 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) End fetching skill-wise employee count - RequestId: b5d05c91-f91e-421a-ae83-7526925fc4f2
+2025-12-10 23:46:09,119 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeRecordResource] (executor-thread-19) request_id: 3c45bed9-b40e-4f60-a0ed-cb8854f418dd | Fetching all employees
+2025-12-10 23:46:09,119 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) Start fetching employees - RequestId: 3c45bed9-b40e-4f60-a0ed-cb8854f418dd
+2025-12-10 23:46:09,171 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-20) End fetching skill-wise employee count - RequestId: cef58d98-2610-4435-af07-86f19ce9e3f9
+2025-12-10 23:46:09,383 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-21) End fetching employees - RequestId: 1af10492-a018-48c4-bf37-d119d188fdfa
+2025-12-10 23:46:09,383 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeRecordService] (executor-thread-19) End fetching employees - RequestId: 3c45bed9-b40e-4f60-a0ed-cb8854f418dd
+2025-12-10 23:46:13,922 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: cd562933-20d5-4137-823e-4ffafdba563d | Fetching all assets
+2025-12-10 23:46:13,922 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-21) request_id: c4d88edf-6153-4a2e-a604-1e92337e75e5 | Fetching all assets
+2025-12-10 23:46:13,936 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-21) Start fetching counts assets - RequestId: c4d88edf-6153-4a2e-a604-1e92337e75e5
+2025-12-10 23:46:13,936 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching all assets - RequestId: cd562933-20d5-4137-823e-4ffafdba563d
+2025-12-10 23:46:13,942 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-21) End fetching counts assets - RequestId: c4d88edf-6153-4a2e-a604-1e92337e75e5
+2025-12-10 23:46:13,989 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching all assets - RequestId: cd562933-20d5-4137-823e-4ffafdba563d
+2025-12-10 23:46:14,154 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-20) request_id: 4f16178c-e39a-4ab5-ba3e-9e09c2c34fd7 | Fetching all assets
+2025-12-10 23:46:14,162 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id: 32aa8e94-8463-4438-9925-fd5942d7af6f | Fetching all assets
+2025-12-10 23:46:14,162 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) Start fetching counts assets - RequestId: 4f16178c-e39a-4ab5-ba3e-9e09c2c34fd7
+2025-12-10 23:46:14,162 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching all assets - RequestId: 32aa8e94-8463-4438-9925-fd5942d7af6f
+2025-12-10 23:46:14,162 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-21) correlation-id : ecbc0780-3c0c-46af-97e7-cc3dab38d50e | activity : Asset Type List | message : Started
+2025-12-10 23:46:14,162 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-22) correlation-id : 878915a6-1617-45de-927a-2d1d717314a9 | activity : Asset Type List | message : Started
+2025-12-10 23:46:14,162 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-21) correlation-id : ecbc0780-3c0c-46af-97e7-cc3dab38d50e | activity : Asset Type List | message : Ended
+2025-12-10 23:46:14,168 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-20) End fetching counts assets - RequestId: 4f16178c-e39a-4ab5-ba3e-9e09c2c34fd7
+2025-12-10 23:46:14,168 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-22) correlation-id : 878915a6-1617-45de-927a-2d1d717314a9 | activity : Asset Type List | message : Ended
+2025-12-10 23:46:14,222 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching all assets - RequestId: 32aa8e94-8463-4438-9925-fd5942d7af6f
+2025-12-10 23:46:21,460 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 862ba6e3-8354-4586-8e0a-7ca274bf7cc8 | fetching all assets grouped by type
+2025-12-10 23:46:21,460 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 862ba6e3-8354-4586-8e0a-7ca274bf7cc8
+2025-12-10 23:46:21,465 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 862ba6e3-8354-4586-8e0a-7ca274bf7cc8
+2025-12-10 23:46:21,768 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-8) request_id : 167475cd-9206-42a9-b990-e8efb5364a59 | fetching all assets grouped by type
+2025-12-10 23:46:21,769 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) Start fetching assets grouped by type - RequestId: 167475cd-9206-42a9-b990-e8efb5364a59
+2025-12-10 23:46:21,773 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-8) End fetching asset counts by type - RequestId: 167475cd-9206-42a9-b990-e8efb5364a59
+2025-12-10 23:47:09,066 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: 06796875-aeee-45b6-aa54-7b9914afae13 | Fetching all assets
+2025-12-10 23:47:09,067 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching counts assets - RequestId: 06796875-aeee-45b6-aa54-7b9914afae13
+2025-12-10 23:47:09,070 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching counts assets - RequestId: 06796875-aeee-45b6-aa54-7b9914afae13
+2025-12-10 23:47:09,077 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) correlation-id : 38c02c6b-276b-4cf1-a9ba-a77229150282 | activity : Asset Type List | message : Started
+2025-12-10 23:47:09,079 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) correlation-id : 38c02c6b-276b-4cf1-a9ba-a77229150282 | activity : Asset Type List | message : Ended
+2025-12-10 23:47:09,120 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: 31a9ab00-18a1-4b82-a2a2-3daac369e250 | Fetching all assets
+2025-12-10 23:47:09,120 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching all assets - RequestId: 31a9ab00-18a1-4b82-a2a2-3daac369e250
+2025-12-10 23:47:09,171 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching all assets - RequestId: 31a9ab00-18a1-4b82-a2a2-3daac369e250
+2025-12-10 23:47:12,006 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-24) request_id : 61504c13-e91a-4cb6-b8a4-06938ae609cf | get all holidays
+2025-12-10 23:47:12,006 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.LeaveResource] (executor-thread-23) request_id : 0091f8da-a9d3-4fe9-869d-0897b59c8397 | get all holidays
+2025-12-10 23:47:12,021 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) Start fetching all holidays records - RequestId: 61504c13-e91a-4cb6-b8a4-06938ae609cf
+2025-12-10 23:47:12,021 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) Start fetching all holidays records - RequestId: 0091f8da-a9d3-4fe9-869d-0897b59c8397
+2025-12-10 23:47:12,021 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-25) request_id : a868f05a-9f12-46eb-9bca-f7a8a9833028 | fetch All Regularization Attendance 
+2025-12-10 23:47:12,023 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-26) request_id : 5fc72bf8-9103-447b-931a-48a725d5fde8 | fetch All Regularization Attendance 
+2025-12-10 23:47:12,023 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) Start fetching all Regularization Attendance records - RequestId: a868f05a-9f12-46eb-9bca-f7a8a9833028
+2025-12-10 23:47:12,025 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-26) Start fetching all Regularization Attendance records - RequestId: 5fc72bf8-9103-447b-931a-48a725d5fde8
+2025-12-10 23:47:12,025 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-24) End fetching all holidaysz records - RequestId: 61504c13-e91a-4cb6-b8a4-06938ae609cf
+2025-12-10 23:47:12,025 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.LeaveService] (executor-thread-23) End fetching all holidaysz records - RequestId: 0091f8da-a9d3-4fe9-869d-0897b59c8397
+2025-12-10 23:47:12,028 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-25) End fetching all Regularization Attendance records - RequestId: a868f05a-9f12-46eb-9bca-f7a8a9833028
+2025-12-10 23:47:12,028 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-26) End fetching all Regularization Attendance records - RequestId: 5fc72bf8-9103-447b-931a-48a725d5fde8
+2025-12-10 23:47:13,814 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-25) request_id: 7476a794-7d11-490c-b8e6-006e60d0a26c | Fetching all assets
+2025-12-10 23:47:13,814 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id: 12f38573-19cb-41bd-b50d-c6ae6973fc1d | Fetching all assets
+2025-12-10 23:47:13,815 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) correlation-id : c495add4-a2aa-4054-b4f1-e55b16986e3e | activity : Asset Type List | message : Started
+2025-12-10 23:47:13,815 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) Start fetching counts assets - RequestId: 7476a794-7d11-490c-b8e6-006e60d0a26c
+2025-12-10 23:47:13,815 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching all assets - RequestId: 12f38573-19cb-41bd-b50d-c6ae6973fc1d
+2025-12-10 23:47:13,819 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-23) correlation-id : c495add4-a2aa-4054-b4f1-e55b16986e3e | activity : Asset Type List | message : Ended
+2025-12-10 23:47:13,819 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) End fetching counts assets - RequestId: 7476a794-7d11-490c-b8e6-006e60d0a26c
+2025-12-10 23:47:13,880 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching all assets - RequestId: 12f38573-19cb-41bd-b50d-c6ae6973fc1d
+2025-12-10 23:47:13,905 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) correlation-id : 06852d6b-11c8-4273-8466-381d614c435e | activity : Asset Type List | message : Started
+2025-12-10 23:47:13,908 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) correlation-id : 06852d6b-11c8-4273-8466-381d614c435e | activity : Asset Type List | message : Ended
+2025-12-10 23:47:13,950 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-25) request_id: 962fb1fb-49a4-4947-9a57-e1c69a3bdab0 | Fetching all assets
+2025-12-10 23:47:13,951 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) Start fetching counts assets - RequestId: 962fb1fb-49a4-4947-9a57-e1c69a3bdab0
+2025-12-10 23:47:13,954 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-25) End fetching counts assets - RequestId: 962fb1fb-49a4-4947-9a57-e1c69a3bdab0
+2025-12-10 23:47:14,004 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id: 406b5323-9500-4608-8afc-98d75e3303b0 | Fetching all assets
+2025-12-10 23:47:14,004 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching all assets - RequestId: 406b5323-9500-4608-8afc-98d75e3303b0
+2025-12-10 23:47:14,037 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching all assets - RequestId: 406b5323-9500-4608-8afc-98d75e3303b0
+2025-12-10 23:47:18,540 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id : 8b7e0a3f-0c9c-45ab-8cd7-128a6d382b33 | fetching all assets grouped by type
+2025-12-10 23:47:18,542 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching assets grouped by type - RequestId: 8b7e0a3f-0c9c-45ab-8cd7-128a6d382b33
+2025-12-10 23:47:18,544 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching asset counts by type - RequestId: 8b7e0a3f-0c9c-45ab-8cd7-128a6d382b33
+2025-12-10 23:47:18,562 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-19) request_id : 7334a789-0697-44b3-8ceb-a2a8e0af48d0 | fetching all assets grouped by type
+2025-12-10 23:47:18,562 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) Start fetching assets grouped by type - RequestId: 7334a789-0697-44b3-8ceb-a2a8e0af48d0
+2025-12-10 23:47:18,574 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-19) End fetching asset counts by type - RequestId: 7334a789-0697-44b3-8ceb-a2a8e0af48d0
+2025-12-10 23:50:39,214 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id: 7b3a714a-edaa-44bf-9c06-2e960a06b43d | Fetching all assets
+2025-12-10 23:50:39,215 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching all assets - RequestId: 7b3a714a-edaa-44bf-9c06-2e960a06b43d
+2025-12-10 23:50:39,229 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching all assets - RequestId: 7b3a714a-edaa-44bf-9c06-2e960a06b43d
+2025-12-10 23:50:39,323 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-27) request_id: 4d1f40b9-f5e6-4641-9538-c1df30fc0df1 | Fetching all assets
+2025-12-10 23:50:39,324 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-27) Start fetching counts assets - RequestId: 4d1f40b9-f5e6-4641-9538-c1df30fc0df1
+2025-12-10 23:50:39,328 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-27) End fetching counts assets - RequestId: 4d1f40b9-f5e6-4641-9538-c1df30fc0df1
+2025-12-10 23:50:39,646 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-27) correlation-id : 476a5523-1cd4-41ca-ac01-2ac1b6cfd11a | activity : Asset Type List | message : Started
+2025-12-10 23:50:39,649 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-27) correlation-id : 476a5523-1cd4-41ca-ac01-2ac1b6cfd11a | activity : Asset Type List | message : Ended
+2025-12-10 23:50:40,130 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id : 2e0f9cff-672f-4596-9163-99c839f9058e | fetching all assets grouped by type
+2025-12-10 23:50:40,131 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching assets grouped by type - RequestId: 2e0f9cff-672f-4596-9163-99c839f9058e
+2025-12-10 23:50:40,144 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching asset counts by type - RequestId: 2e0f9cff-672f-4596-9163-99c839f9058e
+2025-12-10 23:50:40,156 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id : 115fa738-f90e-4a97-8703-bd60dee9a5db | fetching all assets grouped by type
+2025-12-10 23:50:40,156 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching assets grouped by type - RequestId: 115fa738-f90e-4a97-8703-bd60dee9a5db
+2025-12-10 23:50:40,159 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching asset counts by type - RequestId: 115fa738-f90e-4a97-8703-bd60dee9a5db
+2025-12-10 23:51:03,883 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 2c184ed0-1ba2-47fd-b891-df2710b83686 | activity : Asset Type List | message : Started
+2025-12-10 23:51:03,886 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 2c184ed0-1ba2-47fd-b891-df2710b83686 | activity : Asset Type List | message : Ended
+2025-12-10 23:51:03,935 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 6cd1251c-b6dc-4d61-bf4e-4b12f74d5a5b | activity : Asset Type List | message : Started
+2025-12-10 23:51:03,937 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 6cd1251c-b6dc-4d61-bf4e-4b12f74d5a5b | activity : Asset Type List | message : Ended
+2025-12-10 23:51:18,756 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 3cfc6960-9a8c-4d9c-b0b0-95d776426890 | activity : Asset Type List | message : Started
+2025-12-10 23:51:18,757 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 3cfc6960-9a8c-4d9c-b0b0-95d776426890 | activity : Asset Type List | message : Ended
+2025-12-10 23:51:18,803 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 4fede3e4-f6ac-49e4-8d7a-d183204f170d | activity : Asset Type List | message : Started
+2025-12-10 23:51:18,803 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 4fede3e4-f6ac-49e4-8d7a-d183204f170d | activity : Asset Type List | message : Ended
+2025-12-10 23:51:36,186 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 81ac264e-e0bf-4086-a883-ff36ecd9932b | activity : Asset Type List | message : Started
+2025-12-10 23:51:36,186 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 81ac264e-e0bf-4086-a883-ff36ecd9932b | activity : Asset Type List | message : Ended
+2025-12-10 23:51:36,249 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 5bf38fc6-fdfd-40c2-b911-2c1cf40acc32 | activity : Asset Type List | message : Started
+2025-12-10 23:51:36,251 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 5bf38fc6-fdfd-40c2-b911-2c1cf40acc32 | activity : Asset Type List | message : Ended
+2025-12-10 23:52:50,197 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id: f23c01f5-481e-4150-8962-a77b053303b0 | Fetching all assets
+2025-12-10 23:52:50,198 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching all assets - RequestId: f23c01f5-481e-4150-8962-a77b053303b0
+2025-12-10 23:52:50,216 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-28) correlation-id : a782fe3e-0d4d-47b7-993b-653d7de11ad5 | activity : Asset Type List | message : Started
+2025-12-10 23:52:50,219 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-28) correlation-id : a782fe3e-0d4d-47b7-993b-653d7de11ad5 | activity : Asset Type List | message : Ended
+2025-12-10 23:52:50,223 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching all assets - RequestId: f23c01f5-481e-4150-8962-a77b053303b0
+2025-12-10 23:52:50,259 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-28) request_id: f2f9d740-9669-49a3-b0ba-f82e2b39fd5f | Fetching all assets
+2025-12-10 23:52:50,260 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-28) Start fetching counts assets - RequestId: f2f9d740-9669-49a3-b0ba-f82e2b39fd5f
+2025-12-10 23:52:50,264 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-28) End fetching counts assets - RequestId: f2f9d740-9669-49a3-b0ba-f82e2b39fd5f
+2025-12-10 23:52:51,145 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id : d2cae2bd-3434-4963-9f15-0bc2223d89b4 | fetching all assets grouped by type
+2025-12-10 23:52:51,147 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching assets grouped by type - RequestId: d2cae2bd-3434-4963-9f15-0bc2223d89b4
+2025-12-10 23:52:51,150 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching asset counts by type - RequestId: d2cae2bd-3434-4963-9f15-0bc2223d89b4
+2025-12-10 23:52:51,170 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.bou.AssetResource] (executor-thread-26) request_id : fdaab250-7b5f-467e-870a-ca2f2f881396 | fetching all assets grouped by type
+2025-12-10 23:52:51,172 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) Start fetching assets grouped by type - RequestId: fdaab250-7b5f-467e-870a-ca2f2f881396
+2025-12-10 23:52:51,175 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) End fetching asset counts by type - RequestId: fdaab250-7b5f-467e-870a-ca2f2f881396
+2025-12-10 23:52:58,931 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : f28eb2f2-3ddc-4bbd-a028-848cb1daee9d | activity : Asset Type List | message : Started
+2025-12-10 23:52:58,934 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : f28eb2f2-3ddc-4bbd-a028-848cb1daee9d | activity : Asset Type List | message : Ended
+2025-12-10 23:52:58,982 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : b5357e62-79f2-4cfd-b4fa-fcfd20b3d9d7 | activity : Asset Type List | message : Started
+2025-12-10 23:52:58,986 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : b5357e62-79f2-4cfd-b4fa-fcfd20b3d9d7 | activity : Asset Type List | message : Ended
+2025-12-10 23:53:30,948 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 322fae5a-09f7-4ad1-87cb-d0f065f8088c | activity : Asset Type List | message : Started
+2025-12-10 23:53:30,951 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 322fae5a-09f7-4ad1-87cb-d0f065f8088c | activity : Asset Type List | message : Ended
+2025-12-10 23:53:30,999 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : bde91cbe-513e-46fa-8ff2-de33eb1bfa1e | activity : Asset Type List | message : Started
+2025-12-10 23:53:31,001 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : bde91cbe-513e-46fa-8ff2-de33eb1bfa1e | activity : Asset Type List | message : Ended
+2025-12-10 23:53:36,754 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : e5c07345-cb3b-4a17-b388-954e119927a1 | activity : Asset Type List | message : Started
+2025-12-10 23:53:36,754 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : e5c07345-cb3b-4a17-b388-954e119927a1 | activity : Asset Type List | message : Ended
+2025-12-10 23:53:36,812 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 08bdb54c-ea68-4f51-9fe3-3d25c83a3e09 | activity : Asset Type List | message : Started
+2025-12-10 23:53:36,815 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 08bdb54c-ea68-4f51-9fe3-3d25c83a3e09 | activity : Asset Type List | message : Ended
+2025-12-10 23:55:24,186 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 215ffb77-126d-43a1-8ecc-55d7d81bc6b6 | activity : Asset Type List | message : Started
+2025-12-10 23:55:24,189 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 215ffb77-126d-43a1-8ecc-55d7d81bc6b6 | activity : Asset Type List | message : Ended
+2025-12-10 23:55:24,238 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 593c0a65-fd1b-41a9-a749-d0309f8705c4 | activity : Asset Type List | message : Started
+2025-12-10 23:55:24,241 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 593c0a65-fd1b-41a9-a749-d0309f8705c4 | activity : Asset Type List | message : Ended
+2025-12-10 23:55:30,422 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : df9d07be-6727-464f-ba71-22cd6f4de2e2 | activity : Asset Type List | message : Started
+2025-12-10 23:55:30,426 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : df9d07be-6727-464f-ba71-22cd6f4de2e2 | activity : Asset Type List | message : Ended
+2025-12-10 23:55:30,472 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 15616eb5-d0c4-4115-9048-0505dad2a811 | activity : Asset Type List | message : Started
+2025-12-10 23:55:30,478 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 15616eb5-d0c4-4115-9048-0505dad2a811 | activity : Asset Type List | message : Ended
+2025-12-10 23:57:00,074 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 66a40567-6caf-4a92-b30f-9e2c16e3ad75 | activity : Asset Type List | message : Started
+2025-12-10 23:57:00,076 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 66a40567-6caf-4a92-b30f-9e2c16e3ad75 | activity : Asset Type List | message : Ended
+2025-12-10 23:57:00,131 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : dc06469c-c6a8-4fd0-a475-bd449258b11e | activity : Asset Type List | message : Started
+2025-12-10 23:57:00,133 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : dc06469c-c6a8-4fd0-a475-bd449258b11e | activity : Asset Type List | message : Ended
+2025-12-10 23:58:08,845 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : d8f8a6bb-1f0a-4714-b95b-b4eeb8a89b3c | activity : Asset Type List | message : Started
+2025-12-10 23:58:08,848 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : d8f8a6bb-1f0a-4714-b95b-b4eeb8a89b3c | activity : Asset Type List | message : Ended
+2025-12-10 23:58:08,895 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 10703df4-b021-4920-85b7-ff710d3fc0a3 | activity : Asset Type List | message : Started
+2025-12-10 23:58:08,898 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 10703df4-b021-4920-85b7-ff710d3fc0a3 | activity : Asset Type List | message : Ended
+2025-12-10 23:58:17,884 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 851ff896-02e8-4391-a32f-2ea8a606bc8a | activity : Asset Type List | message : Started
+2025-12-10 23:58:17,887 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 851ff896-02e8-4391-a32f-2ea8a606bc8a | activity : Asset Type List | message : Ended
+2025-12-10 23:58:17,937 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 7f7652ad-934d-4cd1-a5ca-d6ed12f5c231 | activity : Asset Type List | message : Started
+2025-12-10 23:58:17,941 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 7f7652ad-934d-4cd1-a5ca-d6ed12f5c231 | activity : Asset Type List | message : Ended
+2025-12-10 23:58:46,655 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 6e8d5e32-d5a9-4f5f-aaf0-996fa36ec254 | activity : Asset Type List | message : Started
+2025-12-10 23:58:46,658 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 6e8d5e32-d5a9-4f5f-aaf0-996fa36ec254 | activity : Asset Type List | message : Ended
+2025-12-10 23:58:46,705 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 17de4857-0f20-420c-b25e-f23d3bee0c39 | activity : Asset Type List | message : Started
+2025-12-10 23:58:46,707 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 17de4857-0f20-420c-b25e-f23d3bee0c39 | activity : Asset Type List | message : Ended
+2025-12-10 23:58:53,596 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 3b132f8b-c653-4bb1-bb3a-4d12de78ac2d | activity : Asset Type List | message : Started
+2025-12-10 23:58:53,598 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 3b132f8b-c653-4bb1-bb3a-4d12de78ac2d | activity : Asset Type List | message : Ended
+2025-12-10 23:58:53,661 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 2d47b9d0-8942-4e60-9d41-8dbfdcdba0e2 | activity : Asset Type List | message : Started
+2025-12-10 23:58:53,664 laptop-t3siq6r0 workeronboarding-dev.jar[2556] INFO  [com.sbd.rec.con.ser.AssetService] (executor-thread-26) correlation-id : 2d47b9d0-8942-4e60-9d41-8dbfdcdba0e2 | activity : Asset Type List | message : Ended

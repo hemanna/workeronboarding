@@ -1,0 +1,45 @@
+2025-07-27 00:31:24,490 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 5.968s. Listening on: http://0.0.0.0:8080
+2025-07-27 00:31:24,495 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2025-07-27 00:31:24,496 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2025-07-27 00:31:33,755 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start updating Employee Salary Structure - RequestId: 2e750153-9657-49de-8c33-69e01b27c85c, EmployeeId: 78
+2025-07-27 00:31:33,761 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.com.exc.map.BusinessExceptionMapper] (executor-thread-1) correlation-id : 2e750153-9657-49de-8c33-69e01b27c85c | status code : 400 | message : Request data cannot be null
+2025-07-27 00:35:08,617 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start updating Employee Salary Structure - RequestId: 005a75b9-2f9e-4efd-89ac-ea14203b1445, EmployeeId: 78
+2025-07-27 00:35:09,921 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) End updating Employee Salary Structure - RequestId: 005a75b9-2f9e-4efd-89ac-ea14203b1445
+2025-07-27 00:36:35,573 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start updating Employee Salary Structure - RequestId: 327bfda4-ac70-44db-b2cf-7a540bb94a2d, EmployeeId: 78
+2025-07-27 00:36:35,673 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) End updating Employee Salary Structure - RequestId: 327bfda4-ac70-44db-b2cf-7a540bb94a2d
+2025-07-27 00:37:00,903 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) Start updating Employee Salary Structure - RequestId: dcd936c0-00fa-4dc2-8246-368a9844e1a8, EmployeeId: 78
+2025-07-27 00:37:00,987 laptop-t3siq6r0 workeronboarding-dev.jar[6528] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : b25ed8fd-dc9c-48a7-9e83-3df32cd41879 | message : null | cause : {}: java.lang.NullPointerException
+	at com.sbd.record.control.service.SalaryStructureService.updateSalaryStructure(SalaryStructureService.java:372)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.updateSalaryStructure$$superforward(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass$$function$$5.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.SalaryStructureService_Subclass.updateSalaryStructure(Unknown Source)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.updateSalaryStructure(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.updateSalaryStructure(SalaryStructureResource.java:73)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$updateSalaryStructure_a9b887f4ed452ce5a71055c7b8a41b857b8a333e.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-07-27 00:37:53,864 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [io.qua.dep.dev.fil.StaticFileManager] (vert.x-worker-thread-1) Ignoring module-info.java in dev mode, set the `quarkus.live-reload.ignore-module-info` property to `false` in your project descriptor (`pom.xml` or `build.gradle`) to disable this behavior.
+2025-07-27 00:37:56,353 laptop-t3siq6r0 workeronboarding-dev.jar[6528] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\SalaryStructureService.java uses unchecked or unsafe operations., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\SalaryStructureService.java
+2025-07-27 00:37:56,355 laptop-t3siq6r0 workeronboarding-dev.jar[6528] WARN  [io.qua.dep.dev.JavaCompilationProvider] (vert.x-worker-thread-1) Recompile with -Xlint:unchecked for details., line -1 in C:\Users\91819\workeronboarding\src\main\java\com\sbd\record\control\service\SalaryStructureService.java
+2025-07-27 00:37:56,379 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in SalaryStructureService.class.
+2025-07-27 00:37:56,470 laptop-t3siq6r0 workeronboarding-dev.jar[6528] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.088s

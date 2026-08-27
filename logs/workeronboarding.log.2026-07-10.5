@@ -1,0 +1,68 @@
+2026-07-10 13:47:58,372 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 4.117s. Listening on: http://0.0.0.0:8080
+2026-07-10 13:47:58,375 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-07-10 13:47:58,377 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-07-10 13:47:58,380 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 10.770s 
+2026-07-10 13:47:58,384 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload took more than 4 seconds, you may want to enable instrumentation based reload (quarkus.live-reload.instrumentation=true). This allows small changes to take effect without restarting Quarkus.
+2026-07-10 13:47:58,398 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [com.sbd.rec.bou.EmployeeAttendanceResource] (executor-thread-1) Request Id : d477010b-eca8-4525-8215-35afcb6e6a7e | Fetch Today Attendance
+2026-07-10 13:47:58,416 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlation-id : d477010b-eca8-4525-8215-35afcb6e6a7e | activity : TODAY ATTENDANCE | message : Started
+2026-07-10 13:47:58,491 laptop-t3siq6r0 workeronboarding-dev.jar[1100] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) Unknown column 'd.department_name' in 'field list'
+2026-07-10 13:47:58,497 laptop-t3siq6r0 workeronboarding-dev.jar[1100] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 822969f0-fdcd-4aee-b03c-76d1739f23e3 | message : JDBC exception executing SQL [SELECT ed.id, ed.employee_name, d.department_name, ea.check_in, ea.check_out, ea.working_hours FROM employee_attendance ea INNER JOIN employee_details ed ON ea.employee_id = ed.id INNER JOIN department d ON ea.department_id = d.id WHERE ea.date = CURDATE() ORDER BY ed.employee_name] [Unknown column 'd.department_name' in 'field list'] [n/a] | cause : {}: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [SELECT ed.id, ed.employee_name, d.department_name, ea.check_in, ea.check_out, ea.working_hours FROM employee_attendance ea INNER JOIN employee_details ed ON ea.employee_id = ed.id INNER JOIN department d ON ea.department_id = d.id WHERE ea.date = CURDATE() ORDER BY ed.employee_name] [Unknown column 'd.department_name' in 'field list'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:257)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:163)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getMetaData(AbstractResultSetAccess.java:36)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getColumnCount(AbstractResultSetAccess.java:52)
+	at org.hibernate.query.results.ResultSetMappingImpl.resolve(ResultSetMappingImpl.java:193)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:477)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:267)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sql.internal.NativeSelectQueryPlanImpl.performList(NativeSelectQueryPlanImpl.java:97)
+	at org.hibernate.query.sql.internal.NativeQueryImpl.doList(NativeQueryImpl.java:626)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at org.hibernate.query.Query.getResultList(Query.java:119)
+	at com.sbd.common.repository.EmployeeAttendanceRepository.fetchTodayAttendance(EmployeeAttendanceRepository.java:201)
+	at com.sbd.common.repository.EmployeeAttendanceRepository_ClientProxy.fetchTodayAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService.fetchTodayAttendance(EmployeeAttendanceService.java:1231)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchTodayAttendance$$superforward(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass$$function$$40.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.sbd.record.control.service.EmployeeAttendanceService_Subclass.fetchTodayAttendance(Unknown Source)
+	at com.sbd.record.control.service.EmployeeAttendanceService_ClientProxy.fetchTodayAttendance(Unknown Source)
+	at com.sbd.record.boundary.EmployeeAttendanceResource.fetchTodayAttendance(EmployeeAttendanceResource.java:318)
+	at com.sbd.record.boundary.EmployeeAttendanceResource$quarkusrestinvoker$fetchTodayAttendance_de495e7b45f431cc2e4b94a180b9651073d7b844.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'd.department_name' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeQuery(PreparedStatementWrapper.java:78)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:239)
+	... 43 more
+
+2026-07-10 13:55:19,829 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in AttendanceTodayJsonb.class.
+2026-07-10 13:55:19,988 laptop-t3siq6r0 workeronboarding-dev.jar[1100] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding stopped in 0.134s

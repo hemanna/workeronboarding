@@ -1,0 +1,55 @@
+2026-05-16 15:51:48,013 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [io.quarkus] (Quarkus Main Thread) workeronboarding 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.5) started in 12.975s. Listening on: http://0.0.0.0:8080
+2026-05-16 15:51:48,021 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [io.quarkus] (Quarkus Main Thread) Profiles dev,common activated. Live Coding activated.
+2026-05-16 15:51:48,022 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, config-yaml, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, resteasy-reactive-jsonb, smallrye-context-propagation, vertx]
+2026-05-16 15:52:06,212 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlation-id : 949c99fa-d710-4576-a711-772369f7cd70 | activity : Attendance List | message : Started
+2026-05-16 15:52:07,297 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.EmployeeAttendanceService] (executor-thread-1) correlation-id : 949c99fa-d710-4576-a711-772369f7cd70 | activity : Attendance List | message : Ended
+2026-05-16 16:14:48,614 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: b866f1b4-6805-40f7-823f-1bfbac77f27f | Fetching deduction report
+2026-05-16 16:14:48,701 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : b866f1b4-6805-40f7-823f-1bfbac77f27f | activity : Deduction report Detail | message : Started
+2026-05-16 16:14:49,743 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : b866f1b4-6805-40f7-823f-1bfbac77f27f | activity : Deduction report Detail | message : Ended
+2026-05-16 16:15:23,914 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: 6ec18a65-6248-4d09-8b82-b52f1715fe97 | Fetching deduction report
+2026-05-16 16:15:23,914 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : 6ec18a65-6248-4d09-8b82-b52f1715fe97 | activity : Deduction report Detail | message : Started
+2026-05-16 16:15:23,920 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : 6ec18a65-6248-4d09-8b82-b52f1715fe97 | activity : Deduction report Detail | message : Ended
+2026-05-16 16:15:28,853 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: 26bfb55d-dbd4-4cd3-b95b-f3c6510eff58 | Fetching deduction report
+2026-05-16 16:15:28,854 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : 26bfb55d-dbd4-4cd3-b95b-f3c6510eff58 | activity : Deduction report Detail | message : Started
+2026-05-16 16:15:28,919 laptop-t3siq6r0 workeronboarding-dev.jar[24584] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 31042ca4-fc1d-4d54-a0fa-61bfc4268839 | message : class java.lang.Long cannot be cast to class java.math.BigDecimal (java.lang.Long and java.math.BigDecimal are in module java.base of loader 'bootstrap') | cause : {}: java.lang.ClassCastException: class java.lang.Long cannot be cast to class java.math.BigDecimal (java.lang.Long and java.math.BigDecimal are in module java.base of loader 'bootstrap')
+	at com.sbd.common.mapper.SalaryStructureMapper.toDeductionDTO(SalaryStructureMapper.java:39)
+	at com.sbd.record.control.service.SalaryStructureService.fetchDeductionReport(SalaryStructureService.java:571)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.fetchDeductionReport(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.getDeductionReport(SalaryStructureResource.java:129)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$getDeductionReport_66cfffea6e1da2d4a6c58e4e5db084ec7185060b.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2026-05-16 16:15:43,912 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: cfe577c0-c10e-4f3a-995e-382e440e9332 | Fetching deduction report
+2026-05-16 16:15:43,912 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : cfe577c0-c10e-4f3a-995e-382e440e9332 | activity : Deduction report Detail | message : Started
+2026-05-16 16:15:43,923 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : cfe577c0-c10e-4f3a-995e-382e440e9332 | activity : Deduction report Detail | message : Ended
+2026-05-16 16:15:57,601 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: 6f1922e0-24a6-44a7-89ff-941e5e5f7528 | Fetching deduction report
+2026-05-16 16:15:57,602 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : 6f1922e0-24a6-44a7-89ff-941e5e5f7528 | activity : Deduction report Detail | message : Started
+2026-05-16 16:15:57,611 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : 6f1922e0-24a6-44a7-89ff-941e5e5f7528 | activity : Deduction report Detail | message : Ended
+2026-05-16 16:16:05,030 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.bou.SalaryStructureResource] (executor-thread-1) correlation_Id: bc992a2b-3156-4988-82c8-abdcf72b6761 | Fetching deduction report
+2026-05-16 16:16:05,032 laptop-t3siq6r0 workeronboarding-dev.jar[24584] INFO  [com.sbd.rec.con.ser.SalaryStructureService] (executor-thread-1) correlation-id : bc992a2b-3156-4988-82c8-abdcf72b6761 | activity : Deduction report Detail | message : Started
+2026-05-16 16:16:05,039 laptop-t3siq6r0 workeronboarding-dev.jar[24584] ERROR [com.sbd.com.exc.map.AllTechnicalExceptionMapper] (executor-thread-1) correlation-id : 2d02d92e-5146-405e-9b47-34f3c4694290 | message : class java.lang.Long cannot be cast to class java.math.BigDecimal (java.lang.Long and java.math.BigDecimal are in module java.base of loader 'bootstrap') | cause : {}: java.lang.ClassCastException: class java.lang.Long cannot be cast to class java.math.BigDecimal (java.lang.Long and java.math.BigDecimal are in module java.base of loader 'bootstrap')
+	at com.sbd.common.mapper.SalaryStructureMapper.toDeductionDTO(SalaryStructureMapper.java:39)
+	at com.sbd.record.control.service.SalaryStructureService.fetchDeductionReport(SalaryStructureService.java:571)
+	at com.sbd.record.control.service.SalaryStructureService_ClientProxy.fetchDeductionReport(Unknown Source)
+	at com.sbd.record.boundary.SalaryStructureResource.getDeductionReport(SalaryStructureResource.java:129)
+	at com.sbd.record.boundary.SalaryStructureResource$quarkusrestinvoker$getDeductionReport_66cfffea6e1da2d4a6c58e4e5db084ec7185060b.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:582)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
