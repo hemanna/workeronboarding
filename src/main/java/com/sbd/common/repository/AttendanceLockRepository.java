@@ -8,42 +8,89 @@ import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.List;
+
 @ApplicationScoped
 public class AttendanceLockRepository implements PanacheRepository<AttendanceLock> {
 
     @Inject
     EntityManager em;
 
-    //Check attendance exists
-    public Long countAttendance(Integer month, Integer year) {
-        return (Long) em.createQuery(QueryEnum.COUNT_ATTENDANCE.getValue())
+    // Check attendance exists for selected month/year
+    public Long countAttendance(
+            Integer month,
+            Integer year
+    ) {
+        return em.createQuery(
+                        QueryEnum.COUNT_ATTENDANCE.getValue(),
+                        Long.class
+                )
                 .setParameter("month", month)
                 .setParameter("year", year)
                 .getSingleResult();
     }
 
-    // Check already locked
-    public Long countLocked(Integer month, Integer year) {
-        return (Long) em.createQuery(QueryEnum.COUNT_LOCKED.getValue())
+
+    // Get locked employee IDs for selected month/year
+    public List<Integer> findLockedEmployeeIds(
+            Integer month,
+            Integer year
+    ) {
+        return em.createQuery(
+                        QueryEnum.FIND_LOCKED_EMPLOYEE_IDS.getValue(),
+                        Integer.class
+                )
+                .setParameter("month", month)
+                .setParameter("year", year)
+                .getResultList();
+    }
+
+
+    // Insert lock for selected employee
+    public int insertLock(
+            Integer employeeId,
+            Integer month,
+            Integer year
+    ) {
+        return em.createNativeQuery(
+                        QueryEnum.INSERT_LOCK.getValue()
+                )
+                .setParameter(1, employeeId)
+                .setParameter(2, month)
+                .setParameter(3, year)
+                .executeUpdate();
+    }
+
+
+    // Update attendance status only for selected employee
+    public int updateAttendanceStatus(
+            Integer employeeId,
+            Integer month,
+            Integer year
+    ) {
+        return em.createQuery(
+                        QueryEnum.UPDATE_ATTENDANCE_STATUS.getValue()
+                )
+                .setParameter("employeeId", employeeId)
+                .setParameter("month", month)
+                .setParameter("year", year)
+                .executeUpdate();
+    }
+
+    // Check whether employee is already locked for selected month/year
+    public Long countEmployeeLocked(
+            Integer employeeId,
+            Integer month,
+            Integer year
+    ) {
+        return em.createQuery(
+                        QueryEnum.COUNT_EMPLOYEE_LOCKED.getValue(),
+                        Long.class
+                )
+                .setParameter("employeeId", employeeId)
                 .setParameter("month", month)
                 .setParameter("year", year)
                 .getSingleResult();
-    }
-
-    // Insert lock
-    public int insertLock(Integer month, Integer year) {
-        return em.createNativeQuery(QueryEnum.INSERT_LOCK.getValue())
-                .setParameter(1, month)
-                .setParameter(2, year)
-                .executeUpdate();
-    }
-
-    //Update attendance status
-    public int updateAttendanceStatus(Integer month, Integer year) {
-        return em.createQuery(QueryEnum.UPDATE_ATTENDANCE_STATUS.getValue())
-                .setParameter("month", month)
-                .setParameter("year", year)
-                .executeUpdate();
     }
 
     @Getter
@@ -51,38 +98,44 @@ public class AttendanceLockRepository implements PanacheRepository<AttendanceLoc
     public enum QueryEnum {
 
         COUNT_ATTENDANCE(
-                "SELECT COUNT(a) FROM EmployeeAttendance a " +
+                "SELECT COUNT(a) " +
+                        "FROM EmployeeAttendance a " +
                         "WHERE FUNCTION('MONTH', a.date) = :month " +
                         "AND FUNCTION('YEAR', a.date) = :year"
         ),
 
-        COUNT_LOCKED(
-                "SELECT COUNT(al) FROM AttendanceLock al " +
+        FIND_LOCKED_EMPLOYEE_IDS(
+                "SELECT al.employee.id " +
+                        "FROM AttendanceLock al " +
                         "WHERE al.month = :month " +
+                        "AND al.year = :year " +
+                        "AND al.locked = true " +
+                        "ORDER BY al.employee.id"
+        ),
+
+
+        INSERT_LOCK(
+                "INSERT INTO attendance_lock " +
+                        "(employee_id, month, year, locked, locked_at) " +
+                        "VALUES (?1, ?2, ?3, TRUE, NOW())"
+        ),
+
+        COUNT_EMPLOYEE_LOCKED(
+                "SELECT COUNT(al) " +
+                        "FROM AttendanceLock al " +
+                        "WHERE al.employee.id = :employeeId " +
+                        "AND al.month = :month " +
                         "AND al.year = :year " +
                         "AND al.locked = true"
         ),
-
-        INSERT_LOCK(
-                "INSERT INTO attendance_lock (employee_id, month, year, locked, locked_at) " +
-                        "SELECT DISTINCT a.employee_id, ?1, ?2, TRUE, NOW() " +
-                        "FROM employee_attendance a " +
-                        "WHERE MONTH(a.date) = ?1 " +
-                        "AND YEAR(a.date) = ?2 " +
-                        "AND NOT EXISTS ( " +
-                        "    SELECT 1 FROM attendance_lock al " +
-                        "    WHERE al.employee_id = a.employee_id " +
-                        "    AND al.month = ?1 " +
-                        "    AND al.year = ?2 " +
-                        ")"
-        ),
-
         UPDATE_ATTENDANCE_STATUS(
                 "UPDATE EmployeeAttendance a " +
                         "SET a.approvalStatus = 'APPROVED' " +
-                        "WHERE FUNCTION('MONTH', a.date) = :month " +
+                        "WHERE a.employee.id = :employeeId " +
+                        "AND FUNCTION('MONTH', a.date) = :month " +
                         "AND FUNCTION('YEAR', a.date) = :year"
         );
+
 
         private final String value;
     }

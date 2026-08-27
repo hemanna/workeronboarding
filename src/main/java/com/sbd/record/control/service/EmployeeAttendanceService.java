@@ -987,7 +987,11 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
 
     @Override
     @Transactional
-    public ApiResponse lockAttendance(ApiRequest<AttendanceLockJsonb> apiRequest, String correlationId) throws BusinessException {
+    public ApiResponse lockAttendance(
+            ApiRequest<AttendanceLockJsonb> apiRequest,
+            String correlationId
+    ) throws BusinessException {
+
         log.info(
                 LogEnum.ACTIVITY.getValue(),
                 correlationId,
@@ -996,14 +1000,38 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
         );
 
         AttendanceLockJsonb request = apiRequest.getData();
+
         Integer month = request.getMonth();
         Integer year = request.getYear();
 
-        log.info("correlationId={} | Locking attendance for month={} year={}",
-                correlationId, month, year);
+        List<Integer> employeeIds = request.getEmployeeIds();
+
+        log.info(
+                "correlationId={} | Locking attendance for month={} year={} employees={}",
+                correlationId,
+                month,
+                year,
+                employeeIds
+        );
+
+        // Validate employee IDs
+        if (employeeIds == null || employeeIds.isEmpty()) {
+            return new ApiResponse(
+                    new Status(
+                            Response.Status.BAD_REQUEST.getStatusCode(),
+                            StatusCodeEnum.BAD_REQUEST.getValue(),
+                            correlationId
+                    ),
+                    "Employee IDs are required"
+            );
+        }
 
         // Check attendance exists
-        Long attendanceCount = attendanceLockRepository.countAttendance(month, year);
+        Long attendanceCount =
+                attendanceLockRepository.countAttendance(
+                        month,
+                        year
+                );
 
         if (attendanceCount == 0) {
             return new ApiResponse(
@@ -1016,25 +1044,66 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
             );
         }
 
-        // Check already locked
-        Long lockedCount = attendanceLockRepository.countLocked(month, year);
+        int lockedRows = 0;
+        int updatedRows = 0;
 
-        if (lockedCount > 0) {
-            return new ApiResponse(
-                    new Status(
-                            Response.Status.CONFLICT.getStatusCode(),
-                            "ALREADY_LOCKED",
-                            correlationId
-                    ),
-                    "Attendance already locked for this month/year"
-            );
+        // Lock selected employees individually
+        for (Integer employeeId : employeeIds) {
+
+            // Check whether this employee is already locked
+            Long alreadyLocked =
+                    attendanceLockRepository.countEmployeeLocked(
+                            employeeId,
+                            month,
+                            year
+                    );
+
+            if (alreadyLocked > 0) {
+
+                log.warn(
+                        "correlationId={} | Employee {} attendance already locked for {}/{}",
+                        correlationId,
+                        employeeId,
+                        month,
+                        year
+                );
+
+                return new ApiResponse(
+                        new Status(
+                                Response.Status.BAD_REQUEST.getStatusCode(),
+                                StatusCodeEnum.BAD_REQUEST.getValue(),
+                                correlationId
+                        ),
+                        "Attendance already locked for employee "
+                                + employeeId
+                                + " for "
+                                + month
+                                + "/"
+                                + year
+                );
+            }
+
+
+            // Insert employee lock
+            int inserted =
+                    attendanceLockRepository.insertLock(
+                            employeeId,
+                            month,
+                            year
+                    );
+
+            if (inserted > 0) {
+                lockedRows++;
+
+                // Update only this employee's attendance
+                updatedRows +=
+                        attendanceLockRepository.updateAttendanceStatus(
+                                employeeId,
+                                month,
+                                year
+                        );
+            }
         }
-
-        // Insert lock
-        int lockedRows = attendanceLockRepository.insertLock(month, year);
-
-        // Update attendance status
-        int updatedRows = attendanceLockRepository.updateAttendanceStatus(month, year);
 
         log.info(
                 LogEnum.ACTIVITY.getValue(),
@@ -1049,8 +1118,10 @@ public class EmployeeAttendanceService implements EmployeeAttendanceControl {
                         StatusCodeEnum.SUCCESS.getValue(),
                         correlationId
                 ),
-                "Attendance Locked Successfully | Employees: " + lockedRows +
-                        " | Updated Records: " + updatedRows
+                "Attendance Locked Successfully | Employees: "
+                        + lockedRows
+                        + " | Updated Records: "
+                        + updatedRows
         );
     }
 
