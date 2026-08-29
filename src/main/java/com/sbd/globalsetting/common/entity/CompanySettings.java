@@ -1,5 +1,6 @@
 package com.sbd.globalsetting.common.entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,8 +24,10 @@ public class CompanySettings {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "company_logo", length = 500)
-    private String companyLogo;
+    @Lob
+    @Column(name = "company_logo", columnDefinition = "LONGBLOB")
+    @JsonbTransient
+    private byte[] companyLogo;
 
     @Column(name = "company_name", nullable = false, length = 255)
     private String companyName;
