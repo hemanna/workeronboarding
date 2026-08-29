@@ -1,6 +1,7 @@
 package com.sbd.common.repository;
 
 import com.sbd.common.Jsonb.MonthlyPayrollJsonb;
+import com.sbd.common.Jsonb.PayrollMonthSummaryJsonb;
 import com.sbd.common.Jsonb.PayrollStatusJsonb;
 import com.sbd.common.Jsonb.PayrollSummaryJsonb;
 import com.sbd.common.entity.SalaryStructure;
@@ -154,6 +155,49 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
 
                 (BigDecimal) row[2]
 
+        );
+    }
+
+    public PayrollMonthSummaryJsonb fetchMonthSummary(
+            Integer month,
+            Integer year) {
+
+        Number totalEmployees = (Number) em.createNativeQuery(
+                        QueryEnum.GET_MONTH_TOTAL_EMPLOYEES.getValue())
+                .setParameter(1, month)
+                .setParameter(2, year)
+                .getSingleResult();
+
+
+        Object[] payrollRow = (Object[]) em.createNativeQuery(
+                        QueryEnum.GET_MONTH_PAYROLL_SUMMARY.getValue())
+                .setParameter(1, month)
+                .setParameter(2, year)
+                .getSingleResult();
+
+
+        Integer employeeCount =
+                totalEmployees != null
+                        ? totalEmployees.intValue()
+                        : 0;
+
+
+        BigDecimal totalPayrollCost =
+                payrollRow[0] != null
+                        ? new BigDecimal(payrollRow[0].toString())
+                        : BigDecimal.ZERO;
+
+
+        BigDecimal totalDeductions =
+                payrollRow[1] != null
+                        ? new BigDecimal(payrollRow[1].toString())
+                        : BigDecimal.ZERO;
+
+
+        return new PayrollMonthSummaryJsonb(
+                employeeCount,
+                totalPayrollCost,
+                totalDeductions
         );
     }
     @Getter
@@ -335,6 +379,20 @@ public class SalaryStructureRepository implements PanacheRepository<SalaryStruct
 
                         "AND year=?2"
 
+        ),
+        GET_MONTH_TOTAL_EMPLOYEES(
+                "SELECT COUNT(DISTINCT employee_id) AS totalEmployees " +
+                        "FROM attendance_lock " +
+                        "WHERE month = ?1 " +
+                        "AND year = ?2"
+        ),
+        GET_MONTH_PAYROLL_SUMMARY(
+                "SELECT " +
+                        "COALESCE(SUM(gross_salary), 0) AS totalPayrollCost, " +
+                        "COALESCE(SUM(gross_salary - net_salary), 0) AS totalDeductions " +
+                        "FROM payroll " +
+                        "WHERE month = ?1 " +
+                        "AND year = ?2"
         );
 
         private final String value;

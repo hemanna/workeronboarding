@@ -46,4 +46,10 @@ public interface SalaryStructureControl {
             Integer year,
             String correlationId
     ) throws BusinessException;
+
+    ApiResponse fetchMonthSummary(
+            Integer month,
+            Integer year,
+            String correlationId)
+            throws BusinessException;
 }
